@@ -12,7 +12,7 @@ with sync_playwright() as p:
     pg=c.new_page();errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
     pg.goto(B+'?intro=1');pg.wait_for_function("document.getElementById('intro')?.classList.contains('gl-on')",timeout=60000);pg.wait_for_timeout(1200)
     pg.screenshot(path=f'screenshots/v51-intro-start-{w}x{h}.png')
-    pg.wait_for_timeout(4000);pg.mouse.move(w*.7,h*.5);pg.mouse.down();pg.mouse.move(w*.5,h*.45,steps=8);pg.mouse.up();pg.wait_for_timeout(800)
+    pg.wait_for_timeout(4000);gx,gy=pg.evaluate("(()=>{const r=document.querySelector('.globe-slot').getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]})()");pg.mouse.move(gx+60,gy);pg.mouse.down();pg.mouse.move(gx-60,gy-10,steps=8);pg.mouse.up();pg.wait_for_timeout(800)
     pg.screenshot(path=f'screenshots/v51-intro-mid-{w}x{h}.png')
     pg.evaluate("document.getElementById('goFind').click()");pg.wait_for_timeout(1500)
     pg.screenshot(path=f'screenshots/v51-intro-end-{w}x{h}.png')

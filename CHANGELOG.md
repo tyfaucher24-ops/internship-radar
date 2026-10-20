@@ -5,6 +5,9 @@
 - "Find my internship" does a quick fade to the homepage.
 - Cut-off fixed: full-viewport canvas (100vw x 100dvh); the camera distance is solved from globe + halo radius and FOV on both axes so the globe fits inside its slot beside/under the headline (never under the copy); recomputed on resize, visualViewport resize and orientation change.
 - Freeze fixed: the old low-fps watchdog disposed WebGL and swapped to a static globe after a few seconds of <40fps (always on software GL). Replaced with adaptive quality tiers (pixel ratio, atmosphere, shader detail) that step down/up with hysteresis and never stop rendering. 60s liveness test: test_v51_alive.py.
+- One shared "open" count: header, start-page counter and results line all use open + verified within 24h of the last sync (the sync's meta.open rule; listings you added count too). Unverified open listings no longer appear under Open.
+- Missing locations: filled only from explicit location text in the posting (title or description, e.g. "Primary City/State: Mesa, Arizona") that geocodes to a real US city (pipeline/locfill.py, run by sync before compact). Anything else is labelled "Remote" (if the posting says remote) or "Remote/Unspecified". Nothing guessed.
+- Intro no longer leaves a scrollbar-gutter strip at tablet widths; test_v5_shots.py updated (no transition shots).
 - Also includes the V5 perf work: listings index parsed in a Web Worker, metric-matched Inter fallback, reserved filter/results space (CLS).
 
 ## V5 — Website redesign + performance

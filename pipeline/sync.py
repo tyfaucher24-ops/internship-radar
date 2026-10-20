@@ -279,7 +279,7 @@ def main():
     json.dump(logs,open(os.path.join(D,'sync_log.json'),'w'),separators=(',',':'))
     print(json.dumps(meta),file=sys.stderr);print(json.dumps({'by_source':srcs,'deadline_pct':health['deadline_coverage_pct'],'stats':stats},default=dict),file=sys.stderr)
 def _compact():
-    from . import compact; compact.main()
+    from . import locfill, compact; locfill.main(); compact.main()
 if __name__=='__main__':
     try: main();_compact()
     except Exception:

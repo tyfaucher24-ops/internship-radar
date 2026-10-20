@@ -8,8 +8,8 @@ const shortDate=d=>new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'sh
 function logoHTML(x,big){const ini=esc((x.company||'?').replace(/^the /i,'').slice(0,1).toUpperCase());const hue=[...(x.company||'')].reduce((a,c)=>a+c.charCodeAt(0),0)%360;return `<span class="logo${big?' big':''}" style="--h:${hue}" aria-hidden="true">${ini}</span>`}
 function closeLbl(x){if(x.st==='upcoming')return{t:x.pred?.label||'Opening soon',c:'up'};if(!x.deadline)return{t:x.rolling?'Rolling deadline':'Closing date not listed',c:'none'};const n=days(x.deadline);
  if(n<0)return{t:'Closed '+shortDate(x.deadline),c:'closed'};return{t:n===0?'Closes today':n===1?'Closes tomorrow':'Closes '+shortDate(x.deadline)+(n<7?` · ${n} days`:''),c:n<3?'red':n<7?'amber':'ok'}}
-function locShort(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));let s=L.slice(0,1).join('')+(L.length>1?` +${L.length-1} more`:'');if(x.remote)s=s?s+' · Remote':'Remote';return s||'Location not listed'}
-function locFull(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));if(x.remote)L.push('Remote');return L.join(' · ')||'Location not listed'}
+function locShort(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));let s=L.slice(0,1).join('')+(L.length>1?` +${L.length-1} more`:'');if(x.remote)s=s?s+' · Remote':'Remote';return s||x.loc_label||'Remote/Unspecified'}
+function locFull(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));if(x.remote)L.push('Remote');return L.join(' · ')||x.loc_label||'Remote/Unspecified'}
 function mbadge(x){const m=MSCORE.get(x.id);if(!m)return'';const c={'Strong Match':'b-strong','Realistic':'b-real','Reach':'b-reach','Hidden Gem':'b-gem'}[m.bucket];return`<span class="badge ${c}" title="${esc(m.reason)}">${m.bucket==='Hidden Gem'?'💎 ':''}${m.bucket}</span>`}
 function saveBtn(x){if(x.st==='upcoming'){const on=Store.get('notify',[]).includes(x.id);return`<button class="btn-save${on?' on':''}" data-act="notify" aria-pressed="${on}">${on?'🔔 Notifying':'Notify me'}</button>`}
  const t=T.byListing(x.id);return t?`<button class="btn-save on" data-act="tracker" aria-label="In your tracker: ${esc(t.status)}">✓ ${esc(t.status)}</button>`:`<button class="btn-save" data-act="save" aria-label="Save ${esc(x.company)} ${esc(x.title)}">Save</button>`}
@@ -39,7 +39,7 @@ $('imp').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const key
 $('clearAll').onclick=()=>{if(confirm('Delete everything you saved on this website (in this browser)? Export first if you want a backup.')){Store.clear();location.reload()}};
 /* ---------- filters ---------- */
 const FDEF=[
- ['status','Status',x=>[x.st==='upcoming'?'Upcoming':x.st==='closed'?'Closed':'Open'],['Open','Upcoming','Closed']],
+ ['status','Status',x=>x.st==='upcoming'?['Upcoming']:x.st==='closed'?['Closed']:x.live?['Open']:[],['Open','Upcoming','Closed']],
  ['cat','Industry',x=>[x.industry||'Other']],
  ['rt','Role type',x=>[x.role_type||'Internship']],
  ['state','State',x=>x._states.length?x._states:['Not listed']],
@@ -202,8 +202,11 @@ const RIO='IntersectionObserver' in window&&!RM?new IntersectionObserver(es=>es.
 function reveal(){document.querySelectorAll('main>section:not([hidden]) .panel, main>section:not([hidden]) .prose>*, .site-footer .fgrid>*').forEach(el=>{if(el.classList.contains('rv'))return;el.classList.add('rv');RIO?RIO.observe(el):el.classList.add('in')})}
 /* ---------- data load ---------- */
 const CITYIDX=new Map();
-function mergeMine(){const mine=Store.get('myListings',[]).map(x=>prepare({...x,_mine:true,_det:true,id:String(x.id),source:'Added by you'}));D=mine.concat(D.filter(x=>!x._mine));BYID=new Map(D.map(x=>[String(x.id),x]))}
-function hdrCount(){const t=META.updated?`${(META.open||0).toLocaleString()} open internships · ${(META.closing_this_week||0).toLocaleString()} closing this week · updated ${ago(META.updated)}`:'Live counts unavailable';document.querySelectorAll('.hdrCount').forEach(e=>{if(!e.closest('#intro'))e.textContent=t})}
+function mergeMine(){const mine=Store.get('myListings',[]).map(x=>prepare({...x,_mine:true,_det:true,id:String(x.id),source:'Added by you'}));D=mine.concat(D.filter(x=>!x._mine));BYID=new Map(D.map(x=>[String(x.id),x]));if(META.updated)markLive()}
+/* One shared definition of "open": status open + verified within 24h of the last sync (same rule the sync uses for meta.open), plus listings you added yourself. */
+function markLive(){const cut=META.updated?Date.parse(META.updated)-864e5:0;for(const x of D)x.live=!!x._mine||(x.status==='open'&&x.st!=='closed'&&!x.hidden&&!x.past_term&&!!x.lv&&Date.parse(x.lv+(x.lv.length<=16?':00Z':''))>=cut)}
+function liveCounts(){if(!D.length||!D.some(x=>'live' in x))return{open:META.open||0,wk:META.closing_this_week||0};let o=0,w=0;for(const x of D)if(x.live){o++;if(x.deadline){const n=days(x.deadline);if(n>=0&&n<=7)w++}}return{open:o,wk:w}}
+function hdrCount(){const LC=liveCounts();const t=META.updated?`${LC.open.toLocaleString()} open internships · ${LC.wk.toLocaleString()} closing this week · updated ${ago(META.updated)}`:'Live counts unavailable';document.querySelectorAll('.hdrCount').forEach(e=>{if(!e.closest('#intro'))e.textContent=t})}
 async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('prefs',{}).map)mapToggle(true);
  $('vl').style.height='auto';$('vl').innerHTML='<div class="grow static">'+Array.from({length:gridCols()*2},()=>'<div class="card skelcard"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>').join('')+'</div>';
  const metaP=fetch('data/meta.json').then(r=>r.json()).catch(()=>({}));metaP.then(m=>{META=m;hdrCount();document.dispatchEvent(new CustomEvent('radar:meta',{detail:m}))});
@@ -217,7 +220,7 @@ async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('p
   const reps=Store.get('reports',{});D.forEach(x=>{if(reps[x.id]?.type==='closed')x.hidden=true;for(const L of x.locations||[])if(L.lat!=null&&L.city){const k=L.city+', '+L.state;if(!CITYIDX.has(k))CITYIDX.set(k,{lat:L.lat,lng:L.lng})}});
   const dl=document.createElement('datalist');dl.id='cityList';dl.innerHTML=[...CITYIDX.keys()].sort().map(k=>`<option value="${esc(k)}">`).join('');document.body.appendChild(dl);
  }catch(e){$('vl').innerHTML='';$('vl').style.height='auto';$('notice').innerHTML=`<div class="err" role="alert"><b>Couldn't load listings.</b> ${esc(e.message)}. <button class="btn-ghost sm" onclick="location.reload()">Retry</button></div>`;return}
- await metaP;setInterval(hdrCount,60000);
+ await metaP;markLive();hdrCount();setInterval(hdrCount,60000);
  const n=Store.get('notify',[]);const nowOpen=n.map(id=>BYID.get(id)).filter(x=>x&&x.st!=='upcoming');if(nowOpen.length)$('notice').innerHTML=`<div class="ok" role="status">🔔 Now open: ${nowOpen.map(x=>esc(x.company)).join(', ')}. <button class="btn-ghost sm" onclick="Store.set('notify',[]);this.parentNode.remove()">Dismiss</button></div>`;
  await new Promise(r=>setTimeout(r,0));update();document.body.classList.remove('booting');document.dispatchEvent(new Event('radar:data'));
  profileInit();trackerInit();const h=location.hash.slice(1);if(h&&$('t-'+h))go(h,false);else reveal();window._interactiveAt=performance.now();

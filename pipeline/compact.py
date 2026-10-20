@@ -2,7 +2,7 @@
 data/detail/{0..63}.json (drawer-only fields; descriptions stay in data/desc/), loaded on demand. Source of truth stays data/listings.json."""
 import os,json,glob
 D=os.path.join(os.path.dirname(__file__),'..','data')
-INDEX_KEYS=['id','company','title','category','role_type','remote','workplace','deadline','rolling','class_years','terms','season','year','past_term','posted','status','sponsorship','citizenship','paid','size','gpa_min','openings','metro_pop','hidden','has_desc','stale']
+INDEX_KEYS=['id','company','title','category','role_type','remote','workplace','deadline','rolling','class_years','terms','season','year','past_term','posted','status','sponsorship','citizenship','paid','size','gpa_min','openings','metro_pop','hidden','has_desc','stale','loc_label']
 DROP={'key','board','ats_id','link_ok_at','sector'}
 def main():
     L=json.load(open(os.path.join(D,'listings.json')))['listings']

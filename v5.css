@@ -179,3 +179,4 @@ html{scrollbar-gutter:stable}
 .ping-css{display:none!important}
 .sky-grad{animation:none}.cglow,.skyping,.cityprev{display:none}
 #intro{right:auto;width:100vw}
+html:has(body.intro-on){scrollbar-gutter:auto;overflow:hidden}

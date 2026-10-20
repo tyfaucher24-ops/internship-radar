@@ -1,0 +1,17 @@
+screenshots/
+test-data/
+__pycache__/
+*.pyc
+internships.json
+railway_function.ts
+screenshot*.png
+/tmp/
+pipeline/cache/
+vendor/2023_Gaz_*
+vendor/pop.csv
+vendor/us_cities.csv
+build_data.py
+shot.py
+test.py
+legacy/data_v2.json
+.github/

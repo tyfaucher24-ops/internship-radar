@@ -3,19 +3,19 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const TODAY=new Date();TODAY.setHours(0,0,0,0);const days=d=>Math.round((new Date(d+'T00:00:00')-TODAY)/864e5);
 const NL='<span class="nl">not listed</span>';
-const INDUSTRIES=['Business & Operations','Data & AI','Design & Creative','Engineering & Hardware','Finance & Accounting','Government & Policy','Healthcare & Life Sciences','HR & People','Legal','Marketing & Sales','Media & Communications','Nonprofit & Education','Product Management','Quant & Trading','Real Estate','Software & IT','Other'];
-const ROLE_TYPES=['Internship','Co-op','Early-insight program','Research internship','Fellowship','Apprenticeship','Part-time internship'];
+const INDUSTRIES=['Accounting & Audit','Business & Operations','Consulting & Strategy','Data & AI','Design & Creative','Engineering & Hardware','Finance & Banking','Government & Policy','Healthcare & Life Sciences','HR & People','Legal','Marketing & Sales','Media & Communications','Nonprofit & Education','Product Management','Quant & Trading','Real Estate','Research','Software & IT','Supply Chain & Logistics','Other'];
+const ROLE_TYPES=['Internship','Co-op','Early-insight program','Research internship','Fellowship','Apprenticeship','Externship','Part-time internship','Student position'];
 const CLASS_YEARS=['Freshman','Sophomore','Junior','Senior','Graduate'];
 const STATES='AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA PR RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ');
-const LBL={open:'Open',closing_soon:'Closing soon',closed:'Closed',not_open:'Not open yet'};
-function statusOf(x){if(x.status==='closed'||x.status==='not_open')return x.status;if(x.deadline){const n=days(x.deadline);if(n<0)return'closed';if(n<=14)return'closing_soon'}return'open'}
+const LBL={open:'Open',closing_soon:'Closing soon',closed:'Closed',not_open:'Upcoming',upcoming:'Upcoming'};
+function statusOf(x){if(x.status==='upcoming')return'upcoming';if(x.status==='closed'||x.status==='not_open')return x.status;if(x.deadline){const n=days(x.deadline);if(n<0)return'closed';if(n<=14)return'closing_soon'}return'open'}
 const fmtDate=d=>new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 const dlText=x=>x.deadline?fmtDate(x.deadline):(x.rolling?'Rolling':'Deadline '+NL);
 const locText=x=>{const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', ')||l.region).filter(Boolean);let s=L.length?L.slice(0,3).join(' · ')+(L.length>3?` +${L.length-3}`:''):(x.location_text||'');if(x.remote&&!/remote/i.test(s))s=(s?s+' · ':'')+'Remote';return s?esc(s):'Location '+NL};
 const termText=x=>x.terms&&x.terms.length?esc(x.terms.join(', ')):(x.season?esc(x.season+' '+(x.year||'')):'Term '+NL);
 const yearsText=x=>x.class_years&&x.class_years.length?esc(x.class_years.join(', ')):'Class years '+NL;
-function prepare(x){const st=statusOf(x);return {...x,st,_states:(x.locations||[]).map(l=>l.state).filter(Boolean),
-  _t:[x.company,x.title,x.industry,x.role_type,x.location_text,(x.locations||[]).map(l=>l.city+' '+l.state).join(' '),x.source_category].join(' ').toLowerCase()}}
+function prepare(x){if(x.category&&!x.industry)x.industry=x.category;if(!x.date_added)x.date_added=x.posted||(x.first_seen||'').slice(0,10);const st=statusOf(x);
+  return Object.assign(x,{st,_states:(x.locations||[]).map(l=>l.state).filter(Boolean),_t:[x.company,x.title,x.industry,x.role_type,x.sector,(x.locations||[]).map(l=>(l.city||'')+' '+(l.state||'')).join(' '),x.remote?'remote':''].join(' ').toLowerCase()})}
 /* Parse "City, ST; City2, ST2; Remote" into schema locations */
 function parseLocations(s){const out=[];let remote=false;(s||'').split(/[;|]/).map(t=>t.trim()).filter(Boolean).forEach(t=>{if(/remote/i.test(t)){remote=true;return}
   const m=t.match(/^(.+?),\s*([A-Za-z]{2})$/);if(m&&STATES.includes(m[2].toUpperCase()))out.push({city:m[1].trim(),state:m[2].toUpperCase()});else if(STATES.includes(t.toUpperCase()))out.push({city:null,state:t.toUpperCase()});else out.push({city:t,state:null})});return{locations:out,remote}}

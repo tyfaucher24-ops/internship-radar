@@ -1,0 +1,286 @@
+# Employers to probe on public ATS boards (name|industry). Only boards that actually respond with jobs are added.
+Grant Thornton|Accounting
+BDO USA|Accounting
+RSM US|Accounting
+Crowe|Accounting
+Baker Tilly|Accounting
+CLA CliftonLarsonAllen|Accounting
+Moss Adams|Accounting
+Plante Moran|Accounting
+Cherry Bekaert|Accounting
+Forvis Mazars|Accounting
+Marcum|Accounting
+CohnReznick|Accounting
+Citrin Cooperman|Accounting
+Wipfli|Accounting
+Aprio|Accounting
+Armanino|Accounting
+Withum|Accounting
+Elliott Davis|Accounting
+Bain & Company|Consulting
+Boston Consulting Group|Consulting
+Oliver Wyman|Consulting
+L.E.K. Consulting|Consulting
+Kearney|Consulting
+Huron|Consulting
+Guidehouse|Consulting
+Slalom|Consulting
+West Monroe|Consulting
+Clarkston Consulting|Consulting
+Point B|Consulting
+ZS Associates|Consulting
+Alvarez & Marsal|Consulting
+FTI Consulting|Consulting
+Cornerstone Research|Consulting
+Analysis Group|Consulting
+Charles River Associates|Consulting
+Simon-Kucher|Consulting
+Jane Street|Finance
+Hudson River Trading|Finance
+Citadel|Finance
+Two Sigma|Finance
+DRW|Finance
+Optiver|Finance
+IMC Trading|Finance
+Jump Trading|Finance
+Susquehanna|Finance
+Point72|Finance
+Bridgewater Associates|Finance
+AQR|Finance
+Houlihan Lokey|Finance
+Lazard|Finance
+Evercore|Finance
+Moelis|Finance
+PJT Partners|Finance
+Jefferies|Finance
+William Blair|Finance
+Piper Sandler|Finance
+Raymond James|Finance
+Stifel|Finance
+Baird|Finance
+Truist|Finance
+Fifth Third|Finance
+KeyBank|Finance
+Huntington|Finance
+Synchrony|Finance
+Ally|Finance
+Discover|Finance
+Capital One|Finance
+Northern Trust|Finance
+State Street|Finance
+Fidelity Investments|Finance
+Vanguard|Finance
+Charles Schwab|Finance
+Edward Jones|Finance
+Ameriprise|Finance
+Nuveen|Finance
+TIAA|Finance
+MetLife|Finance
+Prudential|Finance
+Nationwide|Finance
+Allstate|Finance
+Progressive|Finance
+Liberty Mutual|Finance
+Travelers|Finance
+Chubb|Finance
+The Hartford|Finance
+Brex|Finance
+Ramp|Finance
+Mercury|Finance
+Chime|Finance
+Robinhood|Finance
+Affirm|Finance
+SoFi|Finance
+Plaid|Finance
+Stripe|Finance
+Carta|Finance
+Addepar|Finance
+Betterment|Finance
+Wealthfront|Finance
+Acorns|Finance
+Ogilvy|Marketing
+WPP|Marketing
+Publicis|Marketing
+Omnicom|Marketing
+Edelman|Marketing
+Weber Shandwick|Marketing
+FleishmanHillard|Marketing
+VaynerMedia|Marketing
+Wieden+Kennedy|Marketing
+Droga5|Marketing
+Mother|Marketing
+R/GA|Marketing
+Huge|Marketing
+Momentum Worldwide|Marketing
+Horizon Media|Marketing
+Havas|Marketing
+Dentsu|Marketing
+iHeartMedia|Media
+Spotify|Media
+The New York Times|Media
+Vox Media|Media
+Conde Nast|Media
+Hearst|Media
+NBCUniversal|Media
+Paramount|Media
+Warner Bros. Discovery|Media
+Bloomberg|Media
+Axios|Media
+Politico|Media
+The Washington Post|Media
+BuzzFeed|Media
+Nike|Consumer
+Lululemon|Consumer
+Patagonia|Consumer
+Allbirds|Consumer
+Warby Parker|Consumer
+Glossier|Consumer
+Away|Consumer
+Chewy|Consumer
+Wayfair|Consumer
+Etsy|Consumer
+Peloton|Consumer
+Sweetgreen|Consumer
+Chipotle|Consumer
+Starbucks|Consumer
+Target|Consumer
+Best Buy|Consumer
+PepsiCo|Consumer
+Coca-Cola|Consumer
+Procter & Gamble|Consumer
+Unilever|Consumer
+General Mills|Consumer
+Kraft Heinz|Consumer
+Mars|Consumer
+Estee Lauder|Consumer
+Hershey|Consumer
+Red Bull|Consumer
+Mayo Clinic|Healthcare
+Cleveland Clinic|Healthcare
+Kaiser Permanente|Healthcare
+Atrium Health|Healthcare
+Novant Health|Healthcare
+Pfizer|Healthcare
+Moderna|Healthcare
+Genentech|Healthcare
+Regeneron|Healthcare
+Vertex|Healthcare
+Gilead|Healthcare
+Amgen|Healthcare
+Abbott|Healthcare
+Medtronic|Healthcare
+Stryker|Healthcare
+Boston Scientific|Healthcare
+Illumina|Healthcare
+Tempus|Healthcare
+Oscar Health|Healthcare
+One Medical|Healthcare
+Ro|Healthcare
+Hims & Hers|Healthcare
+Cityblock Health|Healthcare
+Devoted Health|Healthcare
+Flatiron Health|Healthcare
+Komodo Health|Healthcare
+Color|Healthcare
+Teach For America|Nonprofit
+City Year|Nonprofit
+Code for America|Nonprofit
+Khan Academy|Nonprofit
+Wikimedia Foundation|Nonprofit
+Mozilla|Nonprofit
+Electronic Frontier Foundation|Nonprofit
+ACLU|Nonprofit
+Human Rights Watch|Nonprofit
+The Nature Conservancy|Nonprofit
+World Wildlife Fund|Nonprofit
+Environmental Defense Fund|Nonprofit
+Sierra Club|Nonprofit
+American Red Cross|Nonprofit
+Habitat for Humanity|Nonprofit
+Feeding America|Nonprofit
+United Way|Nonprofit
+Year Up|Nonprofit
+Girls Who Code|Nonprofit
+DonorsChoose|Nonprofit
+Brookings Institution|Government
+Urban Institute|Government
+RAND Corporation|Government
+Center for American Progress|Government
+Bipartisan Policy Center|Government
+American Enterprise Institute|Government
+Council on Foreign Relations|Government
+Atlantic Council|Government
+New America|Government
+MITRE|Government
+Booz Allen Hamilton|Government
+Leidos|Government
+SAIC|Government
+CACI|Government
+Anduril|Government
+Palantir|Government
+Kirkland & Ellis|Law
+Latham & Watkins|Law
+Skadden|Law
+Wilson Sonsini|Law
+Cooley|Law
+Fenwick & West|Law
+Gunderson Dettmer|Law
+Orrick|Law
+Goodwin|Law
+Perkins Coie|Law
+Clio|Law
+Ironclad|Law
+Harvey|Law
+CBRE|Real Estate
+JLL|Real Estate
+Cushman & Wakefield|Real Estate
+Colliers|Real Estate
+Newmark|Real Estate
+Compass|Real Estate
+Zillow|Real Estate
+Redfin|Real Estate
+Opendoor|Real Estate
+Greystar|Real Estate
+Hines|Real Estate
+Tishman Speyer|Real Estate
+Related Companies|Real Estate
+Brookfield|Real Estate
+Duke Energy|Energy
+NextEra Energy|Energy
+Dominion Energy|Energy
+Southern Company|Energy
+Exelon|Energy
+Rivian|Energy
+Sunrun|Energy
+Form Energy|Energy
+Commonwealth Fusion Systems|Energy
+Arcadia|Energy
+Watershed|Energy
+Flexport|Logistics
+project44|Logistics
+FourKites|Logistics
+C.H. Robinson|Logistics
+XPO|Logistics
+J.B. Hunt|Logistics
+Ryder|Logistics
+Delta Air Lines|Travel
+United Airlines|Travel
+JetBlue|Travel
+Marriott|Travel
+Hilton|Travel
+Hyatt|Travel
+Airbnb|Travel
+Expedia|Travel
+Booking|Travel
+Carolina Panthers|Sports
+Charlotte FC|Sports
+NBA|Sports
+NFL|Sports
+MLB|Sports
+NHL|Sports
+MLS|Sports
+NASCAR|Sports
+Fanatics|Sports
+DraftKings|Sports
+FanDuel|Sports
+Hudl|Sports

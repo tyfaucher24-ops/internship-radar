@@ -33,7 +33,7 @@ function trackerRefresh(){if(!$('board'))return;const a=T.all(),s=stats(a);
  $('board').hidden=tView!=='board';$('tList').hidden=tView!=='list';
  $('board').innerHTML=TSTAT.map(st=>{const c=a.filter(t=>t.status===st);return `<div class="col" data-status="${st}"><div class="colh">${st} <span>${c.length}</span></div>${c.map(appCard).join('')}</div>`}).join('');
  $('tList').innerHTML=`<div class="tw"><table><thead><tr><th>Company</th><th>Role</th><th>Status</th><th>Deadline</th><th>Applied</th><th>Next step</th><th>Contact</th><th></th></tr></thead><tbody>${a.map(t=>`<tr><td><b>${esc(t.listing.company)}</b></td><td>${esc(t.listing.title)}</td><td><select onchange="moveTo('${t.id}',this.value)">${TSTAT.map(s=>`<option${s===t.status?' selected':''}>${s}</option>`).join('')}</select></td><td>${t.listing.deadline?fmtD(t.listing.deadline):(t.listing.rolling?'Rolling':NL)}</td><td>${fmtD(t.dateApplied)}</td><td>${esc(t.nextStep)} ${fmtD(t.nextDate)}</td><td>${esc(t.contact)}</td><td><button class="ghost sm" onclick="editApp('${t.id}')">Details</button></td></tr>`).join('')}</tbody></table></div>`;
- if(typeof render==='function'&&D.length){render();home();if(typeof mineUI==='function')mineUI()}}
+ document.dispatchEvent(new Event('radar:tracker'))}
 function editApp(id){const t=T.all().find(o=>o.id===id);if(!t)return;const L=t.listing;
  openModal(`<h2>${esc(L.company)}</h2><p class="muted">${esc(L.title)}${L.location?' · '+esc(L.location):''}</p>${L.apply_url?`<p><a class="btn" href="${esc(L.apply_url)}" target="_blank" rel="noopener">Open application ↗</a></p>`:''}
  <form id="appF"><div class="grid2"><label>Status<select name="status">${TSTAT.map(s=>`<option${s===t.status?' selected':''}>${s}</option>`).join('')}</select></label><label>Date applied<input type="date" name="dateApplied" value="${esc(t.dateApplied)}"></label>
@@ -63,3 +63,4 @@ function buildICS(a=T.all()){const stamp=new Date().toISOString().replace(/[-:]/
  return {text:lines.map(fold).join('\r\n')+'\r\n',count:ev.length}}
 function exportICS(){const {text,count}=buildICS();if(!count){alert('No upcoming deadlines or next-step dates in your tracker yet. Note: most listings don\'t publish a deadline; add next-step dates in Details.');return}
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/calendar'}));a.download='internship-deadlines.ics';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function trackerInit(){$('tb').onclick=()=>{tView='board';$('tb').className='on';$('tl').className='';trackerRefresh()};$('tl').onclick=()=>{tView='list';$('tl').className='on';$('tb').className='';trackerRefresh()};$('ics').onclick=exportICS;trackerRefresh()}

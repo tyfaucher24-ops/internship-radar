@@ -22,7 +22,9 @@
   "strongOdds": 65,
   "realisticFit": 45,
   "realisticOdds": 45,
-  "poorFitBelow": 25
+  "poorFitBelow": 25,
+  "gemCompetitionMax": 40,
+  "gemFit": 35
  },
  "tierOdds": {
   "_placeholder": true,
@@ -48,7 +50,7 @@
  ],
  "targetSchools": [
   {
-   "industry": "Finance & Accounting",
+   "industry": "Finance & Banking",
    "schools": "PLACEHOLDER Target University A; PLACEHOLDER Target University B",
    "placeholder": true
   }
@@ -61,9 +63,9 @@
   }
  ],
  "majorIndustries": {
-  "finance": "Finance & Accounting",
-  "accounting": "Finance & Accounting",
-  "economics": "Finance & Accounting",
+  "finance": "Finance & Banking",
+  "accounting": "Accounting & Audit",
+  "economics": "Finance & Banking",
   "business": "Business & Operations",
   "management": "Business & Operations",
   "marketing": "Marketing & Sales",
@@ -89,7 +91,6 @@
   "sport": "Marketing & Sales"
  },
  "industryKeywords": {
-  "Finance & Accounting": "excel,financial modeling,accounting,valuation,gaap,audit,tax,quickbooks,bloomberg,financial analysis,budgeting,reconciliation,powerpoint,credit,banking,investment",
   "Software & IT": "python,java,javascript,typescript,react,sql,git,aws,azure,linux,c++,c#,node,api,cloud,docker",
   "Data & AI": "python,sql,r,tableau,power bi,machine learning,statistics,pandas,excel,data analysis,sas,spss,ai",
   "Engineering & Hardware": "solidworks,autocad,matlab,cad,c,embedded,circuit,manufacturing,mechanical,electrical,simulation",
@@ -104,6 +105,11 @@
   "Nonprofit & Education": "teaching,tutoring,community,outreach,volunteer,fundraising",
   "HR & People": "recruiting,hr,onboarding,people,talent,workday",
   "Legal": "legal research,writing,compliance,contracts,westlaw",
-  "Real Estate": "real estate,excel,argus,valuation,property,underwriting"
+  "Real Estate": "real estate,excel,argus,valuation,property,underwriting",
+  "Finance & Banking": "excel,financial modeling,accounting,valuation,gaap,audit,tax,quickbooks,bloomberg,financial analysis,budgeting,reconciliation,powerpoint,credit,banking,investment",
+  "Accounting & Audit": "accounting,audit,tax,gaap,excel,quickbooks,reconciliation,cpa,assurance",
+  "Consulting & Strategy": "excel,powerpoint,analysis,consulting,strategy,research,case,presentation",
+  "Supply Chain & Logistics": "excel,supply chain,logistics,procurement,sql,operations,inventory",
+  "Research": "research,lab,data analysis,python,r,statistics,writing"
  }
 }

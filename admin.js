@@ -1,13 +1,13 @@
-/* Admin (client-side only). Working copy of listings kept in localStorage until exported as data.json. */
+/* Admin (client-side only). Working copy of listings kept in localStorage until exported as data/manual.json. */
 let META={},L=[],ashown=50;
 const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
 function openModal(h){$('mbody').innerHTML=h;$('modal').hidden=false}function closeModal(){$('modal').hidden=true}$('mx').onclick=closeModal;
 $('gForm').onsubmit=async e=>{e.preventDefault();if(await sha('idr-salt:'+$('pw').value)===window.ADMIN_HASH){sessionStorage.setItem('idr_admin','1');unlock()}else $('gMsg').textContent='Wrong password.'};
 $('logout').onclick=()=>{sessionStorage.removeItem('idr_admin');location.reload()};
 async function unlock(){$('gate').hidden=true;$('adm').hidden=false;$('logout').hidden=false;
- const j=await (await fetch('data.json')).json();META={generated:j.generated,schema:j.schema};const w=Store.get('adminListings',null);L=w||j.internships;$('dirty').textContent=w?'You have unsaved local edits. Export data.json and redeploy to publish.':'';render();queueUI();loadCfg()}
+ const j=await (await fetch('data/manual.json')).json();META={};const w=Store.get('adminListings',null);L=w||j;$('dirty').textContent=w?'You have unsaved local edits. Export manual.json, commit it to data/ and the next sync publishes it.':'';render();queueUI();loadCfg();healthUI()}
 if(sessionStorage.getItem('idr_admin'))unlock();
-const save=()=>{Store.set('adminListings',L);$('dirty').textContent='Local edits saved in this browser. Export data.json and redeploy to publish.';render()};
+const save=()=>{Store.set('adminListings',L);$('dirty').textContent='Local edits saved in this browser. Export manual.json, commit it to data/ and the next sync publishes it.';render()};
 const nextId=()=>L.reduce((m,x)=>typeof x.id==='number'?Math.max(m,x.id):m,-1)+1;
 function render(){const q=$('aq').value.toLowerCase().split(/\s+/).filter(Boolean);const r=L.filter(x=>{const t=(x.company+' '+x.title+' '+(x.location_text||'')+' '+x.source).toLowerCase();return q.every(w=>t.includes(w))});
  $('aStats').innerHTML=`<div><b>${L.length.toLocaleString()}</b>listings</div><div><b>${Store.get('reviewQueue',[]).filter(x=>x.queue_status==='pending').length}</b>pending review</div><div><b>${new Set(L.map(x=>x.source)).size}</b>sources</div>`;
@@ -18,7 +18,7 @@ function edit(id){const i=L.findIndex(x=>String(x.id)===String(id));const x=i>=0
   if(i>=0){n.industry=n.industry||x.industry;L[i]={...x,...n,past_term:x.past_term&&JSON.stringify(n.terms)===JSON.stringify(x.terms)}}else L.unshift(n);closeModal();save()}}
 function del(id){const x=L.find(x=>String(x.id)===String(id));if(x&&confirm(`Delete ${x.company} — ${x.title}?`)){L=L.filter(o=>o!==x);save()}}
 $('addNew').onclick=()=>edit('__new');
-$('exportData').onclick=()=>{const srcs=[...new Set(L.map(x=>x.source))].sort();Store.download('data.json',{generated:new Date().toISOString().slice(0,10),schema:'v2',sources:srcs,count:L.length,internships:L})};
+$('exportData').onclick=()=>Store.download('manual.json',L);
 $('discard').onclick=()=>{if(confirm('Discard all local admin edits?')){Store.remove('adminListings');location.reload()}};
 $('tpl').onclick=()=>{const h='company,title,industry,role_type,location,remote,deadline,season,year,class_years,apply_url,date_added,source,notes';const a=document.createElement('a');a.href='data:text/csv,'+encodeURIComponent(h+'\n');a.download='listings-template.csv';a.click()};
 $('csv').onchange=async e=>{const f=e.target.files[0];if(!f)return;const rows=parseCSV(await f.text());let id=nextId();const ok=[],bad=[];
@@ -48,3 +48,24 @@ function cfgUI(){$('cfg').innerHTML=`<h3>Firm tiers &amp; GPA bars</h3><p class=
  $('cfg').querySelectorAll('input[data-path]').forEach(el=>el.onchange=()=>{const o=el.dataset.path.split('.').reduce((a,k)=>a[k],C);o[el.dataset.f]=el.type==='number'?+el.value:el.value;Store.set('adminConfig',C)})}
 $('cfgExport').onclick=()=>Store.download('config.json',C);
 $('cfgReset').onclick=()=>{if(confirm('Discard config edits?')){Store.remove('adminConfig');loadCfg()}};
+
+/* ---------- V4: data health, review, missing companies, registry ---------- */
+const J=u=>fetch(u,{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+async function healthUI(){const [h,m,rv,ms]=await Promise.all([J('data/health.json'),J('data/meta.json'),J('data/review.json'),J('data/missing.json')]);const el=$('health');
+ if(!h||!m){el.innerHTML='<p class="muted">No health data yet (the sync has not run).</p>';return}
+ const ad=Object.entries(h.adapters||{}).sort((a,b)=>b[1].postings-a[1].postings);
+ el.innerHTML=`<div class="stats"><div class="stat"><b>${(m.open||0).toLocaleString()}</b><span>open + verified 24h</span></div><div class="stat"><b>${(m.open_all||0).toLocaleString()}</b><span>open (all)</span></div><div class="stat"><b>${h.pct_verified_24h}%</b><span>verified in 24h</span></div><div class="stat"><b>${h.deadline_coverage_pct}%</b><span>with a deadline</span></div><div class="stat"><b>${h.stale}</b><span>stale</span></div><div class="stat"><b>${h.duplicate_rate_pct}%</b><span>possible duplicates</span></div><div class="stat"><b>${h.review_queue}</b><span>review queue</span></div><div class="stat"><b>${(m.upcoming||0).toLocaleString()}</b><span>upcoming predictions</span></div></div>
+ <p class="muted">Last sync ${new Date(m.updated).toLocaleString()} (${m.duration_s||'?'}s) · ${m.companies_tracked} companies tracked, ${m.companies_with_listings} with open listings${m.last_error?` · <b style="color:#b42318">last error: ${esc(m.last_error)}</b>`:''}${m.linkcheck?` · link check ${new Date(m.linkcheck.at).toLocaleString()}: ${m.linkcheck.live} live, ${m.linkcheck.dead} closed, ${m.linkcheck.unknown} unknown`:''}</p>
+ <div class="tw"><table><thead><tr><th>Source</th><th>Boards</th><th>Sync success</th><th>Postings</th><th>Errors (sample)</th></tr></thead><tbody>${ad.map(([k,v])=>`<tr><td>${esc(k)}</td><td>${v.boards}</td><td>${v.boards?Math.round(100*v.ok/v.boards):0}%</td><td>${v.postings}</td><td><details><summary>${v.errors.length}</summary>${v.errors.map(esc).join('<br>')}</details></td></tr>`).join('')}</tbody></table></div>
+ <h3>By category</h3><p>${Object.entries(h.by_category||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(k)} <b>${v}</b>`).join(' · ')}</p>
+ <h3>By source type</h3><p>${Object.entries(h.listings_by_source_type||{}).map(([k,v])=>`${esc(k)} <b>${v}</b>`).join(' · ')}</p>
+ <h3>Gap report</h3><p>Categories under 25 open listings: ${(h.gap_report?.categories_under_25||[]).map(esc).join(', ')||'none'}. Registry companies with no open listings: ${h.gap_report?.companies_in_registry_without_listings??'?'}.</p>`;
+ const R=(rv||[]).slice(0,300);$('review').innerHTML=`<p class="muted">${(rv||[]).length} postings the intern detector was unsure about (not published). Add clear ones to data/manual.json.</p>`+(R.length?`<div class="tw"><table><thead><tr><th>Company</th><th>Title</th><th>Why</th></tr></thead><tbody>${R.map(r=>`<tr><td>${esc(r.company)}</td><td>${r.url?`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`:esc(r.title)}</td><td>${esc(r.reason||'')}</td></tr>`).join('')}</tbody></table></div>`:'');
+ const loc=Store.get('missingQueue',[]);const all=[...loc.map(x=>({company:x.company,body:`${x.careers||''} · seen on ${x.where}${x.role?' · '+x.role:''}`,url:'',state:'this browser',at:x.at})),...(ms||[])];
+ $('missing').innerHTML=all.length?`<div class="tw"><table><thead><tr><th>Company</th><th>Details</th><th>From</th></tr></thead><tbody>${all.map(x=>`<tr><td>${esc(x.company)}</td><td class="small">${esc(x.body).slice(0,200)}</td><td>${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">GitHub (${esc(x.state)})</a>`:esc(x.state)}</td></tr>`).join('')}</tbody></table></div>`:'<p class="muted">No missing-company requests yet.</p>'}
+$('regGo').onclick=()=>{const rows=$('regIn').value.split('\n').map(l=>l.trim()).filter(Boolean);const out=['name,domain,ats,slug,size,industry,hq_state,careers_url,discovered_via,notes'];const bad=[];
+ const det=u=>{let m;if(m=u.match(/boards(?:-api)?\.greenhouse\.io\/(?:v1\/boards\/)?([\w-]+)|job-boards\.greenhouse\.io\/([\w-]+)/))return['greenhouse',m[1]||m[2]];if(m=u.match(/jobs\.lever\.co\/([\w.-]+)/))return['lever',m[1]];if(m=u.match(/jobs\.ashbyhq\.com\/([\w.%-]+)/))return['ashby',m[1]];
+  if(m=u.match(/(?:jobs|careers)\.smartrecruiters\.com\/([\w-]+)/))return['smartrecruiters',m[1]];if(m=u.match(/apply\.workable\.com\/([\w-]+)/))return['workable',m[1]];if(m=u.match(/([\w-]+)\.recruitee\.com/))return['recruitee',m[1]];if(m=u.match(/([\w-]+)\.bamboohr\.com/))return['bamboohr',m[1]];
+  if(m=u.match(/([\w-]+)\.(wd\d+)\.myworkdayjobs\.com\/(?:[a-z]{2}-[A-Z]{2}\/)?([\w-]+)/))return['workday',`${m[1]}|${m[2]}|${m[3]}`];return['jsonld',u]};
+ rows.forEach(l=>{const [name,url,industry='',size='']=l.split(',').map(s=>s.trim());if(!name||!/^https?:/.test(url||'')){bad.push(l);return}const [ats,slug]=det(url);const q=v=>/[",]/.test(v)?`"${v.replace(/"/g,'""')}"`:v;out.push([name,'',ats,slug,size,industry,'',url,'admin bulk add',''].map(q).join(','))});
+ $('regOut').innerHTML=`<p>${out.length-1} rows ready${bad.length?`, ${bad.length} skipped (need “Name, https://careers-url”)`:''}. Append them to <code>data/companies.csv</code>; the next sync picks them up.</p>`;if(out.length>1)Store.download('companies-additions.csv',out.join('\n')+'\n')};

@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Internship Deadline Radar · Free forever</title><meta name="description" content="Free US internship finder for college students: real listings, deadlines, filters, saved searches.">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"></head><body class="landing">
+<div id="sky" aria-hidden="true"><div class="stars"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div><div id="grid"></div></div>
+<div id="globeWrap" aria-hidden="true"><div id="fallbackGlobe"><div class="fg-us"></div></div><div id="globe"></div></div>
+<canvas id="fx" aria-hidden="true"></canvas><div id="tip" role="tooltip" hidden></div>
+<button id="snd" class="snd" aria-label="Sound off" title="Ping sound (off)">🔇</button>
+<section id="landing">
+ <div class="hero-in"><div class="hero-copy"><h1 class="hl">Every internship. Every deadline. One radar.</h1><p class="sub">Free for every US student.</p>
+ <p class="counter" id="counter"><span class="pulse"></span><span id="cX">…</span> internships tracked · <span id="cY">…</span> deadlines this week</p>
+ <div class="cta"><button id="goFind" class="cbtn primary">Find My Internship</button><button id="goLogin" class="cbtn secondary">Log in</button></div><p id="loginNote" class="lnote" hidden>Accounts are coming soon. No sign-up needed: everything you save stays in this browser.</p></div>
+ <a class="scrollcue" href="#feat" aria-label="Scroll to features">↓</a></div>
+ <div id="feat" class="features">
+  <div class="feat fade"><div class="prev pv-track"><div class="pcol"><i>Saved</i><b class="pc m1"></b><b class="pc"></b></div><div class="pcol"><i>Applied</i><b class="pc"></b></div><div class="pcol"><i>Interview</i><b class="pc m2"></b></div></div><h3>Track every deadline</h3><p>Save roles, drag them through your pipeline, and send every deadline to your calendar.</p></div>
+  <div class="feat fade"><div class="prev pv-odds"><div class="bar"><span>Fit</span><em style="--w:86%"></em></div><div class="bar"><span>Odds</span><em style="--w:62%"></em></div><div class="tagr"><b class="t1">Strong</b><b class="t2">Realistic</b><b class="t3">Reach</b></div></div><h3>Know your real odds</h3><p>Upload your resume and see Fit and Odds for every listing, with an honest reason.</p></div>
+  <div class="feat fade"><div class="prev pv-free"><div class="zero">$0</div><div class="chk">✓ No login · ✓ No ads · ✓ No paywall</div></div><h3>100% free</h3><p>Every feature, for every US student. Your data never leaves your device.</p></div>
+ </div>
+ <p class="lfoot">Real listings from public trackers. City dots geocoded with the open kelvins/US-Cities-Database.</p>
+</section>
+
+<header><div class="wrap hd"><div class="brand" id="brand" title="Back to the radar"><span class="dot"></span><div><h1>Internship Deadline Radar</h1><p>Real US internships, every field. <b>Free. No login.</b></p></div></div>
+<div class="hdbtn"><button id="exp" class="ghost sm" title="Download everything you've saved here as JSON">Export my data</button><label class="ghost sm btnlike" title="Restore from an export file">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label></div></div>
+<nav class="wrap tabs"><button data-t="home" class="on">Home</button><button data-t="find">Find</button><button data-t="tracker">Tracker</button><button data-t="add">Add</button><button data-t="profile">Profile</button><button data-t="foryou">For you</button><button data-t="connect">Connect</button><button data-t="practice">Practice</button></nav></header>
+<main class="wrap">
+<section id="t-home">
+ <div class="hero"><h2>Never miss an internship deadline.</h2><p class="muted">Real listings pulled from public trackers. US only. Unknown details show as <em>not listed</em>; we never guess.</p>
+ <div class="stats" id="stats"></div><input id="hq" class="search" type="search" placeholder="Search company, role, city…"></div>
+ <h2>Deadlines this week</h2><p class="muted" id="weekNote"></p><div id="week" class="grid"></div>
+ <h2>Your top matches</h2><div id="topSlot" class="panel placeholder"><p class="muted">Coming soon: personalized matches from your profile. <a href="#" data-go="profile">Fill in your profile</a> now so they're ready.</p></div>
+</section>
+<section id="t-find" hidden>
+ <input id="q" class="search" type="search" placeholder="Search company, role, field, city…">
+ <div class="filters">
+  <select id="fInd" aria-label="Industry"><option value="">All industries</option></select>
+  <select id="fState" aria-label="Location"><option value="">All US locations</option></select>
+  <select id="fType" aria-label="Role type"><option value="">All role types</option></select>
+  <select id="fWin" aria-label="Deadline"><option value="">Any deadline</option><option value="week">Closes this week</option><option value="month">Closes this month</option><option value="dated">Has a deadline</option><option value="rolling">Rolling</option></select>
+  <select id="fYear" aria-label="Class year"><option value="">Any class year</option></select>
+  <label class="chk"><input type="checkbox" id="fRemote"> Remote</label>
+  <label class="chk"><input type="checkbox" id="fHide" checked> Hide closed</label>
+  <label class="chk" title="Includes listings whose only term has already started or ended (e.g. Summer 2026)"><input type="checkbox" id="fPast"> Include past terms</label>
+  <div class="toggle"><button id="vc" class="on">Cards</button><button id="vt">Table</button></div>
+ </div>
+ <div class="saved"><button id="saveF" class="ghost sm">☆ Save these filters</button><span id="savedList"></span></div>
+ <input type="hidden" id="fCity"><p id="count" class="muted"></p><div id="list"></div><div class="more"><button id="moreBtn" class="ghost">Show more</button></div>
+</section>
+<section id="t-tracker" hidden>
+ <div class="row thead"><div class="stats" id="tStats"></div><div class="tbtns"><div class="toggle"><button id="tb" class="on">Board</button><button id="tl">List</button></div><button id="ics" class="ghost">📅 Add deadlines to my calendar</button></div></div>
+ <div id="tEmpty" class="panel placeholder"><p class="muted">Nothing tracked yet. Hit <b>Save</b> or <b>Mark applied</b> on any listing in <a href="#" data-go="find">Find</a>.</p></div>
+ <p class="muted hint">Drag cards by ⋮⋮ between columns, or use the status menu on each card.</p>
+ <div id="board" class="board"></div><div id="tList" hidden></div>
+</section>
+<section id="t-add" hidden>
+ <div class="panel"><h2>Add an internship</h2><p class="muted">Know a real posting we're missing? It's saved to <b>your list</b> right away and sent to the review queue. Please only add postings you can link to.</p>
+ <form id="addForm"></form><p><button form="addForm">Save internship</button> <span id="addMsg" class="muted"></span></p></div>
+ <h2>Your added internships</h2><div id="mine" class="grid"></div>
+</section>
+<section id="t-profile" hidden>
+ <div class="panel"><h2>Your profile</h2><p class="muted">Stored only in this browser. Use Export my data to back it up or move it.</p>
+ <form id="profForm"><div class="grid2"><label>Name<input name="name"></label><label>School<input name="school"></label><label>Major<input name="major"></label>
+ <label>Class year<select name="classYear"><option value="">Not set</option></select></label><label>GPA (optional)<input name="gpa" type="number" step="0.01" min="0" max="4.5"></label>
+ <label>Preferred locations (comma separated)<input name="locations" placeholder="Charlotte, NC, Remote"></label></div>
+ <fieldset class="cy"><legend>Target industries</legend><div id="pInd"></div></fieldset>
+ <p><button>Save profile</button> <span id="profMsg" class="muted"></span></p></form></div>
+ <div class="panel"><h2>Your data</h2><p class="muted">Profile, saved filters, added internships, contacts and practice history. Nothing leaves your device.</p>
+ <p><button class="ghost" onclick="exportData()">Export my data</button> <button class="ghost" onclick="$('imp').click()">Import my data</button> <button class="ghost" id="clearAll">Clear everything</button></p></div>
+</section>
+<section id="t-foryou" hidden>
+ <div class="panel"><h2>Realistic matches</h2><p class="muted">Everything runs in your browser. Files are never uploaded. No LinkedIn scraping: use LinkedIn's own <b>More → Save to PDF</b> or paste your profile text.</p>
+ <div class="crow"><label class="drop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><span>Upload resume (PDF/DOCX)</span></label><label class="drop"><input type="file" id="liPdf" accept=".pdf"><span>Upload LinkedIn PDF</span></label></div>
+ <details><summary class="muted">…or paste LinkedIn profile text</summary><textarea id="liText" rows="5" placeholder="Copy your profile (About, Experience, Education, Skills) and paste here"></textarea><button class="ghost sm" id="liGo">Parse pasted text</button></details>
+ <p id="rstat" class="muted"></p>
+ <div id="parsedBox" hidden><h3>What we read (edit anything wrong)</h3><form id="parsedForm"><div class="grid2"><label>School<input name="school"></label><label>Major<input name="major"></label><label>GPA<input name="gpa" type="number" step="0.01" min="0" max="4.5"></label><label>Class year<select name="classYear"><option value="">Not set</option></select></label></div>
+ <label>Skills (comma separated)<textarea name="skills" rows="2"></textarea></label><label>Past internships / jobs (one per line: Title — Org (dates) :: what you did)<textarea name="experience" rows="4"></textarea></label>
+ <div class="grid2"><label>Leadership (one per line)<textarea name="leadership" rows="3"></textarea></label><label>Clubs &amp; activities (one per line)<textarea name="clubs" rows="3"></textarea></label></div>
+ <p><button>Save &amp; match</button> <span class="muted">Target industries and locations come from your <a href="#" data-go="profile">Profile</a>.</span></p></form></div></div>
+ <div id="mResults"><div class="toggle mt" id="mTabs"><button data-b="all" class="on">All</button><button data-b="Strong Match">Strong</button><button data-b="Realistic">Realistic</button><button data-b="Reach">Reach</button><button data-b="poor">Poor fit</button></div>
+ <p class="muted" id="mCounts"></p><div id="mList"></div><div class="more"><button id="mMore" class="ghost">Show more</button></div>
+ <p class="muted">Fit = overlap of your skills, experience, industry and location with the role. Odds = firm tier, target-school list, GPA bar, class-year eligibility and related experience. Inputs we have no data for are left out, and the reason says so. Scoring settings are placeholders until real data is added.</p></div>
+</section>
+<section id="t-connect" hidden>
+ <div class="panel"><h2>Outreach templates</h2><p class="muted">Placeholders: {name} {school} {company} {role} {contact}. Edits save automatically.</p><div id="tpls"></div></div>
+ <div class="panel"><h2>Contact tracker</h2><form id="cForm" class="crow"><input name="name" placeholder="Name" required><input name="company" placeholder="Company"><select name="status"><option>To contact</option><option>Messaged</option><option>Replied</option><option>Call scheduled</option><option>Thanked</option></select><input name="next" type="date" title="Next follow-up"><button>Add</button></form>
+ <div class="tw"><table><thead><tr><th>Name</th><th>Company</th><th>Status</th><th>Next follow-up</th><th></th></tr></thead><tbody id="cBody"></tbody></table></div></div>
+</section>
+<section id="t-practice" hidden>
+ <div class="panel"><h2>Interview practice</h2>
+ <div class="filters"><select id="qField"></select><select id="qType"><option value="behavioral">Behavioral</option><option value="technical">Technical basics</option><option value="coffee">Coffee chat (you ask)</option><option value="screen">Phone screen</option></select>
+ <select id="qTime"><option value="60">1 min</option><option value="120" selected>2 min</option><option value="180">3 min</option></select><button id="qStart">Start timed question</button></div>
+ <div id="qCard" class="qcard" hidden><div class="qtimer" id="qClock">2:00</div><div class="qtext" id="qText"></div><textarea id="qNotes" rows="4" placeholder="Notes / bullet points for your answer"></textarea>
+ <div class="rate">Self-rating: <span id="stars"></span></div><div class="row"><button id="qNext" class="ghost">Next question</button><span id="qDone" class="muted"></span></div></div></div>
+ <div class="panel tips"><h3>STAR method</h3><p><b>S</b>ituation: one sentence of context. <b>T</b>ask: what you owned. <b>A</b>ction: 2–3 specific things <i>you</i> did. <b>R</b>esult: a number or concrete outcome, plus what you learned.</p>
+ <h3>Quick tips</h3><ul><li>Keep answers 60–120 seconds; pause instead of using filler.</li><li>Research the team and one recent company headline before every call.</li><li>For coffee chats, ask about their path, not for a job. Ask for one referral or name at the end.</li><li>Send a thank-you within 24 hours, referencing one specific thing they said.</li><li>Phone screens: stand up, smile, keep your resume and questions in front of you.</li></ul></div>
+ <div class="panel"><h3>Practice history</h3><div id="qHist" class="muted">No sessions yet.</div></div>
+</section>
+<p class="muted foot" id="foot">Free, no ads, no login. Always confirm details on the employer's site before applying.</p>
+</main>
+<div id="modal" class="modal" hidden><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js" defer></script>
+<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script><script src="tracker.js" defer></script><script src="matcher.js" defer></script><script src="landing.js" defer></script></body></html>

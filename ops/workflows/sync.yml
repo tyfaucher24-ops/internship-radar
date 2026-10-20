@@ -1,0 +1,42 @@
+name: Sync listings
+on:
+  schedule:
+    - cron: '17 */6 * * *'   # every 6 hours
+  workflow_dispatch:
+    inputs:
+      args:
+        description: 'Extra args for pipeline.sync (e.g. --only greenhouse --limit 50)'
+        required: false
+        default: ''
+permissions:
+  contents: write
+  issues: read
+concurrency:
+  group: data-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - name: Collect user reports
+        env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: python -m pipeline.reports || echo "reports step failed; keeping previous reports.json"
+      - name: Sync from company career sites
+        env:
+          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
+        run: python -m pipeline.sync --workers 24 ${{ github.event.inputs.args }}
+      - name: Commit data (last good data is kept on failure)
+        if: always()
+        run: |
+          git config user.name "radar-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "data: sync $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 10; done; exit 1

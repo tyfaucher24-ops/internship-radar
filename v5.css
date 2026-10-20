@@ -168,3 +168,14 @@ html{scrollbar-gutter:stable}
 .fbar,.pillwrap{align-items:center}.pill,button.pill{align-self:center}
 #pills{min-height:80px}#t-db .rhead{min-height:48px}
 @media (max-width:767px){#pills{min-height:96px}#t-db .rhead{min-height:90px}}
+/* V5.1: full-viewport globe stage; copy is an overlay that never covers the globe (globe is fitted inside .globe-slot) */
+.globe-stage{position:fixed;left:0;top:0;width:100vw;height:100vh;height:100dvh;z-index:0;overflow:visible}
+.globe-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s;touch-action:none;cursor:grab}
+#intro.gl-on .globe-stage canvas{opacity:1}
+.hero{pointer-events:none}.hero-copy,.hero-copy *{pointer-events:auto}
+.globe-slot{pointer-events:none}
+#intro.going .globe-wrap{transform:none}
+#intro.gl-on .globe-ph{opacity:0}
+.ping-css{display:none!important}
+.sky-grad{animation:none}.cglow,.skyping,.cityprev{display:none}
+#intro{right:auto;width:100vw}

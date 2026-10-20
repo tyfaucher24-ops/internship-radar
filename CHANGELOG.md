@@ -1,5 +1,12 @@
 # Internship Radar changelog
 
+## V5.1 — Just the planet
+- Intro is now just the V3 planet, rebuilt: NASA Blue Marble texture self-hosted (4K, or 2K on small screens), sRGB, max anisotropy, antialiasing, pixel ratio min(DPR,2), fresnel rim + soft pink/blue atmosphere, small glowing internship-hub dots in one draw call, slow rotation, drag to spin with inertia, hover pulse + tooltip. No ping, sweep, zoom, parallax or cursor effects.
+- "Find my internship" does a quick fade to the homepage.
+- Cut-off fixed: full-viewport canvas (100vw x 100dvh); the camera distance is solved from globe + halo radius and FOV on both axes so the globe fits inside its slot beside/under the headline (never under the copy); recomputed on resize, visualViewport resize and orientation change.
+- Freeze fixed: the old low-fps watchdog disposed WebGL and swapped to a static globe after a few seconds of <40fps (always on software GL). Replaced with adaptive quality tiers (pixel ratio, atmosphere, shader detail) that step down/up with hysteresis and never stop rendering. 60s liveness test: test_v51_alive.py.
+- Also includes the V5 perf work: listings index parsed in a Web Worker, metric-matched Inter fallback, reserved filter/results space (CLS).
+
 ## V5 — Website redesign + performance
 - Start page: static sky hero (Inter), lazy Three.js globe (V3 planet/ping/zoom, higher quality), drag/zoom/hover/click-city preview, ~1.55s transition, reduced-motion fade, returning visitors skip it.
 - Two-stage FPS watchdog (lite globe, then static CSS globe); WebGL disposed after the intro; MSAA off; pixel ratio min(dpr,2).

@@ -11,7 +11,8 @@
 <!-- start page (first visit only; returning visitors never see it) -->
 <div id="intro" role="dialog" aria-modal="true" aria-labelledby="introH">
  <div class="sky" aria-hidden="true"><div class="sky-grad"></div><div class="stars"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div></div>
- <div class="hero">
+ <div class="globe-stage" aria-hidden="true"><canvas id="gl"></canvas></div>
+  <div class="hero">
   <div class="hero-copy">
    <p class="eyebrow"><span class="pulse"></span> Internship Radar</p>
    <h1 id="introH" class="hl">Every internship.<br>Tracked. Matched. Free.</h1>
@@ -19,7 +20,7 @@
    <p class="counter"><span class="hdrCount">Loading live counts…</span></p>
    <div class="cta"><button id="goFind" class="cbtn primary" type="button">Find my internship</button><button id="skipIntro" class="cbtn secondary" type="button">Skip intro</button></div>
   </div>
-  <div class="globe-wrap" aria-hidden="true"><div class="globe-ph"></div><canvas id="gl"></canvas><div class="ping-css"></div></div>
+  <div class="globe-wrap globe-slot" aria-hidden="true"><div class="globe-ph"></div><div class="ping-css"></div></div>
  </div>
 </div>
 <a class="skiplink" href="#main">Skip to content</a>

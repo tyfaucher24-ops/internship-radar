@@ -89,7 +89,7 @@ function matcherUI(){const f=$('parsedForm');CLASS_YEARS.forEach(c=>f.classYear.
  document.querySelectorAll('#mTabs button').forEach(b=>b.onclick=()=>{mFilter=b.dataset.b;document.querySelectorAll('#mTabs button').forEach(o=>o.classList.toggle('on',o===b));showMatches()});
  $('mMore').onclick=()=>{mShown+=24;showMatches()};match()}
 let mShown=24;
-async function match(){await runMatch();mShown=24;showMatches();homeMatches()}
+async function match(){await runMatch();mShown=24;showMatches();homeMatches();document.dispatchEvent(new Event('radar:matches'))}
 function showMatches(){if(!MATCHES.length){$('mCounts').textContent='';$('mList').innerHTML='<p class="muted">Upload a resume or LinkedIn PDF, or paste your LinkedIn text, then Save &amp; match.</p>';$('mMore').hidden=true;return}
  const c=b=>MATCHES.filter(m=>b==='poor'?m.poor:m.bucket===b&&!m.poor).length;
  $('mCounts').innerHTML=`<b>${c('Strong Match')}</b> strong · <b>${c('Realistic')}</b> realistic · <b>${c('Reach')}</b> reach · <b>${c('poor')}</b> poor fit, out of ${MATCHES.length.toLocaleString()} open listings`;

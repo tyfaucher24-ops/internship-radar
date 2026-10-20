@@ -2,7 +2,7 @@
    To move to real accounts later, swap the backend object below for an API-backed one; callers keep using Store.get/set. */
 window.Store=(()=>{
   const P='idr_',VERSION=2;
-  const KEYS=['profile','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker'];
+  const KEYS=['profile','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker','prefs'];
   const backend={read:k=>localStorage.getItem(P+k),write:(k,v)=>localStorage.setItem(P+k,v),del:k=>localStorage.removeItem(P+k)};
   const subs=[];
   const get=(k,d)=>{try{const v=JSON.parse(backend.read(k));return v??d}catch{return d}};

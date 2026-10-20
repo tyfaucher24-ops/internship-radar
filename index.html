@@ -1,7 +1,24 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Internship Deadline Radar · Free forever</title><meta name="description" content="Free US internship finder for college students: real listings, deadlines, filters, saved searches.">
-<link rel="stylesheet" href="style.css"></head><body>
-<header><div class="wrap hd"><div class="brand"><span class="dot"></span><div><h1>Internship Deadline Radar</h1><p>Real US internships, every field. <b>Free. No login.</b></p></div></div>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="landing.css"></head><body class="landing">
+<div id="sky" aria-hidden="true"><div class="stars"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div><div id="grid"></div></div>
+<div id="globeWrap" aria-hidden="true"><div id="fallbackGlobe"><div class="fg-us"></div></div><div id="globe"></div></div>
+<canvas id="fx" aria-hidden="true"></canvas><div id="tip" role="tooltip" hidden></div>
+<button id="snd" class="snd" aria-label="Sound off" title="Ping sound (off)">🔇</button>
+<section id="landing">
+ <div class="hero-in"><div class="hero-copy"><h1 class="hl">Every internship. Every deadline. One radar.</h1><p class="sub">Free for every US student.</p>
+ <p class="counter" id="counter"><span class="pulse"></span><span id="cX">…</span> internships tracked · <span id="cY">…</span> deadlines this week</p>
+ <div class="cta"><button id="goFind" class="cbtn primary">Find My Internship</button><button id="goLogin" class="cbtn secondary">Log in</button></div><p id="loginNote" class="lnote" hidden>Accounts are coming soon. No sign-up needed: everything you save stays in this browser.</p></div>
+ <a class="scrollcue" href="#feat" aria-label="Scroll to features">↓</a></div>
+ <div id="feat" class="features">
+  <div class="feat fade"><div class="prev pv-track"><div class="pcol"><i>Saved</i><b class="pc m1"></b><b class="pc"></b></div><div class="pcol"><i>Applied</i><b class="pc"></b></div><div class="pcol"><i>Interview</i><b class="pc m2"></b></div></div><h3>Track every deadline</h3><p>Save roles, drag them through your pipeline, and send every deadline to your calendar.</p></div>
+  <div class="feat fade"><div class="prev pv-odds"><div class="bar"><span>Fit</span><em style="--w:86%"></em></div><div class="bar"><span>Odds</span><em style="--w:62%"></em></div><div class="tagr"><b class="t1">Strong</b><b class="t2">Realistic</b><b class="t3">Reach</b></div></div><h3>Know your real odds</h3><p>Upload your resume and see Fit and Odds for every listing, with an honest reason.</p></div>
+  <div class="feat fade"><div class="prev pv-free"><div class="zero">$0</div><div class="chk">✓ No login · ✓ No ads · ✓ No paywall</div></div><h3>100% free</h3><p>Every feature, for every US student. Your data never leaves your device.</p></div>
+ </div>
+ <p class="lfoot">Real listings from public trackers. City dots geocoded with the open kelvins/US-Cities-Database.</p>
+</section>
+
+<header><div class="wrap hd"><div class="brand" id="brand" title="Back to the radar"><span class="dot"></span><div><h1>Internship Deadline Radar</h1><p>Real US internships, every field. <b>Free. No login.</b></p></div></div>
 <div class="hdbtn"><button id="exp" class="ghost sm" title="Download everything you've saved here as JSON">Export my data</button><label class="ghost sm btnlike" title="Restore from an export file">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label></div></div>
 <nav class="wrap tabs"><button data-t="home" class="on">Home</button><button data-t="find">Find</button><button data-t="tracker">Tracker</button><button data-t="add">Add</button><button data-t="profile">Profile</button><button data-t="foryou">For you</button><button data-t="connect">Connect</button><button data-t="practice">Practice</button></nav></header>
 <main class="wrap">
@@ -25,7 +42,7 @@
   <div class="toggle"><button id="vc" class="on">Cards</button><button id="vt">Table</button></div>
  </div>
  <div class="saved"><button id="saveF" class="ghost sm">☆ Save these filters</button><span id="savedList"></span></div>
- <p id="count" class="muted"></p><div id="list"></div><div class="more"><button id="moreBtn" class="ghost">Show more</button></div>
+ <input type="hidden" id="fCity"><p id="count" class="muted"></p><div id="list"></div><div class="more"><button id="moreBtn" class="ghost">Show more</button></div>
 </section>
 <section id="t-tracker" hidden>
  <div class="row thead"><div class="stats" id="tStats"></div><div class="tbtns"><div class="toggle"><button id="tb" class="on">Board</button><button id="tl">List</button></div><button id="ics" class="ghost">📅 Add deadlines to my calendar</button></div></div>
@@ -81,4 +98,4 @@
 <div id="modal" class="modal" hidden><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js" defer></script>
-<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script><script src="tracker.js" defer></script><script src="matcher.js" defer></script></body></html>
+<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script><script src="tracker.js" defer></script><script src="matcher.js" defer></script><script src="landing.js" defer></script></body></html>

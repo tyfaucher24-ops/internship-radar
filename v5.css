@@ -162,3 +162,7 @@ html.seen #intro{display:none}
 .pill,button.pill{min-height:40px;font-size:14.5px;padding:0 16px}
 .btn,a.btn,button.btn{padding:0 18px;border-radius:10px}.btn-ghost,button.btn-ghost{padding:0 14px;border-radius:10px}
 .nav a{padding:0 14px}.btn-save{min-width:76px;padding:0 14px;border-radius:10px}.x{width:38px;height:38px;font-size:20px}}
+html{scrollbar-gutter:stable}
+.sky-grad{position:fixed}
+#t-db .rhead{min-height:48px}#vl{min-height:calc(100vh - 200px)}
+.fbar,.pillwrap{align-items:center}.pill,button.pill{align-self:center}

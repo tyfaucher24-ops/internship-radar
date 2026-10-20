@@ -1,0 +1,2 @@
+// Fetches and parses the listings index off the main thread, then streams it back in small chunks.
+onmessage=async e=>{try{const r=await fetch(e.data.url);if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();const L=j.listings||[];const rest={...j};delete rest.listings;postMessage({t:'meta',rest,n:L.length});for(let i=0;i<L.length;i+=800)postMessage({t:'chunk',rows:L.slice(i,i+800)});postMessage({t:'done'})}catch(err){postMessage({t:'err',msg:String(err.message||err)})}};

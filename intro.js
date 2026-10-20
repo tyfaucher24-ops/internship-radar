@@ -39,7 +39,7 @@ document.addEventListener('radar:meta',e=>{const el=intro.querySelector('.counte
 if(RM){intro.classList.add('static');return}
 /* ---------- WebGL planet ---------- */
 const cv=$i('gl'),wrap=cv.parentElement;
-function webglOK(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(_){return false}}
+function webglOK(){try{const c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(!g)return false;if(Q.get('gl')==='1')return true;const d=g.getExtension('WEBGL_debug_renderer_info'),r=d?String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)):'';g.getExtension('WEBGL_lose_context')?.loseContext();return !/swiftshader|llvmpipe|softpipe|software|basic render/i.test(r)}catch(_){return false}}
 if(!webglOK()||Q.get('gl')==='0'){intro.classList.add('static');let raf;(function l(){domFrame();raf=requestAnimationFrame(l)})();stopLoop=()=>cancelAnimationFrame(raf);return}
 const ll2v=(lat,lng,r=1)=>{const a=lat*Math.PI/180,b=lng*Math.PI/180;return[r*Math.cos(a)*Math.sin(b),r*Math.sin(a),r*Math.cos(a)*Math.cos(b)]};
 const US={lat:38.5,lng:-97};

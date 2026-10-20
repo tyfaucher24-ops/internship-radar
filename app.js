@@ -207,8 +207,13 @@ function hdrCount(){const t=META.updated?`${(META.open||0).toLocaleString()} ope
 async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('prefs',{}).map)mapToggle(true);
  $('vl').style.height='auto';$('vl').innerHTML='<div class="grow static">'+Array.from({length:gridCols()*2},()=>'<div class="card skelcard"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>').join('')+'</div>';
  const metaP=fetch('data/meta.json').then(r=>r.json()).catch(()=>({}));metaP.then(m=>{META=m;hdrCount();document.dispatchEvent(new CustomEvent('radar:meta',{detail:m}))});
- try{const l=await fetch('data/index.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()});
-  const yieldT=()=>new Promise(r=>setTimeout(r,0));D=[];const LL=l.listings;for(let i=0;i<LL.length;i+=1500){for(const x of LL.slice(i,i+1500))D.push(prepare({...x,id:String(x.id),first_seen:x.fs}));await yieldT()}mergeMine();
+ try{D=[];const prep=rows=>{for(const x of rows)D.push(prepare({...x,id:String(x.id),first_seen:x.fs}))};
+  const loadMain=async()=>{const l=await fetch('data/index.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()});const LL=l.listings;for(let i=0;i<LL.length;i+=800){prep(LL.slice(i,i+800));await new Promise(r=>setTimeout(r,0))}};
+  if(window.Worker){await new Promise((res,rej)=>{let w;try{w=new Worker('data-worker.js')}catch(_){return loadMain().then(res,rej)}const q=[];let busy=false,done=false;
+   const pump=()=>{if(busy)return;busy=true;const step=()=>{const t=performance.now();while(q.length&&performance.now()-t<12)prep(q.shift());if(q.length)setTimeout(step,0);else{busy=false;if(done){w.terminate();res()}}};step()};
+   w.onmessage=e=>{const m=e.data;if(m.t==='chunk'){q.push(m.rows);pump()}else if(m.t==='done'){done=true;if(!busy){w.terminate();res()}}else if(m.t==='err'){w.terminate();rej(new Error(m.msg))}};
+   w.onerror=()=>{w.terminate();D=[];loadMain().then(res,rej)};w.postMessage({url:new URL('data/index.json',location.href).href})})}else await loadMain();
+  mergeMine();
   const reps=Store.get('reports',{});D.forEach(x=>{if(reps[x.id]?.type==='closed')x.hidden=true;for(const L of x.locations||[])if(L.lat!=null&&L.city){const k=L.city+', '+L.state;if(!CITYIDX.has(k))CITYIDX.set(k,{lat:L.lat,lng:L.lng})}});
   const dl=document.createElement('datalist');dl.id='cityList';dl.innerHTML=[...CITYIDX.keys()].sort().map(k=>`<option value="${esc(k)}">`).join('');document.body.appendChild(dl);
  }catch(e){$('vl').innerHTML='';$('vl').style.height='auto';$('notice').innerHTML=`<div class="err" role="alert"><b>Couldn't load listings.</b> ${esc(e.message)}. <button class="btn-ghost sm" onclick="location.reload()">Retry</button></div>`;return}

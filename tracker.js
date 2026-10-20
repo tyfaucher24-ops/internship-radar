@@ -100,7 +100,7 @@ function buildICS(a=T.all()){const stamp=new Date().toISOString().replace(/[-:]/
    'BEGIN:VALARM','ACTION:DISPLAY',`DESCRIPTION:${icsEsc(summary)}`,'TRIGGER:-P1D','END:VALARM','END:VEVENT'].filter(Boolean))};
  a.forEach(t=>{const L=t.listing;if(L.deadline&&['Saved','Applied'].includes(t.status)&&days(L.deadline)>=0)add('dl-'+t.id,L.deadline,`Deadline: ${L.company} – ${L.title}`,`Status: ${t.status}`,L.apply_url);
   if((t.followUp||t.nextDate)&&!['Rejected','Withdrawn','Ghosted','Closed','Accepted'].includes(t.status))add('nx-'+t.id,t.followUp||t.nextDate,`${t.nextStep||'Follow up'}: ${L.company}`,`${L.title}${t.contact?'\nContact: '+t.contact:''}${t.notes?'\n'+t.notes:''}`,L.apply_url)});
- const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Internship Deadline Radar//Tracker//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Internship deadlines',...ev.flat(),'END:VCALENDAR'];
+ const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Internship Radar//Tracker//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Internship deadlines',...ev.flat(),'END:VCALENDAR'];
  return {text:lines.map(fold).join('\r\n')+'\r\n',count:ev.length}}
 function exportICS(){const {text,count}=buildICS();if(!count){alert('No upcoming deadlines or next-step dates in your tracker yet. Note: most listings don\'t publish a deadline; add next-step dates in Details.');return}
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/calendar'}));a.download='internship-deadlines.ics';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}

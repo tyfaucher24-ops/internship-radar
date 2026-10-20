@@ -1,6 +1,8 @@
 # Internship Radar
 
-A free, live database of US internships: https://tyfaucher24-ops.github.io/internship-radar/
+**Every internship. Tracked. Matched. Free.**
+
+A free website that tracks every open US internship (and the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get: https://tyfaucher24-ops.github.io/internship-radar/
 
 Plain HTML/CSS/JS on GitHub Pages. Data is refreshed by free GitHub Actions. No accounts and no server; everything a student saves (tracker, profile, filters) stays in their own browser, and Export/Import lets them back it up.
 

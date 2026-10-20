@@ -1,4 +1,4 @@
-# Changelog
+# Internship Radar changelog
 
 ## V3: landing page + globe intro (2026-10-20)
 - **Landing** (`landing.js`, `landing.css`): animated coral/pink/violet/sky gradient sky, drifting clouds, faint stars; 3D Earth (globe.gl 2.46.2 via CDN, lazy-loaded after first paint) with atmosphere halo and slow rotation; tilts slightly toward the cursor.

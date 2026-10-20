@@ -1,5 +1,14 @@
 # Internship Radar changelog
 
+## V5 — Website redesign + performance
+- Start page: static sky hero (Inter), lazy Three.js globe (V3 planet/ping/zoom, higher quality), drag/zoom/hover/click-city preview, ~1.55s transition, reduced-motion fade, returning visitors skip it.
+- Two-stage FPS watchdog (lite globe, then static CSS globe); WebGL disposed after the intro; MSAA off; pixel ratio min(dpr,2).
+- Website layout: header (Find / My Tracker / My Profile + profile menu), footer, About/Contact/Privacy pages, max width 1520px.
+- Find: horizontal pill filter bar, chips + Clear all, More filters modal, windowed 3/2/1 grid of big cards, friendly "Closes Nov 3" labels, 250ms drawer.
+- Compact data index + on-demand detail/description shards; chunked parsing; pdf.js/mammoth lazy-loaded.
+- Desktop controls 38–40px / 14.5px text (10f); touch keeps 44px+.
+- Renamed to "Internship Radar" — Every internship. Tracked. Matched. Free.
+
 ## V3: landing page + globe intro (2026-10-20)
 - **Landing** (`landing.js`, `landing.css`): animated coral/pink/violet/sky gradient sky, drifting clouds, faint stars; 3D Earth (globe.gl 2.46.2 via CDN, lazy-loaded after first paint) with atmosphere halo and slow rotation; tilts slightly toward the cursor.
 - **Real city dots**: `geocode.py` matches listing city+state against the vendored kelvins/US-Cities-Database (MIT, `vendor/us_cities.csv`) -> `cities.json` (598 cities, 3,319 of 3,672 listings). Unmatched cities get no dot. Brighter/bigger = more listings; hover tooltip shows city + count; click filters Find to that city (clearable chip).

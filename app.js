@@ -20,7 +20,7 @@ function rowHTML(x){return`<article class="lrow${x.st==='closed'?' isclosed':''}
 const card=(x,extra='')=>`<div class="mcard">${rowHTML(x).replace('<div class="l4">','<div class="l4">'+extra)}</div>`;
 /* ---------- navigation ---------- */
 function go(t){if(t==='find'||t==='home')t='db';if(t==='foryou')t='profile';document.querySelectorAll('.tabs button').forEach(o=>{o.classList.toggle('on',o.dataset.t===t);o.setAttribute('aria-current',o.dataset.t===t?'page':'false')});
- document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!=='t-'+t);const u=new URL(location);u.hash=t==='db'?'':t;history.replaceState(null,'',u);if(t==='db')requestAnimationFrame(vrender);if(t==='tracker'&&window.trackerRefresh)trackerRefresh();if(t==='profile')renderMatches()}
+ document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!=='t-'+t);const u=new URL(location);u.hash=t==='db'?'':t;history.replaceState(null,'',u);if(t!=='db')scrollTo(0,0);if(t==='db')requestAnimationFrame(vrender);if(t==='tracker'&&window.trackerRefresh)trackerRefresh();if(t==='profile')renderMatches()}
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>go(b.dataset.t));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();go(a.dataset.go)}});
 function openModal(h){$('mbody').innerHTML=h;$('modal').hidden=false;setTimeout(()=>$('mbody').querySelector('input,select,textarea,button')?.focus(),30)}function closeModal(){$('modal').hidden=true}
@@ -99,7 +99,7 @@ function vrender(force){const vl=$('vl');if($('t-db').hidden)return;rowH=isMob()
  let h='';for(let i=s;i<e;i++)h+=`<div class="vrow" style="transform:translateY(${i*rowH}px);height:${rowH}px">${rowHTML(RES[i])}</div>`;vl.innerHTML=h}
 addEventListener('scroll',()=>requestAnimationFrame(()=>vrender()),{passive:true});addEventListener('resize',()=>vrender(true));
 function onRowClick(e){const row=e.target.closest('[data-id]');if(!row)return;const x=BYID.get(row.dataset.id);if(!x)return;const b=e.target.closest('[data-act]');
- if(b){e.stopPropagation();const a=b.dataset.act;if(a==='save')track(x.id,'Saved');else if(a==='applied')track(x.id,'Applied');else if(a==='tracker'){go('tracker');const t=T.byListing(x.id);t&&editApp(t.id)}
+ if(b){e.stopPropagation();const a=b.dataset.act;if(a==='save')track(x.id,'Saved');else if(a==='applied')track(x.id,'Applied');else if(a==='tracker'){go('tracker');const t=T.byListing(x.id);setTimeout(()=>{const r=t&&document.querySelector(`#tTable tr[data-id="${t.id}"]`);if(r){r.scrollIntoView({block:'center'});r.classList.add('flash');r.querySelector('select')?.focus()}},50)}
   else if(a==='notify'){const n=Store.get('notify',[]);const i=n.indexOf(x.id);i<0?n.push(x.id):n.splice(i,1);Store.set('notify',n);vrender(true);renderMatches(true)}return}
  if(e.target.closest('a'))return;openDrawer(x)}
 ['vl','mList'].forEach(id=>{$(id).addEventListener('click',onRowClick);$(id).addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.lrow'))onRowClick(e)})});

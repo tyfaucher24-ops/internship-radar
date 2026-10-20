@@ -35,10 +35,15 @@
  </div>
 </section>
 <section id="t-tracker" class="wrap" hidden>
- <div class="row thead"><div class="stats" id="tStats"></div><div class="tbtns"><div class="toggle"><button id="tb" class="on">Board</button><button id="tl">List</button></div><button id="ics" class="ghost">📅 Add deadlines to my calendar</button></div></div>
- <div id="tEmpty" class="panel placeholder"><p class="muted">Nothing tracked yet. Use <b>Save</b> or <b>Applied</b> on any listing in the <a href="#" data-go="db">Database</a>.</p></div>
- <p class="muted hint">Drag cards by ⋮⋮ between columns, or use the status menu on each card.</p>
- <div id="board" class="board"></div><div id="tList" hidden></div>
+ <h2 class="sr">My tracker</h2>
+ <div class="tstats" id="tStats" aria-live="polite"></div>
+ <div class="ttools"><div class="seg" id="tSeg" role="group" aria-label="Filter rows"></div><span class="sp"></span>
+  <button type="button" id="tAdd" class="ghost sm">+ Add row</button><label class="ghost sm btnlike" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();$('tImp').click()}">Import CSV<input type="file" id="tImp" accept=".csv,text/csv" hidden></label>
+  <button type="button" id="tCsv" class="ghost sm">Export CSV</button><button type="button" id="tXls" class="ghost sm">Export Excel</button><button type="button" id="ics" class="ghost sm">📅 Add closing dates to calendar</button>
+  <span class="colwrap"><button type="button" id="tColBtn" class="ghost sm" aria-expanded="false" aria-controls="tColMenu">Columns ▾</button><div id="tColMenu" class="colmenu" hidden><div id="tCols"></div><button type="button" class="ghost sm" id="tColDone">Done</button></div></span></div>
+ <div id="tEmpty" class="panel placeholder"><p class="muted">Nothing tracked yet. Hit <b>Save</b> or <b>Applied</b> on any listing in the <a href="#" data-go="db">Database</a> and it lands here as a row, or use <b>+ Add row</b>.</p></div>
+ <div class="tscroll"><table id="tTable" class="sheet"></table></div>
+ <p class="muted small">Click any cell to edit; changes save in this browser. Arrow keys move between cells. Drag a column header's edge to resize. Rows turn amber under 7 days to close, red under 3, gray once closed.</p>
 </section>
 <section id="t-profile" class="wrap" hidden>
  <div class="pgrid"><div>

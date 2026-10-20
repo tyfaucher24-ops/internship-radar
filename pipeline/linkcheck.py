@@ -18,4 +18,6 @@ def main():
     v=[r for r in op if (r.get('last_verified') or '')>cut];today=datetime.date.today()
     m.update(open=len(v),open_all=len(op),closing_this_week=sum(1 for r in v if r.get('deadline') and 0<=(datetime.date.fromisoformat(r['deadline'])-today).days<=7),linkcheck={'at':now,**res})
     json.dump(m,open(os.path.join(D,'meta.json'),'w'),indent=1);print(res)
-if __name__=='__main__': main()
+if __name__=='__main__':
+    main()
+    from . import compact; compact.main()

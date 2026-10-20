@@ -278,8 +278,10 @@ def main():
     json.dump(review[:2000],open(os.path.join(D,'review.json'),'w'),indent=0);json.dump(state,open(os.path.join(D,'state.json'),'w'),separators=(',',':'))
     json.dump(logs,open(os.path.join(D,'sync_log.json'),'w'),separators=(',',':'))
     print(json.dumps(meta),file=sys.stderr);print(json.dumps({'by_source':srcs,'deadline_pct':health['deadline_coverage_pct'],'stats':stats},default=dict),file=sys.stderr)
+def _compact():
+    from . import compact; compact.main()
 if __name__=='__main__':
-    try: main()
+    try: main();_compact()
     except Exception:
         traceback.print_exc()
         p=os.path.join(D,'meta.json');m=jload(p,{});m['last_error']={'at':NOWS,'error':traceback.format_exc()[-1500:]};json.dump(m,open(p,'w'),indent=1);sys.exit(1)

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="style.css"></head><body>
 <header><div class="wrap hd"><div class="brand"><span class="dot"></span><div><h1>Internship Deadline Radar</h1><p>Real US internships, every field. <b>Free. No login.</b></p></div></div>
 <div class="hdbtn"><button id="exp" class="ghost sm" title="Download everything you've saved here as JSON">Export my data</button><label class="ghost sm btnlike" title="Restore from an export file">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label></div></div>
-<nav class="wrap tabs"><button data-t="home" class="on">Home</button><button data-t="find">Find</button><button data-t="add">Add</button><button data-t="profile">Profile</button><button data-t="foryou">For you</button><button data-t="connect">Connect</button><button data-t="practice">Practice</button></nav></header>
+<nav class="wrap tabs"><button data-t="home" class="on">Home</button><button data-t="find">Find</button><button data-t="tracker">Tracker</button><button data-t="add">Add</button><button data-t="profile">Profile</button><button data-t="foryou">For you</button><button data-t="connect">Connect</button><button data-t="practice">Practice</button></nav></header>
 <main class="wrap">
 <section id="t-home">
  <div class="hero"><h2>Never miss an internship deadline.</h2><p class="muted">Real listings pulled from public trackers. US only. Unknown details show as <em>not listed</em>; we never guess.</p>
@@ -26,6 +26,12 @@
  </div>
  <div class="saved"><button id="saveF" class="ghost sm">☆ Save these filters</button><span id="savedList"></span></div>
  <p id="count" class="muted"></p><div id="list"></div><div class="more"><button id="moreBtn" class="ghost">Show more</button></div>
+</section>
+<section id="t-tracker" hidden>
+ <div class="row thead"><div class="stats" id="tStats"></div><div class="tbtns"><div class="toggle"><button id="tb" class="on">Board</button><button id="tl">List</button></div><button id="ics" class="ghost">📅 Add deadlines to my calendar</button></div></div>
+ <div id="tEmpty" class="panel placeholder"><p class="muted">Nothing tracked yet. Hit <b>Save</b> or <b>Mark applied</b> on any listing in <a href="#" data-go="find">Find</a>.</p></div>
+ <p class="muted hint">Drag cards by ⋮⋮ between columns, or use the status menu on each card.</p>
+ <div id="board" class="board"></div><div id="tList" hidden></div>
 </section>
 <section id="t-add" hidden>
  <div class="panel"><h2>Add an internship</h2><p class="muted">Know a real posting we're missing? It's saved to <b>your list</b> right away and sent to the review queue. Please only add postings you can link to.</p>
@@ -70,4 +76,4 @@
 <div id="modal" class="modal" hidden><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js" defer></script>
-<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script></body></html>
+<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script><script src="tracker.js" defer></script></body></html>

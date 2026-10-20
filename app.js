@@ -3,7 +3,7 @@ let D=[],BASE=[],view='cards',shown=60,profile=Store.get('profile',{});
 const card=(x,extra='')=>`<article class="card"><div class="row"><span class="co">${esc(x.company)}</span><span class="badge b-${x.st}">${LBL[x.st]}</span></div><div class="role">${esc(x.title)}</div>
 <div class="meta"><span>📍 ${locText(x)}</span><span>${esc(x.industry||'Industry not listed')}</span>${x.role_type&&x.role_type!=='Internship'?`<span>${esc(x.role_type)}</span>`:''}</div>
 <div class="meta"><span>🗓 ${dlText(x)}</span><span class="cd">${cd(x)}</span><span>${termText(x)}</span></div><div class="meta"><span>🎓 ${yearsText(x)}</span>${x._mine?'<span class="mine">Added by you</span>':''}${extra}</div>
-<div class="row">${applyBtn(x)}<button class="ghost sm" onclick="connect('${esc(x.id)}')">Connect</button></div></article>`;
+<div class="row">${applyBtn(x)}<span class="acts">${typeof trackBtns==='function'?trackBtns(x):''}<button class="ghost sm" onclick="connect('${esc(x.id)}')">Connect</button></span></div></article>`;
 const cd=x=>{if(!x.deadline||x.st==='closed')return'';const n=days(x.deadline);return n===0?'Closes today':`${n} day${n==1?'':'s'} left`};
 const applyBtn=x=>x.apply_url?`<a class="btn" href="${esc(x.apply_url)}" target="_blank" rel="noopener">Apply ↗</a>`:'<span class="nolink">Apply link not listed</span>';
 // tabs
@@ -29,7 +29,7 @@ fetch('data.json').then(r=>r.json()).then(j=>{BASE=j.internships.map(prepare);me
  ['q','fInd','fState','fType','fWin','fYear','fRemote','fHide','fPast'].forEach(i=>$(i).addEventListener('input',()=>{shown=60;render()}));
  $('hq').addEventListener('keydown',e=>{if(e.key==='Enter'){$('q').value=$('hq').value;go('find');render()}});
  savedUI();render();home();initPractice();initConnect();profileUI();addUI();loadResumeUI();
- const h=location.hash.slice(1);if(h&&$('t-'+h))go(h)}).catch(e=>{$('stats').textContent='Could not load listings: '+e.message});
+ trackerInit();const h=location.hash.slice(1);if(h&&$('t-'+h))go(h)}).catch(e=>{$('stats').textContent='Could not load listings: '+e.message});
 $('vc').onclick=()=>{view='cards';$('vc').className='on';$('vt').className='';render()};$('vt').onclick=()=>{view='table';$('vt').className='on';$('vc').className='';render()};
 $('moreBtn').onclick=()=>{shown+=90;render()};
 const rank={closing_soon:0,open:1,not_open:2,closed:3};
@@ -127,3 +127,5 @@ function stars(){$('stars').innerHTML=[1,2,3,4,5].map(n=>`<button class="${n<=cu
 function saveQ(){const h=Store.get('practice',[]);h.unshift({q:cur.q,r:cur.rating,n:$('qNotes').value,d:new Date().toLocaleDateString()});Store.set('practice',h.slice(0,50));histUI()}
 function histUI(){const h=Store.get('practice',[]);if(h.length)$('qHist').innerHTML=h.slice(0,10).map(x=>`<div>${'★'.repeat(x.r)}${'☆'.repeat(5-x.r)} · ${esc(x.q)} <span class="muted">(${esc(x.d)})</span></div>`).join('')}
 $('qStart').onclick=startQ;$('qNext').onclick=()=>{if(cur&&!cur.rating&&$('qNotes').value)saveQ();startQ()};
+
+function trackerInit(){$('tb').onclick=()=>{tView='board';$('tb').className='on';$('tl').className='';trackerRefresh()};$('tl').onclick=()=>{tView='list';$('tl').className='on';$('tb').className='';trackerRefresh()};$('ics').onclick=exportICS;trackerRefresh()}

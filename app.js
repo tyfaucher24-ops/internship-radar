@@ -208,13 +208,13 @@ async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('p
  $('vl').style.height='auto';$('vl').innerHTML='<div class="grow static">'+Array.from({length:gridCols()*2},()=>'<div class="card skelcard"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>').join('')+'</div>';
  const metaP=fetch('data/meta.json').then(r=>r.json()).catch(()=>({}));metaP.then(m=>{META=m;hdrCount();document.dispatchEvent(new CustomEvent('radar:meta',{detail:m}))});
  try{const l=await fetch('data/index.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()});
-  D=l.listings.map(x=>prepare({...x,id:String(x.id),first_seen:x.fs}));mergeMine();
+  const yieldT=()=>new Promise(r=>setTimeout(r,0));D=[];const LL=l.listings;for(let i=0;i<LL.length;i+=1500){for(const x of LL.slice(i,i+1500))D.push(prepare({...x,id:String(x.id),first_seen:x.fs}));await yieldT()}mergeMine();
   const reps=Store.get('reports',{});D.forEach(x=>{if(reps[x.id]?.type==='closed')x.hidden=true;for(const L of x.locations||[])if(L.lat!=null&&L.city){const k=L.city+', '+L.state;if(!CITYIDX.has(k))CITYIDX.set(k,{lat:L.lat,lng:L.lng})}});
   const dl=document.createElement('datalist');dl.id='cityList';dl.innerHTML=[...CITYIDX.keys()].sort().map(k=>`<option value="${esc(k)}">`).join('');document.body.appendChild(dl);
  }catch(e){$('vl').innerHTML='';$('vl').style.height='auto';$('notice').innerHTML=`<div class="err" role="alert"><b>Couldn't load listings.</b> ${esc(e.message)}. <button class="btn-ghost sm" onclick="location.reload()">Retry</button></div>`;return}
  await metaP;setInterval(hdrCount,60000);
  const n=Store.get('notify',[]);const nowOpen=n.map(id=>BYID.get(id)).filter(x=>x&&x.st!=='upcoming');if(nowOpen.length)$('notice').innerHTML=`<div class="ok" role="status">🔔 Now open: ${nowOpen.map(x=>esc(x.company)).join(', ')}. <button class="btn-ghost sm" onclick="Store.set('notify',[]);this.parentNode.remove()">Dismiss</button></div>`;
- update();document.body.classList.remove('booting');document.dispatchEvent(new Event('radar:data'));
+ await new Promise(r=>setTimeout(r,0));update();document.body.classList.remove('booting');document.dispatchEvent(new Event('radar:data'));
  profileInit();trackerInit();const h=location.hash.slice(1);if(h&&$('t-'+h))go(h,false);else reveal();window._interactiveAt=performance.now();
  (window.requestIdleCallback||setTimeout)(()=>refreshMatches())}
 /* ---------- profile ---------- */

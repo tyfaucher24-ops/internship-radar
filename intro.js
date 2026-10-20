@@ -40,13 +40,13 @@ if(RM){intro.classList.add('static');return}
 /* ---------- WebGL planet ---------- */
 const cv=$i('gl'),wrap=cv.parentElement;
 function webglOK(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(_){return false}}
-if(!webglOK()){intro.classList.add('static');let raf;(function l(){domFrame();raf=requestAnimationFrame(l)})();stopLoop=()=>cancelAnimationFrame(raf);return}
+if(!webglOK()||Q.get('gl')==='0'){intro.classList.add('static');let raf;(function l(){domFrame();raf=requestAnimationFrame(l)})();stopLoop=()=>cancelAnimationFrame(raf);return}
 const ll2v=(lat,lng,r=1)=>{const a=lat*Math.PI/180,b=lng*Math.PI/180;return[r*Math.cos(a)*Math.sin(b),r*Math.sin(a),r*Math.cos(a)*Math.cos(b)]};
 const US={lat:38.5,lng:-97};
-Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js'),
- fetch('assets/land-dots.bin').then(r=>r.arrayBuffer()),fetch('data/hubs.json').then(r=>r.json()).catch(()=>[])]).then(([THREE,landBuf,hubs])=>{
+new Promise(r=>requestAnimationFrame(()=>setTimeout(r,250))).then(()=>Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js'),
+ fetch('assets/land-dots.bin').then(r=>r.arrayBuffer()),fetch('data/hubs.json').then(r=>r.json()).catch(()=>[])])).then(([THREE,landBuf,hubs])=>{
  if(ended)return;
- const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:'high-performance'});
+ const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:Q.get('aa')==='1',alpha:true,powerPreference:'high-performance'});
  renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.05,50),G=new THREE.Group();scene.add(G);
  const uC=new THREE.Vector3(...ll2v(US.lat,US.lng));const t1=new THREE.Vector3(0,1,0).cross(uC).normalize(),t2=uC.clone().cross(t1).normalize();
@@ -112,10 +112,10 @@ Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.modu
  startTransition=()=>{if(S.phase!=='idle')return;S.phase='go';S.t0=performance.now();S.from={rx:S.rx,ry:S.ry,z:S.zoom};intro.querySelector('.cityprev')?.classList.remove('on');intro.classList.add('going');
   let to=-US.lng*Math.PI/180;while(to-S.ry>Math.PI)to-=2*Math.PI;while(S.ry-to>Math.PI)to+=2*Math.PI;S.to={rx:US.lat*Math.PI/180,ry:to}};
  /* fps watchdog → lighter globe */
- let fr=[],lite=false;
- function watchdog(dt){if(lite)return;fr.push(dt);let s=0;for(const x of fr)s+=x;while(s>2000&&fr.length>1){s-=fr.shift()}if(s>=1900&&fr.length/(s/1000)<40){lite=true;renderer.setPixelRatio(1);U.uPR.value=1;fit();fetch('assets/land-dots-lite.bin').then(r=>r.arrayBuffer()).then(b=>{land.geometry.dispose();land.geometry=landGeo(b)});intro.dataset.lite='1'}}
+ let fr=[],lite=false,liteAt=0,dead=false;
+ function watchdog(dt){if(dead)return;fr.push(dt);if(lite&&performance.now()-liteAt>2500){let s2=0;for(const x of fr)s2+=x;if(s2>=1900&&fr.length/(s2/1000)<40&&S.phase==='idle'){dead=true;cancelAnimationFrame(raf);dispose();intro.classList.remove('gl-on');intro.classList.add('static');intro.dataset.lite='2';(function l(){if(ended)return;domFrame();requestAnimationFrame(l)})();startTransition=null}return}if(lite)return;let s=0;for(const x of fr)s+=x;while(s>2000&&fr.length>1){s-=fr.shift()}if(s>=1900&&fr.length/(s/1000)<40){lite=true;liteAt=performance.now();fr=[];renderer.setPixelRatio(1);U.uPR.value=1;fit();fetch('assets/land-dots-lite.bin').then(r=>r.arrayBuffer()).then(b=>{land.geometry.dispose();land.geometry=landGeo(b)});intro.dataset.lite='1'}}
  let raf,last=performance.now(),shown=false;
- function frame(now){raf=requestAnimationFrame(frame);const dt=Math.min(64,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);U.uTime.value=now/1000;domFrame();
+ function frame(now){raf=requestAnimationFrame(frame);const dt=Math.min(64,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;U.uTime.value=now/1000;domFrame();
   if(S.phase==='idle'){if(!S.drag){S.ry+=(S.vy+.06)*s;S.rx=Math.max(-1.1,Math.min(1.1,S.rx+S.vx*s));const k=Math.pow(.05,s);S.vx*=k;S.vy=S.vy*k}
    S.tiltX+=((S.tvy*.12)-S.tiltX)*(1-Math.pow(.002,s));S.tiltY+=((S.tvx*.18)-S.tiltY)*(1-Math.pow(.002,s));S.zoom+=(S.zt-S.zoom)*(1-Math.pow(.004,s))}
   else{const t=(now-S.t0)/1000/SLOW;const a=ease(clamp(t/.6));S.rx=S.from.rx+(S.to.rx-S.from.rx)*a;S.ry=S.from.ry+(S.to.ry-S.from.ry)*a;S.tiltX*=.9;S.tiltY*=.9;

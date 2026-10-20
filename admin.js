@@ -5,7 +5,7 @@ function openModal(h){$('mbody').innerHTML=h;$('modal').hidden=false}function cl
 $('gForm').onsubmit=async e=>{e.preventDefault();if(await sha('idr-salt:'+$('pw').value)===window.ADMIN_HASH){sessionStorage.setItem('idr_admin','1');unlock()}else $('gMsg').textContent='Wrong password.'};
 $('logout').onclick=()=>{sessionStorage.removeItem('idr_admin');location.reload()};
 async function unlock(){$('gate').hidden=true;$('adm').hidden=false;$('logout').hidden=false;
- const j=await (await fetch('data.json')).json();META={generated:j.generated,schema:j.schema};const w=Store.get('adminListings',null);L=w||j.internships;$('dirty').textContent=w?'You have unsaved local edits. Export data.json and redeploy to publish.':'';render();queueUI()}
+ const j=await (await fetch('data.json')).json();META={generated:j.generated,schema:j.schema};const w=Store.get('adminListings',null);L=w||j.internships;$('dirty').textContent=w?'You have unsaved local edits. Export data.json and redeploy to publish.':'';render();queueUI();loadCfg()}
 if(sessionStorage.getItem('idr_admin'))unlock();
 const save=()=>{Store.set('adminListings',L);$('dirty').textContent='Local edits saved in this browser. Export data.json and redeploy to publish.';render()};
 const nextId=()=>L.reduce((m,x)=>typeof x.id==='number'?Math.max(m,x.id):m,-1)+1;
@@ -30,3 +30,21 @@ function queueUI(){const q=Store.get('reviewQueue',[]);const p=q.filter(x=>x.que
  $('queue').innerHTML=p.length?p.map(x=>`<div class="qi"><div><b>${esc(x.company)}</b> — ${esc(x.title)}<div class="muted">${locText(x)} · ${dlText(x)} · ${x.apply_url?`<a href="${esc(x.apply_url)}" target="_blank" rel="noopener">verify link ↗</a>`:'no link'} · submitted ${esc((x.submitted||'').slice(0,10))}</div></div><div class="nw"><button class="sm" onclick="qAct('${esc(x.id)}','approved')">Approve</button> <button class="ghost sm" onclick="qAct('${esc(x.id)}','rejected')">Reject</button></div></div>`).join(''):'<p class="muted">Queue is empty.</p>'}
 function qAct(id,st){const q=Store.get('reviewQueue',[]);const x=q.find(o=>o.id===id);if(!x)return;x.queue_status=st;x.reviewed=new Date().toISOString();Store.set('reviewQueue',q);
  if(st==='approved'){const {queue_status,submitted,reviewed,...clean}=x;L.unshift({...clean,id:nextId(),source:'User submission (approved)'});save()}queueUI();render()}
+/* ---------- matcher config editor ---------- */
+let C=null;
+async function loadCfg(){const base=await (await fetch('config.json')).json();C=Store.get('adminConfig',null)||base;cfgUI()}
+const cfgSave=()=>{Store.set('adminConfig',C);cfgUI()};
+const ph=o=>o&&(o.placeholder||o._placeholder)?'<span class="badge b-closing_soon">PLACEHOLDER</span>':'';
+function tableEd(key,cols){const rows=C[key]||[];return `<div class="tw"><table><thead><tr>${cols.map(c=>`<th>${c[1]}</th>`).join('')}<th></th></tr></thead><tbody>${rows.map((r,i)=>`<tr>${cols.map(([k,,t])=>`<td>${t==='bool'?`<input type="checkbox" data-k="${key}" data-i="${i}" data-f="${k}"${r[k]?' checked':''}>`:`<input data-k="${key}" data-i="${i}" data-f="${k}" ${t==='num'?'type="number" step="0.01"':''} value="${esc(r[k]??'')}">`}</td>`).join('')}<td class="nw">${ph(r)} <button class="ghost sm" onclick="C['${key}'].splice(${i},1);cfgSave()">×</button></td></tr>`).join('')}</tbody></table></div><button class="ghost sm" onclick="(C['${key}']=C['${key}']||[]).push({});cfgSave()">+ Row</button>`}
+function kvEd(path,obj){return `<div class="kv">${Object.entries(obj).filter(([k])=>!k.startsWith('_')).map(([k,v])=>`<label>${esc(k)}<input data-path="${path}" data-f="${esc(k)}" ${typeof v==='number'?'type="number"':''} value="${esc(v)}"></label>`).join('')}</div>`}
+function cfgUI(){$('cfg').innerHTML=`<h3>Firm tiers &amp; GPA bars</h3><p class="muted">Firm name must match the listing's company. Tier 1 = most selective.</p>${tableEd('firmTiers',[['firm','Firm'],['tier','Tier (1-3)','num'],['gpaBar','GPA bar','num'],['targetSchoolsOnly','Mostly target schools','bool']])}
+ <h3>Target schools per industry</h3><p class="muted">Schools separated by ;</p>${tableEd('targetSchools',[['industry','Industry'],['schools','Schools']])}
+ <h3>Default GPA bar per industry</h3>${tableEd('industryGpaBars',[['industry','Industry'],['gpaBar','GPA bar','num']])}
+ <h3>Weights ${ph(C.weights)}</h3><p class="muted">Fit</p>${kvEd('weights.fit',C.weights.fit)}<p class="muted">Odds</p>${kvEd('weights.odds',C.weights.odds)}
+ <h3>Bucket thresholds ${ph(C.thresholds)}</h3>${kvEd('thresholds',C.thresholds)}<h3>Odds by firm tier ${ph(C.tierOdds)}</h3>${kvEd('tierOdds',C.tierOdds)}
+ <h3>Industry keywords</h3><p class="muted">Comma separated skills that count toward Fit for each industry.</p>${kvEd('industryKeywords',C.industryKeywords)}
+ <h3>Major → industry</h3>${kvEd('majorIndustries',C.majorIndustries)}`;
+ $('cfg').querySelectorAll('input[data-k]').forEach(el=>el.onchange=()=>{const r=C[el.dataset.k][+el.dataset.i];r[el.dataset.f]=el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?null:+el.value):el.value.trim();delete r.placeholder;Store.set('adminConfig',C)});
+ $('cfg').querySelectorAll('input[data-path]').forEach(el=>el.onchange=()=>{const o=el.dataset.path.split('.').reduce((a,k)=>a[k],C);o[el.dataset.f]=el.type==='number'?+el.value:el.value;Store.set('adminConfig',C)})}
+$('cfgExport').onclick=()=>Store.download('config.json',C);
+$('cfgReset').onclick=()=>{if(confirm('Discard config edits?')){Store.remove('adminConfig');loadCfg()}};

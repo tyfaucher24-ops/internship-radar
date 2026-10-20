@@ -7,6 +7,8 @@
 <form id="gForm" class="crow"><input id="pw" type="password" placeholder="Password" autocomplete="current-password" required><button>Unlock</button></form><p id="gMsg" class="muted"></p></section>
 <section id="adm" hidden>
  <div class="stats" id="aStats"></div>
+ <div class="panel"><div class="row"><h2>Matcher config</h2><div><button class="ghost" id="cfgExport">Export config.json</button> <button class="ghost" id="cfgReset">Discard config edits</button></div></div>
+ <p class="muted">Every scoring input the matcher uses. Rows marked <b>PLACEHOLDER</b> are stand-ins; replace them with real, sourced data. Don't add firm data you can't back up. Edits apply to the site in this browser right away; export config.json and redeploy to publish.</p><div id="cfg"></div></div>
  <div class="panel"><h2>Review queue</h2><p class="muted">User submissions waiting for approval. Stored in this browser's localStorage for now (only submissions made in this browser appear until a server endpoint is added — see Submissions.SUBMIT_ENDPOINT in store.js).</p><div id="queue"></div></div>
  <div class="panel"><h2>Bulk import CSV</h2><p class="muted">Header row with any of: <code>company,title,industry,role_type,location,remote,deadline,season,year,class_years,apply_url,date_added,source,notes</code>. Location like <code>Charlotte, NC; Remote</code>. Deadline as YYYY-MM-DD or <code>rolling</code>; blank = not listed. Only import real postings.</p>
  <div class="crow"><label class="drop"><input type="file" id="csv" accept=".csv,text/csv"><span>Choose CSV</span></label><input id="csvSrc" placeholder="Source name (e.g. Career fair list Oct 2026)"><button class="ghost" id="tpl">Download CSV template</button></div><div id="csvOut"></div></div>

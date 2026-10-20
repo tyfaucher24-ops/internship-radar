@@ -49,12 +49,17 @@
  <p><button class="ghost" onclick="exportData()">Export my data</button> <button class="ghost" onclick="$('imp').click()">Import my data</button> <button class="ghost" id="clearAll">Clear everything</button></p></div>
 </section>
 <section id="t-foryou" hidden>
- <div class="panel"><h2>Match internships to your resume</h2><p class="muted">Upload a PDF, DOCX or TXT. It's read in your browser and never uploaded anywhere. Major, class year, industries and locations come from your Profile.</p>
- <label class="drop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><span>Choose resume file</span></label> <span id="rstat" class="muted"></span>
- <label>Skills &amp; keywords (edit freely)<textarea id="pSkills" rows="3"></textarea></label>
- <button id="pSave">Save &amp; match</button></div>
- <h2>Top matches</h2><p class="muted">Best keyword and industry fit.</p><div id="topM" class="grid"></div>
- <h2>Realistic for you</h2><p class="muted">Good fit, still open, and fits your class year.</p><div id="realM" class="grid"></div>
+ <div class="panel"><h2>Realistic matches</h2><p class="muted">Everything runs in your browser. Files are never uploaded. No LinkedIn scraping: use LinkedIn's own <b>More → Save to PDF</b> or paste your profile text.</p>
+ <div class="crow"><label class="drop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><span>Upload resume (PDF/DOCX)</span></label><label class="drop"><input type="file" id="liPdf" accept=".pdf"><span>Upload LinkedIn PDF</span></label></div>
+ <details><summary class="muted">…or paste LinkedIn profile text</summary><textarea id="liText" rows="5" placeholder="Copy your profile (About, Experience, Education, Skills) and paste here"></textarea><button class="ghost sm" id="liGo">Parse pasted text</button></details>
+ <p id="rstat" class="muted"></p>
+ <div id="parsedBox" hidden><h3>What we read (edit anything wrong)</h3><form id="parsedForm"><div class="grid2"><label>School<input name="school"></label><label>Major<input name="major"></label><label>GPA<input name="gpa" type="number" step="0.01" min="0" max="4.5"></label><label>Class year<select name="classYear"><option value="">Not set</option></select></label></div>
+ <label>Skills (comma separated)<textarea name="skills" rows="2"></textarea></label><label>Past internships / jobs (one per line: Title — Org (dates) :: what you did)<textarea name="experience" rows="4"></textarea></label>
+ <div class="grid2"><label>Leadership (one per line)<textarea name="leadership" rows="3"></textarea></label><label>Clubs &amp; activities (one per line)<textarea name="clubs" rows="3"></textarea></label></div>
+ <p><button>Save &amp; match</button> <span class="muted">Target industries and locations come from your <a href="#" data-go="profile">Profile</a>.</span></p></form></div></div>
+ <div id="mResults"><div class="toggle mt" id="mTabs"><button data-b="all" class="on">All</button><button data-b="Strong Match">Strong</button><button data-b="Realistic">Realistic</button><button data-b="Reach">Reach</button><button data-b="poor">Poor fit</button></div>
+ <p class="muted" id="mCounts"></p><div id="mList"></div><div class="more"><button id="mMore" class="ghost">Show more</button></div>
+ <p class="muted">Fit = overlap of your skills, experience, industry and location with the role. Odds = firm tier, target-school list, GPA bar, class-year eligibility and related experience. Inputs we have no data for are left out, and the reason says so. Scoring settings are placeholders until real data is added.</p></div>
 </section>
 <section id="t-connect" hidden>
  <div class="panel"><h2>Outreach templates</h2><p class="muted">Placeholders: {name} {school} {company} {role} {contact}. Edits save automatically.</p><div id="tpls"></div></div>
@@ -76,4 +81,4 @@
 <div id="modal" class="modal" hidden><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js" defer></script>
-<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script><script src="tracker.js" defer></script></body></html>
+<script src="store.js" defer></script><script src="listing.js" defer></script><script src="practice.js" defer></script><script src="app.js" defer></script><script src="tracker.js" defer></script><script src="matcher.js" defer></script></body></html>

@@ -1,0 +1,109 @@
+{
+ "_readme": "Scoring inputs for the matcher. Everything marked PLACEHOLDER is a stand-in: replace with real, sourced data in admin.html and export. Placeholder firm/school entries intentionally do not name real organizations, so real firms show as 'no data'.",
+ "weights": {
+  "_placeholder": true,
+  "fit": {
+   "industry": 30,
+   "skills": 35,
+   "experience": 25,
+   "location": 10
+  },
+  "odds": {
+   "firmTier": 20,
+   "school": 20,
+   "gpa": 20,
+   "classYear": 25,
+   "experience": 15
+  }
+ },
+ "thresholds": {
+  "_placeholder": true,
+  "strongFit": 65,
+  "strongOdds": 65,
+  "realisticFit": 45,
+  "realisticOdds": 45,
+  "poorFitBelow": 25
+ },
+ "tierOdds": {
+  "_placeholder": true,
+  "1": 25,
+  "2": 50,
+  "3": 75
+ },
+ "firmTiers": [
+  {
+   "firm": "PLACEHOLDER Example Bank (replace)",
+   "tier": 1,
+   "gpaBar": 3.7,
+   "targetSchoolsOnly": true,
+   "placeholder": true
+  },
+  {
+   "firm": "PLACEHOLDER Example Regional Firm (replace)",
+   "tier": 3,
+   "gpaBar": 3.0,
+   "targetSchoolsOnly": false,
+   "placeholder": true
+  }
+ ],
+ "targetSchools": [
+  {
+   "industry": "Finance & Accounting",
+   "schools": "PLACEHOLDER Target University A; PLACEHOLDER Target University B",
+   "placeholder": true
+  }
+ ],
+ "industryGpaBars": [
+  {
+   "industry": "Quant & Trading",
+   "gpaBar": 3.7,
+   "placeholder": true
+  }
+ ],
+ "majorIndustries": {
+  "finance": "Finance & Accounting",
+  "accounting": "Finance & Accounting",
+  "economics": "Finance & Accounting",
+  "business": "Business & Operations",
+  "management": "Business & Operations",
+  "marketing": "Marketing & Sales",
+  "computer science": "Software & IT",
+  "information": "Software & IT",
+  "data science": "Data & AI",
+  "statistics": "Data & AI",
+  "mathematics": "Quant & Trading",
+  "engineering": "Engineering & Hardware",
+  "biology": "Healthcare & Life Sciences",
+  "chemistry": "Healthcare & Life Sciences",
+  "nursing": "Healthcare & Life Sciences",
+  "health": "Healthcare & Life Sciences",
+  "communications": "Media & Communications",
+  "journalism": "Media & Communications",
+  "political": "Government & Policy",
+  "international": "Government & Policy",
+  "design": "Design & Creative",
+  "art": "Design & Creative",
+  "education": "Nonprofit & Education",
+  "sociology": "Nonprofit & Education",
+  "psychology": "HR & People",
+  "sport": "Marketing & Sales"
+ },
+ "industryKeywords": {
+  "Finance & Accounting": "excel,financial modeling,accounting,valuation,gaap,audit,tax,quickbooks,bloomberg,financial analysis,budgeting,reconciliation,powerpoint,credit,banking,investment",
+  "Software & IT": "python,java,javascript,typescript,react,sql,git,aws,azure,linux,c++,c#,node,api,cloud,docker",
+  "Data & AI": "python,sql,r,tableau,power bi,machine learning,statistics,pandas,excel,data analysis,sas,spss,ai",
+  "Engineering & Hardware": "solidworks,autocad,matlab,cad,c,embedded,circuit,manufacturing,mechanical,electrical,simulation",
+  "Marketing & Sales": "marketing,social media,seo,google analytics,hubspot,salesforce,content,copywriting,canva,adobe,crm,sales,brand",
+  "Business & Operations": "excel,operations,supply chain,project management,powerpoint,analysis,logistics,consulting,process improvement",
+  "Product Management": "product,agile,jira,user research,figma,sql,roadmap,analytics",
+  "Quant & Trading": "python,c++,probability,statistics,math,trading,options,r,matlab",
+  "Design & Creative": "figma,adobe,photoshop,illustrator,ux,ui,design,canva,prototyping",
+  "Healthcare & Life Sciences": "lab,clinical,research,biology,chemistry,patient,hipaa,pcr,data analysis",
+  "Media & Communications": "writing,editing,social media,content,journalism,adobe,video,public relations",
+  "Government & Policy": "policy,research,writing,analysis,public affairs,government",
+  "Nonprofit & Education": "teaching,tutoring,community,outreach,volunteer,fundraising",
+  "HR & People": "recruiting,hr,onboarding,people,talent,workday",
+  "Legal": "legal research,writing,compliance,contracts,westlaw",
+  "Real Estate": "real estate,excel,argus,valuation,property,underwriting"
+ }
+}

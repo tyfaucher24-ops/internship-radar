@@ -581,3 +581,70 @@ html.dark .card,html.dark .pf-col,html.dark .modal .mbox{background:var(--c-surf
 html.dark .firsttip .ghost,html.dark .firsttip button{color:var(--c-ink);background:var(--c-surface);border-color:var(--c-line-2)}
 .tk-short{display:none}
 @media (max-width:700px){.tk-full{display:none}.tk-short{display:inline}.ticker{margin-top:var(--sp-1)}.ticker .tk-lbl{padding:0 var(--sp-2)}}
+/* ===== V11.2: nothing overflows a card; footer chips wrap, each chip stays on one line ===== */
+.grow{height:240px}.card{height:240px}
+@media(max-width:700px){.grow{height:238px}.card{height:238px}}
+body.graded .grow{height:270px}body.graded .card{height:270px}
+@media(max-width:700px){body.graded .grow{height:268px}body.graded .card{height:268px}}
+.card{overflow:hidden}
+.c-foot{flex-wrap:wrap;row-gap:var(--sp-2);column-gap:var(--sp-2);justify-content:flex-start;align-items:center;min-width:0}
+.c-foot>*{flex:none;white-space:nowrap;max-width:100%}
+.c-foot .dl{min-height:28px;font-size:var(--fs-s);padding:0 var(--sp-3)}
+.c-foot .grp{margin-left:0}
+.c-foot .btn-save{margin-left:auto;min-height:36px}
+.c-verd{display:flex;flex-wrap:wrap;gap:var(--sp-1);min-width:0}.c-verd>*{white-space:nowrap}
+/* V11.2 ticker: centred, whole items, wide edge fade, real sync time */
+.ticker{align-items:stretch;height:36px;min-height:36px}
+.ticker .tk-lbl,.tk-win,.tk-track,.ticker .tk-i{display:flex;align-items:center;line-height:20px}
+.ticker .tk-lbl{position:relative;z-index:1;background:var(--c-tk-bg)!important;padding-top:0;padding-bottom:0}
+.ticker .tk-lbl>*{line-height:20px}
+.tk-win{height:100%;-webkit-mask:linear-gradient(90deg,transparent,black 56px,black calc(100% - 56px),transparent);mask:linear-gradient(90deg,transparent,black 56px,black calc(100% - 56px),transparent)}
+.tk-track{height:100%}
+.ticker .tk-i{flex:none;height:100%;gap:var(--sp-2);padding:0 var(--sp-5)}
+.ticker .tk-i>*{flex:none;white-space:nowrap;line-height:20px}
+.tk-stale{color:var(--c-amber)}#tkStale{margin-left:var(--sp-1)}
+#intro .itk{height:30px;min-height:30px;padding-bottom:0}
+#intro .itk .tk-lbl{background:transparent!important}
+#intro .hero{padding-bottom:40px}
+/* V11.2 profile: GPA and work authorization each get a full row; labels never cut */
+#t-profile .pf-gpa-auth{grid-template-columns:1fr!important}
+#t-profile .pf-lab{white-space:nowrap}
+#t-profile .cb-one{overflow:visible;text-overflow:clip;white-space:nowrap}
+.cb-pop .cb-search{padding-left:38px!important}
+.cb-pop{max-width:calc(100vw - 16px)}
+@media(min-width:1200px){.pf3{grid-template-columns:minmax(0,.9fr) minmax(0,1.25fr) minmax(0,.95fr)}}
+/* ===== V11.2 tracker: condensed sheet that fits 1280+ without sideways scroll ===== */
+#t-tracker table.sheet{width:100%;min-width:0;table-layout:fixed;font-size:var(--fs-s)}
+#t-tracker .sheet th{resize:none;min-width:0;vertical-align:middle}
+#t-tracker .sheet th .th{padding:var(--sp-2) var(--sp-3);font-size:var(--fs-s);line-height:20px;display:flex;align-items:center;min-height:36px;box-sizing:border-box;letter-spacing:.04em}
+#t-tracker .sheet td{height:48px;padding:2px var(--sp-3);overflow:hidden}
+#t-tracker .sheet th.c-company{width:190px}#t-tracker .sheet th.c-title{width:auto}#t-tracker .sheet th.c-status{width:150px}#t-tracker .sheet th.c-closes{width:140px}
+#t-tracker .sheet th.c-dateApplied,#t-tracker .sheet th.c-followUp,#t-tracker .sheet th.c-dateSaved{width:96px}#t-tracker .sheet th.c-nextStep{width:150px}#t-tracker .sheet th.c-notes{width:auto}#t-tracker .sheet th.c-link{width:84px}#t-tracker .sheet th.c-x{width:40px}
+#t-tracker .sheet th.c-location{width:130px}#t-tracker .sheet th.c-priority{width:110px}#t-tracker .sheet th.c-contact,#t-tracker .sheet th.c-resumeVersion,#t-tracker .sheet th.c-closeReason{width:120px}#t-tracker .sheet th.c-coverLetter{width:70px}
+#t-tracker .c-company .ce,#t-tracker .c-title .ce,#t-tracker .c-notes .ce,#t-tracker .c-nextStep .ce{min-width:0;width:100%}
+#t-tracker .sheet .ta{height:calc(2.7em + 2px);font-size:var(--fs-s)}
+/* select-all: room on the left, centred like the row boxes */
+#t-tracker .sheet th.c-company{position:sticky}
+#t-tracker .sheet th.c-company .th{padding-left:calc(var(--sp-3) + 26px)}
+#t-tracker .sheet th .tsel-all{position:absolute;left:var(--sp-3);top:50%;transform:translateY(-50%);margin:0;z-index:1}
+#t-tracker .coc .tsel{flex:none;margin:0}
+/* status pills: one width, one line */
+#t-tracker .sheet .pill{width:100%!important;min-width:0;max-width:136px;height:30px;min-height:30px;padding:0 var(--sp-5) 0 var(--sp-3);font-size:var(--fs-s);white-space:nowrap;text-overflow:ellipsis}
+/* dates: text until clicked, "—" when empty */
+.dcell{display:block;position:relative}
+.dcell .dv{all:unset;cursor:pointer;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--c-ink-2);padding:2px 0}
+.dcell .dv:focus-visible{outline:2px solid var(--c-pri-2);border-radius:4px}
+.dcell .dt{display:none}
+.dcell.ed .dv{display:none}.dcell.ed .dt{display:block;width:100%;box-sizing:border-box}
+#t-tracker .dcell .cin{padding:2px var(--sp-2);border-radius:var(--r-pill);font-size:var(--fs-s);font-weight:650}
+.c-link .lk.has{display:none}.c-link .lkopen{white-space:nowrap}
+/* summary bar: one slim strip, same width as the table */
+#t-tracker .tstats{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--c-line);border-radius:var(--r);background:var(--c-surface);overflow:hidden;margin-bottom:var(--sp-3)}
+#t-tracker .tstats .tst{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:var(--sp-2);flex:1 1 auto;justify-content:center;padding:var(--sp-2) var(--sp-4);min-height:40px;border-right:1px solid var(--c-line);cursor:pointer;font-size:var(--fs-s);color:var(--c-mut);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+#t-tracker .tstats .tst:last-child{border-right:0}
+#t-tracker .tstats .tst b{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:var(--fs-m);font-weight:500;color:var(--c-ink);letter-spacing:0}
+#t-tracker .tstats .tst.up b{color:var(--c-up)}#t-tracker .tstats .tst.warn b{color:var(--c-down)}
+#t-tracker .tstats .tst:hover{background:var(--c-bg)}#t-tracker .tstats .tst.on{background:var(--c-pri-soft);color:var(--c-pri-ink)}
+#t-tracker .tstats .tst:focus-visible{outline:2px solid var(--c-pri-2);outline-offset:-2px}
+#t-tracker .sheet th.c-company{width:170px}#t-tracker .sheet th.c-status{width:180px}#t-tracker .sheet th.c-closes{width:128px}#t-tracker .sheet th.c-dateApplied,#t-tracker .sheet th.c-followUp,#t-tracker .sheet th.c-dateSaved{width:84px}#t-tracker .sheet th.c-nextStep{width:140px}#t-tracker .sheet th.c-link{width:72px}
+#t-tracker .sheet .pill{max-width:164px}

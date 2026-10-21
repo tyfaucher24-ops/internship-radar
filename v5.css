@@ -651,3 +651,4 @@ body.graded .grow{height:270px}body.graded .card{height:270px}
 #t-tracker .sheet th.c-x{width:44px}#t-tracker .sheet td.c-x{padding:0;text-align:center;overflow:visible}
 #t-tracker .tstats{padding:0;min-height:0}#t-tracker .tstats .tst{min-height:36px;padding:0 var(--sp-4)}
 .pf-scroll.pf-more:has(.cb.open){-webkit-mask:none;mask:none}
+#tkAsOf{opacity:1;color:var(--c-mut)}html.dark #tkAsOf{color:var(--c-ink-2)}

@@ -75,6 +75,12 @@ def main():
         ch=[i for i in nv if i in pv and any(pv[i].get(k)!=nv[i].get(k) for k in ('deadline','title','locations','company'))]
         rep.update({'added':len(set(nv)-set(pv)),'removed':len(set(pv)-set(nv)),'changed':len(ch),'previous_open':len(pv)})
         if len(pv)>1000 and len(nv)<0.6*len(pv): rep['collapse']=True
+        else:
+            try:
+                from pipeline import changes
+                meta=json.load(open(os.path.join(D,'meta.json')))
+                rep['events']=changes.update(json.load(open(a.prev)).get('listings',[]),L,meta.get('updated') or NOWS)
+            except Exception as e: rep['events_error']=str(e)[:200]
     try:
         logs=json.load(open(os.path.join(D,'sync_log.json')));fs=[l for l in logs if not l.get('ok')]
         rep['sources']={'boards':len(logs),'ok':len(logs)-len(fs),'failed':len(fs),'failed_sample':[f"{l['company']} ({l['ats']}): {str(l.get('error'))[:80]}" for l in fs[:30]]}

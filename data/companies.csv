@@ -2490,3 +2490,6 @@ Zscaler,,greenhouse,zscaler,,,,,github:SimplifyJobs/Summer2027-Internships,
 Zurn Elkay Water Solutions,,workday,elkay.wd1.myworkdayjobs.com/elkay/Elkay_External,,,,,github:SimplifyJobs/Summer2027-Internships,
 Zuru,,ashby,zuru,,,,,github:SimplifyJobs/Summer2027-Internships,
 Zus Health,,lever,zushealth,,,,,github:SimplifyJobs/Summer2027-Internships,
+Two Sigma,twosigma.com,avature,https://careers.twosigma.com/careers/InternshipsAndEarlyCareers,,Finance,NY,https://careers.twosigma.com/careers/InternshipsAndEarlyCareers,manual:V9,V9: official careers site (robots.txt allows /careers)
+Morgan Stanley,morganstanley.com,talnet,morganstanley.tal.net,,Finance,NY,https://morganstanley.tal.net/candidate/jobboard/vacancy/1/adv/,manual:V9,V9: official campus board; crawl-delay 10 honored; bare city names mapped only for known US offices
+Evercore,evercore.com,talnet,evercore.tal.net,,Finance,NY,https://evercore.tal.net/candidate/jobboard/vacancy/1/adv/,manual:V9,V9: official campus board; crawl-delay 10 honored

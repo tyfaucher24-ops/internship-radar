@@ -4,7 +4,7 @@ import requests
 UA='InternshipRadarBot/1.0 (+https://tyfaucher24-ops.github.io/internship-radar/; free student internship index)'
 S=requests.Session();S.headers.update({'User-Agent':UA,'Accept':'application/json, text/html;q=0.9'})
 _lock=threading.Lock();_next={};_robots={};_hostlock={}
-DELAY={'default':1.0,'boards-api.greenhouse.io':0.35,'api.lever.co':0.35,'api.ashbyhq.com':0.35,'api.smartrecruiters.com':0.35,'apply.workable.com':1.0}
+DELAY={'default':1.0,'boards-api.greenhouse.io':0.35,'api.lever.co':0.35,'api.ashbyhq.com':0.35,'api.smartrecruiters.com':0.35,'apply.workable.com':1.0,'careers.twosigma.com':3.0,'morganstanley.tal.net':10.0,'evercore.tal.net':10.0}
 log=logging.getLogger('net')
 def _wait(host):
     d=DELAY.get(host,DELAY['default'] if 'myworkdayjobs' not in host else 0.6)

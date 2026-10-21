@@ -100,7 +100,7 @@ def predict_upcoming(open_recs,history,registry):
     """Upcoming windows from REAL past posting dates only (GitHub list history + our first_seen history)."""
     have=collections.defaultdict(set)
     for r in open_recs:
-        for t in r['terms'] or []: have[N.nkey(r['company'])].add(t)
+        for t in r.get('terms') or []: have[N.nkey(r['company'])].add(t)
     target=f'Summer {N.acad_year_end()}'
     byco=collections.defaultdict(lambda:collections.defaultdict(list));names={};links={}
     for h in history:

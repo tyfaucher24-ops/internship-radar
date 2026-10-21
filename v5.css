@@ -392,3 +392,10 @@ body.graded .grow{height:242px}body.graded .card{height:242px}
 .c-verd{display:flex;align-items:center;gap:6px;margin:2px 0 0;flex:none;min-height:24px}.c-verd .verd{margin-left:0}
 .fbp-top{justify-content:flex-start}
 .c-verd .mbadge{margin-left:0!important}
+.c-verd .mbadge{margin-left:0!important}
+.grp{font:inherit;font-size:12px;font-weight:600;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:2px 9px;cursor:pointer;white-space:nowrap;margin-left:auto;margin-right:6px}
+.grp:hover{background:#dbeafe}.grp:focus-visible{outline:2px solid #1d4ed8;outline-offset:2px}
+.grpn{color:#475569;font-weight:400;font-size:.9em}
+.beg{border:1px solid #c7d2fe;background:#eef2ff;border-radius:14px;padding:16px 20px;margin:0 0 16px}
+.beg h2{font-size:17px;margin:0 0 6px;color:#1e1b4b}.beg ul{margin:0 0 10px 18px;padding:0;color:#312e81;line-height:1.5}
+.beg-a{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.beg .linkbtn{background:none;border:0;color:#3730a3;text-decoration:underline;cursor:pointer;font:inherit}

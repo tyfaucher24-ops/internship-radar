@@ -165,3 +165,69 @@ def usajobs(c):
         if len(items)<250: break
         page+=1
     return out
+
+# --- V9: careers sites without a public JSON API (robots.txt checked by fetch; crawl-delay honored in net.DELAY) ---
+def _txt(h):
+    import html as _h
+    h=re.sub(r'(?is)<(script|style)[^>]*>.*?</\1>','',h)
+    return _h.unescape(re.sub(r'[ \t]+',' ',re.sub(r'<[^>]+>','\n',h)))
+_INTERNISH=re.compile(r'(?i)\b(intern|internship|summer analyst|summer associate|co-?op|summer program)')
+@adapter('avature',official=False)
+def avature(c):
+    """Avature careers portals (e.g. Two Sigma). slug = full list-page URL. Reads the public list page + each job page."""
+    base=c['slug'];seen={};off=0
+    while off<300:
+        h=fetch(base+(f'?jobOffset={off}' if off else '')).text
+        new=0
+        for u,t in re.findall(r'href="(https://[^"]+/JobDetail/[^"]+)"[^>]*>\s*([^<]+?)\s*<',h):
+            t=t.strip()
+            if t and t!='View role' and u not in seen: seen[u]=t;new+=1
+        if not new or f'jobOffset={off+10}' not in h: break
+        off+=10
+    out=[]
+    for u,t in seen.items():
+        if not _INTERNISH.search(t): continue
+        d=fetch(u).text;tx=_txt(d)
+        loc='';m=re.search(r'Location\s*\n\s*(?:\s*\n)*\s*([A-Z]{2}) ([^\n]+?)\s*\n(?:\s*\n)*\s*([^\n]+?)\s*\n',tx)
+        if m and m.group(3).strip()=='United States': loc=f"{m.group(2).strip()}, {m.group(1)}"
+        if not loc: continue  # non-US or unreadable location: skip rather than guess
+        i=tx.find('Location')
+        out.append({'title':t,'url':u,'locations':[loc],'desc':tx[max(0,i):i+12000],'ats_id':u.rstrip('/').rsplit('/',1)[-1]})
+    return out
+# US office cities for tal.net boards, which only list a bare city name. Any city not here is skipped (never guessed).
+TALNET_US={'New York':'New York, NY','Houston':'Houston, TX','Baltimore':'Baltimore, MD','Alpharetta':'Alpharetta, GA','Purchase':'Purchase, NY','Chicago':'Chicago, IL',
+ 'San Francisco':'San Francisco, CA','Menlo Park':'Menlo Park, CA','Boston':'Boston, MA','Los Angeles':'Los Angeles, CA','Salt Lake City':'Salt Lake City, UT','Columbus':'Columbus, OH',
+ 'Philadelphia':'Philadelphia, PA','Charlotte':'Charlotte, NC','Dallas':'Dallas, TX','Atlanta':'Atlanta, GA','Miami':'Miami, FL','Seattle':'Seattle, WA','Minneapolis':'Minneapolis, MN',
+ 'Washington DC':'Washington, DC','Washington, D.C.':'Washington, DC','Denver':'Denver, CO','West Conshohocken':'West Conshohocken, PA','New York City':'New York, NY','NYC':'New York, NY','Jersey City':'Jersey City, NJ'}
+@adapter('talnet',official=False)
+def talnet(c):
+    """Oracle tal.net campus boards (Morgan Stanley, Evercore). slug = host, e.g. morganstanley.tal.net. Only /candidate/ and /vx/ pages (allowed by robots.txt)."""
+    host=c['slug'];rows=[];start=0
+    while start<1000:
+        h=fetch(f'https://{host}/candidate/jobboard/vacancy/1/adv/'+(f'?start={start}' if start else '')).text
+        got=[]
+        for row in re.findall(r'(?s)<tr class="opp_\d+[^"]*".*?</tr>',h):
+            m=re.search(r'<a[^>]+href="([^"]+)"[^>]*>\s*(.*?)\s*</a>',row,re.S)
+            if m: got.append((m.group(1),m.group(2),[re.sub(r'<[^>]+>|\s+',' ',td).strip() for td in re.findall(r'(?s)<td[^>]*>(.*?)</td>',row)[1:]]))
+        rows+=got
+        if len(got)<50 or f'start={start+50}' not in h: break
+        start+=50
+    import html as _h
+    def _d(x):
+        try: return datetime.datetime.strptime(x.replace('Sept','Sep'),'%d %b %Y').date().isoformat()
+        except Exception: return None
+    out=[]
+    for u,t,cols in rows:
+        t=_h.unescape(re.sub(r'\s+',' ',t)).strip();cols=[_h.unescape(x) for x in cols]
+        if not _INTERNISH.search(t) or re.search(r'(?i)full[- ]time|coffee chat|webinar|insight|event|networking|open house',t): continue
+        dates=[_d(x) for x in cols];posted=deadline=None
+        if any(dates): posted=dates[0];deadline=dates[1] if len(dates)>1 else None
+        cities=[x.strip() for x in re.split(r'[,/;]| and ',cols[0]) if x.strip()] if cols and not dates[0] else []
+        us=[TALNET_US[x] for x in cities if x in TALNET_US]
+        if not cols or dates[0]:  # board has no city column: read the city from the title, else skip
+            us=[v for k,v in TALNET_US.items() if re.search(r'\b'+re.escape(k)+r'\b',t)][:1]
+        if not us: continue
+        tx=_txt(fetch(u).text)
+        i=tx.find('Job description')
+        out.append({'title':t,'url':u,'locations':us,'desc':tx[i:i+12000] if i>=0 else '','posted':posted,'deadline':deadline,'ats_id':re.search(r'/opp/(\d+)',u).group(1) if '/opp/' in u else u})
+    return out

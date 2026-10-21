@@ -17,8 +17,14 @@ function pick(ev){/* latest sync first; interleave kinds so one kind doesn't fil
  const out=[];for(let i=0;out.length<36&&i<200;i++)for(const k of ['deadline','new','closed']){if(by[k][i])out.push(by[k][i])}return out.slice(0,36)}
 function render(){const T=$('ticker');if(!T)return;const ev=(CH&&CH.events)||[];if(!ev.length){T.hidden=true;return}
  const L=pick(ev);const h=L.map(item).join('');$('tkTrack').innerHTML=h+(RM?'':h.replace(/<button /g,'<button aria-hidden="true" tabindex="-1" '));
- $('tkTrack').style.setProperty('--tk-dur',Math.max(40,L.length*5)+'s');$('tkAsOf').textContent='as of '+fmtT(ev[0].t);T.hidden=false}
-async function load(){try{const r=await fetch('data/changes.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.updated===lastUpd)return;lastUpd=j.updated;CH=j;render()}catch(_){}}
+ $('tkTrack').style.setProperty('--tk-dur',Math.max(40,L.length*5)+'s');asOf();T.hidden=false}
+let META_UPD='';
+function asOf(){const el=$('tkAsOf');if(!el)return;const t=META_UPD||(CH&&CH.updated);if(!t){el.textContent='';return}const h=(Date.now()-Date.parse(t))/36e5;
+ el.textContent='Synced '+fmtT(t)+(h>=20?' '+new Date(t).toLocaleDateString([],{month:'short',day:'numeric'}):'');el.classList.toggle('tk-stale',h>4);
+ el.title=h>4?'The last sync was over 4 hours ago. Some postings may have changed since.':'Time of the last sync';const w=$('tkStale');if(w)w.hidden=!(h>4)}
+setInterval(asOf,60000);
+async function load(){try{const m=await (await fetch('data/meta.json?ts='+Date.now(),{cache:'no-store'})).json();if(m&&m.updated){META_UPD=m.updated;asOf()}}catch(_){}
+try{const r=await fetch('data/changes.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.updated===lastUpd)return;lastUpd=j.updated;CH=j;render()}catch(_){}}
 function whenReady(f){let n=0;(function w(){if(has('__')||(typeof BYID!=='undefined'&&BYID.size)||n++>60)f();else setTimeout(w,500)})()}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-tk]');if(!b||b.disabled)return;const x=BYID.get(b.dataset.tk);if(x)openDrawer(x)});
 function market(){if(!CH)return;const ev=CH.events||[],at=ev.length?ev[0].t:CH.updated,cur=ev.filter(e=>e.t===at);const c=k=>(CH.counts&&at===CH.updated&&CH.counts[k]!=null)?CH.counts[k]:cur.filter(e=>e.k===k).length;

@@ -48,7 +48,7 @@
 <section id="t-db" class="page">
  <div class="pagehead find-head"><div class="container"><h1>Find your internship</h1><p class="lede"><span class="pulse up" aria-hidden="true"></span><span class="hdrCount" id="hdrCount" aria-live="polite">Loading live counts…</span></p></div></div>
  <div class="container"><section id="ticker" class="ticker" aria-label="Internship Exchange: real changes from the latest sync" hidden>
-  <button type="button" class="tk-lbl" id="tkMarket" title="Open Market"><b><span class="pulse up" aria-hidden="true"></span><span class="tk-full">Internship Exchange</span><span class="tk-short">Live</span></b><span id="tkAsOf"></span></button>
+  <button type="button" class="tk-lbl" id="tkMarket" title="Open Market"><b><span class="pulse up" aria-hidden="true"></span><span class="tk-full">Internship Exchange</span><span class="tk-short">Live</span></b><span id="tkAsOf"></span><span id="tkStale" class="tk-stale" hidden>⚠ over 4 h old</span></button>
   <div class="tk-win"><div class="tk-track" id="tkTrack"></div></div>
  </section></div>
  <div class="container">
@@ -94,7 +94,7 @@
     <div class="pf-f"><span class="pf-lab">Minor <small>optional</small></span><div id="cbMinor"></div><p class="pf-help">Example: Statistics.</p></div></div>
    <div class="pf-row2"><div class="pf-f"><span class="pf-lab">Class year <button type="button" class="tip" data-tip="classyear" aria-label="What is class year?">?</button></span><div id="cbYear"></div><p class="pf-help">Your year in school this fall. Many internships only take certain years.</p></div>
     <div class="pf-f"><span class="pf-lab">Graduation</span><div class="pf-row2 tight"><div id="cbGradM"></div><div id="cbGradY"></div></div><p class="pf-help">Example: May 2028.</p></div></div>
-   <div class="pf-row2"><div class="pf-f"><label class="pf-lab" for="gpaIn">GPA <small>optional</small></label><div id="cbGpa"></div><p class="pf-help">Type your exact GPA on a 4.0 scale, e.g. 3.40. Some firms have GPA cutoffs.</p></div>
+   <div class="pf-row2 pf-gpa-auth"><div class="pf-f"><label class="pf-lab" for="gpaIn">GPA <small>optional</small></label><div id="cbGpa"></div><p class="pf-help">4.0 scale, e.g. 3.40. Some firms have cutoffs.</p></div>
     <div class="pf-f"><span class="pf-lab">Work authorization <button type="button" class="tip" data-tip="Sponsorship" aria-label="What is sponsorship?">?</button></span><div id="cbAuth"></div><p class="pf-help">Used to hide roles you can’t take.</p></div></div>
    <div class="pf-f"><span class="pf-lab">Interests</span><div id="cbInd"></div><p class="pf-help">Pick the industries you want. Example: Finance &amp; Banking, Data &amp; AI.</p></div>
    <div class="pf-f"><span class="pf-lab">Preferred locations</span><div id="cbLoc"></div><p class="pf-help">A state or city. Example: Anywhere in Texas, or Chicago, IL.</p>

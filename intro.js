@@ -44,18 +44,18 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
  Promise.resolve(null),fetch('data/hubs.json').then(r=>r.json()).catch(()=>[])])).then(([THREE,landBuf,hubs])=>{
  if(ended)return;
  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:'high-performance'});
- renderer.setPixelRatio(window.__swGL?1:Math.min(devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;
+ renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.05,50),G=new THREE.Group();scene.add(G);
  const uC=new THREE.Vector3(...ll2v(US.lat,US.lng));const t1=new THREE.Vector3(0,1,0).cross(uC).normalize(),t2=uC.clone().cross(t1).normalize();
  const U={uTime:{value:0},uPing:{value:-1},uSweep:{value:-10},uC:{value:uC},uT1:{value:t1},uT2:{value:t2},uC2:{value:new THREE.Vector3(0,1,0)},uPing2:{value:-1},uPR:{value:renderer.getPixelRatio()},uScale:{value:1},uHover:{value:-1},uFx:{value:1}};
  const RADAR=`uniform vec3 uC,uT1,uT2,uC2;uniform float uPing,uSweep,uPing2,uTime,uFx;
   float rings(vec3 n,vec3 c,float p){return 0.;}float sweep(vec3 n){return 0.;}/* V5.1 #8: radar ping/sweep removed */`;
  // V3 planet, rebuilt: NASA Blue Marble (public domain) self-hosted at 4K (2K on small screens), sRGB + max anisotropy, day-side lighting, fresnel rim, shader radar overlay
- const big=Math.max(screen.width,screen.height)*(devicePixelRatio||1)>1600;
- const tex=new THREE.TextureLoader().load(big?'assets/earth-4k.jpg':'assets/earth-2k.jpg',()=>{earthReady=true});let earthReady=false;
+ const PHONE=Math.min(screen.width,screen.height)<600,big=!PHONE&&Math.max(screen.width,screen.height)*(devicePixelRatio||1)>1600;
+ const tex=new THREE.TextureLoader().load(big?'assets/earth-4k.webp':'assets/earth-2k.webp',()=>{earthReady=true});let earthReady=false;
  tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=renderer.capabilities.getMaxAnisotropy();tex.generateMipmaps=true;tex.minFilter=THREE.LinearMipmapLinearFilter;
  U.uMap={value:tex};
- const ocean=new THREE.Mesh(new THREE.SphereGeometry(1,96,64),new THREE.ShaderMaterial({uniforms:U,vertexShader:`varying vec3 vN,vW,vV;varying vec2 vUv;void main(){vUv=uv;vN=normalize(position);vec4 w=modelMatrix*vec4(position,1.);vW=normalize(mat3(modelMatrix)*position);vV=normalize(cameraPosition-w.xyz);gl_Position=projectionMatrix*viewMatrix*w;}`,
+ const ocean=new THREE.Mesh(new THREE.SphereGeometry(1,PHONE?72:96,PHONE?48:64),new THREE.ShaderMaterial({uniforms:U,vertexShader:`varying vec3 vN,vW,vV;varying vec2 vUv;void main(){vUv=uv;vN=normalize(position);vec4 w=modelMatrix*vec4(position,1.);vW=normalize(mat3(modelMatrix)*position);vV=normalize(cameraPosition-w.xyz);gl_Position=projectionMatrix*viewMatrix*w;}`,
   fragmentShader:RADAR+`uniform sampler2D uMap;varying vec3 vN,vW,vV;varying vec2 vUv;void main(){vec3 L=normalize(vec3(-.45,.45,.95));float lam=max(dot(vW,L),0.);float fr=pow(1.-max(dot(vW,vV),0.),3.);
    vec3 tc=texture2D(uMap,vUv).rgb;vec3 col=tc*(.28+1.05*lam)+vec3(1.,.62,.85)*fr*.55+vec3(.35,.55,1.)*fr*.35;
    float r=rings(vN,uC,uPing)+rings(vN,uC2,uPing2)*.8;float s=sweep(vN);col+=vec3(.55,1.,.85)*r*.95+vec3(.35,1.,.8)*s*.35;gl_FragColor=vec4(col,1.);
@@ -72,7 +72,7 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
   fragmentShader:`varying float vA,vF;void main(){float d=length(gl_PointCoord-.5);float core=1.-smoothstep(.12,.2,d),halo=pow(1.-smoothstep(0.,.5,d),2.);vec3 c=mix(vec3(1.,.72,.3),vec3(1.,.95,.75),clamp(vF,0.,1.));gl_FragColor=vec4(c*(core+halo*(.55+vF)),(core+halo*.8)*vA);}`});
  const hubPts=new THREE.Points(hg,hubMat);G.add(hubPts);
  // atmosphere glow
- const atm=new THREE.Mesh(new THREE.SphereGeometry(1.14,64,48),new THREE.ShaderMaterial({side:THREE.BackSide,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
+ const atm=new THREE.Mesh(new THREE.SphereGeometry(1.14,PHONE?40:64,PHONE?28:48),new THREE.ShaderMaterial({side:THREE.BackSide,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
   vertexShader:`varying float vZ;void main(){vZ=normalize(normalMatrix*normal).z;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
   fragmentShader:`varying float vZ;void main(){float i=pow(smoothstep(0.,.5,-vZ),1.8);gl_FragColor=vec4(mix(vec3(.45,.7,1.),vec3(1.,.78,.9),.55)*i*1.25,i*.9);}`}));scene.add(atm);
  /* camera fit to the bounding sphere (globe + halo + padding); recomputed on resize/orientation */
@@ -117,15 +117,21 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
  /* Adaptive quality (V5.1 #6): never stop rendering. Low fps steps the pixel ratio down (2→1.5→1→.75) instead of swapping to a static globe.
     The old 2-stage watchdog disposed WebGL after ~4.5s of <40fps (always true on software GL / during warm-up) — that was the freeze. */
  // Tiers: each one keeps as much as it can hold. Steps down on sustained slow frames, back up on sustained fast ones (hysteresis), never to a static image.
- const P0=renderer.getPixelRatio();
- const TIERS=[{pr:P0,atm:1,fx:1},{pr:Math.min(P0,1.5),atm:1,fx:1},{pr:Math.min(P0,1.25),atm:1,fx:1},{pr:1,atm:1,fx:.6},{pr:.85,atm:0,fx:.6},{pr:.7,atm:0,fx:.4}].filter((t,i,a)=>i===0||t.pr<a[i-1].pr||t.atm<a[i-1].atm||t.fx<a[i-1].fx);
- let fr=[],qi=window.__swGL?Math.min(3,TIERS.length-1):0,warm=performance.now()+1500,lastStep=0;window.__globeFrames=0;
- function applyTier(){const T=TIERS[qi];renderer.setPixelRatio(T.pr);U.uPR.value=T.pr;atm.visible=!!T.atm;U.uFx.value=T.fx;fit();intro.dataset.lite=String(qi)}
+ /* V5.3 quality tiers: as pretty as the device can hold. Start tier from screen size, DPR, cores and memory; then adapt by frame time.
+    Low tiers draw fewer (largest) hub dots and render at 30fps to free the main thread. Never stops rendering, never a static image. */
+ const DPR=devicePixelRatio||1,CAP=PHONE?1.5:2,P0=Math.min(DPR,CAP),NH=H.length;
+ const TIERS=[{pr:P0,dots:NH,fps:60},{pr:Math.min(P0,1.25),dots:NH,fps:60},{pr:1,dots:Math.min(NH,700),fps:60},{pr:1,dots:Math.min(NH,400),fps:30},{pr:.85,dots:Math.min(NH,250),fps:30},{pr:.75,dots:Math.min(NH,160),fps:30}];
+ const hc=navigator.hardwareConcurrency||4,mem=navigator.deviceMemory||4;
+ let qi=window.__swGL?3:PHONE?((hc>=8&&mem>=6)?0:(hc>=6&&mem>=4)?1:(hc>=4)?2:3):(hc>=8?0:hc>=4?1:2);
+ if(Q.get('tier'))qi=Math.max(0,Math.min(TIERS.length-1,+Q.get('tier')));
+ let fr=[],warm=performance.now()+1500,lastStep=0,lastDraw=0;window.__globeFrames=0;
+ function applyTier(){const T=TIERS[qi];renderer.setPixelRatio(T.pr);U.uPR.value=T.pr;hg.setDrawRange(0,T.dots);fit();intro.dataset.lite=String(qi)}
+ // frame time = gap between rendered frames; target is the tier's fps
  function watchdog(dt){const now=performance.now();window.__globeFrames++;if(now<warm)return;fr.push(dt);let s=0;for(const x of fr)s+=x;while(s>2000&&fr.length>1)s-=fr.shift();if(s<1800||now-lastStep<1500)return;
-  const fps=fr.length/(s/1000);if(fps<48&&qi<TIERS.length-1){qi++;lastStep=now;fr=[];applyTier()}else if(fps>58.5&&qi>0&&now-lastStep>5000){qi--;lastStep=now;fr=[];applyTier()}}
+  const fps=fr.length/(s/1000),tgt=TIERS[qi].fps;if(fps<tgt*.8&&qi<TIERS.length-1){qi++;lastStep=now;fr=[];applyTier()}else if(fps>tgt*.97&&qi>0&&now-lastStep>(TIERS[qi-1].fps>tgt?12000:6000)){qi--;lastStep=now;fr=[];applyTier()}}
  const dead=false;
  let raf,last=performance.now(),shown=false;
- function frame(now){raf=requestAnimationFrame(frame);const dt=Math.min(64,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;U.uTime.value=now/1000;domFrame();
+ function frame(now){raf=requestAnimationFrame(frame);if(TIERS[qi].fps<60&&now-lastDraw<31)return;lastDraw=now;const dt=Math.min(80,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;U.uTime.value=now/1000;domFrame();
   if(S.phase==='idle'){if(!S.drag){S.ry+=(S.vy+.06)*s;S.rx=Math.max(-1.1,Math.min(1.1,S.rx+S.vx*s));const k=Math.pow(.05,s);S.vx*=k;S.vy=S.vy*k}
    S.zoom+=(S.zt-S.zoom)*(1-Math.pow(.004,s))}
   else{const t=(now-S.t0)/1000/SLOW;const a=ease(clamp(t/.6));S.rx=S.from.rx+(S.to.rx-S.from.rx)*a;S.ry=S.from.ry+(S.to.ry-S.from.ry)*a;S.tiltX*=.9;S.tiltY*=.9;

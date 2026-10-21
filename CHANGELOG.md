@@ -1,5 +1,11 @@
 # Internship Radar changelog
 
+## V5.3 — 3D globe for everyone, tuned per device
+- Starting quality tier picked from screen size, devicePixelRatio, CPU cores and device memory, then adapted by frame time (steps down quickly, back up slowly). Never stops, never a static image while WebGL works.
+- Phones: 2K WebP Earth texture (206 KB, was a 313 KB JPEG); desktops get a 4K WebP (584 KB, was 1.1 MB), pixel ratio capped at 1.5, lighter sphere meshes, cheap backside atmosphere shader.
+- Low tiers draw fewer (largest) hub dots and render at 30fps to free the main thread.
+- Checked at 375x667, 390x844 and 768x1024: full planet visible and crisp.
+
 ## V5.2 — Intro on every visit
 - The globe intro now shows every time someone opens the site root (no more "returning visitors skip it"). Deep links (#find, #tracker, #profile, ?q= and other filter URLs) and in-site navigation skip it; the logo returns to the intro. Skip / Find my internship keep the quick fade.
 - The 3D globe starts once the page is idle (requestIdleCallback, 1.5s timeout); the static planet shows until then and the canvas cross-fades in.

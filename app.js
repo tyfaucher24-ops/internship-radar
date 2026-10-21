@@ -24,11 +24,11 @@ function cardHTML(x){const c=closeLbl(x);return`<article class="card${x.st==='cl
  <div class="c-foot"><span class="dl dl-${c.c}">${esc(c.t)}</span>${saveBtn(x)}</div></article>`}
 const card=(x,extra='')=>cardHTML(x).replace('<div class="c-foot">',extra?`<div class="c-extra">${extra}</div><div class="c-foot">`:'<div class="c-foot">');
 /* ---------- navigation (hash pages, natural scroll) ---------- */
-const PAGES=['db','tracker','profile','about','contact','privacy'];
+const PAGES=['db','tracker','profile','feedback','about','contact','privacy'];
 function go(t,push=true){if(t==='find'||t==='home'||!PAGES.includes(t))t='db';document.querySelectorAll('.nav [data-t]').forEach(o=>{o.classList.toggle('on',o.dataset.t===t);o.toggleAttribute('aria-current',o.dataset.t===t);if(o.dataset.t===t)o.setAttribute('aria-current','page')});
  document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!=='t-'+t);const u=new URL(location);u.hash=t==='db'?'':t;history[push?'pushState':'replaceState'](null,'',u);scrollTo(0,0);
- document.title=({db:'Find internships',tracker:'My Tracker',profile:'My Profile',about:'About',contact:'Contact',privacy:'Privacy'})[t]+' · Internship Radar';
- if(t==='db')requestAnimationFrame(()=>vrender(true));if(t==='tracker'&&window.trackerRefresh)trackerRefresh();document.body.classList.toggle('on-profile',t==='profile');document.dispatchEvent(new CustomEvent('radar:page',{detail:t}));reveal()}
+ document.title=({db:'Find internships',tracker:'My Tracker',profile:'My Profile',feedback:'Honest feedback',about:'About',contact:'Contact',privacy:'Privacy'})[t]+' · Internship Radar';
+ if(t==='db')requestAnimationFrame(()=>vrender(true));if(t==='tracker'&&window.trackerRefresh)trackerRefresh();if($('fbNudge'))$('fbNudge').hidden=!MatchCore.hasProfile(profile);if(t==='profile'&&$('fbLink'))$('fbLink').hidden=!MatchCore.hasProfile(profile);if(t==='feedback')(window.renderFeedback?Promise.resolve():loadScript('feedback.js')).then(()=>renderFeedback());document.body.classList.toggle('on-profile',t==='profile');document.dispatchEvent(new CustomEvent('radar:page',{detail:t}));reveal()}
 addEventListener('popstate',()=>go(location.hash.slice(1)||'db',false));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();go(a.dataset.go)}});
 function openModal(h,cls=''){$('mbody').innerHTML=h;$('modal').className='modal '+cls;$('modal').hidden=false;document.body.classList.add('noscroll');setTimeout(()=>$('mbody').querySelector('input,select,textarea,button')?.focus(),30)}
@@ -276,7 +276,7 @@ function profileInit(){const f=$('pf');pfRender();
   $('majorList').innerHTML=MAJORS.map(m=>`<option value="${esc(m.replace(/\b\w/g,c=>c.toUpperCase()))}">`).join('');$('skillList').innerHTML=SKILLS.map(s=>`<option value="${esc(s)}">`).join('')};
  f.addEventListener('focusin',fillLists,{once:true});document.addEventListener('radar:page',e=>{if(e.detail==='profile')fillLists()})}
 async function readIn(file){$('rstat').textContent='Reading '+file.name+'…';try{ingest(await readFile(file))}catch(err){$('rstat').textContent='Could not read that file: '+err.message}}
-function ingest(text){const R=parseResume(text);pfRead();let n=0;const set=(k,v)=>{if(v&&!PF[k]){PF[k]=String(v);n++}};set('school',R.school);set('major',R.major);set('gpa',R.gpa);set('classYear',R.classYear);
+function ingest(text){const R=parseResume(text);Store.set('resumeText',String(text||'').slice(0,30000));pfRead();let n=0;const set=(k,v)=>{if(v&&!PF[k]){PF[k]=String(v);n++}};set('school',R.school);set('major',R.major);set('gpa',R.gpa);set('classYear',R.classYear);
  const sk=(R.skills||[]).map(s=>s.toLowerCase()).filter(s=>!PF.skills.includes(s));if(sk.length){PF.skills.push(...sk);n+=sk.length}
  const ex=(R.experience||[]).filter(e=>e.title&&!PF.experience.some(p=>p.title===e.title)).map(e=>{const [t,o]=e.title.split(' — ');return{kind:/intern/i.test(t)?'Internship':'Job',title:(t||'').trim(),org:(o||'').trim(),start:'',end:'',bullets:(e.text||'').split(/(?<=\.)\s+|\s*•\s*/).map(x=>x.trim()).filter(x=>x.length>3).slice(0,3)}});
  const cl=(R.clubs||[]).concat(R.leadership||[]).slice(0,3).filter(c=>!PF.experience.some(p=>p.title===c)).map(c=>({kind:'Club',title:c.slice(0,80),org:'',start:'',end:'',bullets:[]}));
@@ -287,10 +287,10 @@ async function saveAndSearch(){pfRead();const errs=[];if(PF.gpa&&(isNaN(+PF.gpa)
  if(errs.length){$('pfMsg').textContent='Please '+errs.join(' and ')+'.';$('pfMsg').classList.add('err');return}$('pfMsg').classList.remove('err');
  profile={...JSON.parse(JSON.stringify(PF)),v:6,savedAt:new Date().toISOString()};Store.set('profile',profile);Store.set('profileDraft',PF);
  $('pfSave').disabled=true;$('pfMsg').textContent='Grading internships…';await rescore();const n=D.filter(x=>x.live&&MSCORE.has(x.id)).length;$('pfSave').disabled=false;$('pfMsg').textContent='Saved';
- F.sort='match';$('sort').value='match';go('db');update();vrender(true);toastMsg(`Showing your matches. ${n.toLocaleString()} internships graded.`)}
+ F.sort='match';$('sort').value='match';go('db');update();vrender(true);toastMsg(`Showing your matches. ${n.toLocaleString()} internships graded.`);$('pfMsg').innerHTML='Saved · <a href="#feedback" data-go="feedback">See honest feedback</a>';const fl=$('fbLink');if(fl)fl.hidden=false;if($('fbNudge'))$('fbNudge').hidden=false}
 function resetProfile(){openModal(`<h2>Reset your profile?</h2><p>This clears your profile and removes all match grades. The homepage goes back to its default view. Your tracker is not affected.</p><div class="mf-foot"><button type="button" class="link" id="rsNo">Cancel</button><button type="button" class="btn danger" id="rsYes">Reset to default</button></div>`);
- $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');profile={v:6};PF={v:6,experience:[],skills:[],locations:[],industries:[]};MSCORE=new Map();
-  if(F.sort==='match')F.sort='new';F.minm='';$('sort').value=F.sort;closeModal();pfRender();$('rstat').textContent='';go('db');update();vrender(true);toastMsg('Profile reset. Showing all internships.')}}
+ $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');Store.remove('resumeText');profile={v:6};PF={v:6,experience:[],skills:[],locations:[],industries:[]};MSCORE=new Map();
+  if(F.sort==='match')F.sort='new';F.minm='';if($('fbNudge'))$('fbNudge').hidden=true;$('sort').value=F.sort;closeModal();pfRender();$('rstat').textContent='';go('db');update();vrender(true);toastMsg('Profile reset. Showing all internships.')}}
 /* ---------- grading: Web Worker rescoring (falls back to time-sliced main thread) ---------- */
 let MWK=null,mwInit=false,mwSeq=0;
 function slimRows(){return D.filter(x=>x.st!=='closed').map(x=>({id:x.id,title:x.title,company:x.company,industry:x.industry||x.category,class_years:x.class_years,size:x.size,metro_pop:x.metro_pop,remote:x.remote,posted:x.posted,fs:x.first_seen,gpa_min:x.gpa_min,openings:x.openings,paid:x.paid,sponsorship:x.sponsorship,citizenship:x.citizenship,locations:(x.locations||[]).map(l=>({pop:l.pop})),_t:x._t}))}

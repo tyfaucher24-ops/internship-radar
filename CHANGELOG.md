@@ -1,5 +1,15 @@
 # Internship Radar changelog
 
+## V6.2 — Honest feedback page
+- New page, "Honest feedback" (#feedback), linked from My Profile and next to the results count once a profile is saved. It is blunt but constructive, and every number is computed in the browser from the saved profile, the live listings and the same scoring engine. Nothing leaves the device.
+- Five sections:
+  1. Where you stand: A/B/C/D/F counts across the live listings, the median match and a plain verdict.
+  2. What's holding you back: skills the matcher looks for in your interest areas that you haven't listed (with counts), no experience, listings you can't apply to because of class year, GPA bars, sponsorship, and elite-firm grades.
+  3. Where you can realistically land now: the best industries by B-or-better count, average match by competition level, and your top 6 real listings.
+  4. The 3 changes that would move your grades most: each is re-scored across every live listing in the match worker, e.g. "raises 973 listings by one grade or more".
+  5. Resume checks: length, quantified bullets, dates, a skills section, an email address, and experience entries without dates or bullets. The uploaded resume text is now kept in localStorage (`idr_resumeText`) for these checks and cleared by Reset.
+- The page builds in about 1s for all 3 test profiles (headless Chromium, 10,871 listings). `test_v62.py` writes screenshots `v62-*.png`.
+
 ## V6.1 — Speed and grade calibration
 - Speed: the logo map is no longer fetched at startup. It loads once the page is idle, about 3s after the intro starts, and only the cards and tracker rows on screen re-render. The match worker still starts only once a saved profile exists. Requests during the first page load (local Lighthouse): 39 down to 23.
 - Stricter grading, for honesty (`match-weights.json`): Fit 45%, Odds 40%, Preferences 15% (unchanged). A new strictness curve (score^1.35) pulls every score down, and the top hardest, so A grades are rare. Low competition helps only a little: the odds bonus below competition 40 dropped from +25 to +10, and the final low-competition boost from 0.6 to 0.2. No relief for missing experience, and no competition discount for strong profiles.

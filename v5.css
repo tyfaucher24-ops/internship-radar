@@ -455,3 +455,7 @@ body.intro-on main#main{visibility:hidden}
 /* V10 profile: hints show while a field is in use, so each bucket fits without a long scroll */
 #t-profile .pf-col:nth-child(2) .pf-help{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 #toast .t-undo{margin-left:var(--sp-2);background:none;border:0;color:var(--c-pri-soft-2);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}
+/* V10: the first-visit tip floats (no layout shift when it appears) */
+.firsttip{position:fixed;left:var(--sp-4);bottom:var(--sp-4);z-index:40;max-width:440px;margin:0;box-shadow:var(--shadow-2);font-size:var(--fs-s)}
+@media (max-width:700px){.firsttip{left:var(--sp-2);right:var(--sp-2);bottom:var(--sp-2);max-width:none}}
+body.noscroll .firsttip{display:none}

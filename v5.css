@@ -454,3 +454,4 @@ body.intro-on main#main{visibility:hidden}
 #t-tracker.tr-empty #tCsv,#t-tracker.tr-empty #tXls,#t-tracker.tr-empty #ics,#t-tracker.tr-empty .colwrap,#t-tracker.tr-empty #tSeg,#t-tracker.tr-empty .ttools .sp{display:none}
 /* V10 profile: hints show while a field is in use, so each bucket fits without a long scroll */
 #t-profile .pf-col:nth-child(2) .pf-help{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#toast .t-undo{margin-left:var(--sp-2);background:none;border:0;color:var(--c-pri-soft-2);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer}

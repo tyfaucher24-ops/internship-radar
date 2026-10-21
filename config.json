@@ -115,5 +115,390 @@
   "Consulting & Strategy": "excel,powerpoint,analysis,consulting,strategy,research,case,presentation",
   "Supply Chain & Logistics": "excel,supply chain,logistics,procurement,sql,operations,inventory",
   "Research": "research,lab,data analysis,python,r,statistics,writing"
+ },
+ "roleGroups": [
+  {
+   "g": "ib",
+   "label": "Investment banking",
+   "re": "investment bank|\\bibd?\\b|m&a|mergers|capital markets|leveraged finance|equity research|banking (summer )?analyst|global banking|corporate (&|and) investment bank|summer analyst.*bank|banking (associate|summer|intern)|investment banking|corporate finance (&|and) advisory|restructuring",
+   "adj": [
+    "pe",
+    "finance",
+    "sandt"
+   ]
+  },
+  {
+   "g": "pe",
+   "label": "Private equity / VC",
+   "re": "private equity|growth equity|venture capital|\\bvc\\b|buyout|private credit|private markets",
+   "adj": [
+    "ib",
+    "finance"
+   ]
+  },
+  {
+   "g": "quant",
+   "label": "Quant / trading",
+   "re": "quant|trading|trader|algorithmic|systematic|market making|\\bstrats?\\b",
+   "adj": [
+    "swe",
+    "data",
+    "sandt"
+   ]
+  },
+  {
+   "g": "sandt",
+   "label": "Sales & trading / markets",
+   "re": "sales (&|and) trading|\\bs&t\\b|global markets|markets (summer )?analyst",
+   "adj": [
+    "quant",
+    "ib"
+   ]
+  },
+  {
+   "g": "hardware",
+   "label": "Hardware / electrical",
+   "re": "hardware|electrical|\\bic\\b|analog|asic|fpga|\\brf\\b|embedded|firmware|circuit|semiconductor|silicon|mixed.signal|pcb|power electronics",
+   "adj": [
+    "mech",
+    "swe"
+   ]
+  },
+  {
+   "g": "mech",
+   "label": "Mechanical / process / manufacturing engineering",
+   "re": "mechanical|manufacturing|process (research )?engineer|chemical|packaging engineer|industrial engineer|civil|structural|materials|quality engineer|product engineer|design engineer|aerospace|propulsion|controls engineer|plant|construction|environmental engineer",
+   "adj": [
+    "hardware",
+    "ops"
+   ]
+  },
+  {
+   "g": "data",
+   "label": "Data / ML / AI",
+   "re": "data (scien|analy|engineer)|machine learning|\\bml\\b|\\bai\\b|artificial intelligence|analytics|business intelligence|\\bnlp\\b|computer vision",
+   "adj": [
+    "swe",
+    "quant"
+   ]
+  },
+  {
+   "g": "swe",
+   "label": "Software engineering",
+   "re": "software|developer|\\bswe\\b|full.?stack|back.?end|front.?end|web dev|mobile|devops|site reliability|\\bsre\\b|platform engineer|cloud engineer|programmer|infrastructure engineer|security engineer|application engineer",
+   "adj": [
+    "data",
+    "quant"
+   ]
+  },
+  {
+   "g": "consulting",
+   "label": "Consulting / strategy",
+   "re": "consult|strategy|advisory",
+   "adj": [
+    "finance",
+    "ops"
+   ]
+  },
+  {
+   "g": "marketing",
+   "label": "Marketing / communications",
+   "re": "marketing|brand|social media|content|communications|digital media|\\bseo\\b|advertis|public relations|\\bpr\\b|creative strategist|e.?commerce",
+   "adj": [
+    "sales",
+    "design"
+   ]
+  },
+  {
+   "g": "sales",
+   "label": "Sales / business development",
+   "re": "sales|business development|account (manager|executive)|\\bsdr\\b|\\bbdr\\b|customer success",
+   "adj": [
+    "marketing"
+   ]
+  },
+  {
+   "g": "accounting",
+   "label": "Accounting / audit / tax",
+   "re": "accounting|audit|\\btax\\b|assurance|\\bcpa\\b|controller",
+   "adj": [
+    "finance"
+   ]
+  },
+  {
+   "g": "finance",
+   "label": "Corporate finance / wealth / insurance",
+   "re": "finance|fp&a|treasury|financial analyst|credit|wealth|asset management|investment|underwrit|actuar|risk|banking|portfolio",
+   "adj": [
+    "ib",
+    "accounting",
+    "pe"
+   ]
+  },
+  {
+   "g": "nursing",
+   "label": "Nursing / patient care",
+   "re": "nurs|\\brn\\b|patient care|clinical (intern|extern)|\\bcna\\b|nurse extern|student nurse",
+   "adj": [
+    "health"
+   ]
+  },
+  {
+   "g": "health",
+   "label": "Health / life sciences",
+   "re": "pharma|pharmacy|clinical|health|medical|biolog|biotech|laborator|\\blab\\b|research.*(bio|chem)|hospital",
+   "adj": [
+    "nursing"
+   ]
+  },
+  {
+   "g": "product",
+   "label": "Product / program management",
+   "re": "product manag|program manag|project manag|\\bpm\\b intern",
+   "adj": [
+    "swe",
+    "consulting"
+   ]
+  },
+  {
+   "g": "ops",
+   "label": "Operations / supply chain",
+   "re": "operations|supply chain|logistics|procurement|purchasing|continuous improvement|lean",
+   "adj": [
+    "consulting",
+    "mech"
+   ]
+  },
+  {
+   "g": "design",
+   "label": "Design / UX",
+   "re": "\\bux\\b|\\bui\\b|user experience|graphic design|product design|visual design|designer",
+   "adj": [
+    "marketing"
+   ]
+  },
+  {
+   "g": "hr",
+   "label": "HR / recruiting",
+   "re": "human resources|\\bhr\\b|recruit|talent|people (ops|operations)",
+   "adj": [
+    "ops"
+   ]
+  },
+  {
+   "g": "legal",
+   "label": "Legal / compliance",
+   "re": "legal|\\blaw\\b|paralegal|compliance",
+   "adj": [
+    "finance"
+   ]
+  },
+  {
+   "g": "eng",
+   "label": "General engineering",
+   "re": "engineer|engineering|r&d|technician",
+   "adj": [
+    "mech",
+    "hardware",
+    "swe"
+   ]
+  }
+ ],
+ "majorGroups": {
+  "finance": [
+   "ib",
+   "pe",
+   "finance",
+   "sandt"
+  ],
+  "economics": [
+   "finance",
+   "ib",
+   "consulting",
+   "data"
+  ],
+  "accounting": [
+   "accounting",
+   "finance"
+  ],
+  "business": [
+   "ops",
+   "consulting",
+   "finance",
+   "sales",
+   "marketing"
+  ],
+  "management": [
+   "ops",
+   "consulting"
+  ],
+  "marketing": [
+   "marketing"
+  ],
+  "communications": [
+   "marketing"
+  ],
+  "journalism": [
+   "marketing"
+  ],
+  "advertising": [
+   "marketing"
+  ],
+  "computer science": [
+   "swe",
+   "data",
+   "quant"
+  ],
+  "software": [
+   "swe"
+  ],
+  "computer engineering": [
+   "swe",
+   "hardware"
+  ],
+  "electrical": [
+   "hardware"
+  ],
+  "mechanical": [
+   "mech"
+  ],
+  "chemical": [
+   "mech",
+   "health"
+  ],
+  "civil": [
+   "mech"
+  ],
+  "industrial": [
+   "mech",
+   "ops"
+  ],
+  "aerospace": [
+   "mech"
+  ],
+  "materials": [
+   "mech"
+  ],
+  "biomedical": [
+   "health",
+   "mech"
+  ],
+  "mathematics": [
+   "quant",
+   "data"
+  ],
+  "math": [
+   "quant",
+   "data"
+  ],
+  "statistics": [
+   "data",
+   "quant"
+  ],
+  "physics": [
+   "quant",
+   "hardware",
+   "data"
+  ],
+  "data science": [
+   "data"
+  ],
+  "information systems": [
+   "swe",
+   "data"
+  ],
+  "information technology": [
+   "swe"
+  ],
+  "nursing": [
+   "nursing"
+  ],
+  "biology": [
+   "health"
+  ],
+  "chemistry": [
+   "health"
+  ],
+  "public health": [
+   "health"
+  ],
+  "health": [
+   "health"
+  ],
+  "pharmacy": [
+   "health"
+  ],
+  "psychology": [
+   "hr",
+   "health",
+   "marketing"
+  ],
+  "human resources": [
+   "hr"
+  ],
+  "supply chain": [
+   "ops"
+  ],
+  "design": [
+   "design"
+  ],
+  "graphic": [
+   "design"
+  ],
+  "political science": [
+   "legal"
+  ],
+  "law": [
+   "legal"
+  ],
+  "undeclared": []
+ },
+ "industryGroups": {
+  "Finance & Banking": [
+   "finance"
+  ],
+  "Quant & Trading": [
+   "quant"
+  ],
+  "Software & IT": [
+   "swe"
+  ],
+  "Data & AI": [
+   "data"
+  ],
+  "Marketing & Sales": [
+   "marketing"
+  ],
+  "Healthcare & Life Sciences": [
+   "health"
+  ],
+  "Accounting & Audit": [
+   "accounting"
+  ],
+  "Consulting & Strategy": [
+   "consulting"
+  ],
+  "Engineering & Hardware": [
+   "mech",
+   "hardware"
+  ],
+  "Business & Operations": [
+   "ops"
+  ],
+  "Supply Chain & Logistics": [
+   "ops"
+  ],
+  "Product Management": [
+   "product"
+  ],
+  "Design & Creative": [
+   "design"
+  ],
+  "HR & People": [
+   "hr"
+  ],
+  "Legal": [
+   "legal"
+  ]
  }
 }

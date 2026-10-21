@@ -54,7 +54,7 @@ window.renderFeedback=async function(){const el=$('fbBody');if(!MatchCore.hasPro
  if(!base.relocate)add('Say you’re open to relocating',{relocate:true});
  if(!base.remoteOK)add('Say remote is OK',{remoteOK:true});
  const r=await multi(cands.map(c=>c.pr));const ids=r.ids,idx=new Map(ids.map((id,i)=>[id,i]));
- const lifts=cands.map((c,j)=>{const arr=r.pcts[j];let up=0,toB=0;for(const x of live){const i=idx.get(x.id);if(i==null)continue;const o=MSCORE.get(x.id).pct,nw=arr[i];if(gIdx(nw)<gIdx(o)){up++;if(!/^[AB]/.test(MatchCore.grade(o,MW))&&/^[AB]/.test(MatchCore.grade(nw,MW)))toB++}}return{...c,up,toB}}).filter(c=>c.up>0).sort((a,b)=>b.up-a.up).slice(0,3);
+ const lifts=cands.map((c,j)=>{const arr=r.pcts[j];let up=0,toB=0;for(const x of live){const i=idx.get(x.id);if(i==null)continue;const o=MSCORE.get(x.id).pct,nw=arr[i]===255?o:arr[i];if(gIdx(nw)<gIdx(o)){up++;if(!/^[AB]/.test(MatchCore.grade(o,MW))&&/^[AB]/.test(MatchCore.grade(nw,MW)))toB++}}return{...c,up,toB}}).filter(c=>c.up>0).sort((a,b)=>b.up-a.up).slice(0,3);
  const checks=resumeChecks();window._fbMs=Math.round(performance.now()-t0);
  const bar=Object.entries(cnt).map(([g,n])=>`<div class="fb-g"><span class="mbadge ${({A:'g5',B:'g4',C:'g3',D:'g2',F:'g0'})[g]}">${g}</span><b>${N(n)}</b><i style="width:${Math.max(1,Math.round(100*n/live.length))}%"></i></div>`).join('');
  el.innerHTML=`

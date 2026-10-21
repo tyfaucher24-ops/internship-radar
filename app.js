@@ -1,5 +1,5 @@
 /* Internship Radar V5: website layout. Find = card grid + pill filter bar; details load on demand. All user data via Store. */
-let D=[],META={},profile=Store.get('profile',{}),BYID=new Map(),MSCORE=new Map();
+let D=[],META={},profile=Store.get('profile',{}),BYID=new Map(),MSCORE=new Map(),UNGR=new Set();
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const ago=iso=>{if(!iso)return'never';const s=(Date.now()-new Date(iso.length===16?iso+':00Z':iso))/1000;if(s<90)return'just now';if(s<3600)return Math.round(s/60)+' min ago';if(s<86400)return Math.round(s/3600)+' h ago';return Math.round(s/86400)+' d ago'};
 const pdate=x=>x.posted||x.fs||'';
@@ -14,13 +14,13 @@ function closeLbl(x){if(x.st==='upcoming')return{t:x.pred?.label||'Opening soon'
  if(n<0)return{t:'Closed '+shortDate(x.deadline),c:'closed'};return{t:n===0?'Closes today':n===1?'Closes tomorrow':'Closes '+shortDate(x.deadline)+(n<7?` · ${n} days`:''),c:n<3?'red':n<7?'amber':'ok'}}
 function locShort(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));let s=L.slice(0,1).join('')+(L.length>1?` +${L.length-1} more`:'');if(x.remote)s=s?s+' · Remote':'Remote';return s||x.loc_label||'Remote/Unspecified'}
 function locFull(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));if(x.remote)L.push('Remote');return L.join(' · ')||x.loc_label||'Remote/Unspecified'}
-function mbadge(x){const m=MSCORE.get(x.id);if(!m)return'';return`<span class="mbadge ${m.band}" title="Match ${m.pct}%, grade ${m.grade}">${m.pct}% · ${m.grade}</span>`}
+function mbadge(x){const m=MSCORE.get(x.id);if(!m)return UNGR.has(x.id)?'<span class="mbadge gna" title="Not enough info to grade this one. Open it to see what to add.">Not enough info</span>':'';const v=m.pct>=(MW?.grader?.verdict?.strong??75)?['strong','Strong shot']:m.pct>=(MW?.grader?.verdict?.worth??55)?['worth','Worth applying']:['long','Long shot'];return`<span class="mbadge ${m.band}" title="Match ${m.pct}%, grade ${m.grade}">${m.pct}% · ${m.grade}</span><span class="verd v-${v[0]}">${v[1]}</span>`}
 function saveBtn(x){if(x.st==='upcoming'){const on=Store.get('notify',[]).includes(x.id);return`<button class="btn-save${on?' on':''}" data-act="notify" aria-pressed="${on}">${on?'🔔 Notifying':'Notify me'}</button>`}
  const t=T.byListing(x.id);return t?`<button class="btn-save on" data-act="tracker" aria-label="In your tracker: ${esc(t.status)}">✓ ${esc(t.status)}</button>`:`<button class="btn-save" data-act="save" aria-label="Save ${esc(x.company)} ${esc(x.title)}">Save</button>`}
 function cardHTML(x){const c=closeLbl(x);return`<article class="card${x.st==='closed'?' isclosed':''}" role="listitem" tabindex="0" data-id="${esc(x.id)}" aria-label="${esc(x.company+', '+x.title)}">
- <div class="c-top">${logoHTML(x)}<div class="c-co" title="${esc(x.company)}">${esc(x.company)}</div>${mbadge(x)}</div>
+ <div class="c-top">${logoHTML(x)}<div class="c-co" title="${esc(x.company)}">${esc(x.company)}</div></div>
  <h3 class="c-role" title="${esc(x.title)}">${esc(x.title)}</h3>
- <p class="c-loc" title="${esc(locFull(x))}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>${esc(locShort(x))}</p>
+ <p class="c-loc" title="${esc(locFull(x))}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>${esc(locShort(x))}</p>${(MSCORE.size||UNGR.size)?`<p class="c-verd">${mbadge(x)}</p>`:''}
  <div class="c-foot"><span class="dl dl-${c.c}">${esc(c.t)}</span>${saveBtn(x)}</div></article>`}
 const card=(x,extra='')=>cardHTML(x).replace('<div class="c-foot">',extra?`<div class="c-extra">${extra}</div><div class="c-foot">`:'<div class="c-foot">');
 /* ---------- navigation (hash pages, natural scroll) ---------- */
@@ -92,6 +92,7 @@ function compute(){const t0=performance.now();const q=parseQ(F.q);TRACKED=new Se
   else{const fn=FD[fail][2];for(const v of fn(x))COUNTS[fail].set(v,(COUNTS[fail].get(v)||0)+1)}}
  const s=F.sort;const cmpDl=(a,b)=>(a.deadline&&days(a.deadline)>=0?a.deadline:'9999').localeCompare(b.deadline&&days(b.deadline)>=0?b.deadline:'9999');
  out.sort(s==='deadline'?(a,b)=>cmpDl(a,b)||pdate(b).localeCompare(pdate(a)):s==='az'?(a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title):s==='match'?(a,b)=>(MSCORE.get(b.id)?.pct??-1)-(MSCORE.get(a.id)?.pct??-1)||cmpDl(a,b):(a,b)=>pdate(b).localeCompare(pdate(a))||cmpDl(a,b));
+ if(s==='match'){/* V9: one company can't take over the top: each extra role from the same company ranks a few points lower (the score itself is unchanged) */const pen=MW?.grader?.diversityPenalty??3,seen=new Map(),eff=new Map();for(const x of out){const m=MSCORE.get(x.id);if(!m)continue;const k=x.company,n=(seen.get(k)||0);seen.set(k,n+1);eff.set(x.id,m.pct-pen*n)}out.sort((a,b)=>(eff.get(b.id)??-99)-(eff.get(a.id)??-99)||cmpDl(a,b))}
  RES=out;window._lastFilterMs=performance.now()-t0}
 function optList(k){const C=COUNTS[k]||new Map(),o=FD[k][3],sel=fv(k);const all=o||[...C.keys()].sort((a,b)=>(C.get(b)-C.get(a))||a.localeCompare(b));
  if(k==='loc'){const opts=[],seen=new Set();const add=(v,extra)=>{if(seen.has(v+(extra.pinned?'*':'')))return;seen.add(v+(extra.pinned?'*':''));opts.push({v,label:locLabel(v),count:C.get(v)||0,...extra})};
@@ -149,8 +150,8 @@ $('sort').onchange=e=>{F.sort=e.target.value;update()};
 /* ---------- windowed card grid (rows of N cards; only visible rows are in the DOM) ---------- */
 let lastRange='',animateNext=false;
 const gridCols=()=>innerWidth>=1100?3:innerWidth>=700?2:1;
-const ROWH=()=>innerWidth>=700?236:226;
-function vrender(force){const vl=$('vl');if($('t-db').hidden)return;const n=gridCols(),rh=ROWH(),rows=Math.ceil(RES.length/n);vl.style.height=rows*rh+'px';vl.style.setProperty('--cols',n);
+const ROWH=()=>(innerWidth>=700?236:226)+((MSCORE.size||UNGR.size)?30:0);
+function vrender(force){document.body.classList.toggle('graded',!!(MSCORE.size||UNGR.size));const vl=$('vl');if($('t-db').hidden)return;const n=gridCols(),rh=ROWH(),rows=Math.ceil(RES.length/n);vl.style.height=rows*rh+'px';vl.style.setProperty('--cols',n);
  const top=vl.getBoundingClientRect().top+scrollY,vh=innerHeight;const s=Math.max(0,Math.floor((scrollY-top)/rh)-3),e=Math.min(rows,Math.ceil((scrollY-top+vh)/rh)+3);
  const key=s+':'+e+':'+RES.length+':'+n;if(!force&&key===lastRange)return;lastRange=key;
  let h='';for(let r=s;r<e;r++){h+=`<div class="grow" style="transform:translateY(${r*rh}px)">`;for(let c=0;c<n;c++){const x=RES[r*n+c];if(x)h+=cardHTML(x)}h+='</div>'}
@@ -173,11 +174,18 @@ function bump(){const n=$('trkN');if(!n||RM)return;n.classList.remove('bump');vo
 ['vl'].forEach(id=>{$(id).addEventListener('click',onCardClick);$(id).addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.card'))onCardClick(e)})});
 /* ---------- drawer (transform-only slide, 250ms) ---------- */
 let lastFocus=null;
+/* V9 honest feedback panel (drawer): verdict, strengths, gaps, actions */
+function fbPanel(d){const cap=s=>esc(s[0].toUpperCase()+s.slice(1));const f=d.feedback||{};const v=f.verdict||{};
+ if(d.pct==null)return`<section class="fbp fbp-gna" aria-label="Match feedback"><p class="fbp-h"><span class="mbadge gna">Not enough info to grade</span></p><p>We won't show a score we can't back up. To grade this one, add ${esc((d.need||[]).join(', '))}.</p>${d.ungraded==='profile'?'<p><a href="#profile" data-go="profile" class="btn small">Add to my profile</a></p>':''}</section>`;
+ const li=a=>a.map(s=>`<li>${cap(String(s).replace(/\.+$/,''))}.</li>`).join('');
+ return`<section class="fbp fbp-${esc(v.k||'long')}" aria-label="Match feedback"><div class="fbp-top"><span class="mbadge ${d.band}">${d.pct}% · ${d.grade}</span><button type="button" class="tip" data-tip="Match %" aria-label="What is match %?">?</button><span class="fbp-verdict">${esc(v.t||'')}</span><span class="muted small">${esc(d.conf)} confidence</span></div>
+ <p class="fbp-why">${cap(String(v.why||'').replace(/\.+$/,''))}.</p>
+ <div class="fbp-cols">${f.strengths&&f.strengths.length?`<div><h4>Why it's a match</h4><ul>${li(f.strengths)}</ul></div>`:''}${f.gaps&&f.gaps.length?`<div><h4>What's holding you back</h4><ul>${li(f.gaps)}</ul></div>`:''}${f.actions&&f.actions.length?`<div><h4>What to do to improve your odds</h4><ul>${li(f.actions)}</ul></div>`:''}</div></section>`}
 function fact(k,v){return`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>`}
 async function openDrawer(x){lastFocus=document.activeElement;const m=MSCORE.get(x.id);const c=closeLbl(x);
  $('dbody').innerHTML=`<div class="dhead">${logoHTML(x,true)}<div><p class="lco">${esc(x.company)}</p><h2 id="dTitle">${esc(x.title)}</h2><p class="muted">${esc(locFull(x))}</p></div></div>
  <div class="drow"><span class="dl dl-${c.c}">${esc(c.t)}</span><span class="muted small">${postedAgo(x)}</span></div><div class="gloss" id="dGloss">${glossHTML(x.title+' '+c.t+' '+(x.sponsorship||'')+(x.citizenship?' sponsorship':''))}</div>
- ${m?(()=>{const d=matchDetail(x);return d?`<div class="mwhy"><p class="mwhy-h"><span class="mbadge ${d.band}">${d.pct}% · ${d.grade}</span> <button type="button" class="tip" data-tip="Match %" aria-label="What is match %?">?</button> <span class="muted small">${d.conf} confidence</span></p><ul>${d.reasons.map(r=>`<li>${esc(r[0].toUpperCase()+r.slice(1))}.</li>`).join('')}</ul>${d.tip?`<p class="tip"><b>Tip:</b> ${esc(d.tip)}</p>`:''}</div>`:''})():''}${x.pred?`<p class="why">📈 ${esc(x.pred.label)} (${esc(x.pred.confidence)} confidence)<span id="predBasis"></span>.</p>`:''}
+ ${(m||UNGR.has(x.id))?(()=>{const d=matchDetail(x);return d?fbPanel(d):''})():''}${x.pred?`<p class="why">📈 ${esc(x.pred.label)} (${esc(x.pred.confidence)} confidence)<span id="predBasis"></span>.</p>`:''}
  <p class="dact" id="dAct"><span class="skel" style="width:220px;height:44px;display:inline-block"></span></p>
  <dl class="facts" id="dFacts"></dl>
  <h3>Description</h3><div id="dDesc" class="desc"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>
@@ -351,18 +359,18 @@ async function saveAndSearch(){pfRead();const errs=[];if(PF.gpa&&(isNaN(+PF.gpa)
  $('pfSave').disabled=true;$('pfMsg').textContent='Grading internships…';await rescore();const n=D.filter(x=>x.live&&MSCORE.has(x.id)).length;$('pfSave').disabled=false;$('pfMsg').textContent='Saved';
  F.sort='match';$('sort').value='match';go('db');update();vrender(true);toastMsg(`Showing your matches. ${n.toLocaleString()} internships graded.`);$('pfMsg').innerHTML='Saved · <a href="#feedback" data-go="feedback">See honest feedback</a>';const fl=$('fbLink');if(fl)fl.hidden=false;if($('fbNudge'))$('fbNudge').hidden=false}
 function resetProfile(){const nT=(typeof T!=='undefined'?T.all().length:0),nP=Store.get('savedFilters',[]).length;openModal(`<h2>Reset to default?</h2><div class="rs-cols"><div><h3>This clears</h3><ul><li>Your profile (school, major, GPA, skills, experience)</li><li>Your uploaded resume text</li><li>All match grades and feedback</li><li>Your current search and filters</li></ul></div><div><h3>This keeps</h3><ul><li>Your tracker (${nT} saved internship${nT===1?'':'s'})</li><li>Saved filter presets (${nP})</li></ul></div></div>${nT?`<label class="rs-tr"><input type="checkbox" id="rsTr"> Also clear my tracker (${nT} internship${nT===1?'':'s'}). This can't be undone.</label>`:''}<div class="mf-foot"><button type="button" class="link" id="rsNo">Cancel</button><button type="button" class="btn danger" id="rsYes">Reset</button></div>`);
- $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');Store.remove('resumeText');profile={v:6};PF={v:6,experience:[],skills:[],locations:[],industries:[]};OPENEXP=-1;MSCORE=new Map();
+ $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');Store.remove('resumeText');profile={v:6};UNGR=new Set();PF={v:6,experience:[],skills:[],locations:[],industries:[]};OPENEXP=-1;MSCORE=new Map();
   const clrT=$('rsTr')?.checked;if(clrT)T.save([]);F={...DEFAULTS};$('q').value='';saveF();renderPills();if($('fbNudge'))$('fbNudge').hidden=true;$('sort').value=F.sort;closeModal();pfRender();$('rstat').textContent='';go('db');update();vrender(true);toastMsg(clrT?'Profile, filters and tracker cleared.':'Profile and filters reset. Your tracker was kept.')}}
 /* ---------- grading: Web Worker rescoring (falls back to time-sliced main thread) ---------- */
 let MWK=null,mwInit=false,mwSeq=0;
 function slimRows(){return D.filter(x=>x.st!=='closed').map(x=>({id:x.id,title:x.title,company:x.company,industry:x.industry||x.category,class_years:x.class_years,size:x.size,metro_pop:x.metro_pop,remote:x.remote,posted:x.posted,fs:x.first_seen,gpa_min:x.gpa_min,openings:x.openings,paid:x.paid,sponsorship:x.sponsorship,citizenship:x.citizenship,locations:(x.locations||[]).map(l=>({pop:l.pop})),_t:x._t}))}
-async function rescore(){if(!MatchCore.hasProfile(profile)){MSCORE=new Map();return 0}await cfgReady;await MWready;const t0=performance.now();
- const apply=(ids,pct)=>{if(!MatchCore.hasProfile(profile)){MSCORE=new Map();return 0}const M=new Map();for(let i=0;i<ids.length;i++){const p=pct[i];M.set(ids[i],{pct:p,grade:MatchCore.grade(p,MW),band:MatchCore.band(p)})}MSCORE=M;window._rescoreMs=Math.round(performance.now()-t0);return M.size};
+async function rescore(){if(!MatchCore.hasProfile(profile)){MSCORE=new Map();UNGR=new Set();return 0}await cfgReady;await MWready;const t0=performance.now();
+ const apply=(ids,pct)=>{if(!MatchCore.hasProfile(profile)){MSCORE=new Map();UNGR=new Set();return 0}const M=new Map();UNGR=new Set();for(let i=0;i<ids.length;i++){const p=pct[i];if(p==null||p===255){UNGR.add(ids[i]);continue}M.set(ids[i],{pct:p,grade:MatchCore.grade(p,MW),band:MatchCore.band(p)})}MSCORE=M;window._rescoreMs=Math.round(performance.now()-t0);return M.size};
  if(window.Worker){try{if(!MWK){MWK=new Worker('match-worker.js')}if(!mwInit){MWK.postMessage({t:'init',rows:slimRows(),cfg:CFG,w:MW});mwInit=true}
   const seq=++mwSeq;return await new Promise((res,rej)=>{MWK.onmessage=e=>{if(e.data.seq===seq)res(apply(e.data.ids,e.data.pct))};MWK.onerror=rej;MWK.postMessage({t:'score',seq,profile})})}catch(_){MWK=null}}
  const P=MatchCore.profile(profile),rows=D.filter(x=>x.st!=='closed'),ids=[],pct=[];for(let i=0;i<rows.length;i++){ids.push(rows[i].id);pct.push(MatchCore.score({...rows[i],industry:rows[i].industry||rows[i].category},P,CFG,MW).pct);if(i%1500===1499)await new Promise(r=>setTimeout(r,0))}return apply(ids,pct)}
 async function refreshMatches(){await rescore();if(!MSCORE.size&&F.minm)F.minm='';renderPills();vrender(true);if(F.sort==='match')update(true)}
-function matchDetail(x){if(!MSCORE.has(x.id)||!CFG||!MW)return null;return MatchCore.score({...x,industry:x.industry||x.category},MatchCore.profile(profile),CFG,MW)}
+function matchDetail(x){if(!(MSCORE.has(x.id)||UNGR.has(x.id))||!CFG||!MW)return null;return MatchCore.score({...x,industry:x.industry||x.category},MatchCore.profile(profile),CFG,MW)}
 document.addEventListener('radar:tracker',()=>{vrender(true);$('trkN').textContent=T.all().length||''});
 
 boot();

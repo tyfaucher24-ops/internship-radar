@@ -20,7 +20,7 @@ with sync_playwright() as p:
   R['toast']=pg.evaluate("document.getElementById('toast')?.textContent");R['rescore_ms']=pg.evaluate('window._rescoreMs');R['sort']=pg.evaluate("document.getElementById('sort').value")
   R['first_badges']=pg.locator('#vl .mbadge').all_inner_texts()[:6]
   pg.screenshot(path=SS+'v6-home-grades.png')
-  pg.click('#vl .card >> nth=0');pg.wait_for_selector('.mwhy',timeout=8000);pg.wait_for_timeout(400);R['drawer']=pg.inner_text('.mwhy');pg.screenshot(path=SS+'v6-drawer.png');pg.keyboard.press('Escape')
+  pg.click('#vl .card >> nth=0');pg.wait_for_selector('.fbp',timeout=8000);pg.wait_for_timeout(400);R['drawer']=pg.inner_text('.fbp');pg.screenshot(path=SS+'v6-drawer.png');pg.keyboard.press('Escape')
   pg.click('[data-pill=minm]');pg.wait_for_timeout(200);pg.keyboard.type('75');pg.keyboard.press('Enter');pg.click('[data-apply]');pg.wait_for_timeout(300);R['count_75']=pg.inner_text('#count')
   # re-save with the top-student profile -> rescoring changes
   pg.goto(B+'#profile');pg.wait_for_function('window._interactiveAt');pg.evaluate("p=>localStorage.setItem('idr_profileDraft',JSON.stringify(p))",T['top']);pg.reload();pg.wait_for_function('window._interactiveAt');pg.wait_for_timeout(200)

@@ -90,5 +90,11 @@
   "max": 50,
   "reliefBelow": 60
  },
- "strictness": 1.35
+ "strictness": 1.35,
+ "eliteFirm": {
+  "_readme": "Firms with tier 1 in config.json firmTiers (each has a cited public acceptance-rate source). Weak profiles are capped.",
+  "maxTier": 1,
+  "noRelatedExpCap": 50,
+  "belowGpaBarCap": 60
+ }
 }

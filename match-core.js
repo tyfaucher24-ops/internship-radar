@@ -9,7 +9,7 @@ const TSTOP=new Set('intern internship interns summer fall spring winter 2026 20
 MC.grade=(p,W)=>{for(const [m,g] of (W.grades||[]))if(p>=m)return g;return'F'};
 MC.band=p=>p>=90?'g5':p>=75?'g4':p>=60?'g3':p>=45?'g2':p>=30?'g1':'g0';
 function avgW(parts,w){let s=0,t=0,n=0;for(const [k,v] of parts){if(v==null)continue;const ww=+w[k]||0;s+=v*ww;t+=ww;n++}return t?{v:s/t,n}:{v:null,n:0}}
-function firmRow(C,co){const n=norm(co);return (C.firmTiers||[]).filter(f=>!f.placeholder).find(f=>{const k=norm(f.firm);return k&&(n===k||n.startsWith(k+' ')||k.startsWith(n+' '))})}
+function firmRow(C,co){const n=norm(co);return (C.firmTiers||[]).filter(f=>!f.placeholder).find(f=>{const k=norm(f.firm);return [f.firm,...(f.aliases||[])].map(norm).some(k=>k&&(n===k||n.startsWith(k+' ')||k.startsWith(n+' ')))})}
 // competition: 0 = few applicants expected, 100 = very crowded. Real inputs only.
 function competition(x,firm){const parts=[],why=[],easy=[];
  const sz=x.size||'';if(/^Small|1[–-]200/i.test(sz)){parts.push(20);easy.push('a small firm')}else if(/^Mid/i.test(sz))parts.push(50);else if(/^Large|5,?000\+/i.test(sz)){parts.push(80);why.push('a large, well-known employer')}
@@ -65,10 +65,12 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const B=W.lowCompetitionBoost||{};if(comp.score!=null&&comp.score<(B.below||35))pct+=(100-pct)*((B.below-comp.score)/B.below)*(B.strength||.5);
  // strictness curve: pct^k pulls every score down and the top hardest in absolute terms, so A grades are rare (match-weights.json strictness)
  if(W.strictness&&W.strictness!==1)pct=100*Math.pow(Math.max(0,pct)/100,W.strictness);
+ // elite firms (sub-1% acceptance, cited in config.json): a weak profile can't grade above D/C-
+ const EF=W.eliteFirm;let elite=null;if(EF&&firm&&+firm.tier<=EF.maxTier){if(!rel.length){pct=Math.min(pct,EF.noRelatedExpCap);elite=`${firm.firm} accepts under 1% of intern applicants, and you have no related experience yet`}else if(!P.gpa||P.gpa<(+firm.gpaBar||0)){pct=Math.min(pct,EF.belowGpaBarCap);elite=`${firm.firm} accepts under 1% of intern applicants${P.gpa?`; your GPA is under the ${firm.gpaBar} most applicants have`:'; add your GPA'}`}}
  if(ineligible)pct=Math.min(pct,W.ineligibleCap||40);
  pct=Math.max(0,Math.min(100,Math.round(pct)));
  const known=fit.n+odds.n+prefs.n,conf=known>=9?'high':known>=6?'medium':'low';
- const reasons=ineligible?[`Not eligible: ${ineligible}`]:[...pos.slice(0,3),...neg.slice(0,1)].slice(0,3);
+ const reasons=ineligible?[`Not eligible: ${ineligible}`]:elite?[elite,...pos.slice(0,2)]:[...pos.slice(0,3),...neg.slice(0,1)].slice(0,3);
  let tip=null;if(!ineligible&&pct<60){tip=!P.skills.length?'Add your skills (or upload a resume) to sharpen this score.':!P.exp.length?'Add any experience: part-time jobs, clubs and projects all count.':sk.length===0&&kws.length?`Roles like this ask for ${kws.slice(0,3).join(', ')}; add them if you have them.`:'Look for similar roles at smaller or local firms, where your odds are higher.'}
  return {pct,grade:MC.grade(pct,W),band:MC.band(pct),fit:Math.round(fit.v??0),odds:Math.round(odds.v??0),prefs:prefs.v==null?null:Math.round(prefs.v),comp:comp.score,reasons:reasons.length?reasons:['Little overlap with your profile yet'],tip,conf,ineligible:!!ineligible}};
 MC.profile=function(pr){const sk=(pr.skills||[]).map(s=>norm(s)).filter(Boolean);

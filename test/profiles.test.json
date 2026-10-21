@@ -1,4 +1,151 @@
-{"_note":"TEST PROFILES ONLY - never shipped or loaded by the site.",
-"none":{"_test":true,"school":"Wichita State University","major":"Business","classYear":"Freshman","gpa":"","sponsorship":"no","industries":["Business & Operations","Marketing & Sales"],"locations":["Wichita, KS"],"remoteOK":true,"relocate":false,"experience":[],"skills":["excel","communication"],"savedAt":"t"},
-"average":{"_test":true,"school":"University of North Carolina at Charlotte","major":"Finance","classYear":"Junior","gpa":"3.3","sponsorship":"no","industries":["Finance & Banking","Accounting & Audit"],"locations":["Charlotte, NC","Raleigh, NC"],"remoteOK":true,"relocate":true,"experience":[{"title":"Bank Teller","org":"Truist","bullets":["Handled cash transactions and customer accounts"]},{"title":"Treasurer","org":"Finance Club","bullets":["Managed club budget in Excel"]}],"skills":["excel","financial modeling","accounting","powerpoint","customer service"],"savedAt":"t"},
-"top":{"_test":true,"school":"University of Michigan","major":"Computer Science","minor":"Mathematics","classYear":"Junior","gpa":"3.9","sponsorship":"no","industries":["Software & IT","Data & AI"],"locations":["San Francisco, CA","New York, NY","Seattle, WA"],"remoteOK":true,"relocate":true,"experience":[{"title":"Software Engineering Intern","org":"Google","bullets":["Built backend services in Python and Go","Improved data pipeline latency 30%"]},{"title":"Machine Learning Research Assistant","org":"UMich AI Lab","bullets":["Trained PyTorch models for NLP"]},{"title":"Hackathon Winner","org":"MHacks","bullets":["Built a React app with a Node backend"]}],"skills":["python","java","c++","javascript","react","sql","machine learning","pytorch","aws","git","data structures","software engineering"],"savedAt":"t"}}
+{
+ "_note": "TEST PROFILES ONLY - never shipped or loaded by the site.",
+ "none": {
+  "_test": true,
+  "school": "Wichita State University",
+  "major": "Business",
+  "classYear": "Freshman",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Business & Operations",
+   "Marketing & Sales"
+  ],
+  "locations": [
+   "Wichita, KS"
+  ],
+  "remoteOK": true,
+  "relocate": false,
+  "experience": [],
+  "skills": [
+   "excel",
+   "communication"
+  ],
+  "savedAt": "t"
+ },
+ "average": {
+  "_test": true,
+  "school": "University of North Carolina at Charlotte",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking",
+   "Accounting & Audit"
+  ],
+  "locations": [
+   "Charlotte, NC",
+   "Raleigh, NC"
+  ],
+  "remoteOK": true,
+  "relocate": true,
+  "experience": [
+   {
+    "title": "Bank Teller",
+    "org": "Truist",
+    "bullets": [
+     "Handled cash transactions and customer accounts"
+    ]
+   },
+   {
+    "title": "Treasurer",
+    "org": "Finance Club",
+    "bullets": [
+     "Managed club budget in Excel"
+    ]
+   }
+  ],
+  "skills": [
+   "excel",
+   "financial modeling",
+   "accounting",
+   "powerpoint",
+   "customer service"
+  ],
+  "savedAt": "t"
+ },
+ "top": {
+  "_test": true,
+  "school": "University of Michigan",
+  "major": "Computer Science",
+  "minor": "Mathematics",
+  "classYear": "Junior",
+  "gpa": "3.9",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT",
+   "Data & AI"
+  ],
+  "locations": [
+   "San Francisco, CA",
+   "New York, NY",
+   "Seattle, WA"
+  ],
+  "remoteOK": true,
+  "relocate": true,
+  "experience": [
+   {
+    "title": "Software Engineering Intern",
+    "org": "Google",
+    "bullets": [
+     "Built backend services in Python and Go",
+     "Improved data pipeline latency 30%"
+    ]
+   },
+   {
+    "title": "Machine Learning Research Assistant",
+    "org": "UMich AI Lab",
+    "bullets": [
+     "Trained PyTorch models for NLP"
+    ]
+   },
+   {
+    "title": "Hackathon Winner",
+    "org": "MHacks",
+    "bullets": [
+     "Built a React app with a Node backend"
+    ]
+   }
+  ],
+  "skills": [
+   "python",
+   "java",
+   "c++",
+   "javascript",
+   "react",
+   "sql",
+   "machine learning",
+   "pytorch",
+   "aws",
+   "git",
+   "data structures",
+   "software engineering"
+  ],
+  "savedAt": "t"
+ },
+ "sophomoreNone": {
+  "_test": true,
+  "school": "Wichita State University",
+  "major": "Business",
+  "classYear": "Sophomore",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking",
+   "Business & Operations"
+  ],
+  "locations": [
+   "Wichita, KS"
+  ],
+  "remoteOK": true,
+  "relocate": false,
+  "experience": [],
+  "skills": [
+   "excel",
+   "communication"
+  ],
+  "savedAt": "t",
+  "_about": "No experience, sophomore, finance interest (Ty benchmark)"
+ }
+}

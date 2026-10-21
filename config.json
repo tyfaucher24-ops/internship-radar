@@ -14,6 +14,42 @@
    "gpaBar": 3.0,
    "targetSchoolsOnly": false,
    "placeholder": true
+  },
+  {
+   "firm": "JPMorgan Chase",
+   "aliases": [
+    "JP Morgan Chase",
+    "JPMorganChase",
+    "JPMorgan",
+    "J.P. Morgan"
+   ],
+   "tier": 1,
+   "gpaBar": 3.5,
+   "targetSchoolsOnly": false,
+   "evidence": "630,000 internship applications for about 4,100 interns in 2025 (~0.7%)",
+   "source": "https://www.efinancialcareers.com/news/bank-acceptance-rate (citing Financial News, https://www.fnlondon.com/articles/record-number-of-graduates-apply-to-be-wall-street-bankers-0ac689a8)"
+  },
+  {
+   "firm": "Bank of America",
+   "aliases": [
+    "Bank of America / Merrill",
+    "BofA",
+    "Merrill"
+   ],
+   "tier": 1,
+   "gpaBar": 3.5,
+   "targetSchoolsOnly": false,
+   "evidence": "About 240,000 applications for fewer than 2,000 summer internships in 2026 (~0.8%)",
+   "source": "https://www.businessinsider.com/bank-of-america-summer-interns-wall-street-ai-2026-6"
+  },
+  {
+   "firm": "Goldman Sachs",
+   "aliases": [],
+   "tier": 1,
+   "gpaBar": 3.5,
+   "targetSchoolsOnly": false,
+   "evidence": "Over 315,000 applications for 2,700 internship spots",
+   "source": "https://www.bloomberg.com/opinion/articles/2025-05-29/wall-street-interns-are-safe-from-ai-here-s-why"
   }
  ],
  "targetSchools": [

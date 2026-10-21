@@ -1,6 +1,18 @@
 # Internship Radar changelog
 
 
+## V11.2 — Polish + accurate resume reading (2026-10-21)
+- **Cards:** footer chips wrap onto a second line instead of overlapping; each chip stays on one line; short labels ("No deadline listed", "✓ OA", "✓ Interview"); every card in the grid is the same height and nothing spills outside it.
+- **Ticker:** every item, label and separator is vertically centred (Find and intro). Items never shrink or cut mid-text, and a 56px fade hides the edges. The label now shows the real last sync time from `data/meta.json` ("Synced 4:12 PM") and "⚠ over 4 h old" when it is stale.
+- **Tracker:** the table fits 1280/1440/1920 with no sideways scroll (fixed column widths, 48px rows). "Closes" merges days left and the date ("41 days · Dec 1"). Empty dates show "—" (the date picker opens on click), with no mm/dd/yyyy placeholders or stray picker icons. The select-all box is inside the header and centred. Status pills share one width, and header text is centred. The five stat boxes are now one slim bar (SAVED 0 | APPLIED 4 | …) with mono numbers, offers in green and closing-this-week in red; clicking a stat filters the table.
+- **Profile:** School only ever holds a school from the list. Short forms like "Queens University" match the one list entry by whole words, otherwise the field stays empty; older free-text values are migrated. Dropdown panels inside the columns are fixed to the screen and flip up or shift left, so a card never clips them. The search icon no longer covers the placeholder. GPA and Work authorization each get a full row. The work-auth labels are short ("Citizen / green card", "Other work permit", "Need sponsorship"). Column widths are rebalanced.
+- **Resume parser (rewritten):** reads name, school (list only), degree, major, minor, class year, GPA (cumulative first, 4.0 scale only), work authorization (only when stated), skills and experience ("Org | Title | dates", "Title, Org", org line + title line). It rejoins lines wrapped by narrow PDF columns and uses the education entry that belongs to the chosen school (for transfers). Low-confidence fields are left empty and listed under "Check these".
+  - Tests: 34 fictional TEST fixtures in `test/resumes/` (txt, docx, pdf, 2-column pdf; community college, state, Ivy, HBCU, international/F-1, career changer, veteran, D1 athletes, transfer). They are scored through the site's real PDF/DOCX reader by `test/resumes/score.py`.
+  - Tuning set (26): 76.5% → 100% field accuracy.
+  - Held-out set (8, written after tuning): 97.5% on the first run (2 major misses), 100% after fixing them. Per-field results are in the report.
+- **Grader feedback:** every strength, gap, action and verdict cites the real profile or listing (city, title, company, experience); the generic tips are gone. `test/grader_grounded.js` checks 2,645 feedback lines across the 7 personas + Ty's profile: 2,645 grounded. Grades stay harsh: Ty's profile (Queens, Finance, sophomore, 3.92, D1 lacrosse, investment club) gets F (24–30%) at JPMorgan. The top match is a Charlotte wealth-management internship.
+- **QA:** an automated overflow check (scrollWidth > clientWidth and spill outside cards/columns) on Find, drawer, Market, tracker and profile at 1280/1440/1920/390. test_v112 86/86, test_v111 32/32, V11 16/16, V10 41/41, V8 123/123.
+
 ## V11.1 — Stock-market polish (2026-10-21)
 - Rolling digits (position-only, under 500 ms) on the Find header count, intro counter, Details count and Market counts. Screen readers get the plain number.
 - Colour-blind grades toggle (profile menu ▾): high grades and "added" turn blue instead of green. Saved in this browser.

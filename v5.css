@@ -443,3 +443,4 @@ body.intro-on main#main{visibility:hidden}
  .beg .btn.sm{flex:1}
 }
 .c-foot{gap:var(--sp-2)}.c-foot .dl{min-width:0}
+.fact-nl{grid-column:1/-1}.fact-nl dd{color:var(--c-mut)}

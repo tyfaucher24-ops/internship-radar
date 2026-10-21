@@ -9,7 +9,7 @@ with sync_playwright() as p:
   for run in ['fresh','returning']:
     c=p.chromium.launch_persistent_context(prof,viewport={'width':1280,'height':800});pg=c.new_page();E=[];pg.on('pageerror',lambda e:E.append(str(e)))
     pg.goto(B);pg.wait_for_timeout(800);r={'root_intro':pg.evaluate(vis)}
-    pg.click('#skipIntro');pg.wait_for_timeout(700);r['after_skip_intro']=pg.evaluate(vis)
+    pg.click('#goFind');pg.wait_for_timeout(700);r['after_skip_intro']=pg.evaluate(vis)
     pg.click('.nav a[data-t="tracker"]');pg.wait_for_timeout(300);r['innav_intro']=pg.evaluate(vis)
     pg.click('header .brand');pg.wait_for_load_state();pg.wait_for_timeout(800);r['logo_intro']=pg.evaluate(vis)
     pg.click('#goFind');pg.wait_for_timeout(900);r['after_find_intro']=pg.evaluate(vis)

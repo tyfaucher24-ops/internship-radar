@@ -11,7 +11,7 @@ with sync_playwright() as p:
     pg.on('console',lambda m:errs.append(m.text) if m.type=='error' else None);pg.on('pageerror',lambda e:errs.append(str(e)))
     # first visit: intro
     pg.goto(BASE+'?introSlow=3');pg.wait_for_timeout(4500);pg.screenshot(path=SS+f'v4-intro-{name}.png')
-    pg.evaluate("document.getElementById('skipIntro').click()");pg.wait_for_timeout(600)
+    pg.evaluate("document.getElementById('goFind').click()");pg.wait_for_timeout(600)
     # returning visit timing
     pg.goto(BASE);pg.wait_for_function('window._interactiveAt',timeout=20000);ti=pg.evaluate('window._interactiveAt');
     assert pg.evaluate("document.getElementById('intro').hidden"),'intro shown to returning visitor'

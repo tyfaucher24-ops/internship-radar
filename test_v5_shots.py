@@ -11,7 +11,7 @@ with sync_playwright() as p:
     pg.on('pageerror',lambda e:E.append(str(e)));pg.on('console',lambda m:E.append(m.text) if m.type=='error' else None)
     pg.goto(B+'?intro=1');pg.wait_for_function("document.getElementById('intro')?.classList.contains('gl-on')",timeout=30000);pg.wait_for_timeout(1500)
     pg.screenshot(path=SS+f'v5-start-{w}x{h}.png')
-    pg.evaluate("document.getElementById('skipIntro').click()");pg.wait_for_function('window._interactiveAt',timeout=30000);pg.wait_for_timeout(800)
+    pg.evaluate("document.getElementById('goFind').click()");pg.wait_for_function('window._interactiveAt',timeout=30000);pg.wait_for_timeout(800)
     pg.screenshot(path=SS+f'v5-find-{w}x{h}.png');errs[f'{w}x{h}']=E;ctx.close()
   # V5.1: no transition any more (Find my internship = quick fade), so no transition shots.
 print(json.dumps(errs))

@@ -55,8 +55,14 @@ function field(host,o){const st={multi:!!o.multi,value:o.multi?[...(o.value||[])
  const lab=v=>{const x=st.all().find(p=>p.v===v);return x?x.label:v};
  function draw(){if(st.multi){val.innerHTML=st.value.length?st.value.map((v,i)=>`<span class="cb-chip">${escH(lab(v))}<button type="button" data-rm="${i}" aria-label="Remove ${escH(lab(v))}" tabindex="-1">×</button></span>`).join(''):`<span class="cb-ph">${escH(o.placeholder||'Choose…')}</span>`}
   else val.innerHTML=st.value?`<span class="cb-one">${escH(lab(st.value))}</span>`:`<span class="cb-ph">${escH(o.placeholder||'Choose…')}</span>`}
+ /* V11.2: inside a scrolling column the panel is fixed to the viewport, so the card never clips it; it flips up and shifts left to stay on screen */
+ function place(){pop.style.left='';pop.style.top='';pop.style.bottom='';pop.style.width='';pop.style.position='';host.classList.remove('up');
+  if(host.closest('.pf-scroll,.mbox')){const f=fld.getBoundingClientRect(),w=Math.min(Math.max(f.width,280),innerWidth-16);pop.style.position='fixed';pop.style.width=w+'px';pop.style.left=Math.max(8,Math.min(f.left,innerWidth-8-w))+'px';const h=pop.getBoundingClientRect().height;
+   if(f.bottom+6+h>innerHeight-8&&f.top-6-h>8){pop.style.top=(f.top-6-h)+'px'}else pop.style.top=(f.bottom+6)+'px';return}
+  const r=pop.getBoundingClientRect();if(r.right>innerWidth-8)pop.style.left=Math.min(0,innerWidth-8-r.right)+'px';const rb=pop.getBoundingClientRect();host.classList.toggle('up',rb.bottom>innerHeight-8&&fld.getBoundingClientRect().top>rb.height+20)}
+ addEventListener('scroll',e=>{if(!pop.hidden&&pop.style.position==='fixed'&&!pop.contains(e.target))place()},true);addEventListener('resize',()=>{if(!pop.hidden)place()});
  function open(seed){if(!pop.hidden)return;closeAll(host);if(!L)L=makeList(pop,st);pop.hidden=false;fld.setAttribute('aria-expanded','true');host.classList.add('open');L.inp.value=seed||'';L.build();
-  const r=pop.getBoundingClientRect();pop.style.left='';if(r.right>innerWidth-8)pop.style.left=Math.min(0,innerWidth-8-r.right)+'px';const rb=pop.getBoundingClientRect();host.classList.toggle('up',rb.bottom>innerHeight-8&&fld.getBoundingClientRect().top>rb.height+20);
+  place();
   L.inp.focus({preventScroll:true})}
  function close(focus){if(pop.hidden)return;pop.hidden=true;host.classList.remove('open','up');fld.setAttribute('aria-expanded','false');if(focus)fld.focus({preventScroll:true})}
  st.onEsc=()=>close(true);

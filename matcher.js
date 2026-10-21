@@ -15,9 +15,14 @@ function findSchool(edu,nameLine){const L=(typeof SCHOOLS!=='undefined'&&SCHOOLS
  for(const n of L){const i=txt.indexOf(n);if(i>=0&&(!best||n.length>best.n.length||(n.length===best.n.length&&i<best.i)))best={n,i}}
  if(!best){for(const [n,al] of Object.entries(A))for(const a of al.split('|')){if(a.length<3&&a!==a.toUpperCase())continue;const m=new RegExp('(^|[^A-Za-z])'+a.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'([^A-Za-z]|$)',a.length<=4?'':'i').exec(txt);if(m&&(!best||m.index<best.i))best={n,i:m.index}}}
  if(best)return best.n;
- let s=((edu.match(/[^\n,|]*(University|College|Institute of Technology|Institute)[^\n,|]*/)||[])[0]||'').replace(/\s*(20\d\d|expected|graduat).*/i,'').trim();
- if(nameLine&&s.startsWith(nameLine.trim()))s=s.slice(nameLine.trim().length).trim();
- s=s.replace(/^(?:[A-Z][a-z]+\s){2,3}(?=(?:The\s)?(?:University|College)\b)/,'');return s}
+ /* V11.2: never free text. Match short forms ("Queens University") to ONE list entry by whole words; otherwise leave School empty. */
+ const cands=[];const re=/((?:[A-Z][A-Za-z&.'-]+\s){0,3}(?:University|College|Institute)(?:\s(?:of|at)\s(?:[A-Z][A-Za-z&.'-]+\s?){1,3})?)/g;let m;while((m=re.exec(edu.replace(/\s+/g,' '))))cands.push(m[1].trim());
+ const words=s=>s.toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w&&!['the','of','at','and'].includes(w));
+ for(const c of cands){if(nameLine&&c.startsWith(nameLine.trim()))continue;const cw=words(c);if(cw.length<2)continue;
+  const hits=L.filter(n=>{const nw=words(n);return cw.every(w=>nw.includes(w))&&(nw.join(' ').startsWith(cw.join(' '))||cw.length>=nw.length-1)});
+  if(hits.length===1)return hits[0];if(hits.length>1){const st=hits.filter(n=>words(n).join(' ').startsWith(cw.join(' ')));if(st.length===1)return st[0]}}
+ return ''}
+window.findSchool=findSchool;
 function parseResume(text){const S=sections(text),all=text.replace(/\s+/g,' '),lo=all.toLowerCase();const edu=(S.education||[]).join('\n')||all;
  // V9: school from the known list (+ aliases like MIT, Rutgers, Wharton) first; the regex is only a fallback, and never
  // takes the person's name line. Degrees ("Associate in Arts", "Bachelor of Science") are degrees, not majors.

@@ -40,8 +40,8 @@ function kvEd(path,obj){return `<div class="kv">${Object.entries(obj).filter(([k
 function cfgUI(){$('cfg').innerHTML=`<h3>Firm tiers &amp; GPA bars</h3><p class="muted">Firm name must match the listing's company. Tier 1 = most selective.</p>${tableEd('firmTiers',[['firm','Firm'],['tier','Tier (1-3)','num'],['gpaBar','GPA bar','num'],['targetSchoolsOnly','Mostly target schools','bool']])}
  <h3>Target schools per industry</h3><p class="muted">Schools separated by ;</p>${tableEd('targetSchools',[['industry','Industry'],['schools','Schools']])}
  <h3>Default GPA bar per industry</h3>${tableEd('industryGpaBars',[['industry','Industry'],['gpaBar','GPA bar','num']])}
- <h3>Weights ${ph(C.weights)}</h3><p class="muted">Fit</p>${kvEd('weights.fit',C.weights.fit)}<p class="muted">Odds</p>${kvEd('weights.odds',C.weights.odds)}
- <h3>Bucket thresholds ${ph(C.thresholds)}</h3>${kvEd('thresholds',C.thresholds)}<h3>Odds by firm tier ${ph(C.tierOdds)}</h3>${kvEd('tierOdds',C.tierOdds)}
+ <h3>Match % weights</h3><p class="muted">Set in match-weights.json in the repo (Fit 45% · Odds 40% · Preferences 15%).</p>
+ 
  <h3>Industry keywords</h3><p class="muted">Comma separated skills that count toward Fit for each industry.</p>${kvEd('industryKeywords',C.industryKeywords)}
  <h3>Major → industry</h3>${kvEd('majorIndustries',C.majorIndustries)}`;
  $('cfg').querySelectorAll('input[data-k]').forEach(el=>el.onchange=()=>{const r=C[el.dataset.k][+el.dataset.i];r[el.dataset.f]=el.type==='checkbox'?el.checked:el.type==='number'?(el.value===''?null:+el.value):el.value.trim();delete r.placeholder;Store.set('adminConfig',C)});

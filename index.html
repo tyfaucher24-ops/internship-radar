@@ -39,50 +39,56 @@
    <div class="pills" id="pills"></div>
   </div>
   <div class="chipsrow"><div id="chips" class="chips"></div></div>
-  <div class="rhead"><p id="count" aria-live="polite"></p><div class="rtools"><button type="button" id="mapBtn" class="pill" aria-pressed="false" aria-controls="mapPanel">Show map</button><label class="sortl">Sort <select id="sort"><option value="new">Newest</option><option value="deadline">Closing soonest</option><option value="match">Best match</option><option value="az">A–Z</option></select></label></div></div>
+  <div class="rhead"><p id="count" aria-live="polite"></p><div class="rtools"><button type="button" id="mapBtn" class="pill" aria-pressed="false" aria-controls="mapPanel">Show map</button><label class="sortl">Sort <select id="sort"><option value="new">Newest</option><option value="deadline">Closing soonest</option><option value="match">Match % (highest first)</option><option value="az">A–Z</option></select></label></div></div>
   <div id="mapPanel" class="mapbox" hidden><div id="map"></div><p class="muted small" id="mapNote"></p></div>
   <div id="notice"></div>
   <div id="vl" class="grid" role="list" aria-label="Internships"></div>
   <div id="empty" class="empty" hidden></div>
  </div>
 </section>
-<section id="t-tracker" class="page" hidden><div class="pagehead"><div class="container"><h1>My Tracker</h1><p class="lede">Every application in one spreadsheet. Save a listing and it lands here automatically.</p></div></div><div class="container">
+<section id="t-tracker" class="page" hidden><div class="pagehead"><div class="container twide"><h1>My Tracker</h1><p class="lede">Every application in one spreadsheet. Save a listing and it lands here automatically.</p></div></div><div class="container twide">
  <div class="tstats" id="tStats" aria-live="polite"></div>
  <div class="ttools"><div class="seg" id="tSeg" role="group" aria-label="Filter rows"></div><span class="sp"></span>
   <button type="button" id="tAdd" class="ghost sm">+ Add row</button><label class="ghost sm btnlike" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();$('tImp').click()}">Import CSV<input type="file" id="tImp" accept=".csv,text/csv" hidden></label>
   <button type="button" id="tCsv" class="ghost sm">Export CSV</button><button type="button" id="tXls" class="ghost sm">Export Excel</button><button type="button" id="ics" class="ghost sm">📅 Add closing dates to calendar</button>
   <span class="colwrap"><button type="button" id="tColBtn" class="ghost sm" aria-expanded="false" aria-controls="tColMenu">Columns ▾</button><div id="tColMenu" class="colmenu" hidden><div id="tCols"></div><button type="button" class="ghost sm" id="tColDone">Done</button></div></span></div>
- <div id="tEmpty" class="panel placeholder"><p class="muted">Nothing tracked yet. Hit <b>Save</b> or <b>Applied</b> on any listing in the <a href="#" data-go="db">Database</a> and it lands here as a row, or use <b>+ Add row</b>.</p></div>
+ <div id="tEmpty" class="panel placeholder"><div class="tempty"><div class="te-ico" aria-hidden="true">🗂️</div><h2>Your tracker is empty</h2><p class="muted">Hit <b>Save</b> or <b>Applied</b> on any internship and it lands here as a row. You can also use <b>+ Add row</b>.</p><a class="btn pri" href="#find" data-go="db">Find internships</a></div></div>
  <div class="tscroll"><table id="tTable" class="sheet"></table></div>
  <p class="muted small">Click any cell to edit; changes save in this browser. Arrow keys move between cells. Drag a column header's edge to resize. Rows turn amber under 7 days to close, red under 3, gray once closed.</p>
 </div></section>
-<section id="t-profile" class="page" hidden><div class="pagehead"><div class="container"><h1>My Profile</h1><p class="lede">Tell us about you once. Your matches update live on the right, and everything stays in this browser.</p></div></div><div class="container">
- <div class="pgrid"><div>
- <div class="panel"><h2>My profile</h2><p class="muted">Stored only in this browser. Matches update live as you edit. Use Export to back it up.</p>
-  <div class="strength"><div class="sbar"><i id="sFill"></i></div><p><b id="sPct">0%</b> profile strength · <span id="sNext" class="muted"></span></p></div>
-  <div class="crow"><label class="drop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><span>Upload resume (PDF/DOCX)</span></label><label class="drop"><input type="file" id="liPdf" accept=".pdf"><span>Upload LinkedIn “Save to PDF”</span></label></div>
-  <details><summary>…or paste your LinkedIn profile text</summary><textarea id="liText" rows="5" placeholder="Copy your About, Experience, Education and Skills and paste here. Nothing is pulled from LinkedIn automatically."></textarea><button class="ghost sm" id="liGo" type="button">Read pasted text</button></details>
-  <p id="rstat" class="muted" aria-live="polite"></p>
- </div>
- <form id="parsedForm" class="panel" autocomplete="off">
-  <h3>Basics</h3><div class="grid2"><label>School<input name="school"></label><label>Major<input name="major"></label><label>Class year<select name="classYear"><option value="">Not set</option></select></label><label>Graduation date<input name="gradDate" type="month"></label><label>GPA (optional)<input name="gpa" type="number" step="0.01" min="0" max="4.5"></label><label>Where you live (City, ST)<input name="home" placeholder="Charlotte, NC"></label></div>
-  <label class="chk"><input type="checkbox" name="relocate"> Willing to relocate</label>
-  <h3>Goals</h3><fieldset class="cy"><legend>Target categories</legend><div id="pInd"></div></fieldset>
-  <div class="grid2"><label>Dream companies (comma separated)<input name="dream"></label><label>Roles you want<input name="roles" placeholder="e.g. financial analyst, marketing"></label><label>Preferred locations<input name="locations" placeholder="NC, New York, Remote"></label><label>Seasons<input name="seasons" placeholder="Summer 2027"></label></div>
-  <label class="chk"><input type="checkbox" name="remoteOk"> Open to remote</label>
-  <h3>Background</h3><label>Skills (comma separated)<textarea name="skills" rows="2"></textarea></label>
-  <label>Experience (one per line: Title — Org (dates) :: what you did)<textarea name="experience" rows="3"></textarea></label>
-  <div class="grid2"><label>Coursework<textarea name="coursework" rows="2"></textarea></label><label>Clubs &amp; activities (one per line)<textarea name="clubs" rows="2"></textarea></label><label>Leadership (one per line)<textarea name="leadership" rows="2"></textarea></label><label>Certifications<textarea name="certs" rows="2"></textarea></label></div>
-  <h3>Eligibility</h3><div class="grid2"><label>Work authorization<select name="workAuth"><option value="">Prefer not to say</option><option value="citizen">US citizen</option><option value="pr">Permanent resident</option><option value="sponsor">Will need sponsorship (e.g. F-1/CPT/OPT)</option></select></label></div>
-  <h3>Preferences</h3><div class="grid2"><label class="chk"><input type="checkbox" name="paidOnly"> Paid internships only</label><label>Company size<select name="sizePref"><option value="">Any</option><option>Small (1–200)</option><option>Mid (201–5,000)</option><option>Large (5,000+)</option></select></label><label>Minimum match level<select name="minMatch"><option value="">Show all</option><option value="Realistic">Realistic or better</option><option value="Strong Match">Strong only</option></select></label></div>
-  <p class="muted small" id="saveMsg" aria-live="polite">Changes save automatically.</p>
+<section id="t-profile" class="page pf-page" hidden>
+<div class="pf-wrap">
+ <div class="pf-head"><h1>My Profile</h1><p class="lede">Only what improves your matches. Everything stays in this browser.</p>
+  <div class="pf-progress" aria-label="Profile progress"><div class="pf-track"><i id="pfFill"></i></div><p><b id="pfPct">0%</b> complete <span id="pfNext" class="muted"></span></p></div></div>
+ <section class="pf-sec" aria-labelledby="pfH1"><h2 id="pfH1"><span class="num">1</span>Resume</h2><p class="muted">Upload a PDF or Word resume and we'll fill in the form for you. You can change anything.</p>
+  <label class="pf-drop" id="pfDrop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32"><path d="M12 16V4m0 0l-5 5m5-5l5 5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Drop your resume here</b><span>or click to choose a PDF or DOCX file</span></label>
+  <p id="rstat" class="pf-stat" role="status" aria-live="polite"></p>
+  <details class="pf-li"><summary>Optional: use your LinkedIn profile</summary><div class="pf-li-in"><label class="pf-drop sm"><input type="file" id="liPdf" accept=".pdf"><b>Upload LinkedIn “Save to PDF”</b></label><label class="pf-l">…or paste your LinkedIn profile text<textarea id="liText" rows="4" placeholder="Copy your About, Experience, Education and Skills and paste here. Nothing is pulled from LinkedIn automatically."></textarea></label><button type="button" class="btn-ghost" id="liGo">Read pasted text</button></div></details>
+ </section>
+ <form id="pf" autocomplete="off" novalidate>
+ <section class="pf-sec" aria-labelledby="pfH2"><h2 id="pfH2"><span class="num">2</span>About you</h2>
+  <div class="pf-grid">
+   <label class="pf-l pf-full">School<input name="school" list="schoolList" placeholder="Start typing your school"></label>
+   <label class="pf-l">Major<input name="major" list="majorList" placeholder="e.g. Finance"></label>
+   <label class="pf-l"><span>Minor <small>optional</small></span><input name="minor" list="majorList"></label>
+   <label class="pf-l">Class year<select name="classYear"><option value="">Choose…</option><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option><option>Graduate</option></select></label>
+   <label class="pf-l">Graduation date<input name="gradDate" type="month"></label>
+   <label class="pf-l"><span>GPA <small>optional</small></span><input name="gpa" type="number" inputmode="decimal" step="0.01" min="0" max="4.5" placeholder="e.g. 3.4"></label>
+   <fieldset class="pf-l pf-seg"><legend>Will you need visa sponsorship?</legend><label><input type="radio" name="sponsorship" value="no"> No</label><label><input type="radio" name="sponsorship" value="yes"> Yes</label></fieldset>
+  </div>
+  <fieldset class="pf-f"><legend>Interests <small>pick the industries you want</small></legend><div class="pf-chips" id="pfInd"></div></fieldset>
+  <div class="pf-f"><label class="pf-l" for="locIn">Preferred locations</label><div class="pf-chipin" id="locBox"><span class="pf-chiplist" id="locChips"></span><input id="locIn" list="cityList" placeholder="Add a city, e.g. Charlotte, NC" autocomplete="off"></div>
+   <div class="pf-toggles"><label class="pf-tog"><input type="checkbox" name="remoteOK"><span></span> Remote OK</label><label class="pf-tog"><input type="checkbox" name="relocate"><span></span> Open to relocate</label></div></div>
+ </section>
+ <section class="pf-sec" aria-labelledby="pfH3"><h2 id="pfH3"><span class="num">3</span>Experience</h2><p class="muted">Jobs, internships, clubs and projects all count.</p>
+  <div id="expList"></div><button type="button" class="btn-ghost pf-add" id="addExp">+ Add experience</button>
+  <div class="pf-f"><label class="pf-l" for="skIn">Skills</label><div class="pf-chipin" id="skBox"><span class="pf-chiplist" id="skChips"></span><input id="skIn" list="skillList" placeholder="Add a skill, e.g. Excel" autocomplete="off"></div></div>
+ </section>
  </form>
- <div class="panel"><h3>Your data</h3><p><button class="ghost" type="button" onclick="exportData()">Export my data</button> <button class="ghost" type="button" onclick="$('imp').click()">Import my data</button> <button class="ghost" type="button" id="clearAll">Clear everything</button></p></div>
- </div>
- <div id="mResults" class="panel"><h2>For you</h2><div class="toggle mt" id="mTabs" role="tablist"></div><p class="muted" id="mCounts"></p><div id="mList"></div><div class="more"><button id="mMore" class="ghost" type="button">Show more</button></div>
-  <p class="muted small">Match = Fit × Odds. Fit = how your skills, experience and goals overlap the role. Odds = class-year eligibility, GPA bar, related experience and a competition score (company size, brand tier, metro size, time open, who can apply, number of openings). Hidden Gems = low competition and a decent fit. Missing data is left out and the reason says so.</p></div>
- </div>
-</div></section>
+</div>
+<div class="pf-bar" role="region" aria-label="Save profile"><div class="pf-wrap pf-barin"><button type="button" class="link pf-reset" id="pfReset">Reset to default</button><span id="pfMsg" class="muted small" aria-live="polite"></span><button type="button" class="btn pf-save" id="pfSave">Save &amp; Search</button></div></div>
+<datalist id="schoolList"></datalist><datalist id="majorList"></datalist><datalist id="skillList"></datalist>
+</section>
 <section id="t-about" class="page" hidden><div class="pagehead"><div class="container"><h1>About Internship Radar</h1></div></div><div class="container prose">
  <p>Internship Radar is a free website that tracks every open US internship it can verify, flags the ones about to open, keeps your applications in one spreadsheet, and shows the roles you have a real shot at.</p>
  <h2>Where the listings come from</h2><p>Straight from company career sites, through the public job-board systems those sites use (Greenhouse, Lever, Ashby, Workday and others), refreshed several times a day. Public internship lists on GitHub only help us discover companies, and each lead is checked on the company's own posting before it appears. We never copy listings from LinkedIn, Indeed or Handshake.</p>
@@ -105,5 +111,5 @@
 <div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <div id="tip" role="tooltip" hidden></div>
 <script src="store.js"></script><script src="listing.js"></script>
-<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
+<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
 </body></html>

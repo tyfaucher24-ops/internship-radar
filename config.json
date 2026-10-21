@@ -1,37 +1,5 @@
 {
- "_readme": "Scoring inputs for the matcher. Everything marked PLACEHOLDER is a stand-in: replace with real, sourced data in admin.html and export. Placeholder firm/school entries intentionally do not name real organizations, so real firms show as 'no data'.",
- "weights": {
-  "_placeholder": true,
-  "fit": {
-   "industry": 30,
-   "skills": 35,
-   "experience": 25,
-   "location": 10
-  },
-  "odds": {
-   "firmTier": 20,
-   "school": 20,
-   "gpa": 20,
-   "classYear": 25,
-   "experience": 15
-  }
- },
- "thresholds": {
-  "_placeholder": true,
-  "strongFit": 65,
-  "strongOdds": 65,
-  "realisticFit": 45,
-  "realisticOdds": 45,
-  "poorFitBelow": 25,
-  "gemCompetitionMax": 40,
-  "gemFit": 35
- },
- "tierOdds": {
-  "_placeholder": true,
-  "1": 25,
-  "2": 50,
-  "3": 75
- },
+ "_readme": "Scoring inputs for the matcher. Everything marked PLACEHOLDER is a stand-in: replace with real, sourced data in admin.html and export. Placeholder firm/school entries intentionally do not name real organizations, so real firms show as 'no data'. Match % weights live in match-weights.json.",
  "firmTiers": [
   {
    "firm": "PLACEHOLDER Example Bank (replace)",

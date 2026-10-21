@@ -32,7 +32,7 @@ function closesIn(t){const L=t.listing;if(postingClosed(t))return{txt:'Posting c
 function sortVal(t,k){const L=t.listing;return k==='closes'?closesIn(t).n:k==='company'?L.company||'':k==='title'?L.title||'':k==='location'?L.location||'':k==='link'?L.apply_url||'':k==='status'?TSTAT.indexOf(t.status):k==='priority'?-(t.priority||0):(t[k]||'')}
 const pill=s=>'st-'+s.toLowerCase().replace(/\s+/g,'-');
 function cell(t,k){const L=t.listing;const inp=(f,v,type='text',ph='')=>`<input class="ce" data-f="${f}" type="${type}" value="${esc(v||'')}" placeholder="${ph}" aria-label="${f}">`;
- switch(k){case 'company':return inp('company',L.company);case 'title':return inp('title',L.title);case 'location':return inp('location',L.location);
+ switch(k){case 'company':return `<div class="coc">${window.logoHTML?logoHTML({company:L.company||''},false,'sm'):''}<textarea class="ce ta" rows="2" data-f="company" aria-label="company" title="${esc(L.company||'')}">${esc(L.company||'')}</textarea></div>`;case 'title':return `<textarea class="ce ta" rows="2" data-f="title" aria-label="title" title="${esc(L.title||'')}">${esc(L.title||'')}</textarea>`;case 'location':return inp('location',L.location);
  case 'status':return`<select class="ce pill ${pill(t.status)}" data-f="status" aria-label="Status">${TSTAT.map(s=>`<option${s===t.status?' selected':''}>${s}</option>`).join('')}</select>`;
  case 'closes':{const c=closesIn(t);return`<span class="cin ${c.cls}">${esc(c.txt)}</span>${L.deadline&&!postingClosed(t)?'':''}<input class="ce dl" data-f="deadline" type="date" value="${esc(L.deadline||'')}" aria-label="Closing date" title="Closing date">`}
  case 'dateApplied':return inp('dateApplied',t.dateApplied,'date');case 'followUp':return inp('followUp',t.followUp,'date');case 'dateSaved':return inp('dateSaved',t.dateSaved,'date');
@@ -42,7 +42,7 @@ function cell(t,k){const L=t.listing;const inp=(f,v,type='text',ph='')=>`<input 
  case 'link':return`${L.apply_url?`<a href="${esc(L.apply_url)}" target="_blank" rel="noopener">Open ↗</a>`:''}<input class="ce lk" data-f="apply_url" type="url" value="${esc(L.apply_url||'')}" placeholder="https://" aria-label="Link">`}}
 function trackerRefresh(){if(!$('tTable'))return;const a=T.all();$('trkN')&&($('trkN').textContent=a.length||'');
  const wk=a.filter(t=>{const c=closesIn(t);return c.n>=0&&c.n<=7&&!CLOSEDST.includes(t.status)}).length;
- $('tStats').innerHTML=[['Saved',a.filter(t=>t.status==='Saved').length],['Applied',a.filter(t=>t.dateApplied||APPLIED_SET.includes(t.status)).length],['Interviews',a.filter(t=>t.history.includes('Interviewing')).length],['Offers',a.filter(t=>t.history.includes('Offer')||t.status==='Accepted').length],['Closing this week',wk]].map(([l,n])=>`<span><b>${n}</b> ${l}</span>`).join('<span aria-hidden="true">·</span>');
+ $('tStats').innerHTML=[['Saved',a.filter(t=>t.status==='Saved').length],['Applied',a.filter(t=>t.dateApplied||APPLIED_SET.includes(t.status)).length],['Interviews',a.filter(t=>t.history.includes('Interviewing')).length],['Offers',a.filter(t=>t.history.includes('Offer')||t.status==='Accepted').length],['Closing this week',wk]].map(([l,n])=>`<span class="tst"><b>${n}</b>${l}</span>`).join('');
  $('tSeg').innerHTML=SEG.map(([n,f])=>`<button type="button" class="${tSeg===n?'on':''}" data-seg="${n}" aria-pressed="${tSeg===n}">${n} <small>${a.filter(f).length}</small></button>`).join('');
  const cols=visCols();const f=SEG.find(s=>s[0]===tSeg)[1];const rows=a.filter(f).sort((x,y)=>{const A=sortVal(x,tSort.k),B=sortVal(y,tSort.k);return (A<B?-1:A>B?1:0)*tSort.d});
  const W=Store.get('trackerW',{});$('tEmpty').hidden=a.length>0;
@@ -62,7 +62,8 @@ function trackerInit(){const tb=$('tTable');
   if(e.target.dataset.star){const n=+e.target.dataset.star;upd(id,t=>t.priority=t.priority===n?0:n);trackerRefresh()}
   else if(e.target.dataset.ghost){upd(id,t=>setStatus(t,'Ghosted'));trackerRefresh()}
   else if(e.target.dataset.del){const t=T.all().find(o=>o.id===id);if(t&&confirm(`Remove ${t.listing.company||'this row'} from your tracker?`)){T.save(T.all().filter(o=>o.id!==id))}}});
- tb.addEventListener('keydown',e=>{const td=e.target.closest('td');if(!td||!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))return;const isText=e.target.tagName==='INPUT'&&!['date'].includes(e.target.type);
+ tb.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.classList.contains('ta')){e.preventDefault();e.target.blur();return}});
+ tb.addEventListener('keydown',e=>{const td=e.target.closest('td');if(!td||!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key))return;const isText=(e.target.tagName==='TEXTAREA'||e.target.tagName==='INPUT')&&!['date'].includes(e.target.type);
   if(isText&&(e.key==='ArrowLeft'&&e.target.selectionStart>0||e.key==='ArrowRight'&&e.target.selectionEnd<e.target.value.length))return;if(e.target.tagName==='SELECT'&&(e.key==='ArrowUp'||e.key==='ArrowDown')&&!e.altKey)return;
   if(e.target.type==='date'&&(e.key==='ArrowUp'||e.key==='ArrowDown'))return;
   const tr=td.parentElement,ci=[...tr.children].indexOf(td);let tgt=null;if(e.key==='ArrowLeft')tgt=tr.children[ci-1];if(e.key==='ArrowRight')tgt=tr.children[ci+1];

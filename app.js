@@ -5,12 +5,14 @@ const ago=iso=>{if(!iso)return'never';const s=(Date.now()-new Date(iso.length===
 const pdate=x=>x.posted||x.fs||'';
 const postedAgo=x=>{const d=pdate(x);if(!d)return'';const n=-days(d.slice(0,10));return n<=0?'Posted today':n===1?'Posted yesterday':n<60?`Posted ${n} days ago`:'Posted '+fmtDate(d.slice(0,10))};
 const shortDate=d=>new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
-function logoHTML(x,big){const ini=esc((x.company||'?').replace(/^the /i,'').slice(0,1).toUpperCase());const hue=[...(x.company||'')].reduce((a,c)=>a+c.charCodeAt(0),0)%360;return `<span class="logo${big?' big':''}" style="--h:${hue}" aria-hidden="true">${ini}</span>`}
+let LOGOS=null;fetch('data/logo-map.json').then(r=>r.json()).then(m=>{LOGOS=m;if(D.length)vrender(true);window.trackerRefresh&&trackerRefresh()}).catch(()=>{LOGOS={}});
+function logoHTML(x,big,cls){const sz=cls==='sm'?28:big?56:40,co=x.company||'';const f=LOGOS&&LOGOS[co];const ini=esc(co.replace(/^the /i,'').slice(0,1).toUpperCase()||'?');const hue=[...co].reduce((a,c)=>a+c.charCodeAt(0),0)%360;
+ const k=`logo${big?' big':''}${cls?' '+cls:''}`;return f?`<span class="${k} has-img" aria-hidden="true"><img src="assets/logos/${esc(f)}" alt="" width="${sz}" height="${sz}" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.parentNode.style.setProperty('--h','${hue}');this.replaceWith(document.createTextNode('${ini}'))"></span>`:`<span class="${k}" style="--h:${hue}" aria-hidden="true">${ini}</span>`}
 function closeLbl(x){if(x.st==='upcoming')return{t:x.pred?.label||'Opening soon',c:'up'};if(!x.deadline)return{t:x.rolling?'Rolling deadline':'Closing date not listed',c:'none'};const n=days(x.deadline);
  if(n<0)return{t:'Closed '+shortDate(x.deadline),c:'closed'};return{t:n===0?'Closes today':n===1?'Closes tomorrow':'Closes '+shortDate(x.deadline)+(n<7?` · ${n} days`:''),c:n<3?'red':n<7?'amber':'ok'}}
 function locShort(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));let s=L.slice(0,1).join('')+(L.length>1?` +${L.length-1} more`:'');if(x.remote)s=s?s+' · Remote':'Remote';return s||x.loc_label||'Remote/Unspecified'}
 function locFull(x){const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', '));if(x.remote)L.push('Remote');return L.join(' · ')||x.loc_label||'Remote/Unspecified'}
-function mbadge(x){const m=MSCORE.get(x.id);if(!m)return'';const c={'Strong Match':'b-strong','Realistic':'b-real','Reach':'b-reach','Hidden Gem':'b-gem'}[m.bucket];return`<span class="badge ${c}" title="${esc(m.reason)}">${m.bucket==='Hidden Gem'?'💎 ':''}${m.bucket}</span>`}
+function mbadge(x){const m=MSCORE.get(x.id);if(!m)return'';return`<span class="mbadge ${m.band}" title="Match ${m.pct}%, grade ${m.grade}">${m.pct}% · ${m.grade}</span>`}
 function saveBtn(x){if(x.st==='upcoming'){const on=Store.get('notify',[]).includes(x.id);return`<button class="btn-save${on?' on':''}" data-act="notify" aria-pressed="${on}">${on?'🔔 Notifying':'Notify me'}</button>`}
  const t=T.byListing(x.id);return t?`<button class="btn-save on" data-act="tracker" aria-label="In your tracker: ${esc(t.status)}">✓ ${esc(t.status)}</button>`:`<button class="btn-save" data-act="save" aria-label="Save ${esc(x.company)} ${esc(x.title)}">Save</button>`}
 function cardHTML(x){const c=closeLbl(x);return`<article class="card${x.st==='closed'?' isclosed':''}" role="listitem" tabindex="0" data-id="${esc(x.id)}" aria-label="${esc(x.company+', '+x.title)}">
@@ -24,7 +26,7 @@ const PAGES=['db','tracker','profile','about','contact','privacy'];
 function go(t,push=true){if(t==='find'||t==='home'||!PAGES.includes(t))t='db';document.querySelectorAll('.nav [data-t]').forEach(o=>{o.classList.toggle('on',o.dataset.t===t);o.toggleAttribute('aria-current',o.dataset.t===t);if(o.dataset.t===t)o.setAttribute('aria-current','page')});
  document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!=='t-'+t);const u=new URL(location);u.hash=t==='db'?'':t;history[push?'pushState':'replaceState'](null,'',u);scrollTo(0,0);
  document.title=({db:'Find internships',tracker:'My Tracker',profile:'My Profile',about:'About',contact:'Contact',privacy:'Privacy'})[t]+' · Internship Radar';
- if(t==='db')requestAnimationFrame(()=>vrender(true));if(t==='tracker'&&window.trackerRefresh)trackerRefresh();if(t==='profile')renderMatches();reveal()}
+ if(t==='db')requestAnimationFrame(()=>vrender(true));if(t==='tracker'&&window.trackerRefresh)trackerRefresh();document.body.classList.toggle('on-profile',t==='profile');document.dispatchEvent(new CustomEvent('radar:page',{detail:t}));reveal()}
 addEventListener('popstate',()=>go(location.hash.slice(1)||'db',false));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();go(a.dataset.go)}});
 function openModal(h,cls=''){$('mbody').innerHTML=h;$('modal').className='modal '+cls;$('modal').hidden=false;document.body.classList.add('noscroll');setTimeout(()=>$('mbody').querySelector('input,select,textarea,button')?.focus(),30)}
@@ -36,7 +38,6 @@ function pm(open){$('pmMenu').hidden=!open;$('pmBtn').setAttribute('aria-expande
 $('pmBtn').onclick=e=>{e.stopPropagation();pm($('pmMenu').hidden)};document.addEventListener('click',e=>{if(!e.target.closest('.pmenu'))pm(false)});
 $('exp').onclick=()=>{exportData();pm(false)};document.querySelector('.pm-imp').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('imp').click()}};
 $('imp').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const keys=Store.importAll(JSON.parse(await f.text()));alert(`Imported: ${keys.join(', ')||'nothing'}`);location.reload()}catch(err){alert('Import failed: '+err.message)}e.target.value=''};
-$('clearAll').onclick=()=>{if(confirm('Delete everything you saved on this website (in this browser)? Export first if you want a backup.')){Store.clear();location.reload()}};
 /* ---------- filters ---------- */
 const FDEF=[
  ['status','Status',x=>x.st==='upcoming'?['Upcoming']:x.st==='closed'?['Closed']:x.live?['Open']:[],['Open','Upcoming','Closed']],
@@ -53,7 +54,7 @@ const FDEF=[
  ['paid','Pay',x=>[x.paid===true?'Paid':x.paid===false?'Unpaid':'Not listed'],['Paid','Unpaid','Not listed']]];
 const FD=Object.fromEntries(FDEF.map(d=>[d[0],d]));
 const DEFAULTS={status:'Open',sort:'new'};
-let F={};const FK=['q','status','cat','rt','state','city','near','radius','wp','dlw','posted','term','cy','size','spons','paid','mine','hideTracked','sort'];
+let F={};const FK=['q','status','cat','rt','state','city','near','radius','wp','dlw','posted','term','cy','size','spons','paid','minm','hideTracked','sort'];
 function loadF(){const u=new URLSearchParams(location.search);const fromUrl=FK.some(k=>u.has(k));const src=fromUrl?Object.fromEntries(FK.filter(k=>u.has(k)).map(k=>[k,u.get(k)])):Store.get('filters',{});F={...DEFAULTS,...src}}
 function saveF(){const u=new URL(location);FK.forEach(k=>u.searchParams.delete(k));FK.forEach(k=>{if(F[k]&&F[k]!==DEFAULTS[k])u.searchParams.set(k,F[k])});u.searchParams.delete('intro');u.searchParams.delete('introSlow');history.replaceState(null,'',u);Store.set('filters',F)}
 let TRACKED=new Set();
@@ -62,7 +63,7 @@ let NEAR=null;
 function baseOK(x,q){if(x.hidden)return false;if(q.length&&!q.every(w=>x._t.includes(w)))return false;
  if(F.city){const [c,s]=F.city.split('|');if(c==='Remote'){if(!x.remote)return false}else if(!(x.locations||[]).some(l=>l.city===c&&l.state===s))return false}
  if(NEAR&&+F.radius){if(!(x.locations||[]).some(l=>l.lat!=null&&hav(NEAR,l)<=+F.radius))return false}
- if(F.mine==='1'){const m=MSCORE.get(x.id);if(!m||m.poor||m.bucket==='Reach')return false}
+ if(F.minm&&MSCORE.size){const m=MSCORE.get(x.id);if(!m||m.pct<+F.minm)return false}
  if(F.hideTracked==='1'&&TRACKED.has(String(x.id)))return false;
  if(x.past_term&&F.status!=='Closed')return false;return true}
 let RES=[],COUNTS={};
@@ -75,16 +76,17 @@ function compute(){const t0=performance.now();const q=(F.q||'').toLowerCase().tr
   if(nf===0){out.push(x);for(const [k,,fn] of FDEF)for(const v of fn(x))COUNTS[k].set(v,(COUNTS[k].get(v)||0)+1)}
   else{const fn=FD[fail][2];for(const v of fn(x))COUNTS[fail].set(v,(COUNTS[fail].get(v)||0)+1)}}
  const s=F.sort;const cmpDl=(a,b)=>(a.deadline&&days(a.deadline)>=0?a.deadline:'9999').localeCompare(b.deadline&&days(b.deadline)>=0?b.deadline:'9999');
- out.sort(s==='deadline'?(a,b)=>cmpDl(a,b)||pdate(b).localeCompare(pdate(a)):s==='az'?(a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title):s==='match'?(a,b)=>(MSCORE.get(b.id)?.score??-1)-(MSCORE.get(a.id)?.score??-1)||cmpDl(a,b):(a,b)=>pdate(b).localeCompare(pdate(a))||cmpDl(a,b));
+ out.sort(s==='deadline'?(a,b)=>cmpDl(a,b)||pdate(b).localeCompare(pdate(a)):s==='az'?(a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title):s==='match'?(a,b)=>(MSCORE.get(b.id)?.pct??-1)-(MSCORE.get(a.id)?.pct??-1)||cmpDl(a,b):(a,b)=>pdate(b).localeCompare(pdate(a))||cmpDl(a,b));
  RES=out;window._lastFilterMs=performance.now()-t0}
 const optList=k=>{const C=COUNTS[k]||new Map(),o=FD[k][3];const all=o||[...C.keys()].sort((a,b)=>k==='state'?a.localeCompare(b):(C.get(b)-C.get(a))||a.localeCompare(b));return[...new Set([...(F[k]?[F[k]]:[]),...all])].map(v=>[v,C.get(v)||0])};
 function radioGroup(k,label,anyLabel='Any'){return`<fieldset class="rg"><legend>${label}</legend><div class="rg-opts"><label class="opt"><input type="radio" name="f-${k}" value=""${!F[k]?' checked':''}> ${anyLabel}</label>${optList(k).map(([v,n])=>`<label class="opt${!n&&F[k]!==v?' dim':''}"><input type="radio" name="f-${k}" value="${esc(v)}"${F[k]===v?' checked':''}${!n&&F[k]!==v?' disabled':''}> ${esc(v)} <span class="n">${n.toLocaleString()}</span></label>`).join('')}</div></fieldset>`}
-const PILLS=[['cat','Industry'],['loc','Location'],['cy','Class year'],['dlw','Closing date'],['more','More filters']];
+const PILLS0=[['cat','Industry'],['loc','Location'],['cy','Class year'],['dlw','Closing date'],['minm','Minimum match'],['more','More filters']];const pillList=()=>PILLS0.filter(([k])=>k!=='minm'||MSCORE.size);
 const MOREK=['status','rt','wp','posted','term','size','spons','paid'];
 function pillLabel(k,l){if(k==='loc'){const v=F.city?F.city.replace('|',', ').replace(/, $/,''):F.near&&F.radius?`${F.near} +${F.radius}mi`:F.state||'';return v?`${l}: ${v}`:l}
- if(k==='more'){const n=MOREK.filter(k=>F[k]&&F[k]!==DEFAULTS[k]).length+(F.mine==='1')+(F.hideTracked==='1');return n?`${l} · ${n}`:l}return F[k]?`${l}: ${F[k]}`:l}
-function renderPills(){$('pills').innerHTML=PILLS.map(([k,l])=>{const on=k==='more'?/·/.test(pillLabel(k,l)):pillLabel(k,l)!==l;return`<div class="pillwrap"><button type="button" class="pill${on?' active':''}${k==='more'?' more':''}" data-pill="${k}" aria-haspopup="${k==='more'?'dialog':'true'}" aria-expanded="false">${esc(pillLabel(k,l))}<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div>`}).join('')}
+ if(k==='more'){const n=MOREK.filter(k=>F[k]&&F[k]!==DEFAULTS[k]).length+(F.hideTracked==='1');return n?`${l} · ${n}`:l}if(k==='minm')return F.minm?`${l}: ${F.minm}%+`:l;return F[k]?`${l}: ${F[k]}`:l}
+function renderPills(){$('pills').innerHTML=pillList().map(([k,l])=>{const on=k==='more'?/·/.test(pillLabel(k,l)):pillLabel(k,l)!==l;return`<div class="pillwrap"><button type="button" class="pill${on?' active':''}${k==='more'?' more':''}" data-pill="${k}" aria-haspopup="${k==='more'?'dialog':'true'}" aria-expanded="false">${esc(pillLabel(k,l))}<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div>`}).join('')}
 function popHTML(k){if(k==='loc')return`${radioGroup('state','State','Any state')}<fieldset class="rg"><legend>Near a city</legend><div class="near"><input list="cityList" id="nearIn" placeholder="City, ST" value="${esc(F.near||'')}" aria-label="City"><select id="radIn" aria-label="Distance"><option value="">Any distance</option>${[10,25,50,100,250].map(r=>`<option value="${r}"${+F.radius===r?' selected':''}>Within ${r} mi</option>`).join('')}</select></div></fieldset><label class="opt chk"><input type="checkbox" id="remIn"${F.city==='Remote|'?' checked':''}> Remote only</label>`;
+ if(k==='minm')return`<fieldset class="rg"><legend>Minimum match</legend>${[['','Any'],['60','60%+'],['75','75%+'],['90','90%+']].map(([v,t])=>`<label class="opt"><input type="radio" name="f-minm" value="${v}"${(F.minm||'')===v?' checked':''}> ${t}</label>`).join('')}</fieldset>`;
  return radioGroup(k,FD[k][1])}
 function closePops(){document.querySelectorAll('.pop').forEach(p=>p.remove());document.querySelectorAll('[data-pill]').forEach(b=>b.setAttribute('aria-expanded','false'))}
 $('pills').addEventListener('click',e=>{const b=e.target.closest('[data-pill]');if(!b)return;const k=b.dataset.pill;const open=b.getAttribute('aria-expanded')==='true';closePops();if(open)return;
@@ -97,9 +99,9 @@ $('pills').addEventListener('click',e=>{const b=e.target.closest('[data-pill]');
  p.querySelector('[data-done]').onclick=()=>{closePops();b.focus()};p.querySelector('[data-clear]').onclick=()=>{if(k==='loc'){F.state='';F.city='';F.near='';F.radius=''}else F[k]='';closePops();update();b.focus()}});
 document.addEventListener('click',e=>{if(!e.target.closest('.pillwrap'))closePops()});
 function moreFilters(){openModal(`<h2>More filters</h2><div class="mf">${MOREK.map(k=>radioGroup(k,FD[k][1],k==='status'?'Any status':'Any')).join('')}
- <fieldset class="rg"><legend>Personal</legend><label class="opt chk"><input type="checkbox" id="mineIn"${F.mine==='1'?' checked':''}> Only my matches</label><label class="opt chk"><input type="checkbox" id="hideIn"${F.hideTracked==='1'?' checked':''}> Hide internships I saved or applied to</label></fieldset></div>
+ <fieldset class="rg"><legend>Personal</legend><label class="opt chk"><input type="checkbox" id="hideIn"${F.hideTracked==='1'?' checked':''}> Hide internships I saved or applied to</label></fieldset></div>
  <div class="mf-foot"><button type="button" class="link" id="mfClear">Clear all filters</button><button type="button" class="btn" id="mfDone">Show <span id="mfN">${RES.length.toLocaleString()}</span> internships</button></div>`,'wide');
- const box=$('mbody');box.onchange=ev=>{const t=ev.target;if(t.name&&t.name.startsWith('f-'))F[t.name.slice(2)]=t.value;if(t.id==='mineIn')F.mine=t.checked?'1':'';if(t.id==='hideIn')F.hideTracked=t.checked?'1':'';update();
+ const box=$('mbody');box.onchange=ev=>{const t=ev.target;if(t.name&&t.name.startsWith('f-'))F[t.name.slice(2)]=t.value;if(t.id==='hideIn')F.hideTracked=t.checked?'1':'';update();
   const keep=t.name||t.id;const sc=box.scrollTop;moreFiltersRefresh();box.scrollTop=sc;const el=box.querySelector(`[name="${keep}"]:checked,#${keep}`);el&&el.focus()};
  $('mfDone').onclick=closeModal;$('mfClear').onclick=()=>{clearAll();closeModal()}}
 function moreFiltersRefresh(){const mf=$('mbody').querySelector('.mf');if(!mf)return;const tmp=document.createElement('div');tmp.innerHTML=MOREK.map(k=>radioGroup(k,FD[k][1],k==='status'?'Any status':'Any')).join('');
@@ -107,7 +109,7 @@ function moreFiltersRefresh(){const mf=$('mbody').querySelector('.mf');if(!mf)re
 function clearAll(){F={...DEFAULTS,sort:F.sort};$('q').value='';update()}
 function chipsHTML(){const c=[];
  if(F.q)c.push(['q',`“${F.q}”`]);FDEF.forEach(([k,l])=>{if(F[k]&&!(k==='status'&&F[k]==='Open'))c.push([k,`${l}: ${F[k]}`])});if(F.city)c.push(['city',F.city==='Remote|'?'Remote only':'📍 '+F.city.replace('|',', ')]);if(F.near&&F.radius)c.push(['near',`Within ${F.radius} mi of ${F.near}`]);
- if(F.mine==='1')c.push(['mine','My matches']);if(F.hideTracked==='1')c.push(['hideTracked','Hiding saved & applied']);
+ if(F.minm&&MSCORE.size)c.push(['minm',`Match ${F.minm}%+`]);if(F.hideTracked==='1')c.push(['hideTracked','Hiding saved & applied']);
  return c.map(([k,t])=>`<button class="chip" data-k="${k}" aria-label="Remove filter ${esc(t)}">${esc(t)} <span aria-hidden="true">×</span></button>`).join('')+(c.length?'<button class="link clear" data-k="__all">Clear all</button>':'')}
 function update(keepPop){compute();saveF();if(!keepPop)renderPills();else{const open=document.querySelector('.pop.open');renderPillLabels();if(open){const k=open.previousElementSibling?.dataset?.pill}}
  $('chips').innerHTML=chipsHTML();$('chips').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k;if(k==='__all')return clearAll();if(k==='near'){F.near='';F.radius=''}else F[k]=k==='status'?'Open':'';if(k==='q')$('q').value='';update()});
@@ -115,7 +117,7 @@ function update(keepPop){compute();saveF();if(!keepPop)renderPills();else{const 
  $('count').innerHTML=`<b>${RES.length.toLocaleString()}</b> ${F.status==='Upcoming'?'upcoming':F.status==='Closed'?'closed':F.status?'open':''} internship${RES.length===1?'':'s'}`;
  $('empty').hidden=RES.length>0;$('empty').innerHTML=`<h3>No internships match</h3><p class="muted">Try removing a filter${F.q?' or searching for something broader':''}.</p><button class="btn" type="button" onclick="clearAll()">Clear all filters</button>`;
  animateNext=true;vrender(true);if(window.mapUpdate)mapUpdate()}
-function renderPillLabels(){document.querySelectorAll('[data-pill]').forEach(b=>{const p=PILLS.find(p=>p[0]===b.dataset.pill);const l=pillLabel(p[0],p[1]);b.firstChild.textContent=l;b.classList.toggle('active',p[0]==='more'?/·/.test(l):l!==p[1])})}
+function renderPillLabels(){document.querySelectorAll('[data-pill]').forEach(b=>{const p=PILLS0.find(p=>p[0]===b.dataset.pill);const l=pillLabel(p[0],p[1]);b.firstChild.textContent=l;b.classList.toggle('active',p[0]==='more'?/·/.test(l):l!==p[1])})}
 let qTimer;$('q').addEventListener('input',e=>{clearTimeout(qTimer);qTimer=setTimeout(()=>{F.q=e.target.value.trim();update()},120)});
 $('sort').onchange=e=>{F.sort=e.target.value;update()};
 /* ---------- windowed card grid (rows of N cards; only visible rows are in the DOM) ---------- */
@@ -138,18 +140,18 @@ async function ensureDetail(x){if(x._det||x._mine)return x;const sh=shardOf(x.id
 async function descOf(x){if(!x.has_desc)return null;const sh=shardOf(x.id);if(!descCache[sh])descCache[sh]=fetch(`data/desc/${sh}.json`).then(r=>r.json()).catch(()=>({}));return (await descCache[sh])[x.id]||null}
 async function onCardClick(e){const row=e.target.closest('[data-id]');if(!row)return;const x=BYID.get(row.dataset.id);if(!x)return;const b=e.target.closest('[data-act]');
  if(b){e.stopPropagation();const a=b.dataset.act;if(a==='save'){blip(b);await ensureDetail(x);track(x.id,'Saved');bump()}else if(a==='applied'){await ensureDetail(x);track(x.id,'Applied');bump()}else if(a==='tracker'){go('tracker');const t=T.byListing(x.id);setTimeout(()=>{const r=t&&document.querySelector(`#tTable tr[data-id="${t.id}"]`);if(r){r.scrollIntoView({block:'center'});r.classList.add('flash');r.querySelector('select')?.focus()}},50)}
-  else if(a==='notify'){const n=Store.get('notify',[]);const i=n.indexOf(x.id);i<0?n.push(x.id):n.splice(i,1);Store.set('notify',n);vrender(true);renderMatches(true)}return}
+  else if(a==='notify'){const n=Store.get('notify',[]);const i=n.indexOf(x.id);i<0?n.push(x.id):n.splice(i,1);Store.set('notify',n);vrender(true)}return}
  if(e.target.closest('a'))return;openDrawer(x)}
 function blip(b){if(RM)return;const s=document.createElement('span');s.className='blip';b.appendChild(s);setTimeout(()=>s.remove(),700)}
 function bump(){const n=$('trkN');if(!n||RM)return;n.classList.remove('bump');void n.offsetWidth;n.classList.add('bump')}
-['vl','mList'].forEach(id=>{$(id).addEventListener('click',onCardClick);$(id).addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.card'))onCardClick(e)})});
+['vl'].forEach(id=>{$(id).addEventListener('click',onCardClick);$(id).addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.card'))onCardClick(e)})});
 /* ---------- drawer (transform-only slide, 250ms) ---------- */
 let lastFocus=null;
 function fact(k,v){return`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>`}
 async function openDrawer(x){lastFocus=document.activeElement;const m=MSCORE.get(x.id);const c=closeLbl(x);
  $('dbody').innerHTML=`<div class="dhead">${logoHTML(x,true)}<div><p class="lco">${esc(x.company)}</p><h2 id="dTitle">${esc(x.title)}</h2><p class="muted">${esc(locFull(x))}</p></div></div>
- <div class="drow"><span class="dl dl-${c.c}">${esc(c.t)}</span>${mbadge(x)}<span class="muted small">${postedAgo(x)}</span></div>
- ${m?`<p class="why">${esc(m.reason)}</p>`:''}${x.pred?`<p class="why">📈 ${esc(x.pred.label)} (${esc(x.pred.confidence)} confidence)<span id="predBasis"></span>.</p>`:''}
+ <div class="drow"><span class="dl dl-${c.c}">${esc(c.t)}</span><span class="muted small">${postedAgo(x)}</span></div>
+ ${m?(()=>{const d=matchDetail(x);return d?`<div class="mwhy"><p class="mwhy-h"><span class="mbadge ${d.band}">${d.pct}% · ${d.grade}</span> <span class="muted small">${d.conf} confidence</span></p><ul>${d.reasons.map(r=>`<li>${esc(r[0].toUpperCase()+r.slice(1))}.</li>`).join('')}</ul>${d.tip?`<p class="tip"><b>Tip:</b> ${esc(d.tip)}</p>`:''}</div>`:''})():''}${x.pred?`<p class="why">📈 ${esc(x.pred.label)} (${esc(x.pred.confidence)} confidence)<span id="predBasis"></span>.</p>`:''}
  <p class="dact" id="dAct"><span class="skel" style="width:220px;height:44px;display:inline-block"></span></p>
  <dl class="facts" id="dFacts"></dl>
  <h3>Description</h3><div id="dDesc" class="desc"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>
@@ -191,9 +193,15 @@ function loadMap(){if(MAPREADY)return MAPREADY;MAPREADY=Promise.all([loadScript(
  $('map').innerHTML=`<svg viewBox="0 0 975 640" role="img" aria-label="US map of matching internships"><g class="states">${st.map(f=>`<path d="${path(f)}"/>`).join('')}</g><g id="mdots"></g><g id="mremote" class="mremote" tabindex="0" role="button" aria-label="Remote internships"><circle cx="900" cy="560" r="30"/><text x="900" y="564" text-anchor="middle">Remote</text><text id="mrN" x="900" y="612" text-anchor="middle" class="mrn"></text></g></svg>`;
  $('mremote').onclick=()=>{F.city=F.city==='Remote|'?'':'Remote|';update()};$('mremote').onkeydown=e=>{if(e.key==='Enter')$('mremote').onclick()};mapUpdate()}).catch(e=>{$('map').innerHTML='<p class="muted">Map could not load (offline?). Filters still work.</p>';MAPREADY=null});return MAPREADY}
 window.mapUpdate=function(){if(!PROJ||$('mapPanel').hidden||document.hidden)return;const agg=new Map();let rem=0;
- for(const x of RES){if(x.remote)rem++;for(const l of x.locations||[]){if(l.lat==null)continue;const k=l.city+'|'+l.state;const a=agg.get(k)||{l,n:0};a.n++;agg.set(k,a)}}
- let h='';for(const [k,a] of agg){const p=PROJ([a.l.lng,a.l.lat]);if(!p)continue;const r=Math.min(18,2.5+Math.sqrt(a.n)*1.6);h+=`<circle class="${F.city===k?'sel':''}" data-k="${esc(k)}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r.toFixed(1)}"><title>${esc(a.l.city)}, ${esc(a.l.state)} · ${a.n}</title></circle>`}
+ for(const x of RES){if(x.remote)rem++;for(const l of x.locations||[]){if(l.lat==null)continue;const k=l.city+'|'+l.state;const a=agg.get(k)||{l,n:0,co:new Map()};a.n++;a.co.set(x.company,(a.co.get(x.company)||0)+1);agg.set(k,a)}}
+ window._mapAgg=agg;
+ let h='';for(const [k,a] of agg){const p=PROJ([a.l.lng,a.l.lat]);if(!p)continue;const r=Math.min(18,2.5+Math.sqrt(a.n)*1.6);h+=`<circle class="${F.city===k?'sel':''}" data-k="${esc(k)}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r.toFixed(1)}"></circle>`}
  $('mdots').innerHTML=h;$('mrN').textContent=rem.toLocaleString();$('mremote').classList.toggle('sel',F.city==='Remote|');
+ const tip=$('mapTip')||Object.assign(document.createElement('div'),{id:'mapTip',className:'maptip',hidden:true});if(!tip.parentNode){$('map').style.position='relative';$('map').appendChild(tip)}
+ $('mdots').onmouseover=e=>{const c=e.target.closest('circle');if(!c)return;const a=agg.get(c.dataset.k);if(!a)return;const top=[...a.co].sort((p,q)=>q[1]-p[1]).slice(0,3);
+  tip.innerHTML=`<b>${esc(a.l.city)}, ${esc(a.l.state)}</b> · ${a.n.toLocaleString()}<div class="mt-co">${top.map(([co,n])=>`<span>${logoHTML({company:co},false,'sm')}${esc(co)} <i>${n}</i></span>`).join('')}</div>`;
+  const R=$('map').getBoundingClientRect(),C=c.getBoundingClientRect();tip.style.left=Math.min(R.width-240,Math.max(0,C.left-R.left+C.width/2-120))+'px';tip.style.top=(C.top-R.top+C.height+8)+'px';tip.hidden=false};
+ $('mdots').onmouseout=e=>{if(e.target.closest('circle'))tip.hidden=true};
  $('mdots').onclick=e=>{const c=e.target.closest('circle');if(!c)return;F.city=F.city===c.dataset.k?'':c.dataset.k;update()};
  $('mapNote').textContent=`${agg.size.toLocaleString()} cities · click a dot to filter${F.city?' · click again to clear':''}`}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&window.mapUpdate)mapUpdate()});
@@ -225,42 +233,72 @@ async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('p
  await new Promise(r=>setTimeout(r,0));update();document.body.classList.remove('booting');document.dispatchEvent(new Event('radar:data'));
  profileInit();trackerInit();const h=location.hash.slice(1);if(h&&$('t-'+h))go(h,false);else reveal();window._interactiveAt=performance.now();
  (window.requestIdleCallback||setTimeout)(()=>refreshMatches())}
-/* ---------- profile ---------- */
-const PFIELDS=['school','major','classYear','gradDate','gpa','home','relocate','dream','roles','locations','seasons','remoteOk','workAuth','paidOnly','sizePref','minMatch'];
-const RFIELDS=['skills','experience','coursework','clubs','leadership','certs'];
-function profileInit(){const f=$('parsedForm');CLASS_YEARS.forEach(c=>f.classYear.add(new Option(c,c)));
- $('pInd').innerHTML=INDUSTRIES.filter(i=>i!=='Other').map(i=>`<label class="chk"><input type="checkbox" name="industries" value="${esc(i)}"> ${esc(i)}</label>`).join('');fillProfile();strength();
- let t;f.addEventListener('input',()=>{clearTimeout(t);$('saveMsg').textContent='Saving…';t=setTimeout(saveProfile,350)});f.addEventListener('change',()=>{clearTimeout(t);t=setTimeout(saveProfile,50)});f.onsubmit=e=>{e.preventDefault();saveProfile()};
- const onFile=async e=>{const file=e.target.files[0];if(!file)return;$('rstat').textContent='Reading…';try{ingest(await readFile(file),file.name)}catch(err){$('rstat').textContent='Could not read file: '+err.message}e.target.value=''};
- $('resume').onchange=onFile;$('liPdf').onchange=onFile;$('liGo').onclick=()=>{const t=$('liText').value.trim();if(t.length<40){$('rstat').textContent='Paste your full LinkedIn profile text first.';return}ingest(t,'pasted LinkedIn text')}}
-function fillProfile(){const f=$('parsedForm'),p=profile,r=Store.get('resume',{});PFIELDS.forEach(k=>{const el=f[k];if(!el)return;if(el.type==='checkbox')el.checked=!!p[k];else el.value=p[k]||''});
- f.querySelectorAll('[name=industries]').forEach(c=>c.checked=(p.industries||[]).includes(c.value));
- f.skills.value=Array.isArray(r.skills)?r.skills.join(', '):(r.skills||'');f.experience.value=(r.experience||[]).map(e=>[e.title,e.dates&&`(${e.dates})`].filter(Boolean).join(' ')+(e.text?' :: '+e.text:'')).join('\n');
- ['coursework','certs'].forEach(k=>f[k].value=r[k]||'');['clubs','leadership'].forEach(k=>f[k].value=(r[k]||[]).join('\n'))}
-function ingest(text,label){const R=parseResume(text);const cur=Store.get('resume',{});Store.set('resume',{...cur,...R,source:label});
- ['school','major','gpa','classYear'].forEach(k=>{if(R[k]&&!profile[k])profile[k]=R[k]});Store.set('profile',profile);fillProfile();strength();refreshMatches();
- $('rstat').textContent=`Read ${label}: ${R.skills.length} skills, ${R.experience.length} experience entries${R.school?', '+R.school:''}. Check the form below and fix anything wrong.`}
-function saveProfile(){const f=$('parsedForm'),fd=new FormData(f);PFIELDS.forEach(k=>{const el=f[k];if(!el)return;profile[k]=el.type==='checkbox'?el.checked:(fd.get(k)||'').trim()});profile.industries=fd.getAll('industries');profile.updated=new Date().toISOString();Store.set('profile',profile);
- const exp=f.experience.value.split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{const [h,t]=l.split(' :: ');const d=(h.match(/\(([^)]*20\d\d[^)]*)\)\s*$/)||[])[1]||'';return{title:h.replace(/\s*\([^)]*\)\s*$/,'').trim(),dates:d,text:t||''}});
- Store.set('resume',{...Store.get('resume',{}),skills:f.skills.value.split(',').map(s=>s.trim().toLowerCase()).filter(Boolean),experience:exp,coursework:f.coursework.value,certs:f.certs.value,clubs:f.clubs.value.split('\n').filter(Boolean),leadership:f.leadership.value.split('\n').filter(Boolean),edited:new Date().toISOString()});
- $('saveMsg').textContent='Saved in this browser ✓';strength();refreshMatches()}
-function strength(){const p=profile,r=Store.get('resume',{});const sk=Array.isArray(r.skills)?r.skills:[];
- const items=[['school',!!p.school,10,'your school'],['major',!!p.major,10,'your major'],['classYear',!!p.classYear,12,'your class year'],['industries',(p.industries||[]).length>0,12,'target categories'],['skills',sk.length>=5,14,'at least 5 skills (or upload a resume)'],
-  ['experience',(r.experience||[]).length>0,12,'any experience (jobs, volunteering, projects count)'],['locations',!!p.locations||!!p.remoteOk,8,'preferred locations'],['workAuth',!!p.workAuth,6,'work authorization'],['clubs',(r.clubs||[]).length>0||(r.leadership||[]).length>0,6,'clubs or leadership'],['gradDate',!!p.gradDate,4,'graduation date'],['gpa',!!p.gpa,3,'GPA (optional)'],['coursework',!!r.coursework,3,'relevant coursework']];
- const pct=Math.round(items.reduce((a,i)=>a+(i[1]?i[2]:0),0));const next=items.filter(i=>!i[1]).sort((a,b)=>b[2]-a[2])[0];window._strength=pct;$('sFill').style.width=pct+'%';$('sPct').textContent=pct+'%';$('sNext').textContent=next?'Add next: '+next[3]:'Looking great!'}
-/* ---------- matches ---------- */
-let mTab='best',mShown=20;
-async function refreshMatches(){await runMatch();MSCORE=new Map(MATCHES.map(m=>[m.x.id,m]));if(F.mine==='1'||F.sort==='match')update();else vrender(true);renderMatches()}
-function renderMatches(){const el=$('mList');if(!el)return;if(!MATCHES.length){$('mTabs').innerHTML='';$('mCounts').textContent='';el.innerHTML='<p class="muted">Add a few skills or a target category above (or upload a resume) and your matches appear here instantly.</p>';$('mMore').hidden=true;return}
- const B=[['best','Best'],['Hidden Gem','Hidden Gems'],['Strong Match','Strong'],['Realistic','Realistic'],['Reach','Reach']].filter(([k])=>k!=='Hidden Gem'||MATCHES.some(m=>m.bucket==='Hidden Gem'));
- const min=profile.minMatch;const ok=m=>!m.poor&&(!min||(min==='Strong Match'?m.bucket==='Strong Match'||m.bucket==='Hidden Gem':m.bucket!=='Reach'))&&(!profile.paidOnly||m.x.paid!==false);
- let L=MATCHES.filter(m=>ok(m)&&(mTab==='best'||m.bucket===mTab));
- if(mTab==='best'&&(window._strength||0)<50)L=[...L.filter(m=>m.bucket==='Hidden Gem'),...L.filter(m=>m.bucket!=='Hidden Gem')];// thin profile: gems first
- $('mTabs').innerHTML=B.map(([k,l])=>`<button type="button" class="${mTab===k?'on':''}" data-b="${k}">${l} <small>${(k==='best'?MATCHES.filter(ok):MATCHES.filter(m=>ok(m)&&m.bucket===k)).length}</small></button>`).join('');
- $('mTabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{mTab=b.dataset.b;mShown=20;renderMatches()});
- $('mCounts').textContent=`${MATCHES.filter(ok).length.toLocaleString()} matches out of ${MATCHES.length.toLocaleString()} open listings`;
- el.innerHTML=L.length?L.slice(0,mShown).map(m=>card(m.x,`<span class="sc">Match <b>${m.score}</b></span><span class="sc">Fit ${m.fit} × Odds ${m.odds}</span>${m.comp!=null?`<span class="sc">Competition ${m.comp}</span>`:''}`)+`<p class="why mwhy">${esc(m.reason)}</p>`).join(''):'<p class="muted">None in this group yet.</p>';$('mMore').hidden=L.length<=mShown}
-$('mMore').onclick=()=>{mShown+=20;renderMatches()};
+/* ---------- V6 profile: matching-only, single column, autosaved draft; Save & Search grades every card ---------- */
+const MWready=fetch('match-weights.json').then(r=>r.json()).catch(()=>({fit:.45,odds:.4,prefs:.15}));let MW=null;MWready.then(w=>MW=w);
+function migrateProfile(p){if(!p||p.v===6)return p||{};const r=Store.get('resume',{});const loc=Array.isArray(p.locations)?p.locations:String(p.locations||'').split(',').map(s=>s.trim()).filter(s=>s&&!/^remote$/i.test(s));
+ return {v:6,school:p.school||r.school||'',major:p.major||r.major||'',minor:'',classYear:p.classYear||r.classYear||'',gradDate:p.gradDate||'',gpa:p.gpa||r.gpa||'',sponsorship:p.workAuth==='sponsor'?'yes':(p.workAuth?'no':''),
+  industries:p.industries||[],locations:loc,remoteOK:!!p.remoteOk||/remote/i.test(String(p.locations||'')),relocate:!!p.relocate,
+  experience:(r.experience||[]).map(e=>({kind:'Job',title:e.title||'',org:'',start:'',end:'',bullets:e.text?[e.text.slice(0,200)]:[]})),skills:Array.isArray(r.skills)?r.skills:[]}}
+profile=migrateProfile(profile);
+let PF=Store.get('profileDraft',null)||JSON.parse(JSON.stringify(profile));PF.experience=PF.experience||[];PF.skills=PF.skills||[];PF.locations=PF.locations||[];PF.industries=PF.industries||[];
+const KINDS=['Job','Internship','Club','Project'];
+function chipHTML(v,i,list){return`<span class="pf-chip">${esc(v)}<button type="button" data-rm="${list}" data-i="${i}" aria-label="Remove ${esc(v)}">×</button></span>`}
+function expHTML(e,i){const b=[0,1,2].map(j=>e.bullets?.[j]||'');return`<div class="pf-exp" data-i="${i}"><div class="pf-exphead"><select data-e="kind" aria-label="Type">${KINDS.map(k=>`<option${e.kind===k?' selected':''}>${k}</option>`).join('')}</select><button type="button" class="link" data-delexp="${i}">Remove</button></div>
+ <div class="pf-grid"><label class="pf-l">Title<input data-e="title" value="${esc(e.title||'')}" placeholder="e.g. Sales Associate"></label><label class="pf-l">Organization<input data-e="org" value="${esc(e.org||'')}" placeholder="e.g. Target"></label>
+ <label class="pf-l">Start<input type="month" data-e="start" value="${esc(e.start||'')}"></label><label class="pf-l">End <small>blank if current</small><input type="month" data-e="end" value="${esc(e.end||'')}"></label></div>
+ <div class="pf-bul">${b.map((t,j)=>`<input data-b="${j}" value="${esc(t)}" placeholder="${j?'Another highlight (optional)':'What you did, e.g. Trained 4 new hires'}" aria-label="Highlight ${j+1}">`).join('')}</div></div>`}
+function pfRender(){const f=$('pf');['school','major','minor','classYear','gradDate','gpa'].forEach(k=>f[k].value=PF[k]||'');f.querySelectorAll('[name=sponsorship]').forEach(r=>r.checked=r.value===PF.sponsorship);f.remoteOK.checked=!!PF.remoteOK;f.relocate.checked=!!PF.relocate;
+ $('pfInd').innerHTML=INDUSTRIES.filter(i=>i!=='Other').map(i=>`<label class="pf-ichip"><input type="checkbox" value="${esc(i)}"${PF.industries.includes(i)?' checked':''}><span>${esc(i)}</span></label>`).join('');
+ $('locChips').innerHTML=PF.locations.map((v,i)=>chipHTML(v,i,'locations')).join('');$('skChips').innerHTML=PF.skills.map((v,i)=>chipHTML(v,i,'skills')).join('');
+ $('expList').innerHTML=PF.experience.map(expHTML).join('');pfProgress()}
+function pfRead(){const f=$('pf');['school','major','minor','classYear','gradDate','gpa'].forEach(k=>PF[k]=f[k].value.trim());PF.sponsorship=(f.querySelector('[name=sponsorship]:checked')||{}).value||'';PF.remoteOK=f.remoteOK.checked;PF.relocate=f.relocate.checked;
+ PF.industries=[...$('pfInd').querySelectorAll('input:checked')].map(c=>c.value);
+ PF.experience=[...$('expList').querySelectorAll('.pf-exp')].map(d=>{const g=k=>d.querySelector(`[data-e="${k}"]`).value.trim();return{kind:g('kind'),title:g('title'),org:g('org'),start:g('start'),end:g('end'),bullets:[...d.querySelectorAll('[data-b]')].map(x=>x.value.trim()).filter(Boolean)}});return PF}
+function pfProgress(){const items=[['school',!!PF.school],['major',!!PF.major],['class year',!!PF.classYear],['interests',PF.industries.length>0],['locations',PF.locations.length>0||PF.remoteOK],['experience',PF.experience.some(e=>e.title||e.org)],['skills',PF.skills.length>=3],['sponsorship answer',!!PF.sponsorship]];
+ const pct=Math.round(100*items.filter(i=>i[1]).length/items.length);$('pfFill').style.width=pct+'%';$('pfPct').textContent=pct+'%';const nx=items.find(i=>!i[1]);$('pfNext').textContent=nx?`· Next: add your ${nx[0]}`:'· Looking great'}
+let pfT;function pfDraft(){clearTimeout(pfT);pfT=setTimeout(()=>{pfRead();Store.set('profileDraft',PF);pfProgress();$('pfMsg').textContent='Draft saved'},300)}
+function addChip(list,inp){const v=inp.value.trim().replace(/\s+/g,' ');if(!v)return;const L=PF[list];if(!L.some(x=>x.toLowerCase()===v.toLowerCase()))L.push(list==='skills'?v.toLowerCase():v);inp.value='';$(list==='skills'?'skChips':'locChips').innerHTML=L.map((x,i)=>chipHTML(x,i,list)).join('');pfDraft()}
+function profileInit(){const f=$('pf');pfRender();
+ f.addEventListener('input',pfDraft);f.addEventListener('change',pfDraft);
+ [['locIn','locations'],['skIn','skills']].forEach(([id,list])=>{const inp=$(id);inp.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===','){e.preventDefault();addChip(list,inp)}else if(e.key==='Backspace'&&!inp.value&&PF[list].length){PF[list].pop();pfRender();pfDraft();inp.focus()}});
+  inp.addEventListener('change',()=>{if(inp.value&&[...(inp.list?.options||[])].some(o=>o.value===inp.value))addChip(list,inp)});inp.addEventListener('blur',()=>addChip(list,inp))});
+ f.addEventListener('click',e=>{const rm=e.target.closest('[data-rm]');if(rm){PF[rm.dataset.rm].splice(+rm.dataset.i,1);pfRender();pfDraft();return}
+  const de=e.target.closest('[data-delexp]');if(de){pfRead();PF.experience.splice(+de.dataset.delexp,1);pfRender();pfDraft()}});
+ $('addExp').onclick=()=>{pfRead();PF.experience.push({kind:'Job',title:'',org:'',start:'',end:'',bullets:[]});pfRender();pfDraft();$('expList').lastElementChild?.querySelector('[data-e=title]')?.focus()};
+ const drop=$('pfDrop');['dragenter','dragover'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add('over')}));['dragleave','drop'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove('over')}));
+ drop.addEventListener('drop',e=>{const file=e.dataTransfer.files[0];if(file)readIn(file)});
+ const onFile=e=>{const file=e.target.files[0];if(file)readIn(file);e.target.value=''};$('resume').onchange=onFile;$('liPdf').onchange=onFile;
+ $('liGo').onclick=()=>{const t=$('liText').value.trim();if(t.length<40){$('rstat').textContent='Paste your full LinkedIn profile text first.';return}ingest(t)};
+ $('pfSave').onclick=saveAndSearch;$('pfReset').onclick=resetProfile;
+ let lists=false;const fillLists=()=>{if(lists)return;lists=true;fetch('data/schools.json').then(r=>r.json()).then(a=>$('schoolList').innerHTML=a.map(n=>`<option value="${esc(n)}">`).join('')).catch(()=>{});
+  $('majorList').innerHTML=MAJORS.map(m=>`<option value="${esc(m.replace(/\b\w/g,c=>c.toUpperCase()))}">`).join('');$('skillList').innerHTML=SKILLS.map(s=>`<option value="${esc(s)}">`).join('')};
+ f.addEventListener('focusin',fillLists,{once:true});document.addEventListener('radar:page',e=>{if(e.detail==='profile')fillLists()})}
+async function readIn(file){$('rstat').textContent='Reading '+file.name+'…';try{ingest(await readFile(file))}catch(err){$('rstat').textContent='Could not read that file: '+err.message}}
+function ingest(text){const R=parseResume(text);pfRead();let n=0;const set=(k,v)=>{if(v&&!PF[k]){PF[k]=String(v);n++}};set('school',R.school);set('major',R.major);set('gpa',R.gpa);set('classYear',R.classYear);
+ const sk=(R.skills||[]).map(s=>s.toLowerCase()).filter(s=>!PF.skills.includes(s));if(sk.length){PF.skills.push(...sk);n+=sk.length}
+ const ex=(R.experience||[]).filter(e=>e.title&&!PF.experience.some(p=>p.title===e.title)).map(e=>{const [t,o]=e.title.split(' — ');return{kind:/intern/i.test(t)?'Internship':'Job',title:(t||'').trim(),org:(o||'').trim(),start:'',end:'',bullets:(e.text||'').split(/(?<=\.)\s+|\s*•\s*/).map(x=>x.trim()).filter(x=>x.length>3).slice(0,3)}});
+ const cl=(R.clubs||[]).concat(R.leadership||[]).slice(0,3).filter(c=>!PF.experience.some(p=>p.title===c)).map(c=>({kind:'Club',title:c.slice(0,80),org:'',start:'',end:'',bullets:[]}));
+ PF.experience.push(...ex,...cl);n+=ex.length+cl.length;pfRender();Store.set('profileDraft',PF);$('rstat').textContent=n?`We filled in ${n} field${n===1?'':'s'}. Check them below.`:'We could not find details to fill in. Add them below.'}
+function toastMsg(m){if(typeof toast==='function')toast(m)}
+async function saveAndSearch(){pfRead();const errs=[];if(PF.gpa&&(isNaN(+PF.gpa)||+PF.gpa<0||+PF.gpa>4.5))errs.push('GPA should be between 0 and 4.5');
+ if(!PF.industries.length&&!PF.major&&!PF.skills.length&&!PF.experience.length)errs.push('add at least your major, an interest, a skill or an experience');
+ if(errs.length){$('pfMsg').textContent='Please '+errs.join(' and ')+'.';$('pfMsg').classList.add('err');return}$('pfMsg').classList.remove('err');
+ profile={...JSON.parse(JSON.stringify(PF)),v:6,savedAt:new Date().toISOString()};Store.set('profile',profile);Store.set('profileDraft',PF);
+ $('pfSave').disabled=true;$('pfMsg').textContent='Grading internships…';await rescore();const n=D.filter(x=>x.live&&MSCORE.has(x.id)).length;$('pfSave').disabled=false;$('pfMsg').textContent='Saved';
+ F.sort='match';$('sort').value='match';go('db');update();vrender(true);toastMsg(`Showing your matches. ${n.toLocaleString()} internships graded.`)}
+function resetProfile(){openModal(`<h2>Reset your profile?</h2><p>This clears your profile and removes all match grades. The homepage goes back to its default view. Your tracker is not affected.</p><div class="mf-foot"><button type="button" class="link" id="rsNo">Cancel</button><button type="button" class="btn danger" id="rsYes">Reset to default</button></div>`);
+ $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');profile={v:6};PF={v:6,experience:[],skills:[],locations:[],industries:[]};MSCORE=new Map();
+  if(F.sort==='match')F.sort='new';F.minm='';$('sort').value=F.sort;closeModal();pfRender();$('rstat').textContent='';go('db');update();vrender(true);toastMsg('Profile reset. Showing all internships.')}}
+/* ---------- grading: Web Worker rescoring (falls back to time-sliced main thread) ---------- */
+let MWK=null,mwInit=false,mwSeq=0;
+function slimRows(){return D.filter(x=>x.st!=='closed').map(x=>({id:x.id,title:x.title,company:x.company,industry:x.industry||x.category,class_years:x.class_years,size:x.size,metro_pop:x.metro_pop,remote:x.remote,posted:x.posted,fs:x.first_seen,gpa_min:x.gpa_min,openings:x.openings,paid:x.paid,sponsorship:x.sponsorship,citizenship:x.citizenship,locations:(x.locations||[]).map(l=>({pop:l.pop})),_t:x._t}))}
+async function rescore(){if(!MatchCore.hasProfile(profile)){MSCORE=new Map();return 0}await cfgReady;await MWready;const t0=performance.now();
+ const apply=(ids,pct)=>{if(!MatchCore.hasProfile(profile)){MSCORE=new Map();return 0}const M=new Map();for(let i=0;i<ids.length;i++){const p=pct[i];M.set(ids[i],{pct:p,grade:MatchCore.grade(p,MW),band:MatchCore.band(p)})}MSCORE=M;window._rescoreMs=Math.round(performance.now()-t0);return M.size};
+ if(window.Worker){try{if(!MWK){MWK=new Worker('match-worker.js')}if(!mwInit){MWK.postMessage({t:'init',rows:slimRows(),cfg:CFG,w:MW});mwInit=true}
+  const seq=++mwSeq;return await new Promise((res,rej)=>{MWK.onmessage=e=>{if(e.data.seq===seq)res(apply(e.data.ids,e.data.pct))};MWK.onerror=rej;MWK.postMessage({t:'score',seq,profile})})}catch(_){MWK=null}}
+ const P=MatchCore.profile(profile),rows=D.filter(x=>x.st!=='closed'),ids=[],pct=[];for(let i=0;i<rows.length;i++){ids.push(rows[i].id);pct.push(MatchCore.score({...rows[i],industry:rows[i].industry||rows[i].category},P,CFG,MW).pct);if(i%1500===1499)await new Promise(r=>setTimeout(r,0))}return apply(ids,pct)}
+async function refreshMatches(){await rescore();if(!MSCORE.size&&F.minm)F.minm='';renderPills();vrender(true);if(F.sort==='match')update(true)}
+function matchDetail(x){if(!MSCORE.has(x.id)||!CFG||!MW)return null;return MatchCore.score({...x,industry:x.industry||x.category},MatchCore.profile(profile),CFG,MW)}
 document.addEventListener('radar:tracker',()=>{vrender(true);$('trkN').textContent=T.all().length||''});
 
 boot();

@@ -2,8 +2,8 @@
 
 ## V6.1 — Speed and grade calibration
 - Speed: the logo map is no longer fetched at startup. It loads once the page is idle, about 3s after the intro starts, and only the cards and tracker rows on screen re-render. The match worker still starts only once a saved profile exists. Requests during the first page load (local Lighthouse): 39 down to 23.
-- Calibration (`match-weights.json` and the odds curve; no new data): Fit 47%, Odds 43%, Preferences 10%. The odds curve now uses exponent 0.9 with a +30 bonus below competition 40. Strong candidates (GPA and related experience) feel a crowded applicant pool less (`strengthRelief` 0.35). Having no experience counts less the lower a role's competition is (`noExperience`: 50 rising to 90). The low-competition boost now runs below 42 at strength 0.8.
-- The no-experience test profile now gets 28 A- grades at low-competition roles it's eligible for and that match its interests (it had none). On crowded roles (competition 60+), the top profile now leads it by 25.6 points (80.5 vs 54.9 on average), up from 19.0.
+- Stricter grading, for honesty (`match-weights.json`): Fit 45%, Odds 40%, Preferences 15% (unchanged). A new strictness curve (score^1.35) pulls every score down, and the top hardest, so A grades are rare. Low competition helps only a little: the odds bonus below competition 40 dropped from +25 to +10, and the final low-competition boost from 0.6 to 0.2. No relief for missing experience, and no competition discount for strong profiles.
+- Grade counts over 10,871 live listings, A-range (A+/A/A-) in brackets: no-experience profile median 29%, best grade C (0 A-range, was 0); average profile median 37%, best B+ (0 A-range, was 29); top profile median 40% (266 A-range, was 752).
 - The sync workflow copy in `ops/workflows/sync.yml` now runs the logo build (new companies only, plus careers-board retries that haven't been tried yet) and commits `assets/logos/`.
 
 ## V6 — One match grade, a simpler profile, a bigger tracker, real logos

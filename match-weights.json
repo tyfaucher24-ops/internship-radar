@@ -1,8 +1,8 @@
 {
  "_readme": "V6 match % weights. Match % = Fit*fit + Odds*odds + Preferences*prefs (weights sum to 1). Sub-weights are relative. Unknown inputs are left out and lower confidence. Edit here only.",
- "fit": 0.47,
- "odds": 0.43,
- "prefs": 0.1,
+ "fit": 0.45,
+ "odds": 0.4,
+ "prefs": 0.15,
  "fitParts": {
   "interest": 35,
   "skills": 25,
@@ -23,8 +23,8 @@
   "remote": 15
  },
  "lowCompetitionBoost": {
-  "below": 42,
-  "strength": 0.8
+  "below": 40,
+  "strength": 0.2
  },
  "ineligibleCap": 40,
  "grades": [
@@ -80,14 +80,15 @@
   90
  ],
  "oddsCurve": {
-  "exponent": 0.9,
+  "exponent": 1.3,
   "lowBelow": 40,
-  "lowBonus": 30,
-  "strengthRelief": 0.35
+  "lowBonus": 10,
+  "strengthRelief": 0
  },
  "noExperience": {
   "base": 50,
-  "max": 90,
+  "max": 50,
   "reliefBelow": 60
- }
+ },
+ "strictness": 1.35
 }

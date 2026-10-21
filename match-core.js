@@ -63,6 +63,8 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const parts=[[fit.v,W.fit],[odds.v,W.odds],[prefs.v,W.prefs]].filter(p=>p[0]!=null);const tw=parts.reduce((a,p)=>a+p[1],0)||1;
  let pct=parts.reduce((a,p)=>a+p[0]*p[1],0)/tw;
  const B=W.lowCompetitionBoost||{};if(comp.score!=null&&comp.score<(B.below||35))pct+=(100-pct)*((B.below-comp.score)/B.below)*(B.strength||.5);
+ // strictness curve: pct^k pulls every score down and the top hardest in absolute terms, so A grades are rare (match-weights.json strictness)
+ if(W.strictness&&W.strictness!==1)pct=100*Math.pow(Math.max(0,pct)/100,W.strictness);
  if(ineligible)pct=Math.min(pct,W.ineligibleCap||40);
  pct=Math.max(0,Math.min(100,Math.round(pct)));
  const known=fit.n+odds.n+prefs.n,conf=known>=9?'high':known>=6?'medium':'low';

@@ -459,3 +459,8 @@ body.intro-on main#main{visibility:hidden}
 .firsttip{position:fixed;left:var(--sp-4);bottom:var(--sp-4);z-index:40;max-width:440px;margin:0;box-shadow:var(--shadow-2);font-size:var(--fs-s)}
 @media (max-width:700px){.firsttip{left:var(--sp-2);right:var(--sp-2);bottom:var(--sp-2);max-width:none}}
 body.noscroll .firsttip{display:none}
+@media (max-width:700px){
+ .find-head .lede{min-height:2.9em}
+ #t-db .rhead #count{flex:1 1 100%;min-height:1.5em}
+ #t-db .rhead .rtools{flex:1 1 100%;min-height:88px;align-content:flex-start}
+}

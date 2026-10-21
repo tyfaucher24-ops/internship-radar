@@ -2493,3 +2493,10 @@ Zus Health,,lever,zushealth,,,,,github:SimplifyJobs/Summer2027-Internships,
 Two Sigma,twosigma.com,avature,https://careers.twosigma.com/careers/InternshipsAndEarlyCareers,,Finance,NY,https://careers.twosigma.com/careers/InternshipsAndEarlyCareers,manual:V9,V9: official careers site (robots.txt allows /careers)
 Morgan Stanley,morganstanley.com,talnet,morganstanley.tal.net,,Finance,NY,https://morganstanley.tal.net/candidate/jobboard/vacancy/1/adv/,manual:V9,V9: official campus board; crawl-delay 10 honored; bare city names mapped only for known US offices
 Evercore,evercore.com,talnet,evercore.tal.net,,Finance,NY,https://evercore.tal.net/candidate/jobboard/vacancy/1/adv/,manual:V9,V9: official campus board; crawl-delay 10 honored
+Deutsche Bank,db.com,workday,db.wd3.myworkdayjobs.com/db/DBWebsite,,Finance,NY,,manual:V9,V9: official Workday board
+PayPal,paypal.com,workday,paypal.wd1.myworkdayjobs.com/paypal/jobs,,Technology,CA,,manual:V9,V9: official Workday board
+The Home Depot,homedepot.com,workday,homedepot.wd5.myworkdayjobs.com/homedepot/CareerDepot,,Retail,GA,,manual:V9,V9: official Workday board
+AT&T,att.com,workday,att.wd1.myworkdayjobs.com/att/ATTGeneral,,Telecommunications,TX,,manual:V9,V9: official Workday board
+RBC,rbc.com,workday,rbc.wd3.myworkdayjobs.com/rbc/RBCGLOBAL1,,Finance,,,manual:V9,V9: official Workday board
+BMO,bmo.com,workday,bmo.wd3.myworkdayjobs.com/bmo/External,,Finance,IL,,manual:V9,V9: official Workday board
+TD Securities,td.com,workday,td.wd3.myworkdayjobs.com/td/TD_Bank_Careers,,Finance,NY,,manual:V9,V9: official Workday board (TD Bank)

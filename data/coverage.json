@@ -1,0 +1,989 @@
+[
+ {
+  "firm": "Citadel",
+  "registry": "",
+  "open": 1,
+  "status": "covered",
+  "note": "Careers site sits behind a Cloudflare bot challenge; not read"
+ },
+ {
+  "firm": "Citadel Securities",
+  "registry": "",
+  "open": 1,
+  "status": "covered",
+  "note": "Careers site sits behind a Cloudflare bot challenge; not read"
+ },
+ {
+  "firm": "Morgan Stanley",
+  "registry": "talnet",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Evercore",
+  "registry": "talnet",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": "Board read; at audit time it listed only coffee chats/open houses (events, not jobs)"
+ },
+ {
+  "firm": "Blackstone",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Two Sigma",
+  "registry": "avature",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Google",
+  "registry": "",
+  "open": 9,
+  "status": "covered",
+  "note": "robots.txt disallows /about/careers/applications/jobs/results"
+ },
+ {
+  "firm": "Goldman Sachs",
+  "registry": "",
+  "open": 8,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "JPMorgan Chase",
+  "registry": "",
+  "open": 6,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Bank of America",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Citi",
+  "registry": "workday",
+  "open": 9,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Wells Fargo",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Barclays",
+  "registry": "workday",
+  "open": 6,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "UBS",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Deutsche Bank",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "BNP Paribas",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "RBC",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "BMO",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "TD Securities",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Jefferies",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Lazard",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Centerview Partners",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "PJT Partners",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Moelis",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Perella Weinberg",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Guggenheim",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Houlihan Lokey",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "William Blair",
+  "registry": "greenhouse",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Piper Sandler",
+  "registry": "workday",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Raymond James",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Stifel",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "KKR",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Carlyle",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Apollo",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "TPG",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Bain Capital",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Warburg Pincus",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "BlackRock",
+  "registry": "workday",
+  "open": 12,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Vanguard",
+  "registry": "workday",
+  "open": 21,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Fidelity",
+  "registry": "workday",
+  "open": 43,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "State Street",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "PIMCO",
+  "registry": "workday",
+  "open": 27,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Wellington",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "T. Rowe Price",
+  "registry": "workday",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Bridgewater",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Millennium",
+  "registry": "",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Point72",
+  "registry": "greenhouse",
+  "open": 17,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "D. E. Shaw",
+  "registry": "",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Jane Street",
+  "registry": "greenhouse",
+  "open": 14,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Hudson River Trading",
+  "registry": "",
+  "open": 2,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Jump Trading",
+  "registry": "greenhouse",
+  "open": 11,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Optiver",
+  "registry": "greenhouse",
+  "open": 11,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "IMC",
+  "registry": "greenhouse",
+  "open": 11,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "DRW",
+  "registry": "greenhouse",
+  "open": 7,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Susquehanna International Group (SIG)",
+  "registry": "",
+  "open": 18,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Akuna Capital",
+  "registry": "",
+  "open": 10,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Virtu",
+  "registry": "greenhouse",
+  "open": 4,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Tower Research",
+  "registry": "",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Five Rings",
+  "registry": "greenhouse",
+  "open": 4,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "McKinsey",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Boston Consulting Group",
+  "registry": "",
+  "open": 2,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Bain & Company",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Deloitte",
+  "registry": "",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "PwC",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "EY",
+  "registry": "",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "KPMG",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Accenture",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Oliver Wyman",
+  "registry": "lever",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Booz Allen Hamilton",
+  "registry": "",
+  "open": 63,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Microsoft",
+  "registry": "",
+  "open": 27,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Amazon",
+  "registry": "",
+  "open": 13,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Apple",
+  "registry": "workday",
+  "open": 9,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Meta",
+  "registry": "",
+  "open": 33,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "NVIDIA",
+  "registry": "workday",
+  "open": 27,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Netflix",
+  "registry": "workday",
+  "open": 2,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Salesforce",
+  "registry": "workday",
+  "open": 8,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Adobe",
+  "registry": "workday",
+  "open": 15,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Oracle",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "IBM",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Intel",
+  "registry": "smartrecruiters,workday",
+  "open": 37,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "AMD",
+  "registry": "",
+  "open": 29,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Qualcomm",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Cisco",
+  "registry": "workday",
+  "open": 41,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Tesla",
+  "registry": "",
+  "open": 125,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "SpaceX",
+  "registry": "greenhouse",
+  "open": 16,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Stripe",
+  "registry": "greenhouse",
+  "open": 6,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Palantir",
+  "registry": "lever",
+  "open": 31,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Databricks",
+  "registry": "",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "OpenAI",
+  "registry": "ashby",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Anthropic",
+  "registry": "greenhouse",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Uber",
+  "registry": "greenhouse",
+  "open": 4,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Airbnb",
+  "registry": "greenhouse",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Snowflake",
+  "registry": "ashby",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "ServiceNow",
+  "registry": "smartrecruiters",
+  "open": 5,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Workday",
+  "registry": "workday",
+  "open": 6,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Intuit",
+  "registry": "smartrecruiters",
+  "open": 8,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "PayPal",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Capital One",
+  "registry": "workday",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "American Express",
+  "registry": "",
+  "open": 25,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Visa",
+  "registry": "smartrecruiters,workday",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Mastercard",
+  "registry": "workday",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Lockheed Martin",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Northrop Grumman",
+  "registry": "workday",
+  "open": 26,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "RTX",
+  "registry": "workday",
+  "open": 96,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Boeing",
+  "registry": "",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "General Dynamics",
+  "registry": "smartrecruiters,workday",
+  "open": 22,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "GE Aerospace",
+  "registry": "workday",
+  "open": 44,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Honeywell",
+  "registry": "",
+  "open": 8,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Caterpillar",
+  "registry": "workday",
+  "open": 20,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Deere",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "3M",
+  "registry": "workday",
+  "open": 20,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Johnson & Johnson",
+  "registry": "workday",
+  "open": 78,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Pfizer",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Merck",
+  "registry": "workday",
+  "open": 56,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "AbbVie",
+  "registry": "smartrecruiters",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Eli Lilly",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Procter & Gamble",
+  "registry": "workday",
+  "open": 31,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "PepsiCo",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Coca-Cola",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Unilever",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "L'Oreal",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Nike",
+  "registry": "workday",
+  "open": 16,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Disney",
+  "registry": "",
+  "open": 4,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Comcast",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ },
+ {
+  "firm": "Verizon",
+  "registry": "workday",
+  "open": 13,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "AT&T",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "T-Mobile",
+  "registry": "workday",
+  "open": 3,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Walmart",
+  "registry": "workday",
+  "open": 30,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Target",
+  "registry": "workday",
+  "open": 42,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Home Depot",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Ford",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "General Motors",
+  "registry": "workday",
+  "open": 48,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Toyota",
+  "registry": "lever",
+  "open": 2,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "ExxonMobil",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "Chevron",
+  "registry": "workday",
+  "open": 18,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Mayo Clinic",
+  "registry": "",
+  "open": 1,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Cleveland Clinic",
+  "registry": "workday",
+  "open": 6,
+  "status": "covered",
+  "note": ""
+ },
+ {
+  "firm": "Kaiser Permanente",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "HCA Healthcare",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "UnitedHealth Group",
+  "registry": "",
+  "open": 0,
+  "status": "not in registry",
+  "note": ""
+ },
+ {
+  "firm": "CVS Health",
+  "registry": "workday",
+  "open": 0,
+  "status": "in registry, 0 open now",
+  "note": ""
+ }
+]

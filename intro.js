@@ -14,9 +14,21 @@ function arrive(){body.classList.remove('intro-on');body.classList.add('arriving
 function end(fast){if(ended)return;ended=true;
  intro.classList.add(fast||RM?'fade-fast':'fade');arrive();setTimeout(()=>{stopLoop();dispose();intro.remove();const q=$i('q');q&&q.focus({preventScroll:true})},fast||RM?320:650)}
 window.__introEnd=end;
-$i('skipIntro').onclick=()=>end(true);
-$i('goFind').onclick=()=>end(false);/* V5.1 #9: quick fade, no zoom */
-addEventListener('keydown',function k(e){if(e.key==='Escape'&&!ended){end(true);removeEventListener('keydown',k)}});
+/* V7: Details screen (replaces Skip intro). transform/opacity only; #details history state; Back, browser back and Esc reverse it */
+const DT=$i('details'),DB=$i('detailsBtn');let dOpen=false;
+function placeDetails(){const st=intro.querySelector('.globe-stage'),sl=intro.querySelector('.globe-slot').getBoundingClientRect(),mob=innerWidth<=900;
+ const cx=sl.left+sl.width/2,cy=sl.top+sl.height/2,tx=mob?innerWidth/2:innerWidth*0.27,ty=mob?Math.min(innerHeight*0.2,sl.height*0.42):innerHeight/2,s=mob?0.55:0.72;
+ intro.style.setProperty('--dx',(tx-cx)+'px');intro.style.setProperty('--dy',(ty-cy)+'px');intro.style.setProperty('--ds',s);intro.style.setProperty('--ox',cx+'px');intro.style.setProperty('--oy',cy+'px')}
+function openDetails(push){if(dOpen||ended)return;dOpen=true;placeDetails();DT.hidden=false;DB.setAttribute('aria-expanded','true');void DT.offsetWidth;intro.classList.add('details-on');if(push)history.pushState({details:1},'','#details');setTimeout(()=>$i('detailsBack').focus({preventScroll:true}),RM?50:700)}
+function closeDetails(){if(!dOpen)return;dOpen=false;intro.classList.remove('details-on');DB.setAttribute('aria-expanded','false');setTimeout(()=>{if(!dOpen)DT.hidden=true;DB.focus({preventScroll:true})},RM?200:900)}
+DB.onclick=()=>openDetails(true);
+$i('detailsBack').onclick=()=>{if(history.state&&history.state.details)history.back();else{closeDetails();history.replaceState(null,'',location.pathname+location.search)}};
+addEventListener('popstate',()=>{if(ended)return;if(location.hash==='#details')openDetails(false);else closeDetails()});
+addEventListener('resize',()=>{if(dOpen)placeDetails()});
+$i('dFind').onclick=()=>{if(location.hash==='#details')history.replaceState(null,'',location.pathname+location.search);end(false)};
+if(location.hash==='#details')requestAnimationFrame(()=>openDetails(false));
+$i('goFind').onclick=()=>{if(location.hash==='#details')history.replaceState(null,'',location.pathname+location.search);end(false)};/* V5.1 #9: quick fade, no zoom */
+addEventListener('keydown',function k(e){if(e.key==='Escape'&&!ended){if(dOpen){$i('detailsBack').click();return}end(true);removeEventListener('keydown',k)}});
 /* ---------- DOM interactions: cursor glow, parallax, sky ripples, magnetic button ---------- */
 const glow=document.createElement('div');
 const P={mx:.5,my:.5,tx:.5,ty:.5};

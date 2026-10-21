@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<script>/* V5.2: the globe intro shows on every visit to the site root; deep links (#find, #tracker, #profile, ?q=…) skip it */(function(){var h=location.hash.replace(/^#/,""),q=new URLSearchParams(location.search);["intro","gl","aa"].forEach(function(k){q.delete(k)});if((h&&!/^intro$/.test(h))||[...q.keys()].length)document.documentElement.classList.add("seen")})()</script>
+<script>/* V5.2: the globe intro shows on every visit to the site root; deep links (#find, #tracker, #profile, ?q=…) skip it */(function(){var h=location.hash.replace(/^#/,""),q=new URLSearchParams(location.search);["intro","gl","aa"].forEach(function(k){q.delete(k)});if((h&&!/^(intro|details)$/.test(h))||[...q.keys()].length)document.documentElement.classList.add("seen")})()</script>
 <title>Internship Radar · Every internship. Tracked. Matched. Free.</title>
 <meta name="description" content="Internship Radar tracks every open US internship (plus the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get. Free, no login.">
 <meta property="og:title" content="Internship Radar"><meta property="og:description" content="Every internship. Tracked. Matched. Free."><meta property="og:type" content="website"><meta property="og:url" content="https://tyfaucher24-ops.github.io/internship-radar/"><meta property="og:image" content="https://tyfaucher24-ops.github.io/internship-radar/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
@@ -18,10 +18,22 @@
    <h1 id="introH" class="hl">Every internship.<br>Tracked. Matched. Free.</h1>
    <p class="sub">We track every open US internship, flag the ones about to open, keep your applications in one place, and show the roles you can actually get.</p>
    <p class="counter"><span class="hdrCount">Loading live counts…</span></p>
-   <div class="cta"><button id="goFind" class="cbtn primary" type="button">Find my internship</button><button id="skipIntro" class="cbtn secondary" type="button">Skip intro</button></div>
+   <div class="cta"><button id="goFind" class="cbtn primary" type="button">Find My Internship</button><button id="detailsBtn" class="cbtn ghost" type="button" aria-controls="details" aria-expanded="false">Details</button></div>
   </div>
   <div class="globe-wrap globe-slot" aria-hidden="true"><div class="globe-ph"></div><div class="ping-css"></div></div>
  </div>
+ <section id="details" class="details" aria-labelledby="detailsH" hidden>
+  <button id="detailsBack" class="d-back" type="button">← Back</button>
+  <h2 id="detailsH">What is Internship Radar?</h2>
+  <ol class="d-steps">
+   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><div><b>Every internship</b><span>Thousands of real US internships, checked against company career sites. Last updated <span id="dUpd">recently</span>.</span></div></li>
+   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><b>Your match %</b><span>Add your resume and experience to see how well you fit each one.</span></div></li>
+   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span><div><b>Track everything</b><span>Save internships and track applications in one simple spreadsheet.</span></div></li>
+   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>100% free</b><span>No paywalls, ever.</span></div></li>
+  </ol>
+  <p class="d-count"><b id="dCount">…</b> open internships right now.</p>
+  <button id="dFind" class="cbtn primary" type="button">Find My Internship</button>
+ </section>
 </div>
 <a class="skiplink" href="#main">Skip to content</a>
 <header id="hdr" class="site-header"><div class="container hd">

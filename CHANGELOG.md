@@ -1,5 +1,11 @@
 # Internship Radar changelog
 
+## V7 — Details screen on the intro
+- "Skip intro" is gone. Next to "Find My Internship" there is now a "Details" button (same size, outline style).
+- Details: the planet eases to the left and shrinks (on phones it stays on top and shrinks), the hero text fades out, and a panel slides in: "What is Internship Radar?", four short steps with icons (staggered fade-in), the shared live count ("10,871 open internships right now.") and Find My Internship. It uses only transform and opacity (about 0.9s).
+- Back, the browser back button and Esc all reverse it. `#details` is a real history state and works as a direct link. With reduced motion it is a simple fade.
+- The copy is accurate: the scheduled sync isn't running yet, so step 1 says listings are "checked against company career sites" and shows the real "Last updated X ago" from `data/meta.json` rather than promising a refresh rate.
+
 ## V6.2 — Honest feedback page
 - New page, "Honest feedback" (#feedback), linked from My Profile and next to the results count once a profile is saved. It is blunt but constructive, and every number is computed in the browser from the saved profile, the live listings and the same scoring engine. Nothing leaves the device.
 - Five sections:

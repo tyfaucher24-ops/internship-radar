@@ -136,3 +136,8 @@
 --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;
 --shadow-1:0 1px 2px rgba(20,23,43,.06);--shadow-2:0 8px 24px rgba(20,23,43,.10);
 --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--dur:.15s;}
+/* V11 editorial accents (newspaper feel layered on the V10 theme) */
+:root{--font-display:"Playfair Display",Georgia,"Times New Roman",serif;--font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+--c-paper:#f7f4ec;--c-newsink:#1a1a1a;--c-accent:#9b1c1c;--c-up:#047857;--c-down:#b42318;--c-move:#8a5a00;--rule:1px solid var(--c-newsink)}
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:400 900;font-display:swap;src:url(assets/playfair-700.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(assets/jbmono-500.woff2) format("woff2")}

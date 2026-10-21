@@ -4,7 +4,7 @@
 <meta name="description" content="Internship Radar tracks every open US internship (plus the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get. Free, no login.">
 <meta property="og:title" content="Internship Radar"><meta property="og:description" content="Every internship. Tracked. Matched. Free."><meta property="og:type" content="website"><meta property="og:url" content="https://tyfaucher24-ops.github.io/internship-radar/"><meta property="og:image" content="https://tyfaucher24-ops.github.io/internship-radar/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#5b46c9"><link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preload" href="assets/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preload" href="assets/inter-var.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/playfair-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="v4.css"><link rel="stylesheet" href="v5.css"></head>
 <body class="booting">
 <a class="skiplink" href="#results">Skip to results</a>
@@ -44,7 +44,15 @@
 </div></header>
 <main id="main">
 <section id="t-db" class="page">
- <div class="pagehead find-head"><div class="container"><h1>Find your internship</h1><p class="lede"><span class="hdrCount" id="hdrCount" aria-live="polite">Loading live counts…</span></p></div></div>
+ <div class="pagehead find-head mast"><div class="container">
+  <div class="mast-top"><span class="mast-date" id="mastDate"></span><span class="lede"><span class="hdrCount" id="hdrCount" aria-live="polite">Loading live counts…</span></span></div>
+  <h1 class="mast-h">Internship Radar</h1>
+  <p class="mast-sub">Find your internship</p>
+ </div></div>
+ <div class="container"><section id="ticker" class="ticker" aria-label="Internship Exchange: real changes from the latest sync" hidden>
+  <button type="button" class="tk-lbl" id="tkMarket" title="Open Market Activity"><b>Internship Exchange</b><span id="tkAsOf"></span></button>
+  <div class="tk-win"><div class="tk-track" id="tkTrack"></div></div>
+ </section></div>
  <div class="container">
   <div class="fbar" role="search">
    <div class="sbox"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search company, role or keyword" aria-label="Search internships" autocomplete="off"></div>
@@ -126,5 +134,5 @@
 <div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <div id="tip" role="tooltip" hidden></div>
 <script src="store.js"></script><script src="listing.js"></script>
-<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="lists.js" defer></script><script src="combo.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
+<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="lists.js" defer></script><script src="combo.js" defer></script><script src="ticker.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
 </body></html>

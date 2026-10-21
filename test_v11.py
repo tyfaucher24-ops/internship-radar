@@ -24,7 +24,7 @@ with sync_playwright() as p:
     pg.keyboard.press('Escape')
     ok('Pulsing live dots in header and ticker',pg.locator('.find-head .pulse').count()==1 and pg.locator('#ticker .pulse').count()==1 and pg.evaluate("getComputedStyle(document.querySelector('.pulse'),'::after').animationName")=='pulse')
     ok('No newspaper masthead left',pg.locator('.mast,.mast-h,#mastDate').count()==0)
-    ok('Ticker is a dark market board',pg.evaluate("getComputedStyle(document.getElementById('ticker')).backgroundColor")=='rgb(15, 18, 32)')
+    ok('Ticker uses the page surface (V11.1 restrained strip)',pg.evaluate("getComputedStyle(document.getElementById('ticker')).backgroundColor")=='rgb(255, 255, 255)')
 
 
     pg.goto('about:blank');pg.goto(B+'#profile');pg.wait_for_timeout(2000)

@@ -3,7 +3,7 @@ Only three event kinds, all verifiable from the two snapshots:
   new      - open and visible now, not open before, and first seen during this sync
   closed   - open and visible before, marked closed by this sync (hidden-by-QA rows are NOT counted as closed)
   deadline - open in both, both have a deadline, and it changed
-Writes data/changes.json: {"updated", "counts" (full counts for the latest sync), "events"} with up to 150 events per kind for the latest sync plus up to 300 older events from the last 7 days. Nothing is ever simulated."""
+Writes data/changes.json: {"updated": ISO, "events": [...]} keeping the last 7 days (max 400 events). Nothing is ever simulated."""
 import json,os,datetime
 D=os.path.join(os.path.dirname(__file__),'..','data')
 def _loc(r):
@@ -32,10 +32,6 @@ def update(prev,cur,at):
     keep=[e for e in old.get('events',[]) if e['t']>=cut and e['t']!=at]
     new=events(prev,cur,at);order={'new':0,'deadline':1,'closed':2}
     new.sort(key=lambda e:(order[e['k']],e['co']))
-    counts={k:sum(1 for e in new if e['k']==k) for k in order}
-    cap=[];per={k:0 for k in order}
-    for e in new:
-        if per[e['k']]<150: cap.append(e);per[e['k']]+=1
-    allv=cap+[e for e in keep][:300]
-    json.dump({'updated':at,'source':'sync diff (previous vs new listings snapshot)','counts':counts,'events':allv},open(fp,'w'),ensure_ascii=False,separators=(',',':'))
+    allv=(new+keep)[:400]
+    json.dump({'updated':at,'source':'sync diff (previous vs new listings snapshot)','events':allv},open(fp,'w'),ensure_ascii=False,separators=(',',':'))
     c={k:sum(1 for e in new if e['k']==k) for k in order};print('changes.json',c,'kept',len(keep));return c

@@ -213,6 +213,11 @@ def main():
     for pid,p in prevL.items():
         if p['key'] in recs or p.get('source_type')=='prediction': continue
         b=tuple((p.get('board') or ':').split(':',1));b=(b[0],b[1].lower()) if len(b)==2 else b
+        # partial runs (--only/--limit/--skip-leads) never close listings from sources they did not read
+        ran={(k[0],k[1].lower()) for k in res}
+        out_of_scope=(p.get('source_type') in ('ats','jsonld') and b not in ran) or (p.get('source_type')=='github-verified' and a.skip_leads)
+        if (a.only or a.limit or a.skip_leads) and out_of_scope:
+            recs[p['key']]=p;stats['kept_out_of_scope']+=1;continue
         if p.get('source_type') in ('ats','jsonld') and b in failed and p.get('status')=='open':
             p['stale']=True;recs[p['key']]=p;stats['kept_last_good']+=1
         elif p.get('status')=='open':

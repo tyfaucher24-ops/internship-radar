@@ -3,15 +3,15 @@ name,domain,ats,slug,size,industry,hq_state,careers_url,discovered_via,notes
 10a Labs,,greenhouse,10alabs,,,,,github:SimplifyJobs/Summer2027-Internships,
 1Password,,ashby,1password,,,,,github:SimplifyJobs/Summer2027-Internships,
 1X,,ashby,1x,,,,,github:SimplifyJobs/Summer2027-Internships,
-2027 Civil Engineering & Construction Materials Testing 6-month Co-op - St. Cloud,,workday,braunintertec.wd5.myworkdayjobs.com/braunintertec/brauninterteccareers,,,,,github:speedyapply/2027-SWE-College-Jobs,
-2027 Summer Internship Program - Systematic Trading Technology Software Engineer - New York,,workday,brevanhoward.wd3.myworkdayjobs.com/brevanhoward/bh_externalcareers,,,,,github:speedyapply/2027-SWE-College-Jobs,
-2027 Summer IT & Software Internships,,greenhouse,hasbro,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Braun Intertec,,workday,braunintertec.wd5.myworkdayjobs.com/braunintertec/brauninterteccareers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Brevan Howard,,workday,brevanhoward.wd3.myworkdayjobs.com/brevanhoward/bh_externalcareers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Hasbro,,greenhouse,hasbro,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 21Shares,,greenhouse,21shares,,,,,github:SimplifyJobs/Summer2027-Internships,
 3M,,workday,3m.wd1.myworkdayjobs.com/3m/Search,,,,,github:SimplifyJobs/Summer2027-Internships,
 60decibelsinc,,greenhouse,60decibelsinc,,,,,github:SimplifyJobs/Summer2027-Internships,
 7-Eleven,,workday,my7elevenhr.wd12.myworkdayjobs.com/my7elevenhr/Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 A Thinking Ape,,greenhouse,athinkingape,,,,,github:SimplifyJobs/Summer2027-Internships,
-A.I. Developer Co-Op - Boston - MA,,workday,manh.wd5.myworkdayjobs.com/manh/campus,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Manhattan Associates,,workday,manh.wd5.myworkdayjobs.com/manh/campus,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 AAA Club Alliance,,workday,aaamidatlantic.wd5.myworkdayjobs.com/aaamidatlantic/aaamidatlantic,,,,,github:SimplifyJobs/Summer2027-Internships,
 AAA Club Alliance,,workday,ace.wd5.myworkdayjobs.com/ace/careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 AAA Mountainwest Group,,workday,ncnu.wd1.myworkdayjobs.com/ncnu/aaa_ncnu_careers,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -61,9 +61,9 @@ Agilent Technologies,,workday,agilent.wd5.myworkdayjobs.com/agilent/Agilent_Stud
 AgZen,,ashby,agzen,,,,,github:SimplifyJobs/Summer2027-Internships,
 AHEAD,,lever,thinkahead,,,,,github:SimplifyJobs/Summer2027-Internships,
 AI Fund,,lever,AIFund,,,,,github:SimplifyJobs/Summer2027-Internships,
-AI Intern to the CEO,,ashby,cyvl,,,,,github:SimplifyJobs/Summer2027-Internships,
-AI Security Software Engineer Intern - Summer 2027,,workday,cmu.wd115.myworkdayjobs.com/cmu/cmu,,,,,github:speedyapply/2027-SWE-College-Jobs,
-AI Security Software Engineer Intern - Summer 2027,,workday,cmu.wd115.myworkdayjobs.com/cmu/sei,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Cyvl,,ashby,cyvl,,,,,github:SimplifyJobs/Summer2027-Internships,V9: name fixed (was a job title)
+Carnegie Mellon University,,workday,cmu.wd115.myworkdayjobs.com/cmu/cmu,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Carnegie Mellon Software Engineering Institute,,workday,cmu.wd115.myworkdayjobs.com/cmu/sei,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 AIG,,workday,aig.wd1.myworkdayjobs.com/aig/aig,,,,,github:SimplifyJobs/Summer2027-Internships,
 AIG,,workday,aig.wd1.myworkdayjobs.com/aig/early_careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 Air Liquide,,workday,airliquidehr.wd3.myworkdayjobs.com/airliquidehr/AirLiquideExternalCareer,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -519,7 +519,7 @@ Clio,,workday,clio.wd3.myworkdayjobs.com/clio/ClioCareerSite,,,,,github:Simplify
 CLO Virtual Fashion,,lever,clovirtualfashion,,,,,github:SimplifyJobs/Summer2027-Internships,
 Clockwork Systems,,greenhouse,clockworksystems,,,,,github:SimplifyJobs/Summer2027-Internships,
 Clorox,,workday,clorox.wd1.myworkdayjobs.com/clorox/InviteClorox,,,,,github:SimplifyJobs/Summer2027-Internships,
-Cloud ERP Implementation Intern,,workday,impactadvisors.wd501.myworkdayjobs.com/impactadvisors/impactadvisors,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Impact Advisors,,workday,impactadvisors.wd501.myworkdayjobs.com/impactadvisors/impactadvisors,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Cloudflare,,greenhouse,cloudflare,,,,,github:SimplifyJobs/Summer2027-Internships,
 Cloudforce,,lever,go-cloudforce,,,,,github:SimplifyJobs/Summer2027-Internships,
 Clēnera,,greenhouse,clenera,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -658,11 +658,11 @@ Dentsu,,workday,dentsuaegis.wd3.myworkdayjobs.com/dentsuaegis/DAN_GLOBAL,,,,,git
 Denver,,workday,denver.wd1.myworkdayjobs.com/denver/CCD-denver-denvergov-CSC_Jobs-Civil_service_jobs-Police_Jobs-Fire_Jobs,,,,,github:SimplifyJobs/Summer2027-Internships,
 DESIGNME Hair,,greenhouse,designmehair,,,,,github:SimplifyJobs/Summer2027-Internships,
 Desjardins Group,,workday,desjardins.wd10.myworkdayjobs.com/desjardins/Desjardins,,,,,github:SimplifyJobs/Summer2027-Internships,
-Desktop Software Intern - Summer 2027,,greenhouse,formlabsinternships,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Formlabs,,greenhouse,formlabsinternships,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Detroit Lions,,greenhouse,detroitlions,,,,,github:SimplifyJobs/Summer2027-Internships,
 Dev Technology Group,,greenhouse,devtechnology,,,,,github:SimplifyJobs/Summer2027-Internships,
-DevOps Intern,,workday,swbc.wd1.myworkdayjobs.com/swbc/collegeinternships,,,,,github:speedyapply/2027-SWE-College-Jobs,
-DevOps Intern,,workday,swbc.wd1.myworkdayjobs.com/swbc/swivel,,,,,github:speedyapply/2027-SWE-College-Jobs,
+SWBC,,workday,swbc.wd1.myworkdayjobs.com/swbc/collegeinternships,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+SWBC,,workday,swbc.wd1.myworkdayjobs.com/swbc/swivel,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 DevRev,,greenhouse,devrev,,,,,github:SimplifyJobs/Summer2027-Internships,
 Dexmate,,ashby,dexmate,,,,,github:SimplifyJobs/Summer2027-Internships,
 Dexterra Group,,smartrecruiters,Dexterra,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -714,7 +714,7 @@ Dusty Robotics,,greenhouse,dustyrobotics,,,,,github:SimplifyJobs/Summer2027-Inte
 DV Trading,,greenhouse,dvtrading,,,,,github:SimplifyJobs/Summer2027-Internships,
 DXC Technology,,workday,dxctechnology.wd1.myworkdayjobs.com/dxctechnology/dxcjobs,,,,,github:SimplifyJobs/Summer2027-Internships,
 Dynamic Catholic,,lever,dynamiccatholic,,,,,github:SimplifyJobs/Summer2027-Internships,
-e-Careers,,workable,ecareers,,,,,github:SimplifyJobs/Summer2027-Internships,
+e-Careers,,workable,ecareers,,,,,github:SimplifyJobs/Summer2027-Internships,V9: name fixed (was a job title)
 E-Space,,lever,espace,,,,,github:SimplifyJobs/Summer2027-Internships,
 EarnIn,,greenhouse,earnin,,,,,github:SimplifyJobs/Summer2027-Internships,
 Eataly,,smartrecruiters,Eataly,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -740,8 +740,8 @@ Ellipsis Labs,,ashby,ellipsislabs,,,,,github:SimplifyJobs/Summer2027-Internships
 Elsevier,,workday,relx.wd3.myworkdayjobs.com/relx/ElsevierJobs,,,,,github:SimplifyJobs/Summer2027-Internships,
 Eluvio,,workable,eluvio,,,,,github:SimplifyJobs/Summer2027-Internships,
 Ema,,ashby,ema,,,,,github:SimplifyJobs/Summer2027-Internships,
-Embedded Software Engineering Intern,,workday,otis.wd504.myworkdayjobs.com/otis/rec_ext_gateway,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Embedded Systems Engineering Intern - Spring '27,,workable,smartflower-solar-llc,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Otis,,workday,otis.wd504.myworkdayjobs.com/otis/rec_ext_gateway,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Smartflower Solar,,workable,smartflower-solar-llc,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 EMC Insurance,,workday,emcins.wd5.myworkdayjobs.com/emcins/EMC_Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 EMC Insurance,,workday,emcins.wd5.myworkdayjobs.com/emcins/EMC_Internships,,,,,github:SimplifyJobs/Summer2027-Internships,
 Emergent Labs,,greenhouse,emergentlabsinc,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -856,8 +856,8 @@ Finra,,workday,finra.wd1.myworkdayjobs.com/finra/FINRA,,,,,github:SimplifyJobs/S
 Firemon,,lever,firemon,,,,,github:SimplifyJobs/Summer2027-Internships,
 Firetiger,,ashby,firetiger,,,,,github:SimplifyJobs/Summer2027-Internships,
 Fireworks AI,,greenhouse,fireworksai,,,,,github:SimplifyJobs/Summer2027-Internships,
-Firmware Engineering Co-op,,workday,bracco.wd103.myworkdayjobs.com/bracco/braccocareers,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Firmware Engineering Co-Op - Spring 2027,,workday,lego.wd103.myworkdayjobs.com/lego/lego_executive,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Bracco,,workday,bracco.wd103.myworkdayjobs.com/bracco/braccocareers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+LEGO Group,,workday,lego.wd103.myworkdayjobs.com/lego/lego_executive,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 First American,,workday,firstam.wd1.myworkdayjobs.com/firstam/firstamericancareers,,,,,github:SimplifyJobs/Summer2027-Internships,
 First Bank & Trust,,workday,bankeasy.wd5.myworkdayjobs.com/bankeasy/bank-easy-job-openings,,,,,github:SimplifyJobs/Summer2027-Internships,
 First Financial,,workday,ffin.wd1.myworkdayjobs.com/ffin/First_Financial_Bank,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -1177,11 +1177,11 @@ Interco,,smartrecruiters,Interco,,,,,github:SimplifyJobs/Summer2027-Internships,
 Interdigital,,workday,interdigital.wd5.myworkdayjobs.com/interdigital/InterDigital_Intern,,,,,github:SimplifyJobs/Summer2027-Internships,
 Interdigital,,workday,interdigital.wd5.myworkdayjobs.com/interdigital/InterDigital_Career,,,,,github:SimplifyJobs/Summer2027-Internships,
 Intermountain Healthcare,,workday,imh.wd108.myworkdayjobs.com/imh/IntermountainCareers,,,,,github:SimplifyJobs/Summer2027-Internships,
-Intern - Software Engineer - Master's EG,,workday,paloaltonetworks.wd5.myworkdayjobs.com/paloaltonetworks/hidden-private-pawn-temp-gateway-147258369,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Palo Alto Networks,,workday,paloaltonetworks.wd5.myworkdayjobs.com/paloaltonetworks/hidden-private-pawn-temp-gateway-147258369,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 International Mission Board,,workday,golimitless.wd1.myworkdayjobs.com/golimitless/Staff_External_career_site,,,,,github:SimplifyJobs/Summer2027-Internships,
 International Rescue Committee (IRC),,workday,theirc.wd1.myworkdayjobs.com/theirc/External_Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
-Internship,,ashby,interplay,,,,,github:SimplifyJobs/Summer2027-Internships,
-Internship - Software Engineering,,workday,tihinsurance.wd1.myworkdayjobs.com/tihinsurance/crc_careers,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Interplay,,ashby,interplay,,,,,github:SimplifyJobs/Summer2027-Internships,V9: name fixed (was a job title)
+CRC Group,,workday,tihinsurance.wd1.myworkdayjobs.com/tihinsurance/crc_careers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 InterSystems,,greenhouse,intersystems,,,,,github:SimplifyJobs/Summer2027-Internships,
 Intrinsic,,greenhouse,intrinsicrobotics,,,,,github:SimplifyJobs/Summer2027-Internships,
 Intropic,,lever,intropic,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -1196,7 +1196,7 @@ Iowa State University,,workday,isu.wd1.myworkdayjobs.com/isu/IowaStateJobs,,,,,g
 iRhythm Technologies,,workday,irhythmtech.wd5.myworkdayjobs.com/irhythmtech/irhythm,,,,,github:SimplifyJobs/Summer2027-Internships,
 Iron Mountain,,workday,ironmountain.wd5.myworkdayjobs.com/ironmountain/iron-mountain-jobs,,,,,github:SimplifyJobs/Summer2027-Internships,
 iSpot.tv,,greenhouse,ispottv,,,,,github:SimplifyJobs/Summer2027-Internships,
-IT Cloud Engineering Intern,,workday,werner.wd501.myworkdayjobs.com/werner/werner,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Werner Enterprises,,workday,werner.wd501.myworkdayjobs.com/werner/werner,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Itron,,workday,itron.wd5.myworkdayjobs.com/itron/Early_Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 Itron,,workday,itron.wd5.myworkdayjobs.com/itron/Itron,,,,,github:SimplifyJobs/Summer2027-Internships,
 Ivo,,lever,ivo,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -1355,7 +1355,7 @@ Lunar Outpost,,bamboohr,lunaroutpost,,,,,github:SimplifyJobs/Summer2027-Internsh
 Lunon,,ashby,Lunon,,,,,github:SimplifyJobs/Summer2027-Internships,
 Luxium Solutions,,workable,luxium-solutions-llc,,,,,github:SimplifyJobs/Summer2027-Internships,
 Lydian,,ashby,lydian,,,,,github:SimplifyJobs/Summer2027-Internships,
-Lytx Careers,,workday,lytx.wd1.myworkdayjobs.com/lytx/Lytx,,,,,github:SimplifyJobs/Summer2027-Internships,
+Lytx,,workday,lytx.wd1.myworkdayjobs.com/lytx/Lytx,,,,,github:SimplifyJobs/Summer2027-Internships,V9: name fixed (was a job title)
 Léger,,smartrecruiters,Leger2,,,,,github:SimplifyJobs/Summer2027-Internships,
 M&G,,workday,mgpru.wd3.myworkdayjobs.com/mgpru/mandgprudential,,,,,github:SimplifyJobs/Summer2027-Internships,
 M&T Bank,,workday,mtb.wd5.myworkdayjobs.com/mtb/Campus,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -2015,17 +2015,17 @@ Socket,,ashby,socket,,,,,github:SimplifyJobs/Summer2027-Internships,
 SOCOTEC UK & Ireland,,smartrecruiters,SOCOTECUKIreland,,,,,github:SimplifyJobs/Summer2027-Internships,
 Socure,,ashby,socure,,,,,github:SimplifyJobs/Summer2027-Internships,
 SoFi,,greenhouse,sofi,,Finance,,,probe:seed list,
-Software Development Engineering Intern,,workday,tranetechnologies.wd12.myworkdayjobs.com/tranetechnologies/trane_technologies_careers,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Development Intern,,greenhouse,haigroup,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineer Co-op,,greenhouse,internrecruiting,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineer Intern,,ashby,juicebox,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineer Intern - Backend - Rust,,ashby,n1,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineer Intern - Summer 2027,,workday,netflix.wd108.myworkdayjobs.com/netflix/netflix,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineering - Full Stack - Northeastern Co-op,,workday,priceline.wd1.myworkdayjobs.com/priceline/priceline-collegehiring,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineering Intern - Applied AI,,workday,thgrp.wd12.myworkdayjobs.com/thgrp/envita,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineering Intern - Backend,,greenhouse,aidashinc,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineering Intern - Summer 2027,,workday,ttmtech.wd5.myworkdayjobs.com/ttmtech/jobs,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Software Engineering Intern Summer 2027,,workday,mdtkangaroo.wd108.myworkdayjobs.com/mdtkangaroo/minimedcareers,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Trane Technologies,,workday,tranetechnologies.wd12.myworkdayjobs.com/tranetechnologies/trane_technologies_careers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+HAI Group,,greenhouse,haigroup,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Vestmark,,greenhouse,internrecruiting,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Juicebox,,ashby,juicebox,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+N1,,ashby,n1,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Netflix,,workday,netflix.wd108.myworkdayjobs.com/netflix/netflix,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Priceline,,workday,priceline.wd1.myworkdayjobs.com/priceline/priceline-collegehiring,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Envita,,workday,thgrp.wd12.myworkdayjobs.com/thgrp/envita,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+AiDash,,greenhouse,aidashinc,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+TTM Technologies,,workday,ttmtech.wd5.myworkdayjobs.com/ttmtech/jobs,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+MiniMed,,workday,mdtkangaroo.wd108.myworkdayjobs.com/mdtkangaroo/minimedcareers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Solar Turbines,,workday,cat.wd5.myworkdayjobs.com/cat/solarturbines,,,,,github:SimplifyJobs/Summer2027-Internships,
 Solenis,,workday,solenis.wd1.myworkdayjobs.com/solenis/Solenis,,,,,github:SimplifyJobs/Summer2027-Internships,
 Solid Power,,greenhouse,solidpower,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -2101,8 +2101,8 @@ Stripe,,greenhouse,stripe,,Finance,,,probe:seed list,
 STRS Ohio,,workday,strsoh.wd1.myworkdayjobs.com/strsoh/STRS_Jobs,,,,,github:SimplifyJobs/Summer2027-Internships,
 Stryker,,workday,stryker.wd1.myworkdayjobs.com/stryker/StrykerCareers,,,,,github:SimplifyJobs/Summer2027-Internships,
 STV,,workday,stvinc.wd5.myworkdayjobs.com/stvinc/stv,,,,,github:SimplifyJobs/Summer2027-Internships,
-Summer 2027 Internship - Software,,greenhouse,stokespacetechnologies,,,,,github:speedyapply/2027-SWE-College-Jobs,
-Summer Intern - Software Engineering - Quality Assurance,,workday,allegion.wd5.myworkdayjobs.com/allegion/earlytalent_careers,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Stoke Space,,greenhouse,stokespacetechnologies,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
+Allegion,,workday,allegion.wd5.myworkdayjobs.com/allegion/earlytalent_careers,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Sun Life,,workday,sunlife.wd3.myworkdayjobs.com/sunlife/Campus,,,,,github:SimplifyJobs/Summer2027-Internships,
 Sun Life,,workday,sunlife.wd3.myworkdayjobs.com/sunlife/Experienced-Jobs,,,,,github:SimplifyJobs/Summer2027-Internships,
 Suncor,,workday,suncor.wd1.myworkdayjobs.com/suncor/Suncor_External,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -2147,7 +2147,7 @@ Taylor,,workday,taylor.wd1.myworkdayjobs.com/taylor/external,,,,,github:Simplify
 TC Energy,,workday,tcenergy.wd3.myworkdayjobs.com/tcenergy/CAREER_SITE_TC,,,,,github:SimplifyJobs/Summer2027-Internships,
 TD Bank,,workday,td.wd3.myworkdayjobs.com/td/TD_Bank_Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 TD Synnex,,workday,synnex.wd5.myworkdayjobs.com/synnex/tdsynnexcareers,,,,,github:SimplifyJobs/Summer2027-Internships,
-Tech Ops Package Dev Co-Op Spring,,workday,kenvue.wd5.myworkdayjobs.com/kenvue/kenvue,,,,,github:speedyapply/2027-SWE-College-Jobs,
+Kenvue,,workday,kenvue.wd5.myworkdayjobs.com/kenvue/kenvue,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Technergetics,,greenhouse,technergetics,,,,,github:SimplifyJobs/Summer2027-Internships,
 Techtronic Industries,,workday,tti.wd1.myworkdayjobs.com/tti/tti_pe,,,,,github:SimplifyJobs/Summer2027-Internships,
 Tekton,,lever,tekton,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -2294,7 +2294,7 @@ United Therapeutics,,workday,vhr-unither.wd5.myworkdayjobs.com/vhr-unither/Exter
 UnitedMasters,,greenhouse,unitedmasterstranslation,,,,,github:SimplifyJobs/Summer2027-Internships,
 UnitX,,ashby,unitxlabs,,,,,github:SimplifyJobs/Summer2027-Internships,
 Unity,,workday,unitytech.wd1.myworkdayjobs.com/unitytech/Unity,,,,,github:SimplifyJobs/Summer2027-Internships,
-Universal Music Group Careers,,workday,umusic.wd5.myworkdayjobs.com/umusic/umgus,,,,,github:SimplifyJobs/Summer2027-Internships,
+Universal Music Group,,workday,umusic.wd5.myworkdayjobs.com/umusic/umgus,,,,,github:SimplifyJobs/Summer2027-Internships,V9: name fixed (was a job title)
 University Corporation for Atmospheric Research,,workday,ucar.wd5.myworkdayjobs.com/ucar/UCAR_Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
 University Health Network,,smartrecruiters,UniversityHealthNetwork,,,,,github:SimplifyJobs/Summer2027-Internships,
 University of Arkansas,,workday,uasys.wd5.myworkdayjobs.com/uasys/uasys,,,,,github:SimplifyJobs/Summer2027-Internships,

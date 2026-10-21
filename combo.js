@@ -10,11 +10,16 @@ const ROW=40,VIS=9;
 const nrm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9+#& ]/g,' ').replace(/\s+/g,' ').trim();
 const escH=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let uid=0;
-function prep(o){o=typeof o==='string'?{v:o}:o;const label=o.label||o.v;const n=nrm(label+' '+(o.alias||''));const words=n.split(' ');return{...o,label,_n:n,_w:words,_i:words.map(w=>w[0]).join('')}}
-function match(o,toks,q){if(!toks.length)return 1;let sc=0;if(o._n.startsWith(q))sc=4;else if(toks.every(t=>o._w.some(w=>w.startsWith(t))))sc=3;else if(q.length>=2&&!q.includes(' ')&&o._i.startsWith(q))sc=2;else if(toks.every(t=>t.length>=3&&o._n.includes(t)))sc=1;return sc}
+function prep(o){o=typeof o==='string'?{v:o}:o;const label=o.label||o.v;const n=nrm(label);const words=n.split(' ');const al=String(o.alias||'').split('|').map(nrm).filter(Boolean);return{...o,label,_n:n,_w:words,_i:words.map(w=>w[0]).join(''),_a:al,_aw:al.flatMap(a=>a.split(' '))}}
+/* V9 ranking tiers: exact name 100 > exact alias 90 > name starts with 80 > alias starts with 70 > every word starts a word 60 >
+   alias word-prefix 50 > initials 40 > fuzzy substring 20. Counts/popularity only break ties inside a tier. */
+function match(o,toks,q){if(!toks.length)return 1;
+ if(o._n===q)return 100;if(o._a.includes(q))return 90;if(o._n.startsWith(q))return 80;if(o._a.some(a=>a.startsWith(q)))return 70;
+ if(toks.every(t=>o._w.some(w=>w.startsWith(t))))return 60;if(toks.every(t=>o._aw.some(w=>w.startsWith(t))))return 50;
+ if(q.length>=2&&!q.includes(' ')&&o._i.startsWith(q))return 40;if(toks.every(t=>t.length>=3&&(o._n.includes(t)||o._a.some(a=>a.includes(t)))))return 20;return 0}
 function filter(all,q,pinnedFirst){const qq=nrm(q),toks=qq?qq.split(' '):[];const t0=performance.now();let out;
  if(!toks.length){out=pinnedFirst?[...all.filter(o=>o.pinned).map(o=>({...o,group:'Popular'})),...all.filter(o=>!o.pinned||true)]:all}
- else{out=[];for(const o of all){const s=match(o,toks,qq);if(s)out.push([s,o])}const w=o=>o[0]+(o[1].count?Math.log10(o[1].count+1)*0.5:0)+(o[1].pinned?0.6:0)+(o[1].boost||0)+(o[1].alias&&o[1].alias.length<=2&&nrm(o[1].alias)===qq?2:0);out.sort((a,b)=>w(b)-w(a)||a[1].label.length-b[1].label.length);out=out.map(x=>({...x[1],group:null}))}
+ else{out=[];for(const o of all){const s=match(o,toks,qq);if(s)out.push([s,o])}const w=o=>o[0]+(o[1].boost||0)+Math.min(4,(o[1].count?Math.log10(o[1].count+1)*0.8:0)+(o[1].pinned?1:0));out.sort((a,b)=>w(b)-w(a)||a[1].label.length-b[1].label.length);G.Combo._top=out.length?out[0][0]:0;out=out.map(x=>({...x[1],group:null}))}
  G.Combo.lastSearchMs=performance.now()-t0;return out}
 /* ---- the searchable list (shared by field + inline) ---- */
 function makeList(box,st){const id='cb'+(++uid);
@@ -25,7 +30,7 @@ function makeList(box,st){const id='cb'+(++uid);
   // group headers
   const v=[];let g;for(const o of f){const gg=o.group||null;if(gg&&gg!==g){v.push({hdr:gg});g=gg}else if(!gg&&g){v.push({hdr:'All'});g=null}v.push(o)}
   const q=inp.value.trim();if(st.other!==false&&st.allowOther){const exact=all.some(o=>nrm(o.label)===nrm(q));v.push({other:true,q:exact?'':q})}
-  view=v;act=view.findIndex(o=>!o.hdr&&!o.other&&o.v!==undefined);if(!q&&!st.multi){const si=view.findIndex(o=>!o.hdr&&isSel(o.v));if(si>=0)act=si}
+  view=v;act=view.findIndex(o=>!o.hdr&&!o.other&&o.v!==undefined);if(inp.value.trim()&&(G.Combo._top||0)<50)act=-1;if(!q&&!st.multi){const si=view.findIndex(o=>!o.hdr&&isSel(o.v));if(si>=0)act=si}
   none.hidden=view.some(o=>!o.hdr&&!o.other);paint(true)}
  const isSel=v=>st.multi?st.value.includes(v):st.value===v;
  function rowHTML(o,i){if(o.hdr)return`<div class="cb-h" role="presentation" style="top:${i*ROW}px">${escH(o.hdr)}</div>`;
@@ -55,7 +60,7 @@ function field(host,o){const st={multi:!!o.multi,value:o.multi?[...(o.value||[])
   L.inp.focus({preventScroll:true})}
  function close(focus){if(pop.hidden)return;pop.hidden=true;host.classList.remove('open','up');fld.setAttribute('aria-expanded','false');if(focus)fld.focus({preventScroll:true})}
  st.onEsc=()=>close(true);
- st.pick=(v,custom)=>{if(st.multi){const i=st.value.indexOf(v);if(i>=0)st.value.splice(i,1);else st.value.push(v);if(custom&&!st.all().some(p=>p.v===v))raw.push(prep({v,group:'Your entries'}))}else{st.value=st.value===v&&!custom?st.value:v;if(custom&&!st.all().some(p=>p.v===v))raw.push(prep({v,group:'Your entries'}));close(true)}draw();o.onChange&&o.onChange(st.multi?[...st.value]:st.value)};
+ st.pick=(v,custom)=>{if(st.multi){if(!st.value.includes(v))st.value.push(v);if(custom&&!st.all().some(p=>p.v===v))raw.push(prep({v,group:'Your entries'}))}else{st.value=st.value===v&&!custom?st.value:v;if(custom&&!st.all().some(p=>p.v===v))raw.push(prep({v,group:'Your entries'}));close(true)}draw();o.onChange&&o.onChange(st.multi?[...st.value]:st.value)};
  fld.addEventListener('click',e=>{const rm=e.target.closest('[data-rm]');if(rm){e.stopPropagation();st.value.splice(+rm.dataset.rm,1);draw();o.onChange&&o.onChange([...st.value]);return}pop.hidden?open():close(true)});
  fld.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '||e.key==='ArrowDown'){e.preventDefault();open()}else if(e.key==='Backspace'&&st.multi&&st.value.length){st.value.pop();draw();o.onChange&&o.onChange([...st.value])}else if(e.key.length===1&&!e.ctrlKey&&!e.metaKey&&!e.altKey){e.preventDefault();open(e.key)}});
  host.addEventListener('focusout',e=>{if(!host.contains(e.relatedTarget))setTimeout(()=>{if(!host.contains(document.activeElement))close(false)},0)});

@@ -1,7 +1,8 @@
 name: Sync listings
 on:
   schedule:
-    - cron: '17 */6 * * *'   # every 6 hours
+    - cron: '7 */2 * * *'    # every 2 hours (full sync: company boards + link re-checks)
+    - cron: '37 1-23/2 * * *' # odd hours: fast pass over high-churn ATS boards only (Greenhouse/Lever/Ashby)
   workflow_dispatch:
     inputs:
       args:
@@ -10,19 +11,21 @@ on:
         default: ''
 permissions:
   contents: write
-  issues: read
+  issues: write
 concurrency:
   group: data-sync
   cancel-in-progress: false
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 110
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install requests pillow
+      - name: Snapshot previous listings (for the sync report)
+        run: cp data/listings.json /tmp/prev_listings.json || echo '{"listings":[]}' > /tmp/prev_listings.json
       - name: Collect user reports
         env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: python -m pipeline.reports || echo "reports step failed; keeping previous reports.json"
@@ -30,12 +33,16 @@ jobs:
         env:
           USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
           USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
-        run: python -m pipeline.sync --workers 24 ${{ github.event.inputs.args }}
+        run: |
+          if [ "${{ github.event.schedule }}" = "37 1-23/2 * * *" ]; then ARGS="--only greenhouse,lever,ashby --skip-leads"; else ARGS="${{ github.event.inputs.args }}"; fi
+          python -m pipeline.sync --workers 24 $ARGS
+      - name: Accuracy checks + sync report (fails the run if checks fail)
+        run: python -m pipeline.qa --prev /tmp/prev_listings.json
       - name: Company logos (new companies only; robots.txt respected; keeps the old logos on failure)
-        timeout-minutes: 40
+        timeout-minutes: 30
         run: python -m pipeline.logos || echo "logo step failed; keeping previous logos"
       - name: Commit data (last good data is kept on failure)
-        if: always()
+        if: success()
         run: |
           git config user.name "radar-sync"
           git config user.email "actions@users.noreply.github.com"
@@ -43,3 +50,11 @@ jobs:
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "data: sync $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 10; done; exit 1
+      - name: Open an issue when the sync fails
+        if: failure()
+        env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: |
+          T="Sync failed $(date -u +%Y-%m-%dT%H:%MZ)"
+          B="Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          N=$(gh issue list --label sync-failure --state open --json number --jq '.[0].number')
+          if [ -n "$N" ]; then gh issue comment "$N" --body "$T — $B"; else gh label create sync-failure --color B60205 -f >/dev/null 2>&1; gh issue create --title "$T" --body "$B" --label sync-failure; fi

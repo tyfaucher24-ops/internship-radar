@@ -96,6 +96,9 @@ def verify_link(u):
         if DEAD.search(r.text[:200000]): return False
         return True
     except Exception: return None
+class Rec(dict):
+    """Older/compacted records may lack optional keys; missing keys read as None instead of crashing the sync."""
+    def __missing__(self,k): return None
 def predict_upcoming(open_recs,history,registry):
     """Upcoming windows from REAL past posting dates only (GitHub list history + our first_seen history)."""
     have=collections.defaultdict(set)
@@ -239,7 +242,7 @@ def main():
     # finalize: first_seen / state
     out=[]
     for r in recs.values():
-        s=state.get(r['id'],{})
+        r=Rec(r);s=state.get(r['id'],{})
         r['first_seen']=s.get('first_seen') or (prevL.get(r['id']) or {}).get('first_seen') or NOWS
         if r.get('status')=='closed' and not r.get('closed_at'): r['closed_at']=NOWS
         if r['deadline'] and r['deadline']<str(N.TODAY) and r.get('status')=='open': r['status']='closed';r['closed_at']=NOWS

@@ -1,6 +1,21 @@
 # Internship Radar changelog
 
 
+## V9 — Fresh data, honest grades, more firms (2026-10-21)
+- Auto-sync (prepared): `ops/workflows/sync.yml` runs a full sync every 2h (:07) and a fast Greenhouse/Lever/Ashby pass on the odd hours (:37), runs `pipeline.qa`, commits only on success, and opens/comments a `sync-failure` issue when a run fails. It is **not active yet**: the repo token lacks the `workflow` scope (see README/report for Ty's steps). Partial runs never close listings they didn't read. Older records missing optional keys no longer crash the sync.
+- Header shows "Updated X ago" and warns when data is more than 4h old.
+- `pipeline/qa.py`: re-checks company names against the registry, hides listings whose "company" is a job title, cleans city text (keeps a city only if it geocodes), closes listings past their deadline, drops implausible ATS end dates (>200 days out), hides exact duplicates, writes `data/sync_report.json` + `data/sync_history.json`, fails if the open count collapses.
+- Persona-report bugs: dropdown ranking (exact > alias > starts-with > word > initials), sponsorship and school aliases, numeric GPA box, resume parser (school, degree, major, grad date) with a "Check these" review step, re-picking a skill never removes it, 36 company names that were job titles fixed (e.g. Otis), location cleanup, visible "Got it" button, Reset dialog that lists what is cleared/kept with an option to clear the tracker. Long text wraps instead of being cut off.
+- Grader v2: role groups with adjacent groups, firm tiers where cited, credit for past employers, unknown competition counts as average (not best case), no skills listed is a gap, "Not enough info to grade" instead of a misleading score, at most a few roles per company near the top. Drawer feedback panel: verdict (Strong shot / Worth applying / Long shot), why it's a match, what's holding you back, what to do.
+- Coverage: new official boards for Two Sigma (careers site), Morgan Stanley and Evercore (campus boards, crawl-delay 10 honored), Deutsche Bank, PayPal, Home Depot, AT&T, RBC, BMO, TD. Not covered: Citadel (bot challenge), Google (robots.txt disallows job results). Audit of 141 big employers in `ops/COVERAGE.md`.
+- Upcoming listings say "Expected <window>" with the basis (past posting dates) in the drawer.
+- H-1B history per employer from the official USCIS H-1B Employer Data Hub (FY2022, exact-name matches only), with source link.
+- Similar roles at one company (same title, different city/year) are grouped: "N similar roles" expands them in place.
+- "New to internships? Start here" box with a one-click filter for roles open to freshmen/sophomores.
+- "Found via GitHub" credits removed from listing details.
+- Login + email/SMS alerts: proposal only (`ops/ALERTS_PROPOSAL.md`); nothing wired, no secrets in the repo.
+- QA scripts: `test/spotcheck.py` (re-opens random listings at the source), `test/coverage.py`, `test/personas.js`.
+
 ## V8 — Easier controls (2026-10-20)
 - Searchable dropdowns (new `combo.js`, lists in `lists.js`) for school, major, minor, class year, graduation month/year, GPA, work authorization, interests, locations, skills and experience type/dates. They offer fuzzy search ("comp sci", "penn st"), chips for multi-select, virtualized lists, a pinned Popular group, "Other: use …" for your own value, and full keyboard support. Free-text fields auto-grow.
 - Every filter pill opens a panel with a search bar, checkable options with live counts, and a "Show N" Apply plus Clear. Location searches cities, states and metros, has quick picks (Remote and the top metros) and a near-a-city radius. Chips are removable one by one, with Clear all. Pills wrap, so there is no horizontal scroll.

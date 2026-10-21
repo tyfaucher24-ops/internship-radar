@@ -399,3 +399,4 @@ body.graded .grow{height:242px}body.graded .card{height:242px}
 .beg{border:1px solid #c7d2fe;background:#eef2ff;border-radius:14px;padding:16px 20px;margin:0 0 16px}
 .beg h2{font-size:17px;margin:0 0 6px;color:#1e1b4b}.beg ul{margin:0 0 10px 18px;padding:0;color:#312e81;line-height:1.5}
 .beg-a{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.beg .linkbtn{background:none;border:0;color:#3730a3;text-decoration:underline;cursor:pointer;font:inherit}
+body.intro-on main#main{visibility:hidden}

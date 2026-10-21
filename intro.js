@@ -50,7 +50,7 @@ if(RM){intro.classList.add('static');return}
 const cv=$i('gl'),wrap=cv.parentElement,slot=intro.querySelector('.globe-slot');
 function webglOK(){try{const c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(!g)return false;const d=g.getExtension('WEBGL_debug_renderer_info'),r=d?String(g.getParameter(d.UNMASKED_RENDERER_WEBGL)):'';window.__swGL=/swiftshader|llvmpipe|softpipe|software|basic render/i.test(r);g.getExtension('WEBGL_lose_context')?.loseContext();return true}catch(_){return false}}
 /* V10: software-rendered WebGL (no GPU) or a small phone screen gets the static planet; the 3D globe there costs seconds of main-thread time */
-if(!webglOK()||Q.get('gl')==='0'||window.__swGL||(Math.min(screen.width,screen.height)<600&&Q.get('gl')!=='1')){intro.classList.add('static');let raf;(function l(){domFrame();raf=requestAnimationFrame(l)})();stopLoop=()=>cancelAnimationFrame(raf);return}
+if(!webglOK()||Q.get('gl')==='0'||(Q.get('gl')!=='1'&&(window.__swGL||Math.min(screen.width,screen.height)<600))){intro.classList.add('static');let raf;(function l(){domFrame();raf=requestAnimationFrame(l)})();stopLoop=()=>cancelAnimationFrame(raf);return}
 const ll2v=(lat,lng,r=1)=>{const a=lat*Math.PI/180,b=lng*Math.PI/180;return[r*Math.cos(a)*Math.sin(b),r*Math.sin(a),r*Math.cos(a)*Math.cos(b)]};
 const US={lat:38.5,lng:-97};
 new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows until then and the canvas cross-fades in */const go=()=>requestAnimationFrame(()=>r());window.requestIdleCallback?requestIdleCallback(go,{timeout:1500}):setTimeout(go,800)}).then(()=>Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js'),

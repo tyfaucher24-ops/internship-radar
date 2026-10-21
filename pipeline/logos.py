@@ -111,10 +111,10 @@ def ats_logo(ats,slug):
     return None,None
 def second_pass():
     P=os.path.join(D,'logos.json');d=json.load(open(P));reg={r['name']:r for r in csv.DictReader(open(os.path.join(D,'companies.csv')))}
-    todo=[c for c,v in d.items() if not v.get('logo') and reg.get(c,{}).get('ats') and reg[c].get('slug')]
+    todo=[c for c,v in d.items() if not v.get('logo') and not v.get('board_tried') and reg.get(c,{}).get('ats') and reg[c].get('slug')]
     def work(c):
         im,src=ats_logo(reg[c]['ats'],reg[c]['slug'])
-        if im is None: return c,None
+        if im is None: return c,{**d[c],'board_tried':True}
         f=slug(c)+'.webp';save(im,os.path.join(OUT,f));return c,{**d[c],'logo':'assets/logos/'+f,'src':src}
     with cf.ThreadPoolExecutor(8) as ex:
         for c,v in ex.map(work,todo):

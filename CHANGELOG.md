@@ -1,5 +1,11 @@
 # Internship Radar changelog
 
+## V6.1 — Speed and grade calibration
+- Speed: the logo map is no longer fetched at startup. It loads once the page is idle, about 3s after the intro starts, and only the cards and tracker rows on screen re-render. The match worker still starts only once a saved profile exists. Requests during the first page load (local Lighthouse): 39 down to 23.
+- Calibration (`match-weights.json` and the odds curve; no new data): Fit 47%, Odds 43%, Preferences 10%. The odds curve now uses exponent 0.9 with a +30 bonus below competition 40. Strong candidates (GPA and related experience) feel a crowded applicant pool less (`strengthRelief` 0.35). Having no experience counts less the lower a role's competition is (`noExperience`: 50 rising to 90). The low-competition boost now runs below 42 at strength 0.8.
+- The no-experience test profile now gets 28 A- grades at low-competition roles it's eligible for and that match its interests (it had none). On crowded roles (competition 60+), the top profile now leads it by 25.6 points (80.5 vs 54.9 on average), up from 19.0.
+- The sync workflow copy in `ops/workflows/sync.yml` now runs the logo build (new companies only, plus careers-board retries that haven't been tried yet) and commits `assets/logos/`.
+
 ## V6 — One match grade, a simpler profile, a bigger tracker, real logos
 - Matching: Strong / Realistic / Reach / Hidden Gems are gone. Every listing gets one match % and a letter grade (A+ 95–100 … F under 45). Weights live in one file, `match-weights.json`: Fit 45%, Odds 40%, Preferences 15%. If you're not eligible (class year, sponsorship or citizenship), the score is capped at 40% and the reason is shown.
 - The badge sits at the top right of each card ("92% · A") on a green-to-red pastel scale with AA contrast. The detail drawer shows the score, 2–3 reasons and a tip when the score is low. Grades appear only after you save a profile, and then results sort by match %. New "Minimum match" filter: Any / 60%+ / 75%+ / 90%+.

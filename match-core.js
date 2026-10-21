@@ -33,17 +33,23 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const sk=P.skills.filter(s=>kws.some(k=>k===s||(s.length>3&&(k.includes(s)||s.includes(k))))||(s.length>3&&title.includes(s)));
  let fSk=null;if(P.skills.length){fSk=Math.min(100,25+sk.length*25);if(sk.length)pos.push(`your ${sk.slice(0,3).join(', ')} skill${sk.length>1?'s':''} match${sk.length>1?'':'es'} the role`)}else unknown++;
  const rel=P.exp.filter(e=>{const t=e.n;return kws.filter(k=>k.length>3&&t.includes(k)).length>=2||title.split(' ').some(w=>w.length>4&&!TSTOP.has(w)&&t.includes(w))});
- const fExp=P.exp.length?Math.min(100,50+rel.length*30):50;if(rel.length)pos.push(`you've done related work (${rel[0].title.slice(0,40)})`);
+ const firm=firmRow(C,x.company),comp=competition(x,firm);
+ // no experience: entry-level, low-competition roles don't expect any, so the gap counts less as competition falls (match-weights.json noExperience)
+ const NE=W.noExperience||{},neV=comp.score==null?(NE.base??50):Math.round((NE.base??50)+((NE.max??50)-(NE.base??50))*Math.max(0,((NE.reliefBelow??50)-comp.score)/(NE.reliefBelow??50)));
+ const fExp=P.exp.length?Math.min(100,50+rel.length*30):neV;if(rel.length)pos.push(`you've done related work (${rel[0].title.slice(0,40)})`);
  const fit=avgW([['interest',fInt],['major',fMaj],['skills',fSk],['experience',fExp]],W.fitParts||{});
  // ---- Odds ----
- const firm=firmRow(C,x.company),comp=competition(x,firm);
- const cOdds=comp.score==null?null:Math.round(100*Math.pow(1-comp.score/100,1.3)+ (comp.score<40?25:0));
+ const OC=W.oddsCurve||{exponent:1.3,lowBelow:40,lowBonus:25};
+ // a strong candidate (high GPA, related experience) feels a crowded applicant pool less: competition is discounted by profile strength
+ const strength=Math.min(1,(P.gpa?Math.max(0,(P.gpa-3.3)/0.6):0)*0.5+Math.min(1,rel.length/2)*0.5);
+ const cEff=comp.score==null?null:comp.score*(1-(OC.strengthRelief||0)*strength);
+ const cOdds=cEff==null?null:Math.min(100,Math.round(100*Math.pow(1-cEff/100,OC.exponent)+(cEff<OC.lowBelow?OC.lowBonus:0)));
  let oYear=null;const cy=x.class_years||[];if(cy.length&&P.classYear){if(cy.includes(P.classYear))oYear=95;else ineligible=`it lists ${cy.join('/')} students and you're a ${P.classYear}`}else unknown++;
  const bar=x.gpa_min!=null&&x.gpa_min!==''?+x.gpa_min:(firm&&firm.gpaBar?+firm.gpaBar:null);let oGpa=null;
  if(bar&&P.gpa){oGpa=P.gpa>=bar?90:P.gpa>=bar-0.2?50:15;if(P.gpa<bar)neg.push(`your GPA is under its ${bar} bar`)}
  const tl=(C.targetSchools||[]).find(r=>!r.placeholder&&r.industry===ind);let oSch=null;
  if(tl&&P.schoolN){const ts=tl.schools.split(/[;\n]/).map(norm).filter(Boolean);oSch=ts.some(s=>P.schoolN.includes(s)||s.includes(P.schoolN))?85:45}
- const oExp=P.exp.length?Math.min(95,55+rel.length*20):50;
+ const oExp=P.exp.length?Math.min(95,55+rel.length*20):neV;
  const odds=avgW([['competition',cOdds],['classYear',oYear],['gpa',oGpa],['school',oSch],['experience',oExp]],W.oddsParts||{});
  if(comp.score!=null&&comp.score<40&&comp.easy.length)pos.push(`competition looks low (${comp.easy.slice(0,2).join(', ')})`);else if(comp.score!=null&&comp.score>=65)neg.push(`competition is high${comp.why.length?' ('+comp.why[0]+')':''}`);
  // ---- Preferences ----

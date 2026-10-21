@@ -5,7 +5,9 @@ const ago=iso=>{if(!iso)return'never';const s=(Date.now()-new Date(iso.length===
 const pdate=x=>x.posted||x.fs||'';
 const postedAgo=x=>{const d=pdate(x);if(!d)return'';const n=-days(d.slice(0,10));return n<=0?'Posted today':n===1?'Posted yesterday':n<60?`Posted ${n} days ago`:'Posted '+fmtDate(d.slice(0,10))};
 const shortDate=d=>new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
-let LOGOS=null;fetch('data/logo-map.json').then(r=>r.json()).then(m=>{LOGOS=m;if(D.length)vrender(true);window.trackerRefresh&&trackerRefresh()}).catch(()=>{LOGOS={}});
+let LOGOS=null,logosAsked=false;function loadLogos(){if(logosAsked)return;logosAsked=true;fetch('data/logo-map.json').then(r=>r.json()).then(m=>{LOGOS=m;const vis=()=>{if(D.length&&!$('t-db')?.hidden)vrender(true);if(!$('t-tracker')?.hidden&&window.trackerRefresh)trackerRefresh()};(window.requestAnimationFrame||setTimeout)(vis)}).catch(()=>{LOGOS={}})}
+/* V6.1: logo map is fetched after load when the browser is idle, never during first paint or the intro */
+addEventListener('load',()=>{const go=()=>(window.requestIdleCallback||((f)=>setTimeout(f,1500)))(loadLogos,{timeout:5000});document.body.classList.contains('intro-on')?setTimeout(go,3000):go()});
 function logoHTML(x,big,cls){const sz=cls==='sm'?28:big?56:40,co=x.company||'';const f=LOGOS&&LOGOS[co];const ini=esc(co.replace(/^the /i,'').slice(0,1).toUpperCase()||'?');const hue=[...co].reduce((a,c)=>a+c.charCodeAt(0),0)%360;
  const k=`logo${big?' big':''}${cls?' '+cls:''}`;return f?`<span class="${k} has-img" aria-hidden="true"><img src="assets/logos/${esc(f)}" alt="" width="${sz}" height="${sz}" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('has-img');this.parentNode.style.setProperty('--h','${hue}');this.replaceWith(document.createTextNode('${ini}'))"></span>`:`<span class="${k}" style="--h:${hue}" aria-hidden="true">${ini}</span>`}
 function closeLbl(x){if(x.st==='upcoming')return{t:x.pred?.label||'Opening soon',c:'up'};if(!x.deadline)return{t:x.rolling?'Rolling deadline':'Closing date not listed',c:'none'};const n=days(x.deadline);

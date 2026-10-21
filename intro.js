@@ -42,7 +42,7 @@ if(false){intro.addEventListener('pointermove',e=>{const r=mag.getBoundingClient
 const clouds=[...intro.querySelectorAll('.cloud')],stars=intro.querySelector('.stars');
 function domFrame(){}/* V5.1 #9: no parallax/glow/magnet — just the planet */
 /* count-up for the live counter once meta arrives */
-document.addEventListener('radar:meta',e=>{const el=intro.querySelector('.counter .hdrCount');if(!el||RM)return;const m=e.detail||{};const N=m.open||0,W=m.closing_this_week||0;const t0=performance.now();
+document.addEventListener('radar:meta',e=>{const el=intro.querySelector('.counter .hdrCount');if(!el||RM)return;const m=e.detail||{};const N=m.open||0,W=m.closing_this_week||0;const t0=performance.now();if(window.rollNum){el.innerHTML='<span class="mono"></span> open internships · <span class="mono"></span> closing this week';const s=el.querySelectorAll('.mono');rollNum(s[0],0);rollNum(s[1],0);requestAnimationFrame(()=>requestAnimationFrame(()=>{rollNum(s[0],N);rollNum(s[1],W)}));return}
  (function f(t){const k=Math.min(1,(t-t0)/1100),e2=1-Math.pow(1-k,3);el.textContent=`${Math.round(N*e2).toLocaleString()} open internships · ${Math.round(W*e2).toLocaleString()} closing this week`;if(k<1&&!ended)requestAnimationFrame(f)})(t0)});
 /* ---------- reduced motion: static hero only ---------- */
 if(RM){intro.classList.add('static');return}

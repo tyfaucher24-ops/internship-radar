@@ -1,4 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* V11.1 theme before paint */try{var u=JSON.parse(localStorage.getItem("ir_ui")||"{}");if(u.theme==="dark")document.documentElement.classList.add("dark");if(u.cb)document.documentElement.classList.add("cb")}catch(e){}</script>
 <script>/* V5.2: the globe intro shows on every visit to the site root; deep links (#find, #tracker, #profile, ?q=…) skip it */(function(){var h=location.hash.replace(/^#/,""),q=new URLSearchParams(location.search);["intro","gl","aa"].forEach(function(k){q.delete(k)});if((h&&!/^(intro|details)$/.test(h))||[...q.keys()].length)document.documentElement.classList.add("seen")})()</script>
 <title>Internship Radar · Every internship. Tracked. Matched. Free.</title>
 <meta name="description" content="Internship Radar tracks every open US internship (plus the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get. Free, no login.">
@@ -17,11 +18,12 @@
    <p class="eyebrow"><span class="pulse"></span> Internship Radar</p>
    <h1 id="introH" class="hl">Every internship.<br>Tracked. Matched. Free.</h1>
    <p class="sub">We track every open US internship, flag the ones about to open, keep your applications in one place, and show the roles you can actually get.</p>
-   <p class="counter"><span class="hdrCount">Loading live counts…</span></p>
+   <p class="counter"><span class="pulse up" aria-hidden="true"></span><span class="hdrCount">Loading live counts…</span></p>
    <div class="cta"><button id="goFind" class="cbtn primary" type="button">Find My Internship</button><button id="detailsBtn" class="cbtn ghost" type="button" aria-controls="details" aria-expanded="false">Details</button></div>
   </div>
   <div class="globe-wrap globe-slot" aria-hidden="true"><div class="globe-ph"></div><div class="ping-css"></div></div>
  </div>
+ <div id="iTk" class="ticker itk" aria-hidden="true" hidden><span class="tk-lbl"><b><span class="pulse up"></span>Live</b></span><div class="tk-win"><div class="tk-track" id="iTkTrack"></div></div></div>
  <section id="details" class="details" aria-labelledby="detailsH" hidden>
   <button id="detailsBack" class="d-back" type="button">← Back</button>
   <h2 id="detailsH">What is Internship Radar?</h2>
@@ -40,7 +42,7 @@
  <a class="brand" href="./" aria-label="Internship Radar home"><img src="assets/icon.svg" alt="" width="32" height="32"><span>Internship Radar</span></a>
  <nav class="nav" aria-label="Main"><a href="#" data-go="db" data-t="db" class="on">Find</a><a href="#tracker" data-go="tracker" data-t="tracker">My Tracker <span class="nbadge" id="trkN"></span></a>
   <span class="pmenu"><a href="#profile" data-go="profile" data-t="profile">My Profile</a><button type="button" id="pmBtn" class="pm-btn" aria-label="Profile menu" aria-expanded="false" aria-controls="pmMenu">▾</button>
-   <div id="pmMenu" class="pm" hidden><button type="button" id="exp">Export my data</button><label class="pm-imp" tabindex="0">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label><a href="admin.html">Admin</a></div></span></nav>
+   <div id="pmMenu" class="pm" hidden><button type="button" id="uiTheme" aria-pressed="false">☾ Dark mode</button><button type="button" id="uiCb" aria-pressed="false">Colour-blind grades: Off</button><button type="button" id="uiQk" onclick="window.quickSearch&&quickSearch()">Quick search <kbd>Ctrl K</kbd></button><button type="button" id="exp">Export my data</button><label class="pm-imp" tabindex="0">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label><a href="admin.html">Admin</a></div></span></nav>
 </div></header>
 <main id="main">
 <section id="t-db" class="page">
@@ -130,5 +132,5 @@
 <div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <div id="tip" role="tooltip" hidden></div>
 <script src="store.js"></script><script src="listing.js"></script>
-<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="lists.js" defer></script><script src="combo.js" defer></script><script src="ticker.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
+<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="lists.js" defer></script><script src="combo.js" defer></script><script src="ticker.js" defer></script><script src="v111.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
 </body></html>

@@ -1,6 +1,15 @@
 # Internship Radar changelog
 
 
+## V11 — Stock-market accents + Internship Exchange (2026-10-21)
+- Ty dropped the newspaper direction; those commits were reverted. Same layout, planet intro, Find and Details as V10; stock-market feel through accents using theme tokens.
+- Pulsing green "live" dots on the intro count, the Find header count and the ticker label (static with reduced motion).
+- Internship Exchange: a dark market-board ticker under the Find header — ▲ NEW (green), ▼ CLOSED (red), ● DEADLINE MOVED (amber) — with a time on every item. Only real events from the diff between two syncs (`pipeline/changes.py` -> `data/changes.json`, run by `pipeline.qa`). No file or no events = no ticker. Pauses on hover/focus, click opens the listing, polls every 5 min.
+- Market panel (click the ticker label): added/closed/deadline counts, top movers by firm, filterable feed, trend line once two syncs exist.
+- Cards lift 2px on hover; closed postings dimmed. JetBrains Mono (22 KB, self-hosted) for ticker numbers.
+- V10 leftovers: phone Sort dropdown 32px; profile hints visible again.
+- QA: test_v11 16/16, V10 41/41, V8 123/123.
+
 ## V10 — UI cleanup and speed (2026-10-21)
 - Design tokens: new `theme.css` holds every color, the 4-step type scale, one radius and the 4px spacing grid. style.css/v4.css/v5.css read only variables, so V11 can re-theme from one file.
 - Find: title and live counts share one row; one-line beginner tip; smaller pills and toolbar; one swipeable filter row and a single-row header on phones; "+N similar" fits inside cards.

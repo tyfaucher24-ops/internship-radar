@@ -6,7 +6,7 @@ with sync_playwright() as p:
   for name,vp in [('desktop',{'width':1400,'height':900}),('mobile',{'width':390,'height':844})]:
     ctx=b.new_context(viewport=vp,accept_downloads=True);pg=ctx.new_page();errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:errs.append(m.text) if m.type=='error' else None)
     pg.add_init_script("localStorage.setItem('idr_introSeen','true');localStorage.setItem('idr_tracker',JSON.stringify([{id:'old1',listingId:null,listing:{company:'Legacy Co',title:'Old Intern'},status:'Interview',history:['Saved','Applied','Interview'],dateApplied:'2026-09-01',created:'2026-09-01T00:00:00Z',updated:'2026-09-20T00:00:00Z'}]))")
-    pg.goto(B);pg.wait_for_function('window._interactiveAt')
+    pg.goto(B+'#find');pg.wait_for_function('window._interactiveAt')
     pg.click('#vl .lrow:nth-of-type(1) [data-act=save]') if False else pg.locator('#vl [data-act=save]').nth(0).click()
     pg.locator('#vl [data-act=applied]').nth(0).click();pg.wait_for_timeout(200)
     # duplicate: drawer save of first tracked

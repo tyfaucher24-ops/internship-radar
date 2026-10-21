@@ -1,5 +1,10 @@
 # Internship Radar changelog
 
+## V5.2 — Intro on every visit
+- The globe intro now shows every time someone opens the site root (no more "returning visitors skip it"). Deep links (#find, #tracker, #profile, ?q= and other filter URLs) and in-site navigation skip it; the logo returns to the intro. Skip / Find my internship keep the quick fade.
+- The 3D globe starts once the page is idle (requestIdleCallback, 1.5s timeout); the static planet shows until then and the canvas cross-fades in.
+- Hover tooltips on planet dots removed; dots still pulse on hover.
+
 ## V5.1 — Just the planet
 - Intro is now just the V3 planet, rebuilt: NASA Blue Marble texture self-hosted (4K, or 2K on small screens), sRGB, max anisotropy, antialiasing, pixel ratio min(DPR,2), fresnel rim + soft pink/blue atmosphere, small glowing internship-hub dots in one draw call, slow rotation, drag to spin with inertia, hover pulse + tooltip. No ping, sweep, zoom, parallax or cursor effects.
 - "Find my internship" does a quick fade to the homepage.

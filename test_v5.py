@@ -5,7 +5,7 @@ engines=sys.argv[2].split(',') if len(sys.argv)>2 else ['chromium']
 out={}
 def run(pg,tag):
   E=[];pg.on('pageerror',lambda e:E.append('PAGEERR '+str(e)[:200]));pg.on('console',lambda m:E.append(m.text[:200]) if m.type=='error' else None)
-  pg.add_init_script("localStorage.setItem('idr_introSeen','true')");pg.goto(B);pg.wait_for_function('window._interactiveAt',timeout=30000);r={'interactive_ms':round(pg.evaluate('window._interactiveAt'))}
+  pg.add_init_script("localStorage.setItem('idr_introSeen','true')");pg.goto(B+'#find');pg.wait_for_function('window._interactiveAt',timeout=30000);r={'interactive_ms':round(pg.evaluate('window._interactiveAt'))}
   for k in ['cat','cy','dlw']:
     pg.click(f'[data-pill={k}]');pg.wait_for_timeout(250);pg.locator('.pop input[type=radio]:not([disabled])').nth(1).check();pg.wait_for_timeout(150);pg.click('.pop [data-done]')
   r['after_pills']=pg.inner_text('#count');r['filter_ms']=round(pg.evaluate('window._lastFilterMs'),1)

@@ -5,13 +5,13 @@ const intro=document.getElementById('intro');if(!intro)return;
 const html=document.documentElement,body=document.body;
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const Q=new URLSearchParams(location.search);const SLOW=+(Q.get('introSlow')||1);
-document.getElementById('replay')?.addEventListener('click',e=>{e.preventDefault();try{localStorage.removeItem('idr_introSeen')}catch(_){}location.href=location.pathname+'?intro=1'});
+document.getElementById('replay')?.addEventListener('click',e=>{e.preventDefault();location.href=location.pathname});
 if(html.classList.contains('seen')){intro.remove();body.classList.add('arrived');return}
 body.classList.add('intro-on');
 const $i=id=>document.getElementById(id);
 let ended=false,stopLoop=()=>{},dispose=()=>{},startTransition=null;
 function arrive(){body.classList.remove('intro-on');body.classList.add('arriving');setTimeout(()=>{body.classList.remove('arriving');body.classList.add('arrived')},900)}
-function end(fast){if(ended)return;ended=true;try{localStorage.setItem('idr_introSeen','true')}catch(_){}
+function end(fast){if(ended)return;ended=true;
  intro.classList.add(fast||RM?'fade-fast':'fade');arrive();setTimeout(()=>{stopLoop();dispose();intro.remove();const q=$i('q');q&&q.focus({preventScroll:true})},fast||RM?320:650)}
 window.__introEnd=end;
 $i('skipIntro').onclick=()=>end(true);
@@ -40,7 +40,7 @@ function webglOK(){try{const c=document.createElement('canvas'),g=c.getContext('
 if(!webglOK()||Q.get('gl')==='0'){intro.classList.add('static');let raf;(function l(){domFrame();raf=requestAnimationFrame(l)})();stopLoop=()=>cancelAnimationFrame(raf);return}
 const ll2v=(lat,lng,r=1)=>{const a=lat*Math.PI/180,b=lng*Math.PI/180;return[r*Math.cos(a)*Math.sin(b),r*Math.sin(a),r*Math.cos(a)*Math.cos(b)]};
 const US={lat:38.5,lng:-97};
-new Promise(r=>requestAnimationFrame(()=>setTimeout(r,250))).then(()=>Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js'),
+new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows until then and the canvas cross-fades in */const go=()=>requestAnimationFrame(()=>r());window.requestIdleCallback?requestIdleCallback(go,{timeout:1500}):setTimeout(go,800)}).then(()=>Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js'),
  Promise.resolve(null),fetch('data/hubs.json').then(r=>r.json()).catch(()=>[])])).then(([THREE,landBuf,hubs])=>{
  if(ended)return;
  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:'high-performance'});
@@ -102,8 +102,8 @@ new Promise(r=>requestAnimationFrame(()=>setTimeout(r,250))).then(()=>Promise.al
  function nearestHub(e){const r=cv.getBoundingClientRect();let best=-1,bd=18*18;const cp=camera.position;
   for(let i=0;i<H.length;i++){tmp.fromArray(hp,3*i).applyMatrix4(G.matrixWorld);const facing=tmp.clone().normalize().dot(cp.clone().sub(tmp).normalize());if(facing<.15)continue;tmp.project(camera);
    const x=(tmp.x+1)/2*r.width,y=(1-tmp.y)/2*r.height,d=(x-(e.clientX-r.left))**2+(y-(e.clientY-r.top))**2;if(d<bd){bd=d;best=i}}return best}
- function hover(e){if(S.phase!=='idle')return;const i=nearestHub(e);U.uHover.value=i;cv.style.cursor=i>=0?'pointer':'grab';if(i<0){tip.style.opacity=0;return}const r=cv.getBoundingClientRect();
-  tip.textContent=`${H[i][3]} · ${H[i][2].toLocaleString()} internship${H[i][2]===1?'':'s'}`;tip.style.transform=`translate3d(${e.clientX-r.left+14}px,${e.clientY-r.top-34}px,0)`;tip.style.opacity=1}
+ function hover(e){if(S.phase!=='idle')return;const i=nearestHub(e);U.uHover.value=i;cv.style.cursor='grab';if(i<0){tip.style.opacity=0;return}const r=cv.getBoundingClientRect();
+  /* V5.2: no tooltip; the dot just pulses */}
  function clickCity(e){return;const i=nearestHub(e);if(i<0)return;U.uC2.value.fromArray(hp,3*i).normalize();U.uPing2.value=0;S.ping2=performance.now();preview(H[i])}
  function preview(h){let el=intro.querySelector('.cityprev');if(!el){el=document.createElement('div');el.className='cityprev';el.setAttribute('role','status');intro.appendChild(el)}
   const [city,st]=h[3].split(', ');const L=(typeof D!=='undefined'?D:[]).filter(x=>x.st!=='closed'&&x.st!=='upcoming'&&(x.locations||[]).some(l=>l.city===city&&l.state===st)).slice(0,3);

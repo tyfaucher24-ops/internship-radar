@@ -180,3 +180,5 @@ html{scrollbar-gutter:stable}
 .sky-grad{animation:none}.cglow,.skyping,.cityprev{display:none}
 #intro{right:auto;width:100vw}
 html:has(body.intro-on){scrollbar-gutter:auto;overflow:hidden}
+.globe-ph{transition:opacity .7s}
+.gtip{display:none!important}

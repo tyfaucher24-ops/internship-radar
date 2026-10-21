@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<script>try{if(localStorage.getItem("idr_introSeen")==="true"&&!/[?&]intro=1/.test(location.search))document.documentElement.classList.add("seen")}catch(e){}</script>
+<script>/* V5.2: the globe intro shows on every visit to the site root; deep links (#find, #tracker, #profile, ?q=…) skip it */(function(){var h=location.hash.replace(/^#/,""),q=new URLSearchParams(location.search);["intro","gl","aa"].forEach(function(k){q.delete(k)});if((h&&!/^intro$/.test(h))||[...q.keys()].length)document.documentElement.classList.add("seen")})()</script>
 <title>Internship Radar · Every internship. Tracked. Matched. Free.</title>
 <meta name="description" content="Internship Radar tracks every open US internship (plus the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get. Free, no login.">
 <meta property="og:title" content="Internship Radar"><meta property="og:description" content="Every internship. Tracked. Matched. Free."><meta property="og:type" content="website"><meta property="og:url" content="https://tyfaucher24-ops.github.io/internship-radar/"><meta property="og:image" content="https://tyfaucher24-ops.github.io/internship-radar/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@
 </div>
 <a class="skiplink" href="#main">Skip to content</a>
 <header id="hdr" class="site-header"><div class="container hd">
- <a class="brand" href="#" data-go="db" aria-label="Internship Radar home"><img src="assets/icon.svg" alt="" width="32" height="32"><span>Internship Radar</span></a>
+ <a class="brand" href="./" aria-label="Internship Radar home"><img src="assets/icon.svg" alt="" width="32" height="32"><span>Internship Radar</span></a>
  <nav class="nav" aria-label="Main"><a href="#" data-go="db" data-t="db" class="on">Find</a><a href="#tracker" data-go="tracker" data-t="tracker">My Tracker <span class="nbadge" id="trkN"></span></a>
   <span class="pmenu"><a href="#profile" data-go="profile" data-t="profile">My Profile</a><button type="button" id="pmBtn" class="pm-btn" aria-label="Profile menu" aria-expanded="false" aria-controls="pmMenu">▾</button>
    <div id="pmMenu" class="pm" hidden><button type="button" id="exp">Export my data</button><label class="pm-imp" tabindex="0">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label><a href="admin.html">Admin</a></div></span></nav>

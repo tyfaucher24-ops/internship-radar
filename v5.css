@@ -542,3 +542,42 @@ kbd{font-family:var(--font-mono);font-size:var(--fs-s);border:1px solid var(--c-
  .pf-scroll.pf-more{-webkit-mask:linear-gradient(black calc(100% - 40px),transparent);mask:linear-gradient(black calc(100% - 40px),transparent)}}
 html.dark .site-header{background:var(--c-hdr)}
 html.dark .card,html.dark .pf-col,html.dark .modal .mbox{background:var(--c-surface);color:var(--c-ink)}
+/* ===== V11.1 design pass (see ops/V11.1_DESIGN_NOTES.md) ===== */
+/* ticker: a quiet hairline strip in the page's own surface colour, not a black bar */
+.ticker{background:var(--c-tk-bg);color:var(--c-tk-ink);border:1px solid var(--c-tk-line);border-radius:var(--r);min-height:34px;box-shadow:var(--shadow-1)}
+.ticker .tk-lbl{color:var(--c-tk-lbl);border-right:1px solid var(--c-tk-line);font-size:var(--fs-s)}
+.ticker .tk-lbl b{font-weight:600;letter-spacing:.08em;color:var(--c-ink)}
+.ticker .tk-lbl:hover,.ticker .tk-lbl:focus-visible{background:var(--c-bg)}
+.ticker .tk-i{color:var(--c-tk-ink);border-right:1px solid var(--c-tk-line)}
+.ticker .tk-new .tk-k{color:var(--c-tk-up)}.ticker .tk-closed .tk-k{color:var(--c-tk-down)}.ticker .tk-deadline .tk-k{color:var(--c-tk-move)}
+.ticker .tk-co{color:var(--c-ink)}.tk-t,.tk-tm{opacity:1;color:var(--c-mut-2)}
+.ticker .pulse.up{background:var(--c-up)}
+/* dots: small, slow, soft halo */
+.pulse{width:6px;height:6px}
+.pulse::after{animation:pulse var(--pulse-dur) ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.45}70%,100%{transform:scale(2.4);opacity:0}}
+.dl .pulse{width:6px;height:6px}
+.pulse.up{background:var(--c-up)}.pulse.dn{background:var(--c-down)}
+/* intro: glass strip that matches the counter pill instead of a solid board */
+#intro .itk{background:var(--c-intro-glass,rgba(15,12,60,.35));border:0;border-top:1px solid rgba(255,255,255,.14);box-shadow:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:1}
+#intro .itk .tk-lbl{color:rgba(255,255,255,.75);border-right:1px solid rgba(255,255,255,.14)}#intro .itk .tk-lbl b{color:var(--c-surface)}
+#intro .itk .tk-i{color:rgba(255,255,255,.85);border-right:1px solid rgba(255,255,255,.12)}
+#intro .itk .tk-co{color:var(--c-surface)}#intro .itk .tk-t,#intro .itk .tk-tm{color:rgba(255,255,255,.6)}
+#intro .itk .tk-new .tk-k{color:var(--c-board-up)}#intro .itk .tk-closed .tk-k{color:var(--c-board-down)}#intro .itk .tk-deadline .tk-k{color:var(--c-board-move)}
+#intro .pulse.up{background:var(--c-board-up)}
+/* numbers: tabular mono everywhere a count appears */
+.find-head .hdrCount .mono,#count b,.mk-s b,.d-count b{font-variant-numeric:tabular-nums}
+/* market panel: stat tiles like a dashboard (label small, number large, tinted by direction) */
+.mk-s{background:var(--c-surface);box-shadow:var(--shadow-1)}
+.mk-s.up{background:var(--c-up-soft);border-color:transparent}.mk-s.dn{background:var(--c-down-soft);border-color:transparent}
+.mk-s span{text-transform:uppercase;letter-spacing:.06em}
+.mk-tabs button[aria-pressed=true]{background:var(--c-ink);color:var(--c-surface);border-color:var(--c-ink)}
+/* closing pills on cards use the same down colour */
+.card .dl-red{color:var(--c-down)}
+.ticker .tk-lbl{flex-direction:row;align-items:center;gap:var(--sp-2);background:transparent!important;min-height:0!important;height:auto;box-shadow:none!important;border-radius:0!important}
+.ticker .tk-lbl b{display:inline-flex;align-items:center}
+#tkAsOf{color:var(--c-mut-2);font-size:var(--fs-s)}
+.ticker .tk-lbl .pulse{flex:none}
+html.dark .firsttip .ghost,html.dark .firsttip button{color:var(--c-ink);background:var(--c-surface);border-color:var(--c-line-2)}
+.tk-short{display:none}
+@media (max-width:700px){.tk-full{display:none}.tk-short{display:inline}.ticker{margin-top:var(--sp-1)}.ticker .tk-lbl{padding:0 var(--sp-2)}}

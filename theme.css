@@ -143,3 +143,9 @@
 html.dark{--c-surface:#161a2b;--c-bg:#0f1220;--c-bg-2:#1d2236;--c-line:#272d45;--c-line-2:#323a57;--c-ink:#e8eaf2;--c-ink-2:#c9cde0;--c-mut:#a3a9c2;--c-mut-2:#8a90aa;--c-faint:#6b7190;--c-pri-soft:#262150;--c-pri-soft-2:#3a3175;--c-pri-ink:#b9adff;--c-blue-soft:#14223f;--c-red-soft:#3a1916;--c-amber-soft:#33280d;--c-green-soft:#0f2e22;--c-up:#34d399;--c-down:#f87171;--c-move:#fbbf24;--c-bar:rgba(22,26,43,.96);--c-hdr:rgba(15,18,32,.88);--c-x525873:#a3a9c2;--c-x8a90a8:#8a90aa;--c-xf3e3a1:#5a4a1a;color-scheme:dark}
 html.cb{--c-up:#1d4ed8;--c-board-up:#60a5fa;--c-cb-hi:#dbeafe;--c-cb-hi-ink:#1e3a8a;--c-cb-hi-line:#93c5fd}
 html.cb.dark{--c-up:#60a5fa}
+/* V11.1 design pass: one restrained market palette used everywhere (intro, Find, drawer, tracker, profile) */
+:root{--c-up:#0e7c5a;--c-down:#c2362b;--c-move:#9a6700;--c-up-soft:#e7f5ef;--c-down-soft:#fbecea;
+--c-tk-bg:var(--c-surface);--c-tk-ink:var(--c-ink-2);--c-tk-line:var(--c-line);--c-tk-up:var(--c-up);--c-tk-down:var(--c-down);--c-tk-move:var(--c-move);--c-tk-lbl:var(--c-mut-2);
+--pulse-dur:2.4s}
+html.dark{--c-up:#3fbf8f;--c-down:#f2766b;--c-move:#e0b54f;--c-up-soft:#0f2e22;--c-down-soft:#3a1916;--c-tk-bg:var(--c-surface);--c-tk-ink:var(--c-ink-2);--c-tk-line:var(--c-line)}
+html.cb{--c-up:#1d5fd8;--c-tk-up:#1d5fd8}html.cb.dark{--c-up:#6ea0f5;--c-tk-up:#6ea0f5}

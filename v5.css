@@ -538,6 +538,7 @@ html.dark body{background:var(--c-bg);color:var(--c-ink)}
 kbd{font-family:var(--font-mono);font-size:var(--fs-s);border:1px solid var(--c-line-2);border-radius:4px;padding:0 4px;margin:0 2px}
 .pm button[aria-pressed]{display:block;width:100%;text-align:left}
 /* profile column: no inner scroll at desktop widths, the page scrolls and clears the Save bar */
-@media (min-width:1200px){.pf-scroll{max-height:none;overflow:visible}}
+@media (min-width:1200px){.pf-scroll{max-height:calc(100dvh - 400px)}
+ .pf-scroll.more{-webkit-mask:linear-gradient(black calc(100% - 40px),transparent);mask:linear-gradient(black calc(100% - 40px),transparent)}}
 html.dark .site-header{background:var(--c-hdr)}
 html.dark .card,html.dark .pf-col,html.dark .modal .mbox{background:var(--c-surface);color:var(--c-ink)}

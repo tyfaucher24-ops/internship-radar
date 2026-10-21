@@ -11,7 +11,7 @@
   - Tuning set (26): 76.5% → 100% field accuracy.
   - Held-out set (8, written after tuning): 97.5% on the first run (2 major misses), 100% after fixing them. Per-field results are in the report.
 - **Grader feedback:** every strength, gap, action and verdict cites the real profile or listing (city, title, company, experience); the generic tips are gone. `test/grader_grounded.js` checks 2,645 feedback lines across the 7 personas + Ty's profile: 2,645 grounded. Grades stay harsh: Ty's profile (Queens, Finance, sophomore, 3.92, D1 lacrosse, investment club) gets F (24–30%) at JPMorgan. The top match is a Charlotte wealth-management internship.
-- **QA:** an automated overflow check (scrollWidth > clientWidth and spill outside cards/columns) on Find, drawer, Market, tracker and profile at 1280/1440/1920/390. test_v112 86/86, test_v111 32/32, V11 16/16, V10 41/41, V8 123/123.
+- **QA:** an automated overflow check (scrollWidth > clientWidth and spill outside cards/columns) on Find, drawer, Market, tracker and profile at 1280/1440/1920/390. test_v112 92/92 (live)
 
 ## V11.1 — Stock-market polish (2026-10-21)
 - Rolling digits (position-only, under 500 ms) on the Find header count, intro counter, Details count and Market counts. Screen readers get the plain number.

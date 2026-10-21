@@ -36,6 +36,8 @@ with sync_playwright() as p:
         if w>=1280:
             sw=pg.evaluate("(()=>{const s=document.querySelector('#t-tracker .tscroll');return [s.scrollWidth,s.clientWidth]})()");ok(f'{w} Tracker: no horizontal scroll',sw[0]<=sw[1]+1,sw)
             o=pg.evaluate("(()=>{const f="+OVER+";return f(document.getElementById('t-tracker'))})()");ok(f'{w} Tracker: no clipped labels/pills',not o,o)
+            ok(f'{w} Tracker: status text fits its pill',pg.evaluate("(()=>{const c=document.createElement('canvas').getContext('2d');return [...document.querySelectorAll('#tTable .pill')].every(e=>{const cs=getComputedStyle(e);c.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;return c.measureText(e.options[e.selectedIndex].text).width<=e.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)+1})})()"))
+            ok(f'{w} Tracker: company names never break mid-word',pg.evaluate("[...document.querySelectorAll('#tTable td.c-company .ta')].every(t=>t.scrollWidth<=t.clientWidth+1&&getComputedStyle(t).overflowWrap==='normal')"))
             ok(f'{w} Tracker: status pills one width',len(set(pg.evaluate("[...document.querySelectorAll('#tTable .pill')].map(e=>e.offsetWidth)")))==1)
             cb=pg.evaluate("(()=>{const c=document.querySelector('.tsel-all').getBoundingClientRect(),h=document.querySelector('#tTable th.c-company').getBoundingClientRect();return [c.left-h.left,c.top-h.top,h.bottom-c.bottom]})()");ok(f'{w} Tracker: select-all box fully inside and centred',min(cb)>=2 and abs(cb[1]-cb[2])<=2,cb)
             ok(f'{w} Tracker: closes merged ("N days · Mon D")',pg.evaluate("[...document.querySelectorAll('#tTable td.c-closes .dv')].some(e=>/·/.test(e.textContent))"))
@@ -51,7 +53,7 @@ with sync_playwright() as p:
         o=pg.evaluate("(()=>{const f="+OVER+";return f(document.getElementById('t-profile'))})()");ok(f'{w} Profile: long real values, no clipped text',not o,o)
         pg.locator('#cbMinor .cb-field').click();pg.wait_for_timeout(400)
         r=pg.evaluate("(()=>{const p=document.querySelector('#cbMinor .cb-pop');const r=p.getBoundingClientRect();const el=document.elementFromPoint(r.right-6,r.top+20);return [r.left,r.right,innerWidth,p.contains(el)]})()")
-        ok(f'{w} Profile: Minor panel fully on screen, not clipped by the card',r[0]>=0 and r[1]<=r[2] and r[3],r)
+        rb=pg.evaluate("document.querySelector('#cbMinor .cb-pop').getBoundingClientRect().bottom<=innerHeight");ok(f'{w} Profile: Minor panel fully on screen, not clipped by the card',r[0]>=0 and r[1]<=r[2] and r[3] and rb,r)
         ic=pg.evaluate("(()=>{const s=document.querySelector('#cbMinor .cb-sbox svg').getBoundingClientRect(),i=document.querySelector('#cbMinor .cb-search');return s.right<=i.getBoundingClientRect().left+parseFloat(getComputedStyle(i).paddingLeft)})()");ok(f'{w} Profile: search icon does not overlap the placeholder',ic)
         pg.keyboard.press('Escape');pg.close()
     pg=page(1440);pg.goto(B);pg.wait_for_timeout(8000)

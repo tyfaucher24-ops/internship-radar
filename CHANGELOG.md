@@ -1,6 +1,15 @@
 # Internship Radar changelog
 
 
+## V10 — UI cleanup and speed (2026-10-21)
+- Design tokens: new `theme.css` holds every color, the 4-step type scale, one radius and the 4px spacing grid. style.css/v4.css/v5.css read only variables, so V11 can re-theme from one file.
+- Find: title and live counts share one row; one-line beginner tip; smaller pills and toolbar; one swipeable filter row and a single-row header on phones; "+N similar" fits inside cards.
+- Drawer: unknown facts collapse into one "Not listed by the employer" line. "Remote/Unspecified" now reads "Location not listed".
+- Profile: About you fits without running under the Save bar; GPA placeholder fits.
+- Tracker: empty tracker shows just the empty state and Add/Import; compact stat strip; Undo after deleting rows.
+- Speed: phones and GPU-less devices get a pre-rendered planet instead of the 3D globe; layout no longer jumps while loading; first-visit tip floats. Live Lighthouse: desktop 100, mobile 85–94.
+- QA: `test_v10.py` (41 UI checks), V8 suite 123/123. Flaw list with status: `ops/V10_AUDIT.md`.
+
 ## V9 — Fresh data, honest grades, more firms (2026-10-21)
 - Auto-sync (prepared): `ops/workflows/sync.yml` runs a full sync every 2h (:07) and a fast Greenhouse/Lever/Ashby pass on the odd hours (:37), runs `pipeline.qa`, commits only on success, and opens/comments a `sync-failure` issue when a run fails. It is **not active yet**: the repo token lacks the `workflow` scope (see README/report for Ty's steps). Partial runs never close listings they didn't read. Older records missing optional keys no longer crash the sync.
 - Header shows "Updated X ago" and warns when data is more than 4h old.

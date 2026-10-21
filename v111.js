@@ -9,7 +9,7 @@ function roll(el,n){if(!el)return;const s=Number(n).toLocaleString();el.classLis
  const ds=s.replace(/\D/g,'');cols.forEach((c,i)=>{c.firstChild.style.transform=`translateY(${-ds[i]*10}%)`});el.dataset.v=s}
 window.rollNum=roll;
 /* profile columns: fade the bottom edge while there is more to scroll, so nothing looks cut off */
-function pfFade(){document.querySelectorAll('#t-profile .pf-scroll').forEach(s=>s.classList.toggle('more',s.scrollHeight-s.scrollTop-s.clientHeight>4))}
+function pfFade(){document.querySelectorAll('#t-profile .pf-scroll').forEach(s=>s.classList.toggle('pf-more',s.scrollHeight-s.scrollTop-s.clientHeight>4))}
 document.addEventListener('scroll',e=>{if(e.target.classList&&e.target.classList.contains('pf-scroll'))pfFade()},true);addEventListener('resize',pfFade);addEventListener('hashchange',()=>setTimeout(pfFade,300));setTimeout(pfFade,800);new MutationObserver(()=>pfFade()).observe(document.getElementById('t-profile')||document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});
 /* lead number of a sentence ("10,827 open internships · …") */
 function rollLead(el){if(!el||el.querySelector('.roll'))return;const t=el.firstChild;if(!t||t.nodeType!==3)return;const m=t.nodeValue.match(/^([\d,]+)(.*)$/s);if(!m)return;

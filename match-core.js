@@ -47,7 +47,7 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const firm=firmRow(C,x.company),comp=competition(x,firm);
  // no experience: entry-level, low-competition roles don't expect any, so the gap counts less as competition falls (match-weights.json noExperience)
  const NE=W.noExperience||{},neV=comp.score==null?(NE.base??50):Math.round((NE.base??50)+((NE.max??50)-(NE.base??50))*Math.max(0,((NE.reliefBelow??50)-comp.score)/(NE.reliefBelow??50)));
- const fExp=P.exp.length?Math.min(100,50+rel.length*30):neV;if(rel.length)pos.push(`you've done related work (${rel[0].title.slice(0,40)})`);
+ const fExp=P.exp.length?Math.min(100,50+rel.length*30):neV;if(rel.length)pos.push(`you've done related work (${rel[0].title.length>50?rel[0].title.slice(0,50).replace(/\s+\S*$/,'')+'…':rel[0].title.trim()})`);
  const fit=avgW([['role',fRole],['interest',fInt],['major',fMaj],['skills',fSk],['experience',fExp]],W.fitParts||{});
  // ---- Odds ----
  const OC=W.oddsCurve||{exponent:1.3,lowBelow:40,lowBonus:25};
@@ -65,7 +65,7 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const odds=avgW([['competition',cOdds],['classYear',oYear],['gpa',oGpa],['school',oSch],['experience',oExp],['employer',pastEmp?95:null]],W.oddsParts||{});
  if(comp.score!=null&&comp.score<40&&comp.easy.length)pos.push(`competition looks low (${comp.easy.slice(0,2).join(', ')})`);else if(comp.score!=null&&comp.score>=65)neg.push(`competition is high${comp.why.length?' ('+comp.why[0]+')':''}`);
  // ---- Preferences ----
- let pLoc=null;const ST=P.states||[];if(P.locs.length||ST.length||P.remoteOK){const tt=' '+text+' ';const hit=P.locs.some(l=>text.includes(l))||ST.some(c=>tt.includes(' '+c+' '));pLoc=hit?100:(x.remote&&P.remoteOK)?100:P.relocate?60:20;if(hit)pos.push('it\u2019s in a location you picked');}
+ let pLoc=null;const ST=P.states||[];if(P.locs.length||ST.length||P.remoteOK){const tt=' '+text+' ';const hL=P.locs.find(l=>text.includes(l))||ST.find(c=>tt.includes(' '+c+' '));const hit=!!hL;pLoc=hit?100:(x.remote&&P.remoteOK)?100:P.relocate?60:20;if(hit){const l0=(x.locations||[])[0];pos.push(`it's in ${l0&&l0.city?l0.city+(l0.state?', '+l0.state:''):String(hL).toUpperCase()}, a location you picked`)}}
  const pRem=x.remote==null||!P.remoteOK?null:(x.remote?100:70);
  const pYear=oYear==null?null:100;const pPaid=x.paid===true?100:null;
  const prefs=avgW([['location',pLoc],['remote',pRem],['classYear',pYear],['paid',pPaid]],W.prefParts||{});
@@ -83,22 +83,22 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  pct=Math.max(0,Math.min(100,Math.round(pct)));
  const known=fit.n+odds.n+prefs.n,conf=known>=9?'high':known>=6?'medium':'low';
  const reasons=ineligible?[`Not eligible: ${ineligible}`]:elite?[elite,...pos.slice(0,2)]:[...pos.slice(0,3),...neg.slice(0,1)].slice(0,3);
- let tip=null;if(!ineligible&&pct<60){tip=!P.skills.length?'Add your skills (or upload a resume) to sharpen this score.':!P.exp.length?'Add any experience: part-time jobs, clubs and projects all count.':sk.length===0&&kws.length?`Roles like this ask for ${kws.slice(0,3).join(', ')}; add them if you have them.`:'Look for similar roles at smaller or local firms, where your odds are higher.'}
+ let tip=null;if(!ineligible&&pct<60){tip=!P.skills.length?'Add your skills (or upload a resume) to sharpen this score.':!P.exp.length?'Add any experience: part-time jobs, clubs and projects all count.':sk.length===0&&kws.length?`Roles like this ask for ${kws.slice(0,3).join(', ')}; add them if you have them.`:(comp.score!=null&&comp.score>=65?`${x.company} gets many applicants for ${MC.groupLabel(gx,C)||'roles like this'}; similar roles at smaller firms in your list grade higher for you.`:null)}
  // V9: not enough info -> no score (never a misleading number)
  const GR=W.grader||{};const pParts=[P.majorN,P.industries.length,P.skills.length,P.exp.length].filter(Boolean).length;const need=[];
  if(!P.majorN)need.push('your major');if(!P.industries.length)need.push('the fields you\u2019re interested in');if(!P.skills.length)need.push('a few skills');if(!P.exp.length)need.push('any experience (jobs, clubs, projects)');
  const ungraded=pParts<(GR.minProfileParts??2)?'profile':(known<(GR.minKnown??5)?'listing':null);
  // honest feedback panel
  const V=GR.verdict||{strong:75,worth:55};const missSk=kws.filter(k=>k.length>3&&!P.skills.some(s=>s===k||k.includes(s)||s.includes(k))&&!/^(and|with|team|work|role)$/.test(k)).slice(0,3);
- const acts=[];if(ineligible)acts.push(cy.length?`Look for roles open to ${P.classYear||'your class year'}s; this one lists ${cy.join('/')} only.`:'Filter to roles that match your work authorization.');
+ const acts=[];if(ineligible)acts.push(cy.length?`Look for roles open to ${P.classYear||'your class year'}s; this one lists ${cy.join('/')} only.`:(x.citizenship===true?`${x.company} requires US citizenship for this role; filter to roles that match your work authorization.`:`${x.company} doesn't sponsor visas for this role; filter to roles that match your work authorization.`));
  else{if(missSk.length&&sk.length<2)acts.push(`Build or show these skills the role asks for: ${missSk.join(', ')}. A short course or a small project you can talk about counts.`);
   if(!rel.length)acts.push(gx?`Add one ${MC.groupLabel(gx,C).toLowerCase()} experience: a class project, club role or part-time job you can describe in 2 bullets.`:'Add one related experience, even a class project.');
   if(elite||(comp.score!=null&&comp.score>=65))acts.push(`Get a referral: message 2–3 alumni or recruiters at ${x.company} before applying. At crowded employers a referral matters more than another bullet.`);
   if(bar&&P.gpa&&P.gpa<bar)acts.push(`Lead with experience and projects; your GPA is under the ${bar} this employer screens for.`);
   if(!P.gpa&&(bar||elite))acts.push('Add your GPA. Firms with GPA screens can\u2019t be scored in your favor without it.');
-  if(pLoc!=null&&pLoc<=20&&!P.relocate)acts.push('Say you\u2019re open to relocating if you would move for this.');
-  if(pct>=V.strong||!acts.length)acts.push('Apply soon, and tailor the top bullet of your resume to this role.')}
- const verdict=ineligible?{k:'no',t:'Not eligible',why:ineligible}:pct>=V.strong?{k:'strong',t:'Strong shot',why:`your background lines up and the odds look reasonable`}:pct>=V.worth?{k:'worth',t:'Worth applying',why:`worth it if you ${acts[0]?acts[0].replace(/\.$/,'').replace(/^./,c=>c.toLowerCase()):'tailor your resume to it'}`}:{k:'long',t:'Long shot',why:neg[0]||elite||(fRole!=null&&fRole<=15?'the role doesn\u2019t match your background':'little overlap with your profile and strong competition')};
+  if(pLoc!=null&&pLoc<=20&&!P.relocate){const l0=(x.locations||[])[0];acts.push(`It's in ${l0&&l0.city?l0.city+(l0.state?', '+l0.state:''):'a city outside your picks'}, not a location you picked. Tick “open to relocating” if you'd move for it.`)}
+  if(pct>=V.strong||!acts.length)acts.push(rel.length?`Apply, and put your ${rel[0].title.length>60?rel[0].title.slice(0,60).replace(/\s+\S*$/,'')+'…':rel[0].title.trim()} experience first on your resume; it's the closest match to “${x.title.slice(0,50)}”.`:sk.length?`Apply, and lead your resume with ${sk.slice(0,2).join(' and ')}, which “${x.title.slice(0,50)}” asks for.`:`Apply if “${x.title.slice(0,50)}” at ${x.company} interests you; nothing in your profile matches it closely yet.`)}
+ const verdict=ineligible?{k:'no',t:'Not eligible',why:ineligible}:pct>=V.strong?{k:'strong',t:'Strong shot',why:pos[0]?pos[0]:`your profile lines up with ${x.title.slice(0,50)}`}:pct>=V.worth?{k:'worth',t:'Worth applying',why:`worth it if you ${acts[0]?acts[0].replace(/\.$/,'').replace(/^./,c=>c.toLowerCase()):'tailor your resume to it'}`}:{k:'long',t:'Long shot',why:neg[0]||elite||(fRole!=null&&fRole<=15?`${x.title.slice(0,50)} doesn't match your ${P.major||'major'} or experience`:`none of your skills${P.major?' or your '+P.major+' major':''} line up with ${x.title.slice(0,50)}`)};
  const feedback={strengths:pos.slice(0,3),gaps:[...(ineligible?[`not eligible: ${ineligible}`]:[]),...(elite?[elite]:[]),...neg].slice(0,3),actions:acts.slice(0,3),verdict};
  if(ungraded)return {pct:null,ungraded,need:ungraded==='profile'?need:['this listing has too little detail (no class year, size or location) to grade fairly'],grade:'—',band:'gna',reasons:['Not enough info to grade'],conf:'low',feedback,group:gx,fit:null,odds:null,prefs:null,comp:comp.score,ineligible:!!ineligible};
  return {pct,grade:MC.grade(pct,W),band:MC.band(pct),group:gx,feedback,pastEmployer:pastEmp,fit:Math.round(fit.v??0),odds:Math.round(odds.v??0),prefs:prefs.v==null?null:Math.round(prefs.v),comp:comp.score,reasons:reasons.length?reasons:['Little overlap with your profile yet'],tip,conf,ineligible:!!ineligible}};

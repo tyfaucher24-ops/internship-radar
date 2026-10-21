@@ -1,11 +1,11 @@
 {
- "at": "2026-10-21T16:50:57Z",
- "open_visible": 11090,
+ "at": "2026-10-21T21:32:23Z",
+ "open_visible": 11154,
  "fixes": {
-  "city_dropped_unverifiable": 1528,
-  "city_normalized": 809,
-  "company_from_registry": 331,
-  "far_ats_enddate_not_shown": 114,
+  "city_dropped_unverifiable": 1526,
+  "city_normalized": 742,
+  "company_from_registry": 6,
+  "far_ats_enddate_not_shown": 113,
   "hidden_bad_company": 27,
   "duplicates_hidden": 65
  },
@@ -181,14 +181,19 @@
    "issue": "company looks like a job title"
   }
  ],
- "added": 575,
- "removed": 734,
- "changed": 1093,
- "previous_open": 11249,
+ "added": 204,
+ "removed": 251,
+ "changed": 20,
+ "previous_open": 11201,
+ "events": {
+  "new": 184,
+  "deadline": 10,
+  "closed": 140
+ },
  "sources": {
   "boards": 2497,
-  "ok": 2269,
-  "failed": 228,
+  "ok": 2288,
+  "failed": 209,
   "failed_sample": [
    "AbbVie (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AbbVie",
    "Accel Learning (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AccelL",
@@ -198,28 +203,28 @@
    "AECOM (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AECOM2",
    "AeroVect (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AeroVe",
    "AG Technologies (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AGTech",
-   "Allegheny County (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://alleghenycounty.bamboohr",
    "Allegis Global Solutions (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Allegi",
    "Amplify (workday): HTTPError: 403 Client Error: Forbidden for url: https://amplify.wd1.myworkdayjob",
    "Analysys Mason (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Analys",
    "Applied Intuition (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
    "Arine (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
    "Arista Networks (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Arista",
-   "Armstrong Fluid Technology (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://armstrongfluidtechnology",
    "Assent (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Assent",
-   "Asure (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://asuresoftware.bamboohr.c",
    "Atomic Semi (ashby): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-",
    "ATPCO (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/ATPCO1",
    "Atria Group (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AtriaG",
    "Augsburg University (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Augsbu",
    "Avery Dennison (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AveryD",
    "Axle (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AxleIn",
-   "Baird (workday): RuntimeError: gave up on https://baird.wd1.myworkdayjobs.com/wday/cxs/baird/care",
-   "Berkshire Grey (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://berkshiregrey.bamboohr.c",
    "BitGo (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
-   "BowerGroupAsia (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://bga.bamboohr.com/careers",
+   "Blackstone (workday): RuntimeError: gave up on https://blackstone.wd1.myworkdayjobs.com/wday/cxs/black",
    "Breeze Airways (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
-   "Calpion/Plutus Health (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://calpionplutus.bamboohr.c"
+   "CALSTART (lever): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings",
+   "Cambia Health Solutions (workday): HTTPError: 422 Client Error: Unprocessable Entity for url: https://cambiahealth.",
+   "Canva (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Canva/",
+   "Capital Rx (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
+   "CapTech Consulting (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/CapTec",
+   "Carnegie Mellon University (workday): HTTPError: 422 Client Error: Unprocessable Entity for url: https://cmu.wd5.mywor"
   ]
  }
 }

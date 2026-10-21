@@ -1,6 +1,16 @@
 # Internship Radar changelog
 
 
+## V11 — Editorial accents + Internship Exchange (2026-10-21)
+- Same layout, colors and components as V10; the newspaper feel is accents only, all through `theme.css` tokens (`--font-display`, `--font-mono`, `--c-paper`, `--c-newsink`, `--c-accent`, ticker up/down colors).
+- Find page masthead: dateline (date + Morning/Evening Edition) over a hairline with live counts in mono, "Internship Radar" in Playfair Display, double rule. Fonts are self-hosted (Playfair 23 KB, JetBrains Mono 22 KB).
+- Internship Exchange ticker under the masthead: ▲ NEW / ▼ CLOSED / ● DEADLINE MOVED with a time on every item. Events come only from the real diff between two syncs (`pipeline/changes.py`, run by `pipeline.qa` after every sync -> `data/changes.json`). No file or no events = no ticker. Pauses on hover/focus, no auto-scroll with reduced motion, click opens the listing, polls every 5 minutes.
+- Market Activity panel (click the ticker label): added/closed/deadline-moved counts for the latest sync, top movers by firm, filterable feed, and an open-internships trend line once two syncs are on record (only one so far).
+- Cards lift 2px on hover; closed postings are dimmed. Tracker rows with an Offer get an "OFFER" stamp. Ctrl/Cmd+K jumps to search.
+- V10 leftovers: phone Sort dropdown is 32px; profile hints are visible again.
+- Planet intro unchanged (no skip button).
+- QA: `test_v11.py` 17/17, V10 41/41, V8 123/123.
+
 ## V10 — UI cleanup and speed (2026-10-21)
 - Design tokens: new `theme.css` holds every color, the 4-step type scale, one radius and the 4px spacing grid. style.css/v4.css/v5.css read only variables, so V11 can re-theme from one file.
 - Find: title and live counts share one row; one-line beginner tip; smaller pills and toolbar; one swipeable filter row and a single-row header on phones; "+N similar" fits inside cards.

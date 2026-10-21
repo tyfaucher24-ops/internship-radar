@@ -1,6 +1,16 @@
 # Internship Radar changelog
 
 
+## V11.1 — Stock-market polish (2026-10-21)
+- Rolling digits (position-only, under 500 ms) on the Find header count, intro counter, Details count and Market counts. Screen readers get the plain number.
+- Colour-blind grades toggle (profile menu ▾): high grades and "added" turn blue instead of green. Saved in this browser.
+- Dark / light mode toggle (profile menu ▾), applied before first paint so there is no flash. Light stays the default.
+- Ctrl/⌘+K quick search: type a company or role, arrow keys, Enter opens the listing. Only open listings from the current data.
+- Red pulsing dot on cards that close within 7 days.
+- Intro: thin live ticker pinned to the bottom (a read-only copy of the real Exchange ticker, hidden when there are no sync events; never covers the buttons; static with reduced motion) and a mono, rolling live counter. Planet and Details unchanged, no skip button.
+- Profile at 1440: columns end above the Save bar and fade at the bottom while there's more to scroll, instead of a hard cut.
+- QA: test_v111 32/32, test_v11 16/16, V10 41/41, V8 123/123.
+
 ## V11 — Stock-market accents + Internship Exchange (2026-10-21)
 - Ty dropped the newspaper direction; those commits were reverted. Same layout, planet intro, Find and Details as V10; stock-market feel through accents using theme tokens.
 - Pulsing green "live" dots on the intro count, the Find header count and the ticker label (static with reduced motion).

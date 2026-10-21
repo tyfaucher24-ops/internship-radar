@@ -84,14 +84,14 @@
 "source": "ashby"
 },
 {
-"company": "AI Security Software Engineer Intern - Summer 2027",
+"company": "Carnegie Mellon University",
 "title": "Building Coordinator - Cohon University Center \u2013 Division of Student Affairs",
 "url": "https://cmu.wd115.myworkdayjobs.com/CMU/job/Pittsburgh-PA/Building-Coordinator---Cohon-University-Center---Division-of-Student-Affairs_2025129",
 "reason": "ambiguous intern wording",
 "source": "workday"
 },
 {
-"company": "AI Security Software Engineer Intern - Summer 2027",
+"company": "Carnegie Mellon University",
 "title": "Receptionist \u2013 Counseling and Psychological Services \u2013 Division of Student Affairs",
 "url": "https://cmu.wd115.myworkdayjobs.com/CMU/job/Pittsburgh-PA/Receptionist---Counseling-and-Psychological-Services---Division-of-Student-Affairs_2025012",
 "reason": "ambiguous intern wording",
@@ -212,7 +212,7 @@
 {
 "company": "American University",
 "title": "Desk Assistant (Student)",
-"url": "https://american.wd1.myworkdayjobs.com/au/job/Main-Campus-Washington-DC/Desk-Assistant--Student-_R5086",
+"url": "https://american.wd1.myworkdayjobs.com/AU/job/Main-Campus-Washington-DC/Desk-Assistant--Student-_R5086",
 "reason": "ambiguous intern wording",
 "source": "workday"
 },
@@ -357,20 +357,6 @@
 "source": "workday"
 },
 {
-"company": "American University",
-"title": "Marketing Assistant (Student)",
-"url": "https://american.wd1.myworkdayjobs.com/AU/job/Main-Campus-Washington-DC/Marketing-Assistant--Student-_R5003",
-"reason": "ambiguous intern wording",
-"source": "workday"
-},
-{
-"company": "American University",
-"title": "ATEC Studio Assistant (Student) (FWS)",
-"url": "https://american.wd1.myworkdayjobs.com/AU/job/Main-Campus-Washington-DC/ATEC-Studio-Assistant--Student---FWS-_R4983",
-"reason": "ambiguous intern wording",
-"source": "workday"
-},
-{
 "company": "Amplify",
 "title": "Executive Recruiter",
 "url": "https://jobs.ashbyhq.com/amplify/a55fad18-039a-4a08-9ef3-904af8d1ffe5",
@@ -387,14 +373,14 @@
 {
 "company": "Anduril",
 "title": "Legal Recruiter (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5180457007?gh_jid=5180457007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5181926007?gh_jid=5181926007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Legal Recruiter (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5181926007?gh_jid=5181926007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5180457007?gh_jid=5180457007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -408,14 +394,14 @@
 {
 "company": "Anduril",
 "title": "Recruiter, Real Estate, Facilities & EHS (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198716007?gh_jid=5198716007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198717007?gh_jid=5198717007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Recruiter, Real Estate, Facilities & EHS (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198717007?gh_jid=5198717007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198716007?gh_jid=5198716007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -443,14 +429,14 @@
 {
 "company": "Anduril",
 "title": "Technical Recruiter, Software - Air Dominance and Strike",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5248804007?gh_jid=5248804007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5235343007?gh_jid=5235343007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Technical Recruiter, Software - Air Dominance and Strike",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5235343007?gh_jid=5235343007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5248804007?gh_jid=5248804007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -716,14 +702,14 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8834243002",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829623002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -737,13 +723,6 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829617002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829315002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
@@ -751,7 +730,14 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829623002",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829617002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8834243002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -765,13 +751,6 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8829620002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/atoms/jobs/8558579002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
@@ -779,7 +758,14 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8827954002",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8829620002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -800,7 +786,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8827954002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -810,6 +796,13 @@
 "url": "https://job-boards.greenhouse.io/atoms/jobs/8828049002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
+},
+{
+"company": "Austin Community College District",
+"title": "Assistant II - Student Technology Services Computer Centers(Hourly)",
+"url": "https://austincc.wd1.myworkdayjobs.com/External/job/South-Austin-Campus/Assistant-II---Student-Technology-Services-Computer-Centers-Hourly-_R-9996",
+"reason": "ambiguous intern wording",
+"source": "workday"
 },
 {
 "company": "Axon",
@@ -1162,6 +1155,34 @@
 "source": "ashby"
 },
 {
+"company": "Brain",
+"title": "AI/ML Engineer, 2027 New Grad",
+"url": "https://jobs.ashbyhq.com/brainco/4c9f8f00-0caf-4927-80da-02a3e53cb0cd",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Brain",
+"title": "AI Security Engineer, 2027 New Grad",
+"url": "https://jobs.ashbyhq.com/brainco/32c4e1c9-ccd1-4dca-a68b-31ad1b868030",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Brain",
+"title": "AI Product Engineer, 2027 New Grad",
+"url": "https://jobs.ashbyhq.com/brainco/c1788246-305f-4e4f-8b03-8444c76a466e",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Brain",
+"title": "AI Platform Engineer, 2027 New Grad",
+"url": "https://jobs.ashbyhq.com/brainco/4d39773e-f4c3-49c1-87c3-812a9804fb15",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
 "company": "Braze",
 "title": "Technical Recruiter II (6-month Fixed-Term Contract)",
 "url": "https://job-boards.greenhouse.io/braze/jobs/8246067",
@@ -1209,6 +1230,20 @@
 "url": "https://job-boards.greenhouse.io/solutions/jobs/4715756006",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
+},
+{
+"company": "Capital Group",
+"title": "CAMPUS: Internal Sales (SLATE) Associate 2027 (Carmel, IN)",
+"url": "https://capgroup.wd1.myworkdayjobs.com/capitalgroupcareers/job/Indianapolis/CAMPUS--Internal-Sales--SLATE--Associate-2027--Carmel--IN-_JR7401",
+"reason": "ambiguous intern wording",
+"source": "workday"
+},
+{
+"company": "Capital Group",
+"title": "CAMPUS: Internal Sales (SLATE) Associate (Los Angeles, CA 2027)",
+"url": "https://capgroup.wd1.myworkdayjobs.com/capitalgroupcareers/job/Los-Angeles/CAMPUS--Internal-Sales--SLATE--Associate--Los-Angeles--CA-2027-_JR7404-1",
+"reason": "ambiguous intern wording",
+"source": "workday"
 },
 {
 "company": "Carta",
@@ -1584,14 +1619,14 @@
 {
 "company": "Flexport",
 "title": "Rotational Development Program",
-"url": "https://job-boards.greenhouse.io/flexport/jobs/8172300",
+"url": "https://job-boards.greenhouse.io/flexport/jobs/8224715",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Flexport",
 "title": "Rotational Development Program",
-"url": "https://job-boards.greenhouse.io/flexport/jobs/8224715",
+"url": "https://job-boards.greenhouse.io/flexport/jobs/8172300",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1785,13 +1820,6 @@
 "source": "ashby"
 },
 {
-"company": "Gen Digital",
-"title": "Fixed Term Recruiter - 6 Months to Perm",
-"url": "https://jobs.ashbyhq.com/gen-digital/cdff49f3-1e29-4469-a6c0-db592babd573",
-"reason": "ambiguous intern wording",
-"source": "ashby"
-},
-{
 "company": "General Matter",
 "title": "Business & Operations Recruiter ",
 "url": "https://job-boards.greenhouse.io/generalmatter/jobs/5381584008",
@@ -1933,6 +1961,13 @@
 },
 {
 "company": "Happyrobot",
+"title": "Technical Recruiter",
+"url": "https://jobs.ashbyhq.com/happyrobot.ai/a274e440-ad70-4f50-a586-9f5df011da5a",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Happyrobot",
 "title": "GTM Recruiter",
 "url": "https://jobs.ashbyhq.com/happyrobot.ai/642aa378-a45b-40a4-8050-2c77d1b38f49",
 "reason": "ambiguous intern wording",
@@ -1977,13 +2012,6 @@
 "company": "Headlands Tech Holdings",
 "title": "C++ Software Developer - New Grad ",
 "url": "https://job-boards.greenhouse.io/headlandstechnologiesllc/jobs/4336806009",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Headlands Tech Holdings",
-"title": "Headlands Tech - On Campus Event Application ",
-"url": "https://job-boards.greenhouse.io/headlandstechnologiesllc/jobs/4457931009",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2233,6 +2261,13 @@
 "source": "workday"
 },
 {
+"company": "Liberty University",
+"title": "Student Accounts Recovery Agent I",
+"url": "https://liberty.wd5.myworkdayjobs.com/lu_job_board_staff/job/Remote-Location/Student-Accounts-Recovery-Agent-I_R0013118",
+"reason": "ambiguous intern wording",
+"source": "workday"
+},
+{
 "company": "Louisiana State University (LSU)",
 "title": "Contingent - Student",
 "url": "https://lsu.wd1.myworkdayjobs.com/LSUWaiver/job/3319-Patrick-F-Taylor-Hall/Contingent---Student_R00119431",
@@ -2276,8 +2311,8 @@
 },
 {
 "company": "Magna International",
-"title": "Student Systems Administrator",
-"url": "https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Vaughan-Ontario-CA/Student-Systems-Administrator_R00261124",
+"title": "Manufacturing Engineering Student",
+"url": "https://wd3.myworkdaysite.com/recruiting/magna/Magna/job/Brampton-Ontario-CA/Manufacturing-Engineering-Student_R00266968",
 "reason": "ambiguous intern wording",
 "source": "workday"
 },
@@ -2327,13 +2362,6 @@
 "company": "Medical University of South Carolina",
 "title": "UNIV - Academic Technology & Curriculum Coordinator - Academic & Student Affairs - College of Dental Medicine",
 "url": "https://musc.wd1.myworkdayjobs.com/MUSC/job/BASIC-SCIENCE-BUILDING/UNIV---Academic-Technology---Curriculum-Coordinator---Academic---Student-Affairs---College-of-Dental-Medicine_R-0000068751",
-"reason": "ambiguous intern wording",
-"source": "workday"
-},
-{
-"company": "Medical University of South Carolina",
-"title": "UNIV - Medical Student Clerkship Coordinator II - Neurology",
-"url": "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/UNIV--Neurology-Fellowship-Coordinator--COM---Neurology_R-0000068742",
 "reason": "ambiguous intern wording",
 "source": "workday"
 },
@@ -2690,21 +2718,21 @@
 {
 "company": "One Medical",
 "title": "Family Nurse Practitioner or Physician Assistant - New Grad Program: Dana Park, May 2027",
-"url": "http://www.onemedical.com/careers/all-departments/8289181?gh_jid=8289181",
+"url": "http://www.onemedical.com/careers/all-departments/8306256?gh_jid=8306256",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "One Medical",
 "title": "Family Nurse Practitioner or Physician Assistant - New Grad Program: Queen Creek, May 2027",
-"url": "http://www.onemedical.com/careers/all-departments/8289178?gh_jid=8289178",
+"url": "http://www.onemedical.com/careers/all-departments/8306254?gh_jid=8306254",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "One Medical",
 "title": "Family Nurse Practitioner or Physician Assistant - New Grad Program: Tempe Gateway, May 2027",
-"url": "http://www.onemedical.com/careers/all-departments/8289176?gh_jid=8289176",
+"url": "http://www.onemedical.com/careers/all-departments/8306250?gh_jid=8306250",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2962,6 +2990,13 @@
 },
 {
 "company": "PennState University",
+"title": "Student Account Associate Supervisor",
+"url": "https://psu.wd1.myworkdayjobs.com/PSU_Staff/job/Penn-State-University-Park/Student-Account-Associate-Supervisor_REQ_0000083401-1",
+"reason": "ambiguous intern wording",
+"source": "workday"
+},
+{
+"company": "PennState University",
 "title": "Student Affairs Generalist",
 "url": "https://psu.wd1.myworkdayjobs.com/PSU_Staff/job/Penn-State-University-Park/Student-Affairs-Generalist_REQ_0000082584-1",
 "reason": "ambiguous intern wording",
@@ -3064,13 +3099,6 @@
 "url": "https://boards.greenhouse.io/point72/jobs/8492784002?gh_jid=8492784002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
-},
-{
-"company": "Prairie View A&M University",
-"title": "Student Research Assistant | College of Agriculture, Food and Natural Resources",
-"url": "https://tamus.wd1.myworkdayjobs.com/PVAMU_External/job/Prairie-View-TX/Student-Research-Assistant---College-of-Agriculture--Food-and-Natural-Resources_R-098096",
-"reason": "ambiguous intern wording",
-"source": "workday"
 },
 {
 "company": "Prairie View A&M University",
@@ -3281,13 +3309,6 @@
 "url": "https://jobs.ashbyhq.com/rho/94d61e4b-65aa-498e-8c0f-9e7890e94733",
 "reason": "ambiguous intern wording",
 "source": "ashby"
-},
-{
-"company": "Rochester Regional Health",
-"title": "Patient Care Tech - Registered Nursing Student: RGH PCT Float Pool",
-"url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Rochester-General-Hospital-RGH/Patient-Care-Tech---Registered-Nursing-Student_REQ_242237",
-"reason": "ambiguous intern wording",
-"source": "workday"
 },
 {
 "company": "RTX",
@@ -3633,14 +3654,14 @@
 "source": "greenhouse"
 },
 {
-"company": "Software Engineer Intern - Backend - Rust",
+"company": "N1",
 "title": "New Grad Software Engineer (Full Stack)",
 "url": "https://jobs.ashbyhq.com/n1/73724fe2-9a93-4a60-b349-4fd3d2efa94a",
 "reason": "ambiguous intern wording",
 "source": "ashby"
 },
 {
-"company": "Software Engineer Intern - Backend - Rust",
+"company": "N1",
 "title": "New Grad Software Engineer (Backend Rust)",
 "url": "https://jobs.ashbyhq.com/n1/a3e25c84-0846-454a-b2fc-a356c2a713bd",
 "reason": "ambiguous intern wording",
@@ -3894,14 +3915,14 @@
 {
 "company": "SpaceX",
 "title": "Recruiter, Go-To-Market (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864582002?gh_jid=8864582002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864549002?gh_jid=8864549002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Recruiter, Go-To-Market (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864549002?gh_jid=8864549002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864582002?gh_jid=8864582002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3999,7 +4020,7 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694852002?gh_jid=8694852002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -4013,7 +4034,7 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694852002?gh_jid=8694852002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -4123,21 +4144,21 @@
 "source": "workday"
 },
 {
-"company": "Summer 2027 Internship - Software",
+"company": "Stoke Space",
 "title": "Entry Level Aerospace Technician",
 "url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/6217753004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
-"company": "Summer 2027 Internship - Software",
+"company": "Stoke Space",
 "title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/5232871004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
-"company": "Summer 2027 Internship - Software",
+"company": "Stoke Space",
 "title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/6227809004",
 "reason": "ambiguous intern wording",
@@ -4163,6 +4184,13 @@
 "url": "https://jobs.ashbyhq.com/tessera-labs/b3013864-10ad-4be6-93e0-03c0e50e9ce9",
 "reason": "ambiguous intern wording",
 "source": "ashby"
+},
+{
+"company": "Texas A&M International University",
+"title": "Federal College Work Study-Student (SBDC)",
+"url": "https://tamus.wd1.myworkdayjobs.com/TAMIU_Student_Employment/job/Laredo-TX/Federal-College-Work-Study-Student--SBDC-_R-098024-1",
+"reason": "ambiguous intern wording",
+"source": "workday"
 },
 {
 "company": "Texas A&M International University",
@@ -4224,13 +4252,6 @@
 "company": "Texas A&M University System",
 "title": "Administrative Coordinator for the Student Success Center",
 "url": "https://tamus.wd1.myworkdayjobs.com/System-wide_External/job/Commerce-TX/Administrative-Coordinator-for-the-Student-Success-Center_R-098168",
-"reason": "ambiguous intern wording",
-"source": "workday"
-},
-{
-"company": "Texas A&M University System",
-"title": "Student Coordinator",
-"url": "https://tamus.wd1.myworkdayjobs.com/System-wide_External/job/College-Station-TX/Student-Coordinator_R-097971",
 "reason": "ambiguous intern wording",
 "source": "workday"
 },
@@ -4620,97 +4641,6 @@
 "source": "workday"
 },
 {
-"company": "University of Pikeville",
-"title": "WS - Admissions Student Ambassador",
-"url": "https://upike.bamboohr.com/careers/371",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - Family & New Student Connections Content Specialist 2",
-"url": "https://upike.bamboohr.com/careers/385",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - Student Media Assistant 2 - Photography",
-"url": "https://upike.bamboohr.com/careers/419",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - Student Media Assistant - Photography - FWS",
-"url": "https://upike.bamboohr.com/careers/421",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - Student Media Assistant - Video - FWS",
-"url": "https://upike.bamboohr.com/careers/422",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - KYCO Student Affairs Office Assistant - FWS",
-"url": "https://upike.bamboohr.com/careers/424",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - KYCOM Student Ambassador - IWS",
-"url": "https://upike.bamboohr.com/careers/428",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - KYCOM NIH Immunology Fellow - IWS",
-"url": "https://upike.bamboohr.com/careers/468",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - NSF Biology Student Researcher - IWS",
-"url": "https://upike.bamboohr.com/careers/476",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - NSF Biology Student Researcher - IWS",
-"url": "https://upike.bamboohr.com/careers/477",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - Mental Health Student Engagement & Social Media Cordinator - FWS",
-"url": "https://upike.bamboohr.com/careers/514",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "WS - Student Success & Programs Assistant - FWS",
-"url": "https://upike.bamboohr.com/careers/522",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
-"company": "University of Pikeville",
-"title": "Student Success Advisor",
-"url": "https://upike.bamboohr.com/careers/577",
-"reason": "ambiguous intern wording",
-"source": "bamboohr"
-},
-{
 "company": "University of Texas - Austin",
 "title": "Administrative Program Coordinator of Student Organizations",
 "url": "https://utaustin.wd1.myworkdayjobs.com/UTstaff/job/UT-MAIN-CAMPUS/Administrative-Program-Coordinator-of-Student-Organizations_R_00049407",
@@ -4810,6 +4740,13 @@
 },
 {
 "company": "University of Virginia",
+"title": "StatLab Graduate Associate (Student Wage)",
+"url": "https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/StatLab-Graduate-Associate--Student-Wage-_R0088483",
+"reason": "ambiguous intern wording",
+"source": "workday"
+},
+{
+"company": "University of Virginia",
 "title": "Communications and Newsletter Assistant (Undergraduate or Graduate Student) (Student Wage)",
 "url": "https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Communications-and-Newsletter-Assistant--Undergraduate-or-Graduate-Student---Student-Wage-_R0087884",
 "reason": "ambiguous intern wording",
@@ -4854,13 +4791,6 @@
 "company": "University of Virginia",
 "title": "Flexible Work Schedule - Transit Bus Driver (Student Wage)",
 "url": "https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Flexible-Work-Schedule---Transit-Bus-Driver--Student-Wage-_R0086100",
-"reason": "ambiguous intern wording",
-"source": "workday"
-},
-{
-"company": "University of Virginia",
-"title": "Resident Community Advisor (RCA) (Student Wage)",
-"url": "https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Resident-Community-Advisor--RCA---Student-Wage-_R0080447-1",
 "reason": "ambiguous intern wording",
 "source": "workday"
 },

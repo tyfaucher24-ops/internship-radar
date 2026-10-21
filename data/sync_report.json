@@ -1,0 +1,225 @@
+{
+ "at": "2026-10-21T16:50:57Z",
+ "open_visible": 11090,
+ "fixes": {
+  "city_dropped_unverifiable": 1528,
+  "city_normalized": 809,
+  "company_from_registry": 331,
+  "far_ats_enddate_not_shown": 114,
+  "hidden_bad_company": 27,
+  "duplicates_hidden": 65
+ },
+ "checks": {
+  "open_past_deadline": 0,
+  "company_equals_title": 0,
+  "company_looks_like_title": 0,
+  "city_not_geocodable": 0,
+  "duplicates": 0,
+  "no_apply_url": 5
+ },
+ "flags": [
+  {
+   "id": "01560f9515",
+   "company": "Carnegie Mellon Software Engineering Institute",
+   "title": "Malware Analysis Intern - Summer 2027",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "04520c0e47",
+   "company": "Carnegie Mellon Software Engineering Institute",
+   "title": "AI Security Research Intern \u2013 Summer 2027",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "f3416edbe7",
+   "company": "Carnegie Mellon Software Engineering Institute",
+   "title": "AI Security Software Engineer Intern \u2013 Summer 2027",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "ed9b7f4033",
+   "company": "Carnegie Mellon Software Engineering Institute",
+   "title": "AI Security Research Intern (Sept 2026 - May 2027)",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "8b003e1104",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "c8462339e6",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "a00009f543",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Drafter Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "ee303040d1",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Designer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "fef36ce7fe",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Technician Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "0377a93713",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Designer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "c735101a2b",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Designer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "1c2ea1cda2",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Designer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "3dbec77761",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Power Engineer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "f2a7ce0ff3",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "HR Recruiting Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "52c2cebf77",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Power Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "30bb47e753",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Electrical Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "c7a1d369b7",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Electrical Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "ad9c5ab350",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Electrical Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "e2aacffcbe",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Machine Shop Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "90439ba556",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Hardware Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "89f139817c",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Electrical Engineering Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "43b316cc12",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Software Engineer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "ae395ab8df",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Software Engineer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "47e5c83b23",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Software Engineer Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "ef374f0364",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Research Intern - Business Development",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "0b160bfc9e",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Electrical Engineering Specialist Intern",
+   "issue": "company looks like a job title"
+  },
+  {
+   "id": "de4cdc8598",
+   "company": "Schweitzer Engineering Laboratories",
+   "title": "Software Engineering Intern - Power Systems",
+   "issue": "company looks like a job title"
+  }
+ ],
+ "added": 575,
+ "removed": 734,
+ "changed": 1093,
+ "previous_open": 11249,
+ "sources": {
+  "boards": 2497,
+  "ok": 2269,
+  "failed": 228,
+  "failed_sample": [
+   "AbbVie (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AbbVie",
+   "Accel Learning (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AccelL",
+   "Accenture (workday): RuntimeError: gave up on https://accenture.wd103.myworkdayjobs.com/wday/cxs/acce",
+   "Accor (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AccorC",
+   "Acumatica (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Acumat",
+   "AECOM (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AECOM2",
+   "AeroVect (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AeroVe",
+   "AG Technologies (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AGTech",
+   "Allegheny County (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://alleghenycounty.bamboohr",
+   "Allegis Global Solutions (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Allegi",
+   "Amplify (workday): HTTPError: 403 Client Error: Forbidden for url: https://amplify.wd1.myworkdayjob",
+   "Analysys Mason (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Analys",
+   "Applied Intuition (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
+   "Arine (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
+   "Arista Networks (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Arista",
+   "Armstrong Fluid Technology (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://armstrongfluidtechnology",
+   "Assent (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Assent",
+   "Asure (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://asuresoftware.bamboohr.c",
+   "Atomic Semi (ashby): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-",
+   "ATPCO (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/ATPCO1",
+   "Atria Group (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AtriaG",
+   "Augsburg University (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Augsbu",
+   "Avery Dennison (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AveryD",
+   "Axle (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AxleIn",
+   "Baird (workday): RuntimeError: gave up on https://baird.wd1.myworkdayjobs.com/wday/cxs/baird/care",
+   "Berkshire Grey (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://berkshiregrey.bamboohr.c",
+   "BitGo (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
+   "BowerGroupAsia (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://bga.bamboohr.com/careers",
+   "Breeze Airways (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
+   "Calpion/Plutus Health (bamboohr): HTTPError: 403 Client Error: Forbidden for url: https://calpionplutus.bamboohr.c"
+  ]
+ }
+}

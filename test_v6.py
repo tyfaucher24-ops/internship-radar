@@ -14,14 +14,14 @@ with sync_playwright() as p:
   # fill a few fields through the UI, the rest from the 'average' test profile
   pg.evaluate("p=>{localStorage.setItem('idr_profileDraft',JSON.stringify(p))}",T['average'])
   pg.reload();pg.wait_for_function('window._interactiveAt');pg.wait_for_timeout(300)
-  pg.fill('#skIn','tableau');pg.keyboard.press('Enter');pg.click('label.pf-ichip:has-text("Consulting")')
-  pg.wait_for_timeout(500);pg.evaluate('scrollTo(0,0)');pg.wait_for_timeout(200);pg.screenshot(path=SS+'v6-profile-filled.png');pg.evaluate("document.getElementById('pfH2').scrollIntoView()");pg.wait_for_timeout(200);pg.screenshot(path=SS+'v6-profile-filled-about.png');pg.evaluate("document.getElementById('pfH3').scrollIntoView()");pg.wait_for_timeout(200);pg.screenshot(path=SS+'v6-profile-filled-experience.png')
+  pg.click('#cbSkills .cb-field');pg.keyboard.type('tableau');pg.keyboard.press('Enter');pg.fill('#cbInd .cb-search','') if False else None;pg.keyboard.press('Escape');pg.click('#cbInd .cb-field');pg.keyboard.type('consult');pg.keyboard.press('Enter');pg.keyboard.press('Escape')
+  pg.wait_for_timeout(500);pg.evaluate('scrollTo(0,0)');pg.wait_for_timeout(200);pg.screenshot(path=SS+'v6-profile-filled.png')
   pg.click('#pfSave');pg.wait_for_function("location.hash===''||location.hash==='#'",timeout=10000);pg.wait_for_timeout(800)
   R['toast']=pg.evaluate("document.getElementById('toast')?.textContent");R['rescore_ms']=pg.evaluate('window._rescoreMs');R['sort']=pg.evaluate("document.getElementById('sort').value")
   R['first_badges']=pg.locator('#vl .mbadge').all_inner_texts()[:6]
   pg.screenshot(path=SS+'v6-home-grades.png')
-  pg.click('[data-pill=minm]');pg.click('.pop input[value="75"]');pg.wait_for_timeout(300);R['count_75']=pg.inner_text('#count');pg.keyboard.press('Escape')
   pg.click('#vl .card >> nth=0');pg.wait_for_selector('.mwhy',timeout=8000);pg.wait_for_timeout(400);R['drawer']=pg.inner_text('.mwhy');pg.screenshot(path=SS+'v6-drawer.png');pg.keyboard.press('Escape')
+  pg.click('[data-pill=minm]');pg.wait_for_timeout(200);pg.keyboard.type('75');pg.keyboard.press('Enter');pg.click('[data-apply]');pg.wait_for_timeout(300);R['count_75']=pg.inner_text('#count')
   # re-save with the top-student profile -> rescoring changes
   pg.goto(B+'#profile');pg.wait_for_function('window._interactiveAt');pg.evaluate("p=>localStorage.setItem('idr_profileDraft',JSON.stringify(p))",T['top']);pg.reload();pg.wait_for_function('window._interactiveAt');pg.wait_for_timeout(200)
   pg.click('#pfSave');pg.wait_for_timeout(1200);R['resave_first']=pg.locator('#vl .mbadge').all_inner_texts()[:3];R['resave_ms']=pg.evaluate('window._rescoreMs')

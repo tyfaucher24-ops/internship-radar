@@ -7,10 +7,10 @@ def run(pg,tag):
   E=[];pg.on('pageerror',lambda e:E.append('PAGEERR '+str(e)[:200]));pg.on('console',lambda m:E.append(m.text[:200]) if m.type=='error' else None)
   pg.add_init_script("localStorage.setItem('idr_introSeen','true')");pg.goto(B+'#find');pg.wait_for_function('window._interactiveAt',timeout=30000);r={'interactive_ms':round(pg.evaluate('window._interactiveAt'))}
   for k in ['cat','cy','dlw']:
-    pg.click(f'[data-pill={k}]');pg.wait_for_timeout(250);pg.locator('.pop input[type=radio]:not([disabled])').nth(1).check();pg.wait_for_timeout(150);pg.click('.pop [data-done]')
+    pg.click(f'[data-pill={k}]');pg.wait_for_timeout(250);pg.locator('.fpanel .cb-o').nth(1).click();pg.wait_for_timeout(150);pg.click('.fpanel [data-apply]')
   r['after_pills']=pg.inner_text('#count');r['filter_ms']=round(pg.evaluate('window._lastFilterMs'),1)
-  pg.click('[data-pill=loc]');pg.wait_for_timeout(200);pg.check('#remIn');pg.wait_for_timeout(150);pg.click('.pop [data-clear]')
-  pg.click('[data-pill=more]');pg.wait_for_timeout(300);pg.locator('#mbody input[name=f-paid][value=Paid]').check();pg.wait_for_timeout(200);pg.screenshot(path=SS+f'v5-morefilters-{tag}.png');pg.click('#mfDone')
+  pg.click('[data-pill=loc]');pg.wait_for_timeout(200);pg.locator('.fpanel .cb-o').first.click();pg.wait_for_timeout(150);pg.click('.fpanel [data-clear]')
+  pg.click('[data-pill=more]');pg.wait_for_timeout(300);pg.locator('.mf-l[data-k=paid] .cb-o').first.click();pg.wait_for_timeout(200);pg.screenshot(path=SS+f'v5-morefilters-{tag}.png');pg.click('#mfDone')
   r['chips']=pg.evaluate("document.querySelectorAll('#chips .chip').length");pg.locator('#chips .chip').first.click();pg.click('#chips .clear');r['cleared']=pg.inner_text('#count')
   for s in ['deadline','match','az','new']: pg.select_option('#sort',s)
   pg.fill('#q','analyst');pg.wait_for_timeout(400);r['search']=pg.inner_text('#count')

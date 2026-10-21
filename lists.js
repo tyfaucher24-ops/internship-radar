@@ -1,0 +1,33 @@
+/* V8 known lists for the searchable dropdowns. Counts come from the live listings at runtime; nothing here is listing data. */
+const LISTS=(()=>{
+const g=(group,arr,pinned=[])=>arr.map(v=>({v,group,pinned:pinned.includes(v)}));
+const MAJ=[...g('Business',['Accounting','Business Administration','Economics','Entrepreneurship','Finance','Hospitality Management','Human Resources','Information Systems','International Business','Management','Marketing','Real Estate','Sport Management','Supply Chain Management'],['Business Administration','Finance','Economics','Accounting','Marketing']),
+ ...g('Computing & Data',['Computer Engineering','Computer Science','Cybersecurity','Data Science','Information Technology','Software Engineering','Statistics','Mathematics','Applied Mathematics'],['Computer Science','Data Science']),
+ ...g('Engineering',['Aerospace Engineering','Biomedical Engineering','Chemical Engineering','Civil Engineering','Electrical Engineering','Environmental Engineering','Industrial Engineering','Materials Science','Mechanical Engineering','Nuclear Engineering','Engineering (General)'],['Mechanical Engineering','Electrical Engineering']),
+ ...g('Sciences',['Biochemistry','Biology','Chemistry','Environmental Science','Geology','Neuroscience','Physics','Public Health','Nursing','Kinesiology','Exercise Science','Pharmacy'],['Biology']),
+ ...g('Social Sciences',['Anthropology','Criminal Justice','Education','Geography','International Relations','Political Science','Psychology','Public Policy','Social Work','Sociology','Urban Planning'],['Psychology','Political Science']),
+ ...g('Humanities & Media',['Communications','English','History','Journalism','Linguistics','Philosophy','Modern Languages','Religious Studies'],['Communications']),
+ ...g('Arts & Design',['Architecture','Art','Film','Graphic Design','Industrial Design','Music','Theatre','UX Design'],['Graphic Design'])];
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const Y=new Date().getFullYear();
+const gradMonths=MONTHS.map((m,i)=>({v:String(i+1).padStart(2,'0'),label:m,pinned:i===4||i===11}));
+const gradYears=Array.from({length:8},(_,i)=>({v:String(Y-1+i),label:String(Y-1+i)}));
+const ymList=()=>{const o=[{v:'present',label:'Present (current)',pinned:true}];for(let y=Y+1;y>=Y-8;y--)for(let m=12;m>=1;m--)o.push({v:`${y}-${String(m).padStart(2,'0')}`,label:`${MONTHS[m-1]} ${y}`,group:String(y),alias:`${MONTHS[m-1].slice(0,3)} ${y} ${m}/${y}`});return o};
+const CLASS=[{v:'Freshman',hint:'1st year'},{v:'Sophomore',hint:'2nd year'},{v:'Junior',hint:'3rd year'},{v:'Senior',hint:'4th year'},{v:'Graduate',hint:'Master’s / PhD'}];
+const GPA=[{v:'3.9',label:'3.9 – 4.0'},{v:'3.7',label:'3.7 – 3.89'},{v:'3.5',label:'3.5 – 3.69'},{v:'3.3',label:'3.3 – 3.49'},{v:'3.0',label:'3.0 – 3.29'},{v:'2.5',label:'2.5 – 2.99'},{v:'2.0',label:'Below 2.5'}];
+const AUTH=[{v:'citizen',label:'US citizen or permanent resident',hint:'No sponsorship needed'},{v:'authorized',label:'Authorized to work, no sponsorship needed',hint:'e.g. some visas, CPT/OPT without later sponsorship'},{v:'sponsor',label:'Will need visa sponsorship (now or later)',hint:'e.g. F-1 students who will need an H-1B'}];
+const KINDS=[{v:'Internship'},{v:'Job',label:'Job / part-time'},{v:'Research'},{v:'Project',label:'Project (class or personal)'},{v:'Club',label:'Club / organization'},{v:'Leadership'},{v:'Volunteer'}];
+const STATES={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',PR:'Puerto Rico'};
+// metro quick picks: real city groupings, counts computed from listings
+const METROS={'New York City area':[['New York','NY'],['Brooklyn','NY'],['Jersey City','NJ'],['Hoboken','NJ'],['Newark','NJ'],['Long Island City','NY']],'SF Bay Area':[['San Francisco','CA'],['San Jose','CA'],['Oakland','CA'],['Palo Alto','CA'],['Mountain View','CA'],['Sunnyvale','CA'],['Santa Clara','CA'],['Menlo Park','CA'],['Redwood City','CA'],['Cupertino','CA'],['San Mateo','CA'],['Fremont','CA'],['Berkeley','CA'],['South San Francisco','CA']],
+ 'Chicago area':[['Chicago','IL'],['Evanston','IL'],['Naperville','IL'],['Schaumburg','IL']],'Boston area':[['Boston','MA'],['Cambridge','MA'],['Somerville','MA'],['Waltham','MA'],['Burlington','MA']],'Seattle area':[['Seattle','WA'],['Bellevue','WA'],['Redmond','WA'],['Kirkland','WA']],'Los Angeles area':[['Los Angeles','CA'],['Santa Monica','CA'],['Irvine','CA'],['Pasadena','CA'],['Burbank','CA'],['Long Beach','CA'],['El Segundo','CA']],
+ 'Washington DC area':[['Washington','DC'],['Arlington','VA'],['Alexandria','VA'],['Reston','VA'],['McLean','VA'],['Bethesda','MD'],['Herndon','VA']],'Austin':[['Austin','TX']],'Dallas–Fort Worth':[['Dallas','TX'],['Fort Worth','TX'],['Plano','TX'],['Irving','TX']],'Atlanta':[['Atlanta','GA']],'Denver area':[['Denver','CO'],['Boulder','CO']],'Charlotte':[['Charlotte','NC']]};
+const PSKILLS=['excel','python','sql','communication','data analysis','powerpoint','java','tableau','research','financial modeling'];
+const TIPS={
+ 'Match %':'How well an internship fits you, from 0 to 100%, based on your profile: your fit for the role (45%), your realistic odds given the competition (40%) and your preferences (15%). It is strict on purpose.',
+ 'Online Assessment':'A timed online test (coding, numbers or personality) many companies send after you apply, before any interview.',
+ 'Rolling deadline':'No fixed closing date: the company reviews applications as they arrive and closes when it has hired. Apply early.',
+ 'Co-op':'A longer, often full-time work term (usually 4–8 months) that some schools build into the degree, often instead of a semester of classes.',
+ 'Summer Analyst':'The usual name banks and consulting firms give their undergraduate summer interns.',
+ 'Sponsorship':'Visa sponsorship means the employer files paperwork so a non-US citizen can work. Many internships say they will not sponsor.'};
+return{MAJ,MONTHS,gradMonths,gradYears,ymList,CLASS,GPA,AUTH,KINDS,STATES,METROS,PSKILLS,TIPS}})();

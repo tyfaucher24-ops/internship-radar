@@ -45,7 +45,7 @@ const FDEF=[
  ['status','Status',x=>x.st==='upcoming'?['Upcoming']:x.st==='closed'?['Closed']:x.live?['Open']:[],['Open','Upcoming','Closed']],
  ['cat','Industry',x=>[x.industry||'Other']],
  ['rt','Role type',x=>[x.role_type||'Internship']],
- ['state','State',x=>x._states.length?x._states:['Not listed']],
+ ['loc','Location',x=>x._lk||(x._lk=locKeys(x))],
  ['wp','Work setting',x=>[x.workplace||(x.remote?'Remote':'Not listed')],['Remote','Hybrid','On-site','Not listed']],
  ['dlw','Closing date',x=>{if(!x.deadline)return[x.rolling?'Rolling':'Not listed'];const n=days(x.deadline);return n<0?['Passed']:n<=7?['This week','This month']:n<=31?['This month']:['Later']},['This week','This month','Later','Rolling','Not listed']],
  ['posted','Date posted',x=>{const d=pdate(x);if(!d)return[];const n=-days(d.slice(0,10));return[n<=1&&'Past 24 hours',n<=3&&'Past 3 days',n<=7&&'Past 7 days',n<=30&&'Past 30 days'].filter(Boolean)},['Past 24 hours','Past 3 days','Past 7 days','Past 30 days']],
@@ -55,71 +55,95 @@ const FDEF=[
  ['spons','Visa sponsorship',x=>[x.citizenship?'US citizenship required':x.sponsorship==='Not offered'?'Not offered':x.sponsorship==='Offered'?'Offered':'Not listed'],['Offered','Not offered','US citizenship required','Not listed']],
  ['paid','Pay',x=>[x.paid===true?'Paid':x.paid===false?'Unpaid':'Not listed'],['Paid','Unpaid','Not listed']]];
 const FD=Object.fromEntries(FDEF.map(d=>[d[0],d]));
-const DEFAULTS={status:'Open',sort:'new'};
-let F={};const FK=['q','status','cat','rt','state','city','near','radius','wp','dlw','posted','term','cy','size','spons','paid','minm','hideTracked','sort'];
-function loadF(){const u=new URLSearchParams(location.search);const fromUrl=FK.some(k=>u.has(k));const src=fromUrl?Object.fromEntries(FK.filter(k=>u.has(k)).map(k=>[k,u.get(k)])):Store.get('filters',{});F={...DEFAULTS,...src}}
+const DEFAULTS={status:'Open',sort:'deadline'};
+let F={};const FK=['q','status','cat','rt','loc','state','city','near','radius','wp','dlw','posted','term','cy','size','spons','paid','minm','hideTracked','sort'];
+function loadF(){const u=new URLSearchParams(location.search);const fromUrl=FK.some(k=>u.has(k));const src=fromUrl?Object.fromEntries(FK.filter(k=>u.has(k)).map(k=>[k,u.get(k)])):Store.get('filters',{});F={...DEFAULTS,...src};/* V8 migrate old single-value location keys */if(F.state){F.loc=[...(F.loc?F.loc.split('~'):[]),'st:'+F.state].join('~');F.state=''}if(F.city){F.loc=[...(F.loc?F.loc.split('~'):[]),F.city==='Remote|'?'Remote':'c:'+F.city].join('~');F.city=''}if(F.sort==='new'&&!src.sort)F.sort=DEFAULTS.sort}
 function saveF(){const u=new URL(location);FK.forEach(k=>u.searchParams.delete(k));FK.forEach(k=>{if(F[k]&&F[k]!==DEFAULTS[k])u.searchParams.set(k,F[k])});u.searchParams.delete('intro');u.searchParams.delete('introSlow');history.replaceState(null,'',u);Store.set('filters',F)}
+/* ---------- V8 filters: multi-select, searchable panels with live counts, staged Apply/Clear ---------- */
+const SEP='~';const fv=k=>F[k]?String(F[k]).split(SEP).filter(Boolean):[];const fset=(k,a)=>{F[k]=a.join(SEP)};
+const METRO_OF=(()=>{const m=new Map();for(const [name,cs] of Object.entries(LISTS.METROS))for(const [c,s] of cs)m.set(c+'|'+s,name);return m})();
+function locKeys(x){const k=new Set();if(x.remote)k.add('Remote');for(const l of x.locations||[]){if(l.state)k.add('st:'+l.state);if(l.city&&l.state){k.add('c:'+l.city+'|'+l.state);const m=METRO_OF.get(l.city+'|'+l.state);if(m)k.add('m:'+m)}}if(!k.size)k.add('Not listed');return[...k]}
+const locLabel=v=>v==='Remote'?'Remote':v.startsWith('st:')?`Anywhere in ${LISTS.STATES[v.slice(3)]||v.slice(3)}`:v.startsWith('c:')?v.slice(2).replace('|',', '):v.startsWith('m:')?v.slice(2):v;
 let TRACKED=new Set();
 const R=3958.8,rad=d=>d*Math.PI/180,hav=(a,b)=>2*R*Math.asin(Math.sqrt(Math.sin(rad(b.lat-a.lat)/2)**2+Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(rad(b.lng-a.lng)/2)**2));
 let NEAR=null;
-function baseOK(x,q){if(x.hidden)return false;if(q.length&&!q.every(w=>x._t.includes(w)))return false;
- if(F.city){const [c,s]=F.city.split('|');if(c==='Remote'){if(!x.remote)return false}else if(!(x.locations||[]).some(l=>l.city===c&&l.state===s))return false}
+/* search syntax: company:google  location:nyc  "exact phrase"  plain words */
+const LOCALIAS={nyc:'new york',ny:'new york',sf:'san francisco',la:'los angeles',dc:'washington',philly:'philadelphia',chi:'chicago',atl:'atlanta',bay:'san francisco'};
+function parseQ(s){const out={words:[],phrases:[],company:[],location:[]};s=String(s||'').toLowerCase();
+ s=s.replace(/(company|location|loc):"([^"]+)"/g,(_,k,v)=>{out[k==='company'?'company':'location'].push(v.trim());return' '}).replace(/(company|location|loc):(\S+)/g,(_,k,v)=>{out[k==='company'?'company':'location'].push(v.replace(/[-_]/g,' '));return' '})
+  .replace(/"([^"]+)"/g,(_,p)=>{out.phrases.push(p.replace(/\s+/g,' ').trim());return' '});
+ out.words=s.split(/\s+/).filter(Boolean);out.location=out.location.map(l=>LOCALIAS[l]||l);return out}
+function baseOK(x,q){if(x.hidden)return false;
+ if(q.words.length&&!q.words.every(w=>x._t.includes(w)))return false;if(q.phrases.length&&!q.phrases.every(p=>x._t.includes(p)))return false;
+ if(q.company.length){const c=(x.company||'').toLowerCase();if(!q.company.some(w=>c.includes(w)))return false}
+ if(q.location.length){const ls=(x.locations||[]).map(l=>((l.city||'')+' '+(l.state||'')+' '+(LISTS.STATES[l.state]||'')).toLowerCase()).join(' | ')+(x.remote?' | remote':'');if(!q.location.some(w=>ls.includes(w)||(w.length===2&&(x.locations||[]).some(l=>(l.state||'').toLowerCase()===w))))return false}
  if(NEAR&&+F.radius){if(!(x.locations||[]).some(l=>l.lat!=null&&hav(NEAR,l)<=+F.radius))return false}
  if(F.minm&&MSCORE.size){const m=MSCORE.get(x.id);if(!m||m.pct<+F.minm)return false}
  if(F.hideTracked==='1'&&TRACKED.has(String(x.id)))return false;
- if(x.past_term&&F.status!=='Closed')return false;return true}
+ if(x.past_term&&!fv('status').includes('Closed'))return false;return true}
 let RES=[],COUNTS={};
-function compute(){const t0=performance.now();const q=(F.q||'').toLowerCase().trim().split(/\s+/).filter(Boolean);TRACKED=new Set(T.all().map(t=>String(t.listingId)));
+function compute(){const t0=performance.now();const q=parseQ(F.q);TRACKED=new Set(T.all().map(t=>String(t.listingId)));
  NEAR=null;if(F.near&&+F.radius){const c=CITYIDX.get(F.near);if(c)NEAR=c}
- const act=FDEF.filter(([k])=>F[k]);COUNTS=Object.fromEntries(FDEF.map(([k])=>[k,new Map()]));const out=[];
+ const act=FDEF.filter(([k])=>F[k]).map(d=>[d[0],d[2],new Set(fv(d[0]))]);COUNTS=Object.fromEntries(FDEF.map(([k])=>[k,new Map()]));const out=[];
  for(const x of D){if(!baseOK(x,q))continue;let fail=null,nf=0;
-  for(const [k,,fn] of act){if(!fn(x).includes(F[k])){nf++;fail=k;if(nf>1)break}}
+  for(const [k,fn,S] of act){if(!fn(x).some(v=>S.has(v))){nf++;fail=k;if(nf>1)break}}
   if(nf>1)continue;
   if(nf===0){out.push(x);for(const [k,,fn] of FDEF)for(const v of fn(x))COUNTS[k].set(v,(COUNTS[k].get(v)||0)+1)}
   else{const fn=FD[fail][2];for(const v of fn(x))COUNTS[fail].set(v,(COUNTS[fail].get(v)||0)+1)}}
  const s=F.sort;const cmpDl=(a,b)=>(a.deadline&&days(a.deadline)>=0?a.deadline:'9999').localeCompare(b.deadline&&days(b.deadline)>=0?b.deadline:'9999');
  out.sort(s==='deadline'?(a,b)=>cmpDl(a,b)||pdate(b).localeCompare(pdate(a)):s==='az'?(a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title):s==='match'?(a,b)=>(MSCORE.get(b.id)?.pct??-1)-(MSCORE.get(a.id)?.pct??-1)||cmpDl(a,b):(a,b)=>pdate(b).localeCompare(pdate(a))||cmpDl(a,b));
  RES=out;window._lastFilterMs=performance.now()-t0}
-const optList=k=>{const C=COUNTS[k]||new Map(),o=FD[k][3];const all=o||[...C.keys()].sort((a,b)=>k==='state'?a.localeCompare(b):(C.get(b)-C.get(a))||a.localeCompare(b));return[...new Set([...(F[k]?[F[k]]:[]),...all])].map(v=>[v,C.get(v)||0])};
-function radioGroup(k,label,anyLabel='Any'){return`<fieldset class="rg"><legend>${label}</legend><div class="rg-opts"><label class="opt"><input type="radio" name="f-${k}" value=""${!F[k]?' checked':''}> ${anyLabel}</label>${optList(k).map(([v,n])=>`<label class="opt${!n&&F[k]!==v?' dim':''}"><input type="radio" name="f-${k}" value="${esc(v)}"${F[k]===v?' checked':''}${!n&&F[k]!==v?' disabled':''}> ${esc(v)} <span class="n">${n.toLocaleString()}</span></label>`).join('')}</div></fieldset>`}
+function optList(k){const C=COUNTS[k]||new Map(),o=FD[k][3],sel=fv(k);const all=o||[...C.keys()].sort((a,b)=>(C.get(b)-C.get(a))||a.localeCompare(b));
+ if(k==='loc'){const opts=[],seen=new Set();const add=(v,extra)=>{if(seen.has(v+(extra.pinned?'*':'')))return;seen.add(v+(extra.pinned?'*':''));opts.push({v,label:locLabel(v),count:C.get(v)||0,...extra})};
+  add('Remote',{pinned:true});Object.keys(LISTS.METROS).filter(m=>C.get('m:'+m)).sort((a,b)=>C.get('m:'+b)-C.get('m:'+a)).forEach(m=>add('m:'+m,{pinned:true,group:'Metro areas'}));
+  Object.keys(LISTS.STATES).filter(s=>C.get('st:'+s)||sel.includes('st:'+s)).sort((a,b)=>LISTS.STATES[a].localeCompare(LISTS.STATES[b])).forEach(s=>add('st:'+s,{group:'States',alias:s,boost:1.5}));
+  [...C.keys()].filter(v=>v.startsWith('c:')).sort().forEach(v=>add(v,{group:'Cities',alias:LISTS.STATES[v.slice(-2)]||''}));sel.filter(v=>!seen.has(v)).forEach(v=>add(v,{}));return opts}
+ return[...new Set([...sel,...all])].map(v=>({v,count:C.get(v)||0}))}
 const PILLS0=[['cat','Industry'],['loc','Location'],['cy','Class year'],['dlw','Closing date'],['minm','Minimum match'],['more','More filters']];const pillList=()=>PILLS0.filter(([k])=>k!=='minm'||MSCORE.size);
-const MOREK=['status','rt','wp','posted','term','size','spons','paid'];
-function pillLabel(k,l){if(k==='loc'){const v=F.city?F.city.replace('|',', ').replace(/, $/,''):F.near&&F.radius?`${F.near} +${F.radius}mi`:F.state||'';return v?`${l}: ${v}`:l}
- if(k==='more'){const n=MOREK.filter(k=>F[k]&&F[k]!==DEFAULTS[k]).length+(F.hideTracked==='1');return n?`${l} · ${n}`:l}if(k==='minm')return F.minm?`${l}: ${F.minm}%+`:l;return F[k]?`${l}: ${F[k]}`:l}
-function renderPills(){$('pills').innerHTML=pillList().map(([k,l])=>{const on=k==='more'?/·/.test(pillLabel(k,l)):pillLabel(k,l)!==l;return`<div class="pillwrap"><button type="button" class="pill${on?' active':''}${k==='more'?' more':''}" data-pill="${k}" aria-haspopup="${k==='more'?'dialog':'true'}" aria-expanded="false">${esc(pillLabel(k,l))}<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div>`}).join('')}
-function popHTML(k){if(k==='loc')return`${radioGroup('state','State','Any state')}<fieldset class="rg"><legend>Near a city</legend><div class="near"><input list="cityList" id="nearIn" placeholder="City, ST" value="${esc(F.near||'')}" aria-label="City"><select id="radIn" aria-label="Distance"><option value="">Any distance</option>${[10,25,50,100,250].map(r=>`<option value="${r}"${+F.radius===r?' selected':''}>Within ${r} mi</option>`).join('')}</select></div></fieldset><label class="opt chk"><input type="checkbox" id="remIn"${F.city==='Remote|'?' checked':''}> Remote only</label>`;
- if(k==='minm')return`<fieldset class="rg"><legend>Minimum match</legend>${[['','Any'],['60','60%+'],['75','75%+'],['90','90%+']].map(([v,t])=>`<label class="opt"><input type="radio" name="f-minm" value="${v}"${(F.minm||'')===v?' checked':''}> ${t}</label>`).join('')}</fieldset>`;
- return radioGroup(k,FD[k][1])}
+const MOREK=['size','spons','paid','posted','term','status','rt','wp'];
+const MINM=[['','Any'],['60','60%+ (C or better)'],['75','75%+ (B or better)'],['90','90%+ (A range)']];
+function pillLabel(k,l){if(k==='loc'){const v=fv('loc'),n=v.length+(F.near&&F.radius?1:0);return n===1?`${l}: ${v[0]?locLabel(v[0]):`${F.near} +${F.radius}mi`}`:n?`${l} · ${n}`:l}
+ if(k==='more'){const n=MOREK.filter(k=>F[k]&&F[k]!==DEFAULTS[k]).length+(F.hideTracked==='1');return n?`${l} · ${n}`:l}if(k==='minm')return F.minm?`${l}: ${F.minm}%+`:l;const v=fv(k);return v.length===1?`${l}: ${v[0]}`:v.length?`${l} · ${v.length}`:l}
+function renderPills(){$('pills').innerHTML=pillList().map(([k,l])=>{const on=pillLabel(k,l)!==l;return`<div class="pillwrap"><button type="button" class="pill${on?' active':''}${k==='more'?' more':''}" data-pill="${k}" aria-haspopup="dialog" aria-expanded="false">${esc(pillLabel(k,l))}<svg aria-hidden="true" viewBox="0 0 12 12" width="12" height="12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div>`}).join('')}
 function closePops(){document.querySelectorAll('.pop').forEach(p=>p.remove());document.querySelectorAll('[data-pill]').forEach(b=>b.setAttribute('aria-expanded','false'))}
+/* count what Apply would show, for the staged selection */
+function stagedCount(patch){const keep={};for(const k in patch){keep[k]=F[k];F[k]=patch[k]}const r0=RES,c0=COUNTS;compute();const n=RES.length;for(const k in keep)F[k]=keep[k];RES=r0;COUNTS=c0;return n}
 $('pills').addEventListener('click',e=>{const b=e.target.closest('[data-pill]');if(!b)return;const k=b.dataset.pill;const open=b.getAttribute('aria-expanded')==='true';closePops();if(open)return;
- if(k==='more')return moreFilters();const p=document.createElement('div');p.className='pop';p.setAttribute('role','dialog');p.setAttribute('aria-label',b.textContent);p.innerHTML=popHTML(k)+`<div class="pop-foot"><button type="button" class="link" data-clear="${k}">Clear</button><button type="button" class="btn sm" data-done>Done</button></div>`;
+ if(k==='more')return moreFilters();const p=document.createElement('div');p.className='pop fpanel';p.setAttribute('role','dialog');p.setAttribute('aria-label',FD[k]?FD[k][1]:b.textContent);
+ p.innerHTML=`<div class="fp-list"></div>${k==='loc'?`<fieldset class="rg fp-near"><legend>Near a city</legend><div class="near"><div id="nearCb"></div><select id="radIn" aria-label="Distance"><option value="">Any distance</option>${[10,25,50,100,250].map(r=>`<option value="${r}"${+F.radius===r?' selected':''}>Within ${r} mi</option>`).join('')}</select></div></fieldset>`:''}<div class="pop-foot"><button type="button" class="link" data-clear>Clear</button><button type="button" class="btn sm" data-apply>Apply</button></div>`;
  b.parentElement.appendChild(p);b.setAttribute('aria-expanded','true');requestAnimationFrame(()=>p.classList.add('open'));
- const r=p.getBoundingClientRect();if(r.right>innerWidth-12)p.style.left=Math.min(0,innerWidth-12-r.right)+'px';
- p.querySelector('input:checked,input,select')?.focus();
- p.addEventListener('change',ev=>{const t=ev.target;if(t.name&&t.name.startsWith('f-')){F[t.name.slice(2)]=t.value;if(t.name==='f-state'){F.city=F.city==='Remote|'?F.city:''}}
-  if(t.id==='remIn'){F.city=t.checked?'Remote|':''}if(t.id==='nearIn'){F.near=t.value;if(F.near&&!F.radius)F.radius='50'}if(t.id==='radIn')F.radius=t.value;update(true)});
- p.querySelector('[data-done]').onclick=()=>{closePops();b.focus()};p.querySelector('[data-clear]').onclick=()=>{if(k==='loc'){F.state='';F.city='';F.near='';F.radius=''}else F[k]='';closePops();update();b.focus()}});
-document.addEventListener('click',e=>{if(!e.target.closest('.pillwrap'))closePops()});
-function moreFilters(){openModal(`<h2>More filters</h2><div class="mf">${MOREK.map(k=>radioGroup(k,FD[k][1],k==='status'?'Any status':'Any')).join('')}
- <fieldset class="rg"><legend>Personal</legend><label class="opt chk"><input type="checkbox" id="hideIn"${F.hideTracked==='1'?' checked':''}> Hide internships I saved or applied to</label></fieldset></div>
- <div class="mf-foot"><button type="button" class="link" id="mfClear">Clear all filters</button><button type="button" class="btn" id="mfDone">Show <span id="mfN">${RES.length.toLocaleString()}</span> internships</button></div>`,'wide');
- const box=$('mbody');box.onchange=ev=>{const t=ev.target;if(t.name&&t.name.startsWith('f-'))F[t.name.slice(2)]=t.value;if(t.id==='hideIn')F.hideTracked=t.checked?'1':'';update();
-  const keep=t.name||t.id;const sc=box.scrollTop;moreFiltersRefresh();box.scrollTop=sc;const el=box.querySelector(`[name="${keep}"]:checked,#${keep}`);el&&el.focus()};
- $('mfDone').onclick=closeModal;$('mfClear').onclick=()=>{clearAll();closeModal()}}
-function moreFiltersRefresh(){const mf=$('mbody').querySelector('.mf');if(!mf)return;const tmp=document.createElement('div');tmp.innerHTML=MOREK.map(k=>radioGroup(k,FD[k][1],k==='status'?'Any status':'Any')).join('');
- [...mf.querySelectorAll('fieldset.rg')].slice(0,MOREK.length).forEach((f,i)=>f.replaceWith(tmp.children[0]));$('mfN').textContent=RES.length.toLocaleString()}
+ const r=p.getBoundingClientRect();if(r.right>innerWidth-8)p.style.left=Math.min(0,innerWidth-8-r.right)+'px';
+ let staged=k==='minm'?[F.minm||'']:fv(k),near=F.near||'',radius=F.radius||'';
+ const patch=()=>k==='minm'?{minm:staged[0]||''}:k==='loc'?{loc:staged.join(SEP),near,radius:near?radius||'50':''}:{[k]:staged.join(SEP)};
+ const btn=p.querySelector('[data-apply]');const refresh=()=>{const t0=performance.now();btn.textContent=`Show ${stagedCount(patch()).toLocaleString()}`;window._stagedMs=performance.now()-t0};
+ const L=Combo.list(p.querySelector('.fp-list'),{label:FD[k]?FD[k][1]:'Minimum match',single:k==='minm',counts:k!=='minm',searchPlaceholder:k==='loc'?'Any city or state, e.g. “austin” or “TX”':`Search ${(FD[k]?FD[k][1]:'options').toLowerCase()}`,
+  options:()=>k==='minm'?MINM.map(([v,t])=>({v,label:t})):optList(k),value:staged,onChange:v=>{staged=v;refresh()},onEsc:()=>{closePops();b.focus()}});
+ if(k==='loc'){const nc=Combo.field($('nearCb'),{label:'Near a city',placeholder:'City, ST',searchPlaceholder:'Type a city',options:()=>[...CITYIDX.keys()].map(v=>({v})),other:false,value:near,onChange:v=>{near=v;if(near&&!radius){radius='50';$('radIn').value='50'}refresh()}});$('radIn').onchange=e=>{radius=e.target.value;refresh()}}
+ refresh();L.focus();
+ btn.onclick=()=>{Object.assign(F,patch());closePops();update();document.querySelector(`[data-pill="${k}"]`)?.focus()};
+ p.querySelector('[data-clear]').onclick=()=>{if(k==='loc'){F.loc='';F.near='';F.radius=''}else F[k]='';closePops();update();document.querySelector(`[data-pill="${k}"]`)?.focus()};
+ p.addEventListener('keydown',ev=>{if(ev.key==='Escape'){ev.stopPropagation();closePops();b.focus()}})});
+document.addEventListener('mousedown',e=>{if(!e.target.closest('.pillwrap'))closePops()});
+function moreFilters(){openModal(`<h2>More filters</h2><p class="muted">Pick as many as you like, then press Show.</p><div class="mf mf8">${MOREK.map(k=>`<section class="mf-sec"><h3>${esc(FD[k][1])}</h3><div class="mf-l" data-k="${k}"></div></section>`).join('')}
+ <section class="mf-sec"><h3>Personal</h3><label class="opt chk"><input type="checkbox" id="hideIn"${F.hideTracked==='1'?' checked':''}> Hide internships I saved or applied to</label></section></div>
+ <div class="mf-foot"><button type="button" class="link" id="mfClear">Clear these filters</button><button type="button" class="btn" id="mfDone">Show <span id="mfN">${RES.length.toLocaleString()}</span> internships</button></div>`,'wide');
+ const st=Object.fromEntries(MOREK.map(k=>[k,fv(k)]));let hide=F.hideTracked==='1';const patch=()=>({...Object.fromEntries(MOREK.map(k=>[k,st[k].join(SEP)])),hideTracked:hide?'1':''});
+ const ref=()=>{$('mfN').textContent=stagedCount(patch()).toLocaleString()};
+ $('mbody').querySelectorAll('.mf-l').forEach(h=>{const k=h.dataset.k;Combo.list(h,{label:FD[k][1],searchPlaceholder:`Search ${FD[k][1].toLowerCase()}`,options:()=>optList(k),value:st[k],onChange:v=>{st[k]=v;ref()}})});
+ $('hideIn').onchange=e=>{hide=e.target.checked;ref()};ref();
+ $('mfDone').onclick=()=>{Object.assign(F,patch());closeModal();update()};$('mfClear').onclick=()=>{MOREK.forEach(k=>F[k]=k==='status'?'Open':'');F.hideTracked='';closeModal();update()}}
 function clearAll(){F={...DEFAULTS,sort:F.sort};$('q').value='';update()}
 function chipsHTML(){const c=[];
- if(F.q)c.push(['q',`“${F.q}”`]);FDEF.forEach(([k,l])=>{if(F[k]&&!(k==='status'&&F[k]==='Open'))c.push([k,`${l}: ${F[k]}`])});if(F.city)c.push(['city',F.city==='Remote|'?'Remote only':'📍 '+F.city.replace('|',', ')]);if(F.near&&F.radius)c.push(['near',`Within ${F.radius} mi of ${F.near}`]);
- if(F.minm&&MSCORE.size)c.push(['minm',`Match ${F.minm}%+`]);if(F.hideTracked==='1')c.push(['hideTracked','Hiding saved & applied']);
- return c.map(([k,t])=>`<button class="chip" data-k="${k}" aria-label="Remove filter ${esc(t)}">${esc(t)} <span aria-hidden="true">×</span></button>`).join('')+(c.length?'<button class="link clear" data-k="__all">Clear all</button>':'')}
-function update(keepPop){compute();saveF();if(!keepPop)renderPills();else{const open=document.querySelector('.pop.open');renderPillLabels();if(open){const k=open.previousElementSibling?.dataset?.pill}}
- $('chips').innerHTML=chipsHTML();$('chips').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k;if(k==='__all')return clearAll();if(k==='near'){F.near='';F.radius=''}else F[k]=k==='status'?'Open':'';if(k==='q')$('q').value='';update()});
- $('sort').value=F.sort||'new';
- $('count').innerHTML=`<b>${RES.length.toLocaleString()}</b> ${F.status==='Upcoming'?'upcoming':F.status==='Closed'?'closed':F.status?'open':''} internship${RES.length===1?'':'s'}`;
- $('empty').hidden=RES.length>0;$('empty').innerHTML=`<h3>No internships match</h3><p class="muted">Try removing a filter${F.q?' or searching for something broader':''}.</p><button class="btn" type="button" onclick="clearAll()">Clear all filters</button>`;
+ if(F.q)c.push(['q','',`Search: “${F.q}”`]);FDEF.forEach(([k,l])=>{fv(k).forEach(v=>{if(k==='status'&&v==='Open'&&fv(k).length===1)return;c.push([k,v,`${k==='loc'?'📍 ':l+': '}${k==='loc'?locLabel(v):v}`])})});if(F.near&&F.radius)c.push(['near','',`Within ${F.radius} mi of ${F.near}`]);
+ if(F.minm&&MSCORE.size)c.push(['minm','',`Match ${F.minm}%+`]);if(F.hideTracked==='1')c.push(['hideTracked','','Hiding saved & applied']);
+ return c.map(([k,v,t])=>`<button class="chip" data-k="${k}" data-v="${esc(v)}" aria-label="Remove filter ${esc(t)}">${esc(t)} <span aria-hidden="true">×</span></button>`).join('')+(c.length?'<button class="link clear" data-k="__all">Clear all</button>':'')}
+function update(keepPop){compute();saveF();if(!keepPop)renderPills();else renderPillLabels();
+ $('chips').innerHTML=chipsHTML();$('chips').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k,v=b.dataset.v;if(k==='__all')return clearAll();if(k==='near'){F.near='';F.radius=''}else if(v&&FD[k]){fset(k,fv(k).filter(x=>x!==v));if(k==='status'&&!F.status)F.status=''}else F[k]='';if(k==='q')$('q').value='';update()});
+ $('sort').value=F.sort||'new';const sv=fv('status');
+ $('count').innerHTML=`<b>${RES.length.toLocaleString()}</b> ${sv.length===1?({Upcoming:'upcoming',Closed:'closed',Open:'open'})[sv[0]]:''} internship${RES.length===1?'':'s'}`;
+ $('empty').hidden=RES.length>0;$('empty').innerHTML=`<h3>No internships match all of that</h3><p class="muted">${F.q?'Try fewer or broader search words, or ':''}remove a filter below. Tip: start with just Industry and Location, then narrow down.</p><button class="btn" type="button" onclick="clearAll()">Clear all filters</button>`;
  animateNext=true;vrender(true);if(window.mapUpdate)mapUpdate()}
-function renderPillLabels(){document.querySelectorAll('[data-pill]').forEach(b=>{const p=PILLS0.find(p=>p[0]===b.dataset.pill);const l=pillLabel(p[0],p[1]);b.firstChild.textContent=l;b.classList.toggle('active',p[0]==='more'?/·/.test(l):l!==p[1])})}
+function renderPillLabels(){document.querySelectorAll('[data-pill]').forEach(b=>{const p=PILLS0.find(p=>p[0]===b.dataset.pill);const l=pillLabel(p[0],p[1]);b.firstChild.textContent=l;b.classList.toggle('active',l!==p[1])})}
 let qTimer;$('q').addEventListener('input',e=>{clearTimeout(qTimer);qTimer=setTimeout(()=>{F.q=e.target.value.trim();update()},120)});
 $('sort').onchange=e=>{F.sort=e.target.value;update()};
 /* ---------- windowed card grid (rows of N cards; only visible rows are in the DOM) ---------- */
@@ -152,8 +176,8 @@ let lastFocus=null;
 function fact(k,v){return`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>`}
 async function openDrawer(x){lastFocus=document.activeElement;const m=MSCORE.get(x.id);const c=closeLbl(x);
  $('dbody').innerHTML=`<div class="dhead">${logoHTML(x,true)}<div><p class="lco">${esc(x.company)}</p><h2 id="dTitle">${esc(x.title)}</h2><p class="muted">${esc(locFull(x))}</p></div></div>
- <div class="drow"><span class="dl dl-${c.c}">${esc(c.t)}</span><span class="muted small">${postedAgo(x)}</span></div>
- ${m?(()=>{const d=matchDetail(x);return d?`<div class="mwhy"><p class="mwhy-h"><span class="mbadge ${d.band}">${d.pct}% · ${d.grade}</span> <span class="muted small">${d.conf} confidence</span></p><ul>${d.reasons.map(r=>`<li>${esc(r[0].toUpperCase()+r.slice(1))}.</li>`).join('')}</ul>${d.tip?`<p class="tip"><b>Tip:</b> ${esc(d.tip)}</p>`:''}</div>`:''})():''}${x.pred?`<p class="why">📈 ${esc(x.pred.label)} (${esc(x.pred.confidence)} confidence)<span id="predBasis"></span>.</p>`:''}
+ <div class="drow"><span class="dl dl-${c.c}">${esc(c.t)}</span><span class="muted small">${postedAgo(x)}</span></div><div class="gloss" id="dGloss">${glossHTML(x.title+' '+c.t+' '+(x.sponsorship||'')+(x.citizenship?' sponsorship':''))}</div>
+ ${m?(()=>{const d=matchDetail(x);return d?`<div class="mwhy"><p class="mwhy-h"><span class="mbadge ${d.band}">${d.pct}% · ${d.grade}</span> <button type="button" class="tip" data-tip="Match %" aria-label="What is match %?">?</button> <span class="muted small">${d.conf} confidence</span></p><ul>${d.reasons.map(r=>`<li>${esc(r[0].toUpperCase()+r.slice(1))}.</li>`).join('')}</ul>${d.tip?`<p class="tip"><b>Tip:</b> ${esc(d.tip)}</p>`:''}</div>`:''})():''}${x.pred?`<p class="why">📈 ${esc(x.pred.label)} (${esc(x.pred.confidence)} confidence)<span id="predBasis"></span>.</p>`:''}
  <p class="dact" id="dAct"><span class="skel" style="width:220px;height:44px;display:inline-block"></span></p>
  <dl class="facts" id="dFacts"></dl>
  <h3>Description</h3><div id="dDesc" class="desc"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>
@@ -168,7 +192,7 @@ async function openDrawer(x){lastFocus=document.activeElement;const m=MSCORE.get
  $('dFacts').innerHTML=[fact('Class years',yearsText(x)),fact('GPA minimum',x.gpa_min?esc(x.gpa_min):NL),fact('Visa sponsorship',x.citizenship?'US citizenship required':x.sponsorship?esc(x.sponsorship):NL),fact('Pay',x.paid===true?esc(x.pay||'Paid'):x.paid===false?'Unpaid':NL),fact('Work setting',x.workplace?esc(x.workplace):(x.remote?'Remote':NL)),fact('Season',termText(x)),fact('Role type',esc(x.role_type||'Internship')),fact('Industry',esc(x.industry||'Other')),fact('Openings',x.openings?esc(x.openings):NL),fact('Company size',x.size?esc(x.size):NL)].join('');
  if(x.pred?.basis&&$('predBasis'))$('predBasis').textContent='. Based on: '+x.pred.basis;
  const lv=x.last_verified||x.lv;$('dMeta').innerHTML=`<p>Source: ${esc(x.source||'')}${x.also_on?` · also listed on ${esc([...new Set(x.also_on)].slice(0,3).join(', '))}`:''}</p><p>${lv?`Last verified ${ago(lv)}`:'Not verified yet'}${x.stale?' · source unreachable on last sync, showing last good data':''}</p><p>${x.deadline?`Closing date from: ${esc(x.deadline_source||'listing')} · `:''}First seen ${x.fs?fmtDate(x.fs):'—'}${x.notes?' · '+esc(x.notes):''}</p>`;
- const d=await descOf(x);const el=$('dDesc');if(el)el.innerHTML=d?esc(d).split(/\n{2,}/).map(p=>`<p>${p.replace(/\n/g,'<br>')}</p>`).join(''):`<p class="muted">${x.st==='upcoming'?'Not posted yet. This is a prediction from past posting dates.':'Full description is on the company posting.'}</p>`}
+ const d=await descOf(x);const el=$('dDesc');if(d&&$('dGloss'))$('dGloss').innerHTML=glossHTML(x.title+' '+c.t+' '+(x.sponsorship||'')+(x.citizenship?' sponsorship':'')+' '+d);if(el)el.innerHTML=d?esc(d).split(/\n{2,}/).map(p=>`<p>${p.replace(/\n/g,'<br>')}</p>`).join(''):`<p class="muted">${x.st==='upcoming'?'Not posted yet. This is a prediction from past posting dates.':'Full description is on the company posting.'}</p>`}
 function closeDrawer(){$('drawer').classList.remove('open');document.body.classList.remove('noscroll');setTimeout(()=>{$('drawer').hidden=true},RM?0:250);lastFocus&&lastFocus.focus&&lastFocus.focus()}
 $('dx').onclick=closeDrawer;$('drawer').onclick=e=>{if(e.target.id==='drawer')closeDrawer()};
 const REPO='tyfaucher24-ops/internship-radar';
@@ -193,19 +217,19 @@ function loadScript(src){return new Promise((ok,no)=>{const s=document.createEle
 function loadMap(){if(MAPREADY)return MAPREADY;MAPREADY=Promise.all([loadScript('https://cdn.jsdelivr.net/npm/d3-array@3'),loadScript('https://cdn.jsdelivr.net/npm/topojson-client@3')]).then(()=>loadScript('https://cdn.jsdelivr.net/npm/d3-geo@3')).then(()=>fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json')).then(r=>r.json()).then(us=>{
  PROJ=d3.geoAlbersUsa().scale(1300).translate([487.5,305]);const path=d3.geoPath();const st=topojson.feature(us,us.objects.states).features;
  $('map').innerHTML=`<svg viewBox="0 0 975 640" role="img" aria-label="US map of matching internships"><g class="states">${st.map(f=>`<path d="${path(f)}"/>`).join('')}</g><g id="mdots"></g><g id="mremote" class="mremote" tabindex="0" role="button" aria-label="Remote internships"><circle cx="900" cy="560" r="30"/><text x="900" y="564" text-anchor="middle">Remote</text><text id="mrN" x="900" y="612" text-anchor="middle" class="mrn"></text></g></svg>`;
- $('mremote').onclick=()=>{F.city=F.city==='Remote|'?'':'Remote|';update()};$('mremote').onkeydown=e=>{if(e.key==='Enter')$('mremote').onclick()};mapUpdate()}).catch(e=>{$('map').innerHTML='<p class="muted">Map could not load (offline?). Filters still work.</p>';MAPREADY=null});return MAPREADY}
+ $('mremote').onclick=()=>{const v=fv('loc');fset('loc',v.includes('Remote')?v.filter(x=>x!=='Remote'):[...v,'Remote']);update()};$('mremote').onkeydown=e=>{if(e.key==='Enter')$('mremote').onclick()};mapUpdate()}).catch(e=>{$('map').innerHTML='<p class="muted">Map could not load (offline?). Filters still work.</p>';MAPREADY=null});return MAPREADY}
 window.mapUpdate=function(){if(!PROJ||$('mapPanel').hidden||document.hidden)return;const agg=new Map();let rem=0;
  for(const x of RES){if(x.remote)rem++;for(const l of x.locations||[]){if(l.lat==null)continue;const k=l.city+'|'+l.state;const a=agg.get(k)||{l,n:0,co:new Map()};a.n++;a.co.set(x.company,(a.co.get(x.company)||0)+1);agg.set(k,a)}}
  window._mapAgg=agg;
- let h='';for(const [k,a] of agg){const p=PROJ([a.l.lng,a.l.lat]);if(!p)continue;const r=Math.min(18,2.5+Math.sqrt(a.n)*1.6);h+=`<circle class="${F.city===k?'sel':''}" data-k="${esc(k)}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r.toFixed(1)}"></circle>`}
- $('mdots').innerHTML=h;$('mrN').textContent=rem.toLocaleString();$('mremote').classList.toggle('sel',F.city==='Remote|');
+ let h='';for(const [k,a] of agg){const p=PROJ([a.l.lng,a.l.lat]);if(!p)continue;const r=Math.min(18,2.5+Math.sqrt(a.n)*1.6);h+=`<circle class="${fv('loc').includes('c:'+k)?'sel':''}" data-k="${esc(k)}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r.toFixed(1)}"></circle>`}
+ $('mdots').innerHTML=h;$('mrN').textContent=rem.toLocaleString();$('mremote').classList.toggle('sel',fv('loc').includes('Remote'));
  const tip=$('mapTip')||Object.assign(document.createElement('div'),{id:'mapTip',className:'maptip',hidden:true});if(!tip.parentNode){$('map').style.position='relative';$('map').appendChild(tip)}
  $('mdots').onmouseover=e=>{const c=e.target.closest('circle');if(!c)return;const a=agg.get(c.dataset.k);if(!a)return;const top=[...a.co].sort((p,q)=>q[1]-p[1]).slice(0,3);
   tip.innerHTML=`<b>${esc(a.l.city)}, ${esc(a.l.state)}</b> · ${a.n.toLocaleString()}<div class="mt-co">${top.map(([co,n])=>`<span>${logoHTML({company:co},false,'sm')}${esc(co)} <i>${n}</i></span>`).join('')}</div>`;
   const R=$('map').getBoundingClientRect(),C=c.getBoundingClientRect();tip.style.left=Math.min(R.width-240,Math.max(0,C.left-R.left+C.width/2-120))+'px';tip.style.top=(C.top-R.top+C.height+8)+'px';tip.hidden=false};
  $('mdots').onmouseout=e=>{if(e.target.closest('circle'))tip.hidden=true};
- $('mdots').onclick=e=>{const c=e.target.closest('circle');if(!c)return;F.city=F.city===c.dataset.k?'':c.dataset.k;update()};
- $('mapNote').textContent=`${agg.size.toLocaleString()} cities · click a dot to filter${F.city?' · click again to clear':''}`}
+ $('mdots').onclick=e=>{const c=e.target.closest('circle');if(!c)return;const v=fv('loc'),key='c:'+c.dataset.k;fset('loc',v.includes(key)?v.filter(x=>x!==key):[...v,key]);update()};
+ $('mapNote').textContent=`${agg.size.toLocaleString()} cities · click a dot to filter${fv('loc').some(v=>v.startsWith('c:'))?' · click again to clear':''}`}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&window.mapUpdate)mapUpdate()});
 /* ---------- scroll reveal ---------- */
 const RIO='IntersectionObserver' in window&&!RM?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');RIO.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'}):null;
@@ -243,40 +267,68 @@ function migrateProfile(p){if(!p||p.v===6)return p||{};const r=Store.get('resume
   experience:(r.experience||[]).map(e=>({kind:'Job',title:e.title||'',org:'',start:'',end:'',bullets:e.text?[e.text.slice(0,200)]:[]})),skills:Array.isArray(r.skills)?r.skills:[]}}
 profile=migrateProfile(profile);
 let PF=Store.get('profileDraft',null)||JSON.parse(JSON.stringify(profile));PF.experience=PF.experience||[];PF.skills=PF.skills||[];PF.locations=PF.locations||[];PF.industries=PF.industries||[];
-const KINDS=['Job','Internship','Club','Project'];
-function chipHTML(v,i,list){return`<span class="pf-chip">${esc(v)}<button type="button" data-rm="${list}" data-i="${i}" aria-label="Remove ${esc(v)}">×</button></span>`}
-function expHTML(e,i){const b=[0,1,2].map(j=>e.bullets?.[j]||'');return`<div class="pf-exp" data-i="${i}"><div class="pf-exphead"><select data-e="kind" aria-label="Type">${KINDS.map(k=>`<option${e.kind===k?' selected':''}>${k}</option>`).join('')}</select><button type="button" class="link" data-delexp="${i}">Remove</button></div>
- <div class="pf-grid"><label class="pf-l">Title<input data-e="title" value="${esc(e.title||'')}" placeholder="e.g. Sales Associate"></label><label class="pf-l">Organization<input data-e="org" value="${esc(e.org||'')}" placeholder="e.g. Target"></label>
- <label class="pf-l">Start<input type="month" data-e="start" value="${esc(e.start||'')}"></label><label class="pf-l">End <small>blank if current</small><input type="month" data-e="end" value="${esc(e.end||'')}"></label></div>
- <div class="pf-bul">${b.map((t,j)=>`<input data-b="${j}" value="${esc(t)}" placeholder="${j?'Another highlight (optional)':'What you did, e.g. Trained 4 new hires'}" aria-label="Highlight ${j+1}">`).join('')}</div></div>`}
-function pfRender(){const f=$('pf');['school','major','minor','classYear','gradDate','gpa'].forEach(k=>f[k].value=PF[k]||'');f.querySelectorAll('[name=sponsorship]').forEach(r=>r.checked=r.value===PF.sponsorship);f.remoteOK.checked=!!PF.remoteOK;f.relocate.checked=!!PF.relocate;
- $('pfInd').innerHTML=INDUSTRIES.filter(i=>i!=='Other').map(i=>`<label class="pf-ichip"><input type="checkbox" value="${esc(i)}"${PF.industries.includes(i)?' checked':''}><span>${esc(i)}</span></label>`).join('');
- $('locChips').innerHTML=PF.locations.map((v,i)=>chipHTML(v,i,'locations')).join('');$('skChips').innerHTML=PF.skills.map((v,i)=>chipHTML(v,i,'skills')).join('');
- $('expList').innerHTML=PF.experience.map(expHTML).join('');pfProgress()}
-function pfRead(){const f=$('pf');['school','major','minor','classYear','gradDate','gpa'].forEach(k=>PF[k]=f[k].value.trim());PF.sponsorship=(f.querySelector('[name=sponsorship]:checked')||{}).value||'';PF.remoteOK=f.remoteOK.checked;PF.relocate=f.relocate.checked;
- PF.industries=[...$('pfInd').querySelectorAll('input:checked')].map(c=>c.value);
- PF.experience=[...$('expList').querySelectorAll('.pf-exp')].map(d=>{const g=k=>d.querySelector(`[data-e="${k}"]`).value.trim();return{kind:g('kind'),title:g('title'),org:g('org'),start:g('start'),end:g('end'),bullets:[...d.querySelectorAll('[data-b]')].map(x=>x.value.trim()).filter(Boolean)}});return PF}
-function pfProgress(){const items=[['school',!!PF.school],['major',!!PF.major],['class year',!!PF.classYear],['interests',PF.industries.length>0],['locations',PF.locations.length>0||PF.remoteOK],['experience',PF.experience.some(e=>e.title||e.org)],['skills',PF.skills.length>=3],['sponsorship answer',!!PF.sponsorship]];
+/* ---------- V8 profile: three buckets (Resume · About you · Experience), searchable dropdowns, autosaved draft ---------- */
+const CB={};let SCHOOLS=null;
+const titleCase=s=>String(s).replace(/\b([a-z])/g,c=>c.toUpperCase()).replace(/\bAnd\b/g,'and');
+function locOptions(){const cnt=new Map(),st=new Map();let rem=0;for(const x of D){if(!x.live)continue;if(x.remote)rem++;for(const l of x.locations||[]){if(!l.city||!l.state)continue;const k=l.city+', '+l.state;cnt.set(k,(cnt.get(k)||0)+1);st.set(l.state,(st.get(l.state)||0)+1)}}
+ const top=[...cnt].sort((a,b)=>b[1]-a[1]).slice(0,8).map(a=>a[0]);
+ return [{v:'Remote',label:'Remote',count:rem,pinned:true},...top.map(c=>({v:c,count:cnt.get(c),pinned:true,group:'Cities'})),
+  ...Object.entries(LISTS.STATES).map(([a,n])=>({v:'state:'+a,label:`Anywhere in ${n}`,alias:a,boost:1.5,count:st.get(a)||0,group:'States'})),
+  ...[...cnt].sort((a,b)=>a[0].localeCompare(b[0])).map(([c,n])=>({v:c,count:n,group:'Cities',alias:LISTS.STATES[c.slice(-2)]||''}))]}
+function indOptions(){const c=new Map();for(const x of D)if(x.live){const k=x.industry||x.category;c.set(k,(c.get(k)||0)+1)}const top=[...c].sort((a,b)=>b[1]-a[1]).slice(0,5).map(a=>a[0]);return INDUSTRIES.filter(i=>i!=='Other').map(i=>({v:i,count:c.get(i)||0,pinned:top.includes(i)}))}
+function gpaVal(g){if(!g)return'';const n=+g;if(isNaN(n))return'';const b=LISTS.GPA.find(o=>n>=+o.v);return LISTS.GPA.some(o=>o.v===String(g))?String(g):(b&&Math.abs(n-+b.v)<1e-9?b.v:String(g))}
+function authFromPF(){return PF.workAuth||(PF.sponsorship==='yes'?'sponsor':PF.sponsorship==='no'?'citizen':'')}
+function pfMake(){const set=(k)=>v=>{PF[k]=v;pfDraft()};
+ CB.school=Combo.field($('cbSchool'),{label:'School',placeholder:'Search your school',searchPlaceholder:'Type your school, e.g. “penn st”',options:()=>(SCHOOLS||[]).map(v=>({v})),dynamic:true,value:PF.school,onChange:set('school')});
+ const maj=()=>LISTS.MAJ.map(o=>({...o}));
+ CB.major=Combo.field($('cbMajor'),{label:'Major',placeholder:'Choose your major',searchPlaceholder:'e.g. “comp sci”',options:maj,value:PF.major,onChange:set('major')});
+ CB.minor=Combo.field($('cbMinor'),{label:'Minor',placeholder:'None',options:maj,value:PF.minor,onChange:set('minor')});
+ CB.year=Combo.field($('cbYear'),{label:'Class year',placeholder:'Choose…',options:LISTS.CLASS,other:false,value:PF.classYear,onChange:set('classYear')});
+ const [gy,gm]=(PF.gradDate||'').split('-');
+ CB.gradM=Combo.field($('cbGradM'),{label:'Graduation month',placeholder:'Month',options:LISTS.gradMonths,other:false,value:gm||'',onChange:v=>{PF.gradDate=(CB.gradY.value||String(new Date().getFullYear()+2))+'-'+v;if(!CB.gradY.value)CB.gradY.set(PF.gradDate.slice(0,4));pfDraft()}});
+ CB.gradY=Combo.field($('cbGradY'),{label:'Graduation year',placeholder:'Year',options:LISTS.gradYears,other:false,value:gy||'',onChange:v=>{PF.gradDate=v+'-'+(CB.gradM.value||'05');if(!CB.gradM.value)CB.gradM.set('05');pfDraft()}});
+ CB.gpa=Combo.field($('cbGpa'),{label:'GPA',placeholder:'Prefer not to say',searchPlaceholder:'Pick a range or type e.g. 3.62',options:LISTS.GPA,value:gpaVal(PF.gpa),onChange:v=>{const n=parseFloat(v);if(v&&(isNaN(n)||n<0||n>4.5)){CB.gpa.set(PF.gpa||'');$('pfMsg').textContent='GPA should be a number between 0 and 4.5';return}PF.gpa=v?String(n):'';pfDraft()}});
+ CB.auth=Combo.field($('cbAuth'),{label:'Work authorization',placeholder:'Choose…',options:LISTS.AUTH,other:false,value:authFromPF(),onChange:v=>{PF.workAuth=v;PF.sponsorship=v==='sponsor'?'yes':v?'no':'';pfDraft()}});
+ CB.ind=Combo.field($('cbInd'),{label:'Interests',multi:true,placeholder:'Choose industries',options:indOptions,dynamic:true,counts:true,other:false,value:PF.industries,onChange:set('industries')});
+ CB.loc=Combo.field($('cbLoc'),{label:'Preferred locations',multi:true,placeholder:'Choose states or cities',searchPlaceholder:'Any city or state, e.g. “austin” or “TX”',options:locOptions,dynamic:true,counts:true,value:PF.locations,onChange:set('locations')});
+ CB.skills=Combo.field($('cbSkills'),{label:'Skills',multi:true,placeholder:'Choose skills',searchPlaceholder:'e.g. “excel”, “python”',options:()=>SKILLS.map(s=>({v:s,label:titleCase(s),pinned:LISTS.PSKILLS.includes(s)})),value:PF.skills,onChange:set('skills')})}
+let OPENEXP=-1;
+const ymLabel=v=>v==='present'?'Present':v?`${LISTS.MONTHS[+v.slice(5)-1]?.slice(0,3)||''} ${v.slice(0,4)}`:'';
+function expHTML(e,i){const sum=[e.title||'Untitled',e.org].filter(Boolean).join(' · '),dt=[ymLabel(e.start),ymLabel(e.end||(e.start?'present':''))].filter(Boolean).join(' – ');
+ return`<div class="pf-exp${i===OPENEXP?' open':''}" data-i="${i}"><button type="button" class="pf-expsum" data-tog="${i}" aria-expanded="${i===OPENEXP}"><span class="pf-kind">${esc(e.kind||'Job')}</span><span class="pf-et">${esc(sum)}</span><span class="pf-ed muted">${esc(dt||'Add dates')}</span></button>
+ ${i===OPENEXP?`<div class="pf-expbody"><div class="pf-f"><span class="pf-lab">Type</span><div class="cbx" data-c="kind"></div></div>
+ <label class="pf-l">Title<input data-e="title" value="${esc(e.title||'')}" placeholder="e.g. Sales Associate"></label><label class="pf-l">Organization<input data-e="org" value="${esc(e.org||'')}" placeholder="e.g. Target"></label>
+ <div class="pf-row2"><div class="pf-f"><span class="pf-lab">Start</span><div class="cbx" data-c="start"></div></div><div class="pf-f"><span class="pf-lab">End</span><div class="cbx" data-c="end"></div></div></div>
+ <label class="pf-l">What you did <small>one point per line</small><textarea class="grow" data-e="bullets" rows="3" placeholder="e.g. Trained 4 new hires&#10;Cut checkout wait time by 20%">${esc((e.bullets||[]).join('\n'))}</textarea></label>
+ <div class="pf-expfoot"><button type="button" class="link" data-delexp="${i}">Remove</button><button type="button" class="btn-ghost sm" data-tog="${i}">Done</button></div></div>`:''}</div>`}
+function expRender(){$('expList').innerHTML=PF.experience.map(expHTML).join('')||'<p class="pf-empty">No experience yet. Add a job, club, class project or volunteer role. Everything counts.</p>';
+ const d=$('expList').querySelector('.pf-exp.open');if(d){const e=PF.experience[OPENEXP];const mk=(c,o)=>Combo.field(d.querySelector(`[data-c="${c}"]`),o);
+  mk('kind',{label:'Experience type',options:LISTS.KINDS,other:false,value:e.kind||'Job',onChange:v=>{e.kind=v;pfDraft();d.querySelector('.pf-kind').textContent=v}});
+  const ym=LISTS.ymList();mk('start',{label:'Start date',placeholder:'Month year',searchPlaceholder:'e.g. “jun 2025”',options:ym.filter(o=>o.v!=='present'),other:false,value:e.start||'',onChange:v=>{e.start=v;pfDraft()}});
+  mk('end',{label:'End date',placeholder:'Present',searchPlaceholder:'e.g. “aug 2025”',options:ym,other:false,value:e.end||'present',onChange:v=>{e.end=v==='present'?'':v;pfDraft()}});Combo.autogrow(d)}}
+function pfRender(){$('pf').remoteOK.checked=!!PF.remoteOK;$('pf').relocate.checked=!!PF.relocate;
+ if(CB.school){CB.school.set(PF.school);CB.major.set(PF.major);CB.minor.set(PF.minor);CB.year.set(PF.classYear);const [y,m]=(PF.gradDate||'').split('-');CB.gradY.set(y||'');CB.gradM.set(m||'');CB.gpa.set(gpaVal(PF.gpa));CB.auth.set(authFromPF());CB.ind.set(PF.industries);CB.loc.set(PF.locations);CB.skills.set(PF.skills)}
+ expRender();pfProgress()}
+function pfRead(){const f=$('pf');PF.remoteOK=f.remoteOK.checked;PF.relocate=f.relocate.checked;return PF}
+function pfProgress(){const items=[['school',!!PF.school],['major',!!PF.major],['class year',!!PF.classYear],['interests',PF.industries.length>0],['locations',PF.locations.length>0||PF.remoteOK],['experience',PF.experience.some(e=>e.title||e.org)],['skills',PF.skills.length>=3],['work authorization',!!PF.sponsorship]];
  const pct=Math.round(100*items.filter(i=>i[1]).length/items.length);$('pfFill').style.width=pct+'%';$('pfPct').textContent=pct+'%';const nx=items.find(i=>!i[1]);$('pfNext').textContent=nx?`· Next: add your ${nx[0]}`:'· Looking great'}
-let pfT;function pfDraft(){clearTimeout(pfT);pfT=setTimeout(()=>{pfRead();Store.set('profileDraft',PF);pfProgress();$('pfMsg').textContent='Draft saved'},300)}
-function addChip(list,inp){const v=inp.value.trim().replace(/\s+/g,' ');if(!v)return;const L=PF[list];if(!L.some(x=>x.toLowerCase()===v.toLowerCase()))L.push(list==='skills'?v.toLowerCase():v);inp.value='';$(list==='skills'?'skChips':'locChips').innerHTML=L.map((x,i)=>chipHTML(x,i,list)).join('');pfDraft()}
-function profileInit(){const f=$('pf');pfRender();
- f.addEventListener('input',pfDraft);f.addEventListener('change',pfDraft);
- [['locIn','locations'],['skIn','skills']].forEach(([id,list])=>{const inp=$(id);inp.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===','){e.preventDefault();addChip(list,inp)}else if(e.key==='Backspace'&&!inp.value&&PF[list].length){PF[list].pop();pfRender();pfDraft();inp.focus()}});
-  inp.addEventListener('change',()=>{if(inp.value&&[...(inp.list?.options||[])].some(o=>o.value===inp.value))addChip(list,inp)});inp.addEventListener('blur',()=>addChip(list,inp))});
- f.addEventListener('click',e=>{const rm=e.target.closest('[data-rm]');if(rm){PF[rm.dataset.rm].splice(+rm.dataset.i,1);pfRender();pfDraft();return}
-  const de=e.target.closest('[data-delexp]');if(de){pfRead();PF.experience.splice(+de.dataset.delexp,1);pfRender();pfDraft()}});
- $('addExp').onclick=()=>{pfRead();PF.experience.push({kind:'Job',title:'',org:'',start:'',end:'',bullets:[]});pfRender();pfDraft();$('expList').lastElementChild?.querySelector('[data-e=title]')?.focus()};
+let pfT;function pfDraft(){clearTimeout(pfT);pfT=setTimeout(()=>{pfRead();Store.set('profileDraft',PF);pfProgress();$('pfMsg').textContent='Draft saved'},250)}
+function profileInit(){const f=$('pf');pfMake();pfRender();
+ f.addEventListener('change',e=>{if(e.target.name==='remoteOK'||e.target.name==='relocate')pfDraft()});
+ $('expList').addEventListener('input',e=>{const t=e.target.closest('[data-e]');if(!t)return;const i=+t.closest('.pf-exp').dataset.i,ex=PF.experience[i];if(t.dataset.e==='bullets')ex.bullets=t.value.split('\n').map(s=>s.replace(/^[•\-–*]\s*/,'').trim()).filter(Boolean);else ex[t.dataset.e]=t.value;
+  const sm=t.closest('.pf-exp').querySelector('.pf-et');if(sm)sm.textContent=[ex.title||'Untitled',ex.org].filter(Boolean).join(' · ');pfDraft()});
+ $('expList').addEventListener('click',e=>{const tg=e.target.closest('[data-tog]');if(tg){const i=+tg.dataset.tog;OPENEXP=OPENEXP===i?-1:i;expRender();const d=$('expList').querySelector('.pf-exp.open [data-e=title]');d&&d.focus();if(OPENEXP<0)$('expList').querySelector(`[data-tog="${i}"]`)?.focus();return}
+  const de=e.target.closest('[data-delexp]');if(de){PF.experience.splice(+de.dataset.delexp,1);OPENEXP=-1;expRender();pfDraft()}});
+ $('addExp').onclick=()=>{PF.experience.push({kind:'Job',title:'',org:'',start:'',end:'',bullets:[]});OPENEXP=PF.experience.length-1;expRender();pfDraft();$('expList').querySelector('.pf-exp.open [data-e=title]')?.focus()};
  const drop=$('pfDrop');['dragenter','dragover'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add('over')}));['dragleave','drop'].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove('over')}));
  drop.addEventListener('drop',e=>{const file=e.dataTransfer.files[0];if(file)readIn(file)});
  const onFile=e=>{const file=e.target.files[0];if(file)readIn(file);e.target.value=''};$('resume').onchange=onFile;$('liPdf').onchange=onFile;
  $('liGo').onclick=()=>{const t=$('liText').value.trim();if(t.length<40){$('rstat').textContent='Paste your full LinkedIn profile text first.';return}ingest(t)};
- $('pfSave').onclick=saveAndSearch;$('pfReset').onclick=resetProfile;
- let lists=false;const fillLists=()=>{if(lists)return;lists=true;fetch('data/schools.json').then(r=>r.json()).then(a=>$('schoolList').innerHTML=a.map(n=>`<option value="${esc(n)}">`).join('')).catch(()=>{});
-  $('majorList').innerHTML=MAJORS.map(m=>`<option value="${esc(m.replace(/\b\w/g,c=>c.toUpperCase()))}">`).join('');$('skillList').innerHTML=SKILLS.map(s=>`<option value="${esc(s)}">`).join('')};
- f.addEventListener('focusin',fillLists,{once:true});document.addEventListener('radar:page',e=>{if(e.detail==='profile')fillLists()})}
+ $('pfSave').onclick=saveAndSearch;$('pfReset').onclick=resetProfile;Combo.autogrow($('pf'));
+ let lists=false;const fillLists=()=>{if(lists)return;lists=true;fetch('data/schools.json').then(r=>r.json()).then(a=>{SCHOOLS=a;CB.school.refreshOptions()}).catch(()=>{})};
+ document.addEventListener('radar:page',e=>{if(e.detail==='profile'){fillLists();CB.ind.refreshOptions();CB.loc.refreshOptions()}});if(!$('t-profile').hidden)fillLists()}
 async function readIn(file){$('rstat').textContent='Reading '+file.name+'…';try{ingest(await readFile(file))}catch(err){$('rstat').textContent='Could not read that file: '+err.message}}
-function ingest(text){const R=parseResume(text);Store.set('resumeText',String(text||'').slice(0,30000));pfRead();let n=0;const set=(k,v)=>{if(v&&!PF[k]){PF[k]=String(v);n++}};set('school',R.school);set('major',R.major);set('gpa',R.gpa);set('classYear',R.classYear);
+function ingest(text){const R=parseResume(text);Store.set('resumeText',String(text||'').slice(0,30000));pfRead();let n=0;const set=(k,v)=>{if(v&&!PF[k]){PF[k]=String(v);n++}};set('school',R.school);set('major',R.major?titleCase(R.major):'');set('gpa',R.gpa);set('classYear',R.classYear);
  const sk=(R.skills||[]).map(s=>s.toLowerCase()).filter(s=>!PF.skills.includes(s));if(sk.length){PF.skills.push(...sk);n+=sk.length}
  const ex=(R.experience||[]).filter(e=>e.title&&!PF.experience.some(p=>p.title===e.title)).map(e=>{const [t,o]=e.title.split(' — ');return{kind:/intern/i.test(t)?'Internship':'Job',title:(t||'').trim(),org:(o||'').trim(),start:'',end:'',bullets:(e.text||'').split(/(?<=\.)\s+|\s*•\s*/).map(x=>x.trim()).filter(x=>x.length>3).slice(0,3)}});
  const cl=(R.clubs||[]).concat(R.leadership||[]).slice(0,3).filter(c=>!PF.experience.some(p=>p.title===c)).map(c=>({kind:'Club',title:c.slice(0,80),org:'',start:'',end:'',bullets:[]}));
@@ -289,8 +341,8 @@ async function saveAndSearch(){pfRead();const errs=[];if(PF.gpa&&(isNaN(+PF.gpa)
  $('pfSave').disabled=true;$('pfMsg').textContent='Grading internships…';await rescore();const n=D.filter(x=>x.live&&MSCORE.has(x.id)).length;$('pfSave').disabled=false;$('pfMsg').textContent='Saved';
  F.sort='match';$('sort').value='match';go('db');update();vrender(true);toastMsg(`Showing your matches. ${n.toLocaleString()} internships graded.`);$('pfMsg').innerHTML='Saved · <a href="#feedback" data-go="feedback">See honest feedback</a>';const fl=$('fbLink');if(fl)fl.hidden=false;if($('fbNudge'))$('fbNudge').hidden=false}
 function resetProfile(){openModal(`<h2>Reset your profile?</h2><p>This clears your profile and removes all match grades. The homepage goes back to its default view. Your tracker is not affected.</p><div class="mf-foot"><button type="button" class="link" id="rsNo">Cancel</button><button type="button" class="btn danger" id="rsYes">Reset to default</button></div>`);
- $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');Store.remove('resumeText');profile={v:6};PF={v:6,experience:[],skills:[],locations:[],industries:[]};MSCORE=new Map();
-  if(F.sort==='match')F.sort='new';F.minm='';if($('fbNudge'))$('fbNudge').hidden=true;$('sort').value=F.sort;closeModal();pfRender();$('rstat').textContent='';go('db');update();vrender(true);toastMsg('Profile reset. Showing all internships.')}}
+ $('rsNo').onclick=closeModal;$('rsYes').onclick=()=>{Store.remove('profile');Store.remove('profileDraft');Store.remove('resume');Store.remove('resumeText');profile={v:6};PF={v:6,experience:[],skills:[],locations:[],industries:[]};OPENEXP=-1;MSCORE=new Map();
+  if(F.sort==='match')F.sort='deadline';F.minm='';if($('fbNudge'))$('fbNudge').hidden=true;$('sort').value=F.sort;closeModal();pfRender();$('rstat').textContent='';go('db');update();vrender(true);toastMsg('Profile reset. Showing all internships.')}}
 /* ---------- grading: Web Worker rescoring (falls back to time-sliced main thread) ---------- */
 let MWK=null,mwInit=false,mwSeq=0;
 function slimRows(){return D.filter(x=>x.st!=='closed').map(x=>({id:x.id,title:x.title,company:x.company,industry:x.industry||x.category,class_years:x.class_years,size:x.size,metro_pop:x.metro_pop,remote:x.remote,posted:x.posted,fs:x.first_seen,gpa_min:x.gpa_min,openings:x.openings,paid:x.paid,sponsorship:x.sponsorship,citizenship:x.citizenship,locations:(x.locations||[]).map(l=>({pop:l.pop})),_t:x._t}))}
@@ -304,3 +356,41 @@ function matchDetail(x){if(!MSCORE.has(x.id)||!CFG||!MW)return null;return Match
 document.addEventListener('radar:tracker',()=>{vrender(true);$('trkN').textContent=T.all().length||''});
 
 boot();
+
+/* ---------- V8 beginner help: "?" tooltips, glossary, first-visit tip, How it works ---------- */
+const GLOSS=[['Online Assessment',/online assessment|\bOA\b|hirevue|codesignal|hackerrank/i],['Rolling deadline',/rolling/i],['Co-op',/\bco-?op\b/i],['Summer Analyst',/summer analyst/i],['Sponsorship',/sponsor/i]];
+function glossHTML(t){const hit=GLOSS.filter(([,re])=>re.test(t||''));return hit.length?`<span class="muted small">Terms:</span> ${hit.map(([k])=>`<button type="button" class="gterm" data-tip="${esc(k)}">${esc(k)} <span aria-hidden="true">?</span></button>`).join('')}`:''}
+LISTS.TIPS.classyear='Your year in school this coming fall: Freshman (1st year), Sophomore (2nd), Junior (3rd), Senior (4th) or Graduate. Many internships are only for certain years.';
+let tipFor=null;function showTip(btn){const k=btn.dataset.tip,t=LISTS.TIPS[k];if(!t)return;const el=$('tip');el.className='tipbub';el.innerHTML=`<b>${esc(k==='classyear'?'Class year':k)}</b><br>${esc(t)}`;el.hidden=false;tipFor=btn;btn.setAttribute('aria-describedby','tip');
+ const r=btn.getBoundingClientRect();el.style.position='fixed';el.style.left=Math.max(8,Math.min(innerWidth-316,r.left-20))+'px';const below=r.bottom+8;el.style.top=below+'px';const h=el.offsetHeight;if(below+h>innerHeight-8)el.style.top=Math.max(8,r.top-h-8)+'px'}
+function hideTip(){if(!tipFor)return;$('tip').hidden=true;tipFor.removeAttribute('aria-describedby');tipFor=null}
+document.addEventListener('mouseover',e=>{const b=e.target.closest('[data-tip]');if(b)showTip(b)});document.addEventListener('mouseout',e=>{if(e.target.closest('[data-tip]'))hideTip()});
+document.addEventListener('focusin',e=>{const b=e.target.closest('[data-tip]');if(b)showTip(b);else hideTip()});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-tip]');if(b){e.preventDefault();e.stopPropagation();tipFor===b&&!$('tip').hidden?hideTip():showTip(b)}else hideTip()},true);
+addEventListener('scroll',hideTip,{passive:true});
+function glossaryHTML(){return`<dl class="glossary">${Object.entries(LISTS.TIPS).filter(([k])=>k!=='classyear').map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`}
+function firstTip(){const pr=Store.get('prefs',{});if(pr.tipDone||$('firstTip'))return;const d=document.createElement('div');d.id='firstTip';d.className='firsttip';d.setAttribute('role','note');
+ d.innerHTML=`<span class="ft-i" aria-hidden="true">💡</span><p><b>New here?</b> Start by searching or filtering, save what you like, then add your profile for match %. <button type="button" class="link" id="ftTerms">What do the terms mean?</button></p><button type="button" class="ft-x" id="ftX" aria-label="Dismiss tip">Got it</button>`;
+ $('chips').closest('.chipsrow').before(d);$('ftX').onclick=()=>{Store.set('prefs',{...Store.get('prefs',{}),tipDone:1});d.remove()};$('ftTerms').onclick=()=>openModal(`<h2>Internship terms, in plain English</h2>${glossaryHTML()}`)}
+/* How it works -> the Details screen on the intro */
+(function(){const nav=document.querySelector('.site-footer nav[aria-label="Footer"]');if(nav&&!$('howBtn')){const a=document.createElement('a');a.href='./?intro=1#details';a.id='howBtn';a.textContent='How it works';nav.prepend(a)}})();
+/* ---------- V8 advanced: shortcuts, share + saved filters ---------- */
+const SHORTCUTS=[['/','Jump to search'],['s','Save the open (or focused) internship'],['Esc','Close the drawer, panel or dialog'],['?','Show this list']];
+function shortcutsModal(){openModal(`<h2>Keyboard shortcuts</h2><table class="kbd">${SHORTCUTS.map(([k,t])=>`<tr><td><kbd>${esc(k)}</kbd></td><td>${esc(t)}</td></tr>`).join('')}</table>
+ <h3>Search tricks</h3><table class="kbd"><tr><td><code>company:google</code></td><td>Only that company (use quotes for spaces: <code>company:"jp morgan"</code>)</td></tr><tr><td><code>location:nyc</code></td><td>A city, state or “remote” (nyc, sf, la, dc work too)</td></tr><tr><td><code>"exact phrase"</code></td><td>Those words in that order</td></tr></table><h3>Terms</h3>${glossaryHTML()}`)}
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;const t=e.target;if(t.closest&&t.closest('input,textarea,select,[contenteditable="true"],.cb-pop'))return;
+ if(e.key==='/'){e.preventDefault();if($('t-db').hidden)go('db');$('q').focus();$('q').select()}
+ else if(e.key==='?'){e.preventDefault();shortcutsModal()}
+ else if(e.key==='s'||e.key==='S'){const b=!$('drawer').hidden?$('drawer').querySelector('[data-act=save]'):document.activeElement?.closest?.('.card')?.querySelector('[data-act=save]');if(b){e.preventDefault();b.click()}}});
+function presetsInit(){const host=document.querySelector('.rtools');if(!host||$('shareBtn'))return;const w=document.createElement('span');w.className='presets';
+ w.innerHTML=`<button type="button" class="pill" id="shareBtn" title="Copy a link to these exact filters">Copy link</button><div class="pillwrap"><button type="button" class="pill" id="presetBtn" aria-haspopup="dialog" aria-expanded="false">Saved filters</button></div>`;host.prepend(w);
+ $('shareBtn').onclick=async()=>{saveF();try{await navigator.clipboard.writeText(location.href);toastMsg('Link copied. Anyone with it sees these filters.')}catch(_){prompt('Copy this link:',location.href)}};
+ $('presetBtn').onclick=e=>{e.stopPropagation();const b=$('presetBtn');if(b.nextElementSibling){b.nextElementSibling.remove();b.setAttribute('aria-expanded','false');return}const P=Store.get('savedFilters',[]);const p=document.createElement('div');p.className='pop open presetpop';p.setAttribute('role','dialog');p.setAttribute('aria-label','Saved filters');
+  p.innerHTML=`<p class="pp-h">Saved filters</p>${P.length?`<ul class="pp-l">${P.map((x,i)=>`<li><button type="button" class="link" data-ap="${i}">${esc(x.name)}</button><button type="button" class="pp-x" data-dp="${i}" aria-label="Delete ${esc(x.name)}">×</button></li>`).join('')}</ul>`:'<p class="muted small">None yet. Set some filters, then save them here.</p>'}
+  <form class="pp-f"><input id="ppName" placeholder="Name these filters, e.g. NYC finance" aria-label="Preset name" maxlength="40"><button class="btn sm" type="submit">Save current</button></form>`;b.after(p);b.setAttribute('aria-expanded','true');$('ppName').focus();
+  const r=p.getBoundingClientRect();if(r.right>innerWidth-8)p.style.left=Math.min(0,innerWidth-8-r.right)+'px';
+  p.onclick=ev=>{ev.stopPropagation();const ap=ev.target.closest('[data-ap]'),dp=ev.target.closest('[data-dp]');if(ap){const x=P[+ap.dataset.ap];const u=new URLSearchParams(x.qs);F={...DEFAULTS,...Object.fromEntries(FK.filter(k=>u.has(k)).map(k=>[k,u.get(k)]))};$('q').value=F.q||'';p.remove();update();toastMsg(`Applied “${x.name}”`)}if(dp){P.splice(+dp.dataset.dp,1);Store.set('savedFilters',P);p.remove();$('presetBtn').click()}};
+  p.querySelector('form').onsubmit=ev=>{ev.preventDefault();const n=$('ppName').value.trim()||`Filters ${P.length+1}`;saveF();P.push({name:n,qs:location.search});Store.set('savedFilters',P);p.remove();b.setAttribute('aria-expanded','false');toastMsg(`Saved “${n}”`)};
+  p.addEventListener('keydown',ev=>{if(ev.key==='Escape'){ev.stopPropagation();p.remove();b.setAttribute('aria-expanded','false');b.focus()}})};
+ document.addEventListener('mousedown',e=>{if(!e.target.closest('.presets')){document.querySelector('.presetpop')?.remove();$('presetBtn')?.setAttribute('aria-expanded','false')}})}
+document.addEventListener('radar:data',()=>{firstTip();presetsInit()});

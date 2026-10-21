@@ -1,5 +1,14 @@
 # Internship Radar changelog
 
+
+## V8 — Easier controls (2026-10-20)
+- Searchable dropdowns (new `combo.js`, lists in `lists.js`) for school, major, minor, class year, graduation month/year, GPA, work authorization, interests, locations, skills and experience type/dates. They offer fuzzy search ("comp sci", "penn st"), chips for multi-select, virtualized lists, a pinned Popular group, "Other: use …" for your own value, and full keyboard support. Free-text fields auto-grow.
+- Every filter pill opens a panel with a search bar, checkable options with live counts, and a "Show N" Apply plus Clear. Location searches cities, states and metros, has quick picks (Remote and the top metros) and a near-a-city radius. Chips are removable one by one, with Clear all. Pills wrap, so there is no horizontal scroll.
+- Beginner help: a dismissible first-visit tip, "?" tooltips (Online Assessment, Rolling deadline, Co-op, Summer Analyst, Sponsorship, Match %), glossary terms in the listing drawer, helper text with an example under every profile field, and a "How it works" footer link to the Details screen. Default sort is Closing soonest, switching to Match % after Save & Search.
+- Advanced: shortcuts (`/` search, `s` save, `?` help, `Esc` close), Copy link (shareable URL), saved filter presets, tracker bulk select/status/delete with confirmation, search syntax `company:`, `location:` and "exact phrase", and More filters (company size, sponsorship, pay, date posted, season).
+- My Profile is now 3 buckets (Resume · About you · Experience). Each column scrolls on its own and a Save/Reset bar stays in view. Two columns on tablet, stacked on phone. This replaces the V6 single-column profile.
+- QA: `test_v8.py` gives 123/123 pass. Walkthrough fixes: a state search ("texas", "tx") ranked "Texas City, TX" above the state, so states are now boosted. The graduation year was cut off ("20…"), so the field was tightened.
+
 ## V7 — Details screen on the intro
 - "Skip intro" is gone. Next to "Find My Internship" there is now a "Details" button (same size, outline style).
 - Details: the planet eases to the left and shrinks (on phones it stays on top and shrinks), the hero text fades out, and a panel slides in: "What is Internship Radar?", four short steps with icons (staggered fade-in), the shared live count ("10,871 open internships right now.") and Find My Internship. It uses only transform and opacity (about 0.9s).

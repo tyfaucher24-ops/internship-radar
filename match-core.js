@@ -53,7 +53,7 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const odds=avgW([['competition',cOdds],['classYear',oYear],['gpa',oGpa],['school',oSch],['experience',oExp]],W.oddsParts||{});
  if(comp.score!=null&&comp.score<40&&comp.easy.length)pos.push(`competition looks low (${comp.easy.slice(0,2).join(', ')})`);else if(comp.score!=null&&comp.score>=65)neg.push(`competition is high${comp.why.length?' ('+comp.why[0]+')':''}`);
  // ---- Preferences ----
- let pLoc=null;if(P.locs.length||P.remoteOK){const hit=P.locs.some(l=>text.includes(l));pLoc=hit?100:(x.remote&&P.remoteOK)?100:P.relocate?60:20;if(hit)pos.push('it\u2019s in a location you picked');}
+ let pLoc=null;const ST=P.states||[];if(P.locs.length||ST.length||P.remoteOK){const tt=' '+text+' ';const hit=P.locs.some(l=>text.includes(l))||ST.some(c=>tt.includes(' '+c+' '));pLoc=hit?100:(x.remote&&P.remoteOK)?100:P.relocate?60:20;if(hit)pos.push('it\u2019s in a location you picked');}
  const pRem=x.remote==null||!P.remoteOK?null:(x.remote?100:70);
  const pYear=oYear==null?null:100;const pPaid=x.paid===true?100:null;
  const prefs=avgW([['location',pLoc],['remote',pRem],['classYear',pYear],['paid',pPaid]],W.prefParts||{});
@@ -75,8 +75,8 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  return {pct,grade:MC.grade(pct,W),band:MC.band(pct),fit:Math.round(fit.v??0),odds:Math.round(odds.v??0),prefs:prefs.v==null?null:Math.round(prefs.v),comp:comp.score,reasons:reasons.length?reasons:['Little overlap with your profile yet'],tip,conf,ineligible:!!ineligible}};
 MC.profile=function(pr){const sk=(pr.skills||[]).map(s=>norm(s)).filter(Boolean);
  return {school:pr.school||'',schoolN:norm(pr.school),major:pr.major||'',majorN:norm([pr.major,pr.minor].filter(Boolean).join(' ')),classYear:pr.classYear||'',gpa:parseFloat(pr.gpa)||null,
-  sponsor:pr.sponsorship==='yes'?true:pr.sponsorship==='no'?false:null,industries:pr.industries||[],locs:(pr.locations||[]).map(l=>norm(String(l).split(',')[0])).filter(Boolean),
-  remoteOK:!!pr.remoteOK,relocate:!!pr.relocate,skills:[...new Set(sk)],exp:(pr.experience||[]).filter(e=>e&&(e.title||e.org)).map(e=>({title:[e.title,e.org].filter(Boolean).join(' at '),n:norm([e.title,e.org,...(e.bullets||[])].join(' '))}))}};
+  sponsor:pr.sponsorship==='yes'?true:pr.sponsorship==='no'?false:null,industries:pr.industries||[],locs:(pr.locations||[]).filter(l=>!/^state:|^remote$/i.test(l)).map(l=>norm(String(l).split(',')[0])).filter(Boolean),states:(pr.locations||[]).filter(l=>/^state:/.test(l)).map(l=>l.slice(6).toLowerCase()),
+  remoteOK:!!pr.remoteOK||(pr.locations||[]).some(l=>/^remote$/i.test(l)),relocate:!!pr.relocate,skills:[...new Set(sk)],exp:(pr.experience||[]).filter(e=>e&&(e.title||e.org)).map(e=>({title:[e.title,e.org].filter(Boolean).join(' at '),n:norm([e.title,e.org,...(e.bullets||[])].join(' '))}))}};
 MC.hasProfile=pr=>!!(pr&&pr.savedAt);
 G.MatchCore=MC;
 })(typeof self!=='undefined'?self:window);

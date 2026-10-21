@@ -70,37 +70,38 @@
  <p class="muted small">Click any cell to edit; changes save in this browser. Arrow keys move between cells. Drag a column header's edge to resize. Rows turn amber under 7 days to close, red under 3, gray once closed.</p>
 </div></section>
 <section id="t-profile" class="page pf-page" hidden>
-<div class="pf-wrap">
- <div class="pf-head"><h1>My Profile</h1><p class="lede">Only what improves your matches. Everything stays in this browser.</p><p><a id="fbLink" class="fb-link" href="#feedback" data-go="feedback" hidden>Get honest feedback on your profile →</a></p>
-  <div class="pf-progress" aria-label="Profile progress"><div class="pf-track"><i id="pfFill"></i></div><p><b id="pfPct">0%</b> complete <span id="pfNext" class="muted"></span></p></div></div>
- <section class="pf-sec" aria-labelledby="pfH1"><h2 id="pfH1"><span class="num">1</span>Resume</h2><p class="muted">Upload a PDF or Word resume and we'll fill in the form for you. You can change anything.</p>
-  <label class="pf-drop" id="pfDrop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32"><path d="M12 16V4m0 0l-5 5m5-5l5 5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Drop your resume here</b><span>or click to choose a PDF or DOCX file</span></label>
-  <p id="rstat" class="pf-stat" role="status" aria-live="polite"></p>
-  <details class="pf-li"><summary>Optional: use your LinkedIn profile</summary><div class="pf-li-in"><label class="pf-drop sm"><input type="file" id="liPdf" accept=".pdf"><b>Upload LinkedIn “Save to PDF”</b></label><label class="pf-l">…or paste your LinkedIn profile text<textarea id="liText" rows="4" placeholder="Copy your About, Experience, Education and Skills and paste here. Nothing is pulled from LinkedIn automatically."></textarea></label><button type="button" class="btn-ghost" id="liGo">Read pasted text</button></div></details>
- </section>
- <form id="pf" autocomplete="off" novalidate>
- <section class="pf-sec" aria-labelledby="pfH2"><h2 id="pfH2"><span class="num">2</span>About you</h2>
-  <div class="pf-grid">
-   <label class="pf-l pf-full">School<input name="school" list="schoolList" placeholder="Start typing your school"></label>
-   <label class="pf-l">Major<input name="major" list="majorList" placeholder="e.g. Finance"></label>
-   <label class="pf-l"><span>Minor <small>optional</small></span><input name="minor" list="majorList"></label>
-   <label class="pf-l">Class year<select name="classYear"><option value="">Choose…</option><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option><option>Graduate</option></select></label>
-   <label class="pf-l">Graduation date<input name="gradDate" type="month"></label>
-   <label class="pf-l"><span>GPA <small>optional</small></span><input name="gpa" type="number" inputmode="decimal" step="0.01" min="0" max="4.5" placeholder="e.g. 3.4"></label>
-   <fieldset class="pf-l pf-seg"><legend>Will you need visa sponsorship?</legend><label><input type="radio" name="sponsorship" value="no"> No</label><label><input type="radio" name="sponsorship" value="yes"> Yes</label></fieldset>
-  </div>
-  <fieldset class="pf-f"><legend>Interests <small>pick the industries you want</small></legend><div class="pf-chips" id="pfInd"></div></fieldset>
-  <div class="pf-f"><label class="pf-l" for="locIn">Preferred locations</label><div class="pf-chipin" id="locBox"><span class="pf-chiplist" id="locChips"></span><input id="locIn" list="cityList" placeholder="Add a city, e.g. Charlotte, NC" autocomplete="off"></div>
-   <div class="pf-toggles"><label class="pf-tog"><input type="checkbox" name="remoteOK"><span></span> Remote OK</label><label class="pf-tog"><input type="checkbox" name="relocate"><span></span> Open to relocate</label></div></div>
- </section>
- <section class="pf-sec" aria-labelledby="pfH3"><h2 id="pfH3"><span class="num">3</span>Experience</h2><p class="muted">Jobs, internships, clubs and projects all count.</p>
-  <div id="expList"></div><button type="button" class="btn-ghost pf-add" id="addExp">+ Add experience</button>
-  <div class="pf-f"><label class="pf-l" for="skIn">Skills</label><div class="pf-chipin" id="skBox"><span class="pf-chiplist" id="skChips"></span><input id="skIn" list="skillList" placeholder="Add a skill, e.g. Excel" autocomplete="off"></div></div>
- </section>
+<div class="pf3-wrap">
+ <div class="pf3-head"><div><h1>My Profile</h1><p class="lede">Only what improves your match %. Everything stays in this browser.</p></div>
+  <div class="pf-progress" aria-label="Profile progress"><div class="pf-track"><i id="pfFill"></i></div><p><b id="pfPct">0%</b> complete <span id="pfNext" class="muted"></span></p><a id="fbLink" class="fb-link" href="#feedback" data-go="feedback" hidden>Get honest feedback →</a></div></div>
+ <form id="pf" class="pf3" autocomplete="off" onsubmit="return false">
+  <section class="pf-col" aria-labelledby="pfH1"><h2 id="pfH1"><span class="num">1</span>Resume</h2><div class="pf-scroll">
+   <p class="pf-help">Upload a PDF or Word resume and we’ll fill in the other two columns. You can change anything.</p>
+   <label class="pf-drop" id="pfDrop"><input type="file" id="resume" accept=".pdf,.docx,.txt"><svg aria-hidden="true" viewBox="0 0 24 24" width="32" height="32"><path d="M12 16V4m0 0l-5 5m5-5l5 5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Drop your resume here</b><span>or click to choose a PDF or DOCX file</span></label>
+   <p id="rstat" class="pf-stat" role="status" aria-live="polite"></p>
+   <details class="pf-li"><summary>Optional: use your LinkedIn profile</summary><div class="pf-li-in"><label class="pf-drop sm"><input type="file" id="liPdf" accept=".pdf"><b>Upload LinkedIn “Save to PDF”</b></label><label class="pf-l">…or paste your LinkedIn profile text<textarea id="liText" class="grow" rows="3" placeholder="Copy your About, Experience, Education and Skills and paste here. Nothing is pulled from LinkedIn automatically."></textarea></label><button type="button" class="btn-ghost" id="liGo">Read pasted text</button></div></details>
+   <div class="pf-tipbox"><b>No resume yet?</b> That’s fine. Fill in “About you” and add any experience, even a part-time job or a class project.</div>
+  </div></section>
+  <section class="pf-col" aria-labelledby="pfH2"><h2 id="pfH2"><span class="num">2</span>About you</h2><div class="pf-scroll">
+   <div class="pf-f"><span class="pf-lab" id="lSchool">School</span><div id="cbSchool" data-lab="lSchool"></div><p class="pf-help">Type a few letters. Example: “ohio st” finds Ohio State University.</p></div>
+   <div class="pf-row2"><div class="pf-f"><span class="pf-lab">Major</span><div id="cbMajor"></div><p class="pf-help">Example: Finance, Computer Science.</p></div>
+    <div class="pf-f"><span class="pf-lab">Minor <small>optional</small></span><div id="cbMinor"></div><p class="pf-help">Example: Statistics.</p></div></div>
+   <div class="pf-row2"><div class="pf-f"><span class="pf-lab">Class year <button type="button" class="tip" data-tip="classyear" aria-label="What is class year?">?</button></span><div id="cbYear"></div><p class="pf-help">Your year in school this fall. Many internships only take certain years.</p></div>
+    <div class="pf-f"><span class="pf-lab">Graduation</span><div class="pf-row2 tight"><div id="cbGradM"></div><div id="cbGradY"></div></div><p class="pf-help">Example: May 2028.</p></div></div>
+   <div class="pf-row2"><div class="pf-f"><span class="pf-lab">GPA <small>optional</small></span><div id="cbGpa"></div><p class="pf-help">Pick a range, or type your exact GPA. Some firms have GPA cutoffs.</p></div>
+    <div class="pf-f"><span class="pf-lab">Work authorization <button type="button" class="tip" data-tip="Sponsorship" aria-label="What is sponsorship?">?</button></span><div id="cbAuth"></div><p class="pf-help">Used to hide roles you can’t take.</p></div></div>
+   <div class="pf-f"><span class="pf-lab">Interests</span><div id="cbInd"></div><p class="pf-help">Pick the industries you want. Example: Finance &amp; Banking, Data &amp; AI.</p></div>
+   <div class="pf-f"><span class="pf-lab">Preferred locations</span><div id="cbLoc"></div><p class="pf-help">A state or city. Example: Anywhere in Texas, or Chicago, IL.</p>
+    <div class="pf-toggles"><label class="pf-tog"><input type="checkbox" name="remoteOK"><span></span> Remote OK</label><label class="pf-tog"><input type="checkbox" name="relocate"><span></span> Open to relocate</label></div></div>
+  </div></section>
+  <section class="pf-col" aria-labelledby="pfH3"><h2 id="pfH3"><span class="num">3</span>Experience</h2><div class="pf-scroll">
+   <p class="pf-help">Jobs, internships, research, clubs and projects all count. Click an entry to edit it.</p>
+   <div id="expList"></div><button type="button" class="btn-ghost pf-add" id="addExp">+ Add experience</button>
+   <div class="pf-f"><span class="pf-lab">Skills</span><div id="cbSkills"></div><p class="pf-help">Only skills you can talk about in an interview. Example: Excel, Python, public speaking.</p></div>
+  </div></section>
  </form>
 </div>
-<div class="pf-bar" role="region" aria-label="Save profile"><div class="pf-wrap pf-barin"><button type="button" class="link pf-reset" id="pfReset">Reset to default</button><span id="pfMsg" class="muted small" aria-live="polite"></span><button type="button" class="btn pf-save" id="pfSave">Save &amp; Search</button></div></div>
-<datalist id="schoolList"></datalist><datalist id="majorList"></datalist><datalist id="skillList"></datalist>
+<div class="pf-bar" role="region" aria-label="Save profile"><div class="pf-barin"><button type="button" class="link pf-reset" id="pfReset">Reset to default</button><span id="pfMsg" class="muted small" aria-live="polite"></span><button type="button" class="btn pf-save" id="pfSave">Save &amp; Search</button></div></div>
+
 </section>
 <section id="t-about" class="page" hidden><div class="pagehead"><div class="container"><h1>About Internship Radar</h1></div></div><div class="container prose">
  <p>Internship Radar is a free website that tracks every open US internship it can verify, flags the ones about to open, keeps your applications in one spreadsheet, and shows the roles you have a real shot at.</p>
@@ -124,5 +125,5 @@
 <div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <div id="tip" role="tooltip" hidden></div>
 <script src="store.js"></script><script src="listing.js"></script>
-<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
+<script src="resume.js" defer></script><script src="matcher.js" defer></script><script src="match-core.js" defer></script><script src="lists.js" defer></script><script src="combo.js" defer></script><script src="tracker.js" defer></script><script src="app.js" defer></script><script src="intro.js" defer></script>
 </body></html>

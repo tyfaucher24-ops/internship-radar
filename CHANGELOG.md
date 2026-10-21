@@ -9,6 +9,7 @@
 - Red pulsing dot on cards that close within 7 days.
 - Intro: thin live ticker pinned to the bottom (a read-only copy of the real Exchange ticker, hidden when there are no sync events; never covers the buttons; static with reduced motion) and a mono, rolling live counter. Planet and Details unchanged, no skip button.
 - Profile at 1440: columns end above the Save bar and fade at the bottom while there's more to scroll, instead of a hard cut.
+- Design pass (ops/V11.1_DESIGN_NOTES.md, patterns from Robinhood, Public, Google Finance/Bloomberg, Stripe, Linear): one muted green/red pair used everywhere; the ticker is now a hairline strip in the page's surface colour (not a black bar); the intro ticker is a glass strip matching the counter pill; dots are 6px with a slow soft halo; Market tiles are tinted dashboard tiles; the ticker label shortens to "Live" on phones.
 - QA: test_v111 32/32, test_v11 16/16, V10 41/41, V8 123/123.
 
 ## V11 — Stock-market accents + Internship Exchange (2026-10-21)

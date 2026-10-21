@@ -27,3 +27,8 @@ Run locally: `pip install requests && python -m pipeline.sync --workers 24` (add
 
 ## Admin
 `admin.html` has the data-health dashboard, review queue, missing-company queue, registry bulk add, hand-checked listings and matcher config. Its password check runs in the browser and is not real security.
+
+## Credits
+- School names for profile autocomplete: [Hipo university-domains-list](https://github.com/Hipo/university-domains-list) (MIT).
+- Company logos: each company's own website icon (fetched through Google's public favicon endpoint t1.gstatic.com/faviconV2, or from the site's apple-touch-icon), or the logo the company uploaded to its public careers board. robots.txt is checked before every request. Logos belong to their owners. Run `python3 pipeline/logos.py` to rebuild `data/logos.json`, `data/logo-map.json` and `assets/logos/`.
+- Match scoring weights: `match-weights.json`.

@@ -1,5 +1,14 @@
 # Internship Radar changelog
 
+## V6 — One match grade, a simpler profile, a bigger tracker, real logos
+- Matching: Strong / Realistic / Reach / Hidden Gems are gone. Every listing gets one match % and a letter grade (A+ 95–100 … F under 45). Weights live in one file, `match-weights.json`: Fit 45%, Odds 40%, Preferences 15%. If you're not eligible (class year, sponsorship or citizenship), the score is capped at 40% and the reason is shown.
+- The badge sits at the top right of each card ("92% · A") on a green-to-red pastel scale with AA contrast. The detail drawer shows the score, 2–3 reasons and a tip when the score is low. Grades appear only after you save a profile, and then results sort by match %. New "Minimum match" filter: Any / 60%+ / 75%+ / 90%+.
+- Rescoring runs in a Web Worker (about 165–210 ms for 10,871 live listings in headless Chromium).
+- Profile: a centered single column with three sections (Resume, About you, Experience), a progress bar and 48px inputs. Drop a resume and the form fills itself ("We filled in X fields. Check them below."). LinkedIn PDF or pasted text is optional. School autocomplete, chips for interests, locations and skills, and repeatable experience entries. Drafts autosave. A sticky bar has Save & Search ("Showing your matches. X internships graded.") and Reset to default, which asks first and then clears the profile and grades.
+- Tracker, sizing only: full width up to 1600px, 60px rows, 15.5px text, 16px cell padding, a 240px company column with a 28px logo, a 280px role column that wraps to 2 lines (full text in the tooltip), bigger status pills and Closes In badges, big-number stats and a friendly empty state with a Find internships button.
+- Real company logos on cards (40px), the drawer (56px), the tracker (28px) and the map tooltips (which now list the top companies in each city). They sit on a white rounded tile with a fixed size (no layout shift), load lazily and fall back to the letter avatar. Built by `pipeline/logos.py` from the company's own site icon (via the public favicon service), its apple-touch-icon, or its public careers board logo. Anything under 48px is rejected, as are placeholder icons shared by unrelated companies and images too light to see on white. Coverage: 1,990 of 2,579 companies (77.2%), which is 9,786 of 11,249 open listings (87.0%).
+- Removed: the old match-tier settings in `config.json` and the admin weight editors (see `match-weights.json` instead).
+
 ## V5.3 — 3D globe for everyone, tuned per device
 - Starting quality tier picked from screen size, devicePixelRatio, CPU cores and device memory, then adapted by frame time (steps down quickly, back up slowly). Never stops, never a static image while WebGL works.
 - Phones: 2K WebP Earth texture (206 KB, was a 313 KB JPEG); desktops get a 4K WebP (584 KB, was 1.1 MB), pixel ratio capped at 1.5, lighter sphere meshes, cheap backside atmosphere shader.

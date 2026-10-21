@@ -444,3 +444,13 @@ body.intro-on main#main{visibility:hidden}
 }
 .c-foot{gap:var(--sp-2)}.c-foot .dl{min-width:0}
 .fact-nl{grid-column:1/-1}.fact-nl dd{color:var(--c-mut)}
+/* V10 tracker: compact stat strip, consistent small tools */
+#t-tracker .tstats{gap:var(--sp-2);padding:var(--sp-3) 0 0;margin-bottom:var(--sp-3)}
+#t-tracker .tst{display:inline-flex;align-items:baseline;gap:var(--sp-2);min-width:0;padding:var(--sp-2) var(--sp-3);border:1px solid var(--c-line);border-radius:var(--r);background:var(--c-surface);font-size:var(--fs-s);color:var(--c-mut);box-shadow:none}
+#t-tracker .tst b{font-size:var(--fs-l);color:var(--c-ink);display:inline}
+#t-tracker .tscroll[hidden],#tHelp[hidden],#tStats[hidden]{display:none}
+#t-tracker .ttools{gap:var(--sp-2);flex-wrap:wrap;align-items:center;margin-bottom:var(--sp-3)}
+#t-tracker .tempty{padding:var(--sp-6) var(--sp-4)}
+#t-tracker.tr-empty #tCsv,#t-tracker.tr-empty #tXls,#t-tracker.tr-empty #ics,#t-tracker.tr-empty .colwrap,#t-tracker.tr-empty #tSeg,#t-tracker.tr-empty .ttools .sp{display:none}
+/* V10 profile: hints show while a field is in use, so each bucket fits without a long scroll */
+#t-profile .pf-col:nth-child(2) .pf-help{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

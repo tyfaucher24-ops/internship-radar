@@ -7,7 +7,13 @@ TODAY=datetime.date(2026,10,20)
 SN={'Alabama':'AL','Alaska':'AK','Arizona':'AZ','Arkansas':'AR','California':'CA','Colorado':'CO','Connecticut':'CT','Delaware':'DE','Florida':'FL','Georgia':'GA','Hawaii':'HI','Idaho':'ID','Illinois':'IL','Indiana':'IN','Iowa':'IA','Kansas':'KS','Kentucky':'KY','Louisiana':'LA','Maine':'ME','Maryland':'MD','Massachusetts':'MA','Michigan':'MI','Minnesota':'MN','Mississippi':'MS','Missouri':'MO','Montana':'MT','Nebraska':'NE','Nevada':'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND','Ohio':'OH','Oklahoma':'OK','Oregon':'OR','Pennsylvania':'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD','Tennessee':'TN','Texas':'TX','Utah':'UT','Vermont':'VT','Virginia':'VA','West Virginia':'WV','Washington':'WA','Wisconsin':'WI','Wyoming':'WY','District of Columbia':'DC','Puerto Rico':'PR'}
 CODES=set(SN.values())
 NOTCITY=re.compile(r'^(US|USA|United States.*|Remote.*|Multiple.*)$',re.I)
+def _cc(c):
+    return re.sub(r'^[\s,\-–—]+|[\s,\-–—]+$','',c) or None if isinstance(c,str) else c
 def parse_place(p):
+    r=_parse_place(p)
+    if r and r.get('city'): r['city']=_cc(r['city'])
+    return r
+def _parse_place(p):
     p=re.sub(r'\s*\+\d+ more$','',p).strip().rstrip('.').rstrip()
     if not p or NOTCITY.match(p) and not re.search(r',\s*[A-Z]{2}\b',p): return None
     m=re.match(r'^([^,;]+?),\s*([A-Z]{2})\b',p)

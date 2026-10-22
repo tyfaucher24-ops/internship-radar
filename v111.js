@@ -14,16 +14,16 @@ document.addEventListener('scroll',e=>{if(e.target.classList&&e.target.classList
 /* lead number of a sentence ("10,827 open internships · …") */
 function rollLead(el){if(!el||el.querySelector('.roll'))return;const t=el.firstChild;if(!t||t.nodeType!==3)return;const m=t.nodeValue.match(/^([\d,]+)(.*)$/s);if(!m)return;
  const sp=document.createElement('span');sp.className='mono';t.nodeValue=m[2];el.insertBefore(sp,t);roll(sp,+m[1].replace(/,/g,''))}
-const obs=new MutationObserver(ms=>{for(const m of ms){const e=m.target.nodeType===1?m.target:m.target.parentElement;const h=e&&e.closest&&e.closest('.hdrCount');if(h&&!h.closest('#intro'))rollLead(h)}});
+const obs=new MutationObserver(ms=>{for(const m of ms){const e=m.target.nodeType===1?m.target:m.target.parentElement;const h=e&&e.closest&&e.closest('.hdrCount');if(h&&!h.closest('#intro')&&h.id!=='hdrCount')rollLead(h)}});
 document.querySelectorAll('.hdrCount').forEach(h=>{if(!h.closest('#intro'))obs.observe(h,{childList:true})});
 const dc=$('dCount');if(dc)new MutationObserver(()=>{const v=dc.textContent;if(/^[\d,]+$/.test(v)){const n=+v.replace(/,/g,'');dc.textContent='';roll(dc,n)}}).observe(dc,{childList:true});
 /* market stats roll in when the panel opens */
 document.addEventListener('click',e=>{if(!e.target.closest('#tkMarket'))return;setTimeout(()=>document.querySelectorAll('.mk-s b').forEach(b=>{const m=b.textContent.match(/^(\D*?)([\d,]+)$/);if(!m)return;const n=+m[2].replace(/,/g,'');b.textContent=m[1];const sp=document.createElement('span');b.appendChild(sp);roll(sp,0);requestAnimationFrame(()=>requestAnimationFrame(()=>roll(sp,n)))}),30)});
 /* ---- theme + colour-blind toggles (menu) ---- */
-const H=document.documentElement,P=(()=>{try{return JSON.parse(localStorage.getItem('ir_ui')||'{}')}catch(e){return {}}})();
+const H=document.documentElement,P=(()=>{try{return JSON.parse(localStorage.getItem('ir_ui')||'{}')}catch(e){return {}}})();if(P.theme!=='light')P.theme='dark';/* V12.1: dark is the default for first-time visitors */
 function apply(){H.classList.toggle('dark',P.theme==='dark');H.classList.toggle('cb',!!P.cb);const t=$('uiTheme'),c=$('uiCb');
  if(t){t.textContent=P.theme==='dark'?'☀ Light mode':'☾ Dark mode';t.setAttribute('aria-pressed',P.theme==='dark')}if(c){c.textContent='Colour-blind grades: '+(P.cb?'On':'Off');c.setAttribute('aria-pressed',!!P.cb)}
- const mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=P.theme==='dark'?'#0f1220':'#5b46c9'}
+ const mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=P.theme==='dark'?'#1a1f26':'#5b46c9'}
 const save=()=>{try{localStorage.setItem('ir_ui',JSON.stringify(P))}catch(e){}apply()};
 $('uiTheme')?.addEventListener('click',()=>{P.theme=P.theme==='dark'?'light':'dark';save()});
 $('uiCb')?.addEventListener('click',()=>{P.cb=!P.cb;save()});apply();

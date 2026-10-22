@@ -1,4 +1,4 @@
-# Internship Radar
+# Intern Index
 
 **Every internship. Tracked. Matched. Free.**
 

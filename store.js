@@ -13,7 +13,7 @@ window.Store=(()=>{
     del:k=>{if(LS)try{LS.removeItem(P+k)}catch{}MEM.delete(k)}};
   const subs=[];
   const get=(k,d)=>{let raw=null;try{raw=backend.read(k)}catch{return d}if(raw==null)return d;try{const v=JSON.parse(raw);return v??d}catch{
-    try{if(LS&&!LS.getItem(P+k+'__corrupt'))LS.setItem(P+k+'__corrupt',raw)}catch{}console.info('Internship Radar: saved "'+k+'" was unreadable; a copy was kept as '+P+k+'__corrupt');return d}};
+    try{if(LS&&!LS.getItem(P+k+'__corrupt'))LS.setItem(P+k+'__corrupt',raw)}catch{}console.info('Intern Index: saved "'+k+'" was unreadable; a copy was kept as '+P+k+'__corrupt');return d}};
   const set=(k,v)=>{const ok=backend.write(k,JSON.stringify(v));if(ok)subs.forEach(f=>f(k,v));return ok};
   const remove=k=>{backend.del(k);subs.forEach(f=>f(k,undefined))};
   const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
@@ -22,7 +22,7 @@ window.Store=(()=>{
   if(get('profile')&&get('resume')){const p=get('profile'),r=get('resume');if(r.major&&!p.major){Object.assign(p,{major:r.major,classYear:r.year,industries:(r.fields||'').split(',').map(s=>s.trim()).filter(Boolean),locations:r.loc||''});set('profile',p)}}
   function exportAll(){const data={};KEYS.forEach(k=>{const v=get(k);if(v!==undefined&&v!==null)data[k]=v});
     return {app:'internship-deadline-radar',version:VERSION,exported:new Date().toISOString(),data}}
-  function importAll(obj,{merge=false}={}){if(!obj||obj.app!=='internship-deadline-radar'||typeof obj.data!=='object')throw new Error('Not an Internship Radar export file');
+  function importAll(obj,{merge=false}={}){if(!obj||obj.app!=='internship-deadline-radar'||typeof obj.data!=='object')throw new Error('Not an Intern Index export file');
     Object.entries(obj.data).forEach(([k,v])=>{if(!KEYS.includes(k))return;const cur=get(k);
       if(merge&&Array.isArray(cur)&&Array.isArray(v)){const ids=new Set(cur.map(x=>x&&x.id));set(k,cur.concat(v.filter(x=>!x||!ids.has(x.id))))}else set(k,v)});
     return Object.keys(obj.data).filter(k=>KEYS.includes(k))}

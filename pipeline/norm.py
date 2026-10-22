@@ -26,6 +26,10 @@ def intern_class(title):
     return 'no'
 # ---------- location ----------
 def parse_place(p):
+    r=_parse_place(p)
+    if r and isinstance(r.get('city'),str): r['city']=re.sub(r'^[\s,\-–—]+|[\s,\-–—]+$','',r['city']) or None
+    return r
+def _parse_place(p):
     p=re.sub(r'\s*\+\d+ more$','',(p or '')).strip().strip('.;,').strip()
     if not p: return None
     if re.search(r'remote|anywhere|virtual|work from home|telework',p,re.I):

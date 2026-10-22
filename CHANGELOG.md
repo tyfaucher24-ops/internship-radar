@@ -1,4 +1,24 @@
-# Internship Radar changelog
+# Intern Index changelog
+(The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
+
+## V12.1 — Intern Index, dark mode, Save and scroll fixes (2026-10-22)
+- Renamed to **Intern Index** everywhere users see it. The repo name and URL are unchanged.
+- Dark mode is the default (#1a1f26 / #232a33 / #2c3440, text #f3f5f7, muted #aab3bf). axe reports 0 violations in dark mode at 1280 and 390 (`ops/a11y_dark.py`).
+- Save and Unsave leave the page exactly where it was, both on the list and in the detail view. Buttons are patched in place, with no re-render and no scroll restore. `test_v121_save.py` covers Save, Unsave and Save from the detail view.
+- Smoother scrolling:
+  - Sticky header is opaque (no backdrop blur).
+  - Decorative animations and transitions pause while scrolling.
+  - Card tilt is gone; virtual rows are contained.
+  - Measured with `ops/perf/scroll_trace.py`, a Chrome trace at 4x CPU throttle across all listings.
+- Grade panel restored, and a Description section added. A unit test now covers the location normalizer (`test/location_norm.test.js`). Stray punctuation is removed from city names in the data.
+- Quote bar: a LIVE badge when the sync is 6h old or less, otherwise an amber "Delayed". The tooltip shows the sync time in ET. Big numbers sit on one bar without wrapping.
+- Tracker:
+  - Full width, 54px rows, 15px text, sticky header.
+  - No horizontal scroll: low-priority columns collapse, and a note lists them.
+  - Tab bar removed; the stat tiles filter instead.
+  - "Customize sheet" is now a primary button.
+- Cache: assets are versioned with `?v=<hash>` and index.html carries a no-cache meta tag.
+
 
 
 ## V12 live audit

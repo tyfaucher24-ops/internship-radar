@@ -23,8 +23,16 @@ const COLS=[['company','Company',1],['title','Role',1],['status','Status',1],['c
  ['location','Location',0],['priority','Priority',0],['followUp','Follow-up',0],['contact','Contact/Referral',0],['resumeVersion','Resume Version',0],['coverLetter','Cover Letter',0],['closeReason','Close Reason',0],['dateSaved','Saved on',0]];
 const SEG=[['All',()=>true],['Saved',t=>t.status==='Saved'],['Applied',t=>['Applied','Online Assessment'].includes(t.status)],['Interviewing',t=>t.status==='Interviewing'],['Offers',t=>['Offer','Accepted'].includes(t.status)],['Rejections',t=>['Rejected','Ghosted','Withdrawn'].includes(t.status)],['Closing this week',t=>{const c=closesIn(t);return c.n>=0&&c.n<=7&&!CLOSEDST.includes(t.status)},1]];
 let tSeg='All',tSort=Store.get('trackerSort',{k:'closes',d:1});
-const visCols=()=>{const v=Store.get('trackerCols',null);let c=COLS.filter(c=>v?v.includes(c[0]):c[2]);if(matchMedia('(max-width:860px)').matches){const s=c.find(x=>x[0]==='status');if(s)c=[c[0],s,...c.slice(1).filter(x=>x!==s)]}return c};
-const stkC=(c,i,cols)=>i===0?'stk':(i===1&&c[0]==='status'&&matchMedia('(max-width:860px)').matches?'stk stk2':'');
+/* V12.1: no horizontal scroll. Chosen columns collapse (lowest priority first) until the sheet fits its box. */
+const MINW={company:190,title:220,status:200,closes:140,dateApplied:110,nextStep:170,notes:200,link:104,location:140,priority:120,followUp:110,contact:150,resumeVersion:140,coverLetter:100,closeReason:140,dateSaved:110};
+const DROP=['coverLetter','resumeVersion','contact','closeReason','dateSaved','followUp','priority','location','notes','link','dateApplied','nextStep','title'];
+const chosenCols=()=>{const v=Store.get('trackerCols',null);return COLS.filter(c=>v?v.includes(c[0]):c[2])};
+let tHidden=[];
+const visCols=()=>{let c=chosenCols();const box=document.querySelector('#t-tracker .twide')||document.body;const avail=(box.clientWidth||innerWidth)-2;const mob=avail<600;
+ const w=x=>mob?({company:130,status:128,closes:92}[x[0]]||120):MINW[x[0]]||120;const xw=mob?0:44;tHidden=[];
+ for(const k of DROP){if(c.reduce((a,x)=>a+w(x),xw)<=avail)break;const h=c.find(x=>x[0]===k);if(h){c=c.filter(x=>x!==h);tHidden.push(h[1])}}
+ return c};
+const stkC=(c,i)=>'';
 const CLOSEDST=['Rejected','Ghosted','Withdrawn','Closed','Accepted'];
 function postingClosed(t){if(t.listingId==null||typeof BYID==='undefined'||!BYID.size)return false;const x=BYID.get(String(t.listingId));return !x||x.st==='closed'}
 function closesIn(t){const L=t.listing;if(postingClosed(t))return{txt:'Posting closed',n:-1,cls:'closed'};if(!L.deadline)return{txt:L.rolling?'Rolling':'Not listed',n:9999,cls:''};const n=days(L.deadline);
@@ -44,8 +52,8 @@ function cell(t,k){const L=t.listing;const inp=(f,v,type='text',ph='')=>`<input 
  case 'link':return`${L.apply_url?`<a class="lkopen" href="${esc(L.apply_url)}" target="_blank" rel="noopener" title="${esc(L.apply_url)}">Open ↗</a>`:''}<input class="ce lk${L.apply_url?' has':''}" data-f="apply_url" type="url" title="${esc(L.apply_url||'')}" value="${esc(L.apply_url||'')}" placeholder="https://" aria-label="Link">`}}
 function trackerRefresh(){if(!$('tTable'))return;const a=T.all();for(const id of [...TSEL])if(!a.some(t=>t.id===id))TSEL.delete(id);$('trkN')&&($('trkN').textContent=a.length||'');
  const wk=a.filter(t=>{const c=closesIn(t);return c.n>=0&&c.n<=7&&!CLOSEDST.includes(t.status)}).length;
- $('tStats').innerHTML=[['Saved',a.filter(t=>t.status==='Saved').length],['Applied',a.filter(t=>t.dateApplied||APPLIED_SET.includes(t.status)).length],['Interviews',a.filter(t=>t.history.includes('Interviewing')).length],['Offers',a.filter(t=>t.history.includes('Offer')||t.status==='Accepted').length],['Closing this week',wk]].map(([l,n])=>{const sg={Saved:'Saved',Applied:'Applied',Interviews:'Interviewing',Offers:'Offers','Closing this week':'Closing this week'}[l];const cl=l==='Offers'&&n?' up':l==='Closing this week'&&n?' warn':'';return`<button type="button" class="tst${cl}${tSeg===sg?' on':''}" data-seg="${sg}" aria-pressed="${tSeg===sg}"><span>${l}</span><b>${n}</b></button>`}).join('');
- $('tSeg').innerHTML=SEG.filter(s=>!s[2]).map(([n,f])=>`<button type="button" class="${tSeg===n?'on':''}" data-seg="${n}" aria-pressed="${tSeg===n}">${n} <small>${a.filter(f).length}</small></button>`).join('');
+ $('tStats').innerHTML=[['All',a.length],['Saved',a.filter(t=>t.status==='Saved').length],['Applied',a.filter(t=>t.dateApplied||APPLIED_SET.includes(t.status)).length],['Interviews',a.filter(t=>t.history.includes('Interviewing')).length],['Offers',a.filter(t=>t.history.includes('Offer')||t.status==='Accepted').length],['Rejections',a.filter(t=>['Rejected','Ghosted','Withdrawn'].includes(t.status)).length],['Closing this week',wk]].map(([l,n])=>{const sg={All:'All',Rejections:'Rejections',Saved:'Saved',Applied:'Applied',Interviews:'Interviewing',Offers:'Offers','Closing this week':'Closing this week'}[l];const cl=l==='Offers'&&n?' up':l==='Closing this week'&&n?' warn':'';return`<button type="button" class="tst${cl}${tSeg===sg?' on':''}" data-seg="${sg}" aria-pressed="${tSeg===sg}"><span>${l}</span><b>${n}</b></button>`}).join('');
+ $('tSeg')&&($('tSeg').innerHTML=SEG.filter(s=>!s[2]).map(([n,f])=>`<button type="button" class="${tSeg===n?'on':''}" data-seg="${n}" aria-pressed="${tSeg===n}">${n} <small>${a.filter(f).length}</small></button>`).join(''));
  const cols=visCols();const f=SEG.find(s=>s[0]===tSeg)[1];const rows=a.filter(f).sort((x,y)=>{const A=sortVal(x,tSort.k),B=sortVal(y,tSort.k);return (A<B?-1:A>B?1:0)*tSort.d});
  const W=Store.get('trackerW',{});$('tEmpty').hidden=a.length>0;{const sc=document.querySelector('#t-tracker .tscroll'),hp=document.getElementById('tHelp'),st=document.getElementById('tStats');if(sc)sc.hidden=!a.length;if(hp)hp.hidden=!a.length;if(st)st.hidden=!a.length;document.getElementById('t-tracker')?.classList.toggle('tr-empty',!a.length)}
  $('tTable').innerHTML=`<thead><tr>${cols.map((c,i)=>`<th scope="col" data-k="${c[0]}" class="${stkC(c,i)} c-${c[0]}" style="${W[c[0]]?'width:'+W[c[0]]+'px':''}" aria-sort="${tSort.k===c[0]?(tSort.d>0?'ascending':'descending'):'none'}">${c[0]==='company'?`<input type="checkbox" class="tsel tsel-all" aria-label="Select all rows"${rows.length&&rows.every(t=>TSEL.has(t.id))?' checked':''}>`:''}<button type="button" class="th">${c[1]}${tSort.k===c[0]?(tSort.d>0?' ▲':' ▼'):''}</button></th>`).join('')}<th class="c-x"><span class="sr">Actions</span></th></tr></thead>
@@ -53,8 +61,10 @@ function trackerRefresh(){if(!$('tTable'))return;const a=T.all();for(const id of
   const tint=CLOSEDST.includes(t.status)||c.cls==='closed'?'r-gray':c.cls==='red'?'r-red':c.cls==='amber'?'r-amber':'';
   return`<tr data-id="${t.id}" class="${tint}${over?' r-over':''}">${cols.map((col,i)=>`<td class="${stkC(col,i)} c-${col[0]}">${cell(t,col[0])}${col[0]==='status'&&stale?`<button type="button" class="ghostq" data-ghost="1">Mark as Ghosted?</button>`:''}${col[0]==='company'&&postingClosed(t)&&!CLOSEDST.includes(t.status)?'<span class="pc">Posting closed</span>':''}${col[0]==='nextStep'&&over?'<span class="ov">Follow-up overdue</span>':''}</td>`).join('')}<td class="c-x"><button type="button" class="ghost sm" data-del="1" aria-label="Delete row">✕</button></td></tr>`}).join('')}</tbody>`;
  bulkBar(rows);
- $('tCols').innerHTML=COLS.map(c=>`<label class="chk"><input type="checkbox" value="${c[0]}"${cols.includes(c)?' checked':''}> ${c[1]}</label>`).join('');
+ $('tCols').innerHTML=COLS.map(c=>`<label class="chk"><input type="checkbox" value="${c[0]}"${chosenCols().includes(c)?' checked':''}> ${c[1]}</label>`).join('');
+ {let n=$('tHid');if(!n){n=document.createElement('p');n.id='tHid';n.className='muted small thid';$('tTable').closest('.tscroll').after(n)}n.hidden=!tHidden.length||!a.length;n.textContent=tHidden.length?`${tHidden.length} column${tHidden.length>1?'s':''} tucked away to fit this screen (${tHidden.join(', ')}). Widen the window to see ${tHidden.length>1?'them':'it'}.`:''}
  document.dispatchEvent(new Event('radar:tracker'))}
+{let rz,lw=innerWidth;addEventListener('resize',()=>{if(innerWidth===lw)return;lw=innerWidth;clearTimeout(rz);rz=setTimeout(()=>{if(!$('t-tracker')?.hidden)trackerRefresh()},120)},{passive:true})}
 const TSEL=new Set();let bulkCb=null;
 function bulkBar(rows){let b=$('tBulk');if(!b){b=document.createElement('div');b.id='tBulk';b.className='tbulk';b.setAttribute('role','region');b.setAttribute('aria-label','Bulk actions');$('tTable').closest('.tscroll').before(b)}
  const n=TSEL.size;b.hidden=!n;if(!n)return;b.innerHTML=`<b>${n} selected</b><span class="tb-st">Change status to <span id="tbSt"></span></span><button type="button" class="btn sm" id="tbApply">Apply</button><button type="button" class="btn-ghost sm danger" id="tbDel">Delete ${n}</button><button type="button" class="link" id="tbClr">Clear selection</button>`;
@@ -87,7 +97,7 @@ function trackerInit(){const tb=$('tTable');
  new ResizeObserver(()=>{}).observe(tb);tb.addEventListener('mouseup',()=>{const W={};tb.querySelectorAll('th[data-k]').forEach(th=>{if(th.style.width)W[th.dataset.k]=parseInt(th.style.width)});
   tb.querySelectorAll('th[data-k]').forEach(th=>{const w=th.offsetWidth;if(th._w&&th._w!==w)W[th.dataset.k]=w;th._w=w});if(Object.keys(W).length)Store.set('trackerW',{...Store.get('trackerW',{}),...W})});
  $('tStats').onclick=e=>{const b=e.target.closest('[data-seg]');if(b){tSeg=tSeg===b.dataset.seg?'All':b.dataset.seg;trackerRefresh()}};
- $('tSeg').onclick=e=>{const b=e.target.closest('[data-seg]');if(b){tSeg=b.dataset.seg;trackerRefresh()}};
+ if($('tSeg'))$('tSeg').onclick=e=>{const b=e.target.closest('[data-seg]');if(b){tSeg=b.dataset.seg;trackerRefresh()}};
  $('tColBtn').onclick=()=>{const m=$('tColMenu');m.hidden=!m.hidden;$('tColBtn').setAttribute('aria-expanded',!m.hidden)};
  const colClose=()=>{$('tColMenu').hidden=true;$('tColBtn').setAttribute('aria-expanded','false')};$('tColDone').onclick=()=>{colClose();$('tColBtn').focus()};
  document.addEventListener('click',e=>{if(!$('tColMenu').hidden&&!e.target.closest('.colwrap'))colClose()});$('tColMenu').addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();colClose();$('tColBtn').focus()}});
@@ -116,7 +126,7 @@ function buildICS(a=T.all()){const stamp=new Date().toISOString().replace(/[-:]/
    'BEGIN:VALARM','ACTION:DISPLAY',`DESCRIPTION:${icsEsc(summary)}`,'TRIGGER:-P1D','END:VALARM','END:VEVENT'].filter(Boolean))};
  a.forEach(t=>{const L=t.listing;if(L.deadline&&['Saved','Applied'].includes(t.status)&&days(L.deadline)>=0)add('dl-'+t.id,L.deadline,`Deadline: ${L.company} – ${L.title}`,`Status: ${t.status}`,L.apply_url);
   if((t.followUp||t.nextDate)&&!['Rejected','Withdrawn','Ghosted','Closed','Accepted'].includes(t.status))add('nx-'+t.id,t.followUp||t.nextDate,`${t.nextStep||'Follow up'}: ${L.company}`,`${L.title}${t.contact?'\nContact: '+t.contact:''}${t.notes?'\n'+t.notes:''}`,L.apply_url)});
- const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Internship Radar//Tracker//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Internship deadlines',...ev.flat(),'END:VCALENDAR'];
+ const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Intern Index//Tracker//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Internship deadlines',...ev.flat(),'END:VCALENDAR'];
  return {text:lines.map(fold).join('\r\n')+'\r\n',count:ev.length}}
 function exportICS(){const {text,count}=buildICS();if(!count){alert('No upcoming deadlines or next-step dates in your tracker yet. Note: most listings don\'t publish a deadline; add next-step dates in Details.');return}
  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/calendar'}));a.download='internship-deadlines.ics';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}

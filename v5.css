@@ -1,5 +1,5 @@
 /* V5 design system: one font, one accent, 8px grid, CSS-variable tokens */
-@font-face{font-family:Geist;src:url(assets/geist-latin.woff2?v=2a8781feb8) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
+@font-face{font-family:Geist;src:url(assets/geist-latin.woff2?v=2ec45ae3f8) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
  --acc:var(--c-pri);--acc-ink:var(--c-x4733b5);--acc-soft:var(--c-pri-soft);--red:var(--c-red);--red-bg:var(--c-red-soft);--amber:var(--c-amber);--amber-bg:var(--c-xfff4dc);--ok:var(--c-x11683a);--ok-bg:var(--c-green-soft);
  --r-sm:10px;--r:14px;--r-lg:20px;--sh:0 1px 2px rgba(20,22,39,.04),0 4px 16px rgba(20,22,39,.05);--sh-h:0 2px 4px rgba(20,22,39,.05),0 16px 40px rgba(60,40,160,.12);
  --maxw:1520px;--gut:clamp(16px,4vw,64px);--ease:cubic-bezier(.2,.7,.2,1)}
@@ -400,7 +400,7 @@ body.graded .grow{height:242px}body.graded .card{height:242px}
 .beg-a{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.beg .linkbtn{background:none;border:0;color:var(--c-x3730a3);text-decoration:underline;cursor:pointer;font:inherit}
 body.intro-on main#main{visibility:hidden}
 /* V10: static planet (phones, no-GPU devices): a pre-rendered view of the US instead of a dot sphere */
-.static .globe-ph{background:url(assets/globe-static.webp?v=2a8781feb8) center/contain no-repeat;border-radius:50%}
+.static .globe-ph{background:url(assets/globe-static.webp?v=2ec45ae3f8) center/contain no-repeat;border-radius:50%}
 .static .globe-ph::after{display:none}
 /* ===== V10 cleanup (tokens only) ===== */
 .find-head{padding:var(--sp-5) 0 var(--sp-2)}
@@ -675,3 +675,53 @@ body.graded .grow{height:270px}body.graded .card{height:270px}
 
 /* V12.1: the virtual list positions its own rows; browser scroll anchoring must not adjust scroll when rows are swapped */
 #vl,#vl *{overflow-anchor:none}.dact .acts{min-height:44px;align-items:center}
+
+/* V12.1 dark mode: text on the accent stays white; the toast sits on a raised surface; semantic red/blue lifted for AA on dark tints */
+html.dark{--c-red:#ff8a7f;--c-blue:#8fb4ff}
+html.dark button:not(.ghost):not(.linkbtn):not(.fdtog):not(.x),html.dark .btn,html.dark a.btn,html.dark .seg button.on,html.dark .toggle .on,html.dark .nbadge,html.dark .mk-tabs button[aria-pressed=true]{color:#fff}
+html.dark #toast{background:#2c3440;color:#f3f5f7;border:1px solid #3a4452}
+
+/* V12.1 stock-quote bar: big tabular numbers, small labels, one slim line, never wraps; fixed line box so nothing jumps */
+.qbar{margin-top:8px}.qbar .hdrCount{display:flex;align-items:center;flex-wrap:nowrap;gap:clamp(14px,3vw,32px);min-height:44px;white-space:nowrap}
+.qbar .q{display:inline-flex;align-items:baseline;gap:8px;min-width:0}.qbar .q b{font-family:var(--font-mono);font-weight:700;font-size:clamp(22px,5.4vw,30px);line-height:1;color:var(--c-ink);letter-spacing:-.01em;font-variant-numeric:tabular-nums}.qbar .q small{font-size:14px;color:var(--c-mut);line-height:1.2}
+.qbadge{display:inline-flex;align-items:center;gap:7px;height:26px;padding:0 10px;border-radius:999px;font:700 12px/1 var(--font-mono);letter-spacing:.08em;flex:none;cursor:default}
+.q-live{color:var(--c-up);background:var(--c-green-soft)}.q-del{color:var(--c-x9a5b00);background:var(--c-amber-soft);letter-spacing:.02em;font-weight:600}
+.qdot{position:relative;width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}.qdot::after{content:'';position:absolute;inset:0;border-radius:50%;background:currentColor;opacity:.5;animation:qp 2s ease-out infinite;will-change:transform,opacity}
+@keyframes qp{to{transform:scale(2.6);opacity:0}}@media (prefers-reduced-motion:reduce){.qdot::after{animation:none}}
+@media (max-width:480px){.qbar .q small{font-size:12px}.qbar .hdrCount{gap:12px}.qbar .q{gap:5px}}
+@media (max-width:480px){.qbar .hdrCount{min-height:52px}.qbar .q{flex-direction:column;align-items:flex-start;gap:3px}.qbar .q b{font-size:24px}}
+
+/* V12.1 My Tracker: full content width, roomy 54px rows, 15-16px text, sticky header, no horizontal scroll (columns collapse in tracker.js) */
+#t-tracker .container.twide{max-width:none;width:calc(100% - 2*var(--gut,32px))}
+#t-tracker .tscroll{overflow-x:hidden;overflow-y:auto}
+#t-tracker table.sheet{width:100%;table-layout:fixed;font-size:15px}
+#t-tracker .sheet th{position:sticky;top:0;z-index:3;background:var(--c-bg-2)}
+#t-tracker .sheet th .th{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-ink-2);min-height:48px;padding:0 16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#t-tracker .sheet td{height:54px;padding:4px 16px;font-size:15px;overflow:hidden}
+#t-tracker .sheet .ce{font-size:15px;padding:8px;text-overflow:ellipsis;min-width:0}
+#t-tracker .sheet .ta{font-size:15px}
+#t-tracker .sheet .pill{font-size:15px;min-width:0;width:100%!important;height:38px;padding:0 12px}
+#t-tracker .sheet td.c-company{position:static}#t-tracker .sheet th,#t-tracker .sheet th.c-company{position:sticky;top:0}
+#t-tracker .sheet th.c-company .th{display:inline-flex;padding-left:8px}#t-tracker .sheet th.c-company{padding-left:12px}
+#t-tracker .sheet .tsel{width:18px;height:18px;margin:0 6px 0 0;flex:none;vertical-align:middle}
+#t-tracker .sheet td.c-company{display:table-cell}
+#t-tracker .sheet th.c-company{width:220px}#t-tracker .sheet th.c-status{width:170px}#t-tracker .sheet th.c-closes{width:150px}#t-tracker .sheet th.c-x{width:48px}
+.thid{margin:8px 0 0}
+@media (max-width:640px){#t-tracker .container.twide{width:calc(100% - 24px)}#t-tracker .sheet .c-x{display:none}#t-tracker .sheet th.c-company{width:auto}#t-tracker .sheet th.c-status{width:128px}#t-tracker .sheet th.c-closes{width:92px}#t-tracker .sheet td,#t-tracker .sheet th .th{padding-left:8px;padding-right:8px}#t-tracker .sheet td{font-size:15px}}
+/* Customize sheet: prominent primary button with an icon */
+.tcust{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;font-weight:600;font-size:15px;border-radius:10px}.tcust svg{flex:none}
+#t-tracker .sheet th.c-company .th{padding-left:36px}#t-tracker .sheet th .tsel-all{left:14px}
+#t-tracker .sheet .ta{height:calc(2.7em + 8px);line-height:1.35;padding:3px 8px;overflow:hidden}#t-tracker .sheet td{height:56px}
+#t-tracker .coc{display:flex;align-items:center;gap:8px;min-width:0}
+#t-tracker .sheet .ta{height:calc(2.7em + 6px);box-sizing:border-box}#t-tracker .sheet td{height:54px;padding-top:3px;padding-bottom:3px}
+@media (max-width:640px){#t-tracker .sheet th.c-status{width:108px}#t-tracker .sheet th.c-closes{width:84px}#t-tracker .sheet .c-company .lg,#t-tracker .sheet .c-company img,#t-tracker .sheet .c-company .logo{display:none}#t-tracker .sheet td.c-closes,#t-tracker .sheet td.c-closes *{white-space:normal;line-height:1.3;font-size:14px}#t-tracker .sheet .pill{font-size:14px;padding:0 6px}#t-tracker .sheet th .th{font-size:12px;letter-spacing:.03em}#t-tracker .sheet th.c-company .th{padding-left:30px}#t-tracker .sheet th .tsel-all{left:8px}#t-tracker .c-company{width:auto;min-width:0;max-width:none}}
+/* V12.1 scroll perf: opaque sticky header (no backdrop blur repaint on scroll), compositor-only pulses, contained virtual rows, no hover lift */
+.site-header{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--c-surface,#fff)}html.dark .site-header{background:#1a1f26}
+.pulse{box-shadow:none;animation:none}.pulse::after{will-change:transform,opacity}
+#vl .grow{contain:layout paint style}
+#vl .card{contain:layout style}#vl .card:hover{transform:none}
+/* V12.1: while the page is scrolling, pause decorative animations and transitions (they forced a repaint every frame) */
+html.scrolling *,html.scrolling *::before,html.scrolling *::after{animation-play-state:paused!important;transition:none!important}
+/* V12.1: status pills and the Open link fit their text (longest status "Assessment (OA)") */
+#t-tracker .sheet th.c-status{width:200px}#t-tracker .sheet th.c-link{width:104px}
+@media (max-width:640px){#t-tracker .sheet th.c-status{width:140px}#t-tracker .sheet .pill{font-size:13px;padding:0 6px}}

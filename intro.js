@@ -14,24 +14,14 @@ function arrive(){body.classList.remove('intro-on');body.classList.add('arriving
 function end(fast){if(ended)return;ended=true;
  intro.classList.add(fast||RM?'fade-fast':'fade');arrive();setTimeout(()=>{stopLoop();dispose();intro.remove();const q=$i('q');q&&q.focus({preventScroll:true})},fast||RM?320:650)}
 window.__introEnd=end;
-/* V7: Details screen (replaces Skip intro). transform/opacity only; #details history state; Back, browser back and Esc reverse it */
-const DT=$i('details'),DB=$i('detailsBtn');let dOpen=false;
-function placeDetails(){const st=intro.querySelector('.globe-stage'),sl=intro.querySelector('.globe-slot').getBoundingClientRect(),mob=innerWidth<=900;
- const cx=sl.left+sl.width/2,cy=sl.top+sl.height/2,tx=mob?innerWidth/2:innerWidth*0.27,ty=mob?Math.min(innerHeight*0.2,sl.height*0.42):innerHeight/2,s=mob?0.55:0.72;
- intro.style.setProperty('--dx',(tx-cx)+'px');intro.style.setProperty('--dy',(ty-cy)+'px');intro.style.setProperty('--ds',s);intro.style.setProperty('--ox',cx+'px');intro.style.setProperty('--oy',cy+'px')}
-function openDetails(push){if(dOpen||ended)return;dOpen=true;placeDetails();DT.hidden=false;DB.setAttribute('aria-expanded','true');void DT.offsetWidth;intro.classList.add('details-on');if(push)history.pushState({details:1},'','#details');setTimeout(()=>$i('detailsBack').focus({preventScroll:true}),RM?50:700)}
-function closeDetails(){if(!dOpen)return;dOpen=false;intro.classList.remove('details-on');DB.setAttribute('aria-expanded','false');setTimeout(()=>{if(!dOpen)DT.hidden=true;DB.focus({preventScroll:true})},RM?200:900)}
-DB.onclick=()=>openDetails(true);
-$i('detailsBack').onclick=()=>{if(history.state&&history.state.details)history.back();else{closeDetails();history.replaceState(null,'',location.pathname+location.search)}};
-addEventListener('popstate',()=>{if(ended)return;if(location.hash==='#details')openDetails(false);else closeDetails()});
-addEventListener('resize',()=>{if(dOpen)placeDetails()});
-$i('dFind').onclick=()=>{if(location.hash==='#details')history.replaceState(null,'',location.pathname+location.search);end(false)};
-if(location.hash==='#details')requestAnimationFrame(()=>openDetails(false));
-$i('goFind').onclick=()=>{if(location.hash==='#details')history.replaceState(null,'',location.pathname+location.search);end(false)};/* V5.1 #9: quick fade, no zoom */
-addEventListener('keydown',function k(e){if(e.key==='Escape'&&!ended){if(dOpen){$i('detailsBack').click();return}end(true);removeEventListener('keydown',k)}});
+/* V13: approved intro. "Skip to live internship database" ends the intro; "Build my profile" sends the globe away and onboarding.js takes over. */
+$i('goFind').onclick=()=>end(false);
+window.__introEnd=(i)=>end(!!i);window.__introExit=()=>{if(ended)return;{const r=intro.querySelector('.globe-slot').getBoundingClientRect();intro.style.setProperty('--ox',(r.left+r.width/2)+'px');intro.style.setProperty('--oy',(r.top+r.height/2)+'px')}window.__gAct=performance.now()+900;intro.classList.add('exit');setTimeout(()=>{intro.classList.add('gone');intro.classList.remove('exit');stopLoop()},RM?0:820)};
+addEventListener('keydown',function k(e){if(e.key==='Escape'&&!ended&&!intro.classList.contains('gone')&&!intro.classList.contains('exit')){end(true);removeEventListener('keydown',k)}});
 /* ---------- DOM interactions: cursor glow, parallax, sky ripples, magnetic button ---------- */
 const glow=document.createElement('div');
 const P={mx:.5,my:.5,tx:.5,ty:.5};
+['pointermove','pointerdown','wheel'].forEach(t=>intro.addEventListener(t,()=>{window.__gAct=performance.now()},{passive:true}));
 intro.addEventListener('pointermove',e=>{P.tx=e.clientX/innerWidth;P.ty=e.clientY/innerHeight;glow.style.opacity=1});
 intro.addEventListener('pointerleave',()=>glow.style.opacity=0);
 false&&intro.addEventListener('click',e=>{if(e.target.closest('button,a,canvas,.cityprev'))return;const r=document.createElement('span');r.className='skyping';r.style.left=e.clientX+'px';r.style.top=e.clientY+'px';intro.appendChild(r);setTimeout(()=>r.remove(),1200)});
@@ -42,8 +32,8 @@ if(false){intro.addEventListener('pointermove',e=>{const r=mag.getBoundingClient
 const clouds=[...intro.querySelectorAll('.cloud')],stars=intro.querySelector('.stars');
 function domFrame(){}/* V5.1 #9: no parallax/glow/magnet — just the planet */
 /* count-up for the live counter once meta arrives */
-document.addEventListener('radar:meta',e=>{const el=intro.querySelector('.counter .hdrCount');if(!el||RM)return;const m=e.detail||{};const N=m.open||0,W=m.closing_this_week||0;const t0=performance.now();if(window.rollNum){el.innerHTML='<span class="mono"></span> open internships · <span class="mono"></span> closing this week';const s=el.querySelectorAll('.mono');rollNum(s[0],0);rollNum(s[1],0);requestAnimationFrame(()=>requestAnimationFrame(()=>{rollNum(s[0],N);rollNum(s[1],W)}));return}
- (function f(t){const k=Math.min(1,(t-t0)/1100),e2=1-Math.pow(1-k,3);el.textContent=`${Math.round(N*e2).toLocaleString()} open internships · ${Math.round(W*e2).toLocaleString()} closing this week`;if(k<1&&!ended)requestAnimationFrame(f)})(t0)});
+document.addEventListener('radar:meta',e=>{const el=$i('iN');if(!el)return;const N=(e.detail||{}).open||0;if(!N){el.textContent='';return}
+ if(window.rollNum&&!RM){el.textContent='';rollNum(el,0);requestAnimationFrame(()=>requestAnimationFrame(()=>rollNum(el,N)));return}el.textContent=N.toLocaleString()});
 /* ---------- reduced motion: static hero only ---------- */
 if(RM){intro.classList.add('static');return}
 /* ---------- WebGL planet ---------- */
@@ -92,14 +82,14 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
  const BOUND=1.14*1.04;let fitD=4,W=1,Hh=1,SL={cx:0,cy:0,s:1},Ctr={x:0,y:0};const tanV=Math.tan(camera.fov*Math.PI/360);
  // distance at which the halo-bounded sphere projects to radius rpx on a viewport of height Hh (exact for a sphere, includes FOV + aspect)
  const distFor=rpx=>BOUND/Math.sin(Math.atan(tanV*rpx/(Hh/2)));
- function fit(){W=Math.max(1,innerWidth);Hh=Math.max(1,innerHeight);const vv=window.visualViewport;if(vv){W=Math.round(vv.width);Hh=Math.round(vv.height)}
+ function fit(){window.__gAct=performance.now();W=Math.max(1,innerWidth);Hh=Math.max(1,innerHeight);const vv=window.visualViewport;if(vv){W=Math.round(vv.width);Hh=Math.round(vv.height)}
   renderer.setSize(W,Hh,false);camera.aspect=W/Hh;const r=slot.getBoundingClientRect();
   SL={cx:r.left+r.width/2,cy:r.top+r.height/2,s:Math.max(40,Math.min(r.width,r.height)/2*.94)};
   fitD=distFor(SL.s);camera.updateProjectionMatrix();U.uScale.value=SL.s/230;const room=Math.min(SL.cx,W-SL.cx,SL.cy,Hh-SL.cy)*.96;S.zmax=Math.max(1,fitD/distFor(Math.max(SL.s,room)));S.zt=Math.min(S.zt,S.zmax)}
  function frameCenter(k){/* k=0: centered in the slot; k=1: centered in the viewport (final zoom-in) */const cx=SL.cx+(W/2-SL.cx)*k,cy=SL.cy+(Hh/2-SL.cy)*k;camera.setViewOffset(W,Hh,W/2-cx,Hh/2-cy,W,Hh);Ctr.x=cx;Ctr.y=cy}
  new ResizeObserver(fit).observe(document.documentElement);addEventListener('resize',fit);window.visualViewport?.addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeout(fit,250));
  /* state */
- const S={rx:.32,ry:1.0,vx:0,vy:.05,tiltX:0,tiltY:0,tvx:0,tvy:0,zoom:1,zt:1,drag:null,idle:true,phase:'idle',t0:0,camK:0,zmax:1,ctr:0};fit();
+ const S={rx:.32,ry:+(Q.get('ry')||1.0),vx:0,vy:0,tiltX:0,tiltY:0,tvx:0,tvy:0,zoom:1,zt:1,drag:null,idle:true,phase:'idle',t0:0,camK:0,zmax:1,ctr:0};fit();
  /* pointer: drag with inertia, wheel/pinch zoom within limits, hover tooltip, click a city */
  const tip=document.createElement('div');tip.className='gtip';wrap.appendChild(tip);const pts=new Map();let lastMove=0,downAt=null;
  cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});downAt={x:e.clientX,y:e.clientY,t:performance.now()};S.drag={x:e.clientX,y:e.clientY};S.vx=S.vy=0});
@@ -144,8 +134,8 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
   const fps=fr.length/(s/1000),tgt=TIERS[qi].fps;if(fps<tgt*.8&&qi<TIERS.length-1){qi++;lastStep=now;fr=[];applyTier()}else if(fps>tgt*.97&&qi>0&&now-lastStep>(TIERS[qi-1].fps>tgt?12000:6000)){qi--;lastStep=now;fr=[];applyTier()}}
  const dead=false;
  let raf,last=performance.now(),shown=false;
- function frame(now){raf=requestAnimationFrame(frame);if(TIERS[qi].fps<60&&now-lastDraw<31)return;lastDraw=now;const dt=Math.min(80,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;U.uTime.value=now/1000;domFrame();
-  if(S.phase==='idle'){if(!S.drag){S.ry+=(S.vy+.06)*s;S.rx=Math.max(-1.1,Math.min(1.1,S.rx+S.vx*s));const k=Math.pow(.05,s);S.vx*=k;S.vy=S.vy*k}
+ function frame(now){raf=requestAnimationFrame(frame);if(TIERS[qi].fps<60&&now-lastDraw<31)return;lastDraw=now;const dt=Math.min(80,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;if(S.phase==='idle'&&!S.drag&&shown&&Math.abs(S.vy)<2e-4&&Math.abs(S.vx)<2e-4&&now-(window.__gAct||0)>700&&!intro.classList.contains('exit'))return;/* V13: globe stands still, so only render when something changes */U.uTime.value=now/1000;domFrame();
+  if(S.phase==='idle'){if(!S.drag){S.ry+=S.vy*s;S.rx=Math.max(-1.1,Math.min(1.1,S.rx+S.vx*s));const k=Math.pow(.05,s);S.vx*=k;S.vy=S.vy*k}
    S.zoom+=(S.zt-S.zoom)*(1-Math.pow(.004,s))}
   else{const t=(now-S.t0)/1000/SLOW;const a=ease(clamp(t/.6));S.rx=S.from.rx+(S.to.rx-S.from.rx)*a;S.ry=S.from.ry+(S.to.ry-S.from.ry)*a;S.tiltX*=.9;S.tiltY*=.9;
    

@@ -1,3 +1,5 @@
+"""SUPERSEDED in V13: the intro Details screen was replaced by the V13 intro + onboarding (see test_v13.py)."""
+import sys;print("SKIP | V7 Details screen removed in V13");sys.exit(0)
 # V7 Details screen: open/close via button, Esc, browser back, #details deep link; fps during the transition; screenshots v7-*.png
 import json,sys;from playwright.sync_api import sync_playwright
 B=sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8800/';R={}

@@ -40,6 +40,6 @@ window.quickSearch=qs;
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();qs()}});
 /* ---- intro ticker: a read-only copy of the real Exchange ticker ---- */
 const tr=$('tkTrack'),it=$('iTkTrack');
-if(tr&&it)new MutationObserver(()=>{const box=$('iTk');if(!box||!it.isConnected)return;const src=[...tr.querySelectorAll('.tk-i:not([aria-hidden])')].slice(0,24);if(!src.length){box.hidden=true;return}
+if(tr&&it&&!it.dataset.v13)new MutationObserver(()=>{const box=$('iTk');if(!box||!it.isConnected)return;const src=[...tr.querySelectorAll('.tk-i:not([aria-hidden])')].slice(0,24);if(!src.length){box.hidden=true;return}
  const h=src.map(b=>`<span class="tk-i ${b.className.replace('tk-i','')}">${b.innerHTML}</span>`).join('');it.innerHTML=h+(RM?'':h);it.style.setProperty('--tk-dur',Math.max(40,src.length*5)+'s');box.hidden=false}).observe(tr,{childList:true});
 })();

@@ -1,45 +1,36 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache, max-age=300"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; worker-src 'self' blob: https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; form-action 'self' https://github.com"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<script>/* V12 build + version check: if a newer build is live, reload once past the HTML cache */window.BUILD='91d49753e0';self.BV='?v='+window.BUILD;(function(){var u=new URL(location.href);if(u.searchParams.has('_b')){u.searchParams.delete('_b');history.replaceState(null,'',u.pathname+u.search+u.hash)}fetch('version.json?ts='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.build||j.build===window.BUILD)return;var k='ir_reload_'+j.build;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1')}catch(e){return}var n=new URL(location.href);n.searchParams.set('_b',j.build);location.replace(n.href)}).catch(function(){})})()</script>
+<script>/* V12 build + version check: if a newer build is live, reload once past the HTML cache */window.BUILD='ea0327db06';self.BV='?v='+window.BUILD;(function(){var u=new URL(location.href);if(u.searchParams.has('_b')){u.searchParams.delete('_b');history.replaceState(null,'',u.pathname+u.search+u.hash)}fetch('version.json?ts='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.build||j.build===window.BUILD)return;var k='ir_reload_'+j.build;try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1')}catch(e){return}var n=new URL(location.href);n.searchParams.set('_b',j.build);location.replace(n.href)}).catch(function(){})})()</script>
 <script>/* V11.1 theme before paint */try{var u=JSON.parse(localStorage.getItem("ir_ui")||"{}");if(u.theme!=="light")document.documentElement.classList.add("dark");if(u.cb)document.documentElement.classList.add("cb")}catch(e){}</script>
 <script>/* V5.2: the globe intro shows on every visit to the site root; deep links (#find, #tracker, #profile, ?q=…) skip it */(function(){var h=location.hash.replace(/^#/,""),q=new URLSearchParams(location.search);["intro","gl","aa"].forEach(function(k){q.delete(k)});if((h&&!/^(intro|details)$/.test(h))||[...q.keys()].length)document.documentElement.classList.add("seen")})()</script>
 <title>Intern Index · Every internship. Tracked. Matched. Free.</title>
 <meta name="description" content="Intern Index tracks every open US internship (plus the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get. Free, no login.">
 <meta property="og:title" content="Intern Index"><meta property="og:description" content="Every internship. Tracked. Matched. Free."><meta property="og:type" content="website"><meta property="og:url" content="https://tyfaucher24-ops.github.io/internship-radar/"><meta property="og:image" content="https://tyfaucher24-ops.github.io/internship-radar/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#5b46c9"><link rel="icon" href="assets/icon.svg?v=91d49753e0" type="image/svg+xml"><link rel="icon" href="favicon.ico?v=91d49753e0" sizes="32x32"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=91d49753e0"><link rel="canonical" href="https://tyfaucher24-ops.github.io/internship-radar/">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preload" href="assets/geist-latin.woff2?v=91d49753e0" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="theme.css?v=91d49753e0"><link rel="stylesheet" href="style.css?v=91d49753e0"><link rel="stylesheet" href="v4.css?v=91d49753e0"><link rel="stylesheet" href="v5.css?v=91d49753e0"></head>
+<meta name="theme-color" content="#5b46c9"><link rel="icon" href="assets/icon.svg?v=ea0327db06" type="image/svg+xml"><link rel="icon" href="favicon.ico?v=ea0327db06" sizes="32x32"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=ea0327db06"><link rel="canonical" href="https://tyfaucher24-ops.github.io/internship-radar/">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preload" href="assets/geist-latin.woff2?v=ea0327db06" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="theme.css?v=ea0327db06"><link rel="stylesheet" href="style.css?v=ea0327db06"><link rel="stylesheet" href="v4.css?v=ea0327db06"><link rel="stylesheet" href="v5.css?v=ea0327db06"><link rel="stylesheet" href="v13.css?v=ea0327db06"></head>
 <body class="booting">
 <!-- start page (first visit only; returning visitors never see it) -->
-<div id="intro" role="dialog" aria-modal="true" aria-labelledby="introH">
- <div class="sky" aria-hidden="true"><div class="sky-grad"></div><div class="stars"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div></div>
+<div id="intro" class="v13" role="dialog" aria-modal="true" aria-labelledby="introH">
+ <div class="skyg" aria-hidden="true"></div><div class="cl" aria-hidden="true" style="width:46vw;height:16vh;left:-10vw;bottom:4%"></div><div class="cl" aria-hidden="true" style="width:38vw;height:14vh;right:-8vw;bottom:16%"></div>
  <div class="globe-stage" aria-hidden="true"><canvas id="gl"></canvas></div>
-  <div class="hero">
+ <button type="button" id="obSkipAll" class="skipall" hidden>Skip setup →</button>
+ <div class="hero">
   <div class="hero-copy">
-   <p class="eyebrow"><span class="pulse"></span> Intern Index</p>
-   <h1 id="introH" class="hl">Every internship.<br>Tracked. Matched. Free.</h1>
+   <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Intern Index</p>
+   <h1 id="introH" class="hl">Every internship.<br>Live tracking.<br>Personalized insights.</h1>
    <p class="sub">We track every open US internship, flag the ones about to open, keep your applications in one place, and show the roles you can actually get.</p>
-   <p class="counter"><span class="pulse up" aria-hidden="true"></span><span class="hdrCount">Loading live counts…</span></p>
-   <div class="cta"><button id="goFind" class="cbtn primary" type="button">Find My Internship</button><button id="detailsBtn" class="cbtn ghost" type="button" aria-controls="details" aria-expanded="false">Details</button></div>
+   <p class="counter"><span class="dot" aria-hidden="true"></span><b class="iN" id="iN">&nbsp;</b> open internships right now</p>
+   <div class="cta"><button id="goBuild" class="btn pri" type="button">Build my profile</button><button id="goFind" class="btn gh" type="button">Skip to live internship database</button></div>
+   <p class="free"><i aria-hidden="true">✓</i> Free forever</p>
   </div>
-  <div class="globe-wrap globe-slot" aria-hidden="true"><div class="globe-ph"></div><div class="ping-css"></div></div>
+  <div class="globe-wrap globe-slot" aria-hidden="true"><div class="globe-ph"></div></div>
  </div>
- <div id="iTk" class="ticker itk" aria-hidden="true" hidden><span class="tk-lbl"><b><span class="pulse up"></span>Live</b></span><div class="tk-win"><div class="tk-track" id="iTkTrack"></div></div></div>
- <section id="details" class="details" aria-labelledby="detailsH" hidden>
-  <button id="detailsBack" class="d-back" type="button">← Back</button>
-  <h2 id="detailsH">What is Intern Index?</h2>
-  <ol class="d-steps">
-   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><div><b>Every internship</b><span>Thousands of real US internships, checked against company career sites. Last updated <span id="dUpd">recently</span>.</span></div></li>
-   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><b>Your match %</b><span>Add your resume and experience to see how well you fit each one.</span></div></li>
-   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span><div><b>Track everything</b><span>Save internships and track applications in one simple spreadsheet.</span></div></li>
-   <li><span class="d-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>100% free</b><span>No paywalls, ever.</span></div></li>
-  </ol>
-  <p class="d-count"><span class="pulse up" aria-hidden="true"></span><b id="dCount">…</b> open internships right now.</p>
-  <button id="dFind" class="cbtn primary" type="button">Find My Internship</button>
- </section>
+ <section id="obCard" class="obcard" role="region" aria-labelledby="obH" hidden></section>
+ <div id="iTk" class="iticker" aria-hidden="true" hidden><span class="lv"><span class="dot"></span>LIVE</span><div class="tk-win"><div class="tk-track" id="iTkTrack" data-v13="1"></div></div></div>
 </div>
 <a class="skiplink" href="#main">Skip to content</a>
 <header id="hdr" class="site-header"><div class="container hd">
- <a class="brand" href="./" aria-label="Intern Index home"><img src="assets/icon.svg?v=91d49753e0" alt="" width="32" height="32"><span>Intern Index</span></a>
+ <a class="brand" href="./" aria-label="Intern Index home"><img src="assets/icon.svg?v=ea0327db06" alt="" width="32" height="32"><span>Intern Index</span></a>
  <nav class="nav" aria-label="Main"><a href="#" data-go="db" data-t="db" class="on">Find</a><a href="#tracker" data-go="tracker" data-t="tracker">My Tracker <span class="nbadge" id="trkN"></span></a>
   <span class="pmenu"><a href="#profile" data-go="profile" data-t="profile">My Profile</a><button type="button" id="pmBtn" class="pm-btn" aria-label="Profile menu" aria-expanded="false" aria-controls="pmMenu">▾</button>
    <div id="pmMenu" class="pm" hidden><button type="button" id="uiTheme" aria-pressed="false">☾ Dark mode</button><button type="button" id="uiCb" aria-pressed="false">Colour-blind grades: Off</button><button type="button" id="uiQk" onclick="window.quickSearch&&quickSearch()">Quick search <kbd>Ctrl K</kbd></button><button type="button" id="exp">Export my data</button><label class="pm-imp" tabindex="0">Import my data<input type="file" id="imp" accept="application/json,.json" hidden></label><a href="admin.html">Admin</a></div></span></nav>
@@ -123,13 +114,13 @@
  <p>You can download everything with <b>Export my data</b> or delete it all with <b>Clear everything</b> on My Profile.</p></div></section>
 </main>
 <footer class="site-footer"><div class="container fgrid">
- <div><p class="brand"><img src="assets/icon.svg?v=91d49753e0" alt="" width="24" height="24"> Intern Index</p><p class="muted">Every internship. Tracked. Matched. Free.</p></div>
+ <div><p class="brand"><img src="assets/icon.svg?v=ea0327db06" alt="" width="24" height="24"> Intern Index</p><p class="muted">Every internship. Tracked. Matched. Free.</p></div>
  <nav aria-label="Footer"><a href="#about" data-go="about">About</a><a href="#contact" data-go="contact">Contact</a><a href="#privacy" data-go="privacy">Privacy</a></nav>
  <nav aria-label="More"><a href="#" id="addBtn">Add an internship</a><a href="#" id="seenBtn">I saw one elsewhere</a><a href="#" id="replay">Replay intro</a></nav>
 </div><div class="container fnote muted small">Free. No ads. No login. Every listing links to the company's own posting.</div></footer>
 <div id="drawer" class="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="dTitle"><div class="dpanel"><button class="x" id="dx" aria-label="Close">×</button><div id="dbody"></div></div></div>
 <div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <div id="tip" role="tooltip" hidden></div>
-<script src="store.js?v=91d49753e0"></script><script src="listing.js?v=91d49753e0"></script>
-<script src="resume.js?v=91d49753e0" defer></script><script src="matcher.js?v=91d49753e0" defer></script><script src="match-core.js?v=91d49753e0" defer></script><script src="lists.js?v=91d49753e0" defer></script><script src="combo.js?v=91d49753e0" defer></script><script src="ticker.js?v=91d49753e0" defer></script><script src="v111.js?v=91d49753e0" defer></script><script src="tracker.js?v=91d49753e0" defer></script><script src="app.js?v=91d49753e0" defer></script><script src="intro.js?v=91d49753e0" defer></script>
+<script src="store.js?v=ea0327db06"></script><script src="listing.js?v=ea0327db06"></script>
+<script src="resume.js?v=ea0327db06" defer></script><script src="matcher.js?v=ea0327db06" defer></script><script src="match-core.js?v=ea0327db06" defer></script><script src="lists.js?v=ea0327db06" defer></script><script src="combo.js?v=ea0327db06" defer></script><script src="ticker.js?v=ea0327db06" defer></script><script src="v111.js?v=ea0327db06" defer></script><script src="tracker.js?v=ea0327db06" defer></script><script src="app.js?v=ea0327db06" defer></script><script src="intro.js?v=ea0327db06" defer></script><script src="onboarding.js?v=ea0327db06" defer></script><script src="autopilot-core.js?v=ea0327db06" defer></script><script src="autopilot.js?v=ea0327db06" defer></script><script src="warmpath-core.js?v=ea0327db06" defer></script><script src="warmpath.js?v=ea0327db06" defer></script>
 </body></html>

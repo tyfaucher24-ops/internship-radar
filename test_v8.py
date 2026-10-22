@@ -13,7 +13,7 @@ with sync_playwright() as p:
   # ---------- BEGINNER (no profile) ----------
   pg.goto(B);pg.wait_for_timeout(1500)
   ok('Intro: no "Skip intro" button',pg.locator('#skipIntro').count()==0)
-  ok('Intro: Details button present',pg.is_visible('#detailsBtn'))
+  ok('Intro: V13 primary CTA present (Details screen superseded in V13)',pg.is_visible('#goBuild'))
   pg.click('#goFind');pg.wait_for_function('window._interactiveAt');pg.wait_for_timeout(800)
   ok('Beginner: first-visit tip shown',pg.is_visible('#firstTip'),pg.inner_text('#firstTip') if pg.locator('#firstTip').count() else '')
   pg.screenshot(path=SS+'v8-beginner-tip.png')
@@ -133,8 +133,8 @@ with sync_playwright() as p:
   # links
   for sel,want in [('.site-footer [data-go=about]','#about'),('.site-footer [data-go=contact]','#contact'),('.site-footer [data-go=privacy]','#privacy')]:
     pg.click(sel);W();ok(f'Link {want}',pg.evaluate('location.hash')==want)
-  ok('Link "How it works" -> Details screen',pg.get_attribute('#howBtn','href').endswith('#details'))
-  p3=ctx.new_page();p3.goto(B+'?intro=1#details');p3.wait_for_timeout(2500);ok('"How it works" opens the Details screen',p3.evaluate("!!document.getElementById('intro')&&document.getElementById('intro').classList.contains('details-on')"));p3.close()
+  ok('Link "How it works" -> About page (V13)',pg.get_attribute('#howBtn','href').endswith('#about'))
+  pass  # V13: Details screen removed; replaced by About page
   ok('Logo link returns to intro (href ./)',pg.get_attribute('a.logo,.brandlink,header a[href="./"]','href') in ('./','/'))
   # reset
   pg.click('[data-t=profile]');W();pg.click('#pfReset');pg.click('#rsYes');pg.wait_for_timeout(600);ok('Reset: back to Closing soonest, no grades',pg.evaluate("document.getElementById('sort').value")=='deadline' and pg.locator('.mbadge').count()==0)

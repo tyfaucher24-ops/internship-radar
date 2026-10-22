@@ -444,8 +444,8 @@ function glossaryHTML(){return`<dl class="glossary">${Object.entries(LISTS.TIPS)
 function firstTip(){const pr=Store.get('prefs',{});if(pr.tipDone||$('firstTip'))return;const d=document.createElement('div');d.id='firstTip';d.className='firsttip';d.setAttribute('role','note');
  d.innerHTML=`<span class="ft-i" aria-hidden="true">💡</span><p><b>New here?</b> Start by searching or filtering, save what you like, then add your profile for match %. <button type="button" class="link" id="ftTerms">What do the terms mean?</button></p><button type="button" class="ft-x" id="ftX" aria-label="Got it, dismiss tip">Got it</button>`;
  $('chips').closest('.chipsrow').before(d);$('ftX').onclick=()=>{Store.set('prefs',{...Store.get('prefs',{}),tipDone:1});d.remove()};$('ftTerms').onclick=()=>openModal(`<h2>Internship terms, in plain English</h2>${glossaryHTML()}`)}
-/* How it works -> the Details screen on the intro */
-(function(){const nav=document.querySelector('.site-footer nav[aria-label="Footer"]');if(nav&&!$('howBtn')){const a=document.createElement('a');a.href='./?intro=1#details';a.id='howBtn';a.textContent='How it works';nav.prepend(a)}})();
+/* How it works -> About (V13: the intro Details screen was replaced by onboarding) */
+(function(){const nav=document.querySelector('.site-footer nav[aria-label="Footer"]');if(nav&&!$('howBtn')){const a=document.createElement('a');a.href='#about';a.dataset.go='about';a.id='howBtn';a.textContent='How it works';nav.prepend(a)}})();
 /* ---------- V8 advanced: shortcuts, share + saved filters ---------- */
 const SHORTCUTS=[['/','Jump to search'],['s','Save the open (or focused) internship'],['Esc','Close the drawer, panel or dialog'],['?','Show this list']];
 function shortcutsModal(){openModal(`<h2>Keyboard shortcuts</h2><table class="kbd">${SHORTCUTS.map(([k,t])=>`<tr><td><kbd>${esc(k)}</kbd></td><td>${esc(t)}</td></tr>`).join('')}</table>

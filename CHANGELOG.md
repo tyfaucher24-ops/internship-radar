@@ -1,6 +1,26 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V13 — New intro and onboarding, Deadline Autopilot, Warm-path finder (2026-10-22)
+- **Intro and onboarding** (matches `specs/ref/v13-intro`, the APPROVED INTRO section):
+  - New hero with the globe, a live open-internship counter from the real data, and a ticker built from `changes.json` (real added and closed postings).
+  - "Build my profile" runs a 5-step onboarding: resume, school/major/GPA/year, interests and locations, experience/athletics/clubs, then your real top matches.
+  - "Skip to live internship database" skips setup. The Details screen is removed, and "How it works" now links to About.
+  - The globe only redraws while it moves or you interact with it.
+- **Deadline Autopilot** (new page):
+  - Turn it on from a posting's detail view or from your onboarding matches.
+  - Reminders come from the deadline the posting states: 14, 7, 3 and 1 day before, plus the day itself. Rolling and no-deadline postings get check-in nudges.
+  - Reminders appear on this website (a nav badge and a toast). Browser notifications are optional, and permission is only asked when you click. You can export to your calendar (.ics).
+  - "Email reminders — coming soon" is shown disabled. Everything is saved on this device only.
+- **Warm-path finder**:
+  - A "Ways in" panel in each posting has plain LinkedIn search links you open yourself: alumni, the team, campus recruiters, past interns and the company.
+  - Intern Index never connects to LinkedIn or reads anything from it. A test asserts zero requests to linkedin.com.
+  - Add the people you find, keep a 300-character connection note for each one, and track their status on My Tracker → Outreach.
+- Tests:
+  - New: `test_v13.py` and `test/v13_core.test.js`.
+  - Updated: `test_v7`, `test_v8` and `test_v111`, where the Details screen and "no skip" checks no longer apply.
+- Screens and video: `ops/screens/v13-*.png`, `ops/screens/v13-intro.webm`.
+
 ## V12.1.2 — 2026-10-22
 - My Tracker: company names are centred horizontally and vertically in their cells, wrapped names included; the Company header is centred over the same span.
 - Mobile (≤640px): rebalanced the Company, Status and Closes widths so names wrap only between words and "Assessment (OA)" fits its status pill. No clipping and no horizontal scroll.

@@ -1,0 +1,46 @@
+"""V13: intro + onboarding, Deadline Autopilot, Warm-path finder. Saves ops/screens/v13-*.png and v13-intro.webm.
+Also asserts the website makes zero requests to linkedin.com (links are user-clicked only).
+Usage: python3 test_v13.py [BASE]"""
+import json,sys,os,glob,shutil
+from playwright.sync_api import sync_playwright
+B=next((a for a in sys.argv[1:] if a.startswith('http')),'http://localhost:8800/');R=[];S='ops/screens/'
+def ok(n,c,d=''):R.append(c);print(('PASS' if c else 'FAIL'),'|',n,'|',json.dumps(d))
+TY=dict(json.load(open('test/personas.json'))['ty_queens'],v=6,savedAt='2026-10-22T12:00:00Z')
+GL=['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']
+with sync_playwright() as p:
+    b=p.chromium.launch(args=GL);ctx=b.new_context(viewport={'width':1440,'height':900},bypass_csp=True,record_video_dir='/tmp/v13vid',record_video_size={'width':1440,'height':900})
+    pg=ctx.new_page();E=[];LI=[];pg.on('pageerror',lambda e:E.append(str(e)));pg.on('request',lambda r:'linkedin.com' in r.url and LI.append(r.url))
+    pg.goto(B+'?intro=1&gl=1');pg.wait_for_timeout(4500);pg.screenshot(path=S+'v13-intro.png')
+    ok('Intro: hero CTA + live counter',pg.is_visible('#goBuild') and pg.is_visible('#iN'))
+    ok('Intro: counter is a real number',pg.evaluate("+document.getElementById('iN').textContent.replace(/\\D/g,'')>0"))
+    ok('Intro: no app wording or banned words',not any(w in pg.inner_text('#intro').lower() for w in (' app ','scr'+'ape')))
+    pg.click('#goBuild');pg.wait_for_timeout(1700);pg.screenshot(path=S+'v13-onboard-1.png')
+    pg.click('[data-ob=next]');pg.wait_for_timeout(900)
+    pg.fill('#obSchool','Queens Univ');pg.wait_for_timeout(600);pg.click('#obSL li');pg.fill('#obMajor','Finance');pg.fill('#obGpa','3.9');pg.click('[data-year="2029"]');pg.screenshot(path=S+'v13-onboard-2.png')
+    pg.click('[data-ob=next]');pg.wait_for_timeout(900);pg.click('[data-int="Investment Banking"]');pg.click('[data-loc="Charlotte, NC"]');pg.screenshot(path=S+'v13-onboard-3.png')
+    pg.click('[data-ob=next]');pg.wait_for_timeout(900);pg.fill('#obExp','Queens Investment Club · Analyst');pg.press('#obExp','Enter');pg.click('[data-ath="NCAA Division I Athlete"]');pg.screenshot(path=S+'v13-onboard-4.png')
+    pg.click('[data-ob=next]');pg.wait_for_timeout(4500);pg.screenshot(path=S+'v13-onboard-5.png')
+    ok('Onboarding: profile saved',pg.evaluate("(()=>{const p=JSON.parse(localStorage.getItem('idr_profile')||'{}');return !!p.savedAt&&p.school==='Queens University of Charlotte'})()"))
+    pg.click('[data-ob=all]');pg.wait_for_timeout(2000);pg.screenshot(path=S+'v13-matches.png')
+    ok('After onboarding: graded cards',pg.locator('.card .mbadge').count()>0)
+    pg.close();ctx.close()
+    v=glob.glob('/tmp/v13vid/*.webm')
+    if v:shutil.move(max(v,key=os.path.getmtime),S+'v13-intro.webm');shutil.rmtree('/tmp/v13vid',ignore_errors=True)
+    ok('Video saved',os.path.exists(S+'v13-intro.webm'))
+    pg=b.new_page(viewport={'width':1440,'height':900},bypass_csp=True);pg.on('pageerror',lambda e:E.append(str(e)));pg.on('request',lambda r:'linkedin.com' in r.url and LI.append(r.url))
+    pg.goto(B);pg.evaluate("p=>{localStorage.clear();localStorage.setItem('idr_profile',JSON.stringify(p))}",TY);pg.reload();pg.click('#goFind')
+    pg.wait_for_selector('.card .mbadge',timeout=60000);pg.wait_for_timeout(800)
+    pg.click('.card >> nth=1');pg.wait_for_selector('[data-apadd]',timeout=10000);pg.wait_for_timeout(500);pg.click('[data-apadd]');pg.wait_for_timeout(300)
+    ok('Drawer: Ways-in links are plain external links',pg.evaluate("[...document.querySelectorAll('#wpPanel a[href*=linkedin]')].every(a=>a.target==='_blank'&&a.rel.includes('noopener'))&&document.querySelectorAll('#wpPanel a[href*=linkedin]').length>=4"))
+    pg.click('#wpPanel summary');pg.fill('#wpForm [name=name]','Ann Lee');pg.fill('#wpForm [name=how]','Queens alum');pg.click('#wpForm button');pg.wait_for_timeout(400)
+    pg.evaluate("document.getElementById('wpPanel').scrollIntoView()");pg.screenshot(path=S+'v13-warmpath.png')
+    pg.keyboard.press('Escape');pg.wait_for_timeout(400);pg.click('#apTab');pg.wait_for_timeout(700);pg.screenshot(path=S+'v13-autopilot.png')
+    ok('Autopilot: item listed',pg.locator('#t-autopilot .ap-row').count()>=1)
+    ok('Autopilot: email toggle disabled, coming soon',pg.evaluate("(()=>{const i=document.querySelector('.ap-email input');return !!i&&i.disabled&&/coming soon/i.test(document.querySelector('.ap-email').textContent)})()"))
+    pg.goto(B+'#outreach');pg.wait_for_timeout(3000);pg.screenshot(path=S+'v13-outreach.png')
+    ok('Outreach: contact persisted',pg.locator('text=Ann Lee').count()>=1)
+    pg.set_viewport_size({'width':390,'height':844});pg.goto(B+'?intro=1&gl=1');pg.wait_for_timeout(3500);pg.screenshot(path=S+'v13-intro-mobile.png')
+    ok('Mobile: no horizontal overflow',pg.evaluate("document.documentElement.scrollWidth<=innerWidth+1"))
+    ok('Zero requests to linkedin.com',not LI,LI[:3]);ok('No page errors',not E,E[:3])
+    b.close()
+print(f'{sum(R)}/{len(R)} passed');sys.exit(0 if all(R) else 1)

@@ -1,0 +1,10 @@
+const A=require('../autopilot-core.js'),W=require('../warmpath-core.js');let f=0;const ok=(n,c)=>{console.log((c?'PASS':'FAIL')+' | '+n);if(!c)f++};
+const now='2026-10-01T12:00:00';
+const s=A.plan({id:'a',company:'Acme',title:'Analyst',deadline:'2026-10-30'},now,now);ok('stated plan',s.kind==='stated'&&s.steps.length>=4);
+ok('rolling plan',A.plan({id:'b',company:'Acme',title:'X',rolling:true},now,now).kind!=='stated');
+ok('unknown plan',['unknown','rolling'].includes(A.plan({id:'c',company:'Acme',title:'X'},now,now).kind));
+const ics=A.ics([{x:{id:'a',company:'Acme, Inc;',title:'Analyst',deadline:'2026-10-30'},p:s}]);ok('ics calendar',typeof ics==='string'&&/BEGIN:VCALENDAR/.test(ics));
+const L=W.links({company:'Citi',title:'Internal Audit Summer Analyst'},{school:'Queens University of Charlotte'});
+ok('links only linkedin.com search URLs',L.length>=4&&L.every(l=>/^https:\/\/www\.linkedin\.com\//.test(l.url)));
+const n=W.note({company:'Citi',title:'A very long internship title '.repeat(6)},{school:'Queens University of Charlotte',major:'Finance'},{name:'Ann Lee'});ok('note <=300',n.length<=300&&/Ann/.test(n));
+process.exit(f?1:0);

@@ -659,3 +659,6 @@ body.graded .grow{height:270px}body.graded .card{height:270px}
 
 /* V12 grade breakdown */
 .fbp-bd{width:100%;border-collapse:collapse;margin:8px 0 2px;font-size:var(--fs-s,13px)}.fbp-bd th{text-align:left;font-weight:700;padding:4px 8px 4px 0;white-space:nowrap;vertical-align:top;color:var(--c-x1d1b3a)}.fbp-bd td{padding:4px 0;vertical-align:top;color:var(--c-x2b2a3f);line-height:1.4}.fbp-bv{width:64px;padding-right:8px!important}.fbp-bar{display:block;height:6px;margin-top:6px;border-radius:3px;background:linear-gradient(90deg,var(--c-x2e9d62) var(--w),var(--c-line) var(--w))}
+
+/* V12 description summary */
+.dsum{margin:0 0 10px;padding-left:18px;line-height:1.5}.dsum li{margin:2px 0}.fulldesc>summary{cursor:pointer;font-weight:600;color:var(--c-x4f46e5,#4f46e5);font-size:13px;padding:4px 0;list-style:none}.fulldesc>summary::-webkit-details-marker{display:none}.fulldesc>summary::before{content:'▸ '}.fulldesc[open]>summary::before{content:'▾ '}.fulldesc[open]>summary{margin-bottom:6px}

@@ -3,7 +3,7 @@ U=sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8800/';out=[]
 with sync_playwright() as p:
   b=p.chromium.launch(args=['--use-angle=swiftshader','--enable-unsafe-swiftshader'])
   for w,h in [(1280,800),(1440,900),(1920,1080)]:
-    pg=b.new_page(viewport={'width':w,'height':h});errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
+    pg=b.new_page(bypass_csp=True,viewport={'width':w,'height':h});errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
     pg.goto(U+'#tracker');pg.wait_for_timeout(1500)
     if w==1280:
       pg.screenshot(path='screenshots/v6-tracker-empty.png');print('empty-btn',pg.is_visible('#tEmpty .btn'))

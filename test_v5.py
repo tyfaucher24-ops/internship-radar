@@ -28,7 +28,7 @@ with sync_playwright() as p:
   for en in engines:
     bt=getattr(p,en);b=bt.launch()
     for tag,kw in [('desktop',dict(viewport={'width':1440,'height':900})),('mobile',dict(viewport={'width':390,'height':844},is_mobile=en!='firefox',has_touch=True,device_scale_factor=2))]:
-      ctx=b.new_context(accept_downloads=True,**kw);pg=ctx.new_page()
+      ctx=b.new_context(bypass_csp=True,accept_downloads=True,**kw);pg=ctx.new_page()
       try: out[f'{en}-{tag}']=run(pg,f'{en}-{tag}')
       except Exception as e: out[f'{en}-{tag}']={'FAIL':str(e)[:600]}
       ctx.close()

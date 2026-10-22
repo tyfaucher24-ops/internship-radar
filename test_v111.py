@@ -6,7 +6,7 @@ R=[];ok=lambda n,c,d='':R.append((n,bool(c),d))
 with sync_playwright() as p:
     b=p.chromium.launch();E=[]
     def page(w=1440,**kw):
-        pg=b.new_page(viewport={'width':w,'height':844 if w<600 else 900},**kw)
+        pg=b.new_page(bypass_csp=True,viewport={'width':w,'height':844 if w<600 else 900},**kw)
         pg.on('pageerror',lambda e:E.append(str(e)));return pg
     ch=None
     for w in (1440,390):

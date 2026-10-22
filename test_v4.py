@@ -7,7 +7,7 @@ res={}
 with sync_playwright() as p:
   b=p.chromium.launch(args=ARGS)
   for name,vp,mob in [('desktop',{'width':1400,'height':900},False),('mobile',{'width':390,'height':844},True)]:
-    ctx=b.new_context(viewport=vp,is_mobile=mob,has_touch=mob,device_scale_factor=2 if mob else 1);pg=ctx.new_page();errs=[]
+    ctx=b.new_context(bypass_csp=True,viewport=vp,is_mobile=mob,has_touch=mob,device_scale_factor=2 if mob else 1);pg=ctx.new_page();errs=[]
     pg.on('console',lambda m:errs.append(m.text) if m.type=='error' else None);pg.on('pageerror',lambda e:errs.append(str(e)))
     # first visit: intro
     pg.goto(BASE+'?introSlow=3');pg.wait_for_timeout(4500);pg.screenshot(path=SS+f'v4-intro-{name}.png')

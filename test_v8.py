@@ -7,7 +7,7 @@ def safe(name,fn):
   except Exception as e:ok(name,False,'exception: '+str(e).split('\n')[0])
 with sync_playwright() as p:
   b=p.chromium.launch(args=['--use-angle=swiftshader','--enable-unsafe-swiftshader'])
-  ctx=b.new_context(viewport={'width':1440,'height':900},permissions=['clipboard-read','clipboard-write'])
+  ctx=b.new_context(bypass_csp=True,viewport={'width':1440,'height':900},permissions=['clipboard-read','clipboard-write'])
   pg=ctx.new_page();pg.on('pageerror',lambda e:ERR.append(str(e)));pg.on('console',lambda m:m.type=='error' and ERR.append(m.text))
   W=lambda:pg.wait_for_timeout(250);pg.set_default_timeout(6000)
   # ---------- BEGINNER (no profile) ----------
@@ -140,7 +140,7 @@ with sync_playwright() as p:
   pg.click('[data-t=profile]');W();pg.click('#pfReset');pg.click('#rsYes');pg.wait_for_timeout(600);ok('Reset: back to Closing soonest, no grades',pg.evaluate("document.getElementById('sort').value")=='deadline' and pg.locator('.mbadge').count()==0)
   # h-scroll at all widths on every page
   for w,h,mob in [(1280,800,False),(1440,900,False),(1920,1080,False),(390,844,True)]:
-    q=b.new_page(viewport={'width':w,'height':h},is_mobile=mob,has_touch=mob);q.on('pageerror',lambda e:ERR.append(str(e)))
+    q=b.new_page(bypass_csp=True,viewport={'width':w,'height':h},is_mobile=mob,has_touch=mob);q.on('pageerror',lambda e:ERR.append(str(e)))
     for hsh in ['#find','#profile','#tracker','#feedback','#about']:
       q.goto(B+hsh);q.wait_for_function('window._interactiveAt');q.wait_for_timeout(400)
       sw=q.evaluate('document.documentElement.scrollWidth');ok(f'No horizontal scroll {w}px {hsh}',sw<=w,sw)

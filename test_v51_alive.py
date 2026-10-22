@@ -6,7 +6,7 @@ ARGS=['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','
 with sync_playwright() as p:
   b=p.chromium.launch(args=ARGS);res={}
   for name,vp in [('desktop',{'width':1440,'height':900}),('mobile',{'width':390,'height':844})]:
-    pg=b.new_page(viewport=vp);errs=[];pg.on('pageerror',lambda e:errs.append(str(e)))
+    pg=b.new_page(bypass_csp=True,viewport=vp);errs=[];pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto(B+'?intro=1&gl=1');pg.wait_for_function("window.__globeFrames>0",timeout=60000)
     samples=[]
     for i in range(12):

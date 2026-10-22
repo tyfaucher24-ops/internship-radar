@@ -5,7 +5,7 @@ SH=sys.argv[2] if len(sys.argv)>2 else 'screenshots/v2-step2-'
 with sync_playwright() as p:
     b=p.chromium.launch();E=[]
     def watch(pg,t):pg.on('pageerror',lambda e:E.append(t+' '+str(e)));pg.on('console',lambda m:m.type=='error' and E.append(t+' console '+m.text))
-    c=b.new_context(viewport={'width':1440,'height':900},accept_downloads=True);pg=c.new_page();watch(pg,'desk')
+    c=b.new_context(bypass_csp=True,viewport={'width':1440,'height':900},accept_downloads=True);pg=c.new_page();watch(pg,'desk')
     # seed legacy-shaped tracker to test migration
     pg.goto(U);pg.evaluate("localStorage.idr_tracker=JSON.stringify({'999999':'Applied'})");pg.reload();pg.wait_for_selector('#stats div')
     print('migrated',pg.evaluate("localStorage.idr_tracker")[:120]);pg.evaluate("localStorage.removeItem('idr_tracker')");pg.reload();pg.wait_for_selector('#stats div')
@@ -29,7 +29,7 @@ with sync_playwright() as p:
     print('ics events',ics.count('BEGIN:VEVENT'),'crlf',ics.count('\r\n')==ics.count('\n'))
     pg.click('#tl');pg.screenshot(path=SH+'list.png');print('list rows',pg.locator('#tList tbody tr').count())
     # mobile touch drag
-    m=b.new_context(viewport={'width':390,'height':844},device_scale_factor=2,is_mobile=True,has_touch=True);mp=m.new_page();watch(mp,'mob')
+    m=b.new_context(bypass_csp=True,viewport={'width':390,'height':844},device_scale_factor=2,is_mobile=True,has_touch=True);mp=m.new_page();watch(mp,'mob')
     mp.goto(U);mp.wait_for_selector('#stats div');mp.evaluate(f"localStorage.idr_tracker={repr(pg.evaluate('localStorage.idr_tracker'))}");mp.goto(U+'#tracker');mp.reload();mp.wait_for_selector('.acard')
     g=mp.locator('.col[data-status=Saved] .grip').first;gb=g.bounding_box();t=mp.locator('.col[data-status=Applied]').bounding_box()
     cdp=m.new_cdp_session(mp)

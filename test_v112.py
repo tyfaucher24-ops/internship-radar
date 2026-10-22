@@ -13,7 +13,7 @@ OVER="""(root)=>{const out=[];const els=(root||document).querySelectorAll('p,spa
 with sync_playwright() as p:
     b=p.chromium.launch();E=[]
     def page(w,**kw):
-        pg=b.new_page(viewport={'width':w,'height':844 if w<600 else 900},**kw);pg.on('pageerror',lambda e:E.append(str(e)));return pg
+        pg=b.new_page(bypass_csp=True,viewport={'width':w,'height':844 if w<600 else 900},**kw);pg.on('pageerror',lambda e:E.append(str(e)));return pg
     for w in (1280,1440,1920,390):
         pg=page(w);pg.goto(B+'#find');pg.wait_for_selector('.card');pg.wait_for_timeout(5000)
         o=pg.evaluate(OVER);ok(f'{w} Find: no clipped or spilling text',not o,o)

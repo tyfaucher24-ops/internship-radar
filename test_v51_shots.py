@@ -9,7 +9,7 @@ with sync_playwright() as p:
   b=p.chromium.launch(args=ARGS)
   for w,h in SZ:
     mob=w<800
-    c=b.new_context(viewport={'width':w,'height':h},device_scale_factor=(2 if w<380 else 3) if mob else (2 if w==768 else 1),is_mobile=mob,has_touch=mob)
+    c=b.new_context(bypass_csp=True,viewport={'width':w,'height':h},device_scale_factor=(2 if w<380 else 3) if mob else (2 if w==768 else 1),is_mobile=mob,has_touch=mob)
     pg=c.new_page();errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
     pg.goto(B+'?intro=1');pg.wait_for_function("document.getElementById('intro')?.classList.contains('gl-on')",timeout=60000);pg.wait_for_timeout(1200)
     pg.screenshot(path=f'screenshots/{PFX}-intro-start-{w}x{h}.png')

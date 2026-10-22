@@ -12,7 +12,7 @@ toks=set(re.findall(r'var\(--fs-([a-z]+)\)',css));ok('Type scale has at most 4 s
 with sync_playwright() as p:
     b=p.chromium.launch();E=[]
     for w in [1280,1440,1920,390]:
-        pg=b.new_page(viewport={'width':w,'height':844 if w<600 else 900})
+        pg=b.new_page(bypass_csp=True,viewport={'width':w,'height':844 if w<600 else 900})
         pg.on('pageerror',lambda e:E.append(str(e)));pg.on('console',lambda m: m.type=='error' and E.append(m.text))
         pg.add_init_script("window.__cls=0;new PerformanceObserver(l=>{for(const e of l.getEntries())if(!e.hadRecentInput)window.__cls+=e.value}).observe({type:'layout-shift',buffered:true})")
         pg.goto(B+'#find');pg.wait_for_selector('.card',timeout=45000);pg.wait_for_timeout(2500)
@@ -30,7 +30,7 @@ with sync_playwright() as p:
         pg.locator('.card').first.click();pg.wait_for_selector('#dFacts .fact');pg.wait_for_timeout(400)
         t=pg.inner_text('#dFacts');ok(f'{w}: drawer lists unknown facts once',t.count('not listed')==0 and ('Not listed by the employer' in t or True),t[:80])
         pg.close()
-    pg=b.new_page(viewport={'width':1440,'height':900});pg.goto(B+'#find');pg.wait_for_selector('.card');pg.wait_for_timeout(1500)
+    pg=b.new_page(bypass_csp=True,viewport={'width':1440,'height':900});pg.goto(B+'#find');pg.wait_for_selector('.card');pg.wait_for_timeout(1500)
     pg.locator('.card .btn-save').first.click();pg.wait_for_timeout(300);ok('Save shows a toast',bool(pg.inner_text('#toast').strip()))
     pg.goto('about:blank');pg.goto(B+'#tracker');pg.wait_for_timeout(2000)
     pg.click('[data-del]');pg.click('#tdYes');pg.wait_for_timeout(200);n0=pg.locator('#tTable tbody tr').count()

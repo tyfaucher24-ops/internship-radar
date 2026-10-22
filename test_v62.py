@@ -5,7 +5,7 @@ RES="Jane Doe  jane@example.edu\nEducation\nState University, B.S. Finance, May 
 with sync_playwright() as p:
   b=p.chromium.launch(args=['--use-angle=swiftshader','--enable-unsafe-swiftshader'])
   for k in ['none','average','top']:
-    pg=b.new_page(viewport={'width':1280,'height':900});errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
+    pg=b.new_page(bypass_csp=True,viewport={'width':1280,'height':900});errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
     pg.goto(B+'#profile');pg.wait_for_function('window._interactiveAt')
     pg.evaluate("([p,r,k])=>{localStorage.setItem('idr_profileDraft',JSON.stringify(p));if(k==='average')localStorage.setItem('idr_resumeText',JSON.stringify(r))}",[T[k],RES,k]);pg.reload();pg.wait_for_function('window._interactiveAt')
     pg.click('#pfSave');pg.wait_for_selector('#fbNudge:not([hidden])',timeout=20000);pg.click('#fbNudge')

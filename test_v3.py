@@ -6,7 +6,7 @@ ARGS=['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','
 with sync_playwright() as p:
     b=p.chromium.launch(args=ARGS);E=[]
     def watch(pg,t):pg.on('pageerror',lambda e:E.append(t+' '+str(e)));pg.on('console',lambda m:m.type=='error' and E.append(t+' console '+m.text))
-    c=b.new_context(viewport={'width':1440,'height':900});pg=c.new_page();watch(pg,'desk')
+    c=b.new_context(bypass_csp=True,viewport={'width':1440,'height':900});pg=c.new_page();watch(pg,'desk')
     pg.goto(U);fcp=pg.evaluate("new Promise(r=>{const f=()=>{const e=performance.getEntriesByName('first-contentful-paint')[0];e?r(e.startTime):setTimeout(f,50)};f()})")
     print('FCP ms',round(fcp))
     pg.wait_for_function("document.getElementById('cY').textContent!=='…'");pg.wait_for_timeout(1000)
@@ -23,7 +23,7 @@ with sync_playwright() as p:
     pg.mouse.move(10,10);pg.evaluate("window.scrollTo(0,900)");pg.wait_for_timeout(1200);pg.screenshot(path=SH+'features.png');pg.evaluate("window.scrollTo(0,0)");pg.wait_for_timeout(300)
     pg.evaluate("window._t0=performance.now();new MutationObserver(()=>{if(document.body.classList.contains('app-mode')&&!window._t1)window._t1=performance.now()-window._t0}).observe(document.body,{attributes:true})");pg.click('#goFind');t0=time.time()
     pg.wait_for_selector('body.app-mode');print('in-page intro ms',round(pg.evaluate('window._t1')))
-    s=b.new_page(viewport={'width':1440,'height':900});watch(s,'slow');s.goto(U+'?introSlow=8');s.wait_for_function('Landing.has3d()',timeout=30000);s.wait_for_timeout(2500)
+    s=b.new_page(bypass_csp=True,viewport={'width':1440,'height':900});watch(s,'slow');s.goto(U+'?introSlow=8');s.wait_for_function('Landing.has3d()',timeout=30000);s.wait_for_timeout(2500)
     s.evaluate("window._s=performance.now();Landing.startIntro()")
     for ms,name in [(450,'anim1-rotate'),(800,'anim2-ping'),(1250,'anim3-sweep'),(1900,'anim4-zoom')]:
         s.wait_for_function(f"performance.now()-window._s>={ms*8}",timeout=60000,polling=50);s.screenshot(path=SH+name+'.png')
@@ -41,11 +41,11 @@ with sync_playwright() as p:
     p3.goto(U);p3.wait_for_function("Landing.has3d()",timeout=20000);p3.wait_for_selector('.gdot');p3.wait_for_timeout(1500)
     print('gold',p3.locator('.gdot.strong').count(),'teal',p3.locator('.gdot.real').count());p3.evaluate("Landing.startIntro()");p3.wait_for_timeout(2700);p3.screenshot(path=SH+'matches-glow.png')
     # mobile
-    m=b.new_context(viewport={'width':390,'height':844},device_scale_factor=2,is_mobile=True,has_touch=True);mp=m.new_page();watch(mp,'mob')
+    m=b.new_context(bypass_csp=True,viewport={'width':390,'height':844},device_scale_factor=2,is_mobile=True,has_touch=True);mp=m.new_page();watch(mp,'mob')
     mp.goto(U);print('mobile FCP',round(mp.evaluate("new Promise(r=>{const f=()=>{const e=performance.getEntriesByName('first-contentful-paint')[0];e?r(e.startTime):setTimeout(f,50)};f()})")))
     try: mp.wait_for_function("Landing.has3d()",timeout=20000)
     except: print('mobile no 3d')
     mp.wait_for_timeout(2500);mp.screenshot(path=SH+'mobile-landing.png');mp.tap('#goFind');mp.wait_for_timeout(1150);mp.screenshot(path=SH+'mobile-anim.png');mp.wait_for_selector('body.app-mode');mp.wait_for_timeout(700);mp.screenshot(path=SH+'mobile-results.png');print('mobile overflow',mp.evaluate('document.documentElement.scrollWidth'))
     # reduced motion
-    r=b.new_context(viewport={'width':1280,'height':800},reduced_motion='reduce');rp=r.new_page();watch(rp,'rm');rp.goto(U);rp.wait_for_timeout(1500);rp.evaluate("window._t0=performance.now();new MutationObserver(()=>{if(document.body.classList.contains('app-mode')&&!window._t1)window._t1=performance.now()-window._t0}).observe(document.body,{attributes:true})");rp.click('#goFind');rp.wait_for_selector('body.app-mode');print('reduced-motion in-page ms',round(rp.evaluate('window._t1')),'3d',rp.evaluate('Landing.has3d()'));rp.wait_for_timeout(500);rp.screenshot(path=SH+'reduced-motion.png')
+    r=b.new_context(bypass_csp=True,viewport={'width':1280,'height':800},reduced_motion='reduce');rp=r.new_page();watch(rp,'rm');rp.goto(U);rp.wait_for_timeout(1500);rp.evaluate("window._t0=performance.now();new MutationObserver(()=>{if(document.body.classList.contains('app-mode')&&!window._t1)window._t1=performance.now()-window._t0}).observe(document.body,{attributes:true})");rp.click('#goFind');rp.wait_for_selector('body.app-mode');print('reduced-motion in-page ms',round(rp.evaluate('window._t1')),'3d',rp.evaluate('Landing.has3d()'));rp.wait_for_timeout(500);rp.screenshot(path=SH+'reduced-motion.png')
     print('ERRORS',E)

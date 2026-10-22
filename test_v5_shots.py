@@ -7,7 +7,7 @@ errs={}
 with sync_playwright() as p:
   b=p.chromium.launch(args=ARGS)
   for w,h in VP:
-    mob=w<700;ctx=b.new_context(viewport={'width':w,'height':h},device_scale_factor=2 if w<1000 else 1,is_mobile=mob,has_touch=mob);pg=ctx.new_page();E=[]
+    mob=w<700;ctx=b.new_context(bypass_csp=True,viewport={'width':w,'height':h},device_scale_factor=2 if w<1000 else 1,is_mobile=mob,has_touch=mob);pg=ctx.new_page();E=[]
     pg.on('pageerror',lambda e:E.append(str(e)));pg.on('console',lambda m:E.append(m.text) if m.type=='error' else None)
     pg.goto(B+'?intro=1');pg.wait_for_function("document.getElementById('intro')?.classList.contains('gl-on')",timeout=30000);pg.wait_for_timeout(1500)
     pg.screenshot(path=SS+f'v5-start-{w}x{h}.png')

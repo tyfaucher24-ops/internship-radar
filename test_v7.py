@@ -5,7 +5,7 @@ FPS="""()=>new Promise(r=>{let n=0,t0=performance.now(),last=t0,worst=0;function
 with sync_playwright() as p:
   b=p.chromium.launch(args=['--use-angle=swiftshader','--enable-unsafe-swiftshader','--ignore-gpu-blocklist'])
   for name,vp,mob in [('desktop',{'width':1440,'height':900},False),('mobile',{'width':390,'height':844},True)]:
-    pg=b.new_page(viewport=vp,is_mobile=mob,has_touch=mob);errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
+    pg=b.new_page(bypass_csp=True,viewport=vp,is_mobile=mob,has_touch=mob);errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:m.type=='error' and errs.append(m.text))
     pg.goto(B);pg.wait_for_timeout(4500);r={'skip_gone':pg.locator('#skipIntro').count()==0,'gl_on':pg.evaluate("document.getElementById('intro').classList.contains('gl-on')")}
     r['idle_fps']=pg.evaluate(FPS)
     pg.click('#detailsBtn');pg.evaluate('f=>{window._fp=(eval(f))()}',FPS);pg.wait_for_timeout(50);r['transition_fps']=pg.evaluate('window._fp')
@@ -18,5 +18,5 @@ with sync_playwright() as p:
     pg.goto('about:blank');pg.goto(B+'#details');pg.wait_for_timeout(2500);r['deeplink_open']=pg.evaluate("!!document.getElementById('intro')&&document.getElementById('intro').classList.contains('details-on')")
     pg.click('#dFind');pg.wait_for_timeout(1200);r['find_ok']=[pg.evaluate("!document.getElementById('intro')"),pg.evaluate('location.hash')]
     r['errors']=errs;R[name]=r;pg.close()
-  pg=b.new_page(viewport={'width':1440,'height':900},reduced_motion='reduce');pg.goto(B);pg.wait_for_timeout(2000);pg.click('#detailsBtn');pg.wait_for_timeout(600);R['reduced_motion_open']=pg.evaluate("document.getElementById('intro').classList.contains('details-on')");pg.screenshot(path='screenshots/v7-details-reduced.png')
+  pg=b.new_page(bypass_csp=True,viewport={'width':1440,'height':900},reduced_motion='reduce');pg.goto(B);pg.wait_for_timeout(2000);pg.click('#detailsBtn');pg.wait_for_timeout(600);R['reduced_motion_open']=pg.evaluate("document.getElementById('intro').classList.contains('details-on')");pg.screenshot(path='screenshots/v7-details-reduced.png')
 print(json.dumps(R,indent=1))

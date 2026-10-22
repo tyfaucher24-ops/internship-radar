@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 U='http://localhost:8765/'
 with sync_playwright() as p:
     b=p.chromium.launch();E=[]
-    c=b.new_context(viewport={'width':1280,'height':860},accept_downloads=True);pg=c.new_page()
+    c=b.new_context(bypass_csp=True,viewport={'width':1280,'height':860},accept_downloads=True);pg=c.new_page()
     pg.on('pageerror',lambda e:E.append('pageerror '+str(e)));pg.on('console',lambda m:m.type=='error' and E.append('console '+m.text))
     pg.goto(U);pg.wait_for_selector('#stats div');pg.wait_for_timeout(300)
     print('stats',pg.inner_text('#stats').replace('\n',' '));print('week',pg.inner_text('#weekNote')[:120],pg.locator('#week .card').count())
@@ -31,9 +31,9 @@ with sync_playwright() as p:
     with a.expect_download() as d: a.click('#exportData')
     import json;j=json.load(open(d.value.path()));print('export data.json',j['count'],j['internships'][0]['company'])
     # import into fresh context
-    c2=b.new_context();p2=c2.new_page();p2.goto(U);p2.wait_for_selector('#stats div');p2.set_input_files('#imp','/tmp/export.json')
+    c2=b.new_context(bypass_csp=True);p2=c2.new_page();p2.goto(U);p2.wait_for_selector('#stats div');p2.set_input_files('#imp','/tmp/export.json')
     p2.on('dialog',lambda d:d.accept());p2.wait_for_timeout(800);print('imported profile',p2.evaluate("localStorage.idr_profile")[:60])
-    m=b.new_page(viewport={'width':390,'height':844},device_scale_factor=2,is_mobile=True);m.on('pageerror',lambda e:E.append('mobile '+str(e)))
+    m=b.new_page(bypass_csp=True,viewport={'width':390,'height':844},device_scale_factor=2,is_mobile=True);m.on('pageerror',lambda e:E.append('mobile '+str(e)))
     m.goto(U);m.wait_for_selector('#stats div');m.screenshot(path='screenshots/v2-step1-mobile.png',full_page=False)
     m.click('[data-t=find]');m.wait_for_selector('#list .card');print('mobile overflow',m.evaluate('document.documentElement.scrollWidth'))
     print('ERRORS',E)

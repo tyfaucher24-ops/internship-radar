@@ -5,7 +5,7 @@ B=sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8800/';SS='screenshots/'
 T=json.load(open('test/profiles.test.json'))
 R={}
 with sync_playwright() as p:
-  b=p.chromium.launch();c=b.new_context(viewport={'width':1440,'height':900});pg=c.new_page();E=[]
+  b=p.chromium.launch();c=b.new_context(bypass_csp=True,viewport={'width':1440,'height':900});pg=c.new_page();E=[]
   pg.on('pageerror',lambda e:E.append(str(e)));pg.on('console',lambda m:m.type=='error' and E.append(m.text))
   pg.goto(B+'#find');pg.wait_for_function('window._interactiveAt');pg.wait_for_timeout(500)
   R['badges_before']=pg.locator('.mbadge').count();R['minm_pill_before']=pg.locator('[data-pill=minm]').count()

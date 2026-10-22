@@ -1,6 +1,9 @@
 # Internship Radar changelog
 
 
+## V12 live audit
+- Live audit all PASS (ops/V12_LIVE_AUDIT.md); thermal/propulsion titles recategorised to Engineering; filler blurbs rejected.
+
 ## V12 — Grader, accuracy, polish (2026-10-22)
 - No jump on Save. Smooth scrolling through keyed row reuse, with a perf test.
 - Short summary bullets with a "Show full description" toggle. Full class-year list.

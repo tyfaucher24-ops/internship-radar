@@ -2232,6 +2232,11 @@
 "Brookfield": {
 "why": "too light to see on white"
 },
+"Brookhaven Lab": {
+"logo": "assets/logos/brookhaven-lab.webp",
+"src": "careers-board",
+"why": "no domain"
+},
 "Brooks Automation": {
 "domain": "brooks.com",
 "domain_src": "clearbit",
@@ -7423,6 +7428,12 @@
 "logo": "assets/logos/kensington.webp",
 "src": "gstatic"
 },
+"Kent Building Supplies": {
+"domain": "kentwin.ca",
+"domain_src": "clearbit",
+"logo": "assets/logos/kent-building-supplies.webp",
+"src": "duckduckgo"
+},
 "Kentro": {
 "domain": "kentro.us",
 "domain_src": "apply-url",
@@ -8211,6 +8222,12 @@
 "logo": "assets/logos/major-league-baseball.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Man Group": {
+"domain": "man.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/man-group.webp",
+"src": "apple-touch-icon"
 },
 "ManTech": {
 "domain": "mantech.co.za",
@@ -11399,6 +11416,12 @@
 "logo": "assets/logos/soti.webp",
 "src": "gstatic"
 },
+"SPS Commerce": {
+"domain": "spscommerce.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/sps-commerce.webp",
+"src": "gstatic"
+},
 "SRC": {
 "logo": null,
 "why": "no domain"
@@ -13642,6 +13665,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/twilio.webp",
 "src": "gstatic"
+},
+"Twitch": {
+"domain": "twitch.tv",
+"domain_src": "clearbit",
+"logo": "assets/logos/twitch.webp",
+"src": "apple-touch-icon"
 },
 "Two Sigma": {
 "domain": "twosigma.com",

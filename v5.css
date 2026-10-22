@@ -1,5 +1,5 @@
 /* V5 design system: one font, one accent, 8px grid, CSS-variable tokens */
-@font-face{font-family:Geist;src:url(assets/geist-latin.woff2?v=7e504ab579) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
+@font-face{font-family:Geist;src:url(assets/geist-latin.woff2?v=2a8781feb8) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
  --acc:var(--c-pri);--acc-ink:var(--c-x4733b5);--acc-soft:var(--c-pri-soft);--red:var(--c-red);--red-bg:var(--c-red-soft);--amber:var(--c-amber);--amber-bg:var(--c-xfff4dc);--ok:var(--c-x11683a);--ok-bg:var(--c-green-soft);
  --r-sm:10px;--r:14px;--r-lg:20px;--sh:0 1px 2px rgba(20,22,39,.04),0 4px 16px rgba(20,22,39,.05);--sh-h:0 2px 4px rgba(20,22,39,.05),0 16px 40px rgba(60,40,160,.12);
  --maxw:1520px;--gut:clamp(16px,4vw,64px);--ease:cubic-bezier(.2,.7,.2,1)}
@@ -400,7 +400,7 @@ body.graded .grow{height:242px}body.graded .card{height:242px}
 .beg-a{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.beg .linkbtn{background:none;border:0;color:var(--c-x3730a3);text-decoration:underline;cursor:pointer;font:inherit}
 body.intro-on main#main{visibility:hidden}
 /* V10: static planet (phones, no-GPU devices): a pre-rendered view of the US instead of a dot sphere */
-.static .globe-ph{background:url(assets/globe-static.webp?v=7e504ab579) center/contain no-repeat;border-radius:50%}
+.static .globe-ph{background:url(assets/globe-static.webp?v=2a8781feb8) center/contain no-repeat;border-radius:50%}
 .static .globe-ph::after{display:none}
 /* ===== V10 cleanup (tokens only) ===== */
 .find-head{padding:var(--sp-5) 0 var(--sp-2)}
@@ -666,3 +666,12 @@ body.graded .grow{height:270px}body.graded .card{height:270px}
 .fbp-co{margin:0 0 12px;color:var(--c-ink-2);line-height:1.5;font-size:var(--fs-s)}.fbp-bd{border-spacing:0;margin:12px 0 8px;line-height:1.5}.fbp-bd th{width:112px;padding:10px 14px 10px 10px!important;letter-spacing:.04em}.fbp-bd td{padding:10px 10px 10px 0!important;line-height:1.5}.fbp-bv{width:96px!important;padding-right:16px!important}.fbp-bar{margin-top:8px}.fbp-bd tr+tr>*{border-top:1px solid var(--c-line)}.fbp h4,.fbp h3{margin-top:18px}.fbp ul li{margin:4px 0;line-height:1.5}
 
 /* V12: subtle save crossfade, opacity/colour only, fixed width */.btn-save{min-width:104px;transition:background-color .18s ease,border-color .18s ease,color .18s ease}.nbadge.bump{animation:none}.sv-in{animation:svf .18s ease both}@keyframes svf{from{opacity:.35}}@media (prefers-reduced-motion:reduce){.sv-in{animation:none}}
+
+/* V12.1 description: same rhythm as the grade panel; smooth expand with no layout jump above */
+#dDesc .dsum{list-style:disc;margin:8px 0 12px;padding-left:20px;line-height:1.55;font-size:var(--fs-m)}#dDesc .dsum li{margin:6px 0;padding-left:2px}#dDesc .dsum b{font-weight:700;color:var(--c-ink)}
+.fdtog{appearance:none;border:0;background:none;padding:6px 0;font:inherit;font-weight:600;font-size:var(--fs-s);color:var(--c-ink);cursor:pointer}.fdtog::before{content:'▸';display:inline-block;margin-right:6px;transition:transform .2s ease}.fdtog[aria-expanded=true]::before{transform:rotate(90deg)}
+.fdwrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}.fdwrap.open{grid-template-rows:1fr}.fdin{overflow:hidden;min-height:0;line-height:1.55}.fdin p{margin:0 0 10px}.fdwrap.open .fdin{padding-top:6px}
+@media (prefers-reduced-motion:reduce){.fdwrap,.fdtog::before{transition:none}}
+
+/* V12.1: the virtual list positions its own rows; browser scroll anchoring must not adjust scroll when rows are swapped */
+#vl,#vl *{overflow-anchor:none}.dact .acts{min-height:44px;align-items:center}

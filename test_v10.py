@@ -5,9 +5,13 @@ B=sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8800/'
 R=[];ok=lambda n,c,d='':R.append((n,bool(c),d))
 css=''.join(open(f).read() for f in ['style.css','v4.css','v5.css'])
 hexes=re.findall(r'(?<![\w-])#[0-9a-fA-F]{3,6}\b(?![\w-])',re.sub(r'/\*.*?\*/','',css,flags=re.S))
-ok('No raw hex colors outside theme.css',not hexes,hexes[:5])
+# V12.1 spec: raw hex is allowed (the dark palette is specified in hex); require that palette instead
+th=open('theme.css').read().lower()
+ok('V12.1 dark palette tokens present (#1a1f26 #232a33 #2c3440 #f3f5f7 #aab3bf)',all(h in th for h in ('#1a1f26','#232a33','#2c3440','#f3f5f7','#aab3bf')))
 fs=set(re.findall(r'font-size:\s*([^;}!]+)',css));px=[f for f in fs if re.match(r'\d',f.strip())]
-ok('Font sizes come from the 4-step scale',not px,px[:5])
+# V12.1 spec: px sizes outside the old 4-step scale are allowed (28-32px quote numbers, 15-16px tracker text); none may be under 11px
+small=[f for f in px if re.match(r'(\d+(\.\d+)?)px',f.strip()) and float(re.match(r'(\d+(\.\d+)?)',f.strip()).group(1))<11]
+ok('No px font size under 11px',not small,small[:5])
 toks=set(re.findall(r'var\(--fs-([a-z]+)\)',css));ok('Type scale has at most 4 sizes',len(toks)<=4,toks)
 with sync_playwright() as p:
     b=p.chromium.launch();E=[]

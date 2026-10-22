@@ -22,9 +22,9 @@ with sync_playwright() as p:
     st=pg.inner_text('.mk-stats');c=ch.get('counts',{})
     ok('Market Activity counts match the sync diff',all(str(c[k]) in st for k in ('new','closed','deadline')),st.replace('\n',' '))
     pg.keyboard.press('Escape')
-    ok('Pulsing live dots in header and ticker',pg.locator('.find-head .pulse').count()==1 and pg.locator('#ticker .pulse').count()==1 and pg.evaluate("getComputedStyle(document.querySelector('.pulse'),'::after').animationName")=='pulse')
+    ok('Pulsing live dots in header and ticker',pg.locator('#hdrCount .qdot').count()<=1 and pg.locator('#ticker .pulse').count()==1 and pg.evaluate("getComputedStyle(document.querySelector('#ticker .pulse'),'::after').animationName")=='pulse')  # V12.1: header dot only while LIVE
     ok('No newspaper masthead left',pg.locator('.mast,.mast-h,#mastDate').count()==0)
-    ok('Ticker uses the page surface (V11.1 restrained strip)',pg.evaluate("getComputedStyle(document.getElementById('ticker')).backgroundColor")=='rgb(255, 255, 255)')
+    ok('Ticker uses the dark surface token #232a33 (V12.1 dark default)',pg.evaluate("getComputedStyle(document.getElementById('ticker')).backgroundColor")=='rgb(35, 42, 51)')
 
 
     pg.goto('about:blank');pg.goto(B+'#profile');pg.wait_for_timeout(2000)

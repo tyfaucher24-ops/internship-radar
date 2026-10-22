@@ -168,7 +168,7 @@ function vrender(force){document.body.classList.toggle('graded',!!(MSCORE.size||
  const sig=RES.length+':'+n+':'+rh+':'+(RES[0]&&RES[0].id);if(force||lastRange===''||sig!==vrSig){vl.textContent='';vrSig=sig}lastRange=key;
  const have=new Map();for(const el of [...vl.children]){const r=+el.dataset.r;if(r<s||r>=e)el.remove();else have.set(r,el)}
  let frag=null;for(let r=s;r<e;r++){if(have.has(r))continue;let h='';for(let c=0;c<n;c++){const x=RES[r*n+c];if(x)h+=cardHTML(x)}const d=document.createElement('div');d.className='grow';d.dataset.r=r;d.style.transform=`translateY(${r*rh}px)`;d.innerHTML=h;(frag||(frag=document.createDocumentFragment())).appendChild(d)}
- if(frag)vl.appendChild(frag);if(animateNext&&!RM){vl.classList.remove('reflow');void vl.offsetWidth;vl.classList.add('reflow')}animateNext=false}
+ if(frag)vl.appendChild(frag);if(animateNext&&!RM){vl.classList.remove('reflow');void vl.offsetWidth;vl.classList.add('reflow');clearTimeout(vl._rf);vl._rf=setTimeout(()=>vl.classList.remove('reflow'),400)}animateNext=false}
 let vrSig='',vrQ=false;
 let scT;addEventListener('scroll',()=>{if(!scT)document.documentElement.classList.add('scrolling');clearTimeout(scT);scT=setTimeout(()=>{scT=0;document.documentElement.classList.remove('scrolling')},160)},{passive:true});addEventListener('scroll',()=>{if(vrQ)return;vrQ=true;requestAnimationFrame(()=>{vrQ=false;vrender()})},{passive:true});let rzT;addEventListener('resize',()=>{clearTimeout(rzT);rzT=setTimeout(()=>vrender(true),60)});
 // subtle tilt on hover (desktop pointers only)

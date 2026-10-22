@@ -1,0 +1,128 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Intern Index V13 mockup</title>
+<style>
+@font-face{font-family:Geist;src:url(geist-latin.woff2)}@font-face{font-family:JB;src:url(jbmono-500.woff2)}
+:root{--bg:#f6f7fb;--s:#ffffff;--r:#e3e6ef;--ink:#14172b;--mut:#4b5168;--up:#047857;--down:#b42318;--amb:#8a5a00;--pri:#5b46c9}
+*{box-sizing:border-box}body{margin:0;width:1440px;height:900px;overflow:hidden;background:radial-gradient(ellipse at 70% 45%,#efedff 0%,#f6f7fb 60%);color:var(--ink);font-family:Geist,system-ui,sans-serif}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 10% 20%,#fff8,transparent),radial-gradient(1px 1px at 30% 70%,#fff6,transparent),radial-gradient(1px 1px at 55% 15%,#fff7,transparent),radial-gradient(1px 1px at 85% 80%,#fff5,transparent),radial-gradient(1px 1px at 92% 30%,#fff6,transparent),radial-gradient(1px 1px at 45% 88%,#fff5,transparent),radial-gradient(1px 1px at 20% 50%,#fff4,transparent)}
+.nav{position:absolute;top:28px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:18px;z-index:5}
+.logo{display:flex;gap:10px;align-items:center}.dot{width:10px;height:10px;border-radius:50%;background:var(--up);box-shadow:0 0 0 4px #04785722}
+.skipall{font-size:14px;color:var(--mut);font-weight:500}
+.planet{position:absolute;width:640px;height:640px;left:740px;top:110px;transition:all .8s cubic-bezier(.2,.8,.2,1)}
+.planet img{width:100%;height:100%;filter:drop-shadow(0 0 60px #5b46c930)}
+.pd{position:absolute;width:9px;height:9px;border-radius:50%}.pd.g{background:var(--up);box-shadow:0 0 10px var(--up)}.pd.r{background:var(--down);box-shadow:0 0 10px var(--down)}
+body.ob .planet{left:820px;top:170px;width:560px;height:560px;opacity:.3}
+body.reveal .planet{opacity:.55}
+.hero{position:absolute;left:96px;top:190px;width:640px;transition:all .4s}
+.eyebrow{display:flex;gap:8px;align-items:center;color:var(--mut);font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+h1{font-size:68px;line-height:1.04;letter-spacing:-.03em;margin:18px 0 22px;font-weight:800}
+.sub{font-size:19px;line-height:1.5;color:var(--mut);margin:0 0 22px;max-width:560px}
+.counter{font-family:JB;font-size:15px;color:var(--ink);display:flex;gap:10px;align-items:center;margin-bottom:30px}.counter b{font-size:22px}
+.btn{font:600 17px Geist;border-radius:12px;padding:16px 26px;border:1px solid var(--r);cursor:pointer}
+.pri{background:var(--pri);color:#fff;border-color:var(--pri)}.gh{background:#fff;color:var(--ink)}
+.cta{display:flex;gap:14px}.free{margin-top:18px;color:var(--mut);font-size:15px;display:flex;gap:8px;align-items:center}.free i{color:var(--up);font-style:normal;font-weight:700}
+.ticker{position:absolute;bottom:0;left:0;right:0;height:44px;background:var(--s);border-top:1px solid var(--r);display:flex;align-items:center;font-family:JB;font-size:13px;gap:34px;padding:0 24px;white-space:nowrap;color:var(--mut)}
+.ticker .lv{color:var(--ink);font-weight:700;display:flex;gap:8px;align-items:center}.ex{font:600 11px Geist;border:1px solid var(--amb);color:var(--amb);border-radius:6px;padding:2px 6px;letter-spacing:.04em}
+.card{position:absolute;left:150px;top:120px;width:660px;background:var(--s);border:1px solid var(--r);border-radius:18px;padding:34px 40px;box-shadow:0 24px 60px #14172b1f;display:none}
+body.ob .hero{opacity:0;transform:translateY(-12px)}body.ob .card{display:block;animation:rise .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.prog{display:flex;gap:6px;margin-bottom:10px}.prog span{flex:1;height:6px;border-radius:3px;background:var(--r)}.prog span.on{background:var(--up)}
+.stp{display:flex;justify-content:space-between;color:var(--mut);font-size:13px;font-family:JB;margin-bottom:22px}
+h2{font-size:30px;margin:0 0 8px;letter-spacing:-.02em}.lead{color:var(--mut);margin:0 0 24px;font-size:16px}
+.drop{border:2px dashed #d8dbe8;border-radius:14px;padding:44px;text-align:center;background:#f6f7fb}
+.drop .ic{font-size:34px;margin-bottom:10px}.drop b{font-size:18px}.drop p{color:var(--mut);margin:8px 0 18px}
+label{display:block;font-size:13px;color:var(--mut);margin:0 0 6px;font-weight:600}
+.in{background:#fff;border:1px solid var(--r);border-radius:10px;padding:13px 14px;font-size:16px;color:var(--ink);margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px}.chip{border:1px solid var(--r);border-radius:999px;padding:9px 15px;font-size:15px;background:#fff}.chip.on{border-color:var(--up);background:#ecfdf3;color:#14172b}
+.chip.on:before{content:"✓ ";color:var(--up)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:26px}.foot .sk{color:var(--mut);font-size:15px}.foot .r{display:flex;gap:10px}
+.tag{display:inline-block;font:600 11px Geist;letter-spacing:.06em;text-transform:uppercase;color:var(--amb);border:1px solid #8a5a0066;border-radius:6px;padding:3px 7px;margin-left:8px;vertical-align:middle}
+.m{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:13px 0;border-top:1px solid var(--r)}
+.lg{width:44px;height:44px;border-radius:10px;background:var(--r);display:grid;place-items:center;font-weight:700;color:var(--mut)}
+.m b{font-size:16px}.m small{display:block;color:var(--mut);font-size:13px;margin-top:3px}
+.gp{font-family:JB;font-size:15px;padding:6px 10px;border-radius:8px;background:#ecfdf3;color:#047857;border:1px solid #04785744}
+.card.wide{width:700px;top:90px}
+
+/* V5 (commit 9cce3f5) blue/pink sky palette */
+body{background:#2a2470;color:#fff}
+.skyg{position:absolute;inset:0;background:radial-gradient(60% 50% at 20% 85%,#ff8e72 0%,transparent 60%),radial-gradient(55% 45% at 85% 80%,#ff7eb3 0%,transparent 60%),radial-gradient(70% 60% at 70% 20%,#5aa9ff 0%,transparent 60%),linear-gradient(180deg,#191a5e 0%,#4a35a8 45%,#c063b5 75%,#ff9a7a 100%)}
+.cl{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.2),rgba(255,255,255,.08) 60%,transparent)}
+.nav,.hero{color:#fff}.skipall{color:#fffd}.sub{color:#ffffffe0}.eyebrow{color:#fff}
+.dot{background:#4ade80;box-shadow:0 0 0 4px #4ade8033}
+.counter{display:inline-flex;background:rgba(15,12,60,.35);border:1px solid rgba(255,255,255,.18);padding:8px 16px;border-radius:99px;color:#fff}
+.hero .pri{background:#fff;color:#2b1f86;border-color:#fff;box-shadow:0 10px 30px rgba(20,10,70,.3)}
+.hero .gh{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.55)}
+.free{color:#fff}.free i{color:#4ade80}
+.planet img{filter:drop-shadow(0 0 50px #5aa9ff80)}
+body.ob .planet{opacity:.55}
+.pd.g{background:#4ade80;box-shadow:0 0 10px #4ade80}.pd.r{background:#ff5a5a;box-shadow:0 0 10px #ff5a5a}
+.card{--ink:#14172b;--mut:#4b5168;color:#14172b;background:#fff;border:0;box-shadow:0 24px 70px rgba(20,10,70,.4)}
+.card .pri{background:#4a35a8;border-color:#4a35a8;color:#fff}.card .gh{background:#fff;color:#14172b;border-color:#e3e6ef}
+.prog span{background:#ede9fe}.prog span.on{background:linear-gradient(90deg,#5aa9ff,#c063b5)}
+.chip.on{border-color:#4a35a8;background:#f5f3ff;color:#2b1f86}.chip.on:before{color:#4a35a8}
+.ticker{background:rgba(15,12,60,.55);border-top:1px solid rgba(255,255,255,.18);color:#ffffffd0}.ticker .lv{color:#fff}
+.ticker [style*="--up"]{color:#4ade80!important}.ticker [style*="--down"]{color:#ff8fa3!important}
+
+.planet{transition:left .85s cubic-bezier(.65,0,.35,1),top .85s cubic-bezier(.65,0,.35,1),width .85s cubic-bezier(.65,0,.35,1),height .85s cubic-bezier(.65,0,.35,1),transform .85s cubic-bezier(.65,0,.35,1),opacity .85s}
+.planet img{filter:drop-shadow(0 0 40px #5aa9ff99)}
+body.ob .planet{opacity:.92}
+.free{display:inline-flex;background:rgba(15,12,60,.45);border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:99px}
+
+#planet{position:absolute;inset:0;width:1440px;height:900px;border:0;background:transparent;pointer-events:none;z-index:0}
+#fx{position:absolute;inset:0;pointer-events:none;z-index:4}
+.hero,.card,.nav{z-index:3}.ticker{z-index:5}
+
+/* v13 r2: planet exits on Build my profile; big centred card */
+#fx{display:none}
+#planet{transform-origin:1043px 452px;transition:transform .8s cubic-bezier(.55,0,.35,1),opacity .8s ease-in}
+.hero{transition:opacity .45s,transform .45s}
+body.exit #planet,body.gone #planet{transform:translate(160px,-430px) scale(.3);opacity:0}
+body.gone #planet{visibility:hidden}
+body.exit .hero{opacity:0;transform:translateY(-14px)}
+.card,.card.wide{left:50%;width:780px;margin-left:-390px;top:96px;padding:46px 56px;border-radius:24px}
+.card.s-tall{top:80px}
+body.ob .card{animation:rise .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(28px) scale(.985)}}
+.card h2{font-size:38px;margin-bottom:10px}.card .lead{font-size:18px;margin-bottom:28px}
+.card label{font-size:15px;margin-bottom:8px}.card .in{font-size:18px;padding:17px 18px;border-radius:12px;margin-bottom:22px}
+.card .chip{font-size:16px;padding:11px 18px}.card .stp{font-size:14px;margin-bottom:26px}.card .prog span{height:8px}
+.card .btn{font-size:18px;padding:17px 30px}.card .drop{padding:56px}.card .drop b{font-size:20px}
+.card .m{padding:15px 0}.card .m b{font-size:18px}.card .m small{font-size:14px}.card .gp{font-size:16px}
+.card .tag{font-size:12px}.card .foot{margin-top:30px}
+h1{font-size:60px}
+.card.out{opacity:0;transform:translateY(-12px);transition:opacity .26s ease-in,transform .26s ease-in}
+#planet{transition:transform .8s cubic-bezier(.55,0,.35,1),opacity .8s cubic-bezier(.4,0,.6,1)}
+</style></head><body>
+
+<div class="skyg"></div><div class="cl" style="width:46vw;height:16vh;left:-10vw;bottom:4%"></div><div class="cl" style="width:38vw;height:14vh;right:-8vw;bottom:16%"></div><div class="nav"><div class="logo"></div><div class="skipall" id="skipall" style="display:none">Skip setup →</div></div>
+<iframe id="planet" src="../v10/?gl=1" title="" aria-hidden="true" tabindex="-1"></iframe>
+<div class="hero">
+ <div class="eyebrow"><span class="dot"></span>Intern Index</div>
+ <h1>Every internship.<br>Live tracking.<br>Personalized insights.</h1>
+ <p class="sub">We track every open US internship, flag the ones about to open, keep your applications in one place, and show the roles you can actually get.</p>
+ <p class="counter"><span class="dot"></span><b>11,024</b> open internships right now</p>
+ <div class="cta"><button class="btn pri">Build my profile</button><button class="btn gh">Skip to live internship database</button></div>
+ <p class="free"><i>✓</i> Free forever</p>
+</div>
+<div class="card" id="card"></div>
+<div class="ticker"><span class="lv"><span class="dot"></span>LIVE</span><span><span style="color:var(--up)">▲</span>&nbsp;1Password · Developer Intern, Extension Excellence · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Baird · Internship — Private Wealth Management… · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Commonwealth Fusion Systems · Intern - Materials Test Engineer · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Flagship Pioneering · Communications and Public Affairs Co-Op · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Grassroots Analytics · Campaigns Account Management Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Hermeus · Build Reliability Engineering Intern -… · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Mercedes-Benz · Finance and Operations Intern · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Phoenix Contact · Manufacturing Co-Op - High School Students · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Shield AI · Summer 2027 - Data Science Intern (R6324) · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Patreon · Product Manager Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Stripe · High School Internship, Software… · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Skydio · Frontend Software Engineer Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Syska Hennessy Group · High School Interns - 2027 · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Toyota Research Institute · Human Aware Interactions and Learning Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Auto-Owners Insurance · Claims Representative Internship · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Varda Space · Construction Management Internship · added</span><span><span style="color:var(--up)">▲</span>&nbsp;ABB · Manufacturing Supply Chain Intern… · added</span><span><span style="color:var(--down)">▼</span>&nbsp;BorgWarner · EPM Support Intern (Year-Round) · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;AbbVie · 2027 Procurement Intern (Undergraduate) · added</span><span><span style="color:var(--down)">▼</span>&nbsp;CDW · On Campus Internship - University of… · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Clera · Founders Associate Intern · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;EY · Tax Intern - Transaction Economics Group · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Advanced Energy · Service Product Marketing Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;GuidePoint Security · Cybersecurity Presales Intern -… · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Aerospace · 2027 Hardware Security Engineering… · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Hewlett Packard (HP) · Software Product Management Intern · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Nasdaq · Project Management Intern - 2027 Summer… · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Protech Automotive Solutions · Automotive ADAS Calibration Technician… · closed</span><span><span style="color:var(--down)">▼</span>&nbsp;Schonfeld · 2027 Cybersecurity Operations Intern · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Amazon.com Services · Hardware Development Engineer Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;Synchrony Financial · BLP Intern – Sales · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Aon · IT / AI Engineer Intern · added</span><span><span style="color:var(--down)">▼</span>&nbsp;University of Texas - Austin · Office Manager for Workplace Experience &amp;… · closed</span><span><span style="color:var(--up)">▲</span>&nbsp;Applied Materials · 2027 Summer Intern, Software Engineer,… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Atoms · ML/AI Research Internship - PhD · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Berkshire Hathaway Energy · Software Engineer Intern · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Bosch · Software Engineering Co-op · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Bosch Group · Intern- Human Resources · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Bosch Home Comfort · Driving Foundations Research Intern · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Boston Medical Center · High School Student Intern Medical Assistant · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Boston Scientific · Equipment Engineering Software Engineer… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Bristol Myers Squibb · 2027 Summer Intern PhD Student - Chemical… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;C.H. Robinson · Cyber Security Internship 2027 · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Campbell Soup Company · Finance Intern/Accounting Intern/Audit… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Carnegie Mellon SEI · AI Security Research Intern · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Caterpillar · Part-time Accounting Intern · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Cigna · Pharmacy Benefits Management - Strategy… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Cisco · Software Engineer Embedded Systems II… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;ClickHouse · Research Intern, ClickHouse Labs · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Colibri Group · Product Builder Returnship Intern · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Cummins · Engineering School-to-Work Intern -… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;DP World · Application Analyst Intern · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Daimler Truck · BEV Systems Engineering Intern — Energy,… · added</span><span><span style="color:var(--up)">▲</span>&nbsp;Dell Technologies · Hardware Engineer 1 Intern · added</span></div>
+<script>
+const P=n=>`<div class="prog">${[1,2,3,4,5].map(i=>`<span class="${i<=n?'on':''}"></span>`).join('')}</div><div class="stp"><span>Step ${n} of 5</span><span>Saved on this device</span></div>`;
+const F=(l='Continue')=>`<div class="foot"><span class="sk">Skip this step</span><div class="r"><button class="btn gh">Back</button><button class="btn pri">${l}</button></div></div>`;
+const S={
+1:P(1)+`<h2>Start with your resume</h2><p class="lead">Optional. We'll prefill the next steps for you.</p><div class="drop"><div class="ic">📄</div><b>Drop your resume here</b><p>PDF or DOCX · parsed in your browser — never uploaded</p><button class="btn gh">Choose file</button></div>`+F(),
+2:P(2)+`<h2>Your school <span class="tag">Example data</span></h2><p class="lead">Used to grade how well you match each internship.</p><label>School</label><div class="in">Example University</div><div class="row"><div><label>Major</label><div class="in">Finance</div></div><div><label>GPA (optional)</label><div class="in">3.5 / 4.0</div></div></div><label>Class year</label><div class="chips"><span class="chip">2027</span><span class="chip on">2028</span><span class="chip">2029</span><span class="chip">2030</span></div>`+F(),
+3:P(3)+`<h2>What are you looking for?</h2><p class="lead">Pick as many as you like.</p><label>Interests</label><div class="chips"><span class="chip on">Investment Banking</span><span class="chip on">Private Equity</span><span class="chip">Quant</span><span class="chip">Software Engineering</span><span class="chip on">Consulting</span><span class="chip">Data</span><span class="chip">Product</span><span class="chip">Marketing</span><span class="chip">Accounting</span></div><label>Locations</label><div class="chips"><span class="chip on">New York, NY</span><span class="chip on">Charlotte, NC</span><span class="chip">Boston, MA</span><span class="chip">Chicago, IL</span><span class="chip on">Remote ok</span></div>`+F(),
+4:P(4)+`<h2>Your experience <span class="tag">Example data</span></h2><p class="lead">Internships, jobs, leadership and athletics all count.</p><label>Experience</label><div class="in">Example Firm · Finance Intern · Summer 2026</div><label>Athletics</label><div class="chips"><span class="chip on">D1 Athlete (Example sport)</span><span class="chip">Club sport</span><span class="chip">Intramural</span></div><label>Clubs &amp; leadership</label><div class="chips"><span class="chip on">Finance Club</span><span class="chip on">Team captain</span><span class="chip">Investment Club</span><span class="chip">+ Add</span></div>`+F(),
+5:P(5)+`<h2>Your top matches <span class="tag">Example</span></h2><p class="lead">Graded against your profile. Mockup uses placeholder listings.</p>`+[['A','Example Co','Investment Banking Summer Analyst','New York, NY · Apply by Nov 14, 2026','91% · A'],['B','Sample Partners','Private Equity Intern','Charlotte, NC · Rolling','86% · A'],['C','Demo Advisory','Consulting Intern','Remote · Deadline not listed','82% · B+'],['D','Placeholder Bank','Corporate Finance Intern','Charlotte, NC · Expected ~Dec 1 (past cycle)','78% · B']].map(m=>`<div class="m"><div class="lg">${m[0]}</div><div><b>${m[2]}</b><small>${m[1]} · ${m[3]}</small></div><span class="gp">${m[4]}</span></div>`).join('')+`<div class="foot"><span class="sk">Start Autopilot for these</span><div class="r"><button class="btn pri">See all my matches →</button></div></div>`};
+window.show=s=>{document.body.className='';document.getElementById('skipall').style.display='none';if(s>0){document.body.className='gone ob s'+s+(s==5?' reveal':'');const c=document.getElementById('card');c.className='card'+(s==5?' wide':'');c.innerHTML=S[s];c.style.animation='none';c.offsetHeight;c.style.animation='';document.getElementById('skipall').style.display='block'}};
+
+window.start=()=>{document.body.classList.add('exit');setTimeout(()=>show(1),820)};
+window.cardOut=()=>document.getElementById('card').classList.add('out');
+window.next=s=>{cardOut();setTimeout(()=>show(s),280)};
+document.querySelector('.hero .pri').onclick=start;
+document.getElementById('card').addEventListener('click',e=>{const b=e.target.closest('.foot .pri');if(b){const m=document.body.className.match(/s(\d)/);if(m&&+m[1]<5)next(+m[1]+1)}});
+const pf=document.getElementById('planet');pf.addEventListener('load',()=>{const d=pf.contentDocument,st=d.createElement('style');
+ st.textContent='html,body,#intro{background:transparent!important}body>*:not(#intro),#intro>*:not(.globe-stage),.sky,.hero-copy,.itk,.globe-ph{visibility:hidden!important}#intro .globe-stage,#intro .globe-stage *{visibility:visible!important}';d.head.appendChild(st)});
+show(+(location.hash.slice(1)||0));
+</script></body></html>

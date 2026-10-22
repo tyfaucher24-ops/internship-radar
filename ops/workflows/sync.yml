@@ -2,7 +2,7 @@ name: Sync listings
 on:
   schedule:
     - cron: '7 */2 * * *'    # every 2 hours (full sync: company boards + link re-checks)
-    - cron: '37 1-23/2 * * *' # odd hours: fast pass over high-churn ATS boards only (Greenhouse/Lever/Ashby)
+    - cron: '22,52 * * * *' # every 30 min: fast pass over high-churn ATS boards only (Greenhouse/Lever/Ashby)
   workflow_dispatch:
     inputs:
       args:
@@ -34,7 +34,7 @@ jobs:
           USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
           USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
         run: |
-          if [ "${{ github.event.schedule }}" = "37 1-23/2 * * *" ]; then ARGS="--only greenhouse,lever,ashby --skip-leads"; else ARGS="${{ github.event.inputs.args }}"; fi
+          if [ "${{ github.event.schedule }}" = "22,52 * * * *" ]; then ARGS="--only greenhouse,lever,ashby --skip-leads"; else ARGS="${{ github.event.inputs.args }}"; fi
           python -m pipeline.sync --workers 24 $ARGS
       - name: Accuracy checks + sync report (fails the run if checks fail)
         run: python -m pipeline.qa --prev /tmp/prev_listings.json

@@ -285,5 +285,35 @@
     "bullets": []
    }
   ]
+ },
+ "p8_acct": {
+  "savedAt": "x",
+  "school": "Clemson University",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gradDate": "2028-05",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "skills": [
+   "excel",
+   "quickbooks",
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Bookkeeping Assistant",
+    "org": "Upstate Dental Group",
+    "bullets": [
+     "Reconciled weekly accounts payable"
+    ]
+   }
+  ]
  }
 }

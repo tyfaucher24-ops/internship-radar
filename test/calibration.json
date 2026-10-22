@@ -1,0 +1,364 @@
+{
+ "_readme": "V12 grader calibration: 10 profiles (test/personas.json) x 6 listings = 60 pairs. Expected grade ranges [low, high] (inclusive; a third value '\u2014' means 'Not enough info' is also acceptable) were written and committed BEFORE the V12 grader was run against them. Listings are modelled on real postings; firm tiers come from config.json citations.",
+ "listings": {
+  "gs_ib": {
+   "company": "Goldman Sachs",
+   "title": "2027 Summer Analyst - Investment Banking",
+   "category": "Finance & Banking",
+   "class_years": [
+    "Junior"
+   ],
+   "locations": [
+    {
+     "city": "New York",
+     "state": "NY",
+     "pop": 8300000
+    }
+   ],
+   "paid": true
+  },
+  "bofa_soph": {
+   "company": "Bank of America",
+   "title": "Sophomore Summer Analyst Program - Global Banking",
+   "category": "Finance & Banking",
+   "class_years": [
+    "Sophomore"
+   ],
+   "locations": [
+    {
+     "city": "Charlotte",
+     "state": "NC",
+     "pop": 900000
+    }
+   ],
+   "paid": true
+  },
+  "small_wealth": {
+   "company": "Piedmont Wealth Advisors",
+   "title": "Wealth Management Intern",
+   "category": "Finance & Banking",
+   "class_years": [],
+   "locations": [
+    {
+     "city": "Charlotte",
+     "state": "NC",
+     "pop": 900000
+    }
+   ],
+   "paid": true
+  },
+  "swe": {
+   "company": "Stripe",
+   "title": "Software Engineer Intern",
+   "category": "Software & IT",
+   "class_years": [],
+   "locations": [
+    {
+     "city": "San Francisco",
+     "state": "CA",
+     "pop": 800000
+    }
+   ],
+   "paid": true
+  },
+  "mkt_mid": {
+   "company": "Scotts Miracle-Gro",
+   "title": "Marketing Intern",
+   "category": "Marketing & Sales",
+   "class_years": [],
+   "locations": [
+    {
+     "city": "Columbus",
+     "state": "OH",
+     "pop": 900000
+    }
+   ],
+   "paid": true
+  },
+  "nurse": {
+   "company": "Henry Ford Health",
+   "title": "Student Nurse Extern",
+   "category": "Healthcare & Life Sciences",
+   "class_years": [
+    "Junior",
+    "Senior"
+   ],
+   "locations": [
+    {
+     "city": "Detroit",
+     "state": "MI",
+     "pop": 630000
+    }
+   ],
+   "paid": true
+  }
+ },
+ "expected": {
+  "p1_ccfresh": {
+   "gs_ib": [
+    "F",
+    "D"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "D-",
+    "C"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "D-",
+    "C"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "p2_marketing": {
+   "gs_ib": [
+    "F",
+    "D"
+   ],
+   "bofa_soph": [
+    "F",
+    "D+"
+   ],
+   "small_wealth": [
+    "D-",
+    "C-"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "C+",
+    "A-"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "p3_nontargetIB": {
+   "gs_ib": [
+    "D-",
+    "C"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "C-",
+    "B"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "F",
+    "D+"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "p4_ivyIB": {
+   "gs_ib": [
+    "B-",
+    "A-"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "C",
+    "B+"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "F",
+    "D+"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "p5_csquant": {
+   "gs_ib": [
+    "F",
+    "D"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "F",
+    "D+"
+   ],
+   "swe": [
+    "B-",
+    "A-"
+   ],
+   "mkt_mid": [
+    "F",
+    "D"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "p6_intl": {
+   "gs_ib": [
+    "F",
+    "D"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "F",
+    "D+"
+   ],
+   "swe": [
+    "C-",
+    "B"
+   ],
+   "mkt_mid": [
+    "F",
+    "D"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "p7_nursing": {
+   "gs_ib": [
+    "F",
+    "D"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "F",
+    "D"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "F",
+    "D"
+   ],
+   "nurse": [
+    "B",
+    "A"
+   ]
+  },
+  "ty_queens": {
+   "gs_ib": [
+    "F",
+    "D"
+   ],
+   "bofa_soph": [
+    "D+",
+    "C"
+   ],
+   "small_wealth": [
+    "B-",
+    "A-"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "F",
+    "D+"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  },
+  "sophomoreNone": {
+   "gs_ib": [
+    "F",
+    "D",
+    "\u2014"
+   ],
+   "bofa_soph": [
+    "F",
+    "C-",
+    "\u2014"
+   ],
+   "small_wealth": [
+    "D-",
+    "C",
+    "\u2014"
+   ],
+   "swe": [
+    "F",
+    "D",
+    "\u2014"
+   ],
+   "mkt_mid": [
+    "F",
+    "D",
+    "\u2014"
+   ],
+   "nurse": [
+    "F",
+    "D",
+    "\u2014"
+   ]
+  },
+  "p8_acct": {
+   "gs_ib": [
+    "F",
+    "D+"
+   ],
+   "bofa_soph": [
+    "F",
+    "D"
+   ],
+   "small_wealth": [
+    "C-",
+    "B"
+   ],
+   "swe": [
+    "F",
+    "D"
+   ],
+   "mkt_mid": [
+    "F",
+    "D+"
+   ],
+   "nurse": [
+    "F",
+    "D"
+   ]
+  }
+ }
+}

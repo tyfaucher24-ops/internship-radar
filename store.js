@@ -3,10 +3,18 @@
 window.Store=(()=>{
   const P='idr_',VERSION=2;
   const KEYS=['profile','resumeText','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker','prefs','filters','notify','reports','missingQueue','trackerCols','trackerSort','trackerW','profileDraft'];
-  const backend={read:k=>localStorage.getItem(P+k),write:(k,v)=>localStorage.setItem(P+k,v),del:k=>localStorage.removeItem(P+k)};
+  /* V12: never crash and never lose data silently. Private mode / disabled storage falls back to memory;
+     a full disk keeps the old value and tells the user; unreadable JSON is backed up before anything overwrites it. */
+  const MEM=new Map();let LS=null;try{LS=window.localStorage;const t=P+'__t';LS.setItem(t,'1');LS.removeItem(t)}catch{LS=null}
+  const warn=msg=>{window.STORE_WARN=msg;try{document.dispatchEvent(new CustomEvent('store:warn',{detail:msg}))}catch{}};
+  if(!LS)setTimeout(()=>warn('Your browser is blocking storage (private mode?). Changes work for this visit but won’t be saved.'),0);
+  const backend={read:k=>LS?LS.getItem(P+k):(MEM.has(k)?MEM.get(k):null),
+    write:(k,v)=>{if(!LS){MEM.set(k,v);return true}try{LS.setItem(P+k,v);return true}catch(e){warn('Your browser storage is full, so the last change was not saved. Export your data (Profile → Export) and clear old items.');return false}},
+    del:k=>{if(LS)try{LS.removeItem(P+k)}catch{}MEM.delete(k)}};
   const subs=[];
-  const get=(k,d)=>{try{const v=JSON.parse(backend.read(k));return v??d}catch{return d}};
-  const set=(k,v)=>{backend.write(k,JSON.stringify(v));subs.forEach(f=>f(k,v))};
+  const get=(k,d)=>{let raw=null;try{raw=backend.read(k)}catch{return d}if(raw==null)return d;try{const v=JSON.parse(raw);return v??d}catch{
+    try{if(LS&&!LS.getItem(P+k+'__corrupt'))LS.setItem(P+k+'__corrupt',raw)}catch{}console.info('Internship Radar: saved "'+k+'" was unreadable; a copy was kept as '+P+k+'__corrupt');return d}};
+  const set=(k,v)=>{const ok=backend.write(k,JSON.stringify(v));if(ok)subs.forEach(f=>f(k,v));return ok};
   const remove=k=>{backend.del(k);subs.forEach(f=>f(k,undefined))};
   const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
   // one-time migration from V1 keys

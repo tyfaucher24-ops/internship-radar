@@ -145,8 +145,8 @@ function chipsHTML(){const c=[];
  if(F.minm&&MSCORE.size)c.push(['minm','',`Match ${F.minm}%+`]);if(F.hideTracked==='1')c.push(['hideTracked','','Hiding saved & applied']);
  return c.map(([k,v,t])=>`<button class="chip" data-k="${k}" data-v="${esc(v)}" aria-label="Remove filter ${esc(t)}">${esc(t)} <span aria-hidden="true">×</span></button>`).join('')+(c.length?'<button class="link clear" data-k="__all">Clear all</button>':'')}
 function begInit(){const el=$('beg');if(!el)return;const n=stagedCount({cy:'Freshman~Sophomore'});
- el.hidden=localStorage.getItem("ir_beg_x")==="1"||!n||!!F.cy;$("begGo").textContent=`Show ${n.toLocaleString()} roles open to freshmen or sophomores`;
- $('begGo').onclick=()=>{F.cy='Freshman~Sophomore';el.hidden=true;update()};$('begX').onclick=()=>{localStorage.setItem('ir_beg_x','1');el.hidden=true}}
+ el.hidden=(()=>{try{return localStorage.getItem("ir_beg_x")==="1"}catch(e){return false}})()||!n||!!F.cy;$("begGo").textContent=`Show ${n.toLocaleString()} roles open to freshmen or sophomores`;
+ $('begGo').onclick=()=>{F.cy='Freshman~Sophomore';el.hidden=true;update()};$('begX').onclick=()=>{try{localStorage.setItem('ir_beg_x','1')}catch(e){}el.hidden=true}}
 function update(keepPop){compute();saveF();if(!keepPop)renderPills();else renderPillLabels();
  $('chips').innerHTML=chipsHTML();$('chips').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k,v=b.dataset.v;if(k==='__all')return clearAll();if(k==='near'){F.near='';F.radius=''}else if(v&&FD[k]){fset(k,fv(k).filter(x=>x!==v));if(k==='status'&&!F.status)F.status=''}else F[k]='';if(k==='q')$('q').value='';update()});
  $('sort').value=F.sort||'new';const sv=fv('status');
@@ -428,3 +428,5 @@ function presetsInit(){const host=document.querySelector('.rtools');if(!host||$(
   p.addEventListener('keydown',ev=>{if(ev.key==='Escape'){ev.stopPropagation();p.remove();b.setAttribute('aria-expanded','false');b.focus()}})};
  document.addEventListener('mousedown',e=>{if(!e.target.closest('.presets')){document.querySelector('.presetpop')?.remove();$('presetBtn')?.setAttribute('aria-expanded','false')}})}
 document.addEventListener('radar:data',()=>{firstTip();presetsInit()});
+/* V12: storage problems are shown, never silent */
+{let last='';const sw=m=>{if(!m||m===last)return;last=m;setTimeout(()=>toastMsg(m),400)};document.addEventListener('store:warn',e=>sw(e.detail));if(window.STORE_WARN)sw(window.STORE_WARN)}

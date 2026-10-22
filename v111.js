@@ -20,11 +20,11 @@ const dc=$('dCount');if(dc)new MutationObserver(()=>{const v=dc.textContent;if(/
 /* market stats roll in when the panel opens */
 document.addEventListener('click',e=>{if(!e.target.closest('#tkMarket'))return;setTimeout(()=>document.querySelectorAll('.mk-s b').forEach(b=>{const m=b.textContent.match(/^(\D*?)([\d,]+)$/);if(!m)return;const n=+m[2].replace(/,/g,'');b.textContent=m[1];const sp=document.createElement('span');b.appendChild(sp);roll(sp,0);requestAnimationFrame(()=>requestAnimationFrame(()=>roll(sp,n)))}),30)});
 /* ---- theme + colour-blind toggles (menu) ---- */
-const H=document.documentElement,P=JSON.parse(localStorage.getItem('ir_ui')||'{}');
+const H=document.documentElement,P=(()=>{try{return JSON.parse(localStorage.getItem('ir_ui')||'{}')}catch(e){return {}}})();
 function apply(){H.classList.toggle('dark',P.theme==='dark');H.classList.toggle('cb',!!P.cb);const t=$('uiTheme'),c=$('uiCb');
  if(t){t.textContent=P.theme==='dark'?'☀ Light mode':'☾ Dark mode';t.setAttribute('aria-pressed',P.theme==='dark')}if(c){c.textContent='Colour-blind grades: '+(P.cb?'On':'Off');c.setAttribute('aria-pressed',!!P.cb)}
  const mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=P.theme==='dark'?'#0f1220':'#5b46c9'}
-const save=()=>{localStorage.setItem('ir_ui',JSON.stringify(P));apply()};
+const save=()=>{try{localStorage.setItem('ir_ui',JSON.stringify(P))}catch(e){}apply()};
 $('uiTheme')?.addEventListener('click',()=>{P.theme=P.theme==='dark'?'light':'dark';save()});
 $('uiCb')?.addEventListener('click',()=>{P.cb=!P.cb;save()});apply();
 /* ---- Cmd/Ctrl+K quick search ---- */

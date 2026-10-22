@@ -3,7 +3,7 @@
 
 ## V12.1.1 — Tracker titles, smoother graded scroll, tests (2026-10-22)
 - Tracker: long role and company names now wrap at word boundaries and show in full. Cells grow to fit (minimum row 54px), so nothing is cut off. "Customize sheet" is exactly 40px tall.
-- Scrolling: closing-soon dots on cards no longer pulse (each one forced its own compositing layer), and the card fade-in only plays right after a filter change instead of on every row that scrolls in. The graded list scrolls at about 60fps with the CPU slowed 4x.
+- Scrolling: closing-soon dots on cards no longer pulse (each one forced its own compositing layer), and the card fade-in only plays right after a filter change instead of on every row that scrolls in. With the CPU slowed 4x, the graded list scrolls at 55.7–59.2fps on the live site (3 runs) and 59.8fps locally.
 - Tests: `test_v10`, `test_v11` and `test_v111` updated for V12.1 (dark is the default, hex palette and px sizes allowed, quote bar instead of rolling digits).
 
 ## V12.1 — Intern Index, dark mode, Save and scroll fixes (2026-10-22)

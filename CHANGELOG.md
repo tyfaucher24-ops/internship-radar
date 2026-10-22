@@ -1,6 +1,10 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V12.1.2 — 2026-10-22
+- My Tracker: company names are centred horizontally and vertically in their cells, wrapped names included; the Company header is centred over the same span.
+- Mobile (≤640px): rebalanced the Company, Status and Closes widths so names wrap only between words and "Assessment (OA)" fits its status pill. No clipping and no horizontal scroll.
+
 ## V12.1.1 — Tracker titles, smoother graded scroll, tests (2026-10-22)
 - Tracker: long role and company names now wrap at word boundaries and show in full. Cells grow to fit (minimum row 54px), so nothing is cut off. "Customize sheet" is exactly 40px tall.
 - Scrolling: closing-soon dots on cards no longer pulse (each one forced its own compositing layer), and the card fade-in only plays right after a filter change instead of on every row that scrolls in. With the CPU slowed 4x, the graded list scrolls at 55.7–59.2fps on the live site (3 runs) and 59.8fps locally.

@@ -55,7 +55,7 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const strength=Math.min(1,(P.gpa?Math.max(0,(P.gpa-3.3)/0.6):0)*0.5+Math.min(1,rel.length/2)*0.5);
  const cEff=(comp.score==null?(OC.unknownAs??55):comp.score)*(1-(OC.strengthRelief||0)*strength);
  const cOdds=Math.min(100,Math.round(100*Math.pow(1-cEff/100,OC.exponent)+(cEff<OC.lowBelow?OC.lowBonus:0)));
- let oYear=null;const cy=x.class_years||[];if(cy.length&&P.classYear){if(cy.includes(P.classYear))oYear=95;else ineligible=`it lists ${cy.join('/')} students and you're a ${P.classYear}`}else unknown++;
+ let oYear=null;const cy=x.class_years||[];if(cy.length&&P.classYear){const EQ={'Graduate / Master’s':['Graduate'],'PhD':['Graduate','PhD'],'Community college (1st year)':['Freshman'],'Community college (2nd year)':['Sophomore'],'Recent grad':['Recent grad','Graduate']},mine=EQ[P.classYear]||[P.classYear];if(mine.some(v=>cy.includes(v)))oYear=95;else ineligible=`it lists ${cy.join('/')} students and you're a ${P.classYear}`}else unknown++;
  const bar=x.gpa_min!=null&&x.gpa_min!==''?+x.gpa_min:(firm&&firm.gpaBar?+firm.gpaBar:null);let oGpa=null;
  if(bar&&P.gpa){oGpa=P.gpa>=bar?90:P.gpa>=bar-0.2?50:15;if(P.gpa<bar)neg.push(`your GPA is under its ${bar} bar`)}
  const tl=(C.targetSchools||[]).find(r=>!r.placeholder&&r.industry===ind);let oSch=null;

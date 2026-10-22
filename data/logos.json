@@ -29,6 +29,7 @@
 "why": "no domain"
 },
 "60decibelsinc": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -78,6 +79,7 @@
 "src": "gstatic"
 },
 "ACLU Kentucky": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -94,6 +96,7 @@
 "src": "gstatic"
 },
 "AEG": {
+"board_tried": true,
 "domain": "aegworldwide.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -161,6 +164,7 @@
 "src": "gstatic"
 },
 "AMI": {
+"board_tried": true,
 "why": "recheck"
 },
 "AMN Healthcare": {
@@ -225,6 +229,7 @@
 "why": "no domain"
 },
 "ATPCO": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -441,6 +446,7 @@
 "src": "gstatic"
 },
 "AfterQuery": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -479,6 +485,12 @@
 "domain": "agilityrobotics.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/agility-robotics.webp",
+"src": "gstatic"
+},
+"AiDash": {
+"domain": "aidash.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/aidash.webp",
 "src": "gstatic"
 },
 "Air Liquide": {
@@ -614,6 +626,7 @@
 "src": "gstatic"
 },
 "Allegis Global Solutions": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -624,6 +637,7 @@
 "src": "gstatic"
 },
 "Allen Control Systems": {
+"board_tried": true,
 "why": "recheck"
 },
 "Alliance Laundry Systems": {
@@ -673,6 +687,7 @@
 "src": "gstatic"
 },
 "Alston & Bird Law Firm": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -878,6 +893,7 @@
 "why": "no logo >=48px"
 },
 "Amperesand": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -888,6 +904,7 @@
 "src": "gstatic"
 },
 "Amynta Group": {
+"board_tried": true,
 "domain": "amyntagroup.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -906,10 +923,17 @@
 "src": "gstatic"
 },
 "Analysys Mason": {
+"board_tried": true,
 "domain": "analysysmason.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
+},
+"Analytic Partners": {
+"domain": "analyticpartners.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/analytic-partners.webp",
+"src": "gstatic"
 },
 "Analytical Mechanics Associates": {
 "domain": "ama-inc.com",
@@ -931,6 +955,7 @@
 "src": "apple-touch-icon"
 },
 "Anduril": {
+"board_tried": true,
 "why": "recheck"
 },
 "Angel City": {
@@ -989,6 +1014,7 @@
 "src": "gstatic"
 },
 "Apex": {
+"board_tried": true,
 "why": "recheck"
 },
 "Apex Companies": {
@@ -1074,6 +1100,7 @@
 "src": "gstatic"
 },
 "Aquatic Capital Management": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1083,6 +1110,7 @@
 "why": "generic placeholder icon"
 },
 "Arc": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1140,6 +1168,7 @@
 "src": "gstatic"
 },
 "Argmax": {
+"board_tried": true,
 "domain": "argmax.ml",
 "domain_src": "clearbit",
 "logo": null,
@@ -1165,6 +1194,7 @@
 "src": "gstatic"
 },
 "Arine": {
+"board_tried": true,
 "domain": "arine.jp",
 "domain_src": "clearbit",
 "logo": null,
@@ -1199,6 +1229,7 @@
 "why": "recheck"
 },
 "Armadin": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1297,6 +1328,7 @@
 "src": "gstatic"
 },
 "Assort Health": {
+"board_tried": true,
 "why": "recheck"
 },
 "Assurant": {
@@ -1307,6 +1339,7 @@
 "why": "no logo >=48px"
 },
 "Assured Guaranty": {
+"board_tried": true,
 "domain": "assuredguaranty.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -1384,6 +1417,7 @@
 "src": "gstatic"
 },
 "Atoms": {
+"board_tried": true,
 "domain": "atoms.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -1419,12 +1453,19 @@
 "logo": "assets/logos/aurora-innovation.webp",
 "src": "gstatic"
 },
+"Austin Community College District": {
+"domain": "austincc.edu",
+"domain_src": "clearbit",
+"logo": "assets/logos/austin-community-college-district.webp",
+"src": "gstatic"
+},
 "Authentic": {
 "logo": "assets/logos/authentic.webp",
 "src": "careers-board",
 "why": "recheck"
 },
 "Auto Club Group": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1447,6 +1488,7 @@
 "src": "gstatic"
 },
 "Autodesk": {
+"board_tried": true,
 "domain": "autodesk.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -1484,6 +1526,7 @@
 "src": "gstatic"
 },
 "Avride": {
+"board_tried": true,
 "domain": "av-ride.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -1507,6 +1550,7 @@
 "src": "gstatic"
 },
 "Axiomatic AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1562,6 +1606,7 @@
 "src": "gstatic"
 },
 "BGE": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1617,6 +1662,7 @@
 "src": "gstatic"
 },
 "Baidu USA": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -1639,6 +1685,9 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"Baldwin Group": {
+"why": "too light to see on white"
+},
 "Banco Bilbao Vizcaya Argentaria": {
 "logo": "assets/logos/banco-bilbao-vizcaya-argentaria.webp",
 "src": "careers-board",
@@ -1651,6 +1700,7 @@
 "src": "gstatic"
 },
 "Bank of America": {
+"board_tried": true,
 "domain": "bank-locations.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -1754,6 +1804,7 @@
 "why": "no domain"
 },
 "Bedrock Robotics": {
+"board_tried": true,
 "why": "recheck"
 },
 "Behaviour Interactive": {
@@ -1821,10 +1872,12 @@
 "why": "no domain"
 },
 "Best Egg": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Beta Technologies": {
+"board_tried": true,
 "domain": "beta.team",
 "domain_src": "clearbit",
 "why": "too light to see on white"
@@ -1907,6 +1960,7 @@
 "src": "gstatic"
 },
 "Blackbird Labs": {
+"board_tried": true,
 "domain": "blackbirdlabs.io",
 "domain_src": "clearbit",
 "logo": null,
@@ -2009,6 +2063,7 @@
 "why": "no logo >=48px"
 },
 "Bobyard": {
+"board_tried": true,
 "why": "recheck"
 },
 "Boeing": {
@@ -2089,6 +2144,12 @@
 "logo": "assets/logos/boys-town.webp",
 "src": "gstatic"
 },
+"Bracco": {
+"domain": "bracco.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/bracco.webp",
+"src": "gstatic"
+},
 "Bracebridge Capital": {
 "domain": "bracebridgecapital.com",
 "domain_src": "clearbit",
@@ -2096,10 +2157,19 @@
 "src": "gstatic"
 },
 "Bracket Bot": {
+"board_tried": true,
 "why": "recheck"
 },
 "Brain": {
+"board_tried": true,
 "why": "recheck"
+},
+"Braun Intertec": {
+"domain": "braunintertec.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/braun-intertec.webp",
+"src": "careers-board",
+"why": "no logo >=48px"
 },
 "Braze": {
 "domain": "braze.com",
@@ -2116,8 +2186,7 @@
 "Brevan Howard": {
 "domain": "brevanhoward.com",
 "domain_src": "clearbit",
-"logo": null,
-"why": "no logo >=48px"
+"why": "too light to see on white"
 },
 "Brevium": {
 "logo": "assets/logos/brevium.webp",
@@ -2156,6 +2225,7 @@
 "why": "no logo >=48px"
 },
 "British Columbia Investment": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2216,6 +2286,7 @@
 "src": "gstatic"
 },
 "ButcherBox": {
+"board_tried": true,
 "domain": "butcherbox.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -2362,6 +2433,12 @@
 "logo": "assets/logos/country-financial.webp",
 "src": "gstatic"
 },
+"CRC Group": {
+"domain": "crcgroup.in",
+"domain_src": "clearbit",
+"logo": "assets/logos/crc-group.webp",
+"src": "gstatic"
+},
 "CSA Group": {
 "domain": "csagroup.org",
 "domain_src": "clearbit",
@@ -2453,6 +2530,7 @@
 "src": "gstatic"
 },
 "Calpion/Plutus Health": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2510,6 +2588,7 @@
 "src": "gstatic"
 },
 "CapTech Consulting": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2532,6 +2611,7 @@
 "src": "gstatic"
 },
 "Capstone Investment Advisors": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2565,6 +2645,11 @@
 "logo": "assets/logos/caresource.webp",
 "src": "gstatic"
 },
+"Carnegie Mellon Software Engineering Institute": {
+"logo": "assets/logos/carnegie-mellon-software-engineering-institute.webp",
+"src": "careers-board",
+"why": "no domain"
+},
 "Carnegie Mellon University": {
 "domain": "cmu.edu",
 "domain_src": "clearbit",
@@ -2595,6 +2680,7 @@
 "src": "gstatic"
 },
 "Cboe": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2616,6 +2702,7 @@
 "why": "no domain"
 },
 "Cenovus Energy": {
+"board_tried": true,
 "domain": "cenovus.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -2739,6 +2826,7 @@
 "src": "gstatic"
 },
 "Charta Health": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2750,6 +2838,7 @@
 "why": "no logo >=48px"
 },
 "Cheiron": {
+"board_tried": true,
 "domain": "cheironenergy.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -2786,10 +2875,15 @@
 "why": "no logo >=48px"
 },
 "Church & Dwight": {
+"board_tried": true,
 "domain": "churchdwight.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
+},
+"Churchill / TIAA (Nuveen)": {
+"logo": null,
+"why": "no domain"
 },
 "Ciena": {
 "domain": "ciena.com",
@@ -2933,12 +3027,14 @@
 "src": "gstatic"
 },
 "City of Philadelphia": {
+"board_tried": true,
 "domain": "phila.gov",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "City of Vancouver": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -2967,6 +3063,7 @@
 "src": "gstatic"
 },
 "Clay": {
+"board_tried": true,
 "why": "recheck"
 },
 "Cleerly": {
@@ -3022,6 +3119,7 @@
 "src": "gstatic"
 },
 "Cloudforce": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3045,6 +3143,7 @@
 "why": "no logo >=48px"
 },
 "CoVar": {
+"board_tried": true,
 "domain": "covarpharma.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -3144,6 +3243,7 @@
 "why": "recheck"
 },
 "Comcast": {
+"board_tried": true,
 "domain": "comcast.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -3179,6 +3279,7 @@
 "src": "gstatic"
 },
 "Commvault": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3284,15 +3385,18 @@
 "why": "recheck"
 },
 "Construction Resources": {
+"board_tried": true,
 "domain": "corebuilds.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "Context": {
+"board_tried": true,
 "why": "recheck"
 },
 "Continental": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3303,6 +3407,7 @@
 "src": "gstatic"
 },
 "Contoro": {
+"board_tried": true,
 "why": "recheck"
 },
 "Cook Group": {
@@ -3358,6 +3463,12 @@
 "domain": "coreandmain.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/core-main.webp",
+"src": "gstatic"
+},
+"Corebridge Financial": {
+"domain": "corebridgefinancial.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/corebridge-financial.webp",
 "src": "gstatic"
 },
 "Coretek Services": {
@@ -3445,6 +3556,7 @@
 "src": "gstatic"
 },
 "Cowboy Space": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3471,6 +3583,7 @@
 "src": "gstatic"
 },
 "Creatify Lab": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3517,6 +3630,7 @@
 "src": "gstatic"
 },
 "Crown Innovations": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3584,6 +3698,7 @@
 "src": "gstatic"
 },
 "Cystic Fibrosis Foundation": {
+"board_tried": true,
 "domain": "cff.org",
 "domain_src": "clearbit",
 "logo": null,
@@ -3608,12 +3723,14 @@
 "src": "gstatic"
 },
 "DESIGNME Hair": {
+"board_tried": true,
 "domain": "designmehair.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "DH Pace": {
+"board_tried": true,
 "domain": "dhpace.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -3738,6 +3855,7 @@
 "src": "gstatic"
 },
 "Datacor": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3748,6 +3866,7 @@
 "src": "gstatic"
 },
 "DatologyAI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3792,6 +3911,7 @@
 "src": "apple-touch-icon"
 },
 "Deft AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -3879,6 +3999,7 @@
 "src": "gstatic"
 },
 "Dexmate": {
+"board_tried": true,
 "why": "recheck"
 },
 "DiDi Global": {
@@ -3985,6 +4106,7 @@
 "src": "gstatic"
 },
 "Donaldson Company": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4087,6 +4209,7 @@
 "why": "no logo >=48px"
 },
 "Droyd Robotics": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4132,6 +4255,7 @@
 "src": "gstatic"
 },
 "E-Space": {
+"board_tried": true,
 "why": "recheck"
 },
 "E2 Consulting Engineers": {
@@ -4162,10 +4286,12 @@
 "src": "gstatic"
 },
 "EPRI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "EQ Bank": {
+"board_tried": true,
 "domain": "eqbank.ca",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -4275,6 +4401,7 @@
 "why": "no logo >=48px"
 },
 "Efficient Computer": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4430,10 +4557,12 @@
 "src": "gstatic"
 },
 "EnergyHub": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Enova": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4464,6 +4593,7 @@
 "why": "too light to see on white"
 },
 "Entegris": {
+"board_tried": true,
 "domain": "entegris.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -4497,6 +4627,11 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/envista.webp",
 "src": "gstatic"
+},
+"Envita": {
+"board_tried": true,
+"logo": null,
+"why": "no domain"
 },
 "Envoy": {
 "domain": "envoy.com",
@@ -4564,6 +4699,7 @@
 "src": "gstatic"
 },
 "Eragon": {
+"board_tried": true,
 "why": "recheck"
 },
 "Ercot": {
@@ -4622,6 +4758,7 @@
 "src": "gstatic"
 },
 "Eurofins": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4638,6 +4775,7 @@
 "src": "gstatic"
 },
 "Eversource Energy": {
+"board_tried": true,
 "domain": "eversource.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -4684,6 +4822,7 @@
 "src": "gstatic"
 },
 "ExodusPoint": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4700,6 +4839,7 @@
 "src": "gstatic"
 },
 "Extreme Networks": {
+"board_tried": true,
 "domain": "extremenetworks.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -4716,6 +4856,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/f-schumacher.webp",
 "src": "gstatic"
+},
+"F.N.B. / First National Bank": {
+"logo": null,
+"why": "no domain"
 },
 "F5": {
 "logo": "assets/logos/f5.webp",
@@ -4901,6 +5045,7 @@
 "why": "no domain"
 },
 "Field AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4947,6 +5092,7 @@
 "why": "recheck"
 },
 "Firetiger": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -4983,6 +5129,7 @@
 "src": "gstatic"
 },
 "First Financial": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -5000,6 +5147,8 @@
 "FirstDay Foundation": {
 "domain": "firstday.foundation",
 "domain_src": "clearbit",
+"logo": "assets/logos/firstday-foundation.webp",
+"src": "careers-board",
 "why": "too light to see on white"
 },
 "Fiserv": {
@@ -5034,6 +5183,7 @@
 "src": "gstatic"
 },
 "Flagship Pioneering": {
+"board_tried": true,
 "domain": "flagshippioneering.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -5115,15 +5265,18 @@
 "src": "gstatic"
 },
 "Forvis Mazars": {
+"board_tried": true,
 "why": "recheck"
 },
 "Forward Networks": {
+"board_tried": true,
 "domain": "forwardnetworks.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "Found Energy": {
+"board_tried": true,
 "domain": "found.energy",
 "domain_src": "clearbit",
 "why": "too light to see on white"
@@ -5226,15 +5379,18 @@
 "why": "no logo >=48px"
 },
 "Fundwell": {
+"board_tried": true,
 "domain": "wefundwell.com",
 "domain_src": "clearbit",
 "why": "recheck"
 },
 "Fussball Club Cincinnati LLC (\u201cFC Cincinnati\u201d)": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "G2": {
+"board_tried": true,
 "why": "recheck"
 },
 "GAF": {
@@ -5334,6 +5490,7 @@
 "src": "gstatic"
 },
 "Galaxy": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -5421,6 +5578,7 @@
 "src": "gstatic"
 },
 "Gelber Group": {
+"board_tried": true,
 "domain": "gelbergroup.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -5438,15 +5596,18 @@
 "why": "no domain"
 },
 "Gen Digital": {
+"board_tried": true,
 "domain": "gendigital.mx",
 "domain_src": "clearbit",
 "why": "recheck"
 },
 "GenBio AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "GenScript": {
+"board_tried": true,
 "domain": "genscript.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -5509,6 +5670,7 @@
 "src": "gstatic"
 },
 "Genesis Molecular AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -5565,6 +5727,7 @@
 "src": "gstatic"
 },
 "Geotab": {
+"board_tried": true,
 "domain": "geotab.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -5602,6 +5765,7 @@
 "why": "no logo >=48px"
 },
 "Glimpse Engineering": {
+"board_tried": true,
 "why": "recheck"
 },
 "Global Infrastructure": {
@@ -5642,9 +5806,12 @@
 "Glydways": {
 "domain": "glydways.com",
 "domain_src": "clearbit",
+"logo": "assets/logos/glydways.webp",
+"src": "careers-board",
 "why": "too light to see on white"
 },
 "GoDaddy": {
+"board_tried": true,
 "domain": "godaddy.com",
 "domain_src": "clearbit",
 "why": "generic placeholder icon"
@@ -5766,6 +5933,7 @@
 "src": "gstatic"
 },
 "Graybar": {
+"board_tried": true,
 "domain": "graybar.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -5800,6 +5968,7 @@
 "src": "gstatic"
 },
 "Greenlight": {
+"board_tried": true,
 "why": "recheck"
 },
 "Greenworks": {
@@ -5809,6 +5978,7 @@
 "src": "gstatic"
 },
 "Gritt Robotics": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -5829,6 +5999,7 @@
 "why": "no logo >=48px"
 },
 "Grow Therapy": {
+"board_tried": true,
 "domain": "growtherapy.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -5851,6 +6022,7 @@
 "src": "gstatic"
 },
 "GuideStone": {
+"board_tried": true,
 "domain": "guidestone.org",
 "domain_src": "clearbit",
 "logo": null,
@@ -5861,6 +6033,7 @@
 "why": "no domain"
 },
 "Guidehouse": {
+"board_tried": true,
 "domain": "guidehouse.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -5914,6 +6087,12 @@
 "logo": "assets/logos/h3x-technologies.webp",
 "src": "gstatic"
 },
+"HAI Group": {
+"domain": "housingcenter.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/hai-group.webp",
+"src": "gstatic"
+},
 "HARMAN": {
 "domain": "harman.com",
 "domain_src": "apply-url",
@@ -5933,6 +6112,7 @@
 "why": "no domain"
 },
 "HCompany": {
+"board_tried": true,
 "why": "recheck"
 },
 "HELLBENDER": {
@@ -6043,6 +6223,7 @@
 "src": "gstatic"
 },
 "Hanna Andersson": {
+"board_tried": true,
 "domain": "hannaandersson.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -6080,9 +6261,17 @@
 "src": "gstatic"
 },
 "Harvey": {
+"board_tried": true,
 "why": "recheck"
 },
+"Hasbro": {
+"domain": "hasbro.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/hasbro.webp",
+"src": "gstatic"
+},
 "Hayden AI": {
+"board_tried": true,
 "domain": "hayden.ai",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -6171,6 +6360,7 @@
 "src": "gstatic"
 },
 "Heron Power": {
+"board_tried": true,
 "why": "recheck"
 },
 "Heven AeroTech": {
@@ -6190,6 +6380,7 @@
 "src": "gstatic"
 },
 "Higharc": {
+"board_tried": true,
 "why": "recheck"
 },
 "Highgate": {
@@ -6324,6 +6515,7 @@
 "why": "no domain"
 },
 "Hubs.is": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6346,6 +6538,7 @@
 "src": "gstatic"
 },
 "Human Computer Lab": {
+"board_tried": true,
 "why": "recheck"
 },
 "Humana": {
@@ -6447,6 +6640,7 @@
 "src": "gstatic"
 },
 "IDEXX": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6455,14 +6649,17 @@
 "why": "no domain"
 },
 "IEM": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "IEX": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "IFS": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6495,6 +6692,7 @@
 "src": "gstatic"
 },
 "IMO Health": {
+"board_tried": true,
 "why": "recheck"
 },
 "IT Cloud Engineering Intern": {
@@ -6552,7 +6750,14 @@
 "logo": "assets/logos/immuta.webp",
 "src": "gstatic"
 },
+"Impact Advisors": {
+"domain": "impact-advisors.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/impact-advisors.webp",
+"src": "gstatic"
+},
 "Impiricus": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6563,9 +6768,11 @@
 "why": "no logo >=48px"
 },
 "Inferact": {
+"board_tried": true,
 "why": "recheck"
 },
 "InfiniteQuant": {
+"board_tried": true,
 "domain": "infinitequant.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -6590,6 +6797,7 @@
 "why": "no logo >=48px"
 },
 "Inizio": {
+"board_tried": true,
 "domain": "iniziodigital.co.uk",
 "domain_src": "clearbit",
 "logo": null,
@@ -6618,6 +6826,7 @@
 "src": "gstatic"
 },
 "Insitro": {
+"board_tried": true,
 "domain": "insitro.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -6652,10 +6861,12 @@
 "src": "gstatic"
 },
 "Instead": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Institute of Foundation Models": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6760,6 +6971,12 @@
 "src": "careers-board",
 "why": "no domain"
 },
+"Interplay": {
+"domain": "letsremark.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/interplay.webp",
+"src": "gstatic"
+},
 "Interstates": {
 "domain": "interstates.com",
 "domain_src": "apply-url",
@@ -6779,6 +6996,7 @@
 "src": "gstatic"
 },
 "Intrinsic": {
+"board_tried": true,
 "domain": "intrinsic.eu",
 "domain_src": "clearbit",
 "logo": null,
@@ -6791,6 +7009,7 @@
 "src": "gstatic"
 },
 "Intuitive Surgical": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6842,6 +7061,7 @@
 "src": "gstatic"
 },
 "Ivo": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -6926,12 +7146,14 @@
 "why": "no logo >=48px"
 },
 "Jain Global": {
+"board_tried": true,
 "domain": "jainglobal.co.in",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "Jane Street": {
+"board_tried": true,
 "domain": "janestreet.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -6981,6 +7203,7 @@
 "src": "gstatic"
 },
 "Johnson Brothers Liquor Company": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7158,6 +7381,12 @@
 "logo": "assets/logos/kensington.webp",
 "src": "gstatic"
 },
+"Kenvue": {
+"domain": "kenvue.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/kenvue.webp",
+"src": "gstatic"
+},
 "Ketjen": {
 "logo": "assets/logos/ketjen.webp",
 "src": "careers-board",
@@ -7278,9 +7507,11 @@
 "src": "gstatic"
 },
 "Kong": {
+"board_tried": true,
 "why": "recheck"
 },
 "Koppers": {
+"board_tried": true,
 "domain": "koppers.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -7328,6 +7559,11 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/lego.webp",
 "src": "gstatic"
+},
+"LEGO Group": {
+"logo": "assets/logos/lego-group.webp",
+"src": "careers-board",
+"why": "no domain"
 },
 "LG Electronics": {
 "domain": "lg.com",
@@ -7436,10 +7672,12 @@
 "src": "gstatic"
 },
 "Latitude.io": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Lawrence Livermore National Laboratory (LLNL)": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7456,6 +7694,7 @@
 "src": "gstatic"
 },
 "League": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7466,6 +7705,7 @@
 "src": "gstatic"
 },
 "Legal & General": {
+"board_tried": true,
 "domain": "legalandgeneral.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -7577,6 +7817,12 @@
 "logo": "assets/logos/life-fitness.webp",
 "src": "gstatic"
 },
+"Light & Wonder": {
+"domain": "lnw.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/light-wonder.webp",
+"src": "gstatic"
+},
 "Lightmatter": {
 "domain": "lightmatter.co",
 "domain_src": "clearbit",
@@ -7590,10 +7836,12 @@
 "src": "gstatic"
 },
 "Lila Sciences": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Lilly USA": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7670,6 +7918,7 @@
 "src": "gstatic"
 },
 "Louis Dreyfus Company": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7779,10 +8028,12 @@
 "src": "gstatic"
 },
 "MAXISIQ": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "MEMX": {
+"board_tried": true,
 "domain": "memx.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -7830,6 +8081,7 @@
 "src": "gstatic"
 },
 "MSX International": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7846,6 +8098,7 @@
 "src": "apple-touch-icon"
 },
 "Mach9": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7868,6 +8121,7 @@
 "why": "no logo >=48px"
 },
 "Madison Energy Infrastructure": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -7950,6 +8204,7 @@
 "src": "gstatic"
 },
 "Maricopa County": {
+"board_tried": true,
 "domain": "maricopa.gov",
 "domain_src": "clearbit",
 "logo": null,
@@ -8010,6 +8265,7 @@
 "why": "recheck"
 },
 "Marvell": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8047,6 +8303,7 @@
 "why": "no domain"
 },
 "Matterworks": {
+"board_tried": true,
 "domain": "matter.works",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -8062,6 +8319,7 @@
 "src": "gstatic"
 },
 "Maxima": {
+"board_tried": true,
 "why": "recheck"
 },
 "Mayo Clinic": {
@@ -8138,6 +8396,7 @@
 "why": "no logo >=48px"
 },
 "Melius": {
+"board_tried": true,
 "why": "recheck"
 },
 "Melotech": {
@@ -8152,6 +8411,7 @@
 "why": "no domain"
 },
 "Mentis AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8207,6 +8467,7 @@
 "src": "gstatic"
 },
 "Meshy": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8217,6 +8478,7 @@
 "src": "gstatic"
 },
 "MetOx International": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8327,6 +8589,9 @@
 "logo": "assets/logos/mindsmith.webp",
 "src": "gstatic"
 },
+"MiniMed": {
+"why": "generic placeholder icon"
+},
 "Mitsubishi UFG": {
 "logo": "assets/logos/mitsubishi-ufg.webp",
 "src": "careers-board",
@@ -8367,6 +8632,7 @@
 "why": "no logo >=48px"
 },
 "Monarch Money": {
+"board_tried": true,
 "domain": "monarchmoneystaging.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -8384,6 +8650,12 @@
 "domain": "moog.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/moog.webp",
+"src": "gstatic"
+},
+"Morgan Stanley": {
+"domain": "morganstanley.com",
+"domain_src": "registry",
+"logo": "assets/logos/morgan-stanley.webp",
 "src": "gstatic"
 },
 "Mosaic": {
@@ -8457,6 +8729,11 @@
 "logo": "assets/logos/myriad-genetics.webp",
 "src": "gstatic"
 },
+"N1": {
+"board_tried": true,
+"logo": null,
+"why": "no domain"
+},
 "NASA Jet Propulsion Laboratory": {
 "domain": "jpl.jobs",
 "domain_src": "clearbit",
@@ -8464,6 +8741,7 @@
 "src": "gstatic"
 },
 "NBCUniversal": {
+"board_tried": true,
 "domain": "nbcuniversal.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -8536,6 +8814,7 @@
 "src": "gstatic"
 },
 "Nash": {
+"board_tried": true,
 "domain": "workatastartup.com",
 "domain_src": "apply-url",
 "why": "generic placeholder icon"
@@ -8565,6 +8844,7 @@
 "why": "no domain"
 },
 "National Life": {
+"board_tried": true,
 "domain": "nationallife.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -8611,6 +8891,7 @@
 "src": "gstatic"
 },
 "Neighbor": {
+"board_tried": true,
 "why": "recheck"
 },
 "Neighborly": {
@@ -8632,6 +8913,7 @@
 "src": "gstatic"
 },
 "NeoCognition": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8702,6 +8984,7 @@
 "why": "no domain"
 },
 "New York Post Holdings": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8781,6 +9064,7 @@
 "why": "no domain"
 },
 "Niantic Spatial": {
+"board_tried": true,
 "why": "recheck"
 },
 "Nidec": {
@@ -8870,6 +9154,7 @@
 "src": "gstatic"
 },
 "Nooks": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -8904,6 +9189,12 @@
 "logo": "assets/logos/northeastern-university.webp",
 "src": "gstatic"
 },
+"Northern Trust": {
+"domain": "northerntrust.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/northern-trust.webp",
+"src": "gstatic"
+},
 "Northrop Grumman": {
 "domain": "northropgrumman.com",
 "domain_src": "clearbit",
@@ -8935,6 +9226,7 @@
 "src": "gstatic"
 },
 "Northwood Space": {
+"board_tried": true,
 "why": "recheck"
 },
 "Notability": {
@@ -9018,6 +9310,7 @@
 "src": "gstatic"
 },
 "OH.io": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -9037,6 +9330,12 @@
 "domain": "otrsolutions.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/otr-solutions.webp",
+"src": "gstatic"
+},
+"Oakworth Capital Bank": {
+"domain": "oakworthcapital.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/oakworth-capital-bank.webp",
 "src": "gstatic"
 },
 "Occidental Petroleum": {
@@ -9062,6 +9361,7 @@
 "src": "gstatic"
 },
 "Oceanus Marine Technologies": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -9112,6 +9412,7 @@
 "src": "gstatic"
 },
 "Oleria Security": {
+"board_tried": true,
 "why": "recheck"
 },
 "Olsson": {
@@ -9141,6 +9442,7 @@
 "why": "no domain"
 },
 "OnLogic": {
+"board_tried": true,
 "domain": "onlogic.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -9203,6 +9505,7 @@
 "src": "gstatic"
 },
 "OptiRTC": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -9213,6 +9516,7 @@
 "src": "gstatic"
 },
 "OpusClip": {
+"board_tried": true,
 "why": "recheck"
 },
 "OraSure Technologies": {
@@ -9239,16 +9543,19 @@
 "src": "gstatic"
 },
 "Orion Steel Group": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Oshkosh": {
+"board_tried": true,
 "domain": "oshkoshcorporation.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "Otis": {
+"board_tried": true,
 "domain": "otis.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -9383,11 +9690,14 @@
 "src": "gstatic"
 },
 "Pace": {
+"board_tried": true,
 "why": "recheck"
 },
 "Pacific Fusion": {
 "domain": "fusionfashion.co.nz",
 "domain_src": "clearbit",
+"logo": "assets/logos/pacific-fusion.webp",
+"src": "careers-board",
 "why": "too light to see on white"
 },
 "Pacific Life": {
@@ -9409,6 +9719,7 @@
 "src": "gstatic"
 },
 "Palmetto Clean Technology": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -9440,6 +9751,7 @@
 "why": "no logo >=48px"
 },
 "Pangram Labs": {
+"board_tried": true,
 "why": "recheck"
 },
 "Papa John's": {
@@ -9490,6 +9802,7 @@
 "src": "gstatic"
 },
 "Parsons": {
+"board_tried": true,
 "domain": "parsons.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -9556,6 +9869,7 @@
 "src": "gstatic"
 },
 "Pebl": {
+"board_tried": true,
 "domain": "thepebl.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -9582,6 +9896,7 @@
 "why": "no domain"
 },
 "Penta Group": {
+"board_tried": true,
 "why": "recheck"
 },
 "Pentair": {
@@ -9615,6 +9930,7 @@
 "src": "gstatic"
 },
 "Periodic Labs": {
+"board_tried": true,
 "why": "recheck"
 },
 "Perpay": {
@@ -9624,6 +9940,7 @@
 "src": "gstatic"
 },
 "Perplexity AI": {
+"board_tried": true,
 "domain": "perplexiity.site",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -9641,6 +9958,7 @@
 "why": "no logo >=48px"
 },
 "Persona": {
+"board_tried": true,
 "why": "recheck"
 },
 "Persona AI": {
@@ -9769,9 +10087,11 @@
 "src": "gstatic"
 },
 "Pivot Robotics": {
+"board_tried": true,
 "why": "recheck"
 },
 "Pivotal Software": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -9822,6 +10142,7 @@
 "why": "no logo >=48px"
 },
 "PlusAI": {
+"board_tried": true,
 "why": "recheck"
 },
 "Podium": {
@@ -9922,6 +10243,7 @@
 "src": "gstatic"
 },
 "Premium Merchant Funding": {
+"board_tried": true,
 "domain": "pmfus.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -9932,12 +10254,19 @@
 "logo": "assets/logos/presence.webp",
 "src": "gstatic"
 },
+"Priceline": {
+"domain": "priceline.com.au",
+"domain_src": "clearbit",
+"logo": "assets/logos/priceline.webp",
+"src": "gstatic"
+},
 "PricewaterhouseCoopers (PwC)": {
 "logo": "assets/logos/pricewaterhousecoopers-pwc.webp",
 "src": "careers-board",
 "why": "no domain"
 },
 "Primer": {
+"board_tried": true,
 "why": "recheck"
 },
 "Primerica": {
@@ -10067,6 +10396,7 @@
 "src": "gstatic"
 },
 "Prysmian Cables & Systems": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10225,6 +10555,7 @@
 "src": "gstatic"
 },
 "RFCUNY": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10246,6 +10577,7 @@
 "why": "no domain"
 },
 "RR Donnelley": {
+"board_tried": true,
 "domain": "rrdonnelley.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -10269,6 +10601,7 @@
 "src": "gstatic"
 },
 "RXO": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10285,6 +10618,7 @@
 "src": "gstatic"
 },
 "Radix Trading": {
+"board_tried": true,
 "domain": "radix-trading.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -10315,11 +10649,17 @@
 "logo": "assets/logos/rakuten-advertising.webp",
 "src": "gstatic"
 },
+"Rakuten International": {
+"board_tried": true,
+"logo": null,
+"why": "no domain"
+},
 "Ralliant": {
 "logo": null,
 "why": "no domain"
 },
 "Ramiel Capital": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10362,6 +10702,7 @@
 "src": "gstatic"
 },
 "Readystate Asset Management": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10454,6 +10795,7 @@
 "src": "gstatic"
 },
 "Rehlko": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10491,6 +10833,7 @@
 "why": "recheck"
 },
 "Renesas Electronics": {
+"board_tried": true,
 "domain": "renesas.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -10549,6 +10892,7 @@
 "why": "too light to see on white"
 },
 "Revel": {
+"board_tried": true,
 "why": "recheck"
 },
 "Revise Robotics": {
@@ -10583,6 +10927,7 @@
 "why": "recheck"
 },
 "Rhoda AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10667,6 +11012,7 @@
 "src": "gstatic"
 },
 "Rivet Industries": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10683,6 +11029,7 @@
 "src": "gstatic"
 },
 "Roam": {
+"board_tried": true,
 "why": "recheck"
 },
 "Robert Bosch": {
@@ -10692,10 +11039,12 @@
 "src": "gstatic"
 },
 "Robert Bosch Venture Capital": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "Robert Half": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10718,6 +11067,7 @@
 "src": "gstatic"
 },
 "Robust.ai": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10835,12 +11185,14 @@
 "src": "gstatic"
 },
 "Rugged Robotics": {
+"board_tried": true,
 "domain": "rugged-robotics.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "Rundoo": {
+"board_tried": true,
 "domain": "getrundoo.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -10897,6 +11249,7 @@
 "src": "gstatic"
 },
 "SCAN": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -10946,6 +11299,7 @@
 "why": "recheck"
 },
 "SOMFY Group": {
+"board_tried": true,
 "domain": "somfy-group.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -10977,6 +11331,7 @@
 "why": "no logo >=48px"
 },
 "STCU": {
+"board_tried": true,
 "domain": "stcu.org",
 "domain_src": "clearbit",
 "logo": null,
@@ -11001,6 +11356,7 @@
 "src": "gstatic"
 },
 "Safran": {
+"board_tried": true,
 "domain": "safran-group.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -11036,6 +11392,7 @@
 "why": "no domain"
 },
 "Salesforce": {
+"board_tried": true,
 "domain": "salesforce.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -11091,6 +11448,7 @@
 "why": "recheck"
 },
 "SanMar": {
+"board_tried": true,
 "domain": "sanmar.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -11148,6 +11506,7 @@
 "src": "gstatic"
 },
 "Saronic": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -11285,6 +11644,7 @@
 "src": "gstatic"
 },
 "Serval": {
+"board_tried": true,
 "domain": "serval66.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -11339,6 +11699,7 @@
 "why": "no domain"
 },
 "Shaw Industries Group": {
+"board_tried": true,
 "domain": "shawinc.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -11406,6 +11767,7 @@
 "src": "gstatic"
 },
 "Sieve": {
+"board_tried": true,
 "domain": "sieve.jp",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -11442,6 +11804,7 @@
 "src": "apple-touch-icon"
 },
 "Sila Nanotechnologies": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -11476,6 +11839,7 @@
 "src": "gstatic"
 },
 "Simple Technology Solutions": {
+"board_tried": true,
 "domain": "simpletechnology.io",
 "domain_src": "clearbit",
 "logo": null,
@@ -11533,6 +11897,7 @@
 "src": "gstatic"
 },
 "Skyways": {
+"board_tried": true,
 "why": "recheck"
 },
 "Skyworks": {
@@ -11546,6 +11911,9 @@
 "src": "careers-board",
 "why": "no domain"
 },
+"Smartflower Solar": {
+"why": "generic placeholder icon"
+},
 "Smartly.io": {
 "domain": "smartly.io",
 "domain_src": "clearbit",
@@ -11553,6 +11921,7 @@
 "src": "gstatic"
 },
 "Smith+Nephew": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -11570,6 +11939,7 @@
 "why": "no logo >=48px"
 },
 "Smiths Detection Group": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -11613,6 +11983,7 @@
 "src": "gstatic"
 },
 "Soci\u00e9t\u00e9 G\u00e9n\u00e9rale de Surveillance (SGS)": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -11657,14 +12028,10 @@
 "why": "no domain"
 },
 "Software Engineering Intern - Summer 2027": {
-"logo": "assets/logos/software-engineering-intern-summer-2027.webp",
-"src": "careers-board",
-"why": "no domain"
+"why": "generic placeholder icon"
 },
 "Software Engineering Intern Summer 2027": {
-"logo": "assets/logos/software-engineering-intern-summer-2027.webp",
-"src": "careers-board",
-"why": "no domain"
+"why": "generic placeholder icon"
 },
 "Solar Turbines": {
 "domain": "solarturbines.com",
@@ -11696,6 +12063,7 @@
 "src": "gstatic"
 },
 "SoloPulse": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -11819,6 +12187,7 @@
 "src": "gstatic"
 },
 "SpecterOps": {
+"board_tried": true,
 "domain": "specterops.io",
 "domain_src": "clearbit",
 "why": "too light to see on white"
@@ -11908,6 +12277,7 @@
 "why": "no logo >=48px"
 },
 "Stanley Black & Decker": {
+"board_tried": true,
 "domain": "stanleyblackanddecker.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -11966,6 +12336,7 @@
 "src": "gstatic"
 },
 "State Street": {
+"board_tried": true,
 "domain": "statestreet.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -12025,6 +12396,7 @@
 "src": "gstatic"
 },
 "Stewart": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12050,6 +12422,7 @@
 "why": "no domain"
 },
 "Strada": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12297,6 +12670,12 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"TD Securities": {
+"domain": "td.com",
+"domain_src": "registry",
+"logo": "assets/logos/td-securities.webp",
+"src": "gstatic"
+},
 "TD Synnex": {
 "domain": "tdsynnex.com",
 "domain_src": "clearbit",
@@ -12308,6 +12687,7 @@
 "why": "no domain"
 },
 "TELUS Digital": {
+"board_tried": true,
 "why": "recheck"
 },
 "TETRAMEM": {
@@ -12346,6 +12726,7 @@
 "src": "gstatic"
 },
 "TNS": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12373,7 +12754,15 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"TTM Technologies": {
+"domain": "ttm.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/ttm-technologies.webp",
+"src": "careers-board",
+"why": "no logo >=48px"
+},
 "TTP": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12396,6 +12785,7 @@
 "why": "recheck"
 },
 "Tahoe Therapeutics": {
+"board_tried": true,
 "why": "recheck"
 },
 "Taiho Oncology": {
@@ -12417,6 +12807,7 @@
 "src": "gstatic"
 },
 "Talos": {
+"board_tried": true,
 "why": "recheck"
 },
 "Tandem Diabetes Care": {
@@ -12450,6 +12841,7 @@
 "src": "gstatic"
 },
 "Tastylive": {
+"board_tried": true,
 "domain": "tastylive.ru",
 "domain_src": "clearbit",
 "logo": null,
@@ -12536,10 +12928,12 @@
 "src": "apple-touch-icon"
 },
 "Tenet3": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "TensorWave": {
+"board_tried": true,
 "why": "recheck"
 },
 "Tenstorrent": {
@@ -12666,6 +13060,7 @@
 "why": "no logo >=48px"
 },
 "The Boeing Company": {
+"board_tried": true,
 "domain": "boeing.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -12765,6 +13160,7 @@
 "src": "gstatic"
 },
 "The Nuclear Company": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12803,6 +13199,7 @@
 "src": "gstatic"
 },
 "The Wonderful Company": {
+"board_tried": true,
 "domain": "wonderful.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -12815,6 +13212,7 @@
 "src": "gstatic"
 },
 "Thea Energy": {
+"board_tried": true,
 "domain": "thea-energy.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -12870,6 +13268,7 @@
 "src": "apple-touch-icon"
 },
 "Tilde Research": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12880,6 +13279,7 @@
 "src": "gstatic"
 },
 "Together AI": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -12901,11 +13301,13 @@
 "why": "no domain"
 },
 "Tonal": {
+"board_tried": true,
 "domain": "tonal.com",
 "domain_src": "clearbit",
 "why": "recheck"
 },
 "Torc Robotics": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13023,6 +13425,7 @@
 "src": "gstatic"
 },
 "Treehouse Strategy and Communications": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13074,6 +13477,7 @@
 "src": "gstatic"
 },
 "True Anomaly": {
+"board_tried": true,
 "domain": "true-anomaly.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -13084,6 +13488,11 @@
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
+},
+"Truist Bank": {
+"logo": "assets/logos/truist-bank.webp",
+"src": "careers-board",
+"why": "no domain"
 },
 "Truist Securities": {
 "domain": "truistsecurities.com",
@@ -13110,6 +13519,7 @@
 "src": "apple-touch-icon"
 },
 "Tuesday Lab": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13123,6 +13533,12 @@
 "domain": "twilio.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/twilio.webp",
+"src": "gstatic"
+},
+"Two Sigma": {
+"domain": "twosigma.com",
+"domain_src": "registry",
+"logo": "assets/logos/two-sigma.webp",
 "src": "gstatic"
 },
 "Two Six Technologies": {
@@ -13239,10 +13655,12 @@
 "src": "gstatic"
 },
 "Uhaul": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
 "UiPath": {
+"board_tried": true,
 "domain": "uipath.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -13290,6 +13708,12 @@
 "logo": "assets/logos/underwriters-laboratories.webp",
 "src": "careers-board",
 "why": "no domain"
+},
+"Unisys": {
+"domain": "unisys.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/unisys.webp",
+"src": "gstatic"
 },
 "United Bank": {
 "domain": "bankwithunited.com",
@@ -13346,6 +13770,11 @@
 "Universal Music Group Careers": {
 "why": "too light to see on white"
 },
+"University Corporation for Atmospheric Research": {
+"logo": "assets/logos/university-corporation-for-atmospheric-research.webp",
+"src": "careers-board",
+"why": "no domain"
+},
 "University Health Network": {
 "domain": "uhn.ca",
 "domain_src": "clearbit",
@@ -13381,6 +13810,7 @@
 "src": "gstatic"
 },
 "University of Pikeville": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13486,6 +13916,7 @@
 "why": "generic placeholder icon"
 },
 "Valstad": {
+"board_tried": true,
 "why": "recheck"
 },
 "Vanasse Hangen Brustlin (VHB)": {
@@ -13664,6 +14095,12 @@
 "logo": "assets/logos/veryable.webp",
 "src": "gstatic"
 },
+"Vestmark": {
+"domain": "vestmark.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/vestmark.webp",
+"src": "gstatic"
+},
 "Vestwell": {
 "domain": "vestwell.com",
 "domain_src": "clearbit",
@@ -13746,6 +14183,7 @@
 "src": "gstatic"
 },
 "Visier Solutions": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13756,6 +14194,7 @@
 "src": "gstatic"
 },
 "Vital Lyfe": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13777,6 +14216,7 @@
 "src": "gstatic"
 },
 "Voloridge": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13787,6 +14227,7 @@
 "src": "gstatic"
 },
 "Voyager Technologies": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13838,6 +14279,7 @@
 "src": "gstatic"
 },
 "Wabtec": {
+"board_tried": true,
 "domain": "wabteccorp.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -13886,6 +14328,7 @@
 "why": "no logo >=48px"
 },
 "Wasabi Technologies": {
+"board_tried": true,
 "domain": "bluearchivetest.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -13936,6 +14379,7 @@
 "why": "no logo >=48px"
 },
 "WeRide": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -13949,6 +14393,7 @@
 "why": "no domain"
 },
 "Weiss Asset Management": {
+"board_tried": true,
 "domain": "weissasset.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -13984,6 +14429,12 @@
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
+},
+"Werner Enterprises": {
+"domain": "werner.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/werner-enterprises.webp",
+"src": "gstatic"
 },
 "West Bend Insurance": {
 "logo": null,
@@ -14060,6 +14511,7 @@
 "src": "gstatic"
 },
 "WhiteWater Midstream": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -14141,6 +14593,7 @@
 "src": "gstatic"
 },
 "Worldly": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -14154,6 +14607,7 @@
 "why": "no domain"
 },
 "Wurl": {
+"board_tried": true,
 "domain": "wurl.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -14194,6 +14648,7 @@
 "src": "gstatic"
 },
 "Xcel Energy": {
+"board_tried": true,
 "domain": "xcelenergy.com",
 "domain_src": "clearbit",
 "logo": null,
@@ -14231,12 +14686,14 @@
 "src": "gstatic"
 },
 "YOU.com": {
+"board_tried": true,
 "domain": "you.com",
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
 },
 "Yai": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -14321,6 +14778,7 @@
 "src": "gstatic"
 },
 "Zip": {
+"board_tried": true,
 "why": "recheck"
 },
 "ZipRecruiter": {
@@ -14378,6 +14836,7 @@
 "src": "gstatic"
 },
 "Zuru": {
+"board_tried": true,
 "domain": "zurufidget.com",
 "domain_src": "clearbit",
 "why": "recheck"
@@ -14401,6 +14860,7 @@
 "src": "gstatic"
 },
 "d-Matrix": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 },
@@ -14494,6 +14954,7 @@
 "why": "recheck"
 },
 "kos.ai": {
+"board_tried": true,
 "why": "recheck"
 },
 "nVent": {
@@ -14548,6 +15009,7 @@
 "why": "too light to see on white"
 },
 "zaimler": {
+"board_tried": true,
 "logo": null,
 "why": "no domain"
 }

@@ -1,13 +1,13 @@
 {
- "at": "2026-10-21T21:32:23Z",
- "open_visible": 11154,
+ "at": "2026-10-22T17:02:12Z",
+ "open_visible": 9915,
  "fixes": {
-  "city_dropped_unverifiable": 1526,
-  "city_normalized": 742,
+  "city_dropped_unverifiable": 1491,
+  "city_normalized": 738,
   "company_from_registry": 6,
-  "far_ats_enddate_not_shown": 113,
+  "far_ats_enddate_not_shown": 112,
   "hidden_bad_company": 27,
-  "duplicates_hidden": 65
+  "duplicates_hidden": 20
  },
  "checks": {
   "open_past_deadline": 0,
@@ -181,23 +181,22 @@
    "issue": "company looks like a job title"
   }
  ],
- "added": 204,
- "removed": 251,
- "changed": 20,
- "previous_open": 11201,
+ "added": 164,
+ "removed": 1518,
+ "changed": 17,
+ "previous_open": 11269,
  "events": {
-  "new": 184,
-  "deadline": 10,
-  "closed": 140
+  "new": 145,
+  "deadline": 6,
+  "closed": 1403
  },
  "sources": {
   "boards": 2497,
-  "ok": 2288,
-  "failed": 209,
+  "ok": 2291,
+  "failed": 206,
   "failed_sample": [
    "AbbVie (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AbbVie",
    "Accel Learning (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AccelL",
-   "Accenture (workday): RuntimeError: gave up on https://accenture.wd103.myworkdayjobs.com/wday/cxs/acce",
    "Accor (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AccorC",
    "Acumatica (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Acumat",
    "AECOM (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AECOM2",
@@ -217,14 +216,15 @@
    "Avery Dennison (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AveryD",
    "Axle (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/AxleIn",
    "BitGo (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
-   "Blackstone (workday): RuntimeError: gave up on https://blackstone.wd1.myworkdayjobs.com/wday/cxs/black",
    "Breeze Airways (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
    "CALSTART (lever): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings",
    "Cambia Health Solutions (workday): HTTPError: 422 Client Error: Unprocessable Entity for url: https://cambiahealth.",
    "Canva (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/Canva/",
    "Capital Rx (greenhouse): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io",
    "CapTech Consulting (smartrecruiters): robots: robots.txt disallows https://api.smartrecruiters.com/v1/companies/CapTec",
-   "Carnegie Mellon University (workday): HTTPError: 422 Client Error: Unprocessable Entity for url: https://cmu.wd5.mywor"
+   "Carnegie Mellon University (workday): HTTPError: 422 Client Error: Unprocessable Entity for url: https://cmu.wd5.mywor",
+   "Castleton Commodities International (workday): HTTPError: 422 Client Error: Unprocessable Entity for url: https://osv-cci.wd1.m",
+   "Chainlink Labs (ashby): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-"
   ]
  }
 }

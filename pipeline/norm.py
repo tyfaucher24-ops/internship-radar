@@ -18,6 +18,7 @@ SENIOR=re.compile(r"\b(senior|sr\.?|staff|principal|director|manager|head of|vp|
 def intern_class(title):
     """returns 'yes' | 'no' | 'ambiguous' (logged for review, never guessed)"""
     t=title or ''
+    if re.search(r'\bhigh[- ]school\b',t,re.I): return 'no'  # V12: college site; high-school programs are not shown
     if INTERN.search(t):
         if re.search(r'\bintern(ship)? (program )?(manager|coordinator|recruiter|lead|director|specialist)\b',t,re.I) or (SENIOR.search(t) and not re.search(r'\bintern',t,re.I)): return 'ambiguous'
         return 'yes'
@@ -81,7 +82,7 @@ CATS=[('Healthcare & Life Sciences',r'clinical|health|medical|pharma|biolog|nurs
 ('Product Management',r'product manag|product owner|\bapm\b|product intern'),
 ('Research',r'research assistant|undergrad(uate)? research|research fellow|\breu\b'),
 ('Data & AI',r'data|machine learning|\bml\b|\bai\b|artificial intel|analytics|scientist|\bnlp\b|computer vision'),
-('Engineering & Hardware',r'mechanical|electrical|civil|hardware|manufactur|aerospace|chemical eng|industrial|systems eng|structural|firmware|embedded|robot|flight test|process eng|quality|materials|environmental eng|field eng'),
+('Engineering & Hardware',r'mechanical|electrical|civil|hardware|manufactur|aerospace|chemical eng|industrial|systems eng|structural|firmware|embedded|robot|flight test|process eng|quality|material science|materials eng|metallurg|environmental eng|field eng|water|wastewater|loads|dynamics|structures|stress|damage tolerance|machine shop|test eng|thermal|propulsion|avionics|nuclear|power systems|substation|hvac|piping|geotech|survey|r&d eng|biomedical eng|glass eng|ceramic|polymer|technician'),
 ('Software & IT',r'software|developer|\bswe\b|full[- ]stack|backend|back-end|front[- ]end|web|cyber|security|\bit\b|cloud|devops|infrastructure|mobile|ios|android|engineer|technology|technical'),
 ('Business & Operations',r'operations|business|project manag|program manag|analyst|administrat|office')]
 SIMPLIFY_CAT={'AI/ML/Data':'Data & AI','Data Science, AI & Machine Learning':'Data & AI','Software':'Software & IT','Software Engineering':'Software & IT','Hardware':'Engineering & Hardware','Hardware Engineering':'Engineering & Hardware','Product':'Product Management','Product Management':'Product Management','Quant':'Quant & Trading','Quantitative Finance':'Quant & Trading'}
@@ -89,7 +90,8 @@ def category(title,dept='',hint=None):
     t=(' '+(title or '')+' ').lower()
     for c,rx in CATS:
         if re.search(rx,t): 
-            if hint=='Software & IT' and c in ('Business & Operations','Engineering & Hardware'): return hint
+            if hint=='Software & IT' and c=='Business & Operations': return hint
+            if hint=='Software & IT' and c=='Engineering & Hardware' and re.search(r'software|firmware|embedded|robot',t): return hint
             return c
     d=(' '+(dept or '')+' ').lower()
     for c,rx in CATS:

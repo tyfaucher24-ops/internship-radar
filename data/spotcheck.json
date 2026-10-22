@@ -1,67 +1,683 @@
 {
- "when": "2026-10-21T13:53:23Z",
- "seed": 1,
- "n": 30,
+ "when": "2026-10-22T18:10:46Z",
+ "seed": 20261022,
+ "n": 200,
  "counts": {
-  "ok": 23,
-  "unreachable": 6,
-  "robots": 1
+  "ok": 194,
+  "title_mismatch": 2,
+  "unreachable": 4
  },
- "accuracy_pct_of_checkable": 100.0,
+ "accuracy_pct_of_checkable": 99.0,
  "rows": [
   {
-   "id": "6415cbed6f",
-   "company": "AMCA",
-   "title": "Growth Internship (Summer 2027)",
-   "url": "https://job-boards.greenhouse.io/amca/jobs/4425052009",
+   "id": "0ba262ad28",
+   "company": "XPENG Motors",
+   "title": "AI Infra Onboard Performance Intern",
+   "url": "https://job-boards.greenhouse.io/xpengmotors/jobs/8581353002",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "60a21f1bd3",
-   "company": "Software Engineering Intern - Applied AI",
-   "title": "Software Engineering Intern, Applied AI",
-   "url": "https://thgrp.wd12.myworkdayjobs.com/Envita/job/Indianapolis-IN/Software-Engineering-Intern--Applied-AI_R-1727",
+   "id": "c89434151d",
+   "company": "HNTB",
+   "title": "Co-op Engineer: Structures - Spring/Summer 2027",
+   "url": "https://hntb.wd5.myworkdayjobs.com/HNTB_University_Careers/job/Philadelphia-PA-Pennsylvania/Co-op-Engineer--Structures---Spring-Summer-2027_R-31879",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "34a4d0590a",
-   "company": "Dow Jones",
-   "title": "Summer 2027 Internship Program \u2013 Audience Intern",
-   "url": "https://dowjones.wd1.myworkdayjobs.com/Dow_Jones_Career/job/NYC---1211-Ave-of-the-Americas/Summer-2027-Internship-Program---Audience-Intern_Job_Req_55881",
+   "id": "8def2127d8",
+   "company": "St. Luke's University Health Network",
+   "title": "Graduate Nurse and Registered Nurse Operating Room Internship (Opportunities at Multiple Campuses)",
+   "url": "https://sluhn.wd1.myworkdayjobs.com/SLUHN/job/Orwigsburg-PA---100-Paramount-Blvd/Graduate-Nurse-and-Registered-Nurse-Operating-Room-Internship--Opportunities-at-Multiple-Campuses-_R094305-2",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "949db752da",
-   "company": "Dallas Fort Worth International Airport",
-   "title": "2027 Undergraduate Summer Internship \u2013 Enterprise Data & Analytics",
-   "url": "https://dfwairport.wd5.myworkdayjobs.com/External/job/DFW-Intl-Airport-Board/XMLNAME-2027-Undergraduate-Summer-Internship---Enterprise-Data---Analytics_JR102162-1",
+   "id": "39bbade99f",
+   "company": "EMC Insurance",
+   "title": "Underwriting Intern \u2013 Northeast Region (Southeast/Southcentral PA)",
+   "url": "https://emcins.wd5.myworkdayjobs.com/EMC_Careers/job/Pennsylvania/Underwriting-Intern---Northeast-Region--Valley-Forge-_R6544",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "c671f71271",
-   "company": "2027 Summer Internship Program - Systematic Trading Technology Software Engineer - New York",
-   "title": "2027 Summer Internship Program \u2013 Venture Capital, New York",
-   "url": "https://wd3.myworkdaysite.com/recruiting/brevanhoward/BH_ExternalCareers/job/New-York/XMLNAME-2027-Summer-Internship-Program---Venture-Capital--New-York_JR101594",
+   "id": "00505d85a5",
+   "company": "Antares Nuclear",
+   "title": "Mechanical Engineering Design Intern - Summer 2027",
+   "url": "https://jobs.ashbyhq.com/Antares/9accca59-103b-4f54-978a-d5bb46bd9c62",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "e6cfc82fc0",
-   "company": "PennState University",
-   "title": "Student Farm Intern: 2027 Cohort",
-   "url": "https://psu.wd1.myworkdayjobs.com/PSU_Staff/job/Penn-State-University-Park/Student-Farm-Intern--2027-Cohort_REQ_0000081842-1",
+   "id": "6282fe4e0e",
+   "company": "The Aerospace",
+   "title": "2027 Space Domain Awareness Graduate Intern",
+   "url": "https://aero.wd5.myworkdayjobs.com/External/job/Colorado-Springs-CO/XMLNAME-2027-Space-Domain-Awareness-Graduate-Intern_R016958",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "ef05e05824",
+   "id": "66fe983f8e",
+   "company": "Cencora",
+   "title": "Intern, Sales & Support",
+   "url": "https://myhrabc.wd5.myworkdayjobs.com/Global/job/Remote-Pennsylvania/Intern--Sales---Support_R2613780",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "81b66c6129",
+   "company": "C.H. Robinson",
+   "title": "Customer Success Intern (Summer 2027)",
+   "url": "https://chrobinson.wd5.myworkdayjobs.com/CHRobinson/job/Chicago-IL-United-States-of-America/Customer-Success-Intern_R49866",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d976148815",
+   "company": "CNA Insurance",
+   "title": "Technology Internship Program (Software Engineering)",
+   "url": "https://cna.wd1.myworkdayjobs.com/CNA_Careers/job/Chicago-IL-USA/Technology-Internship-Program--Software-Engineering-_R-8107",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "68eb0c23a0",
+   "company": "Merck",
+   "title": "2027 Future Talent Program - Study Management - Intern",
+   "url": "https://msd.wd5.myworkdayjobs.com/SearchJobs/job/USA---Pennsylvania---North-Wales-Upper-Gwynedd/XMLNAME-2027-Future-Talent-Program---Study-Management---Intern_R413266",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "f730502a10",
+   "company": "Rocket Lab USA",
+   "title": "Systems Engineering Intern Summer 2027",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7990272003",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "657a4d3c74",
+   "company": "Cherry Bekaert",
+   "title": "Spring 2028 Tax Intern - Palm Beach Gardens",
+   "url": "https://cbh.wd12.myworkdayjobs.com/CherryBekaertEarlyCareers/job/Palm-Beach-Gardens/Spring-2028-Tax-Intern---Palm-Beach-Gardens_JR100977-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b677078530",
+   "company": "McKesson",
+   "title": "Corporate Intern - Summer 2027",
+   "url": "https://mckesson.wd3.myworkdayjobs.com/External_Careers/job/USA-VA-Richmond/Corporate-Intern---Summer-2027_JR0155324",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6d86a6951b",
+   "company": "BGE",
+   "title": "FRISCO - GIS Intern",
+   "url": "https://job-boards.greenhouse.io/bgeinc/jobs/5435139008",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1080bab2cd",
+   "company": "Auto-Owners Insurance",
+   "title": "Claims Representative Internship - Summer 2027",
+   "url": "https://aoins.wd5.myworkdayjobs.com/AutoOwners/job/Birmingham-AL/Claims-Representative-Internship---Summer-2027_R_14558",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c1d2e6af9f",
+   "company": "Figure",
+   "title": "Electrical Engineering Intern [Winter 2027]",
+   "url": "https://job-boards.greenhouse.io/figureai/jobs/4676467006",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ca3c55f0bf",
+   "company": "Tyson Foods",
+   "title": "Cobb Microbiology Year Round Intern - Siloam Springs, AR",
+   "url": "https://tysonfoods.wd5.myworkdayjobs.com/TSN/job/Cobb-Vantress-Corporate---Siloam-Springs-Arkansas/Cobb-Microbiology-Year-Round-Intern---Siloam-Springs--AR_R0486869-2",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "89fb30f56f",
+   "company": "Veeam Software",
+   "title": "CoE Program & Content Intern - Summer 2027",
+   "url": "https://job-boards.eu.greenhouse.io/veeamsoftware/jobs/4964357101",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ca6a1cd76b",
+   "company": "The New School",
+   "title": "Event Planning Support, Student Assistant Specialist",
+   "url": "https://newschool.wd1.myworkdayjobs.com/External/job/D---79-Fifth-Avenue/Event-Planning-Support--Student-Assistant-Specialist_JR109332",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "7b68ebdd78",
+   "company": "Envista",
+   "title": "Research and Development Intern",
+   "url": "https://envista.wd1.myworkdayjobs.com/envistacareers/job/United-States-of-America--Texas--Lubbock/Research-and-Development-Intern_R5027451",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "98928e8c96",
+   "company": "Auto-Owners Insurance",
+   "title": "Claims Representative Internship - Summer 2027",
+   "url": "https://aoins.wd5.myworkdayjobs.com/AutoOwners/job/Madison-WI/Claims-Representative-Internship---Summer-2027_R_14270",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bf2b8a2a0a",
+   "company": "Akuna Capital",
+   "title": "Entry-Level C++ Software Engineer Intern",
+   "url": "https://www.akunacapital.com/careers/job/8013085/?gh_jid=8013085",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "61f9f14f42",
+   "company": "Philips",
+   "title": "Co-op - Electrical Engineering - Latham, NY - January-July 2027",
+   "url": "https://philips.wd3.myworkdayjobs.com/jobs-and-careers/job/Latham-New-York-United-States/Co-op---Electrical-Engineering---Latham--NY---January-July-2027_590387",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "32bbb8be4a",
+   "company": "FOX",
+   "title": "Summer 2027 FOX News Media Internship Program - Technical Operations - Washington DC",
+   "url": "https://fox.wd1.myworkdayjobs.com/Domestic/job/Washington-District-of-Columbia-USA/Summer-2027-FOX-News-Media-Internship-Program---Technical-Operations---Washington-DC_R50033947",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "e5f1057a44",
+   "company": "Bosch",
+   "title": "Calibration Process Optimization Intern",
+   "url": "https://jobs.smartrecruiters.com/BoschGroup/744000156585075",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9bb7c4980c",
+   "company": "Symbotic",
+   "title": "MBA Intern- Executive Projects",
+   "url": "https://symbotic.wd504.myworkdayjobs.com/Symbotic/job/USA-Wilmington--MA---HQ/MBA-Intern--Executive-Projects_R8293",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4d4cff9a78",
+   "company": "Moderna",
+   "title": "Co-Op, Bioanalytics",
+   "url": "https://modernatx.wd1.myworkdayjobs.com/M_tx/job/Cambridge-Massachusetts/Co-Op--Bioanalytics_R19882",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a8b33f95be",
+   "company": "TC Energy",
+   "title": "Intern, Work Management Capabilities & Platforms",
+   "url": "https://tcenergy.wd3.myworkdayjobs.com/CAREER_SITE_TC/job/Houston-Texas/Intern--Work-Management-Capabilities---Platforms_JR-10951",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4bc76090a6",
+   "company": "Stryten",
+   "title": "System Engineer Intern",
+   "url": "https://jobs.stryten.com/jobs/5799?icims=1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8c78bbc766",
+   "company": "FOX",
+   "title": "Summer 2027 FOX Entertainment Internship Program - New York",
+   "url": "https://fox.wd1.myworkdayjobs.com/Domestic/job/New-York-New-York-USA/Summer-2027-FOX-Entertainment-Internship-Program---New-York_R50033974-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bf7faf5932",
+   "company": "Highmark Health",
+   "title": "Radiology Tech Intern / Casual | Forbes Hospital",
+   "url": "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Monroeville-PA-15146-2570-Haymaker-Road/Radiology-Tech-Intern---Casual---Forbes-Hospital_J285715",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "cc60e8da46",
+   "company": "AMI",
+   "title": "AMI Scientist/Interns - Geometry and 3D Vision",
+   "url": "https://jobs.ashbyhq.com/ami/0d7332d8-b8e7-40d3-89b6-dfc02b40bfa2",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c36e28daa4",
+   "company": "State Employees' Credit Union (SECU)",
+   "title": "Intern \u2013 Branch Part-time Spring 2027",
+   "url": "https://ncsecu.wd1.myworkdayjobs.com/SECU/job/North-Carolina/Intern---Branch-Part-time-Spring-2027_JR-16550",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "343ed6097f",
+   "company": "HAI Group",
+   "title": "Software Development Intern",
+   "url": "https://job-boards.greenhouse.io/haigroup/jobs/4409386009",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d62ed60e0a",
+   "company": "NextGen Federal Systems",
+   "title": "Recruiting / Business Support Internship \u2013 Remote",
+   "url": "https://jobs.lever.co/nextgenfed/a0b3a592-0dac-4cae-bee4-1e733bd73d55",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "fad9cae04e",
+   "company": "Merck",
+   "title": "2027 Future Talent Program - Manufacturing Strategy, Business Development and Alliances (MSBDA) Intern",
+   "url": "https://msd.wd5.myworkdayjobs.com/SearchJobs/job/USA---Pennsylvania---West-Point/XMLNAME-2027-Future-Talent-Program---Manufacturing-Strategy--Business-Development-and-Alliances--MSBDA--Intern_R418677",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "3800804c37",
+   "company": "Carrier Global",
+   "title": "Test Engineering Intern - Summer",
+   "url": "https://carrier.wd5.myworkdayjobs.com/jobs/job/CAI19-UTEC-Huntington-111-East-Wayne-Street-Fort-Wayne-IN-46802-USA/Test-Engineering-Intern---Summer_30220233",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "3be664b1c9",
+   "company": "AeroVironment",
+   "title": "Digital Business Technology Infrastructure (DBT) Intern",
+   "url": "https://avav.wd1.myworkdayjobs.com/AVAV/job/Simi-Valley-CA/XMLNAME--Digital-Business-Technology-Infrastructure--DBT--Intern_8885",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d62e90baba",
+   "company": "AeroVironment",
+   "title": "Mechanical Engineering Intern",
+   "url": "https://avav.wd1.myworkdayjobs.com/AVAV/job/Pottstown-PA/Mechanical-Engineering-Intern_8627",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "05ae30a2b0",
    "company": "Muon Space",
-   "title": "Industrial Engineering Intern (Summer 2027)",
-   "url": "https://job-boards.greenhouse.io/muonspace/jobs/5256284007",
+   "title": "GNC Software Engineering Intern (Summer 2027)",
+   "url": "https://job-boards.greenhouse.io/muonspace/jobs/5252680007",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a4d2023995",
+   "company": "Dow Jones",
+   "title": "Summer 2027 Internship Program \u2013 Trade Marketing and Content Intern",
+   "url": "https://dowjones.wd1.myworkdayjobs.com/Dow_Jones_Career/job/NYC---1211-Ave-of-the-Americas/Summer-2027-Internship-Program---Trade-Marketing-and-Content-Intern_Job_Req_55884",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "70b287c2f3",
+   "company": "Insulet",
+   "title": "Co-op, Life Cycle Engineering - Electrical: January - June 2027 (Hybrid)",
+   "url": "https://insulet.wd5.myworkdayjobs.com/insuletcareers/job/Acton-Massachusetts/Co-op--Life-Cycle-Engineering---Electrical--January---June-2027--Hybrid-_REQ-2026-18043",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "41521b7750",
+   "company": "SharkNinja",
+   "title": "Engineering & Technology Co-op Opportunities",
+   "url": "https://job-boards.greenhouse.io/sharkninjaoperatingllc/jobs/4713854006",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6e35509bd2",
+   "company": "Brunswick",
+   "title": "Mercury Marine: UX/UI Design Intern",
+   "url": "https://brunswick.wd1.myworkdayjobs.com/search/job/Fond-du-Lac-WI/Mercury-Marine--UX-UI-Design-Intern_JR-051163",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "99a9ab2e5c",
+   "company": "Point72",
+   "title": "2027 Summer Internship - Investment Services",
+   "url": "https://boards.greenhouse.io/point72/jobs/8811167002?gh_jid=8811167002",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1026780c97",
+   "company": "Point72",
+   "title": "Quantitative Research Intern (NLP)",
+   "url": "https://boards.greenhouse.io/point72/jobs/8018862002?gh_jid=8018862002",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "24641243da",
+   "company": "GlobalFoundries",
+   "title": "APL Quantum Intern (Summer 2027)",
+   "url": "https://globalfoundries.wd1.myworkdayjobs.com/External/job/USA---New-York---Malta/APL-Quantum-Intern--Summer-2027-_JR-2604434",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9504a1dde2",
+   "company": "Trane Technologies",
+   "title": "Electrical Engineering Co-op",
+   "url": "https://tranetechnologies.wd12.myworkdayjobs.com/Trane_Technologies_Careers/job/Grand-Rapids-Michigan/Electrical-Engineering-Co-op_JR-11431",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "75486a8c81",
+   "company": "Aprio",
+   "title": "Aprio Spring/Fall 2027 Internship Application - Audit - Philadelphia",
+   "url": "https://jobs.lever.co/Aprio/36544a16-7748-4da6-8a0a-74792107fe25",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4b387ee285",
+   "company": "Menasha",
+   "title": "Custom Packaging Design Engineer Co-Op (Spring 2027)",
+   "url": "https://menasha.wd12.myworkdayjobs.com/MenashaCorp/job/Mentor-Ohio/Custom-Packaging-Design-Engineer-Co-Op--Spring-2027-_R12878",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "e5679afc6a",
+   "company": "Textron",
+   "title": "Software Engineer Intern",
+   "url": "https://textron.taleo.net/careersection/textron/jobdetail.ftl?job=343299",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "414bfcce96",
+   "company": "Liberty Mutual",
+   "title": "Data Science Co-op",
+   "url": "https://campus-libertymutual.icims.com/jobs/261811/job?mobile=true&needsRedirect=false",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b31d687cad",
+   "company": "University of Nevada, Reno",
+   "title": "Student Worker - Student Computer Science Engineer, SAGE",
+   "url": "https://nshe.wd1.myworkdayjobs.com/UNR-external/job/University-of-Nevada-Reno---Main-Campus/Student-Worker---Student-Computer-Science-Engineer--SAGE_R0153576",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6d12437332",
+   "company": "Marmon Holdings",
+   "title": "Controls Engineer Co-op (Spring 2027)",
+   "url": "https://marmon.wd501.myworkdayjobs.com/Marmon_MSIP_Internships/job/Mt-Juliet-TN/Controls-Engineer-Co-op--Spring-2027-_JR0000045809-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9bcc8622dd",
+   "company": "Motorola",
+   "title": "DSP (Digital Signal Processing) Software Engineering Intern - Summer 2027",
+   "url": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Plantation-FL/DSP--Digital-Signal-Processing--Software-Engineering-Intern---Summer-2027_R68734",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bb7250bdfe",
+   "company": "State of North Carolina",
+   "title": "Data Science Intern",
+   "url": "https://nc.wd108.myworkdayjobs.com/NC_Careers/job/Wake-County-NC/Data-Science-Intern_JR-125225",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "da428d1254",
+   "company": "Hitachi Energy",
+   "title": "2027 Summer Health Safety Environmental Internship-Jefferson City",
+   "url": "https://hitachi.wd1.myworkdayjobs.com/hitachi/job/Jefferson-City-Missouri-United-States-of-America/XMLNAME-2027-Summer-Health-Safety-Environmental-Internship-Jefferson-City_R0143630",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "fd4f040f95",
+   "company": "Integrity",
+   "title": "Research Intern",
+   "url": "https://integritymarketing.wd1.myworkdayjobs.com/Integrity/job/Minneapolis-MN/Research-Intern_JR4284",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1f53dfbaf7",
+   "company": "RTX",
+   "title": "Systems Engineering Intern 2027 - Onsite",
+   "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IN-INDIANAPOLIS-206--3939-Priority-Way-S-Dr--PRIORITY-BLDG-6/Systems-Engineering-Intern-2027---Onsite_01878041",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "f083f53a05",
+   "company": "Base Power",
+   "title": "Finance - Analytics Intern",
+   "url": "https://jobs.ashbyhq.com/base-power/eea685b7-23a1-4a86-b661-9aeb737c9866",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "937711a22a",
+   "company": "Northwestern Mutual",
+   "title": "Enterprise Sustainability & Impact Intern - Modeling & Analytics, Summer 2027",
+   "url": "https://northwesternmutual.wd5.myworkdayjobs.com/CORPORATE-CAREERS/job/Milwaukee-WI-Corporate/Enterprise-Sustainability---Impact-Intern---Modeling---Analytics--Summer-2027_JR-46171",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1d371e5102",
+   "company": "Nationwide",
+   "title": "Summer 2027 Feature Engineer Internship",
+   "url": "https://nationwide.wd1.myworkdayjobs.com/Nationwide_Career/job/Ohio---Columbus-Metro/Summer-2027-Feature-Engineer-Internship_100233",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "3fb30539b0",
+   "company": "Hitachi Energy",
+   "title": "Controls Engineering Internship/Co-op",
+   "url": "https://hitachi.wd1.myworkdayjobs.com/hitachi/job/Auburn-Hills-Michigan-United-States/Controls-Engineering-Internship-Co-op_R0143858",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "76462fad03",
+   "company": "Booz Allen",
+   "title": "University - 2027 Summer Games Systems Engineer Intern - Huntsville, AL",
+   "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/Huntsville-AL/University---2027-Summer-Games-Systems-Engineer-Intern---Huntsville--AL_R0249188",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "aac4ff0818",
+   "company": "Ernst & Young",
+   "title": "Artificial Intelligence Intern - Tax - Tax Technology and Transformation",
+   "url": "https://eyglobal.yello.co/jobs/LGUG7W08QqkVXWnuqFB0TA?job_board_id=c1riT--B2O-KySgYWsZO1Q",
+   "result": "title_mismatch",
+   "detail": "0.00"
+  },
+  {
+   "id": "624446ddfb",
+   "company": "PennState University",
+   "title": "Schreyer Honors College Career Counseling Internship",
+   "url": "https://psu.wd1.myworkdayjobs.com/PSU_Staff/job/Penn-State-University-Park/Schreyer-Honors-College-Career-Counseling-Internship_REQ_0000079208-2",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "5d135cd25f",
+   "company": "Audax Group",
+   "title": "IT Operations Co-Op",
+   "url": "https://job-boards.greenhouse.io/audaxgroup/jobs/4722750005",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1cf051daf1",
+   "company": "The Boeing Company",
+   "title": "Boeing Summer 2027 Internship Program (Paid) - Business Operations",
+   "url": "https://boeing.wd1.myworkdayjobs.com/INTERN/job/USA---Everett-WA/Boeing-Summer-2027-Internship-Program--Paid----Business-Operations_JR2026519268",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "01c5e20c74",
+   "company": "WSFS Bank",
+   "title": "2027 Summer Internship - Bryn Mawr Trust and Wealth Management Operations",
+   "url": "https://wsfsbank.wd1.myworkdayjobs.com/wsfscareers/job/Berwyn-PA/XMLNAME-2027-Summer-Internship---Bryn-Mawr-Trust-and-Wealth-Management-Operations_R-104130-3",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "0b90b6f0a1",
+   "company": "Carrier Global",
+   "title": "Design Engineering Intern - Summer",
+   "url": "https://carrier.wd5.myworkdayjobs.com/jobs/job/CAI19-UTEC-Huntington-111-East-Wayne-Street-Fort-Wayne-IN-46802-USA/Design-Engineering-Intern---Summer_30220221-2",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "e86dcced79",
+   "company": "International Rescue Committee (IRC)",
+   "title": "All US Internship Opportunities",
+   "url": "https://theirc.wd1.myworkdayjobs.com/External_Careers/job/New-York-NY-HQ-USA/All-US-Internship-Opportunities_JR00000488",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1addffe5dc",
+   "company": "Bracebridge Capital",
+   "title": "Northeastern University Software Engineer - Application Development Co-op",
+   "url": "https://job-boards.greenhouse.io/bracebridgecapital/jobs/4745001005",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "78a6d2f929",
+   "company": "Signify",
+   "title": "Mechanical Engineering Intern, Cooper Lighting Solutions - Spring 2027",
+   "url": "https://lighting.wd3.myworkdayjobs.com/jobs-and-careers/job/Aurora/Mechanical-Engineering-Intern--Cooper-Lighting-Solutions---Spring-2027_366626",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ea7a89c665",
+   "company": "ONEOK",
+   "title": "Instrumentation & Electrical Technician Intern",
+   "url": "https://oneok.wd1.myworkdayjobs.com/ONEOK_Early_Careers/job/Midland-TX/Intern---Field--DOT---Unfilled-_R8354",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "e48478eb1c",
+   "company": "Nokia",
+   "title": "ASIC Physical Design Co-op",
+   "url": "https://fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/41122",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1891deff92",
+   "company": "The New School",
+   "title": "List Center Library Student Assistant - FWS",
+   "url": "https://newschool.wd1.myworkdayjobs.com/External/job/D---6-East-16th-Street/List-Center-Library-Student-Assistant_JR109170",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b94a286592",
+   "company": "Vertex Pharmaceuticals",
+   "title": "Spring 2027 Co-op, People Research and Analytics, Human Resources",
+   "url": "https://vrtx.wd501.myworkdayjobs.com/Vertex_Careers/job/Boston-MA/Spring-2027-Co-op--People-Research-and-Analytics--Human-Resources_REQ-31103-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1b6f331c94",
+   "company": "Regeneron Pharmaceuticals",
+   "title": "2027 Co-op Genetics & Genomics (Regeneron Genetics Center)",
+   "url": "https://regeneron.wd1.myworkdayjobs.com/Careers/job/TARRYTOWN/XMLNAME-2027-Co-op-Genetics---Genomics--Regeneron-Genetics-Center-_R51036-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "76a9d9b2af",
+   "company": "Advocate Health Care",
+   "title": "Enterprise Internship, Information Technology",
+   "url": "https://aah.wd5.myworkdayjobs.com/External/job/Aurora-Medical-Center-West-Allis---8901-W-Lincoln-Ave/Enterprise-Internship--Information-Technology_R280265",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "29f4480083",
+   "company": "Hewlett Packard Enterprise",
+   "title": "ASIC Intern",
+   "url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Roseville-California-United-States-of-America/ASIC-Intern_1214020",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "227997f591",
+   "company": "The Federal Reserve System",
+   "title": "Audit Intern - 2027",
+   "url": "https://rb.wd5.myworkdayjobs.com/FRS/job/Cleveland-OH/Audit-Intern---2027_R-0000033629",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "64d1c6ae1a",
+   "company": "Syska Hennessy Group",
+   "title": "Lighting Design Summer Intern",
+   "url": "https://job-boards.greenhouse.io/syskahennessy/jobs/8177851",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8f9798a85c",
+   "company": "IKO",
+   "title": "HSE/Safety Intern",
+   "url": "https://iko.wd3.myworkdayjobs.com/IKO_Careers/job/Ennis-TX/HSE-Safety-Intern_REQ-13202",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d2b95ff73c",
+   "company": "TIAA",
+   "title": "2027 Early Talent Internship: Wealth Management & Advice Solutions",
+   "url": "https://tiaa.wd1.myworkdayjobs.com/Search/job/3965-Dallas-Parkway--Frisco-TX-75034/XMLNAME-2027-Early-Talent-Internship--Wealth-Management---Advice-Solutions_R261000119-2",
    "result": "ok",
    "detail": "1.00"
   },
@@ -74,26 +690,914 @@
    "detail": "1.00"
   },
   {
-   "id": "33ce64046e",
-   "company": "Varda Space",
-   "title": "Aerodynamics & Analysis Engineering Internship - Summer 2027",
-   "url": "https://job-boards.greenhouse.io/vardaspace/jobs/8010632003",
+   "id": "67c0de452b",
+   "company": "Dallas College",
+   "title": "Employee Experience and Engagement Intern",
+   "url": "https://dallascollege.wd1.myworkdayjobs.com/Dallas_College_Careers/job/Bill-J-Priest-Center/Employee-Experience-and-Engagement-Intern_R13471",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "302b59b4b3",
+   "id": "939a9e71d2",
+   "company": "Cambridge Investment Research",
+   "title": "Data Engineering Intern",
+   "url": "https://cir.wd108.myworkdayjobs.com/CIR_External_Career_Site/job/Phoenix-AZ/Data-Engineering-Intern_R-2025-221",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "370ffcc60d",
+   "company": "Johnson & Johnson",
+   "title": "US Medical Affairs GI Summer Intern",
+   "url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Horsham-Pennsylvania-United-States-of-America/US-Medical-Affairs-GI-Summer-Intern_R-104355-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4d4439dd2e",
+   "company": "American Bankers Association",
+   "title": "Intern, Fraud Risk Management",
+   "url": "https://aba.wd1.myworkdayjobs.com/ABA/job/US-DC-Main-Office/Intern--Fraud-Risk-Management_R613",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8c1848e079",
+   "company": "Fannie Mae",
+   "title": "Campus - Risk Analyst Program Intern",
+   "url": "https://fanniemae.wd1.myworkdayjobs.com/FannieMaeCareers/job/Plano-TX/Campus---Risk-Analyst-Program-Intern_JR2821",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bb6a231281",
+   "company": "Procter & Gamble (P&G)",
+   "title": "Communications Manager Internship",
+   "url": "https://pg.wd5.myworkdayjobs.com/1000/job/CINCINNATI-GENERAL-OFFICES/Communications-Manager-Internship_R000157694",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "cc57ae31d5",
+   "company": "Parsons",
+   "title": "Civil Engineer Intern - Summer 2027",
+   "url": "https://parsons.wd5.myworkdayjobs.com/Search/job/US---CA-Pasadena/Civil-Engineer-Intern---Summer-2027_R187651",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "439335c362",
+   "company": "Procter & Gamble (P&G)",
+   "title": "Digital Marketing Technology Internship",
+   "url": "https://pg.wd5.myworkdayjobs.com/1000/job/CINCINNATI-GENERAL-OFFICES/Digital-Marketing-Technology-Internship_R000157501",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "3860b7b61c",
+   "company": "Voyager Technologies",
+   "title": "2027 Mechanical Engineering Intern",
+   "url": "https://job-boards.greenhouse.io/voyagertechnologiesinc/jobs/4423308009",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "63507c9b5f",
+   "company": "Hilb Group",
+   "title": "Corporate Marketing Intern",
+   "url": "https://hilbgroup.wd5.myworkdayjobs.com/HG-Careers/job/REMOTE/Corporate-Marketing-Intern_JR100875",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "19c0ee7918",
+   "company": "Trane Technologies",
+   "title": "Intern - Mechanical Designer",
+   "url": "https://tranetechnologies.wd12.myworkdayjobs.com/Trane_Technologies_Careers/job/La-Crosse-Wisconsin/Intern---Mechanical-Designer_JR-11513",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "82e7fe9801",
+   "company": "Figma",
+   "title": "PhD Intern, AI Applied Scientist (2027)",
+   "url": "https://boards.greenhouse.io/figma/jobs/6207801004?gh_jid=6207801004",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "7b675943ba",
+   "company": "Nebraska Medicine",
+   "title": "Heart Monitoring Unit Internship - Part Time Days",
+   "url": "https://nebraskamed.wd5.myworkdayjobs.com/NM/job/Omaha-NE/Heart-Monitoring-Unit-Internship---Part-Time-Days_REQ-38710",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d7f46a2925",
+   "company": "Johnson & Johnson",
+   "title": "TDS DPD&D Protein Formulations Co-Op",
+   "url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Malvern-Pennsylvania-United-States-of-America/TDS-DPD-D-Protein-Formulations-Co-Op_R-098658",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b644c57cc7",
+   "company": "Hewlett Packard Enterprise",
+   "title": "PhD Research Intern",
+   "url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Milpitas-California-United-States-of-America/PhD-Research-Intern_1213426",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d3c7a05c52",
+   "company": "PricewaterhouseCoopers (PwC)",
+   "title": "Philadelphia - Tax JD - Intern - Summer 2027",
+   "url": "https://pwc.wd3.myworkdayjobs.com/US_Entry_Level_Careers/job/PA-Philadelphia/Philadelphia---Tax-JD---Intern---Summer-2027_763735WD",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "77203fc612",
+   "company": "Entegris",
+   "title": "Customer Service Co-Op",
+   "url": "https://entegris.wd1.myworkdayjobs.com/EntegrisCareers/job/Chaska-MN/Customer-Service-Co-Op_REQ-14481",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "5d8beded55",
+   "company": "Stand Together",
+   "title": "KIP Spring 2027 - Fiscal Policy Intern - Independence Institute",
+   "url": "https://jobs.lever.co/standtogether/79e19696-08a4-4e1e-978f-baea4753124e",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "eef267b78d",
+   "company": "Swarm Aero",
+   "title": "Composite Engineering (M&P) Intern (Summer 2027)",
+   "url": "https://jobs.ashbyhq.com/swarmaero/31565a0a-c55e-4d70-832d-8a4b5e5528ad",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "1d71695f04",
+   "company": "State of Nebraska",
+   "title": "Probation Undergraduate Intern",
+   "url": "https://son.wd108.myworkdayjobs.com/NebraskaStateCareers/job/Kearney-NE/Probation-Undergraduate-Intern_JR2026-00029999",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b251e76e09",
+   "company": "Duke Energy",
+   "title": "Vehicle Maintenance Technician Internship - 2027",
+   "url": "https://dukeenergy.wd1.myworkdayjobs.com/Search/job/Florence-SC/Vehicle-Maintenance-Technician-Internship---2027_R41190",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8fad88619f",
+   "company": "PennState University",
+   "title": "Part-Time Strategic Communications Intern",
+   "url": "https://psu.wd1.myworkdayjobs.com/PSU_Staff/job/Penn-State-University-Park/Part-Time-Strategic-Communications-Intern_REQ_0000080066-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "933f6a3f81",
+   "company": "Ameriprise Financial",
+   "title": "Actuarial Intern",
+   "url": "https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Minnesota/Actuarial-Intern_R26_3572",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "543981665c",
    "company": "Intel",
-   "title": "Platform Hardware and Systems Engineering - Intern, Bachelor\u2019s",
-   "url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Platform-Hardware-and-Systems-Engineering---Intern--Bachelor-s_JR0286827",
+   "title": "Facilities Services - Intern, Bachelor\u2019s",
+   "url": "https://intel.wd1.myworkdayjobs.com/External/job/US-Oregon-Hillsboro/Facilities-Services---Intern--Bachelor-s_JR0286826",
    "result": "ok",
    "detail": "1.00"
   },
   {
-   "id": "87a4247b3b",
-   "company": "Brunswick",
-   "title": "Transducer Engineering Intern",
-   "url": "https://brunswick.wd1.myworkdayjobs.com/search/job/Tulsa-OK/Transducer-Engineering-Intern_JR-051320",
+   "id": "ef091dcbd9",
+   "company": "Point72",
+   "title": "Investment Analyst Intern, Point72 Academy",
+   "url": "https://careers.point72.com/CSJobDetail?jobName=2027-point72-academy-investment-analyst-summer-internship-program-us&jobCode=CPA-0014081",
+   "result": "title_mismatch",
+   "detail": "0.25"
+  },
+  {
+   "id": "ffb747a00e",
+   "company": "Duolingo",
+   "title": "Product Manager, MBA Intern",
+   "url": "https://job-boards.greenhouse.io/duolingounirecruitment/jobs/8888266002",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a2a5832201",
+   "company": "McKesson",
+   "title": "System Design / QA Intern - Summer 2027",
+   "url": "https://mckesson.wd3.myworkdayjobs.com/External_Careers/job/USA-TX-Remote/System-Design---QA-Intern---Summer-2027_JR0152746",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "fcdde8263e",
+   "company": "The Walt Disney Company",
+   "title": "Finance Intern, Spring 2027",
+   "url": "https://disney.wd5.myworkdayjobs.com/disneycareer/job/Anaheim-CA-USA/Finance-Intern--Spring-2027_10162487",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "da2beb99aa",
+   "company": "NOV",
+   "title": "Software Engineer Intern - Rig Technologies",
+   "url": "https://egay.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_4001/job/44449",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "66dbabe2af",
+   "company": "Graco",
+   "title": "HR Operations Intern",
+   "url": "https://graco.wd501.myworkdayjobs.com/Graco_Careers/job/Dayton-Minnesota-USA-French-Lake/HR-Operations-Intern_R0023528",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6f6b6e4948",
+   "company": "WTW",
+   "title": "Risk & Analytics Core Intern",
+   "url": "https://eedu.fa.em3.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1003/job/202606637",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b773f69971",
+   "company": "BRG",
+   "title": "Corporate Finance, Transaction Advisory - 2027 Summer Associate (Intern)",
+   "url": "https://thinkbrg.wd5.myworkdayjobs.com/BRG_External_Career_Site/job/Chicago-IL/Corporate-Finance--Transaction-Advisory---2027-Summer-Associate--Intern-_JR101208",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4af7688019",
+   "company": "nVent",
+   "title": "Manufacturing Engineering Co-op (January - June 2027)",
+   "url": "https://nvent.wd5.myworkdayjobs.com/nVent/job/Anoka-MN-US/Manufacturing-Engineering-Co-op--January---June-2027-_R23576",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "394596ab62",
+   "company": "Four Hands",
+   "title": "Sales Enablement Intern",
+   "url": "https://job-boards.greenhouse.io/fourhands/jobs/4458305009",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c4e7a0bdc4",
+   "company": "UMB",
+   "title": "Capital Markets Sales Intern",
+   "url": "https://umb.wd1.myworkdayjobs.com/UMBExternal/job/Kansas-City-MO/Capital-Markets-Sales-Intern_R-9589",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "21425325d1",
+   "company": "Tarrant Regional Water District",
+   "title": "Summer 2027 Energy Intern (T047)",
+   "url": "https://trwd.wd1.myworkdayjobs.com/TRWDCareers/job/Fort-Worth-TX/Summer-2027-Energy-Intern--T047-_JR100217",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "f84185a157",
+   "company": "Saint Leo University",
+   "title": "2026-2027 FWS Student Worker, Accessibility Services Student Assistant",
+   "url": "https://saintleo.wd503.myworkdayjobs.com/SLU/job/University-Campus/XMLNAME-2026--2027-FWS-Student-Worker--Accessibility-Services-Student-Assistant_R2230",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "2dfa24a3e3",
+   "company": "xAI",
+   "title": "Spring 2027 Software Engineering Internship/Co-op",
+   "url": "https://job-boards.greenhouse.io/xai/jobs/5252108007",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "2873268e13",
+   "company": "Wawa",
+   "title": "Finance Internship",
+   "url": "https://wawa.wd1.myworkdayjobs.com/careers/job/WAWA---Wawa-Inc---Corporate-Office/Finance-Internship_JR122357",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "cd5d3234cf",
+   "company": "Plexus",
+   "title": "Intern - Site IT (Summer 2027)",
+   "url": "https://plexus.wd504.myworkdayjobs.com/Plexus_Careers/job/Neenah-WI/Intern---Site-IT--Summer-2027-_R041137",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "227a9e81ae",
+   "company": "OCC",
+   "title": "Year-Round Intern - Stress Testing & Liquidity Management",
+   "url": "https://theocc.wd5.myworkdayjobs.com/careers/job/Chicago---125-S-Franklin/Year-Round-Intern---Stress-Testing---Liquidity-Management_REQ-4869",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6f8c5b95e8",
+   "company": "DuCharme, McMillen & Associates",
+   "title": "Business Development Intern - Spring 2027",
+   "url": "https://dmainc.wd5.myworkdayjobs.com/DMA/job/Indianapolis-IN/Business-Development-Intern---Spring-2027_REQ650",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "3605028b3d",
+   "company": "Virtu Financial",
+   "title": "2027 Internship - Quantitative Trading",
+   "url": "https://job-boards.greenhouse.io/virtu/jobs/8624408002",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "779edcb0dc",
+   "company": "Commerce Bank",
+   "title": "Intern - Business Banking, Illinois (Summer 2027)",
+   "url": "https://commercebank.wd1.myworkdayjobs.com/CommerceJobs/job/IL---Central-Illinois---Bloomington---Bloomington-Main-61701/Intern-IL-Business-Banking-Summer-2027_38474",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "473545bbab",
+   "company": "Forvis Mazars",
+   "title": "Intern \u2014 Forensics & Valuation Summer 2027 (Charlotte selectable)",
+   "url": "https://forvis.avature.net/campuscareers/JobDetail/Intern-Forensics-Valuation-Summer-2027-Multiple-Locations/15139",
+   "result": "unreachable",
+   "detail": "403 Client Error: Forbidden for url: https://forvis.avature.net/campuscareers/Er"
+  },
+  {
+   "id": "d9ec28d8fd",
+   "company": "Polaris",
+   "title": "Technical Apparel/Gear Internship | Summer 2027 | Klim & 509",
+   "url": "https://polaris.wd5.myworkdayjobs.com/PolarisJobs/job/Rigby-ID-USA/Technical-Apparel-Gear-Internship---Summer-2027---Klim---509_R31300-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8e436f7070",
+   "company": "Jane Street",
+   "title": "Quantitative Trader Intern",
+   "url": "https://www.janestreet.com/join-jane-street/position/8617344002/",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8d5b147302",
+   "company": "STV",
+   "title": "Civil Engineering Intern - Summer 2027",
+   "url": "https://stvinc.wd5.myworkdayjobs.com/stv/job/Briarcrest-Drive-Bryan-Texas/Civil-Engineering-Intern---Summer-2027_JR6349-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "f8ef90a776",
+   "company": "SimVentions",
+   "title": "Software Development Intern",
+   "url": "https://simventions.jibeapply.com/jobs/1631?icims=1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b43ad95362",
+   "company": "HP IQ",
+   "title": "Software Engineering Intern, Connectivity (Summer 2027)",
+   "url": "https://job-boards.greenhouse.io/hpiq/jobs/6176783004",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c533b992e8",
+   "company": "Harbinger Motors",
+   "title": "Intern, Test Engineering",
+   "url": "https://job-boards.greenhouse.io/harbingermotors/jobs/5255968007",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4687d27050",
+   "company": "Aptiv",
+   "title": "Sales Intern",
+   "url": "https://aptiv.wd5.myworkdayjobs.com/APTIV_CAREERS/job/Troy-MI---USA/Sales-Intern_J000702905",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "20b891b72f",
+   "company": "Allegiant Air",
+   "title": "Intern, Financial Analyst (Summer 2027)",
+   "url": "https://jobs.lever.co/allegiantair/fd433f06-813b-4254-b549-5c69f4b5af10",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "00347086cd",
+   "company": "Parsons",
+   "title": "CNO Development Intern/Co-op",
+   "url": "https://parsons.wd5.myworkdayjobs.com/Search/job/US---MD-Field-Location/CNO-Development-Intern-Co-op_R184352",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c169db0409",
+   "company": "Allegion",
+   "title": "Summer Intern - Process Engineering",
+   "url": "https://allegion.wd5.myworkdayjobs.com/careers/job/Greenfield-IN---West-350N/Summer-Intern---Process-Engineering_JR37335-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "14743cb719",
+   "company": "National Life",
+   "title": "Graphic Design Intern \u2013 Summer 2027",
+   "url": "https://job-boards.greenhouse.io/nationallifeinsurancecompany/jobs/4404976009",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "db0bee8150",
+   "company": "Primient",
+   "title": "Human Resources Intern - Summer 2027",
+   "url": "https://primient.wd1.myworkdayjobs.com/External_Careers/job/Schaumburg-IL/Human-Resources-Intern---Summer-2027_JREQ7049",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "65c40274a8",
+   "company": "Entegris",
+   "title": "Environmental Health & Safety Co-Op",
+   "url": "https://entegris.wd1.myworkdayjobs.com/EntegrisCareers/job/Austin-TX/Environmental-Health---Safety-Co-Op_REQ-14420",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c899a3a5eb",
+   "company": "Moderna",
+   "title": "Co-Op, Protein Design",
+   "url": "https://modernatx.wd1.myworkdayjobs.com/M_tx/job/Cambridge-Massachusetts/Co-Op--Protein-Design_R19884",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6437f5c7d5",
+   "company": "Allegion",
+   "title": "Summer Intern - Digital Manufacturing",
+   "url": "https://allegion.wd5.myworkdayjobs.com/careers/job/Colorado-Springs-CO/Summer-Intern---Digital-Manufacturing_JR37704-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "0ea9c982ba",
+   "company": "University of Nevada, Reno",
+   "title": "Student Worker - Department Ambassador, Sociology & Cultural Analysis",
+   "url": "https://nshe.wd1.myworkdayjobs.com/UNR-external/job/University-of-Nevada-Reno---Main-Campus/Student-Worker---Department-Ambassador--Sociology---Cultural-Analysis_R0153469",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4b62689c0e",
+   "company": "Intermountain Healthcare",
+   "title": "Supply Chain Graduate Student Intern III",
+   "url": "https://imh.wd108.myworkdayjobs.com/IntermountainCareers/job/Supply-Chain-Center/Supply-Chain-Graduate-Student-Intern-III_R186377",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ed7b6b0887",
+   "company": "Hy-Vee",
+   "title": "Events Intern - Summer 2027",
+   "url": "https://hyvee.wd1.myworkdayjobs.com/HyVeeCareers/job/Corporate-Office-Westown-Pkwy-West-Des-Moines-IA/Events-Intern---Summer-2027_R251696",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ad8894eb20",
+   "company": "UHY",
+   "title": "2027 Audit Summer Internship - Greenwood",
+   "url": "https://uhyus.wd12.myworkdayjobs.com/uhy/job/Greenwood-SC/XMLNAME-2027-Audit-Summer-Internship---Greenwood_JR102012",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a089174cc9",
+   "company": "NJM Insurance Group",
+   "title": "IT Workstation Support Intern",
+   "url": "https://njm.wd1.myworkdayjobs.com/njm/job/NJM---Trenton/IT-Workstation-Support--Intern_R2008273",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a6840d9559",
+   "company": "Stand Together",
+   "title": "KIP Spring 2027 - Public Affairs Intern - American Legislative Exchange Council",
+   "url": "https://jobs.lever.co/standtogether/f65cb715-6532-430d-a2b3-71dfb25a3346",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c8e6e121b4",
+   "company": "DE Shaw",
+   "title": "Software Developer Intern",
+   "url": "https://www.deshaw.com/careers/software-developer-intern-new-york-summer-2027-5894",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "53c0b7b1a4",
+   "company": "Waymo",
+   "title": "2027 Summer Intern, PhD, Research Scientist, Visual Reasoning",
+   "url": "https://zapply.jobs/l/d/greenhouse-waymo-8292367?s=gh-internships-2027",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4f96c5d16c",
+   "company": "Rhombus",
+   "title": "Software Engineering Intern - Summer 2027",
+   "url": "https://jobs.lever.co/rhombus-systems/59e7a5f3-b457-491d-af08-b629ad35e380",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "20c78edcc5",
+   "company": "Plexus",
+   "title": "Intern - Software Engineer (Summer 2027)",
+   "url": "https://plexus.wd504.myworkdayjobs.com/Plexus_Careers/job/Raleigh-NC/Intern---Software-Engineer--Summer-2027-_R040424",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "0a2f76d15a",
+   "company": "C.H. Robinson",
+   "title": "Finance Operations Intern",
+   "url": "https://chrobinson.wd5.myworkdayjobs.com/CHRobinson/job/Eden-Prairie-MN-United-States-of-America/Finance-Operations-Intern_R49852",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "412e0a342a",
+   "company": "Zekelman Industries",
+   "title": "Intern, Manufacturing Engineer",
+   "url": "https://zekelman.wd12.myworkdayjobs.com/Careers/job/Rochelle-IL/Intern--Manufacturing-Engineer_JR002824",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "27fd3fb5df",
+   "company": "OceanComm",
+   "title": "Engineering Intern / Co-op",
+   "url": "https://apply.workable.com/j/78353F7951",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "245e2d5acc",
+   "company": "McKesson",
+   "title": "Finance Leadership Program Intern - Summer 2027",
+   "url": "https://mckesson.wd3.myworkdayjobs.com/External_Careers/job/USA-TX-Irving/Finance-Leadership-Program-Intern---Summer-2027_JR0153101",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "f17e4f7dee",
+   "company": "ibotta",
+   "title": "Information Security Intern",
+   "url": "https://jobs.ashbyhq.com/ibotta/bc7c532d-931a-40fb-8c6c-b6939dd98582",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8f11d2783c",
+   "company": "Sensata",
+   "title": "Electrical Engineer Intern (Dynapower) - Summer 2027",
+   "url": "https://sensata.wd1.myworkdayjobs.com/Sensata-Careers/job/Dynapower-South-Burlington-VT/Electrical-Engineer-Intern--Dynapower----Summer-2027_IRC98423",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "02a0298c93",
+   "company": "AeroVironment",
+   "title": "Electrical Engineer Intern",
+   "url": "https://avav.wd1.myworkdayjobs.com/AVAV/job/Pottstown-PA/Electrical-Engineer-Intern_9103",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "23d647e78e",
+   "company": "Allegion",
+   "title": "Summer Intern - Product Management",
+   "url": "https://allegion.wd5.myworkdayjobs.com/careers/job/Carmel-IN/Summer-Intern---Product-Management_JR37369-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "cdcc1701e1",
+   "company": "Northeastern University",
+   "title": "Part-Time Lecturer (COE Departmental Coop)",
+   "url": "https://northeastern.wd1.myworkdayjobs.com/careers/job/Boston-MA-Main-Campus/Part-Time-Lecturer--COE-Departmental-Coop-_R132193",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4c4e1e6496",
+   "company": "Cerity Partners",
+   "title": "Financial Planning Analyst Internship",
+   "url": "https://ceritypartners.wd12.myworkdayjobs.com/ceritypartnerscareers/job/New-York-City-NY/Financial-Planning-Analyst-Internship_R931",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "6b32002f8e",
+   "company": "Shure",
+   "title": "Digital Signal Processing Intern",
+   "url": "https://careersus-shure.icims.com/jobs/4957/job?mobile=true&needsRedirect=false",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "c8c103c086",
+   "company": "Fresenius Medical Care",
+   "title": "R&D Engineering Co-op",
+   "url": "https://freseniusmedicalcare.wd3.myworkdayjobs.com/fme/job/Lawrence-MA-USA/R-D-Engineering-Co-op_R0271308",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ccf5f9a0ca",
+   "company": "Tesla",
+   "title": "Software Engineer Intern - Fullstack Engineer - Infrastructure Engineering",
+   "url": "https://www.tesla.com/careers/search/job/281462",
+   "result": "unreachable",
+   "detail": "403 Client Error: Forbidden for url: https://www.tesla.com/careers/search/job/28"
+  },
+  {
+   "id": "ebb995eae7",
+   "company": "McKesson",
+   "title": "McKesson Health Systems (MHS) Marketing Intern - Summer 2027",
+   "url": "https://mckesson.wd3.myworkdayjobs.com/External_Careers/job/USA-TX-Irving/McKesson-Health-Systems--MHS--Marketing-Intern---Summer-2027_JR0153137",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ac9a411c38",
+   "company": "Parsons",
+   "title": "Transportation Engineering Intern - Summer 2027",
+   "url": "https://parsons.wd5.myworkdayjobs.com/Search/job/US---NC-Raleigh/Transportation-Engineering-Intern---Summer-2027_R187423-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a5ca3de1fc",
+   "company": "SpartanNash",
+   "title": "IS Internship - Retail Technology Services",
+   "url": "https://spartannash.wd1.myworkdayjobs.com/SpartanNash_Careers/job/Byron-Center-Michigan/IS-Internship---Retail-Technology-Services_R90111-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "0597ef4ca4",
+   "company": "Honeywell",
+   "title": "Embedded Engineer Intern",
+   "url": "https://ibqbjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Honeywell/job/155562",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d6d1331e7c",
+   "company": "Alcon",
+   "title": "2027 Chemistry, Materials & Life Sciences Interns",
+   "url": "https://alcon.wd5.myworkdayjobs.com/careers_alcon/job/Fort-Worth-Texas/XMLNAME-2027-Chemistry--Materials---Life-Sciences-Interns_R-2026-49482",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ba3f50c322",
+   "company": "Astera Labs",
+   "title": "Business Acceleration Intern",
+   "url": "https://job-boards.greenhouse.io/asteraearlycareer2027/jobs/4743033005",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bdab7f7f69",
+   "company": "KLA",
+   "title": "AI/ML Software Engineer - Intern",
+   "url": "https://kla.wd1.myworkdayjobs.com/Search/job/Ann-Arbor-MI/AI-ML-Software-Engineer---Intern_2641701-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bf06f7c71e",
+   "company": "Gordon Food Service",
+   "title": "Sustainability Intern",
+   "url": "https://gfs.wd5.myworkdayjobs.com/usjobs-gen-gfs/job/Wyoming-Michigan/Sustainability-Intern_R-57405",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "19a0733dd9",
+   "company": "Haleon",
+   "title": "2027 Graduate Summer Internship: Scientific Affairs - Wellness & Nutrition",
+   "url": "https://gsknch.wd3.myworkdayjobs.com/GSKCareers/job/USA---New-Jersey---Warren/XMLNAME-2027-Graduate-Summer-Internship--Scientific-Affairs---Wellness---Nutrition_548435",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9ceac8319d",
+   "company": "Flagship Pioneering",
+   "title": "Flagship Labs 117: Generative Chemistry Co-Op",
+   "url": "https://job-boards.greenhouse.io/fspco-op012325/jobs/8845062002",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "b0a23d4c40",
+   "company": "Life Fitness",
+   "title": "Android Software Intern",
+   "url": "https://lifefitness.wd1.myworkdayjobs.com/searchLFN/job/Schaumburg-IL-60173/Android-Software-Intern_JR-025277",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "2324e30e52",
+   "company": "Tesla",
+   "title": "Software Engineer Intern - Vehicle Software - Summer 2027",
+   "url": "https://www.tesla.com/careers/search/job/281097",
+   "result": "unreachable",
+   "detail": "403 Client Error: Forbidden for url: https://www.tesla.com/careers/search/job/28"
+  },
+  {
+   "id": "f19d2d8ed0",
+   "company": "ibotta",
+   "title": "Corporate Finance Intern",
+   "url": "https://jobs.ashbyhq.com/ibotta/97fc4740-8330-4bed-aab1-e95201bdb02d",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "aa1e0982c8",
+   "company": "Axcelis Technologies",
+   "title": "Manufacturing Test Development Co-op",
+   "url": "https://axcelis.wd1.myworkdayjobs.com/Axcelis/job/Beverly-MA/Manufacturing-Test-Development-Co-op_12009",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "d68aaafe79",
+   "company": "Verizon Communications",
+   "title": "Basking Ridge, NJ: VTeamer for a Day: Verizon Consumer Group: Data Science Summer 2027 Internship",
+   "url": "https://verizon.wd12.myworkdayjobs.com/verizon-careers/job/Basking-Ridge-New-Jersey/Basking-Ridge--NJ--VTeamer-for-a-Day--Verizon-Consumer-Group--Data-Science-Summer-2027-Internship_R-1102417",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "91a54c9126",
+   "company": "Dallas Fort Worth International Airport",
+   "title": "2027 Undergraduate Summer Internship - Emergency Management",
+   "url": "https://dfwairport.wd5.myworkdayjobs.com/External/job/Airport-Headquarters/XMLNAME-2027-Undergraduate-Summer-Internship---Emergency-Management_JR102121",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "cef3db0d55",
+   "company": "HealthCorps",
+   "title": "Teen Health Education Internship",
+   "url": "https://apply.workable.com/j/48224C0313",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "4bf3011334",
+   "company": "IMC Trading",
+   "title": "Deep Learning Research Intern - Summer 2027 - Amsterdam",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4912874101",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "ffc9fe82fc",
+   "company": "Tencent",
+   "title": "Game Research & Development Intern, Engine Research",
+   "url": "https://tencent.wd1.myworkdayjobs.com/Tencent_Careers/job/US-California-Los-Angeles/Game-Research---Development-Intern--Engine-Research_R107344-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "5768a2877f",
+   "company": "Reflect Orbital",
+   "title": "Flight Software Engineering Intern",
+   "url": "https://jobs.ashbyhq.com/reflect-orbital/d2ad1427-89aa-404d-8678-7b8e6dace5e2",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "bad1da4846",
+   "company": "NVIDIA",
+   "title": "PhD Research Intern, Generative AI - 2026",
+   "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/PhD-Research-Intern--Generative-AI---2026_JR2016035",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9419454cd0",
+   "company": "Cherry Bekaert",
+   "title": "Spring 2028 Audit Intern - Indianapolis",
+   "url": "https://cbh.wd12.myworkdayjobs.com/CherryBekaertEarlyCareers/job/Indianapolis-IN/Spring-2028-Audit-Intern---Indianapolis_JR100982-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "a0500eca19",
+   "company": "The New School",
+   "title": "Drama/Bank Street Programs, Student Assistant",
+   "url": "https://newschool.wd1.myworkdayjobs.com/External/job/Z---151-Bank-Street/Drama-Bank-Street-Programs--Student-Assistant_JR109446",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "02503ab521",
+   "company": "Tesla",
+   "title": "Software Engineer Intern - Information Security - Spring 2027",
+   "url": "https://www.tesla.com/careers/search/job/281473",
+   "result": "unreachable",
+   "detail": "403 Client Error: Forbidden for url: https://www.tesla.com/careers/search/job/28"
+  },
+  {
+   "id": "7a9e061c9e",
+   "company": "TC Energy",
+   "title": "Intern, Measurement Services",
+   "url": "https://tcenergy.wd3.myworkdayjobs.com/CAREER_SITE_TC/job/Charleston-West-Virginia/Intern--Measurement-Services_JR-10976",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "678dd3e798",
+   "company": "Allegion",
+   "title": "Summer Intern \u2013 Software Operations Engineer",
+   "url": "https://allegion.wd5.myworkdayjobs.com/careers/job/Carmel-IN/Summer-Intern---Software-Operations-Engineer_JR37722-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "8283627fd4",
+   "company": "Bracco",
+   "title": "Supplier Development Engineering Co-op",
+   "url": "https://bracco.wd103.myworkdayjobs.com/BraccoCareers/job/USA-Eden-Prairie-Minnesota-55344/Supplier-Development-Engineering-Co-op_JR100309",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "479ed8542a",
+   "company": "Oshkosh",
+   "title": "Contract Administration Intern",
+   "url": "https://oshkoshcorporation.wd5.myworkdayjobs.com/Oshkosh/job/Oshkosh-Wisconsin-United-States/Contract-Administration-Intern_R50446",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "e1680398d5",
+   "company": "Baidu USA",
+   "title": "Forward Deployed Engineer Intern",
+   "url": "https://job-boards.greenhouse.io/baidu/jobs/8197142",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9613fbd340",
+   "company": "KLA",
+   "title": "Applications Engineering Intern",
+   "url": "https://kla.wd1.myworkdayjobs.com/Search/job/Milpitas-CA/Applications-Engineering--Intern_2641540-1",
+   "result": "ok",
+   "detail": "1.00"
+  },
+  {
+   "id": "9fb9faf932",
+   "company": "Cisco",
+   "title": "Software Engineer Data & AI PhD (Intern) - United States",
+   "url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Software-Engineer-Data---AI-PhD--Intern----United-States_2025611",
    "result": "ok",
    "detail": "1.00"
   },
@@ -102,150 +1606,6 @@
    "company": "Booz Allen",
    "title": "Enterprise Cybersecurity Data Loss Prevention Intern",
    "url": "https://bah.wd1.myworkdayjobs.com/BAH_Jobs/job/McLean-VA/Enterprise-Cybersecurity-Data-Loss-Prevention-Intern_R0249131-1",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "2ea952c017",
-   "company": "PTC",
-   "title": "Global Security Co-Op",
-   "url": "https://ptc.wd1.myworkdayjobs.com/PTC/job/Boston-MA-USA/Global-Security-Co-Op_JR112886",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "a4d1dc09dd",
-   "company": "Johnson & Johnson",
-   "title": "Epidemiology Summer Intern 2027",
-   "url": "https://jj.wd5.myworkdayjobs.com/JJ/job/Raritan-New-Jersey-United-States-of-America/Epidemiology-Summer-Intern-2027_R-103539",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "82f1ab4681",
-   "company": "Jabil",
-   "title": "Computer Systems Analyst Intern",
-   "url": "https://jabil.wd5.myworkdayjobs.com/Jabil_Careers/job/St-PetersburgTampa-FL/Computer-Systems-Analyst-Intern_J2464586-1",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "7577e5c447",
-   "company": "Meta",
-   "title": "Research Scientist Intern - 3D World Modeling - Robotics and Generative AI",
-   "url": "https://www.metacareers.com/jobs/1839680137188723",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "da075eea53",
-   "company": "Tesla",
-   "title": "Software Engineer Intern - Core AI Compiler & Runtime",
-   "url": "https://www.tesla.com/careers/search/job/281951",
-   "result": "unreachable",
-   "detail": "403 Client Error: Forbidden for url: https://www.tesla.com/careers/search/job/28"
-  },
-  {
-   "id": "3764da5096",
-   "company": "The Walt Disney Company",
-   "title": "WDW Engineering Interns, Spring 2027",
-   "url": "https://disney.wd5.myworkdayjobs.com/disneycareerdc/job/Lake-Buena-Vista-FL-USA/WDW-Engineering-Interns--Spring-2027_10158141-1",
-   "result": "unreachable",
-   "detail": "cxs 403 Client Error: Forbidden for url: https://disney.wd5.mywo"
-  },
-  {
-   "id": "d1f4b00146",
-   "company": "Momentive",
-   "title": "Summer 2027 Intern - Strategic Project Continuous Improvement",
-   "url": "https://momentive.wd1.myworkdayjobs.com/MC/job/US-NY-Niskayuna/Summer-2027-Intern---Strategic-Project-Continuous-Improvement_R9787",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "d0c31a6bbf",
-   "company": "DuCharme, McMillen & Associates",
-   "title": "IT Support Intern - Summer 2027",
-   "url": "https://dmainc.wd5.myworkdayjobs.com/DMA/job/Indianapolis-IN/IT-Support-Intern---Summer-2027_REQ638-1",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "c8d31d3079",
-   "company": "Cencora",
-   "title": "Operations Intern",
-   "url": "https://myhrabc.wd5.myworkdayjobs.com/Global/job/Denver-CO/Operations-Intern_R2616154",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "e5fb436e2c",
-   "company": "Susquehanna International Group (SIG)",
-   "title": "Quantitative Systematic Trading Intern - Master's: Summer 2027",
-   "url": "https://careers-sig.icims.com/jobs/10823/job?mobile=true&needsRedirect=false",
-   "result": "robots",
-   "detail": ""
-  },
-  {
-   "id": "cf1e9af7ed",
-   "company": "Insulet",
-   "title": "Co-op, Embedded Software Engineering: January-June 2027 (Onsite)",
-   "url": "https://insulet.wd5.myworkdayjobs.com/insuletcareers/job/Acton-Massachusetts/Co-op--Embedded-Software-Engineering--January-June-2027--Onsite-_REQ-2026-17966",
-   "result": "unreachable",
-   "detail": "gave up on https://insulet.wd5.myworkdayjobs.com/insuletcareers/job/Acton-Massac"
-  },
-  {
-   "id": "5c270b15cb",
-   "company": "Generac",
-   "title": "Intern Engineering",
-   "url": "https://generac.wd5.myworkdayjobs.com/External/job/Waukesha-WI---USA/Intern-Engineering_JR17282",
-   "result": "unreachable",
-   "detail": "gave up on https://generac.wd5.myworkdayjobs.com/External/job/Waukesha-WI---USA/"
-  },
-  {
-   "id": "c61063b7e7",
-   "company": "Merck",
-   "title": "2027 Future Talent Program - Animal Health Formulation and Analytical Sciences - Intern",
-   "url": "https://msd.wd5.myworkdayjobs.com/SearchJobs/job/USA---New-Jersey---Rahway/XMLNAME-2027-Future-Talent-Program---Animal-Health-Formulation-and-Analytical-Sciences---Intern_R414069",
-   "result": "unreachable",
-   "detail": "gave up on https://msd.wd5.myworkdayjobs.com/SearchJobs/job/USA---New-Jersey---R"
-  },
-  {
-   "id": "85c222972e",
-   "company": "Louisiana State University (LSU)",
-   "title": "Visiting Student Intern",
-   "url": "https://lsu.wd1.myworkdayjobs.com/LSUWaiver/job/3207-Patrick-F-Taylor-Hall/Visiting-Student-Intern_R00121436",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "636288df74",
-   "company": "Cisco",
-   "title": "Data Analyst I (Intern) - United States",
-   "url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/Data-Analyst-I--Intern----United-States_2024561-1",
-   "result": "unreachable",
-   "detail": "gave up on https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-Califo"
-  },
-  {
-   "id": "227a780239",
-   "company": "Valmont",
-   "title": "Design Drafter Intern",
-   "url": "https://valmont.wd1.myworkdayjobs.com/ValmontCareers/job/Valley-NE/Design-Drafter-Intern_R28715",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "cd95526140",
-   "company": "Royal Bank of Canada",
-   "title": "Financial Solutions Intern",
-   "url": "https://rbc.wd3.myworkdayjobs.com/ExternalPrivatePostingStudents/job/Fort-Collins-Colorado-United-States-of-America/Financial-Solutions-Intern_R-0000081516",
-   "result": "ok",
-   "detail": "1.00"
-  },
-  {
-   "id": "a5bf255f63",
-   "company": "RTX",
-   "title": "Industrial Engineer Co-op (Spring/Summer 2027)",
-   "url": "https://globalhr.wd5.myworkdayjobs.com/REC_RTX_Ext_Gateway/job/US-IA-CORALVILLE-155--2855-Heartland-Dr--HEARTLAND-BLDG-155/Industrial-Engineer-Co-op--Spring-Summer-2027-_01881169",
    "result": "ok",
    "detail": "1.00"
   }

@@ -1,6 +1,5 @@
 /* V5 design system: one font, one accent, 8px grid, CSS-variable tokens */
-@font-face{font-family:Inter;src:url(assets/inter-var.woff2) format("woff2");font-weight:100 900;font-display:optional}@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:107%;ascent-override:90%;descent-override:22.43%;line-gap-override:0%}
-:root{--font:Inter,"Inter Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
+@font-face{font-family:Geist;src:url(assets/geist-latin.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
  --acc:var(--c-pri);--acc-ink:var(--c-x4733b5);--acc-soft:var(--c-pri-soft);--red:var(--c-red);--red-bg:var(--c-red-soft);--amber:var(--c-amber);--amber-bg:var(--c-xfff4dc);--ok:var(--c-x11683a);--ok-bg:var(--c-green-soft);
  --r-sm:10px;--r:14px;--r-lg:20px;--sh:0 1px 2px rgba(20,22,39,.04),0 4px 16px rgba(20,22,39,.05);--sh-h:0 2px 4px rgba(20,22,39,.05),0 16px 40px rgba(60,40,160,.12);
  --maxw:1520px;--gut:clamp(16px,4vw,64px);--ease:cubic-bezier(.2,.7,.2,1)}
@@ -294,7 +293,7 @@ body:not(.on-profile) .pf-bar{display:none}
 .cb{position:relative;min-width:0}
 .cb-field{display:flex;align-items:center;gap:8px;min-height:48px;padding:8px 40px 8px 12px;border:1.5px solid var(--c-line-2);border-radius:var(--r);background:var(--c-surface);cursor:pointer;font-size:var(--fs-m);position:relative;box-sizing:border-box;min-width:0}
 .cb-field:hover{border-color:var(--c-xb9b3f5)}.cb-field:focus-visible,.cb.open .cb-field{outline:none;border-color:var(--c-pri-2);box-shadow:0 0 0 3px rgba(109,94,252,.18)}
-.cb-val{display:flex;flex-wrap:wrap;gap:8px;min-width:0;flex:1}.cb-ph{color:var(--c-x8a8fa3)}.cb-one{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.cb-val{display:flex;flex-wrap:wrap;gap:8px;min-width:0;flex:1}.cb-ph{color:var(--c-mut)}.cb-one{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .cb-car{position:absolute;right:14px;top:50%;width:12px;height:12px;margin-top:-8px;fill:none;stroke:var(--c-x555b72);stroke-width:1.6;transition:transform .15s}.cb.open .cb-car{transform:rotate(180deg)}
 .cb-chip{display:inline-flex;align-items:center;gap:4px;max-width:100%;background:var(--c-pri-soft);color:var(--c-x2f2a7a);border-radius:var(--r-pill);padding:4px 8px 4px 12px;font-size:var(--fs-m);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cb-chip button{border:0;background:transparent;color:inherit;font-size:var(--fs-m);line-height:1;cursor:pointer;width:22px;height:22px;border-radius:50%}.cb-chip button:hover{background:rgba(0,0,0,.08)}
@@ -662,3 +661,6 @@ body.graded .grow{height:270px}body.graded .card{height:270px}
 
 /* V12 description summary */
 .dsum{margin:0 0 10px;padding-left:18px;line-height:1.5}.dsum li{margin:2px 0}.fulldesc>summary{cursor:pointer;font-weight:600;color:var(--c-accent);font-size:var(--fs-s);padding:4px 0;list-style:none}.fulldesc>summary::-webkit-details-marker{display:none}.fulldesc>summary::before{content:'▸ '}.fulldesc[open]>summary::before{content:'▾ '}.fulldesc[open]>summary{margin-bottom:6px}
+
+/* V12: airy grade breakdown + company blurb */
+.fbp-co{margin:0 0 12px;color:var(--c-ink-2);line-height:1.5;font-size:var(--fs-s)}.fbp-bd{border-spacing:0;margin:12px 0 8px;line-height:1.5}.fbp-bd th{width:112px;padding:10px 14px 10px 10px!important;letter-spacing:.04em}.fbp-bd td{padding:10px 10px 10px 0!important;line-height:1.5}.fbp-bv{width:96px!important;padding-right:16px!important}.fbp-bar{margin-top:8px}.fbp-bd tr+tr>*{border-top:1px solid var(--c-line)}.fbp h4,.fbp h3{margin-top:18px}.fbp ul li{margin:4px 0;line-height:1.5}

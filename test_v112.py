@@ -22,9 +22,9 @@ with sync_playwright() as p:
         ok(f'{w} Find: no "not lis" truncation labels',pg.locator('.dl:text("Closing date not listed")').count()==0)
         c=pg.evaluate("(()=>{const t=document.getElementById('ticker');if(t.hidden)return null;const bc=t.getBoundingClientRect(),m=bc.top+bc.height/2;return [...t.querySelectorAll('.tk-lbl,.tk-i')].slice(0,30).filter(e=>e.getBoundingClientRect().width).map(e=>{const r=e.getBoundingClientRect();const inner=[...e.children].filter(k=>k.getBoundingClientRect().height).map(k=>{const q=k.getBoundingClientRect();return Math.abs(q.top+q.height/2-m)});return Math.max(Math.abs(r.top+r.height/2-m),...inner)})})()")
         ok(f'{w} Ticker: every item, label and part vertically centred (±1px)',c and max(c)<=1.01,c and max(c))
-        t=pg.inner_text('#tkAsOf');ok(f'{w} Ticker: shows the real last sync time',t.startswith('Synced'),t)
+        t=pg.inner_text('#tkAsOf');ok(f'{w} Ticker: shows the real last sync time',t.startswith('Updated'),t)
         meta=pg.request.get(B+'data/meta.json').json();import datetime as dt;age=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(meta['updated'].replace('Z','+00:00'))).total_seconds()/3600
-        ok(f'{w} Ticker: stale warning only when the sync is over 4 h old',pg.evaluate("!document.getElementById('tkStale').hidden")==(age>4),round(age,1))
+        ok(f'{w} Ticker: stale warning only when the sync is over 6 h old',pg.evaluate("!document.getElementById('tkStale').hidden")==(age>6),round(age,1))
         mask=pg.evaluate("getComputedStyle(document.querySelector('.tk-win')).maskImage||getComputedStyle(document.querySelector('.tk-win')).webkitMaskImage");ok(f'{w} Ticker: edges fade (mask)','gradient' in mask)
         ok(f'{w} Ticker: items never shrink (whole text)',pg.evaluate("[...document.querySelectorAll('#tkTrack .tk-i')].slice(0,20).every(e=>e.scrollWidth<=e.clientWidth+1&&getComputedStyle(e).flexShrink==='0')"))
         pg.locator('.card').first.click();pg.wait_for_timeout(900);o=pg.evaluate(OVER,);ok(f'{w} Drawer: no clipped text',not o,o);pg.keyboard.press('Escape');pg.wait_for_timeout(300)

@@ -20,8 +20,8 @@ function render(){const T=$('ticker');if(!T)return;const ev=(CH&&CH.events)||[];
  $('tkTrack').style.setProperty('--tk-dur',Math.max(40,L.length*5)+'s');asOf();T.hidden=false}
 let META_UPD='';
 function asOf(){const el=$('tkAsOf');if(!el)return;const t=META_UPD||(CH&&CH.updated);if(!t){el.textContent='';return}const h=(Date.now()-Date.parse(t))/36e5;
- el.textContent='Synced '+fmtT(t)+(h>=20?' '+new Date(t).toLocaleDateString([],{month:'short',day:'numeric'}):'');el.classList.toggle('tk-stale',h>4);
- el.title=h>4?'The last sync was over 4 hours ago. Some postings may have changed since.':'Time of the last sync';const w=$('tkStale');if(w)w.hidden=!(h>4)}
+ const m=(Date.now()-Date.parse(t))/6e4;el.textContent='Updated '+(m<1.5?'just now':m<60?Math.round(m)+' min ago':h<24?Math.round(h)+' h ago':new Date(t).toLocaleDateString([],{month:'short',day:'numeric'}));el.classList.toggle('tk-stale',h>6);
+ el.title=(h>6?'The last successful update was over 6 hours ago. Some postings may have changed since. ':'')+'Last update '+fmtT(t);const w=$('tkStale');if(w)w.hidden=!(h>6)}
 setInterval(asOf,60000);
 async function load(){try{const m=await (await fetch('data/meta.json?ts='+Date.now(),{cache:'no-store'})).json();if(m&&m.updated){META_UPD=m.updated;asOf()}}catch(_){}
 try{const r=await fetch('data/changes.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.updated===lastUpd)return;lastUpd=j.updated;CH=j;render()}catch(_){}}

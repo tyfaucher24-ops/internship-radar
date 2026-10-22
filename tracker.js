@@ -28,7 +28,7 @@ const stkC=(c,i,cols)=>i===0?'stk':(i===1&&c[0]==='status'&&matchMedia('(max-wid
 const CLOSEDST=['Rejected','Ghosted','Withdrawn','Closed','Accepted'];
 function postingClosed(t){if(t.listingId==null||typeof BYID==='undefined'||!BYID.size)return false;const x=BYID.get(String(t.listingId));return !x||x.st==='closed'}
 function closesIn(t){const L=t.listing;if(postingClosed(t))return{txt:'Posting closed',n:-1,cls:'closed'};if(!L.deadline)return{txt:L.rolling?'Rolling':'Not listed',n:9999,cls:''};const n=days(L.deadline);
- if(n<0)return{txt:'Closed '+fmtDate(L.deadline),n:-1,cls:'closed'};return{txt:n===0?'Closes today':n===1?'1 day':n+' days',n,cls:n<3?'red':n<7?'amber':''}}
+ if(n<0)return{txt:'Closed '+fmtDate(L.deadline),n:-1,cls:'closed'};return{txt:n===0?'Today':n===1?'1 day':n+' days',n,cls:n<3?'red':n<7?'amber':''}}
 function sortVal(t,k){const L=t.listing;return k==='closes'?closesIn(t).n:k==='company'?L.company||'':k==='title'?L.title||'':k==='location'?L.location||'':k==='link'?L.apply_url||'':k==='status'?TSTAT.indexOf(t.status):k==='priority'?-(t.priority||0):(t[k]||'')}
 const pill=s=>'st-'+s.toLowerCase().replace(/\s+/g,'-');
 const shortD=d=>{if(!d)return'';const x=new Date(d+'T12:00:00');return x.toLocaleDateString([],{month:'short',day:'numeric'})};

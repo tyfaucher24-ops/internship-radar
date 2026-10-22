@@ -2564,6 +2564,10 @@
 "logo": "assets/logos/cambridge-mobile-telematics.webp",
 "src": "apple-touch-icon"
 },
+"Campbell Soup Company": {
+"logo": null,
+"why": "no domain"
+},
 "Camping World": {
 "domain": "campingworld.com",
 "domain_src": "clearbit",
@@ -2644,6 +2648,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/caresource.webp",
 "src": "gstatic"
+},
+"Carnegie Mellon SEI": {
+"logo": null,
+"why": "no domain"
 },
 "Carnegie Mellon Software Engineering Institute": {
 "logo": "assets/logos/carnegie-mellon-software-engineering-institute.webp",
@@ -3089,6 +3097,12 @@
 "logo": "assets/logos/cleveland-cliffs.webp",
 "src": "gstatic"
 },
+"ClickHouse": {
+"domain": "clickhouse.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/clickhouse.webp",
+"src": "gstatic"
+},
 "CliftonLarsonAllen": {
 "domain": "claconnect.com",
 "domain_src": "clearbit",
@@ -3225,6 +3239,12 @@
 "logo": "assets/logos/colgate-palmolive.webp",
 "src": "gstatic"
 },
+"Colibri Group": {
+"domain": "colibrigroup.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/colibri-group.webp",
+"src": "apple-touch-icon"
+},
 "Collier Aerospace": {
 "domain": "collieraerospace.com",
 "domain_src": "clearbit",
@@ -3261,6 +3281,10 @@
 "logo": "assets/logos/commerce-bank.webp",
 "src": "careers-board",
 "why": "no logo >=48px"
+},
+"CommonAI C.I.C.": {
+"logo": null,
+"why": "no domain"
 },
 "Commonwealth Fusion Systems": {
 "domain": "cfs.energy",
@@ -4994,6 +5018,10 @@
 "logo": "assets/logos/farsight.webp",
 "src": "duckduckgo"
 },
+"FedEx Freight": {
+"logo": null,
+"why": "no domain"
+},
 "Federal Home Loan Bank of Indianapolis": {
 "logo": "assets/logos/federal-home-loan-bank-of-indianapolis.webp",
 "src": "careers-board",
@@ -6547,6 +6575,10 @@
 "logo": "assets/logos/humana.webp",
 "src": "apple-touch-icon"
 },
+"Humble Robotics": {
+"logo": null,
+"why": "no domain"
+},
 "Hunt Oil Company": {
 "logo": null,
 "why": "no domain"
@@ -6894,6 +6926,10 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"Integrate": {
+"logo": null,
+"why": "no domain"
+},
 "Integrity": {
 "why": "too light to see on white"
 },
@@ -7007,6 +7043,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/intuit.webp",
 "src": "gstatic"
+},
+"Intuitive": {
+"domain": "intuitive.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Intuitive Surgical": {
 "board_tried": true,
@@ -7379,6 +7421,12 @@
 "domain": "kensington.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/kensington.webp",
+"src": "gstatic"
+},
+"Kentro": {
+"domain": "kentro.us",
+"domain_src": "apply-url",
+"logo": "assets/logos/kentro.webp",
 "src": "gstatic"
 },
 "Kenvue": {
@@ -7857,6 +7905,12 @@
 "logo": "assets/logos/lindy.webp",
 "src": "gstatic"
 },
+"LinkedIn": {
+"domain": "linkedin.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/linkedin.webp",
+"src": "gstatic"
+},
 "Littelfuse": {
 "domain": "littelfuse.com",
 "domain_src": "clearbit",
@@ -8158,6 +8212,12 @@
 "src": "careers-board",
 "why": "recheck"
 },
+"ManTech": {
+"domain": "mantech.co.za",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Manhattan Associates": {
 "domain": "manh.com",
 "domain_src": "clearbit",
@@ -8291,6 +8351,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/massmutual-ascend.webp",
 "src": "gstatic"
+},
+"Massachusetts School Building Authority": {
+"logo": null,
+"why": "no domain"
 },
 "Mastercard": {
 "domain": "mastercard.com.au",
@@ -8488,6 +8552,18 @@
 "logo": "assets/logos/meta.webp",
 "src": "gstatic"
 },
+"Metalenz": {
+"domain": "metalenz.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
+"Metamorphic": {
+"domain": "metamorphic.ir",
+"domain_src": "clearbit",
+"logo": "assets/logos/metamorphic.webp",
+"src": "gstatic"
+},
 "Meter": {
 "domain": "metergroup.com",
 "domain_src": "clearbit",
@@ -8590,6 +8666,8 @@
 "src": "gstatic"
 },
 "MiniMed": {
+"logo": "assets/logos/minimed.webp",
+"src": "careers-board",
 "why": "generic placeholder icon"
 },
 "Mitsubishi UFG": {
@@ -8993,6 +9071,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/newyork-presbyterian.webp",
 "src": "gstatic"
+},
+"Newell Brands": {
+"domain": "newellbrands.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Newmark": {
 "domain": "nmrk.com",
@@ -9491,6 +9575,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/openai.webp",
 "src": "gstatic"
+},
+"OpenArt AI": {
+"logo": null,
+"why": "no domain"
 },
 "OpenGov": {
 "domain": "opengov.com",
@@ -13236,6 +13324,12 @@
 "logo": "assets/logos/thorlabs.webp",
 "src": "gstatic"
 },
+"Thornton Tomasetti": {
+"domain": "thorntontomasetti.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/thornton-tomasetti.webp",
+"src": "gstatic"
+},
 "Thrivent": {
 "domain": "thrivent.com",
 "domain_src": "clearbit",
@@ -13340,12 +13434,20 @@
 "logo": "assets/logos/tower-research-capital.webp",
 "src": "gstatic"
 },
+"Toyota": {
+"logo": null,
+"why": "no domain"
+},
 "Toyota Research Institute": {
 "domain": "tri.global",
 "domain_src": "clearbit",
 "logo": "assets/logos/toyota-research-institute.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Trace3": {
+"logo": null,
+"why": "no domain"
 },
 "Trackonomy": {
 "domain": "trackonomysystems.com",
@@ -13451,6 +13553,12 @@
 "domain": "tricentis.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/tricentis.webp",
+"src": "gstatic"
+},
+"Trillium": {
+"domain": "trlm.com",
+"domain_src": "apply-url",
+"logo": "assets/logos/trillium.webp",
 "src": "gstatic"
 },
 "Trimble": {
@@ -14544,6 +14652,12 @@
 "logo": "assets/logos/winland-foods.webp",
 "src": "careers-board",
 "why": "no domain"
+},
+"WisdomTree": {
+"domain": "wisdomtree.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Wise": {
 "domain": "wise.com",

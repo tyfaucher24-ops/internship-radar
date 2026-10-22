@@ -1,5 +1,5 @@
 /* V5 design system: one font, one accent, 8px grid, CSS-variable tokens */
-@font-face{font-family:Geist;src:url(assets/geist-latin.woff2?v=7bc94fb210) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
+@font-face{font-family:Geist;src:url(assets/geist-latin.woff2?v=4fc8d1652b) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:"Geist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:104%;ascent-override:93%;descent-override:22%;line-gap-override:0%}:root{--font:Geist,"Geist Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--ink:var(--c-ink);--mut:var(--c-x525873);--faint:var(--c-x8a90a8);--line:var(--c-line);--line2:var(--c-line-2);--bg:var(--c-bg);--card:var(--c-surface);
  --acc:var(--c-pri);--acc-ink:var(--c-x4733b5);--acc-soft:var(--c-pri-soft);--red:var(--c-red);--red-bg:var(--c-red-soft);--amber:var(--c-amber);--amber-bg:var(--c-xfff4dc);--ok:var(--c-x11683a);--ok-bg:var(--c-green-soft);
  --r-sm:10px;--r:14px;--r-lg:20px;--sh:0 1px 2px rgba(20,22,39,.04),0 4px 16px rgba(20,22,39,.05);--sh-h:0 2px 4px rgba(20,22,39,.05),0 16px 40px rgba(60,40,160,.12);
  --maxw:1520px;--gut:clamp(16px,4vw,64px);--ease:cubic-bezier(.2,.7,.2,1)}
@@ -75,7 +75,7 @@ main{min-height:70vh}
 .dl-red{background:var(--red-bg);color:var(--red)}.dl-amber{background:var(--amber-bg);color:var(--amber)}.dl-ok{background:var(--ok-bg);color:var(--ok)}.dl-none{background:var(--c-bg-2);color:var(--mut);font-weight:550}.dl-up{background:var(--c-pri-soft);color:var(--c-blue)}.dl-closed{background:var(--c-bg-2);color:var(--c-x555555)}
 .badge{flex:none;font-size:var(--fs-s);font-weight:700;border-radius:var(--r-pill);padding:4px 8px}
 .btn-save{position:relative;min-height:44px;min-width:88px;padding:0 16px;border-radius:var(--r);border:1px solid var(--line2);background:var(--c-surface);color:var(--ink);font-weight:650;font-size:var(--fs-m);cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
-.btn-save:hover{border-color:var(--acc);color:var(--acc-ink)}.btn-save:active{transform:scale(.96)}.btn-save.on{background:var(--acc-soft);border-color:transparent;color:var(--acc-ink)}
+.btn-save:hover{border-color:var(--acc);color:var(--acc-ink)}.btn-save.on{background:var(--acc-soft);border-color:transparent;color:var(--acc-ink)}
 .blip{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-8px;border-radius:50%;border:2px solid var(--acc);animation:blip .7s var(--ease) forwards;pointer-events:none}@keyframes blip{to{transform:scale(7);opacity:0}}
 .grid.reflow .card{animation:rf .32s var(--ease) both}@keyframes rf{from{opacity:0;transform:translateY(8px)}}
 .skelcard{cursor:default}.skel{height:16px;border-radius:var(--r);background:linear-gradient(90deg,var(--c-bg-2),var(--c-bg),var(--c-bg-2));background-size:200% 100%;animation:sk 1.2s infinite;margin:8px 0}.skel.short{width:55%}@keyframes sk{to{background-position:-200% 0}}
@@ -400,7 +400,7 @@ body.graded .grow{height:242px}body.graded .card{height:242px}
 .beg-a{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.beg .linkbtn{background:none;border:0;color:var(--c-x3730a3);text-decoration:underline;cursor:pointer;font:inherit}
 body.intro-on main#main{visibility:hidden}
 /* V10: static planet (phones, no-GPU devices): a pre-rendered view of the US instead of a dot sphere */
-.static .globe-ph{background:url(assets/globe-static.webp?v=7bc94fb210) center/contain no-repeat;border-radius:50%}
+.static .globe-ph{background:url(assets/globe-static.webp?v=4fc8d1652b) center/contain no-repeat;border-radius:50%}
 .static .globe-ph::after{display:none}
 /* ===== V10 cleanup (tokens only) ===== */
 .find-head{padding:var(--sp-5) 0 var(--sp-2)}
@@ -664,3 +664,5 @@ body.graded .grow{height:270px}body.graded .card{height:270px}
 
 /* V12: airy grade breakdown + company blurb */
 .fbp-co{margin:0 0 12px;color:var(--c-ink-2);line-height:1.5;font-size:var(--fs-s)}.fbp-bd{border-spacing:0;margin:12px 0 8px;line-height:1.5}.fbp-bd th{width:112px;padding:10px 14px 10px 10px!important;letter-spacing:.04em}.fbp-bd td{padding:10px 10px 10px 0!important;line-height:1.5}.fbp-bv{width:96px!important;padding-right:16px!important}.fbp-bar{margin-top:8px}.fbp-bd tr+tr>*{border-top:1px solid var(--c-line)}.fbp h4,.fbp h3{margin-top:18px}.fbp ul li{margin:4px 0;line-height:1.5}
+
+/* V12: subtle save crossfade, opacity/colour only, fixed width */.btn-save{min-width:104px;transition:background-color .18s ease,border-color .18s ease,color .18s ease}.nbadge.bump{animation:none}.sv-in{animation:svf .18s ease both}@keyframes svf{from{opacity:.35}}@media (prefers-reduced-motion:reduce){.sv-in{animation:none}}

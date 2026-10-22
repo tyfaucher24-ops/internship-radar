@@ -500,5 +500,663 @@
   "Legal": [
    "legal"
   ]
+ },
+ "firmSelectivity": {
+  "_readme": "V12: recruiting tier of well-known firms, from the cited public tier lists. Firms in firmTiers (cited acceptance rates under 1%) are the most selective. Firms not listed have no tier (never guessed).",
+  "levels": {
+   "tier1": 95,
+   "mbb": 93,
+   "elite_boutique": 92,
+   "bulge": 88,
+   "between": 80,
+   "middle_market": 70,
+   "industry_boutique": 72
+  },
+  "firms": [
+   {
+    "firm": "Morgan Stanley",
+    "aliases": [],
+    "level": "bulge",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Citi",
+    "aliases": [
+     "Citigroup",
+     "Citibank"
+    ],
+    "level": "bulge",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Barclays",
+    "aliases": [],
+    "level": "bulge",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Deutsche Bank",
+    "aliases": [],
+    "level": "bulge",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "UBS",
+    "aliases": [],
+    "level": "bulge",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Centerview Partners",
+    "aliases": [
+     "Centerview"
+    ],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Evercore",
+    "aliases": [],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Lazard",
+    "aliases": [],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Moelis & Company",
+    "aliases": [
+     "Moelis"
+    ],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "PJT Partners",
+    "aliases": [],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Perella Weinberg Partners",
+    "aliases": [
+     "Perella Weinberg"
+    ],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Qatalyst Partners",
+    "aliases": [
+     "Qatalyst"
+    ],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Guggenheim Partners",
+    "aliases": [
+     "Guggenheim Securities",
+     "Guggenheim"
+    ],
+    "level": "elite_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Jefferies",
+    "aliases": [],
+    "level": "between",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Wells Fargo",
+    "aliases": [],
+    "level": "between",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "RBC Capital Markets",
+    "aliases": [
+     "RBC",
+     "Royal Bank of Canada"
+    ],
+    "level": "between",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "HSBC",
+    "aliases": [],
+    "level": "between",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "BNP Paribas",
+    "aliases": [],
+    "level": "between",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Mizuho",
+    "aliases": [],
+    "level": "between",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Houlihan Lokey",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "William Blair",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Baird",
+    "aliases": [
+     "Robert W. Baird"
+    ],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Piper Sandler",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Raymond James",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Lincoln International",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Harris Williams",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Stifel",
+    "aliases": [],
+    "level": "middle_market",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Rothschild & Co",
+    "aliases": [
+     "Rothschild"
+    ],
+    "level": "industry_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "LionTree",
+    "aliases": [],
+    "level": "industry_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "Leerink Partners",
+    "aliases": [],
+    "level": "industry_boutique",
+    "source": "https://rareliquid.com/resources/top-banks"
+   },
+   {
+    "firm": "McKinsey & Company",
+    "aliases": [
+     "McKinsey"
+    ],
+    "level": "mbb",
+    "source": "https://strategycase.com/us-target-schools-mbb/"
+   },
+   {
+    "firm": "Boston Consulting Group",
+    "aliases": [
+     "BCG"
+    ],
+    "level": "mbb",
+    "source": "https://strategycase.com/us-target-schools-mbb/"
+   },
+   {
+    "firm": "Bain & Company",
+    "aliases": [
+     "Bain"
+    ],
+    "level": "mbb",
+    "source": "https://strategycase.com/us-target-schools-mbb/"
+   }
+  ]
+ },
+ "groupSelectivity": {
+  "_readme": "V12: typical competitiveness by role group when nothing firm-specific is known. There is no public per-role acceptance data, so these are labelled 'typical expectation' in feedback.",
+  "ib": 72,
+  "pe": 78,
+  "quant": 80,
+  "consulting": 70,
+  "product": 66,
+  "swe": 62,
+  "data": 62,
+  "sandt": 66,
+  "hardware": 55,
+  "eng": 50,
+  "mech": 50,
+  "finance": 50,
+  "accounting": 48,
+  "marketing": 50,
+  "sales": 42,
+  "design": 55,
+  "legal": 55,
+  "hr": 45,
+  "ops": 45,
+  "health": 48,
+  "nursing": 45,
+  "_default": 48
+ },
+ "skillTaxonomy": {
+  "_readme": "V12 role-aware skills: core skills earn full credit for that role group, plus skills partial credit; anything else earns nothing for that group (e.g. Excel is not a core AI/ML skill).",
+  "ib": {
+   "core": [
+    "financial modeling",
+    "valuation",
+    "dcf",
+    "lbo",
+    "excel",
+    "accounting",
+    "m&a",
+    "pitch book"
+   ],
+   "plus": [
+    "powerpoint",
+    "capital iq",
+    "bloomberg",
+    "factset",
+    "financial analysis",
+    "corporate finance"
+   ]
+  },
+  "pe": {
+   "core": [
+    "financial modeling",
+    "lbo",
+    "valuation",
+    "dcf",
+    "excel",
+    "due diligence"
+   ],
+   "plus": [
+    "accounting",
+    "powerpoint",
+    "capital iq",
+    "pitchbook",
+    "financial analysis"
+   ]
+  },
+  "finance": {
+   "core": [
+    "excel",
+    "financial modeling",
+    "financial analysis",
+    "accounting",
+    "valuation",
+    "budgeting",
+    "forecasting"
+   ],
+   "plus": [
+    "powerpoint",
+    "bloomberg",
+    "sql",
+    "quickbooks",
+    "tableau"
+   ]
+  },
+  "accounting": {
+   "core": [
+    "accounting",
+    "excel",
+    "quickbooks",
+    "gaap",
+    "auditing",
+    "tax",
+    "reconciliation"
+   ],
+   "plus": [
+    "financial analysis",
+    "sap",
+    "bookkeeping"
+   ]
+  },
+  "sandt": {
+   "core": [
+    "excel",
+    "python",
+    "financial markets",
+    "trading",
+    "statistics"
+   ],
+   "plus": [
+    "vba",
+    "bloomberg",
+    "valuation",
+    "probability"
+   ]
+  },
+  "quant": {
+   "core": [
+    "python",
+    "c++",
+    "probability",
+    "statistics",
+    "algorithms",
+    "mathematics"
+   ],
+   "plus": [
+    "machine learning",
+    "r",
+    "linear algebra",
+    "data structures",
+    "java"
+   ]
+  },
+  "swe": {
+   "core": [
+    "python",
+    "java",
+    "c++",
+    "javascript",
+    "typescript",
+    "algorithms",
+    "data structures",
+    "git",
+    "go",
+    "c#",
+    "react",
+    "sql"
+   ],
+   "plus": [
+    "aws",
+    "docker",
+    "linux",
+    "node",
+    "kubernetes",
+    "rust",
+    "c"
+   ]
+  },
+  "data": {
+   "core": [
+    "python",
+    "sql",
+    "machine learning",
+    "statistics",
+    "pandas",
+    "r",
+    "deep learning",
+    "pytorch",
+    "tensorflow"
+   ],
+   "plus": [
+    "tableau",
+    "spark",
+    "nlp",
+    "power bi",
+    "data visualization",
+    "aws"
+   ]
+  },
+  "product": {
+   "core": [
+    "product management",
+    "user research",
+    "sql",
+    "data analysis",
+    "roadmapping"
+   ],
+   "plus": [
+    "figma",
+    "jira",
+    "a/b testing",
+    "python"
+   ]
+  },
+  "consulting": {
+   "core": [
+    "excel",
+    "powerpoint",
+    "data analysis",
+    "case interview",
+    "financial modeling",
+    "research"
+   ],
+   "plus": [
+    "sql",
+    "tableau",
+    "presentation",
+    "project management"
+   ]
+  },
+  "marketing": {
+   "core": [
+    "social media",
+    "content",
+    "seo",
+    "marketing",
+    "copywriting",
+    "google analytics",
+    "canva",
+    "adobe"
+   ],
+   "plus": [
+    "excel",
+    "hubspot",
+    "email marketing",
+    "photoshop",
+    "market research"
+   ]
+  },
+  "sales": {
+   "core": [
+    "sales",
+    "customer service",
+    "communication",
+    "crm",
+    "salesforce",
+    "negotiation"
+   ],
+   "plus": [
+    "excel",
+    "spanish",
+    "hubspot"
+   ]
+  },
+  "nursing": {
+   "core": [
+    "patient care",
+    "cpr",
+    "bls",
+    "vitals",
+    "emr",
+    "clinical"
+   ],
+   "plus": [
+    "epic",
+    "phlebotomy",
+    "cna"
+   ]
+  },
+  "health": {
+   "core": [
+    "patient care",
+    "research",
+    "lab",
+    "clinical",
+    "cpr"
+   ],
+   "plus": [
+    "excel",
+    "spss",
+    "r"
+   ]
+  },
+  "ops": {
+   "core": [
+    "excel",
+    "operations",
+    "logistics",
+    "supply chain",
+    "project management",
+    "data analysis"
+   ],
+   "plus": [
+    "sql",
+    "sap",
+    "customer service"
+   ]
+  },
+  "design": {
+   "core": [
+    "figma",
+    "adobe",
+    "ui",
+    "ux",
+    "photoshop",
+    "illustrator",
+    "sketch"
+   ],
+   "plus": [
+    "html",
+    "css",
+    "canva"
+   ]
+  },
+  "hr": {
+   "core": [
+    "recruiting",
+    "hr",
+    "communication",
+    "excel",
+    "workday"
+   ],
+   "plus": [
+    "customer service",
+    "onboarding"
+   ]
+  },
+  "hardware": {
+   "core": [
+    "circuit design",
+    "verilog",
+    "embedded",
+    "c",
+    "matlab",
+    "pcb"
+   ],
+   "plus": [
+    "python",
+    "c++",
+    "fpga"
+   ]
+  },
+  "mech": {
+   "core": [
+    "solidworks",
+    "cad",
+    "matlab",
+    "autocad",
+    "mechanical design"
+   ],
+   "plus": [
+    "python",
+    "3d printing",
+    "ansys"
+   ]
+  },
+  "eng": {
+   "core": [
+    "matlab",
+    "cad",
+    "autocad",
+    "python",
+    "engineering"
+   ],
+   "plus": [
+    "excel",
+    "solidworks"
+   ]
+  },
+  "legal": {
+   "core": [
+    "legal research",
+    "writing",
+    "westlaw",
+    "research"
+   ],
+   "plus": [
+    "excel",
+    "spanish"
+   ]
+  }
+ },
+ "skillSynonyms": {
+  "ms excel": "excel",
+  "microsoft excel": "excel",
+  "ppt": "powerpoint",
+  "microsoft powerpoint": "powerpoint",
+  "js": "javascript",
+  "ml": "machine learning",
+  "golang": "go",
+  "dcf modeling": "dcf",
+  "discounted cash flow": "dcf",
+  "leveraged buyout": "lbo",
+  "financial modelling": "financial modeling",
+  "modeling": "financial modeling",
+  "c plus plus": "c++",
+  "postgres": "sql",
+  "mysql": "sql",
+  "basic life support": "bls",
+  "stats": "statistics",
+  "adobe creative suite": "adobe"
+ },
+ "titleMajors": {
+  "_readme": "V12: specialised titles inside a broad field and the majors they normally draw from (typical expectation, from the title wording only). A profile whose major isn't listed gets a lower Fit for that title, never a hard block.",
+  "rules": [
+   {
+    "re": "actuar",
+    "majors": "math|actuar|statistic|economics|data",
+    "label": "actuarial roles usually want math, statistics or actuarial science majors"
+   },
+   {
+    "re": "\\b(it|technology|cyber|software|systems?|data|engineering)\\b",
+    "majors": "computer|information|data|software|engineering|math|statistic|cyber",
+    "label": "technology roles usually want CS, IS or data majors"
+   },
+   {
+    "re": "\\b(audit|tax|accounting|assurance)\\b",
+    "majors": "accounting|finance",
+    "label": "audit and tax roles usually want accounting majors"
+   },
+   {
+    "re": "quant|quantitative|trading|strats",
+    "majors": "math|computer|physics|statistic|engineering|economics|financial engineering",
+    "label": "quant roles usually want math, CS or physics majors"
+   },
+   {
+    "re": "\\b(legal|paralegal|law)\\b",
+    "majors": "legal|law|political|english|history|philosophy|criminal",
+    "label": "legal roles usually want pre-law style majors"
+   }
+  ]
  }
 }

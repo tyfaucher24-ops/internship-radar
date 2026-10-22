@@ -1,6 +1,6 @@
 // node test/elite_firms.test.js : a no-experience sophomore must score D or F (<55) at JPMorgan and Bank of America (open or upcoming listings)
 global.self=global;require('../match-core.js');const fs=require('fs');process.chdir(__dirname+'/..');
-const C=JSON.parse(fs.readFileSync('config.json')),W=JSON.parse(fs.readFileSync('match-weights.json')),T=JSON.parse(fs.readFileSync('test/profiles.test.json'));
+const C=JSON.parse(fs.readFileSync('config.json'));C.schoolTiers=JSON.parse(fs.readFileSync('data/school_tiers.json')),W=JSON.parse(fs.readFileSync('match-weights.json')),T=JSON.parse(fs.readFileSync('test/profiles.test.json'));
 const norm=s=>(s||'').toLowerCase().replace(/[^a-z0-9&+# ]/g,' ').replace(/\s+/g,' ').trim();
 const L=JSON.parse(fs.readFileSync('data/listings.json')).listings.filter(x=>x.status!=='closed'&&/jp ?morgan|bank of america/i.test(x.company));
 let fail=0;for(const x of L){x.industry=x.industry||x.category;x._t=norm([x.title,x.company,...(x.locations||[]).map(l=>l.city+' '+l.state)].join(' '));

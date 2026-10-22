@@ -1,0 +1,210 @@
+{
+ "_readme": "V12 school tiers per role group. Only from the cited public sources below; schools not listed are 'not a known target' (never guessed). Groups with no public target data (quant, software, and everything else) have no tiers, and the grader says so and gives school little weight.",
+ "aliases": {
+  "Harvard University": [],
+  "Columbia University": [
+   "Columbia University in the City of New York"
+  ],
+  "University of Pennsylvania": [
+   "Penn",
+   "UPenn",
+   "Wharton"
+  ],
+  "Yale University": [],
+  "Cornell University": [],
+  "University of California, Berkeley": [
+   "UC Berkeley"
+  ],
+  "University of Chicago": [],
+  "Brown University": [],
+  "Stanford University": [],
+  "Duke University": [],
+  "New York University": [
+   "NYU"
+  ],
+  "Dartmouth College": [],
+  "Princeton University": [],
+  "Georgetown University": [],
+  "Massachusetts Institute of Technology": [
+   "MIT"
+  ],
+  "University of California, Los Angeles": [
+   "UCLA"
+  ],
+  "Northwestern University": [],
+  "University of Southern California": [
+   "USC"
+  ],
+  "The University of Texas at Austin": [
+   "University of Texas at Austin",
+   "UT Austin"
+  ],
+  "University of Michigan - Ann Arbor": [
+   "University of Michigan"
+  ],
+  "University of Notre Dame": [],
+  "University of Virginia, Charlottesville": [
+   "University of Virginia",
+   "UVA"
+  ],
+  "Northeastern University": [],
+  "Vanderbilt University": [],
+  "Boston College": [],
+  "Middlebury College": [],
+  "University of North Carolina at Chapel Hill": [
+   "UNC Chapel Hill"
+  ],
+  "Williams College": [],
+  "Washington University, Saint Louis": [
+   "Washington University in St. Louis",
+   "WashU"
+  ],
+  "Southern Methodist University": [],
+  "CUNY Baruch College": [
+   "Baruch College"
+  ],
+  "Johns Hopkins University": [],
+  "University of Illinois at Urbana-Champaign": [
+   "University of Illinois Urbana-Champaign"
+  ],
+  "Boston University": [],
+  "Emory University": [],
+  "Villanova University": [],
+  "Babson College": [],
+  "Wake Forest University": [],
+  "Indiana University - Bloomington": [
+   "Indiana University Bloomington",
+   "Indiana University"
+  ],
+  "Washington and Lee University": [],
+  "Fordham University": [],
+  "Pennsylvania State University": [
+   "Penn State"
+  ],
+  "Carnegie Mellon University": [],
+  "University of Washington": [],
+  "Rice University": [],
+  "University of Minnesota": [],
+  "University of Texas at Dallas": [],
+  "Brigham Young University": [],
+  "Georgia Institute of Technology": [
+   "Georgia Tech"
+  ],
+  "Howard University": []
+ },
+ "groups": {
+  "ib": {
+   "target": [
+    "Harvard University",
+    "Columbia University",
+    "University of Pennsylvania",
+    "Yale University",
+    "Cornell University",
+    "University of California, Berkeley",
+    "University of Chicago",
+    "Brown University",
+    "Stanford University",
+    "Duke University",
+    "New York University",
+    "Dartmouth College",
+    "Princeton University",
+    "Georgetown University",
+    "Massachusetts Institute of Technology",
+    "University of California, Los Angeles",
+    "Northwestern University",
+    "University of Southern California",
+    "The University of Texas at Austin",
+    "University of Michigan - Ann Arbor",
+    "University of Notre Dame",
+    "University of Virginia, Charlottesville"
+   ],
+   "semi": [
+    "Northeastern University",
+    "Vanderbilt University",
+    "Boston College",
+    "Middlebury College",
+    "University of North Carolina at Chapel Hill",
+    "Williams College",
+    "Washington University, Saint Louis",
+    "Southern Methodist University",
+    "CUNY Baruch College",
+    "Johns Hopkins University",
+    "University of Illinois at Urbana-Champaign",
+    "Boston University",
+    "Emory University",
+    "Villanova University",
+    "Babson College",
+    "Wake Forest University",
+    "Indiana University - Bloomington",
+    "Washington and Lee University",
+    "Fordham University",
+    "Pennsylvania State University"
+   ],
+   "sources": [
+    {
+     "url": "https://rareliquid.com/resources/top-banks/goldman-sachs",
+     "what": "Goldman Sachs IB analyst feeder schools, classes ~2015+ (8,114 profiles). Target = the 22 schools each supplying >=0.9% of analysts; semi-target = ranks 23-40."
+    },
+    {
+     "url": "https://www.collegetransitions.com/dataverse/top-feeders-banking",
+     "what": "Top feeders to 16 major banks from ~10,500 IB analyst profiles (adds Fordham, Penn State as semi-targets)."
+    }
+   ]
+  },
+  "pe": {
+   "same_as": "ib",
+   "note": "Private equity hires mostly from investment-banking analyst classes, so it uses the IB feeder lists."
+  },
+  "consulting": {
+   "target": [
+    "Harvard University",
+    "Yale University",
+    "Princeton University",
+    "Columbia University",
+    "University of Pennsylvania",
+    "Brown University",
+    "Dartmouth College",
+    "Cornell University",
+    "Massachusetts Institute of Technology",
+    "Stanford University",
+    "Duke University",
+    "Northwestern University",
+    "University of Chicago",
+    "Georgetown University",
+    "Carnegie Mellon University",
+    "University of California, Berkeley",
+    "University of Michigan - Ann Arbor",
+    "University of Virginia, Charlottesville",
+    "New York University",
+    "University of Southern California",
+    "University of California, Los Angeles"
+   ],
+   "semi": [
+    "Emory University",
+    "University of Washington",
+    "Rice University",
+    "The University of Texas at Austin",
+    "Washington University, Saint Louis",
+    "Vanderbilt University",
+    "University of Minnesota",
+    "Southern Methodist University",
+    "University of Texas at Dallas",
+    "Indiana University - Bloomington",
+    "Brigham Young University",
+    "Georgia Institute of Technology",
+    "University of North Carolina at Chapel Hill",
+    "Howard University"
+   ],
+   "sources": [
+    {
+     "url": "https://strategycase.com/us-target-schools-mbb/",
+     "what": "MBB core undergraduate target schools (target) and the McKinsey/BCG/Bain MBA program school lists (schools on the BCG/Bain lists but not the core undergrad list = semi-target)."
+    },
+    {
+     "url": "https://www.preplounge.com/en/blog/consulting/firms/mbb-target-schools",
+     "what": "MBB pre-MBA program school lists (McKinsey 17, BCG 27, Bain 30)."
+    }
+   ]
+  }
+ }
+}

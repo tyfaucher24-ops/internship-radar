@@ -27,6 +27,11 @@ const RGC=new WeakMap();function rgs(C){let r=RGC.get(C);if(!r){r=(C.roleGroups|
 function groupOf(x,C){const t=x.title||'';for(const g of rgs(C))if(g.rx.test(t))return g.g;const ig=(C.industryGroups||{})[x.industry||x.category];return ig?ig[0]:null}
 MC.groupOf=groupOf;MC.groupLabel=(g,C)=>((C.roleGroups||[]).find(r=>r.g===g)||{}).label||g;
 function groupsFromText(t,C){const out=new Set();for(const g of rgs(C))if(g.rx.test(t))out.add(g.g);return out}
+function firmLevel(C,co,ft){const FS=C.firmSelectivity||{},L=FS.levels||{};if(ft&&+ft.tier<=1)return{v:L.tier1??95,why:`${ft.firm}: cited acceptance rate under 1%`};const n=norm(co);if(!n)return null;
+ const f=(FS.firms||[]).find(f=>[f.firm,...(f.aliases||[])].map(norm).some(k=>k&&(n===k||n.startsWith(k+' '))));return f?{v:L[f.level]??70,why:`${f.firm}: ${f.level.replace(/_/g,' ')} tier (${f.source.replace(/^https?:\/\/(www\.)?/,'').split('/')[0]})`}:null}
+const STC=new WeakMap();function schoolTier(C,g,P){const T=C.schoolTiers;if(!T||!T.groups)return{listed:false};let grp=T.groups[g];if(grp&&grp.same_as)grp=T.groups[grp.same_as];if(!grp||!grp.target)return{listed:false};
+ let m=STC.get(T);if(!m){m={};for(const [k,al] of Object.entries(T.aliases||{}))[k,...al].forEach(a=>m[norm(a)]=k);STC.set(T,m)}const canon=m[P.schoolN];const src=(grp.sources||[])[0]?(grp.sources[0].url.replace(/^https?:\/\/(www\.)?/,'').split('/')[0]):'';
+ return{listed:true,tier:canon&&grp.target.includes(canon)?'target':canon&&grp.semi.includes(canon)?'semi':'other',src}}
 // P = normalized profile (see MC.profile)
 MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category||'',text=x._t||norm(x.title+' '+x.company);
  const kws=[...new Set([...(String((C.industryKeywords||{})[ind]||'')).split(',').map(s=>norm(s)).filter(Boolean),...title.split(' ').filter(w=>w.length>2&&!TSTOP.has(w))])];
@@ -60,7 +65,7 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  if(bar&&P.gpa){oGpa=P.gpa>=bar?90:P.gpa>=bar-0.2?50:15;if(P.gpa<bar)neg.push(`your GPA is under its ${bar} bar`)}
  const tl=(C.targetSchools||[]).find(r=>!r.placeholder&&r.industry===ind);let oSch=null;
  if(tl&&P.schoolN){const ts=tl.schools.split(/[;\n]/).map(norm).filter(Boolean);oSch=ts.some(s=>P.schoolN.includes(s)||s.includes(P.schoolN))?85:45}
- const eliteOrg=P.exp.map(e=>firmRow(C,e.org||'')).find(f=>f&&+f.tier<=1);const finG=['ib','pe','sandt','finance','quant'];
+ var eliteOrg=P.exp.map(e=>firmRow(C,e.org||'')).find(f=>f&&+f.tier<=1);const finG=['ib','pe','sandt','finance','quant'];
  const oExp=P.exp.length?Math.min(95,55+rel.length*20+(eliteOrg&&finG.includes(gx)?25:0)):neV;if(eliteOrg&&finG.includes(gx))pos.unshift(`your ${eliteOrg.firm} internship is one of the strongest signals in finance recruiting`);
  const odds=avgW([['competition',cOdds],['classYear',oYear],['gpa',oGpa],['school',oSch],['experience',oExp],['employer',pastEmp?95:null]],W.oddsParts||{});
  if(comp.score!=null&&comp.score<40&&comp.easy.length)pos.push(`competition looks low (${comp.easy.slice(0,2).join(', ')})`);else if(comp.score!=null&&comp.score>=65)neg.push(`competition is high${comp.why.length?' ('+comp.why[0]+')':''}`);
@@ -71,12 +76,57 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  const prefs=avgW([['location',pLoc],['remote',pRem],['classYear',pYear],['paid',pPaid]],W.prefParts||{});
  // ---- Hard filters ----
  if(P.sponsor===true&&(x.sponsorship==='Not offered'||x.citizenship===true))ineligible=ineligible||(x.citizenship===true?'it requires US citizenship and you need sponsorship':'it doesn\u2019t sponsor visas and you need sponsorship');
+ // ---- V12 grader: five components (School / GPA / Experience / Skills / Fit) vs the listing's selectivity (match-weights.json v12) ----
+ const V12=W.v12;let v12=null;
+ if(V12){const g=gx||'_default',bd=[],lvl=firmLevel(C,x.company,firm);
+  // School: only for role groups with cited target lists (data/school_tiers.json); elsewhere it is not scored
+  const st=schoolTier(C,g==='pe'?'ib':g,P);let cS=null;
+  if(st.listed&&P.schoolN){cS=st.tier==='target'?90:st.tier==='semi'?65:35;bd.push({k:'School',v:cS,s:st.tier==='target'?`${P.school} is a target school for ${MC.groupLabel(g,C).toLowerCase()} (${st.src}).`:st.tier==='semi'?`${P.school} is a semi-target for ${MC.groupLabel(g,C).toLowerCase()} (${st.src}).`:`${P.school} isn't on the cited target lists for ${MC.groupLabel(g,C).toLowerCase()}, so you'll rely on networking more than campus recruiting.`})}
+  else bd.push({k:'School',v:null,s:st.listed?'Add your school to see how recruiters in this field view it.':`School matters little here: there's no public target-school list for ${gx?MC.groupLabel(g,C).toLowerCase():'this kind of role'}${lvl?'':', and smaller firms hire locally'}.`});
+  // GPA: the posting's cutoff first, then a typical bar for the role group (labelled), never a guess
+  const pBar=x.gpa_min!=null&&x.gpa_min!==''?+x.gpa_min:(firm&&firm.gpaBar?+firm.gpaBar:null),tBar=(V12.typicalGpa||{})[g]??(V12.typicalGpa||{})._default??3.0;let cG=null;
+  if(P.gpa){if(pBar){cG=P.gpa<pBar?10:Math.min(100,72+(P.gpa-pBar)*70);bd.push({k:'GPA',v:cG,s:P.gpa<pBar?`Your ${P.gpa} is under the posting's ${pBar} cutoff; many applications at this cutoff are screened out.`:`Your ${P.gpa} clears the posting's ${pBar} cutoff.`})}
+   else{cG=Math.max(5,Math.min(100,60+(P.gpa-tBar)*80));bd.push({k:'GPA',v:cG,s:`No cutoff listed; against a typical expectation of about ${tBar.toFixed(1)} for this field, your ${P.gpa} is ${P.gpa>=tBar+0.3?'strong':P.gpa>=tBar?'fine':'on the low side'}.`})}}
+  else bd.push({k:'GPA',v:null,s:pBar?`Add your GPA: this posting asks for ${pBar}+.`:'No GPA entered, so it counts as neutral. Add it if it’s 3.3 or higher.'});
+  // Experience: typed, relevance-weighted, vs what's normal for your class year; nothing is credited that isn't in your profile
+  const finLike=new Set(V12.athleticsCounts||[]),EXP=V12.expectByYear||{},expect=EXP[P.classYear]??EXP._default??1;let val=0,best=null;
+  for(const e of P.exp){let r=rel.includes(e)?1:0;const ath=/ncaa|division i\b|\bd1\b|division 1|varsity/.test(e.n);
+   if(eliteOrg&&e.org&&firmRow(C,e.org)===eliteOrg&&finG.includes(gx))r=1.5;
+   if(!r&&ath&&finLike.has(g))r=0.6;if(r&&/club|society/.test(e.n)&&!/intern/.test(e.n))r=Math.min(r,0.6);if(r>=1&&/job|intern/i.test(e.kind||''))r=Math.max(r,1.2);if(!r)r=/job|intern/i.test(e.kind||'')?0.25:0.1;
+   const dur=e.months?Math.max(.5,Math.min(1.5,e.months/6)):1,rec=e.endY&&e.endY<new Date().getFullYear()-3?0.6:1;const c=r*dur*rec;val+=c;if(!best||c>best.c)best={c,e,ath,r}}
+  const clip=t=>{t=String(t||'');return t.length<=70?t:t.slice(0,70).replace(/\s+\S*$/,'')+'…'};let cE;const ratio=val/expect;
+  if(!P.exp.length){cE=comp.score!=null&&comp.score<45?45:20;bd.push({k:'Experience',v:cE,s:cE>20?'No experience listed; this entry-level role expects little.':'No experience listed yet, and applicants here usually have some.'})}
+  else{cE=Math.round(Math.min(100,20+55*Math.min(ratio,1)+25*Math.min(1,Math.max(0,ratio-1)/2)));bd.push({k:'Experience',v:cE,s:`${best.r>=1?`Your ${clip(best.e.title)} is directly relevant`:best.ath?`Your ${clip(best.e.title)} counts: recruiters in this field value varsity athletes`:best.r>=.6?`Your ${clip(best.e.title)} is related`:'Your experience is mostly unrelated'}; ${ratio>=1.2?'more than':ratio>=0.85?'about':'less than'} what's typical for a ${(P.classYear||'student').toLowerCase()}.`})}
+  if((x.req||{}).px&&!P.exp.some(e=>rel.includes(e)&&/job|intern/i.test(e.kind||''))){cE=Math.round(cE*0.6);bd[bd.length-1].s+=' The posting asks for prior experience.';neg.unshift('the posting asks for prior experience')}
+  // Skills: role-aware (core skills full credit, plus skills partial)
+  const tx=(C.skillTaxonomy||{})[g];
+  let cK=null;if(tx){const has=s=>P.skills.includes(s);const core=tx.core.filter(has),plus=tx.plus.filter(has);cK=P.skills.length?Math.min(100,20+core.length*22+plus.length*10):15;
+   bd.push({k:'Skills',v:cK,s:core.length?`You list ${core.slice(0,3).join(', ')}, core for this role${plus.length?`, plus ${plus.slice(0,2).join(', ')}`:''}.`:plus.length?`You list ${plus.slice(0,2).join(', ')}, which helps; the core skills here are ${tx.core.slice(0,3).join(', ')}.`:`None of the core skills for this role (${tx.core.slice(0,3).join(', ')}) are on your profile.`})}
+  const rq=x.req||{},rs=(rq.sk||[]);if(rs.length>=2){const got=rs.filter(k=>P.skills.includes(k)),rsc=Math.min(100,15+85*got.length/Math.min(rs.length,4));if(cK!=null)bd.pop();cK=cK==null?rsc:Math.round((cK+rsc)/2);bd.push({k:'Skills',v:cK,s:got.length?`The posting names ${rs.slice(0,4).join(', ')}; you list ${got.slice(0,3).join(', ')}.`:`The posting names ${rs.slice(0,4).join(', ')}; none are on your profile yet.`})}
+  if(cK==null){cK=fSk;bd.push({k:'Skills',v:cK,s:sk.length?`Your ${sk.slice(0,3).join(', ')} match the posting.`:'None of your skills match the posting’s wording.'})}
+  // Fit: role, interests, major, location
+  let fR2=fRole;const tm=((C.titleMajors||{}).rules||[]).find(r=>new RegExp(r.re,'i').test(x.title||''));if(tm&&P.majorN&&!new RegExp(tm.majors).test(P.majorN)&&fR2!=null&&fR2>50){fR2=50;neg.unshift(tm.label+(P.major?` (your major: ${P.major})`:''))}
+  const rm=(x.req||{}).mj||[];let mjNote=null;if(rm.length&&P.majorN&&fR2!=null){const BUS=/financ|accounting|econom|marketing|supply chain|management|business/;const hit=rm.some(m=>P.majorN.includes(m.split(' ')[0])||(m==='business'&&BUS.test(P.majorN))||(m==='mathematics'&&/math/.test(P.majorN))||(m==='engineering'&&/engineer/.test(P.majorN)));
+   if(hit){fR2=Math.min(100,fR2+5);mjNote='The posting names your major.'}else{fR2=Math.min(fR2,45);mjNote=`The posting asks for ${rm.slice(0,3).join(', ')} majors.`;neg.unshift(`the posting asks for ${rm.slice(0,3).join(', ')} majors`+(P.major?`, not ${P.major}`:''))}}
+  const fitP=avgW([['role',fR2],['interest',fInt],['major',fMaj],['loc',pLoc]],{role:45,interest:20,major:20,loc:15});const cF=fitP.v==null?50:fitP.v;
+  bd.push({k:'Fit',v:Math.round(cF),s:(mjNote?mjNote+' ':'')+(tm&&fR2===50?`Partly related: ${tm.label}.`:fRole!=null&&fRole<=15?`It's ${MC.groupLabel(g,C).toLowerCase()}, which doesn't match your major, interests or experience.`:fRole>=78?`It's ${MC.groupLabel(g,C).toLowerCase()}, in line with your ${fRole>=95?'major':'interests'}${pLoc===100?' and a location you picked':pLoc!=null&&pLoc<=20?', but not a location you picked':''}.`:`Partly related to your major and interests${pLoc===100?'; a location you picked':''}.`)});
+  const RW=(V12.weights||{})[g]||(V12.weights||{})._default;const cand0=avgW([['school',cS],['gpa',cG],['exp',cE],['skills',cK]],RW);
+  const cand=(cand0.v==null?50:cand0.v)*(1-RW.fit)+cF*RW.fit;const gate=cand*((V12.fitGate??.5)+(1-(V12.fitGate??.5))*cF/100);
+  // selectivity: cited firm tier, else the role group's typical level (labelled), adjusted by real listing signals
+  let S=lvl?lvl.v:((C.groupSelectivity||{})[g]??(C.groupSelectivity||{})._default??48);const mp=x.metro_pop||Math.max(0,...(x.locations||[]).map(l=>l.pop||0));
+  if(x.remote)S+=8;else if(mp>=1e6)S+=4;else if(mp&&mp<1e5)S-=8;if(cy.includes('Freshman')||cy.includes('Sophomore'))S-=4;if(pBar&&pBar>=3.5)S+=4;
+  const fsd=x.posted||x.fs||(x.first_seen||'').slice(0,10);if(fsd&&-dayN(fsd)>45)S-=4;if(!lvl&&pLoc===100)S-=4;const hb=C.h1b&&C.h1b[x.company];if(!lvl&&hb&&hb.new+hb.cont>=100)S+=5;
+  const under=['Freshman','Sophomore','Community college (1st year)','Community college (2nd year)'].includes(P.classYear);if(!cy.length&&under)S+=6;else if(oYear===95)S-=3;S=Math.max(20,Math.min(100,S));
+  const pen=Math.max(0,S-(V12.headroom??.75)*gate)*(V12.penalty??.4),pAdj=prefs.v==null?0:(prefs.v-60)*(V12.prefs??.12);
+  let pv=gate*(V12.scale??1)-pen+pAdj;const relJob=P.exp.some(e=>rel.includes(e)&&/job|intern/i.test(e.kind||''));if(!relJob&&V12.aNeedsRelatedJob&&pv>V12.aNeedsRelatedJob){pv=V12.aNeedsRelatedJob;bd.push({k:'Ceiling',v:null,s:'A grades need a related job or internship on your profile; you’re capped at A- until then.'})}
+  v12={pct:pv,S,lvl,bd,cand:Math.round(cand)}}
  // ---- Combine (missing parts are left out and their weight re-spread) ----
  const parts=[[fit.v,W.fit],[odds.v,W.odds],[prefs.v,W.prefs]].filter(p=>p[0]!=null);const tw=parts.reduce((a,p)=>a+p[1],0)||1;
  let pct=parts.reduce((a,p)=>a+p[0]*p[1],0)/tw;
+ if(v12)pct=v12.pct;else{
  const B=W.lowCompetitionBoost||{};if(comp.score!=null&&comp.score<(B.below||35))pct+=(100-pct)*((B.below-comp.score)/B.below)*(B.strength||.5);
  // strictness curve: pct^k pulls every score down and the top hardest in absolute terms, so A grades are rare (match-weights.json strictness)
- if(W.strictness&&W.strictness!==1)pct=100*Math.pow(Math.max(0,pct)/100,W.strictness);
+ if(W.strictness&&W.strictness!==1)pct=100*Math.pow(Math.max(0,pct)/100,W.strictness);}
  // elite firms (sub-1% acceptance, cited in config.json): a weak profile can't grade above D/C-
  const EF=W.eliteFirm;let elite=null;if(EF&&firm&&+firm.tier<=EF.maxTier){if(!rel.length){pct=Math.min(pct,EF.noRelatedExpCap);elite=`${firm.firm} accepts under 1% of intern applicants, and you have no related experience yet`}else if(!P.gpa||P.gpa<(+firm.gpaBar||0)){pct=Math.min(pct,EF.belowGpaBarCap);elite=`${firm.firm} accepts under 1% of intern applicants${P.gpa?`; your GPA is under the ${firm.gpaBar} most applicants have`:'; add your GPA'}`}}
  if(ineligible)pct=Math.min(pct,W.ineligibleCap||40);
@@ -99,13 +149,14 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
   if(pLoc!=null&&pLoc<=20&&!P.relocate){const l0=(x.locations||[])[0];acts.push(`It's in ${l0&&l0.city?l0.city+(l0.state?', '+l0.state:''):'a city outside your picks'}, not a location you picked. Tick “open to relocating” if you'd move for it.`)}
   if(pct>=V.strong||!acts.length)acts.push(rel.length?`Apply, and put your ${rel[0].title.length>60?rel[0].title.slice(0,60).replace(/\s+\S*$/,'')+'…':rel[0].title.trim()} experience first on your resume; it's the closest match to “${x.title.slice(0,50)}”.`:sk.length?`Apply, and lead your resume with ${sk.slice(0,2).join(' and ')}, which “${x.title.slice(0,50)}” asks for.`:`Apply if “${x.title.slice(0,50)}” at ${x.company} interests you; nothing in your profile matches it closely yet.`)}
  const verdict=ineligible?{k:'no',t:'Not eligible',why:ineligible}:pct>=V.strong?{k:'strong',t:'Strong shot',why:pos[0]?pos[0]:`your profile lines up with ${x.title.slice(0,50)}`}:pct>=V.worth?{k:'worth',t:'Worth applying',why:`worth it if you ${acts[0]?acts[0].replace(/\.$/,'').replace(/^./,c=>c.toLowerCase()):'tailor your resume to it'}`}:{k:'long',t:'Long shot',why:neg[0]||elite||(fRole!=null&&fRole<=15?`${x.title.slice(0,50)} doesn't match your ${P.major||'major'} or experience`:`none of your skills${P.major?' or your '+P.major+' major':''} line up with ${x.title.slice(0,50)}`)};
- const feedback={strengths:pos.slice(0,3),gaps:[...(ineligible?[`not eligible: ${ineligible}`]:[]),...(elite?[elite]:[]),...neg].slice(0,3),actions:acts.slice(0,3),verdict};
+ const feedback={breakdown:v12?v12.bd:null,selectivity:v12?{v:Math.round(v12.S),src:v12.lvl?v12.lvl.why:'typical expectation for this kind of role'}:null,strengths:pos.slice(0,3),gaps:[...(ineligible?[`not eligible: ${ineligible}`]:[]),...(elite?[elite]:[]),...neg].slice(0,3),actions:acts.slice(0,3),verdict};
  if(ungraded)return {pct:null,ungraded,need:ungraded==='profile'?need:['this listing has too little detail (no class year, size or location) to grade fairly'],grade:'—',band:'gna',reasons:['Not enough info to grade'],conf:'low',feedback,group:gx,fit:null,odds:null,prefs:null,comp:comp.score,ineligible:!!ineligible};
  return {pct,grade:MC.grade(pct,W),band:MC.band(pct),group:gx,feedback,pastEmployer:pastEmp,fit:Math.round(fit.v??0),odds:Math.round(odds.v??0),prefs:prefs.v==null?null:Math.round(prefs.v),comp:comp.score,reasons:reasons.length?reasons:['Little overlap with your profile yet'],tip,conf,ineligible:!!ineligible}};
+function mon(e){const a=Date.parse(String(e.start||'').slice(0,7)+'-01'),b=/present|current/i.test(e.end||'')?Date.now():Date.parse(String(e.end||'').slice(0,7)+'-01');return a&&b&&b>a?Math.round((b-a)/2.63e9):null}
 MC.profile=function(pr){const sk=(pr.skills||[]).map(s=>norm(s)).filter(Boolean);
- return {school:pr.school||'',schoolN:norm(pr.school),major:pr.major||'',majorN:norm([pr.major,pr.minor].filter(Boolean).join(' ')),classYear:pr.classYear||'',gpa:parseFloat(pr.gpa)||null,
+ return {school:pr.school||'',schoolN:norm(pr.school),major:pr.major||'',majorN:/^(undeclared|undecided|exploratory|none)$/i.test(String(pr.major||'').trim())?'':norm([pr.major,pr.minor].filter(Boolean).join(' ')),classYear:pr.classYear||'',gpa:parseFloat(pr.gpa)||null,
   sponsor:pr.sponsorship==='yes'?true:pr.sponsorship==='no'?false:null,industries:pr.industries||[],locs:(pr.locations||[]).filter(l=>!/^state:|^remote$/i.test(l)).map(l=>norm(String(l).split(',')[0])).filter(Boolean),states:(pr.locations||[]).filter(l=>/^state:/.test(l)).map(l=>l.slice(6).toLowerCase()),
-  remoteOK:!!pr.remoteOK||(pr.locations||[]).some(l=>/^remote$/i.test(l)),relocate:!!pr.relocate,skills:[...new Set(sk)],exp:(pr.experience||[]).filter(e=>e&&(e.title||e.org)).map(e=>({title:[e.title,e.org].filter(Boolean).join(' at '),org:e.org||'',n:norm([e.title,e.org,...(e.bullets||[])].join(' '))})),employers:(pr.experience||[]).filter(e=>e&&e.org&&/job|intern/i.test(e.kind||'job')).map(e=>norm(e.org)).filter(s=>s.length>2)}};
+  remoteOK:!!pr.remoteOK||(pr.locations||[]).some(l=>/^remote$/i.test(l)),relocate:!!pr.relocate,skills:[...new Set(sk)],exp:(pr.experience||[]).filter(e=>e&&(e.title||e.org)).map(e=>({title:[e.title,e.org].filter(Boolean).join(' at '),org:e.org||'',kind:e.kind||'',months:mon(e),endY:parseInt(String(e.end||'').slice(0,4))||null,n:norm([e.title,e.org,e.kind,...(e.bullets||[])].join(' '))})),employers:(pr.experience||[]).filter(e=>e&&e.org&&/job|intern/i.test(e.kind||'job')).map(e=>norm(e.org)).filter(s=>s.length>2)}};
 function profileGroups(P,C){const all=new Set(),exp=new Set(),maj=new Set(),ind=new Set();for(const [m,gs] of Object.entries(C.majorGroups||{}))if(P.majorN&&new RegExp('\\b'+m+'\\b').test(P.majorN))gs.forEach(g=>{maj.add(g);all.add(g)});
  for(const i of P.industries)((C.industryGroups||{})[i]||[]).forEach(g=>{ind.add(g);all.add(g)});for(const e of P.exp){e.g=groupsFromText(e.title,C);e.g.forEach(g=>{exp.add(g);all.add(g)})}return{all,exp,maj,ind}}
 MC.hasProfile=pr=>!!(pr&&pr.savedAt);

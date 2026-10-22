@@ -1,6 +1,6 @@
 // V12: grade spread diagnostics per persona over every open listing.
 global.self=global;require('../match-core.js');const fs=require('fs');process.chdir(__dirname+'/..');
-const C=JSON.parse(fs.readFileSync('config.json')),W=JSON.parse(fs.readFileSync('match-weights.json')),PS=JSON.parse(fs.readFileSync('test/personas.json'));
+const C=JSON.parse(fs.readFileSync('config.json'));C.schoolTiers=JSON.parse(fs.readFileSync('data/school_tiers.json')),W=JSON.parse(fs.readFileSync('match-weights.json')),PS=JSON.parse(fs.readFileSync('test/personas.json'));
 const norm=s=>(s||'').toLowerCase().replace(/[^a-z0-9&+# ]/g,' ').replace(/\s+/g,' ').trim();
 const L=JSON.parse(fs.readFileSync('data/index.json')).listings.filter(x=>x.status==='open'&&!x.hidden);L.forEach(x=>{x.industry=x.category;x._t=norm([x.title,x.company,...(x.locations||[]).map(l=>l.city+' '+l.state)].join(' '))});
 const out={};

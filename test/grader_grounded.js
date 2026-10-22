@@ -1,7 +1,7 @@
 // V11.2: every strength, gap, action and verdict reason must cite something real from the profile or the listing.
 // For each persona (incl. Ty's), checks top 40 + JPMorgan/BofA listings. Prints failures and samples. Exit 1 on any ungrounded line.
 global.self=global;require('../match-core.js');const fs=require('fs');process.chdir(__dirname+'/..');
-const C=JSON.parse(fs.readFileSync('config.json')),W=JSON.parse(fs.readFileSync('match-weights.json')),T=JSON.parse(fs.readFileSync('test/personas.json'));
+const C=JSON.parse(fs.readFileSync('config.json'));C.schoolTiers=JSON.parse(fs.readFileSync('data/school_tiers.json')),W=JSON.parse(fs.readFileSync('match-weights.json')),T=JSON.parse(fs.readFileSync('test/personas.json'));
 const norm=s=>(s||'').toLowerCase().replace(/[^a-z0-9&+# ]/g,' ').replace(/\s+/g,' ').trim();
 const L=JSON.parse(fs.readFileSync('data/index.json')).listings.filter(x=>x.status==='open'&&!x.hidden);L.forEach(x=>{x.industry=x.category;x._t=norm([x.title,x.company,...(x.locations||[]).map(l=>l.city+' '+l.state)].join(' '))});
 let bad=0,lines=0;const samples={};

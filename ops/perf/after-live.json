@@ -1,0 +1,30 @@
+{
+ "noprofile": {
+  "cpu_throttle": 4,
+  "listings": 14036,
+  "scroll_s": 11.69,
+  "frames": 765,
+  "fps": 58.3,
+  "p95_frame_ms": 16.8,
+  "dropped_gt20ms": 21,
+  "max_frame_ms": 50,
+  "trace_long_tasks_gt50ms": 0,
+  "trace_max_task_ms": 34.8,
+  "longtask_api": 0,
+  "longtask_api_max": 0
+ },
+ "graded": {
+  "cpu_throttle": 4,
+  "listings": 14036,
+  "scroll_s": 11.68,
+  "frames": 700,
+  "fps": 53.6,
+  "p95_frame_ms": 33.4,
+  "dropped_gt20ms": 82,
+  "max_frame_ms": 49.9,
+  "trace_long_tasks_gt50ms": 0,
+  "trace_max_task_ms": 37.4,
+  "longtask_api": 0,
+  "longtask_api_max": 0
+ }
+}

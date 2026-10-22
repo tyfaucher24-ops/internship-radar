@@ -318,7 +318,7 @@ body:not(.on-profile) .pf-bar{display:none}
 .pf-col h2{display:flex;align-items:center;gap:12px;font-size:var(--fs-l);margin:0;padding:20px 24px 16px;border-bottom:1px solid var(--c-bg-2)}
 .pf-col .num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--c-pri-soft);color:var(--c-pri-ink);font-size:var(--fs-m);font-weight:800}
 .pf-scroll{padding:16px 24px 24px;overflow-y:auto;max-height:calc(100vh - 385px);min-height:300px;overscroll-behavior:contain}
-.pf-f{margin:0 0 16px;min-width:0}.pf-lab{display:flex;align-items:center;gap:8px;font-weight:700;font-size:var(--fs-m);margin-bottom:8px}.pf-lab small{font-weight:500;color:var(--c-x8a8fa3)}
+.pf-f{margin:0 0 16px;min-width:0}.pf-lab{display:flex;align-items:center;gap:8px;font-weight:700;font-size:var(--fs-m);margin-bottom:8px}.pf-lab small{font-weight:500;color:var(--c-mut)}
 .pf-help{color:var(--c-mut-2);font-size:var(--fs-s);line-height:1.45;margin:8px 0 0}.pf-scroll>.pf-help:first-child{margin:0 0 16px;font-size:var(--fs-m)}
 .pf-row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.pf-row2.tight{gap:8px}
 .pf-tipbox{margin-top:16px;background:var(--c-bg);border-radius:var(--r);padding:16px 16px;font-size:var(--fs-m);line-height:1.5}

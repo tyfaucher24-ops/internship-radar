@@ -20,7 +20,7 @@ function saveBtn(x){if(x.st==='upcoming'){const on=Store.get('notify',[]).includ
  const t=T.byListing(x.id);return t?`<button class="btn-save on" data-act="tracker" aria-label="In your tracker: ${esc(t.status)}">✓ ${esc(({'Online Assessment':'OA','Interviewing':'Interview'})[t.status]||t.status)}</button>`:`<button class="btn-save" data-act="save" aria-label="Save ${esc(x.company)} ${esc(x.title)}">Save</button>`}
 function cardHTML(x){const c=closeLbl(x);return`<div class="card${x.st==='closed'?' isclosed':''}" role="listitem" tabindex="0" data-id="${esc(x.id)}" aria-label="${esc(x.company+', '+x.title)}">
  <div class="c-top">${logoHTML(x)}<div class="c-co" title="${esc(x.company)}">${esc(x.company)}</div></div>
- <h3 class="c-role" title="${esc(x.title)}">${esc(x.title)}</h3>
+ <h2 class="c-role" title="${esc(x.title)}">${esc(x.title)}</h2>
  <p class="c-loc" title="${esc(locFull(x))}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>${esc(locShort(x))}</p>${(MSCORE.size||UNGR.size)?`<p class="c-verd">${mbadge(x)}</p>`:''}
  <div class="c-foot"><span class="dl dl-${c.c}"${c.b?` title="${esc(c.b)}"`:''}>${c.c==='red'||c.c==='amber'?'<span class="pulse dn" aria-hidden="true"></span>':''}${esc(c.t)}</span>${grpBtn(x)}${saveBtn(x)}</div></div>`}
 function grpBtn(x){const e=GRP.get(x.id);if(!e||e.n<2||e.ids[0]!==x.id)return'';const o=GEXP.has(e.k);return`<button type="button" class="grp" data-grp="${esc(e.k)}" aria-expanded="${o}" title="${o?'Hide':'Show'} ${e.n-1} similar role${e.n>2?'s':''} at ${esc(x.company)}">${o?"Hide":`+${e.n-1} similar`}</button>`}

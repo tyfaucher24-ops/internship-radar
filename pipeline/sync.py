@@ -62,12 +62,20 @@ def run_registry(reg,workers,only=None,limit=None):
             results[(r['ats'],r['slug'])]=(r,posts,err);logs.append({'ats':r['ats'],'slug':r['slug'],'company':r['name'],'ok':err is None,'error':err,'postings':len(posts or []),'secs':round(dt,1)})
             if i%200==0: print(f'  adapters {i}/{len(uniq)}',file=sys.stderr,flush=True)
     return results,logs
+LOADED=set()
 def github_leads(cache_dir):
     """Listings from public GitHub lists whose links are NOT on a registry ATS board: verified by opening the company's posting."""
-    leads=[]
+    leads=[];LOADED.clear()
     for name,url,kind in GITHUB_LISTS:
         p=os.path.join(cache_dir,N.nkey(name)+('.json' if kind=='json' else '.md'))
+        # refresh from the public list every run (the cache dir is not in git, so CI starts empty)
+        try:
+            txt=fetch(url,check_robots=False,timeout=60).text
+            if kind=='json': json.loads(txt)
+            if len(txt)>1000: open(p,'w').write(txt)
+        except Exception as e: print('leads: could not refresh',name,e,file=sys.stderr)
         if not os.path.exists(p): continue
+        LOADED.add(name)
         if kind=='json':
             for x in json.load(open(p)):
                 if not x.get('active') or x.get('is_visible') is False: continue
@@ -218,6 +226,9 @@ def main():
         b=tuple((p.get('board') or ':').split(':',1));b=(b[0],b[1].lower()) if len(b)==2 else b
         # partial runs (--only/--limit/--skip-leads) never close listings from sources they did not read
         ran={(k[0],k[1].lower()) for k in res}
+        lead_list=(re.search(r'found via ([^)]+)\)',p.get('source') or '') or [None,None])[1]
+        lead_unread=p.get('source_type')=='github-verified' and lead_list is not None and lead_list not in LOADED
+        if lead_unread and p.get('status')=='open': recs[p['key']]=p;stats['kept_list_unreadable']+=1;continue
         out_of_scope=(p.get('source_type') in ('ats','jsonld') and b not in ran) or (p.get('source_type')=='github-verified' and a.skip_leads)
         if (a.only or a.limit or a.skip_leads) and out_of_scope:
             recs[p['key']]=p;stats['kept_out_of_scope']+=1;continue

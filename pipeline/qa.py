@@ -74,7 +74,7 @@ def main():
         nv={r['id']:r for r in vis}
         ch=[i for i in nv if i in pv and any(pv[i].get(k)!=nv[i].get(k) for k in ('deadline','title','locations','company'))]
         rep.update({'added':len(set(nv)-set(pv)),'removed':len(set(pv)-set(nv)),'changed':len(ch),'previous_open':len(pv)})
-        if len(pv)>1000 and len(nv)<0.6*len(pv): rep['collapse']=True
+        if len(pv)>1000 and (len(nv)<0.6*len(pv) or len(set(pv)-set(nv))>0.08*len(pv)): rep['collapse']=True  # V12: a mass close (>8% in one run) means a source failed, not that 8% of jobs closed
         else:
             try:
                 from pipeline import changes

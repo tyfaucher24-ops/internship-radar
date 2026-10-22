@@ -1,6 +1,6 @@
 /* Resume parsing + scoring config (config.json, editable in admin.html). Scoring itself lives in match-core.js. */
 let CFG=null;
-const cfgReady=Promise.all([fetch('config.json').then(r=>r.json()),fetch('data/school_tiers.json').then(r=>r.ok?r.json():null).catch(()=>null),fetch('data/h1b.json').then(r=>r.ok?r.json():null).catch(()=>null)]).then(([c,st,hb])=>{CFG=Store.get('adminConfig',null)||c;if(st)CFG.schoolTiers=st;if(hb)CFG.h1b=hb.employers;return CFG}).catch(()=>CFG={});
+const cfgReady=Promise.all([fetch('config.json'+self.BV).then(r=>r.json()),fetch('data/school_tiers.json'+self.BV).then(r=>r.ok?r.json():null).catch(()=>null),fetch('data/h1b.json'+self.BV).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([c,st,hb])=>{CFG=Store.get('adminConfig',null)||c;if(st)CFG.schoolTiers=st;if(hb)CFG.h1b=hb.employers;return CFG}).catch(()=>CFG={});
 /* ---------- parsing ---------- */
 const HEAD={education:/^(education|academics?)$/,experience:/^(work |professional |relevant |internship |research |work & leadership )?experience|^employment|^work history$/,skills:/^(technical |top )?skills|^skills ?&|^languages ?& ?skills|^certifications? ?& ?skills/,
  leadership:/^leadership/,athletics:/^(athletics|varsity athletics)$/,clubs:/^(activities|clubs|involvement|campus involvement|organizations|extracurricular)/,projects:/^projects?/,other:/^(honors|awards|summary|about|certifications?|interests|languages|contact|references)/};

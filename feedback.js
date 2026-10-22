@@ -21,7 +21,7 @@ function resumeChecks(){const t=Store.get('resumeText','')||'';const out=[];cons
  const ex=pr.experience||[];if(ex.length){const nd=ex.filter(e=>!e.start&&!e.end).length,nb=ex.filter(e=>!(e.bullets||[]).filter(Boolean).length).length;
   if(nd)out.push(['bad',`${nd} of ${ex.length} experience entr${ex.length===1?'y has':'ies have'} no dates.`]);if(nb)out.push(['bad',`${nb} of ${ex.length} experience entr${ex.length===1?'y has':'ies have'} no bullet points describing what you did.`])}
  return out}
-async function multi(profiles){const rows=slimRows();if(!window._fbW){window._fbW=new Worker('match-worker.js');window._fbW.postMessage({t:'init',rows,cfg:CFG,w:MW})}
+async function multi(profiles){const rows=slimRows();if(!window._fbW){window._fbW=new Worker('match-worker.js'+self.BV);window._fbW.postMessage({t:'init',rows,cfg:CFG,w:MW})}
  const w=window._fbW;return new Promise(res=>{w.onmessage=e=>{if(e.data.t==='multi')res(e.data)};w.postMessage({t:'multi',profiles})})}
 window.renderFeedback=async function(){const el=$('fbBody');if(!MatchCore.hasProfile(profile)){el.innerHTML=`<div class="fb-card"><h2>Save your profile first</h2><p class="muted">Feedback is based on your saved profile and your grades on real listings.</p><a class="btn pri" href="#profile" data-go="profile">Go to My Profile</a></div>`;return}
  el.innerHTML='<p class="muted">Reviewing your profile against every live listing…</p>';const t0=performance.now();

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Stamp cache-busting versions so every pushed commit carries a fresh ?v=
+python3 ops/stamp.py >/dev/null && git add index.html *.css version.json

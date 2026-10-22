@@ -54,7 +54,7 @@ if(!webglOK()||Q.get('gl')==='0'||(Q.get('gl')!=='1'&&(window.__swGL||Math.min(s
 const ll2v=(lat,lng,r=1)=>{const a=lat*Math.PI/180,b=lng*Math.PI/180;return[r*Math.cos(a)*Math.sin(b),r*Math.sin(a),r*Math.cos(a)*Math.cos(b)]};
 const US={lat:38.5,lng:-97};
 new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows until then and the canvas cross-fades in */const go=()=>requestAnimationFrame(()=>r());window.requestIdleCallback?requestIdleCallback(go,{timeout:1500}):setTimeout(go,800)}).then(()=>Promise.all([import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js'),
- Promise.resolve(null),fetch('data/hubs.json').then(r=>r.json()).catch(()=>[])])).then(([THREE,landBuf,hubs])=>{
+ Promise.resolve(null),fetch('data/hubs.json'+self.BV).then(r=>r.json()).catch(()=>[])])).then(([THREE,landBuf,hubs])=>{
  if(ended)return;
  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:'high-performance'});
  renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;

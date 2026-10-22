@@ -1,0 +1,15 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    strategy: {matrix: {browser: [chromium, firefox, webkit]}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install playwright && python -m playwright install --with-deps ${{ matrix.browser }}
+      - run: python -m http.server 8800 & sleep 2
+      - run: for t in test_v12 test_v112 test_v111 test_v11 test_v10 test_v12_scroll test_v12_summary test_v12_blurb; do python $t.py; done
+        env: {BROWSER: '${{ matrix.browser }}'}
+      - run: python test/norm_v12.py

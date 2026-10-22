@@ -1,6 +1,16 @@
 # Internship Radar changelog
 
 
+## V12 — Grader, accuracy, polish (2026-10-22)
+- No jump on Save. Smooth scrolling through keyed row reuse, with a perf test.
+- Short summary bullets with a "Show full description" toggle. Full class-year list.
+- Grade panel: a one-line company description quoted verbatim from the posting (omitted when the posting has none), a more open breakdown layout, and fixed athlete-line grammar.
+- New UI font, Geist: self-hosted, latin subset, font-display swap. Numbers stay mono.
+- Classification fixes in `pipeline/norm.py` (Engineering vs Software/Other; high-school postings excluded).
+- Accessibility: axe now clean (skip link, card roles and headings, contrast, tip label).
+- Wealth/insurance selectivity signal left out: no cited source (`ops/V12_GRADER.md`).
+- Docs: `ops/V12_ACCURACY.md`, `ops/V12_TEST_MATRIX.md`, `ops/V12_PHASES.md`, `ops/V12_LAUNCH.md`.
+
 ## V11.2 — Polish + accurate resume reading (2026-10-21)
 - **Cards:** footer chips wrap onto a second line instead of overlapping; each chip stays on one line; short labels ("No deadline listed", "✓ OA", "✓ Interview"); every card in the grid is the same height and nothing spills outside it.
 - **Ticker:** every item, label and separator is vertically centred (Find and intro). Items never shrink or cut mid-text, and a 56px fade hides the edges. The label now shows the real last sync time from `data/meta.json` ("Synced 4:12 PM") and "⚠ over 4 h old" when it is stale.

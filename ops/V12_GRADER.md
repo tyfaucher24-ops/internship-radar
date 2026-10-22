@@ -159,3 +159,10 @@ Breakdown columns: School · GPA · Experience · Skills · Fit (0–100; n/a = 
 
 ## Tests
 `node test/calibration.js` (54/60), `test/grader_grounded.js` (2592/2592 feedback lines grounded in the profile or listing), `test/personas.js`, `test/grade_dist.js`, `test/elite_firms.test.js` and `test/spread.js` all pass. test_v10/v11.1/v11.2/v12 also pass. test_v11 has one failure that predates this change: the ticker count test reads the rolling digits, and the ticker is on hold.
+
+## Wealth management / insurance: firm selectivity (decision 2026-10-22)
+**Decision: left as is.** No cited, allowed source ranks wealth management or insurance firms by intern selectivity.
+- The Vault 2026 Financial Services and Insurance rankings measure intern *satisfaction*, not selectivity.
+- The only acceptance-rate figure found (Corient, about 0.5%) is self-reported in a LinkedIn post. LinkedIn is a banned source, and the figure is not independently cited.
+
+The school factor for corporate finance, wealth and insurance therefore stays "matters little" (n/a), and grades separate profiles on GPA, experience, skills and fit only. We will revisit this if a citable selectivity source appears.

@@ -184,7 +184,7 @@ function companyBlurb(x,d){const t=String(d||'').replace(/\r/g,'');const co=Stri
  const ok=z=>/\b(is|are)\s+(a|an|the|one of)\b|\b(we are|we're)\b|\b(provid|offer|serv|build|design|develop|manufactur|help)/i.test(z)&&!/\b(this role|the role|the position|candidate)\b/i.test(z);
  let m=t.match(new RegExp('(?:^|\\n)\\s*(?:about\\s+(?:us|'+ce+'|the company)|who we are|company (?:overview|description)|our company)\\s*:?\\s*\\n+([\\s\\S]{40,900}?)(?:\\n\\s*\\n|$)','i'));
  const pick=(arr,f)=>{const k=arr.findIndex(f);if(k<0)return'';return arr[k]};
- const good=z=>ok(z)&&!/\b[A-Z]\.$/.test(z);
+ const good=z=>ok(z)&&!/\b[A-Z]\.$/.test(z)&&z.split(/\s+/).length>=8&&!/^(that|this|which|it)[’']?s? (is )?where\b/i.test(z);
  let out=m?pick(sents(m[1]),z=>good(z)&&(new RegExp(first,'i').test(z)||/\b(we|our)\b/i.test(z))):'';
  if(!out)out=pick(sents(t),z=>new RegExp('^(?:At\\s+)?(?:'+ce+'|'+first+')\\b','i').test(z)&&good(z));
  return out}

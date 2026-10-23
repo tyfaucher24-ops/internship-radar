@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V13.1 (part 1, build 261259e6ee, verified live 2026-10-22)
+- Closed all Summer/Fall 2026 postings (those terms have started); one open count everywhere (compact runs hygiene, meta.open=11127).
+- Locations: missing on 0.98% of open listings, using only real sources (ATS slug, posting text, known company sites); each fallback is labeled with loc_source.
+- Linkcheck: 1399 checked, 39 dead closed. JP Morgan names merged; MBA roles tagged and hidden for undergrads unless the Degree filter is set.
+- Sort defaults to Match when a profile exists; Newest sorts by posted date; the empty state offers "show closed matches".
+- Autopilot: steps start no earlier than the next 9:00 AM; .ics uses the America/New_York timezone; header bell with count. Toasts auto-hide.
+- Tracker: company names no longer break mid-word; test_v112 92/92 on live.
+- Still to do: mobile tracker cards (#15), Customize columns (#21), resume parser and grade calibration (#5–9), and the Build my profile upgrades.
+
 ## V13 — New intro and onboarding, Deadline Autopilot, Warm-path finder (2026-10-22)
 - **Intro and onboarding** (matches `specs/ref/v13-intro`, the APPROVED INTRO section):
   - New hero with the globe, a live open-internship counter from the real data, and a ticker built from `changes.json` (real added and closed postings).

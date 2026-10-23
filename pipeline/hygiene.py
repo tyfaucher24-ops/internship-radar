@@ -12,7 +12,7 @@ def clean_city(c):
     if not isinstance(c,str): return c
     c=TRIM.sub('',c);return c or None
 # ---- #13 past-cycle / returning-only / degree ----
-PAST=re.compile(r'\b(summer|fall)[\s\-–]*2026\b',re.I)  # these terms have already started (today is after Sept 2026)
+PAST=re.compile(r'\b(spring|summer|fall|autumn)[\s\-–]*(?:\d{4}\s*[\-–/]\s*)?2026\b|\b(?:spring|summer|fall|autumn|winter|co-?op|intern\w*)[\s\-–(]*20(?:1\d|2[0-5])\b|\b20(?:1\d|2[0-5])[\s\-–)]*(?:spring|summer|fall|autumn|winter|co-?op|intern\w*)\b',re.I)  # V14 #3: every term up to and including Summer/Fall 2026 is past (today is Oct 2026)  # these terms have already started (today is after Sept 2026)
 RETURNING=re.compile(r'\binterns? only\b|\bintern[\s\-]+to[\s\-]+intern\b|\breturning[\s\-]+(interns?|students?|co-?ops?)\b|\bcurrent (interns?|co-?ops?) only\b|\bconversion\b.*\bintern',re.I)
 DEG=[('MBA',re.compile(r'\bMBA\b')),('PhD',re.compile(r'\bPh\.?\s?D\b|\bdoctoral\b|\bpost-?doc',re.I)),('JD',re.compile(r'\bJ\.?D\.?\b(?! Power)|\blaw (student|clerk)',re.I)),('MS',re.compile(r"\b(MS|M\.S\.|MSc|Master'?s|Masters)\b(?! Office| Excel)")),('Grad',re.compile(r'\bgraduate (student|intern|research)',re.I))]
 def degree(title):
@@ -155,6 +155,17 @@ def apply(L,DS,today=None):
                 c,s_=SITES[r['company']]['*'].split('|');g=geo.geocode(c,s_);loc={'city':c,'state':s_,**({'lat':g[0],'lng':g[1]} if g else {})};how='employer site list'
             if loc:
                 r['locations']=[loc];r['loc_source']=how;r.pop('loc_label',None);st['location_'+how.replace(' ','_')]+=1
+    # V14 #4: dedupe open listings on normalized (company, title, location); keep the earliest-seen one
+    nk=lambda v:re.sub(r'[^a-z0-9]+',' ',(v or '').lower()).strip()
+    grp=collections.defaultdict(list)
+    for r in L:
+        if r.get('status')!='open' or r.get('hidden'): continue
+        loc='|'.join(sorted(nk(f"{l.get('city') or ''} {l.get('state') or ''}") for l in r.get('locations') or []))+('|remote' if r.get('remote') else '')
+        grp[(nk(r.get('company')),nk(r.get('title')),loc)].append(r)
+    for g in grp.values():
+        if len(g)<2: continue
+        g.sort(key=lambda r:(r.get('first_seen') or r.get('posted') or '9',r['id']))
+        for r in g[1:]: r['hidden']=True;r['dup_of']=g[0]['id'];st['duplicate_hidden']+=1
     return st
 def meta_counts(L,today=None):
     today=today or datetime.date.today();op=[r for r in L if is_open(r,today)]

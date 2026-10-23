@@ -8,7 +8,7 @@ const days=d=>d?Math.round((new Date(d+'T00:00:00')-today)/864e5):null;
 function pill(x){if(x.rolling)return'<span class="pill good">Rolling</span>';if(x.status==='open')return'<span class="pill good">Open</span>';return'<span class="pill muted">'+esc(x.status||'Unknown')+'</span>';}
 function due(x){const n=days(x.deadline);if(n===null)return esc(x.deadline_text||'No deadline listed');if(n>=0&&n<=7)return'<span class="pill urgent">Due in '+n+'d</span> <span class="num">'+esc(x.deadline)+'</span>';return'<span class="num">'+esc(x.deadline)+'</span>';}
 const av=c=>'<span class="avatar" aria-hidden="true">'+esc((c||'?').trim()[0].toUpperCase())+'</span>';
-fetch('../internships.json').then(r=>r.json()).then(d=>{
+fetch('internships.json').then(r=>r.json()).then(d=>{
  const all=d.internships||[];
  const open=all.filter(x=>x.status==='open'||x.rolling);
  const list=(open.length?open:all).slice(0,6);

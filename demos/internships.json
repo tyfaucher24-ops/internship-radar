@@ -1,0 +1,1966 @@
+{
+ "generated": "2026-10-20",
+ "count": 104,
+ "internships": [
+  {
+   "company": "Corient",
+   "role": "Wealth Management Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / PWM",
+   "deadline": null,
+   "deadline_text": "Closes ~2026-10-01",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — closes Oct 1",
+   "link": "https://ci.wd3.myworkdayjobs.com/en-US/CORIENT_EXTERNAL_CAREER-SITE/job/US-NC-Charlotte-4201-Congress-0240/Wealth-Management-Intern--Summer-2027--Charlotte-_JR6160",
+   "summer": "Summer 2027",
+   "notes": "Still accepting as of 2026-10-09; end date blank",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Duke Energy",
+   "role": "Real Estate Internship — Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Corporate Real Estate / Facilities",
+   "deadline": "2026-10-01",
+   "deadline_text": "Apply by ~2026-10-01",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — closes soon",
+   "link": "https://builtin.com/job/internship-private-wealth-management-charlotte-nc-summer-2027/11007777",
+   "summer": "Summer 2027",
+   "notes": "Must NOT graduate prior to Aug 2027 (Class of 2029 OK). Already on prior list — restored.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Churchill / TIAA (Nuveen)",
+   "role": "Summer Internship — Private Equity & Junior Capital (Charlotte)",
+   "location": "Charlotte",
+   "industry": "PE / Junior Capital",
+   "deadline": "2026-09-23",
+   "deadline_text": "Posting ends ~2026-09-23",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — closes Sep 23",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---FAR-Program---Finance_R-052052",
+   "summer": "Summer 2027",
+   "notes": "Rising junior Class of 2029 OR rising senior Class of 2028. APPLY ASAP — restored prior keeper.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Churchill / TIAA (Nuveen)",
+   "role": "Summer Internship — Fund Finance (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Fund Finance / Credit",
+   "deadline": "2026-09-23",
+   "deadline_text": "Posting ends ~2026-09-23",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — closes Sep 23",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---FAR-Program---Accounting_R-053340",
+   "summer": "Summer 2027",
+   "notes": "Rising junior Class of 2029 or rising senior Class of 2028. APPLY ASAP — restored.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Churchill / TIAA (Nuveen)",
+   "role": "Summer Internship — Tax (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Fund/PE tax",
+   "deadline": "2026-09-23",
+   "deadline_text": "Posting ends ~2026-09-23",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — closes Sep 23",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---Business-Development_R-052926",
+   "summer": "Summer 2027",
+   "notes": "Rising junior Class of 2029 or rising senior; Accounting. APPLY ASAP — restored.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Baird",
+   "role": "Internship — Private Wealth Management (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Private Wealth",
+   "deadline": null,
+   "deadline_text": "Rolling until filled",
+   "rolling": true,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://builtin.com/job/intern-capital-markets/4821351",
+   "summer": "Summer 2027",
+   "notes": "Grad Dec 2027 or later (includes 2029). Jun 2027 Charlotte start.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — FAR Program — Finance (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Corporate Finance / Wealth-industry HQ",
+   "deadline": "2026-09-25",
+   "deadline_text": "Priority ~2026-09-25 (then rolling)",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — priority soon",
+   "link": "https://www.grubbproperties.com/careers/",
+   "summer": "Summer 2027",
+   "notes": "EXPLICIT sophomore OR junior. 10 weeks Jun 1–Aug 6 2027. Fort Mill/Charlotte. GPA 3.0+.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — FAR Program — Accounting (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Corporate Finance / Accounting",
+   "deadline": null,
+   "deadline_text": "Priority ~late Sep 2026",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open",
+   "link": "https://huntington.wd12.myworkdayjobs.com/en-US/HNBcareers",
+   "summer": "Summer 2027",
+   "notes": "Closed 2026-10-09 (posting removed from Workday)",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — Business Development (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Wealth / Advisor platform BD",
+   "deadline": null,
+   "deadline_text": "Priority ~late Sep 2026",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://fnbcorp.wd501.myworkdayjobs.com/en-US/fnbcorp/job/Charlotte-NC/Summer-2027-Commercial-Credit-Banking-Intern---Charlotte--NC_2026-01893",
+   "summer": "Summer 2027",
+   "notes": "Undergrad intern at LPL CLT/Fort Mill HQ — advisor-platform growth. Confirm class year on req; many LPL 2027 tracks take soph/junior.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Cushman & Wakefield",
+   "role": "Intern — Capital Markets (Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / Capital Markets",
+   "deadline": null,
+   "deadline_text": "Rolling / TBD",
+   "rolling": true,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://fnbcorp.wd501.myworkdayjobs.com/en-US/fnbcorp",
+   "summer": "Summer 2027",
+   "notes": "Rising junior preferred. Center City Charlotte EDSF capital markets.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Grubb Properties",
+   "role": "Capital Markets Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / Capital Markets",
+   "deadline": "2026-12-31",
+   "deadline_text": "Resumes accepted through Dec 2026",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://careers.pnc.com/global/en/intern-jobs",
+   "summer": "Summer 2027",
+   "notes": "Undergrad finance/real estate/accounting. 8-week full-time Summer 2027 Charlotte. Interviews early Spring 2027.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Huntington",
+   "role": "Wealth Management Internship — Foundations (Carolinas)",
+   "location": "Charlotte, Carolinas",
+   "industry": "Wealth Management",
+   "deadline": "2026-10-30",
+   "deadline_text": "Rolling / TBD",
+   "rolling": false,
+   "status": "closing_soon",
+   "source_status": "Open — confirm CLT/Carolinas seat",
+   "link": "https://careers.pnc.com/global/en/intern-jobs",
+   "summer": "Summer 2027",
+   "notes": "Foundations track = rising juniors (Winter 2028 / Spring 2029). Carolinas market — ask for Charlotte.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "F.N.B. / First National Bank",
+   "role": "Commercial Credit / Banking Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Commercial Banking / Credit",
+   "deadline": "2026-10-17",
+   "deadline_text": "2026-10-17",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open",
+   "link": "https://opportunities.northwesternmutual.com/students",
+   "summer": "Summer 2027",
+   "notes": "Enrolled undergrad — no rising-senior-only window. Shadow lenders; exposure to Private Bank / Wealth partners.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "F.N.B. / First National Bank",
+   "role": "Commercial Credit Intern — Investment Real Estate (search Workday)",
+   "location": "Charlotte",
+   "industry": "CRE Banking",
+   "deadline": "2026-10-17",
+   "deadline_text": "2026-10-17",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — search Workday",
+   "link": "https://www.wellsfargojobs.com/en/early-careers/undergraduate-programs/other-undergraduate-programs/sophomore-discovery-fellowship-program/",
+   "summer": "Summer 2027",
+   "notes": "Same undergrad bar; Investment Real Estate lending. Search FNB Workday for IRE Charlotte.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "PNC",
+   "role": "C&IB Undergraduate Intern — Commercial & Corporate Banking (filter Charlotte)",
+   "location": "Charlotte",
+   "industry": "Corporate / Commercial Banking",
+   "deadline": null,
+   "deadline_text": "Rolling",
+   "rolling": true,
+   "status": "open",
+   "source_status": "Open — filter Charlotte",
+   "link": "https://careers.bankofamerica.com/en-us/students",
+   "summer": "Summer 2027",
+   "notes": "Many C&IB undergrad reqs accept sophomores or juniors. Confirm Charlotte on live req.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "PNC",
+   "role": "Retail Banking / Financial Wellness Summer Intern (Charlotte listings appear)",
+   "location": "Charlotte",
+   "industry": "Retail / Consumer Banking (pipeline)",
+   "deadline": null,
+   "deadline_text": "Rolling",
+   "rolling": true,
+   "status": "open",
+   "source_status": "Open — verify Charlotte + class year",
+   "link": "https://www.jpmorganchase.com/careers/explore-opportunities/programs/jpmcfellowship",
+   "summer": "Summer 2027",
+   "notes": "Some PNC retail/undergrad tracks accept sophomores. Less ideal than C&IB but CLT-listed — only apply if soph-eligible.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Northwestern Mutual",
+   "role": "College Financial Representative Internship (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / Financial Planning sales",
+   "deadline": null,
+   "deadline_text": "Rolling",
+   "rolling": true,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://careers.truist.com/",
+   "summer": "Summer 2027",
+   "notes": "College FR program; juniors/seniors preferred but sophomores often accepted. Charlotte office. Commission/incentive pay model.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Wells Fargo",
+   "role": "Sophomore Discovery Fellowship (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Early Insight → Banking / Wealth",
+   "deadline": null,
+   "deadline_text": "TBD when apps open",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Built for sophomores. Paid ~6 weeks Charlotte + housing; pipeline to junior internship.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Bank of America / Merrill",
+   "role": "Private Bank / Wealth Sophomore Summer Analyst",
+   "location": "Charlotte",
+   "industry": "Private Banking / Wealth",
+   "deadline": null,
+   "deadline_text": "TBD",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027",
+   "link": "https://www.firstcitizens.com/careers",
+   "summer": "Summer 2027",
+   "notes": "Prior Private Bank sophomore program included Charlotte. Watch Summer 2027 posting.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "JPMorganChase",
+   "role": "Fellowship — Asset & Wealth / Private Bank (sophomore)",
+   "location": null,
+   "industry": "Private Banking / Wealth",
+   "deadline": null,
+   "deadline_text": "Rolling while open",
+   "rolling": true,
+   "status": "not_open",
+   "source_status": "Watch — CLT not guaranteed",
+   "link": "https://careers.edwardjones.com/students-and-graduates/",
+   "summer": "Summer 2027 pipeline",
+   "notes": "Sophomore fellowship can lead to Summer 2027 internship. Location varies.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Truist",
+   "role": "2027 Finance Internship Program (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Corporate finance / treasury / IR / accounting rotations",
+   "deadline": "2026-10-26",
+   "deadline_text": "Apply by ~2026-10-26 (verify live)",
+   "rolling": false,
+   "status": "closing_soon",
+   "source_status": "Open — newly confirmed",
+   "link": "https://careers.truist.com/us/en/urstudent",
+   "summer": "Summer 2027",
+   "notes": "Final degree graduation Dec 2027–June 2029 (includes Class of 2029). Charlotte placement. Healthy window vs ultra-soon closes.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "First Citizens Bank",
+   "role": "Commercial Banking / Credit / Wealth Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Commercial Banking / Wealth",
+   "deadline": null,
+   "deadline_text": "TBD",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027",
+   "link": "https://careers.southstatebank.com/us/en/early-careers-programs",
+   "summer": "Summer 2027",
+   "notes": "Watch First Citizens early-career for Summer 2027 commercial or wealth internships.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Edward Jones",
+   "role": "Branch Internship / Financial Advisor Intern (Charlotte branches)",
+   "location": "Charlotte",
+   "industry": "Wealth / FA track",
+   "deadline": null,
+   "deadline_text": "Varies",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch / branch outreach",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---FAR-Program---Internal-Audit---Data-Analytics_R-053198",
+   "summer": "Summer 2027",
+   "notes": "Often open to sophomores/juniors via local Charlotte branches. Contact CLT branch managers + careers portal.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "U.S. Bank",
+   "role": "Discover Us Finance Fellowship (sophomore early insight)",
+   "location": "Charlotte",
+   "industry": "Early Insight → Banking",
+   "deadline": null,
+   "deadline_text": "TBD",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — location may not be CLT",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": "Sophomore early-insight fellowship. Confirm if/when Charlotte is offered; otherwise skip.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "SouthState Bank",
+   "role": "Commercial Banking Intern — Charlotte (reopen watch)",
+   "location": "Charlotte",
+   "industry": "Commercial Banking",
+   "deadline": null,
+   "deadline_text": "Closed — watch reopen",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Watch — Summer 2027 if reopens",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Had Summer 2027 CLT Commercial Banking intern; expired early Sep. Watch Early Careers; confirm class year.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — FAR Program — Internal Audit Data Analytics (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Wealth ops / Internal Audit",
+   "deadline": null,
+   "deadline_text": "Priority ~Sep 25, 2026",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — priority",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---FAR-Program---Internal-Audit---Data-Analytics_R-053198",
+   "summer": "Summer 2027",
+   "notes": "Explicit sophomore OR junior. Jun 1–Aug 6 2027 Fort Mill/Charlotte.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — FAR Program — Internal Audit Business Audit (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Internal Audit / Controls",
+   "deadline": "2026-09-25",
+   "deadline_text": "Priority 2026-09-25",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — priority soon",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---FAR-Program---Internal-Audit---Business-Audit_R-053190",
+   "summer": "Summer 2027",
+   "notes": "Explicit sophomore OR junior. Finance/accounting preferred. Same summer dates.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "NorthMarq",
+   "role": "2027 Internship Pipeline — Charlotte (Investment Sales / Debt & Equity)",
+   "location": "Charlotte",
+   "industry": "CRE / Investment Sales / Debt & Equity",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — 2027 Internship Pipeline (Charlotte listed)",
+   "link": "https://job-boards.greenhouse.io/northmarq/jobs/5140954008",
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Beacon Partners",
+   "role": "Commercial Real Estate Intern class (Charlotte) — 2027 pipeline watch",
+   "location": "Charlotte",
+   "industry": "CRE Development / Investment",
+   "deadline": null,
+   "deadline_text": "TBD",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "CLT developer expects another intern class in 2027. Watch careers; confirm undergrad/sophomore eligibility when posted.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Charles Schwab",
+   "role": "2027 Wealth Management Academy Internship (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / Financial Planning",
+   "deadline": null,
+   "deadline_text": "Apply ASAP (postings close early)",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — priority",
+   "link": "https://forvis.avature.net/campuscareers/JobDetail/Intern-Wealth-Advisory-Summer-2027-Multiple-Locations/15356",
+   "summer": "Summer 2027",
+   "notes": "Graduate AFTER Aug 2027 (Class of 2029 OK). Jun 7–Aug 6 2027 onsite. Pick Charlotte among location prefs. Separate from regular Intern Academy (that one is rising-senior only — skip).",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Forvis Mazars",
+   "role": "Intern Wealth Advisory Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / Private Client RIA",
+   "deadline": null,
+   "deadline_text": "Open",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://www.usa.jobs/jobs/680722994-summer-2027-internship-risk",
+   "summer": "Summer 2027",
+   "notes": "Charlotte listed. No rising-senior-only window. Requires financial-planning degree track + CFP exam eligibility + 3.0 GPA. 10-week paid.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Grubb Properties",
+   "role": "Investor Relations Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / Investor Relations / Capital",
+   "deadline": "2026-12-31",
+   "deadline_text": "Apps through Dec 2026; interviews Spring 2027",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Rising junior or senior in RE/Finance/Business. 8-week in-office. Sophomore→rising junior Summer 2027 OK.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Ally Financial",
+   "role": "Summer 2027 Internship — Risk (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Banking / Risk (HQ finance-adjacent)",
+   "deadline": null,
+   "deadline_text": "Program May 25–Jul 30 2027",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Graduate Dec 2027–May 2029; rising junior or senior during internship. Charlotte listed.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Mercer Advisors",
+   "role": "2027 Summer Internship (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "Wealth / RIA client service & planning",
+   "deadline": "2026-10-31",
+   "deadline_text": "Initial deadline 2026-10-31",
+   "rolling": false,
+   "status": "closing_soon",
+   "source_status": "Open",
+   "link": "https://tiaa.wd1.myworkdayjobs.com/en-US/Search/job/Charlotte-NC-USA/Churchill-Summer-Internship--Fund-Finance_R260800510-2",
+   "summer": "Summer 2027",
+   "notes": "Rising junior or senior (or Master’s). Charlotte among office locations. 10-week client-service/financial planning focus.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — FAR Program — Risk, Operations, and Compliance (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Wealth ops / Risk / Compliance",
+   "deadline": null,
+   "deadline_text": "Priority Sep 25, 2026 11:59 PM PST",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — priority",
+   "link": "https://lplfinancial.wd1.myworkdayjobs.com/en-US/University/job/Fort-MillCharlotte/Intern-2027---FAR-Program---Risk--Operations--and-Compliance_R-052054",
+   "summer": "Summer 2027",
+   "notes": "Explicit sophomore or junior, 3.0+ GPA. Jun 1–Aug 6 2027.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Ally Financial",
+   "role": "Summer 2027 Internship — Finance (Charlotte)",
+   "location": "Charlotte, Detroit",
+   "industry": "Bank HQ Finance / FP&A / Treasury",
+   "deadline": null,
+   "deadline_text": "Program ~May 21–Jul 31 2027",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://www.usa.jobs/jobs/681110353-summer-2027-internship-finance",
+   "summer": "Summer 2027",
+   "notes": "Rising junior or senior during internship (Class of 2029 OK). Charlotte or Detroit. Finance major/courses. FP&A, treasury, bank finance.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Ally Financial",
+   "role": "Summer 2027 Internship — Consumer Banking Invest Product Management (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth-adjacent / Invest products",
+   "deadline": null,
+   "deadline_text": "Program ~May 21–Jul 31 2027",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://www.usa.jobs/jobs/686534952-summer-2027-internship-consumer-banking-invest-product-management",
+   "summer": "Summer 2027",
+   "notes": "Rising junior or senior during internship. Charlotte. Digital invest product for Ally Bank customers.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Ally Financial",
+   "role": "Summer 2027 Internship — Auto Finance Process Optimization (Charlotte / Detroit)",
+   "location": "Charlotte, Detroit",
+   "industry": "Consumer / commercial lending ops (bank)",
+   "deadline": null,
+   "deadline_text": "May 25–Jul 30 2027",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Rising junior/senior; grad Dec 2027–May 2029 window typical for Ally. Charlotte selectable. Lending process/automation.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Truist",
+   "role": "2027 Truist Audit Services Internship Program (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Bank audit / risk / controls (HQ finance-adjacent)",
+   "deadline": null,
+   "deadline_text": "Open window (verify; not ultra-soon)",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": "https://careers.truist.com/us/en/urstudent",
+   "summer": "Summer 2027",
+   "notes": "Final degree graduation Dec 2027–June 2029 (Class of 2029 eligible). Charlotte HQ. Healthy vs closing-this-week posts.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "United Bank",
+   "role": "United Voices Summer Internship — rotational (Charlotte hub)",
+   "location": "Charlotte",
+   "industry": "Commercial credit / Wealth / Retail rotation",
+   "deadline": null,
+   "deadline_text": "TBD — watch careers",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027",
+   "link": "https://www.getclera.com/jobs/truistfinancialcorporation/2027-truist-audit-services-internship-program-y9q3kkllj2ut",
+   "summer": "Summer 2027",
+   "notes": "Rising juniors and seniors historically; 8-week rotation includes commercial credit/lending and wealth. Charlotte is a regional hub. Confirm 2027 posting.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Equitable",
+   "role": "2027 Summer Intern — Wealth Management (Charlotte option)",
+   "location": "Charlotte",
+   "industry": "Wealth / PWM",
+   "deadline": "2026-12-15",
+   "deadline_text": "Open",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://www.bankwithunited.com/careers/developing-u.html",
+   "summer": "Summer 2027",
+   "notes": "Currently enrolled undergrad (rising junior or senior preferred). 9-week program starting early June 2027. Charlotte option. Wealth Management track.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Huntington",
+   "role": "Summer 2027 Commercial Banking Internship (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Commercial banking / credit / CRE lending",
+   "deadline": null,
+   "deadline_text": "Open",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open",
+   "link": "https://www.usa.jobs/jobs/702176710-2027-summer-intern-wealth-management",
+   "summer": "Summer 2027",
+   "notes": "Confirmed closed 2026-10-09",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Equitable",
+   "role": "2027 Summer Intern — Individual Retirement Sales Desk (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / Retirement distribution",
+   "deadline": null,
+   "deadline_text": "Open",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": "https://huntington.wd12.myworkdayjobs.com/en-US/hnbcareers/job/Columbus-OH/Summer-2027-Commercial-Banking-Internship_R0075257",
+   "summer": "Summer 2027",
+   "notes": "Currently enrolled undergrad/grad; rising junior or senior preferred. 9 weeks from early June 2027. Charlotte. Wholesaling/retirement & annuity distribution.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Equitable",
+   "role": "2027 Summer Intern — Financial Risk (Charlotte / New York)",
+   "location": "Charlotte, New York",
+   "industry": "Finance / Risk / ALM",
+   "deadline": "2026-10-18",
+   "deadline_text": "Listing expires ~2026-10-18",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open",
+   "link": "https://gateway.lafayette.edu/jobs/equitable-2027-summer-intern-financial-risk/",
+   "summer": "Summer 2027",
+   "notes": "Rising junior or senior required. Charlotte or NYC. Finance/math/stats/econ/risk/business. Investment, capital markets, ALM risk.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Duke Energy",
+   "role": "Corporate Accounting & Finance Internship — Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Corporate finance / accounting (HQ)",
+   "deadline": "2026-10-01",
+   "deadline_text": "Closes ~2026-10-01 — PRIORITY / closing soon",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — closes Oct 1",
+   "link": "https://dukeenergy.wd1.myworkdayjobs.com/en-US/search/job/Charlotte-NC/Corporate-Accounting---Finance-Internship---Summer-2027_R41223",
+   "summer": "Summer 2027",
+   "notes": "Must NOT graduate before August 2027 (Class of 2029 OK). GPA ≥2.75. Charlotte. Corporate accounting & finance. NOTE: campus/posting close ~Oct 1 — apply immediately; not counted toward healthy-deadline +15.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "TIAA",
+   "role": "2027 Early Talent Internship — Actuarial Services (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Retirement / insurance finance (actuarial)",
+   "deadline": null,
+   "deadline_text": "Verify end date on TIAA careers",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Expected graduation Dec 2027–Jun 2029 (Class of 2029 OK). 10 weeks. Charlotte or NYC. Retirement/annuity actuarial — finance-adjacent at TIAA.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "F.N.B. / First National Bank",
+   "role": "Summer 2027 Retail Banking Intern (Charlotte Southpark)",
+   "location": "Charlotte",
+   "industry": "Retail / consumer banking (branch + BD shadow)",
+   "deadline": "2026-10-17",
+   "deadline_text": "Closes 2026-10-17",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — newly posted",
+   "link": "https://www.usa.jobs/jobs/702176722-2027-early-talent-internship-actuarial-services",
+   "summer": "Summer 2027",
+   "notes": "Enrolled undergrad bachelor (Finance/Accounting/Marketing/IT). No rising-senior-only window. Charlotte. Deadline Oct 17 — healthy vs ultra-soon closes.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Truist",
+   "role": "2027 Credit Internship Program (Wholesale Banking — Charlotte possible)",
+   "location": "Charlotte",
+   "industry": "Commercial / corporate credit & wholesale banking",
+   "deadline": "2026-11-17",
+   "deadline_text": "Apps through ~2026-11-17 (verify live)",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": "https://careers.truist.com/us/en/urstudent",
+   "summer": "Summer 2027",
+   "notes": "Final degree graduation Dec 2027–June 2029. Wholesale credit track; host team may be CLT. Healthy Nov window.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Oakworth Capital Bank",
+   "role": "Summer Intern Associate 2027 (Charlotte) — Credit/Banking + Wealth rotations",
+   "location": "Charlotte",
+   "industry": "Commercial credit/banking + wealth/financial planning",
+   "deadline": "2026-10-16",
+   "deadline_text": "Closes 2026-10-16",
+   "rolling": false,
+   "status": "closed",
+   "source_status": "Open — newly confirmed",
+   "link": "https://hireaniner.charlotte.edu/jobs/66a9ccccad89190bae92cc0c9f8d9ade",
+   "summer": "Summer 2027",
+   "notes": "Rising seniors preferred; other class years considered (soph/rising-junior OK). Accounting/Finance/Econ. Charlotte office. Healthy mid-Oct close.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Forvis Mazars",
+   "role": "Intern — Forensics & Valuation Summer 2027 (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "Valuation / forensic accounting / transaction analysis (finance-adjacent)",
+   "deadline": null,
+   "deadline_text": "No early campus expire on official post",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — healthy window",
+   "link": "https://forvis.avature.net/campuscareers/JobDetail/Intern-Forensics-Valuation-Summer-2027-Multiple-Locations/15139",
+   "summer": "Summer 2027",
+   "notes": "Pursuing Accounting or Finance BS; 3.0 GPA. No rising-senior-only window. Charlotte among locations. Valuation/M&A analysis fit.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Forvis Mazars",
+   "role": "Intern — Business Consulting Summer 2027 (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "Business/finance consulting & client analytics",
+   "deadline": "2026-10-20",
+   "deadline_text": "Reported ~2026-10-20 (verify live)",
+   "rolling": false,
+   "status": "closing_soon",
+   "source_status": "Open — healthy window",
+   "link": "https://forvis.avature.net/campuscareers/JobDetail/Intern-Business-Consulting-Summer-2027-Multiple-Locations/15355",
+   "summer": "Summer 2027",
+   "notes": "Business/Finance/Analytics majors; no rising-senior-only window. Charlotte advertised. Stretch vs pure banking but finance consulting fit.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Forvis Mazars",
+   "role": "Intern — Tax Summer 2027 | Charlotte SouthPark",
+   "location": "Charlotte",
+   "industry": "Tax (public accounting; CPA-track)",
+   "deadline": null,
+   "deadline_text": "Long-open / no ultra-soon expire found",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — healthy window",
+   "link": "https://forvis.avature.net/campuscareers/JobDetail/United-States-Intern-Tax-Summer-2027-Charlotte-Southpark/14229",
+   "summer": "Summer 2027",
+   "notes": "CPA-exam eligibility expected. Stretch track vs CRE/wealth banking; include for CLT finance-adjacent inventory with healthy deadline.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Cherry Bekaert",
+   "role": "Summer 2027 Strategic Tax — State & Local Tax Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "State & local tax advisory (accounting/finance-adjacent)",
+   "deadline": "2026-11-13",
+   "deadline_text": "Closes ~2026-11-13",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — healthy Nov window",
+   "link": "https://cbh.wd12.myworkdayjobs.com/en-US/CherryBekaertEarlyCareers/job/Charlotte-NC/Summer-2027-Strategic-Tax---State---Local-Tax-Intern-Charlotte_JR101222",
+   "summer": "Summer 2027",
+   "notes": "Bachelor’s preferred in accounting; no rising-senior-only graduation window stated. Charlotte. Healthy Nov 13 close.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Grant Thornton",
+   "role": "Finance Transformation Intern — Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Finance process / FP&A / close & treasury transformation advisory",
+   "deadline": null,
+   "deadline_text": "No early campus expire found on listing",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": "Pursuing Finance/Accounting/Business/IS; 3.0 GPA. No rising-senior-only window stated. Charlotte. Strong bank-HQ finance-adjacent fit.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Forvis Mazars",
+   "role": "Intern — IT Audit Summer 2027 (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "IT audit / SOC / bank-tech controls (risk & compliance adjacent)",
+   "deadline": null,
+   "deadline_text": "No early campus expire on official post",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — healthy window",
+   "link": "https://forvis.avature.net/campuscareers/JobDetail/Intern-IT-Audit-Summer-2027-Multiple-Locations/14903",
+   "summer": "Summer 2027",
+   "notes": "Accounting/IS/CS majors; 3.0 GPA. No rising-senior-only window. Charlotte listed. Stretch vs pure CRE/wealth but bank-risk controls fit.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Forvis Mazars",
+   "role": "Internship — IT Risk & Compliance Cyber Summer 2027 (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "IT risk / cybersecurity compliance (financial controls adjacent)",
+   "deadline": null,
+   "deadline_text": "No early campus expire on official post",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — healthy window",
+   "link": "https://forvis.avature.net/campuscareers/JobDetail/Internship-IT-Risk-Compliance-Cyber-Summer-2027-Multiple-Locations/14956",
+   "summer": "Summer 2027",
+   "notes": "Accounting/IS/CS; 3.0 GPA. No rising-senior-only window. Charlotte selectable. Stretch track.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Cherry Bekaert",
+   "role": "Summer 2027 Strategic Tax — International Tax Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "International tax compliance & consulting (accounting/finance-adjacent)",
+   "deadline": null,
+   "deadline_text": "Open / rolling (verify live; not ultra-soon)",
+   "rolling": true,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": "https://cbh.wd12.myworkdayjobs.com/en-US/CherryBekaertEarlyCareers",
+   "summer": "Summer 2027",
+   "notes": "Accounting/Taxation degree track; no rising-senior-only window stated. Charlotte. Completes +15 healthy-deadline batch.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Grant Thornton",
+   "role": "Audit IT Assurance Intern — Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Audit / IT assurance (ITGC supporting financial-statement audits)",
+   "deadline": null,
+   "deadline_text": "Open / no early expire on Oracle (uni listing ~2026-10-17)",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": "https://ehzq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/115542",
+   "summer": "Summer 2027",
+   "notes": "Pursuing bachelor's in Acct/Finance/IT/MIS + 3.0 GPA only — no Class of 2028 lock. High-ticket national GT assurance track.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Grant Thornton",
+   "role": "Strategic Assurance and SOC Services Intern — Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Audit / SOC assurance (SOC 1/2, controls examinations)",
+   "deadline": null,
+   "deadline_text": "Open / no early Oracle expire",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": "https://ehzq.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/115514",
+   "summer": "Summer 2027",
+   "notes": "Pursuing bachelor's in Acct/IT/MIS + 3.0 GPA — no rising-senior-only window. Distinct from GT Finance Transformation already listed.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Aprio",
+   "role": "2027 Tax/Audit Spring & Summer Internship (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "Public accounting — tax & audit (Top 20 CPA/advisory)",
+   "deadline": null,
+   "deadline_text": "Open on Lever (verify form before apply)",
+   "rolling": false,
+   "status": "open",
+   "source_status": "Open — newly confirmed",
+   "link": "https://jobs.lever.co/Aprio/6afa5675-c9ec-4903-8c67-96d20b4c5a87",
+   "summer": "Summer 2027",
+   "notes": "Accounting major + 3.3 GPA only; Charlotte explicit on requisition; no Class of 2028 lock. Top 20 U.S. CPA firm.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Lincoln Financial Group",
+   "role": "Summer 2027 Internship — Finance / Risk tracks (Charlotte among 6 U.S. offices)",
+   "location": "Charlotte",
+   "industry": "Corp finance / FP&A / risk",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected open Fall 2026",
+   "link": "https://jobs.lincolnfinancial.com/",
+   "summer": "Summer 2027",
+   "notes": "Historically rising juniors+; verify Class ~2029 when live. Vault-top FS internship; Fortune 500; CLT office.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "CAPTRUST",
+   "role": "Summer 2027 Internship — Finance / Wealth Planning / Investment Research (Carolinas)",
+   "location": "Carolinas",
+   "industry": "Wealth / RIA / institutional investment consulting",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected open Fall 2026",
+   "link": "https://www.captrust.com/internships-at-captrust/",
+   "summer": "Summer 2027",
+   "notes": "Rising juniors historically placed; Carolinas HQ gravity. Confirm Class ~2029 on live req.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Spectrum (Charter Communications)",
+   "role": "2027 Summer Intern — Corporate Tax suite (Property / Transaction / Strategic Tax) — Charlotte",
+   "location": "Charlotte",
+   "industry": "Corporate tax",
+   "deadline": null,
+   "deadline_text": "TBD on next wave reopen",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — tax suite closed again; monitor reopen",
+   "link": "https://jobs.spectrum.com/search-jobs/intern?orgIds=21654&alp=6252001-4482348&alt=2",
+   "summer": "Summer 2027",
+   "notes": "Prior wave: rising junior OR senior, grad May 2028–May 2029 (Class ~2029 in). Best F500 corp-tax CLT seat if reposted.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "CBRE",
+   "role": "Students & Graduates Internship — Capital Markets / Brokerage / Valuation (Watch Charlotte Summer 2027)",
+   "location": "Charlotte",
+   "industry": "CRE / capital markets",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected open Fall 2026",
+   "link": "https://careers.cbre.com/",
+   "summer": "Summer 2027",
+   "notes": "Undergrad CM/brokerage historically rising-junior friendly when no Class-2028 lock; confirm on live CLT req. Global #1 CRE.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Newmark",
+   "role": "Commercial Real Estate / Capital Markets Internship — Summer 2027 (Watch Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / capital markets",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected Fall/Winter 2026",
+   "link": "https://www.nmrk.com/careers",
+   "summer": "Summer 2027",
+   "notes": "CRE CM desks often lack Class-2028-only locks; verify rising-junior eligibility on live CLT posting.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Colliers",
+   "role": "Capital Markets / Brokerage Internship — Summer 2027 (Watch Charlotte / Carolinas)",
+   "location": "Charlotte, Carolinas",
+   "industry": "CRE / capital markets",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected open Fall 2026",
+   "link": "https://careers.colliers.com/",
+   "summer": "Summer 2027",
+   "notes": "Historically soph/rising-junior friendly when no junior-year lock; confirm Class ~2029 on live CLT req.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Fidelity Investments",
+   "role": "Summer Internship Program 2027 — Finance / Wealth / Investment (Watch Charlotte / RTP selectable)",
+   "location": "Charlotte, RTP",
+   "industry": "Wealth / IM / corp finance",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected open Fall 2026",
+   "link": "https://jobs.fidelity.com/en/students/internships/",
+   "summer": "Summer 2027",
+   "notes": "Verify Dec 2028+ / no Class-2028-only lock when live; prefer explicit soph/early-talent track. Top-tier AM/brokerage.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Barings",
+   "role": "2027 Investment Management Summer Internship — Charlotte (Watch Class of 2029 / early-insight)",
+   "location": "Charlotte",
+   "industry": "Investment management / credit / real assets",
+   "deadline": null,
+   "deadline_text": "TBD",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — prior wave was Class 2028; need Class 2029 / early insight",
+   "link": "https://careers.barings.com/",
+   "summer": "Summer 2027",
+   "notes": "CAUTION: prior CLT IM wave required current junior / Spring 2028. Keep only if soph/Class-2029 track appears. MassMutual affiliate; CLT HQ prestige.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Dimensional Fund Advisors",
+   "role": "Summer Internship — Global Client Group / Portfolio Management — Charlotte (Watch Class 2029 wave)",
+   "location": "Charlotte",
+   "industry": "Asset management / client group / PM",
+   "deadline": null,
+   "deadline_text": "TBD for Class 2029 seats",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave Class 2028 only; monitor Class 2029",
+   "link": "https://dimensional.wd5.myworkdayjobs.com/dfa_careers",
+   "summer": "Summer 2027",
+   "notes": "CAUTION: live GCG/PM locks Dec 2027–June 2028. Do not apply as Open for sophs — Watch for Class-2029/early program only. Elite AM; major CLT campus.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Deloitte",
+   "role": "Discovery / Sophomore Leadership / Early Insight → Summer 2027 Charlotte Audit/Tax/Advisory",
+   "location": "Charlotte",
+   "industry": "Audit / tax / TS (sophomore leadership)",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — sophomore Discovery path",
+   "link": "https://apply.deloitte.com/",
+   "summer": "Summer 2027",
+   "notes": "Discovery/soph leadership designed for Class ~2029; confirm Charlotte office on live posting. Big 4 early path.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "EY",
+   "role": "EY Launch / Sophomore Early Insight — Summer 2027 Charlotte (Audit/Tax/Consulting)",
+   "location": "Charlotte, Carolinas",
+   "industry": "Audit / tax / consulting (sophomore)",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — EY Launch sophomore path",
+   "link": "https://careers.ey.com/",
+   "summer": "Summer 2027",
+   "notes": "Launch targets Class ~2029. Prefer CLT-tagged Launch or Summer 2027 CLT req without Class-2028-only lock. Major EY Carolinas hub.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "PwC",
+   "role": "PwC Start / Advance sophomore path — Summer 2027 Charlotte (Audit/Tax/Assurance)",
+   "location": "Charlotte",
+   "industry": "Audit / tax / assurance (sophomore)",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Start/Advance soph path",
+   "link": "https://jobs.us.pwc.com/us/en/advance",
+   "summer": "Summer 2027",
+   "notes": "Use only soph-labeled CLT reqs; skip standard Audit Intern Class-2028 locks. Big 4; deep CLT campus.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Jefferies",
+   "role": "Investment Banking Summer Analyst / Early Insight — Charlotte Consumer & Retail (Watch soph-eligible path)",
+   "location": "Charlotte",
+   "industry": "IB / capital markets",
+   "deadline": null,
+   "deadline_text": "TBD when opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — only if Early Insight / Class ~2029 path",
+   "link": "https://www.jefferies.com/careers/campus/",
+   "summer": "Summer 2027",
+   "notes": "CAUTION: standard SA is usually penultimate. Include only if Early Insight/soph posts with Class ~2029 eligibility. Charlotte Consumer & Retail coverage group.",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Raymond James",
+   "role": "Sophomore Opportunities / Early Insight → Charlotte IB Capital Markets (Consumer) Summer 2027",
+   "location": "Charlotte",
+   "industry": "IB / Capital Markets / Wealth (soph path)",
+   "deadline": null,
+   "deadline_text": "TBD (prior Showcase cycle deadline was early Nov prior year)",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — prefer Sophomore Showcase / Career Fast Track; IB SA often rising-senior",
+   "link": "https://www.raymondjames.com/careers/students-and-recent-grads/sophomore-opportunities",
+   "summer": "Summer 2027 pipeline",
+   "notes": "Official sophomore early-insight path; Charlotte IB Consumer SA exists but typically penultimate — use soph programs for Class ~2029",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "TD Bank",
+   "role": "Commercial Banking Internship — Institutional CRE (ICRE) Charlotte (Watch Class ~2029 / next wave)",
+   "location": "Charlotte",
+   "industry": "CRE / Commercial Banking / Credit",
+   "deadline": null,
+   "deadline_text": "TBD for Class 2029 seats",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live 2027 wave preferred Dec 2027–Jun 2028 (Class 2028); need Class 2029 / early insight",
+   "link": "https://careers.td.com/student-new-grads/early-talent-programs/",
+   "summer": "Summer 2027",
+   "notes": "High-ticket CRE lending in CLT; current posting Class-2028 preferred + early Oct close — pipeline for soph-eligible reopen",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internship_scrub_2026-09-21.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "KPMG",
+   "role": "Embark / Sophomore Early Insight → Summer 2027 Charlotte Audit/Tax/Advisory",
+   "location": "Charlotte",
+   "industry": "Big 4 Audit / Tax / Advisory (soph path)",
+   "deadline": null,
+   "deadline_text": "TBD when soph path / Embark opens",
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — use Embark/soph path; skip Class-of-2028-only Summer Analyst waves",
+   "link": "https://www.kpmgcampus.com/",
+   "summer": "Summer 2027 pipeline",
+   "notes": "Parallel to Deloitte Discovery / EY Launch / PwC Start; Charlotte seats exist but main SA wave is Dec 2027–Sep 2028",
+   "sources": [
+    "existing_internships_dedupe.json",
+    "internships_dump.json",
+    "internships_full_dump.json"
+   ]
+  },
+  {
+   "company": "Ameriprise Financial",
+   "role": "Early Careers Internship — Summer 2027 (Watch Charlotte / Carolinas)",
+   "location": "Charlotte, Carolinas",
+   "industry": "Wealth / Advice & Wealth Management",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — opening soon / confirm Charlotte",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Bank of America",
+   "role": "Enterprise Credit Summer Analyst Program — 2027 (Charlotte selectable; GWIM / CRE / CIB credit tracks)",
+   "location": "Charlotte",
+   "industry": "Commercial / CRE / GWIM / CIB Credit",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave penultimate Class 2028 only; monitor Class ~2029 / next cycle",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Berkadia",
+   "role": "Summer Internship Program — Commercial Real Estate (Watch Charlotte / Carolinas)",
+   "location": "Charlotte, Carolinas",
+   "industry": "CRE / Mortgage Banking / Investment Sales",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected Fall/Winter 2026; confirm Charlotte seat when live",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Brown Brothers Harriman (BBH)",
+   "role": "2027 Private Wealth Management Summer Internship (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / PWM / UHNW",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class 2028 junior lock (entering senior Fall 2027); closes Oct 2 (< Oct 12 Open cutoff); monitor Class ~2029 / next cycle",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Eastdil Secured Savills",
+   "role": "2027 U.S. Summer Internship Program — Charlotte selectable (Watch Class ~2029)",
+   "location": "Charlotte",
+   "industry": "CRE / Capital Markets / Real Estate IB",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave Class 2028 only; monitor Class ~2029 / next cycle",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Fifth Third Bank",
+   "role": "Commercial Credit Internship — Summer 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Commercial Banking / Credit",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave Class Dec 2027–May 2028 only; closes ~Oct 3; monitor Class ~2029",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Fifth Third Bank",
+   "role": "Corporate Client Coverage (Corporate Finance) Summer Internship — 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Corporate Banking / Corporate Finance / Credit",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave Dec 2027–May 2028 ONLY; closes ~Oct 3; monitor Class ~2029",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Fifth Third Bank",
+   "role": "Early Insights Program (sophomore) → Commercial / Capital Markets Summer pipeline (Charlotte sessions historically)",
+   "location": "Charlotte",
+   "industry": "Early Insight / Commercial Banking / Capital Markets (soph)",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Early Insights Class ~2029 wave",
+   "link": null,
+   "summer": "Summer 2027–28 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Fifth Third Bank",
+   "role": "Summer 2027 Interns — Commercial Real Estate / Middle Market (Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / Commercial Banking / Middle Market",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class of 2028 only (rising senior); closes ~Oct 3 (< Oct 12); distinct from Commercial Credit / Corporate Client Coverage already on sheet; monitor Class ~2029",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Huntington",
+   "role": "Summer 2027 Corporate and Investment Banking Internship (Charlotte selectable — CSG / Capital Markets)",
+   "location": "Charlotte",
+   "industry": "CIB / Capital Markets / Corporate Banking / Credit",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — current junior / grad Dec 2027 or May 2028 ONLY",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "JLL",
+   "role": "Capital Markets Summer 2027 Internship — Charlotte (Watch Class ~2029)",
+   "location": "Charlotte",
+   "industry": "CRE / Capital Markets",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave junior/grad Summer 2028 only; monitor Class ~2029 / next cycle",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — FAR Program — Service Transformation & Data Analytics (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Wealth HQ / Ops analytics",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class Dec 2027 or May 2028 ONLY (not FAR soph track)",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — Strategy and Growth Analyst (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Wealth-industry HQ / Strategy",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class Dec 2027–May 2028 ONLY (rising-senior lock)",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "LPL Financial",
+   "role": "Intern 2027 — Transition Support Partner (Fort Mill / Charlotte)",
+   "location": "Charlotte, Fort Mill",
+   "industry": "Wealth / Advisor transitions",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class Dec 2027 or May 2028 ONLY",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Marcus & Millichap",
+   "role": "Summer 2027 Brokerage / Research Internship — Charlotte pipeline",
+   "location": "Charlotte",
+   "industry": "CRE / Brokerage",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected Fall/Winter 2026; confirm Class ~2029 + Charlotte | link 404 as of 2026-09-21 refresh",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Matthews Real Estate Investment Services",
+   "role": "Matthews University / Brokerage Internship — Charlotte (Summer 2027 pipeline)",
+   "location": "Charlotte",
+   "industry": "CRE / Brokerage / Investment Sales",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027 Charlotte brokerage / MU pipeline",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Principal Financial Group",
+   "role": "Summer Internship Program 2027 — Finance / Investment / Risk (Watch Charlotte / national)",
+   "location": "Charlotte",
+   "industry": "Asset management / Retirement / Finance",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — expected Fall 2026; confirm Charlotte + Class ~2029 | link 404 as of 2026-09-21 refresh",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Stream Realty Partners",
+   "role": "2027 Summer Brokerage Analyst — Charlotte / Carolinas",
+   "location": "Charlotte, Carolinas",
+   "industry": "CRE / Capital Markets / Brokerage",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — preferably rising senior; Charlotte (Stream Carolinas) selectable via office preference; apply early + Culture Index; monitor Class ~2029 fit",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Truist Securities",
+   "role": "Capital Markets — Financial Risk Management Summer Analyst (Charlotte)",
+   "location": "Charlotte",
+   "industry": "Capital Markets / FRM / Derivatives hedging",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — live wave Class Dec 2027–Jun 2028 only; monitor Class ~2029",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "U.S. Bank",
+   "role": "2027 Commercial Real Estate Summer Intern (Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / Commercial Banking / Credit",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — preferred grad Dec 2027 or May 2028; prior close before Oct 12",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "UBS",
+   "role": "Wealth Management / Early Careers Internship — Summer 2027 (Watch Charlotte)",
+   "location": "Charlotte",
+   "industry": "Wealth / PWM",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — opening soon / confirm Charlotte wealth seat + Class ~2029",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Walker & Dunlop",
+   "role": "Summer 2027 Internship Program — Charlotte pipeline (CRE debt / capital markets / appraisal)",
+   "location": "Charlotte",
+   "industry": "CRE / Debt Capital Markets / Multifamily",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Summer 2027 roles posting late fall 2026; Charlotte office historically hosts interns",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Wells Fargo",
+   "role": "2027 Commercial Banking Summer Internship — Early Careers (Charlotte selectable)",
+   "location": "Charlotte",
+   "industry": "Commercial Banking / Credit / RM support",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — desired grad Dec 2027–Jun 2028; closes ~Sep 30; monitor Class ~2029 / Soph Discovery path",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Wells Fargo",
+   "role": "2027 Finance Summer Internship — Early Careers (Charlotte / Irving / Minneapolis)",
+   "location": "Charlotte, Irving, Minneapolis",
+   "industry": "Corporate Finance / FP&A / Treasury / Controllers",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — desired grad Dec 2027–Jun 2028; close before Oct 12 cutoff",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Wells Fargo",
+   "role": "2027 Wealth & Investment Management Summer Internship — Early Careers (Charlotte / St. Louis)",
+   "location": "Charlotte, St. Louis",
+   "industry": "Wealth / PWM / Banking Lending & Trust",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — rising-senior WIM; grad Dec 2027–Jun 2028; close < Oct 12",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Bank of America",
+   "role": "Real Estate Syndications Summer Analyst Program — 2027 (Charlotte)",
+   "location": "Charlotte",
+   "industry": "CRE / Real Estate Syndications / Debt capital markets",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class 2028 wave closed; monitor Class ~2029 / next cycle",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Citizens",
+   "role": "2027 Summer Analyst — Corporate Credit Securitization (Charlotte) — reopen Watch",
+   "location": "Charlotte",
+   "industry": "Corporate Credit / Capital Markets",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — prior 2027 wave closed Jun 2026 (grad Winter 2027–Spring 2028); monitor Class ~2029",
+   "link": null,
+   "summer": "Summer 2027",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  },
+  {
+   "company": "Regions Bank",
+   "role": "2027 ETP Intern — Corporate Banking Group (Capital Markets / Commercial Credit / Real Estate Banking) — Charlotte",
+   "location": "Charlotte",
+   "industry": "Corporate Banking / Capital Markets / CRE Banking / Credit",
+   "deadline": null,
+   "deadline_text": null,
+   "rolling": false,
+   "status": "not_open",
+   "source_status": "Watch — Class Dec 2027 or May/Jun 2028 wave closed; monitor Class ~2029 / next ETP cycle",
+   "link": null,
+   "summer": "Summer 2027 pipeline",
+   "notes": null,
+   "sources": [
+    "internship_scrub_2026-09-21.json"
+   ]
+  }
+ ]
+}

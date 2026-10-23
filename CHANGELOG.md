@@ -1,6 +1,27 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V13.2 — Detail panel layout (2026-10-22, approved by Ty)
+Matches `specs/V13.2.md` and `specs/ref/v13.2-detail-panel.png`. Grader v2 scoring underneath is unchanged.
+- Order: header (logo, company, role, clean location with no "City -, ST", closes pill, Posted) → short role description (≤160 chars, real sentence about the role, hidden if none fits) → "▸ Show full description" (facts, summary bullets, full posting) → grade card → Why it's a match → How to improve → Ways in. The Apply row sticks to the bottom of the panel.
+- Grade card: "% · grade" pill, verdict, "confidence · selectivity" label (the separate Selectivity paragraph is folded in; the full source is in its tooltip). SCHOOL / GPA / EXPERIENCE / SKILLS / FIT each show a bar and one line of ≤60 chars, e.g. "3.92 vs typical 3.0, strong", "Matters little for this role".
+- Why it's a match: ≤2 bullets of ≤70 chars. How to improve: ≤2 action bullets of ≤70 chars ("Lead your resume with …", "Tick “open to relocating” if you'd move for it"). Lines that are too long get a shorter rewrite or are dropped, never cut off.
+- Ways in: your contacts first, then the alumni, people and recruiter LinkedIn searches, each with a one-line reason, plus a "Draft message" button with a copyable note. These are plain links you click; nothing is fetched from LinkedIn.
+- Tests: test/v132_core.test.js 6/6 (33,687 listing×profile pairs, every line within its limit, none truncated). test_v132.py 236/236 (5 listings × 1280/390 × dark/light: section order, per-section limits, clean header, no clipped text, sticky Apply, zero page errors), on localhost and on the live site. test_v13 13/13, test_v112 92/92, test_v131 92/92.
+- Screens: ops/screens/v13.2-detail-1280-dark.png, v13.2-detail-1280-light.png, v13.2-detail-390-dark.png, v13.2-detail-390-light.png, v13.2-grade-card.png, v13.2-ways-in.png.
+- Note: the V13.2 code reached main inside commit 66c4cd7 (a concurrent V13.3 commit included the working tree); tests, screenshots and this entry landed in the following commit.
+
+## V13.1 — final (2026-10-22, verified live)
+All 24 spec items: PASS (#11 intentionally unchanged).
+- P0: #1 card unsave PASS · #2 warm-path word boundaries (Internal, International, Internship Program no longer match "intern" titles wrongly) PASS · #3 closed-listing detection PASS · #4 location_norm PASS.
+- P1: #5 experience parsing (separate cards, separate bullets, no "()" titles, flagged dates) PASS · #6 D1 from the resume only PASS · #7 skills deduped, contact parsed PASS · #8 step 3 prefilled from the resume PASS · #9 grade calibration (top match 84, ≥5 distinct grades in the top 20, a missing location no longer counts as a match: 69 vs 75) PASS · #10 one open count PASS · #11 deadlines: UNCHANGED (see below) · #12 locations PASS · #13 past-cycle and degree hygiene PASS · #14 autopilot PASS · #15 mobile tracker cards + header that never overlaps PASS · #16 test_v112 92/92 PASS.
+- P2: #17 match sort PASS · #18 newest sort PASS · #19 closed hint PASS · #20 editorial parentheticals (0 open titles with "listings appear"/"possible)"; 931 real cycle parentheticals kept) PASS · #21 Customize columns PASS · #22 toasts PASS · #23 modal Save min-width PASS · #24 bell titled "Autopilot reminders (Email reminders — coming soon)" with the email toggle disabled PASS.
+- #11 is unchanged on purpose: the GE closing date shown is real. It comes from the posting's own similar-jobs sidebar, so replacing or hiding it would mean showing less accurate data.
+- Build my profile upgrades: green progress bar, grad date ↔ class year sync, invalid years blocked, chips survive a reload, experience cards can be added, edited and deleted.
+- Final tracker fit: at 1280 to 1399px the status pill and the Open link fit without clipping and no column gets tucked away; wider rules apply at 1400px and up.
+- Tests: node test/v131_core.test.js 23/23. On the live site: test_v131.py 92/92 (chromium, firefox and webkit at 1440/1280/390, plus perf: DCL < 3s, load < 6s, CLS < 0.1, no long task > 200ms while scrolling), test_v112.py 92/92, test_v13.py 13/13.
+- Screens: ops/screens/v13.1-onboard-1..5.png, v13.1-experience-cards.png, v13.1-experience-edit.png, v13.1-home.png, v13.1-tracker-1280.png, v13.1-tracker-390.png.
+
 ## V13.1 (part 1, build 261259e6ee, verified live 2026-10-22)
 - Closed all Summer/Fall 2026 postings (those terms have started); one open count everywhere (compact runs hygiene, meta.open=11127).
 - Locations: missing on 0.98% of open listings, using only real sources (ATS slug, posting text, known company sites); each fallback is labeled with loc_source.

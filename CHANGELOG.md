@@ -1,6 +1,18 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V13.4 — Autopilot calendar, Apple Calendar export, site-wide wordmark (2026-10-23)
+Matches `specs/V13.4.md`.
+- Autopilot: the "Due now" list is replaced by a calendar. Left: month/week calendar with prev/next, Today, Month/Week toggle, and type chips that double as the legend and filters (Deadline red, Apply-by reminder purple, Follow-up blue, Interview green). Today has a green ring; the selected day is highlighted; days outside the month are dimmed. Arrow keys move between days, Enter selects.
+- Right: the selected day's tasks (logo, role, company, type, time when there is one, Apply opening the job-specific application, ✓ Mark done, Open) with a friendly empty state and "Find internships"; below it "Upcoming 7 days", each row opens the listing.
+- "+ Quick add task" (title, date, type, optional linked internship), saved on this device. User tasks can be completed and deleted (with undo).
+- Tasks come only from real data: Autopilot plans, source-stated deadlines of saved/tracked listings, tracker follow-up dates (Interview when the row is Interviewing), Outreach contacts marked Messaged (follow-up one week later) and your own tasks. Listings without a stated deadline get no deadline dot.
+- Mark done updates Autopilot, marks a Saved tracker row Applied when the apply reminder is done, and records the follow-up on Outreach contacts.
+- "Add to Apple Calendar" in the calendar header: .ics with one event per open task (shown types), title "Type: Company, Role", all-day when there's no time, job-specific apply link in URL and notes, a 1-day-before alarm on deadlines, and stable UIDs so a second import updates instead of duplicating.
+- Fixed panel heights with internal scroll: no layout shift when changing days or months.
+- Header: the "Intern Index" wordmark ("Index" in green) replaces the old logo on every page except the intro, in dark and light.
+- Test: `ops/test_v134.py`. Screens: `ops/screens/v13.4-*.png`; sample export `ops/screens/v13.4-export.ics`.
+
 ## V13.3.1
 - Tracker: company names wrap onto multiple lines, stay centered and are no longer clipped at desktop widths (fixes "Ankura Consulting Group" at 1440). Textareas auto-size to their content.
 - Tracker column widths rebalanced for 861-1399px and >=1400px so Role keeps a readable width.

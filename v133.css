@@ -1,0 +1,38 @@
+/* V13.3 #1: nav group in the top-right corner; one gap value between every item */
+#hdr .hd{--navgap:28px;padding-left:var(--gut);padding-right:var(--gut);gap:16px;justify-content:space-between}
+#hdr .nav{flex:0 1 auto;margin-left:auto;gap:var(--navgap);justify-content:flex-end;overflow:visible}
+#hdr .nav>a,#hdr .nav>.pmenu,#hdr .nav>.ap-bell,#hdr .nav>.th-tog{margin:0!important;flex:none}
+#hdr .nav>a{column-gap:0;padding:0 14px;font-size:14px}
+#hdr .nav .nbadge{margin-left:6px}
+#hdr .nav>.pmenu{gap:var(--navgap);padding:0}
+#hdr .nav .pmenu>a{column-gap:0;padding:0 14px;font-size:14px}
+#hdr .pm-btn{min-width:24px;padding:0}
+#hdr .ap-bell,.th-tog{width:34px;height:34px;flex:0 0 34px}
+.th-tog{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--c-line,#d0d5dd);background:transparent;color:inherit;cursor:pointer;padding:0}
+.th-tog:hover{background:rgba(127,127,127,.12)}.th-tog:focus-visible{outline:2px solid var(--acc,#6d5ae6);outline-offset:2px}
+html.dark .th-tog{border-color:#3a4452;color:#e5e7eb}
+.th-tog .th-moon{display:block}.th-tog .th-sun{display:none}
+html.dark .th-tog .th-sun{display:block}html.dark .th-tog .th-moon{display:none}
+@media (max-width:1279px){#hdr .hd{--navgap:16px}#hdr .nav>a,#hdr .nav .pmenu>a{padding:0 10px}}
+@media (max-width:860px){#hdr .hd{--navgap:6px;padding-left:12px;padding-right:12px}#hdr .nav>a,#hdr .nav .pmenu>a{padding:0 8px;font-size:13px}}
+@media (max-width:480px){#hdr .hd{--navgap:2px;padding-left:8px;padding-right:8px;gap:4px}#hdr .nav{margin-left:auto!important;padding-left:0!important}#hdr .nav>a,#hdr .nav .pmenu>a{padding:6px 5px!important;font-size:12.5px!important}#hdr .ap-bell,.th-tog{width:30px;height:30px;flex:0 0 30px}#hdr .brand span{display:none}}
+#hdr .ap-bell svg{flex:none;width:18px;height:18px;display:block}
+/* V13.3 #3: one page shell for Applications and Outreach so nothing moves on switch */
+#t-outreach .container.twide{max-width:none;width:calc(100% - 2*var(--gut,32px))}
+@media (max-width:640px){#t-outreach .container.twide{width:calc(100% - 24px)}}
+#t-tracker .pagehead h1,#t-outreach .pagehead h1{min-height:1.2em;line-height:1.2}
+#t-tracker .pagehead .lede,#t-outreach .pagehead .lede{line-height:1.5;min-height:3em;max-width:760px}
+#t-tracker .ttools,#t-outreach .ttools{min-height:30px;margin:0 0 12px}
+#t-outreach #wpOut>.ap-empty,#t-tracker #tEmpty:not([hidden]){min-height:317px;box-sizing:border-box;margin-top:0;display:flex;flex-direction:column;justify-content:center}
+.wp-add{display:grid;gap:12px;min-width:min(420px,80vw)}.wp-add label{display:grid;gap:4px;font-size:14px}.wp-add input{min-height:40px;padding:0 10px;border-radius:8px;border:1px solid var(--c-line,#d0d5dd);background:transparent;color:inherit;font:inherit}.wp-add-f{display:flex;justify-content:flex-end}
+/* V13.3 #4: intro green dots blink (opacity + transform only), each on its own delay */
+@keyframes v133blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.82)}}
+#intro .dot{animation:v133blink var(--bd,1.6s) ease-in-out var(--bdl,0s) infinite;will-change:opacity,transform}
+@media (prefers-reduced-motion:reduce){#intro .dot{animation:none}}
+/* V13.3 #5: header logo is a green radar with a rotating sweep (transform only) */
+#hdr .brand .logo-radar{flex:none;width:32px;height:32px;overflow:visible}
+#hdr .brand .logo-radar .lr-lines,#hdr .brand .logo-radar>circle:last-child{filter:drop-shadow(0 0 2px #4ade80) drop-shadow(0 0 4px rgba(74,222,128,.55))}
+#hdr .brand .logo-radar .lr-sweep{transform-origin:32px 32px;transform-box:view-box;animation:v133sweep 3.5s linear infinite;filter:drop-shadow(0 0 3px rgba(74,222,128,.7))}
+@keyframes v133sweep{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){#hdr .brand .logo-radar .lr-sweep{animation:none}}
+@media (max-width:480px){#hdr .brand .logo-radar{width:28px;height:28px}}

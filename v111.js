@@ -23,9 +23,11 @@ document.addEventListener('click',e=>{if(!e.target.closest('#tkMarket'))return;s
 const H=document.documentElement,P=(()=>{try{return JSON.parse(localStorage.getItem('ir_ui')||'{}')}catch(e){return {}}})();if(P.theme!=='light')P.theme='dark';/* V12.1: dark is the default for first-time visitors */
 function apply(){H.classList.toggle('dark',P.theme==='dark');H.classList.toggle('cb',!!P.cb);const t=$('uiTheme'),c=$('uiCb');
  if(t){t.textContent=P.theme==='dark'?'☀ Light mode':'☾ Dark mode';t.setAttribute('aria-pressed',P.theme==='dark')}if(c){c.textContent='Colour-blind grades: '+(P.cb?'On':'Off');c.setAttribute('aria-pressed',!!P.cb)}
+ const tg=$('thTog');if(tg){const l=P.theme==='dark'?'Switch to light mode':'Switch to dark mode';tg.setAttribute('aria-label',l);tg.title=l;tg.setAttribute('aria-pressed',P.theme==='light')}
  const mt=document.querySelector('meta[name=theme-color]');if(mt)mt.content=P.theme==='dark'?'#1a1f26':'#5b46c9'}
 const save=()=>{try{localStorage.setItem('ir_ui',JSON.stringify(P))}catch(e){}apply()};
 $('uiTheme')?.addEventListener('click',()=>{P.theme=P.theme==='dark'?'light':'dark';save()});
+$('thTog')?.addEventListener('click',()=>{P.theme=P.theme==='dark'?'light':'dark';save()});/* V13.3 #2 */
 $('uiCb')?.addEventListener('click',()=>{P.cb=!P.cb;save()});apply();
 /* ---- Cmd/Ctrl+K quick search ---- */
 function qs(){if(typeof openModal!=='function'||typeof D==='undefined')return;

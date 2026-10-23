@@ -6,7 +6,7 @@
 - Tracker column widths rebalanced for 861-1399px and >=1400px so Role keeps a readable width.
 - test/location_norm.test.js updated for the V13.3 code layout (locParts on its own line) and the state-only rule (full state name). All tests pass.
 - Checked the tracker in light and dark mode at 390 (card layout, nothing clipped).
-- Known, not changed: the Closes column can still show an ellipsis ("Today · Oct ...").
+- Tracker Closes column: dates show in full on two lines ("Today" / "Oct 23") at every width, with no ellipsis. Closes is 96px and Company 206px at 861-1399px so names like "Consulting" no longer break mid-word at 1280.
 - Screenshots: ops/screens/v13.3.1-tracker-*.png
 
 ## V13.3 — Data, apply links, card redesign, calibrated grader and honest feedback (2026-10-23)

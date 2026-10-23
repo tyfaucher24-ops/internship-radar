@@ -80,3 +80,8 @@ body.graded #vl .card,body.graded .grid .card{height:322px}
 body.graded #vl .grow{height:322px}
 .ap-ask{bottom:auto;top:84px}/* V13.3 #5b: prompt sits under the header so it never covers the Apply/Save row */
 .card .c-ver{flex:none;margin:0 0 6px;font-size:12px;opacity:.68;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}/* V13.3 #6 */
+/* V13.3.1: tracker company names wrap (centered) and are never clipped; a single word wider than the cell breaks rather than hiding */
+@media (min-width:641px){#t-tracker #tTable td.c-company .coc textarea.ta,#t-tracker #tTable td.c-company .coc .ta{white-space:normal!important;overflow-wrap:break-word!important;word-break:normal!important;text-align:center!important;overflow:hidden;resize:none;line-height:1.25;height:auto}}
+/* V13.3.1: give the company name room without squeezing Role (role keeps ≥190px at 1280 and 1440) */
+@media (min-width:861px) and (max-width:1399px){#t-tracker #tTable th.c-company{width:180px!important}#t-tracker #tTable th.c-closes{width:108px!important}#t-tracker #tTable th.c-dateApplied{width:80px!important}#t-tracker #tTable th.c-nextStep{width:104px!important}#t-tracker #tTable th.c-notes{width:96px!important}#t-tracker #tTable th.c-link{width:64px!important}#t-tracker #tTable th.c-x{width:40px!important}}
+@media (min-width:1400px){#t-tracker #tTable th.c-company{width:200px!important}#t-tracker #tTable th.c-nextStep{width:120px!important}#t-tracker #tTable th.c-notes{width:120px!important}#t-tracker #tTable th.c-link{width:80px!important}}

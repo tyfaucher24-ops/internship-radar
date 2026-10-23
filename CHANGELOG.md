@@ -1,6 +1,14 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V13.3.1
+- Tracker: company names wrap onto multiple lines, stay centered and are no longer clipped at desktop widths (fixes "Ankura Consulting Group" at 1440). Textareas auto-size to their content.
+- Tracker column widths rebalanced for 861-1399px and >=1400px so Role keeps a readable width.
+- test/location_norm.test.js updated for the V13.3 code layout (locParts on its own line) and the state-only rule (full state name). All tests pass.
+- Checked the tracker in light and dark mode at 390 (card layout, nothing clipped).
+- Known, not changed: the Closes column can still show an ellipsis ("Today · Oct ...").
+- Screenshots: ops/screens/v13.3.1-tracker-*.png
+
 ## V13.3 — Data, apply links, card redesign, calibrated grader and honest feedback (2026-10-23)
 Matches `specs/V13.3.md`. Reports: `qa-v13.3/DATA-REPORT.md`, `APPLY-REPORT.md`, `GRADER-RESEARCH.md`, `GRADER-REPORT.md`, `LIVE-CHECK.md`.
 - Grader (§7): company tier 1–5 registry with a reason and cited source per firm, shown in the detail panel as "Company tier N of 5". Capped experience credit (athlete, leadership, military, founder, research, part-time work; ≤ +6 points, never over a tier ceiling; first-gen 0 because no evidence). Missing data lowers confidence, not the grade.

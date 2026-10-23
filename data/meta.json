@@ -1,57 +1,41 @@
 {
- "updated": "2026-10-23T07:23:35Z",
- "open": 11087,
- "open_all": 11087,
- "closing_this_week": 443,
- "upcoming": 1592,
+ "updated": "2026-10-23T08:11:35Z",
+ "open": 11181,
+ "open_all": 11181,
+ "closing_this_week": 545,
+ "upcoming": 1627,
  "companies_tracked": 2497,
- "companies_with_listings": 1466,
- "duration_s": 2094,
+ "companies_with_listings": 1465,
+ "duration_s": 223,
  "apply_links": {
-  "at": "2026-10-23T07:58:32+00:00",
-  "open": 11368,
-  "direct": 10027,
-  "posting": 1298,
-  "none": 43,
-  "checked_this_run": 3945,
-  "ok": 3847,
-  "failed": 20,
-  "unknown": 78,
+  "at": "2026-10-23T08:15:20+00:00",
+  "open": 11352,
+  "direct": 10022,
+  "posting": 1269,
+  "none": 61,
+  "checked_this_run": 8017,
+  "ok": 7873,
+  "unknown": 127,
+  "failed": 17,
   "top_failing_hosts": [
    [
-    "careers.itw.com",
-    4
-   ],
-   [
-    "careers.rivianvw.tech",
-    3
+    "zapply.jobs",
+    10
    ],
    [
     "ats.rippling.com",
     3
    ],
    [
-    "ursamajor.com",
-    3
-   ],
-   [
-    "zapply.jobs",
+    "www.tower-research.com",
     2
    ],
    [
-    "www.databricks.com",
+    "tower-research.com",
     1
    ],
    [
-    "jobs.ea.com",
-    1
-   ],
-   [
-    "careers.mitre.org",
-    1
-   ],
-   [
-    "tetramem.hrmdirect.com",
+    "www.janestreet.com",
     1
    ],
    [
@@ -62,7 +46,7 @@
   "top_fallback_hosts": [
    [
     "zapply.jobs",
-    155
+    161
    ],
    [
     "www.tesla.com",
@@ -99,12 +83,14 @@
    [
     "egug.fa.us2.oraclecloud.com",
     25
+   ],
+   [
+    "apply.careers.microsoft.com",
+    24
    ]
   ],
-  "validated_within_24h": 3847
+  "validated_within_24h": 8536
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
- "hygiene": {
-  "city_trimmed": 10
- }
+ "hygiene": {}
 }

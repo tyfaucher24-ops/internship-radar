@@ -1,6 +1,6 @@
 {
- "at": "2026-10-23T08:09:45Z",
- "open_visible": 11087,
+ "at": "2026-10-23T08:26:05Z",
+ "open_visible": 11181,
  "fixes": {
   "city_dropped_unverifiable": 1407,
   "city_normalized": 461,
@@ -175,14 +175,14 @@
    "issue": "company looks like a job title"
   }
  ],
- "added": 730,
- "removed": 872,
- "changed": 27,
+ "added": 39,
+ "removed": 87,
+ "changed": 2,
  "previous_open": 11229,
  "events": {
-  "new": 724,
-  "deadline": 3,
-  "closed": 828
+  "new": 39,
+  "deadline": 0,
+  "closed": 39
  },
  "sources": {
   "boards": 2497,

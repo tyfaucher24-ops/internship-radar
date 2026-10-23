@@ -2,7 +2,7 @@
    To move to real accounts later, swap the backend object below for an API-backed one; callers keep using Store.get/set. */
 window.Store=(()=>{
   const P='idr_',VERSION=2;
-  const KEYS=['profile','resumeText','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker','prefs','filters','notify','reports','missingQueue','trackerCols','trackerSort','trackerW','profileDraft'];
+  const KEYS=['profile','resumeText','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker','prefs','filters','notify','reports','missingQueue','trackerCols','trackerSort','trackerW','profileDraft','resumeParse'];
   /* V12: never crash and never lose data silently. Private mode / disabled storage falls back to memory;
      a full disk keeps the old value and tells the user; unreadable JSON is backed up before anything overwrites it. */
   const MEM=new Map();let LS=null;try{LS=window.localStorage;const t=P+'__t';LS.setItem(t,'1');LS.removeItem(t)}catch{LS=null}

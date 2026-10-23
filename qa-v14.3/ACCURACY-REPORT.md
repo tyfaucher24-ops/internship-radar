@@ -41,7 +41,7 @@ Here, "hallucinated" means any of the following:
 * A certification that isn't in the expected list.
 * A value whose text can't be found in the source.
 
-The two ambiguous-school fixtures (f18 and f45: "USC" and "Queens") correctly leave the school **empty** and offer a list of candidates for the user to pick from.
+The two ambiguous-school fixtures both correctly leave the school **empty**. f18 ("Queens") also offers a list of candidates to pick from (Queens University of Charlotte, CUNY Queens College). f45 ("USC") offers no candidates, so the review screen shows "Not found. Add it?" and the user types the school in.
 
 ### By format (share of checks passed)
 onecol 99.8–100 · twocol 99.6–100 · table 98.2 (pdf) / 99.3 (docx) · jake 100 · word 99.3–99.5 · text 100 · canva 98.2 (pdf) / 100 (docx)

@@ -1,6 +1,11 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.1 — Cleaner Find page and header (2026-10-23)
+- Find: removed the results summary line ("N open internships · similar roles grouped · N graduate-degree roles hidden by your profile") and its "show all" graduate-roles button. The degree filter still works from the filter bar.
+- Header: the Intern Index wordmark now sits in the top-left corner of the header on every page, in both themes and at desktop and mobile widths.
+- Assets versioned and version.json bumped.
+
 ## V14 — Audit fixes: honest data, grading and accessibility (2026-10-23)
 Matches `specs/V14.md`; per-issue results in `qa-v14/FIX-REPORT.md`.
 - P0: tracker CSV import with column mapping; resume date-range parser fixed.

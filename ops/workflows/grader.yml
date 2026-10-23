@@ -1,0 +1,15 @@
+# V13.3 §7e — BLOCKED: not active. This file lives in ops/workflows only because the repo token lacks the
+# "workflow" scope. To turn it on, Ty copies it to .github/workflows/grader.yml by hand.
+name: grader
+on: [push, pull_request]
+jobs:
+  grader:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '20'}
+      - name: Grader calibration (50 personas × 34 listings, 331 expected pairs)
+        run: |
+          node tests/grader/run.js | tee grader.out
+          node -e "const r=JSON.parse(require('fs').readFileSync('grader.out','utf8').split('\n')[0]);const bad=[];if(r.accuracy<90)bad.push('accuracy '+r.accuracy);for(const k of ['monotonicBreaks','tier1NonStandoutA','nondeterministic','missingDataDrops','feedbackFailures','ungraded'])if(r[k])bad.push(k+' '+r[k]);if(r.outliers>1)bad.push('outliers '+r.outliers);if(bad.length){console.error('FAIL: '+bad.join(', '));process.exit(1)}"

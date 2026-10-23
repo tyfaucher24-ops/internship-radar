@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V13.3 — Data, apply links, card redesign, calibrated grader and honest feedback (2026-10-23)
+Matches `specs/V13.3.md`. Reports: `qa-v13.3/DATA-REPORT.md`, `APPLY-REPORT.md`, `GRADER-RESEARCH.md`, `GRADER-REPORT.md`, `LIVE-CHECK.md`.
+- Grader (§7): company tier 1–5 registry with a reason and cited source per firm, shown in the detail panel as "Company tier N of 5". Capped experience credit (athlete, leadership, military, founder, research, part-time work; ≤ +6 points, never over a tier ceiling; first-gen 0 because no evidence). Missing data lowers confidence, not the grade.
+- Calibration: 50 personas × 34 listings, 331 expected pairs. In band 73.4% → **91.8%**; outliers 32 → **1** (disclosed in the report: a Statistics major on a posting that requires CS/Eng/IS); monotonic breaks 0, tier-1 A for non-standouts 0, nondeterministic 0, missing-data drops 69 → 0.
+- Honest feedback (§7g): every card shows Realistic / Reach / Long shot with the reason on hover or focus; "Realistic for you" sort and a Show filter (Realistic / Reach picks); "Your honest snapshot" on Profile (top gaps and strengths from your 30 best Realistic and 30 best Reach listings, plus one next step); tracker rows show grade and tag; free resources (Wall Street Prep, LeetCode, freeCodeCamp) when skills are the gap. Feedback failures 0 / 331.
+- CI: `ops/workflows/grader.yml` is written but BLOCKED (token lacks the workflow scope); copy it to `.github/workflows/` to turn it on.
+- Tests: tests/grader/run.js passes all §7d checks; test/*.js all pass except location_norm.test.js, which was already failing before V13.3.
+- Screens: ops/screens/v13.3-7g-*.png (live).
+
 ## V13.2 — Detail panel layout (2026-10-22, approved by Ty)
 Matches `specs/V13.2.md` and `specs/ref/v13.2-detail-panel.png`. Grader v2 scoring underneath is unchanged.
 - Order: header (logo, company, role, clean location with no "City -, ST", closes pill, Posted) → short role description (≤160 chars, real sentence about the role, hidden if none fits) → "▸ Show full description" (facts, summary bullets, full posting) → grade card → Why it's a match → How to improve → Ways in. The Apply row sticks to the bottom of the panel.

@@ -7,7 +7,7 @@ Researched on 2026-10-23. Every number below has a link. Where nothing was publi
 |---|---|---|
 | Goldman Sachs | 360,000+ applicants for about 2,600 summer interns in 2025, an acceptance rate of about 0.7% (0.8% in 2024, 1.27% in 2022, 2% in 2013) | [Fortune, Jun 2025](https://fortune.com/2025/06/16/goldman-sachs-internship-summer-analysts-wall-street-tpg-olaplex-red-lobster/), [eFinancialCareers](https://www.efinancialcareers.com/news/goldman-sachs-internship-acceptance-rate) |
 | JPMorgan | 630,000 applicants for 4,100 intern roles in 2025, about 0.7% | [eFinancialCareers](https://www.efinancialcareers.com/news/bank-acceptance-rate) |
-| Citadel Securities | about 0.5% (2023) | [eFinancialCareers](https://www.efinancialcareers.com/news/goldman-sachs-internship-acceptance-rate) |
+| Citadel / Citadel Securities | about 0.4% of intern applicants | [Whali, 2026](https://whali.com/blog/internship-acceptance-rates-2026) (the earlier eFinancialCareers link returned an error and could not be checked, so it was replaced) |
 | McKinsey | about 200,000 applications a year, about 1% hired (attributed to a former Global Managing Partner); internship offer rate estimated under 2% | [Hacking the Case Interview](https://www.hackingthecaseinterview.com/pages/mckinsey-acceptance-rate), [StrategyCase](https://strategycase.com/mckinsey-internship) |
 | BCG / Bain | estimated 1–3% | same as McKinsey row (estimates, not official) |
 | Google / Meta | estimated 1.5–2% and 1–2% of intern applicants; Apple, Amazon and Microsoft estimated 2–4%; none publish official numbers | [Whali, 2026](https://whali.com/blog/internship-acceptance-rates-2026) |

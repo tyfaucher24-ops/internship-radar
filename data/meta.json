@@ -2,11 +2,99 @@
  "updated": "2026-10-23T02:02:03Z",
  "open": 11179,
  "open_all": 11179,
- "closing_this_week": 545,
- "upcoming": 1634,
+ "closing_this_week": 367,
+ "upcoming": 1619,
  "companies_tracked": 2497,
  "companies_with_listings": 1465,
  "duration_s": 245,
  "open_rule": "status open, not hidden, not past term, deadline today or later",
- "hygiene": {}
+ "hygiene": {},
+ "apply_links": {
+  "at": "2026-10-23T02:24:45+00:00",
+  "open": 11229,
+  "direct": 9950,
+  "posting": 1236,
+  "none": 43,
+  "checked_this_run": 5258,
+  "ok": 5132,
+  "failed": 20,
+  "unknown": 106,
+  "top_failing_hosts": [
+   [
+    "zapply.jobs",
+    6
+   ],
+   [
+    "careers.itw.com",
+    4
+   ],
+   [
+    "careers.rivianvw.tech",
+    3
+   ],
+   [
+    "ursamajor.com",
+    3
+   ],
+   [
+    "www.databricks.com",
+    1
+   ],
+   [
+    "jobs.ea.com",
+    1
+   ],
+   [
+    "careers.mitre.org",
+    1
+   ],
+   [
+    "tetramem.hrmdirect.com",
+    1
+   ]
+  ],
+  "top_fallback_hosts": [
+   [
+    "zapply.jobs",
+    145
+   ],
+   [
+    "www.tesla.com",
+    121
+   ],
+   [
+    "www.metacareers.com",
+    50
+   ],
+   [
+    "jobs.bytedance.com",
+    46
+   ],
+   [
+    "careers.withwaymo.com",
+    33
+   ],
+   [
+    "careers.amd.com",
+    28
+   ],
+   [
+    "careersus-shure.icims.com",
+    28
+   ],
+   [
+    "egup.fa.us2.oraclecloud.com",
+    26
+   ],
+   [
+    "apply.careers.microsoft.com",
+    24
+   ],
+   [
+    "fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com",
+    21
+   ]
+  ],
+  "validated_within_24h": 5092
+ }
 }

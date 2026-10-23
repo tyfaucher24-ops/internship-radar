@@ -2,7 +2,7 @@
 data/detail/{0..63}.json (drawer-only fields; descriptions stay in data/desc/), loaded on demand. Source of truth stays data/listings.json."""
 import os,json,glob
 D=os.path.join(os.path.dirname(__file__),'..','data')
-INDEX_KEYS=['id','company','title','category','role_type','remote','workplace','deadline','rolling','class_years','terms','season','year','past_term','posted','status','sponsorship','citizenship','paid','size','gpa_min','openings','metro_pop','hidden','has_desc','stale','loc_label','degree','close_reason']
+INDEX_KEYS=['id','company','title','category','role_type','remote','workplace','deadline','rolling','class_years','terms','season','year','past_term','posted','status','sponsorship','citizenship','paid','size','gpa_min','openings','metro_pop','hidden','has_desc','stale','loc_label','degree','close_reason','ak']
 # V12: posting-only requirement signals for the grader (skills, majors, prior experience), read from the description text. Never guessed:
 # a skill/major is listed only when its exact wording appears in the posting.
 MAJ={'finance':r'finance','accounting':r'accounting','economics':r'economics','business':r'business( administration)?','computer science':r'computer science','engineering':r'engineering','data science':r'data science','statistics':r'statistics','mathematics':r'math(ematics)?','information systems':r'information (systems|technology)','marketing':r'marketing','communications':r'communications?|journalism','nursing':r'nursing','biology':r'biology|life sciences?','chemistry':r'chemistry','physics':r'physics','psychology':r'psychology','supply chain':r'supply chain','hospitality':r'hospitality','graphic design':r'graphic design|design'}

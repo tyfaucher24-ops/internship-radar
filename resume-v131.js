@@ -1,6 +1,6 @@
 /* V13.1 resume extras (specs/V13.1.md P1 #5-#8 + onboarding upgrade 4). Pure functions, no DOM: used by the website and by node tests.
    Rule: only what is actually written in the resume. Anything uncertain stays blank and is flagged with check:[field]. */
-(function(root){
+(function(root){let API_DATEFRAG;
 const MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,sept:9,oct:10,nov:11,dec:12};
 const MRX='(?:jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\\.?';
 const SEAS={spring:3,summer:6,fall:9,winter:12};
@@ -11,7 +11,13 @@ const ONE=new RegExp('\\(?\\s*('+PT+')\\s+((?:19|20)\\d\\d)\\s*\\)?','i');
 const mnum=s=>{if(!s)return 0;s=s.toLowerCase().replace(/\./,'');return MON[s.slice(0,4)]||MON[s.slice(0,3)]||SEAS[s]||0};
 const ym=(y,m)=>y?(m?y+'-'+String(m).padStart(2,'0'):String(y)):'';
 /* "Sept 2025 – Present" | "Jun–Aug 2026" | "June 2026 – August 2026" | "May 2029" */
-function parseDates(s){s=String(s||'');const r=s.match(RANGE);
+/* V14 #2: try a full start-year range first, so "— June 2026 – August 2026" never leaves "– August 2026" behind */
+const FULL=new RegExp('\\(?\\s*(?:('+PT+')\\.?\\s+)?((?:19|20)\\d\\d)\\s*(?:–|—|-|to)\\s*(?:('+PT+')\\.?\\s+)?((?:19|20)\\d\\d|present|current|now)\\s*\\)?','i');
+const SAMEY=new RegExp('\\(?\\s*('+PT+')\\s*(?:–|—|-|to)\\s*('+PT+')\\s+((?:19|20)\\d\\d)\\s*\\)?','i');
+function parseDates(s){s=String(s||'');
+ const f=s.match(FULL);if(f){const ep=/present|current|now/i.test(f[4]);return{start:ym(f[2],mnum(f[1])),end:ep?'Present':ym(f[4],mnum(f[3])),raw:f[0].trim()}}
+ const g=s.match(SAMEY);if(g)return{start:ym(g[3],mnum(g[1])),end:ym(g[3],mnum(g[2])),raw:g[0].trim()};
+ const r=s.match(RANGE);
  if(r&&(r[2]||/\d/.test(r[4])||r[1])&&(r[1]||r[2])){const endPresent=/present|current|now/i.test(r[4]);const ey=endPresent?'':r[4];const sy=r[2]||ey;
   if(!sy&&!endPresent)return null;
   const start=ym(sy,mnum(r[1])),end=endPresent?'Present':ym(ey,mnum(r[3]));if(!start&&!end)return null;return{start,end,raw:r[0].trim()}}
@@ -23,7 +29,7 @@ const SPORT=/\b(lacrosse|football|soccer|basketball|baseball|softball|volleyball
 const D1=/\b(ncaa|division\s+(?:i|1)\b|d-?1\b|d-?i\b|varsity)/i;
 function classify(t,org,sec){const s=(t+' '+org);
  if((D1.test(s)&&(SPORT.test(s)||/athlet/i.test(s)))||(/athlet/i.test(s)&&SPORT.test(s))||sec==='athletics')return'Athletics';
- if(/\bintern(ship)?\b|co-?op/i.test(t))return'Internship';
+ if(/\bintern(ship)?\b|co-?op|\bsummer (analyst|associate)\b/i.test(t))return'Internship';
  if(/research/i.test(s))return'Research';
  if(/volunteer/i.test(s))return'Volunteer';
  if(/\b(club|society|association|council|student government|fraternity|sorority|student[- ]\w+ fund|chapter)\b/i.test(org||t)||/^member$/i.test(t))return'Club';
@@ -38,7 +44,12 @@ function splitHead(h){h=h.replace(/\(\s*\)/g,'').replace(/\s+/g,' ').replace(/[\
  let title='',org='';
  if(parts.length>=2){const a=parts[0],b=parts.slice(1).join(' — ');if(ROLE.test(b)&&!ROLE.test(a)){org=a;title=b}else if(ROLE.test(a)&&!ROLE.test(b)){title=a;org=b}else{org=a;title=b;check.push('title','org')}}
  else if(parts.length===1){const c=parts[0].match(/^(.*?),\s*(.+)$/);if(c&&ROLE.test(c[1])&&!ROLE.test(c[2])){title=c[1];org=c[2]}else if(c&&ROLE.test(c[2])&&!ROLE.test(c[1])){org=c[1];title=c[2]}else if(ROLE.test(parts[0])&&parts[0].split(' ').length<=4)title=parts[0];else{org=parts[0];check.push('title')}}
+ /* V14 #2: a date fragment is never a title or an org */
+ const DF=new RegExp('^[\\s,–—-]*(?:'+PT+')?\\.?\\s*(?:(?:19|20)\\d\\d|present|current)?[\\s,–—-]*$','i');
+ if(title&&DF.test(title)){title='';check.push('title')}if(org&&DF.test(org)){org='';check.push('org')}
+ org=org.replace(/^[\s,–—-]+|[\s,–—-]+$/g,'');title=title.replace(/^[\s,–—-]+|[\s,–—-]+$/g,'');
  return{title:title.trim(),org:org.trim(),location:loc,check}}
+API_DATEFRAG=s=>/^[\s,–—-]*(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec)[a-z]*\.?|spring|summer|fall|winter)?\s*(?:(?:19|20)\d\d|present|current)?[\s,–—-]*$/i.test(String(s||''))||/^[–—-]/.test(String(s||'').trim());
 const GLYPH=/^\s*[•●▪◦‣∙·\-–*]\s*/;
 const HEADS={experience:/^(work |professional |relevant |internship |research )?experience$|^employment$|^work history$/i,leadership:/^leadership( & (athletics|activities|involvement))?$|^leadership and athletics$/i,athletics:/^(athletics|varsity athletics)$/i,clubs:/^(activities|clubs|involvement|campus involvement|organizations|extracurriculars?)$/i,
  education:/^education$/i,skills:/^(technical )?skills( & \w+)?$/i,other:/^(projects?|honors|awards|summary|certifications?|interests|languages|references|coursework)$/i};
@@ -84,5 +95,5 @@ function interestsFromMajor(major){const o=[];MAJOR_IND.forEach(([r,v])=>{if(r.t
 function gradYear(text){const m=String(text||'').match(/\b(?:expected|anticipated|graduat(?:ion|ing)|class of)[:\s]*(?:in\s+)?(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+|(?:spring|summer|fall|winter)\s+)?(20\d\d)\b/i);return m?m[1]:''}
 function athlete(exps){return exps.some(e=>e.kind==='Athletics'&&D1.test(e.title+' '+e.org))}
 function parse(text){const ex=experiences(text);return{contact:contact(text),experience:ex,skills:skills(text),gradYear:gradYear(text),d1:athlete(ex)}}
-const API={parse,parseDates,splitHead,experiences,skills,contact,interestsFromMajor,gradYear,classify,canon};
+const API={isDateFrag:API_DATEFRAG,parse,parseDates,splitHead,experiences,skills,contact,interestsFromMajor,gradYear,classify,canon};
 if(typeof module!=='undefined'&&module.exports)module.exports=API;root.RV131=API})(typeof self!=='undefined'?self:this);

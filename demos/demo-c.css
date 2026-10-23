@@ -1,7 +1,0 @@
-@import url(base.css);
-:root{--xl:24px;--r:4px;--bg:#0c0d0f;--card:#121417;--fg:#e8e6e1;--mut:#a8a49b;--line:#2a2d33;--av:#1a1c20;--good:#5fd38d;--bad:#ff8a80;--apply:#6d28d9;--accent:#f5b83d}
-[data-theme=light]{--bg:#faf8f3;--card:#fff;--fg:#14161a;--mut:#55524b;--line:#ddd8cc;--av:#f2efe6;--good:#177245;--bad:#b3261e;--accent:#8a5a00}
-body{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;background-attachment:fixed}
-body{background-color:var(--bg)}main{gap:48px}.card{padding:16px;gap:8px}td{padding:16px}
-.num,.big{font-family:"JetBrains Mono",ui-monospace,monospace}h1,h2{color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
-.top{border-bottom:1px solid var(--accent)}

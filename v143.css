@@ -38,3 +38,12 @@ html.dark .rv-nf{background:#1c2a4f;color:#c9d6ff;border-color:#5a73c0}
 #t-profile .combo,#t-profile .combo input,#t-profile .field,#t-profile label>input:not([type=checkbox]):not([type=radio]){width:100%}
 #t-profile textarea,.rv-box textarea{field-sizing:content;overflow-wrap:anywhere;white-space:pre-wrap}
 #t-profile select,.rv-box select{white-space:normal;text-overflow:clip}
+/* V14.3 why-this-grade */
+.v143{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}.v143 h4{margin:0 0 8px}.v143 h5{margin:10px 0 4px;font-size:.92rem}
+.v143 ul{margin:0;padding-left:18px}.v143 li{margin:4px 0;overflow-wrap:anywhere}.v143-q{font-size:.88rem}
+.v143-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 18px}
+.v143-chip{display:inline-block;padding:1px 10px;border-radius:999px;font-weight:700;font-size:.8rem;border:1px solid}
+.v143-safety{background:#e3f6ea;color:#14532d;border-color:#2f8f57}.v143-target{background:#e8eefc;color:#1d3a8a;border-color:#6c86d1}.v143-reach{background:#fff1c2;color:#6b4e00;border-color:#c79a00}
+html.dark .v143-safety{background:#123d24;color:#b8f0cc}html.dark .v143-target{background:#1c2a4f;color:#c9d6ff}html.dark .v143-reach{background:#4a3b00;color:#ffe08a}
+.v143-ne{padding:8px 10px;border-radius:8px;background:#fde8e8;color:#7a1414}html.dark .v143-ne{background:#4a1515;color:#ffd0d0}
+.v143-conf{font-size:.88rem;margin:10px 0 0}

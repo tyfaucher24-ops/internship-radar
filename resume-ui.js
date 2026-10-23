@@ -110,3 +110,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 /* V14.3: auto-grow textareas (fallback where field-sizing is unsupported) */
 (function(){if(CSS.supports&&CSS.supports('field-sizing','content'))return;const g=t=>{t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'};document.addEventListener('input',e=>{const t=e.target;if(t.tagName==='TEXTAREA'&&t.closest('#t-profile,.rv-box'))g(t)})})();
+/* V14.3 §5: "Why this grade" in the listing detail: reach/target/safety, Not-eligible reason, top 3 for/against with quotes, next steps, confidence */
+(function(){if(typeof fbPanel!=='function')return;const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const _fb=fbPanel;
+ const TAG={safety:'Safety',target:'Target',reach:'Reach'};
+ const fx=f=>`<li><strong>${E(f.t)}</strong>${f.resume?`<br><span class="v143-q">Your resume: ${E(f.resume)}</span>`:''}${f.posting?`<br><span class="v143-q">The posting: ${E(f.posting)}</span>`:''}</li>`;
+ fbPanel=function(d){const base=_fb(d);const v=d&&d.v143;if(!v)return base;
+  const head=v.eligible?`<p class="v143-tag"><span class="v143-chip v143-${v.tag}">${TAG[v.tag]||''}</span> Fit × chance: ${v.fitXchance} of 100</p>`:`<p class="v143-ne"><strong>Not eligible:</strong> ${E(v.reason)}</p>`;
+  return base+`<section class="v143" aria-label="Why this grade"><h4>Why this grade</h4>${head}<div class="v143-cols">${v.pos.length?`<div><h5>Working for you</h5><ul>${v.pos.map(fx).join('')}</ul></div>`:''}${v.neg.length?`<div><h5>Working against you</h5><ul>${v.neg.map(fx).join('')}</ul></div>`:''}</div>${v.next.length?`<h5>Next steps</h5><ul>${v.next.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`:''}<p class="v143-conf">${E(v.confidence.note)}</p></section>`}})();

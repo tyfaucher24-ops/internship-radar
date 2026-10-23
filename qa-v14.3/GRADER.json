@@ -1,0 +1,377 @@
+{
+ "personas": {
+  "pairs": 331,
+  "inBand": 304,
+  "accuracy": 91.8,
+  "outliers": 1,
+  "ungraded": 0,
+  "monotonicBreaks": 0,
+  "tier1NonStandoutA": 0,
+  "nondeterministic": 0,
+  "missingDataDrops": 0,
+  "feedbackChecked": 331,
+  "feedbackFailures": 0
+ },
+ "pairs": 20,
+ "pairFailures": 0,
+ "monotonicChecks": 2040,
+ "monotonicBreaks": 0,
+ "gradeMix": {
+  "F": 396,
+  "D": 152,
+  "B": 47,
+  "C": 76,
+  "A": 9
+ },
+ "failures": [],
+ "pairList": [
+  {
+   "fixture": "f01",
+   "listing": "1d83684849",
+   "title": "2027 Summer Internship Program – Public Finance",
+   "company": "Piper Sandler",
+   "grade": "B+",
+   "pct": 83,
+   "tag": "safety",
+   "fitXchance": 52,
+   "pos": [
+    "Related experience",
+    "Skills the posting asks for",
+    "Strong GPA"
+   ],
+   "neg": [
+    "Core skills not on your resume"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f02",
+   "listing": "66b972393f",
+   "title": "Software Engineer Intern - Summer 2027",
+   "company": "Enterprise Holdings",
+   "grade": "B",
+   "pct": 75,
+   "tag": "target",
+   "fitXchance": 43,
+   "pos": [
+    "Related experience"
+   ],
+   "neg": [],
+   "confidence": "medium"
+  },
+  {
+   "fixture": "f03",
+   "listing": "4b69dd9d7e",
+   "title": "Small Business Lending Intern",
+   "company": "Lake Michigan Credit Union",
+   "grade": "B+",
+   "pct": 81,
+   "tag": "target",
+   "fitXchance": 42,
+   "pos": [
+    "Related experience",
+    "Skills the posting asks for",
+    "Strong GPA"
+   ],
+   "neg": [
+    "Core skills not on your resume"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f04",
+   "listing": "b33ba30781",
+   "title": "Data Science Intern - Magnet Program",
+   "company": "State Farm",
+   "grade": "C",
+   "pct": 60,
+   "tag": "target",
+   "fitXchance": 44,
+   "pos": [],
+   "neg": [
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f05",
+   "listing": "897f37d2ec",
+   "title": "2027 Quality Intern - Grove City, OH",
+   "company": "Sherwin-Williams",
+   "grade": "B",
+   "pct": 75,
+   "tag": "target",
+   "fitXchance": 35,
+   "pos": [
+    "Strong GPA"
+   ],
+   "neg": [
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f06",
+   "listing": "b33ba30781",
+   "title": "Data Science Intern - Magnet Program",
+   "company": "State Farm",
+   "grade": "D",
+   "pct": 45,
+   "tag": "reach",
+   "fitXchance": 30,
+   "pos": [
+    "Strong GPA"
+   ],
+   "neg": [
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f07",
+   "listing": "b33ba30781",
+   "title": "Data Science Intern - Magnet Program",
+   "company": "State Farm",
+   "grade": "F",
+   "pct": 36,
+   "tag": "reach",
+   "fitXchance": 35,
+   "pos": [],
+   "neg": [
+    "No related experience yet"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "fixture": "f08",
+   "listing": "66b972393f",
+   "title": "Software Engineer Intern - Summer 2027",
+   "company": "Enterprise Holdings",
+   "grade": "B+",
+   "pct": 83,
+   "tag": "target",
+   "fitXchance": 52,
+   "pos": [
+    "Related experience"
+   ],
+   "neg": [],
+   "confidence": "medium"
+  },
+  {
+   "fixture": "f09",
+   "listing": "d55ae622de",
+   "title": "2027 Summer Intern - Retail Banking",
+   "company": "Apple Bank",
+   "grade": "B+",
+   "pct": 81,
+   "tag": "target",
+   "fitXchance": 42,
+   "pos": [
+    "Skills the posting asks for",
+    "Strong GPA"
+   ],
+   "neg": [
+    "Core skills not on your resume",
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f10",
+   "listing": "55e58dbc24",
+   "title": "Internship – Marketing (Year-Round)",
+   "company": "Baird",
+   "grade": "D+",
+   "pct": 53,
+   "tag": "reach",
+   "fitXchance": 35,
+   "pos": [
+    "Related experience",
+    "Your major is one the posting names"
+   ],
+   "neg": [
+    "Core skills not on your resume"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f11",
+   "listing": "1d83684849",
+   "title": "2027 Summer Internship Program – Public Finance",
+   "company": "Piper Sandler",
+   "grade": "B+",
+   "pct": 83,
+   "tag": "safety",
+   "fitXchance": 53,
+   "pos": [
+    "Related experience",
+    "Skills the posting asks for",
+    "Strong GPA"
+   ],
+   "neg": [
+    "Core skills not on your resume"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f12",
+   "listing": "9809d815bd",
+   "title": "2026 Intern Conversion: 2027 Grocery Area Manager",
+   "company": "Walmart",
+   "grade": "B+",
+   "pct": 80,
+   "tag": "target",
+   "fitXchance": 28,
+   "pos": [
+    "Related experience"
+   ],
+   "neg": [
+    "Core skills not on your resume"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f13",
+   "listing": "427172e22a",
+   "title": "Internship - Equity Asset Management Research Analyst, Growth Team (Summer 2027)",
+   "company": "Baird",
+   "grade": "D-",
+   "pct": 44,
+   "tag": "reach",
+   "fitXchance": 32,
+   "pos": [
+    "Strong GPA"
+   ],
+   "neg": [
+    "The posting names a different major",
+    "Core skills not on your resume",
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f14",
+   "listing": "1d83684849",
+   "title": "2027 Summer Internship Program – Public Finance",
+   "company": "Piper Sandler",
+   "grade": "C-",
+   "pct": 59,
+   "tag": "reach",
+   "fitXchance": 42,
+   "pos": [],
+   "neg": [
+    "Core skills not on your resume",
+    "No related experience yet"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "fixture": "f15",
+   "listing": "b33ba30781",
+   "title": "Data Science Intern - Magnet Program",
+   "company": "State Farm",
+   "grade": "D-",
+   "pct": 41,
+   "tag": "reach",
+   "fitXchance": 25,
+   "pos": [
+    "Strong GPA"
+   ],
+   "neg": [
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f16",
+   "listing": "427172e22a",
+   "title": "Internship - Equity Asset Management Research Analyst, Growth Team (Summer 2027)",
+   "company": "Baird",
+   "grade": "D",
+   "pct": 48,
+   "tag": "reach",
+   "fitXchance": 39,
+   "pos": [
+    "Related experience",
+    "Strong GPA"
+   ],
+   "neg": [
+    "The posting names a different major",
+    "Core skills not on your resume"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f17",
+   "listing": "897f37d2ec",
+   "title": "2027 Quality Intern - Grove City, OH",
+   "company": "Sherwin-Williams",
+   "grade": "A",
+   "pct": 92,
+   "tag": "target",
+   "fitXchance": 43,
+   "pos": [
+    "Related experience"
+   ],
+   "neg": [],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f18",
+   "listing": "b33ba30781",
+   "title": "Data Science Intern - Magnet Program",
+   "company": "State Farm",
+   "grade": "C-",
+   "pct": 56,
+   "tag": "reach",
+   "fitXchance": 38,
+   "pos": [
+    "Strong GPA"
+   ],
+   "neg": [
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f19",
+   "listing": "55e58dbc24",
+   "title": "Internship – Marketing (Year-Round)",
+   "company": "Baird",
+   "grade": "D-",
+   "pct": 40,
+   "tag": "reach",
+   "fitXchance": 30,
+   "pos": [
+    "Strong GPA"
+   ],
+   "neg": [
+    "The posting names a different major",
+    "Core skills not on your resume",
+    "No related experience yet"
+   ],
+   "confidence": "high"
+  },
+  {
+   "fixture": "f20",
+   "listing": "74cb211bc7",
+   "title": "Parametric - 2027 Investment Research Internship - (Minneapolis)",
+   "company": "Morgan Stanley",
+   "grade": "C+",
+   "pct": 65,
+   "tag": "target",
+   "fitXchance": 53,
+   "pos": [
+    "You have worked here before",
+    "Skills the posting asks for",
+    "Your major is one the posting names"
+   ],
+   "neg": [
+    "Core skills not on your resume",
+    "No related experience yet"
+   ],
+   "confidence": "medium"
+  }
+ ],
+ "mono": []
+}

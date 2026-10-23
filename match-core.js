@@ -155,6 +155,10 @@ MC.score=function(x,P,C,W){const title=norm(x.title),ind=x.industry||x.category|
  if(W.strictness&&W.strictness!==1)pct=100*Math.pow(Math.max(0,pct)/100,W.strictness);}
  // elite firms (sub-1% acceptance, cited in config.json): a weak profile can't grade above D/C-
  const EF=W.eliteFirm;let elite=null;if(EF&&firm&&+firm.tier<=EF.maxTier){if(!rel.length){pct=Math.min(pct,EF.noRelatedExpCap);elite=`${firm.firm} accepts under 1% of intern applicants, and you have no related experience yet`}else if(!P.gpa||P.gpa<(+firm.gpaBar||0)){pct=Math.min(pct,EF.belowGpaBarCap);elite=`${firm.firm} accepts under 1% of intern applicants${P.gpa?`; your GPA is under the ${firm.gpaBar} most applicants have`:'; add your GPA'}`}}
+ /* V14.3 §5: open-entry floor. Generalist operations / store-leadership roles and ungrouped community roles at accessible
+    employers (tier 4-5) hire from any major, so a different major is a gap, not a near-zero chance. Weights: specs/ref/v14.3-research.md */
+ {const OE=W.openEntry||{floor:45,groups:['ops'],minTier:4};let ti=null;try{ti=MC.tierOf&&v12?MC.tierOf(x,C,v12.S):null}catch(e){}
+  const tl=ti&&ti.t?+ti.t:null;if(!elite&&tl!=null&&tl>=OE.minTier&&((gx&&OE.groups.includes(gx))||(!gx&&tl>=5))&&pct<OE.floor){pct=OE.floor;neg.push('this role is open to most majors, so the gap is fit, not eligibility')}}
  if(ineligible)pct=Math.min(pct,W.ineligibleCap||40);
  pct=Math.max(0,Math.min(100,Math.round(pct)));
  const known=fit.n+odds.n+prefs.n,kc=known-(P.gpa?0:3)/* V13.3: no GPA lowers confidence, not the grade */,conf=kc>=9?'high':kc>=6?'medium':'low';
@@ -202,5 +206,38 @@ MC.profile=function(pr){pr={...pr,experience:(pr.experience||[]).map(fixExp)};co
 function profileGroups(P,C){const all=new Set(),exp=new Set(),maj=new Set(),ind=new Set();for(const [m,gs] of Object.entries(C.majorGroups||{}))if(P.majorN&&new RegExp('\\b'+m+'\\b').test(P.majorN))gs.forEach(g=>{maj.add(g);all.add(g)});
  for(const i of P.industries)((C.industryGroups||{})[i]||[]).forEach(g=>{ind.add(g);all.add(g)});for(const e of P.exp){e.g=groupsFromText(e.title,C);e.g.forEach(g=>{exp.add(g);all.add(g)})}return{all,exp,maj,ind}}
 MC.hasProfile=pr=>!!(pr&&pr.savedAt);
+/* ===== V14.3 §5 grader extensions (extend, don't replace). Weights and thresholds cited in specs/ref/v14.3-research.md ===== */
+/* Confirmed fields only: when a profile came from a resume, fields the user has not confirmed are dropped before grading. */
+MC.confirmedOnly=pr=>{if(!pr||!pr.resumeConfirmedAt||!Array.isArray(pr.unconfirmed)||!pr.unconfirmed.length)return pr;const q={...pr};for(const k of pr.unconfirmed)delete q[k];return q};
+const q1=s=>{s=String(s||'').replace(/\s+/g,' ').trim();return s?'“'+s+'”':null};
+function factors143(x,P,r){const pos=[],neg=[],req=x.req||{},rsk=(req.sk||[]).map(norm),title=x.title||'';
+ const rel=(P.exp||[]).filter(e=>e.g&&r.group&&e.g.has(r.group));
+ if(rel.length){const e=rel[0],tt=e.org&&e.title.endsWith(' at '+e.org)?e.title.slice(0,-(e.org.length+4)):e.title;pos.push({k:'experience',t:'Related experience',resume:q1([tt,e.org].filter(Boolean).join(', ')),posting:q1(title)})}
+ const hit=P.skills.filter(s=>rsk.includes(s)),miss=rsk.filter(s=>!P.skills.includes(s));
+ if(hit.length)pos.push({k:'skills',t:'Skills the posting asks for',resume:q1(hit.slice(0,3).join(', ')),posting:q1((req.sk||[]).join(', '))});
+ const mj=(req.mj||[]).map(norm);
+ if(P.majorN&&mj.length){const ok=mj.some(m=>P.majorN.includes(m));(ok?pos:neg).push({k:'major',t:ok?'Your major is one the posting names':'The posting names a different major',resume:q1(P.major),posting:q1((req.mj||[]).join(', ')+' majors')})}
+ if(req.gpa&&P.gpa){const ok=P.gpa>=+req.gpa;(ok?pos:neg).push({k:'gpa',t:ok?'GPA meets the stated minimum':'GPA is under the stated minimum',resume:q1('GPA '+P.gpa),posting:q1('minimum GPA '+req.gpa)})}
+ else if(P.gpa>=3.5)pos.push({k:'gpa',t:'Strong GPA',resume:q1('GPA '+P.gpa),posting:null});
+ if(r.pastEmployer)pos.unshift({k:'employer',t:'You have worked here before',resume:q1(x.company),posting:q1(x.company)});
+ if(miss.length)neg.push({k:'skills',t:'Core skills not on your resume',resume:null,posting:q1(miss.slice(0,3).join(', '))});
+ if(!rel.length&&r.group)neg.push({k:'experience',t:'No related experience yet',resume:null,posting:q1(title)});
+ if(r.ineligible){const why=(r.feedback&&r.feedback.verdict&&r.feedback.verdict.why)||'';neg.unshift({k:'gate',t:'Not eligible: '+why,resume:null,posting:q1((x.class_years||[]).join('/')||x.sponsorship||x.title)})}
+ return{pos:pos.slice(0,3),neg:neg.slice(0,3)}}
+/* Missing data lowers confidence, never the grade: list what is missing and say so. */
+function conf143(P){const miss=[];if(!P.gpa)miss.push('GPA');if(!P.skills.length)miss.push('skills');if(!(P.exp||[]).length)miss.push('experience');if(!P.classYear)miss.push('class year');if(!P.majorN)miss.push('major');
+ return{level:miss.length===0?'high':miss.length<=2?'medium':'low',missing:miss,note:miss.length?`Lower confidence: your profile has no ${miss.join(', ')}. This doesn't lower the grade.`:'High confidence: the main fields are filled in.'}}
+/* Fit × chance: rank by fit times chance of an offer; tag reach / target / safety from the final percent and the chance. */
+const T143={safetyPct:75,safetyOdds:60,targetPct:60};
+function tag143(r){if(r.pct==null||r.ineligible)return null;return r.pct>=T143.safetyPct&&r.odds>=T143.safetyOdds?'safety':r.pct>=T143.targetPct?'target':'reach'}
+const score0=MC.score;
+MC.score=function(x,P,C,W){const r=score0(x,P,C,W);if(r.pct==null)return r;const f=factors143(x,P,r);
+ r.v143={eligible:!r.ineligible,reason:r.ineligible?((r.feedback.verdict||{}).why||''):null,label:r.ineligible?'Not eligible':null,fitXchance:Math.round((r.fit||0)*(r.odds||0)/100),tag:tag143(r),pos:f.pos,neg:f.neg,next:((r.feedback||{}).actions||[]).slice(0,3),confidence:conf143(P)};return r};
+/* Top (best fit × chance) and Realistic (target or safety only) lists. Ineligible listings never appear. */
+MC.rank143=(items,n)=>{n=n||10;const ok=items.filter(i=>i.r&&i.r.v143&&i.r.v143.eligible);
+ const top=[...ok].sort((a,b)=>b.r.v143.fitXchance-a.r.v143.fitXchance||b.r.pct-a.r.pct).slice(0,n);
+ const realistic=ok.filter(i=>i.r.v143.tag!=='reach').sort((a,b)=>b.r.pct-a.r.pct||b.r.v143.fitXchance-a.r.v143.fitXchance).slice(0,n);return{top,realistic}};
+MC.T143=T143;
+const profile0=MC.profile;MC.profile=pr=>profile0(MC.confirmedOnly(pr));
 G.MatchCore=MC;
 })(typeof self!=='undefined'?self:window);

@@ -33,7 +33,7 @@ function build(res){const R=res.result;const c=R.contact||{};const e=R.education
  const ssrc=R.skills.hard.flatMap(s=>s.src||[]),csrc=R.certs.flatMap(s=>s.src||[]),lsrc=R.skills.languages.flatMap(s=>s.src||[]);
  return `<div class="mbox rv-box" role="document"><h2 id="rvH" tabindex="-1">Check what we read</h2>
  <p class="rv-priv">🔒 Your resume is read on your device and never uploaded. Nothing is filled in until you confirm.</p>
- <div class="rv-step" id="rvS1"><div class="rv-cols"><section class="rv-src" aria-label="Your resume text"><h3>Your resume</h3><ol id="rvSrc">${srcHtml}</ol></section>
+ <div class="rv-step" id="rvS1"><div class="rv-cols"><section class="rv-src" aria-label="Your resume text"><h3>Your resume</h3><ol id="rvSrc" tabindex="0" aria-label="Resume lines">${srcHtml}</ol></section>
  <section class="rv-cards" aria-label="What we found"><h3>What we found</h3>
  <fieldset class="rv-card"${srcAttr(c.src)}><legend>Contact</legend><div class="rv-g">${fld('Name','name',c.name||'','high',c.src)}${fld('Email','email',c.email||'','high',c.src,{type:'email'})}${fld('Phone','phone',c.phone||'','high',c.src,{type:'tel'})}</div></fieldset>
  <fieldset class="rv-card"${srcAttr(e.src)}><legend>Education</legend><div class="rv-g">

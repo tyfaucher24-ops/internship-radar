@@ -1,45 +1,25 @@
 {
- "updated": "2026-10-23T08:11:35Z",
+ "updated": "2026-10-23T12:53:22Z",
  "open": 11181,
  "open_all": 11181,
  "closing_this_week": 545,
- "upcoming": 1627,
+ "upcoming": 1601,
  "companies_tracked": 2497,
  "companies_with_listings": 1465,
- "duration_s": 223,
+ "duration_s": 253,
  "apply_links": {
-  "at": "2026-10-23T08:15:20+00:00",
+  "at": "2026-10-23T12:57:36+00:00",
   "open": 11352,
   "direct": 10022,
-  "posting": 1269,
-  "none": 61,
-  "checked_this_run": 8017,
-  "ok": 7873,
-  "unknown": 127,
-  "failed": 17,
+  "posting": 1268,
+  "none": 62,
+  "checked_this_run": 7375,
+  "ok": 7250,
+  "unknown": 124,
+  "failed": 1,
   "top_failing_hosts": [
    [
     "zapply.jobs",
-    10
-   ],
-   [
-    "ats.rippling.com",
-    3
-   ],
-   [
-    "www.tower-research.com",
-    2
-   ],
-   [
-    "tower-research.com",
-    1
-   ],
-   [
-    "www.janestreet.com",
-    1
-   ],
-   [
-    "merceruniversity.wd1.myworkdayjobs.com",
     1
    ]
   ],
@@ -54,15 +34,11 @@
    ],
    [
     "www.metacareers.com",
-    51
+    50
    ],
    [
     "jobs.bytedance.com",
     46
-   ],
-   [
-    "amazon.jobs",
-    34
    ],
    [
     "careers.withwaymo.com",
@@ -89,7 +65,7 @@
     24
    ]
   ],
-  "validated_within_24h": 8536
+  "validated_within_24h": 8950
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

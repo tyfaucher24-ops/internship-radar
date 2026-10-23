@@ -16,6 +16,7 @@ async def main():
       mode='panel' if i%5==4 else 'card'
       ids=await pg.evaluate("[...BYID.values()].filter(x=>x.st!=='closed'&&x.st!=='upcoming'&&x.ak).map(x=>x.id)")
       jid=random.choice(ids)
+      await pg.keyboard.press('Escape');await pg.wait_for_timeout(500)
       await pg.evaluate(f"(async()=>{{const x=BYID.get({json.dumps(jid)});await ensureDetail(x);openDrawer(x)}})()");await pg.wait_for_timeout(600)
       sel='#dAct a[data-apply]'
       if mode=='card':  # put that card in view via the search box then click its own button
@@ -27,6 +28,8 @@ async def main():
           await pg.evaluate("(()=>{const q=document.querySelector('#q');q.value='';q.dispatchEvent(new Event('input',{bubbles:true}))})()");await pg.wait_for_timeout(700)
           vis=await pg.evaluate("[...document.querySelectorAll('#vl .card a[data-apply]')].map(a=>a.dataset.apply)")
           jid=random.choice(vis);sel=f'#vl .card[data-id="{jid}"] a[data-apply]'
+      try: await pg.wait_for_selector(sel,state='visible',timeout=8000)
+      except Exception: pass
       a=await pg.query_selector(sel)
       kind=(await a.inner_text()).strip()
       exp=await pg.evaluate(f"(async()=>{{const x=BYID.get({json.dumps(jid)});await ensureDetail(x);return x.apply_link}})()")
@@ -43,7 +46,9 @@ async def main():
         ok=bool(exp) and tok.lower() in url.lower() and not (GENERIC.match(urlsplit(url).path)) and opener
         out.append({'id':jid,'mode':mode,'kind':kind,'expected':exp,'opened':url,'noopener':opener,'ok':ok})
         await t.close()
-      except Exception as e: out.append({'id':jid,'mode':mode,'kind':kind,'ok':False,'why':str(e)[:120]})
+      except Exception as e: out.append({'id':jid,'mode':mode,'kind':kind,'ok':False,'why':str(e)[:200]})
+      try: await pg.wait_for_selector('#apAsk:not([hidden])',state='visible',timeout=1500)
+      except Exception: pass
       ask=await pg.query_selector('#apAsk:not([hidden])');out[-1]['asked']=bool(ask)
       if ask: await pg.click('#apAsk [data-n]')
       await pg.evaluate("(()=>{const q=document.querySelector('#q');if(q){q.value='';q.dispatchEvent(new Event('input',{bubbles:true}))}})()")

@@ -1,0 +1,1357 @@
+[
+ {
+  "id": "4957a2c66f",
+  "company": "Goldman Sachs",
+  "title": "Quantitative Strats Analyst Intern - Americas - Investment Banking",
+  "category": "Quant & Trading",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-08-15",
+  "status": "open",
+  "metro_pop": 1302868,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Dallas",
+    "state": "TX",
+    "lat": 32.79,
+    "lng": -96.77
+   }
+  ],
+  "_field": "quant",
+  "_tier": 1,
+  "_kind": "bulge bracket"
+ },
+ {
+  "id": "4d8bd83e34",
+  "company": "Goldman Sachs",
+  "title": "Summer Analyst Intern - FICC and Equities - Sales and Trading",
+  "category": "Marketing & Sales",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-08-15",
+  "status": "open",
+  "metro_pop": 124130,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "West Palm Beach",
+    "state": "FL",
+    "lat": 26.75,
+    "lng": -80.13
+   }
+  ],
+  "_field": "sandt",
+  "_tier": 1,
+  "_kind": "bulge bracket"
+ },
+ {
+  "id": "33666f862c",
+  "company": "Morgan Stanley",
+  "title": "2027 Investment Management Summer Analyst Program - Fixed Income (Boston)",
+  "category": "Finance & Banking",
+  "role_type": "Internship",
+  "deadline": "2026-10-30",
+  "class_years": [
+   "Junior",
+   "Senior"
+  ],
+  "status": "open",
+  "paid": true,
+  "metro_pop": 653833,
+  "has_desc": true,
+  "ak": "p",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.34,
+    "lng": -71.02
+   }
+  ],
+  "req": {
+   "sk": [
+    "bloomberg",
+    "excel",
+    "financial markets"
+   ],
+   "mj": [
+    "communications"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 2,
+  "_kind": "bulge bracket"
+ },
+ {
+  "id": "74cb211bc7",
+  "company": "Morgan Stanley",
+  "title": "Parametric - 2027 Investment Research Internship - (Minneapolis)",
+  "category": "Finance & Banking",
+  "role_type": "Research internship",
+  "workplace": "Hybrid",
+  "rolling": true,
+  "class_years": [
+   "Junior",
+   "Senior",
+   "Graduate"
+  ],
+  "status": "open",
+  "paid": true,
+  "metro_pop": 425115,
+  "has_desc": true,
+  "ak": "p",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.96,
+    "lng": -93.27
+   }
+  ],
+  "req": {
+   "sk": [
+    "algorithms",
+    "data analysis",
+    "excel",
+    "financial markets",
+    "mathematics",
+    "python",
+    "statistics"
+   ],
+   "mj": [
+    "computer science",
+    "economics",
+    "finance",
+    "mathematics",
+    "statistics"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 2,
+  "_kind": "bulge bracket"
+ },
+ {
+  "id": "963103fd8b",
+  "company": "Baird",
+  "title": "Internship \u2013 Private Wealth Management (Phoenix, AZ Summer 2027)",
+  "category": "Finance & Banking",
+  "role_type": "Internship",
+  "workplace": "On-site",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-10-01",
+  "status": "open",
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Phoenix",
+    "state": "AZ",
+    "lat": 33.57,
+    "lng": -112.09,
+    "pop": 1650070
+   }
+  ],
+  "req": {
+   "sk": [
+    "market research"
+   ],
+   "mj": [
+    "business",
+    "finance"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 3,
+  "_kind": "mid-size bank"
+ },
+ {
+  "id": "427172e22a",
+  "company": "Baird",
+  "title": "Internship - Equity Asset Management Research Analyst, Growth Team (Summer 2027)",
+  "category": "Marketing & Sales",
+  "role_type": "Research internship",
+  "workplace": "On-site",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-08-21",
+  "status": "open",
+  "gpa_min": 3.5,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Milwaukee",
+    "state": "WI",
+    "lat": 43.06,
+    "lng": -87.97
+   }
+  ],
+  "req": {
+   "sk": [
+    "accounting",
+    "bloomberg",
+    "factset"
+   ],
+   "mj": [
+    "accounting",
+    "business",
+    "finance"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 3,
+  "_kind": "mid-size bank"
+ },
+ {
+  "id": "1d83684849",
+  "company": "Piper Sandler",
+  "title": "2027 Summer Internship Program \u2013 Public Finance",
+  "category": "Finance & Banking",
+  "role_type": "Internship",
+  "workplace": "On-site",
+  "class_years": [
+   "Junior",
+   "Senior"
+  ],
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-09-14",
+  "status": "open",
+  "paid": true,
+  "metro_pop": 33980,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Leawood",
+    "state": "KS",
+    "lat": 38.91,
+    "lng": -94.63
+   }
+  ],
+  "req": {
+   "sk": [
+    "excel",
+    "powerpoint"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 3,
+  "_kind": "mid-size bank"
+ },
+ {
+  "id": "abf0949001",
+  "company": "Corient",
+  "title": "Portfolio Implementation Intern (Summer 2027)",
+  "category": "Finance & Banking",
+  "role_type": "Internship",
+  "workplace": "On-site",
+  "class_years": [
+   "Junior"
+  ],
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-10-06",
+  "status": "open",
+  "paid": true,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "state": "TX"
+   },
+   {
+    "state": "IL"
+   }
+  ],
+  "req": {
+   "sk": [
+    "excel",
+    "mathematics"
+   ],
+   "mj": [
+    "economics",
+    "finance",
+    "mathematics"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 3,
+  "_kind": "mid-size wealth firm"
+ },
+ {
+  "id": "d55ae622de",
+  "company": "Apple Bank",
+  "title": "2027 Summer Intern - Retail Banking",
+  "category": "Finance & Banking",
+  "role_type": "Internship",
+  "workplace": "Hybrid",
+  "class_years": [
+   "Junior",
+   "Senior"
+  ],
+  "posted": "2026-10-19",
+  "status": "open",
+  "sponsorship": "Not offered",
+  "paid": true,
+  "gpa_min": 3.0,
+  "metro_pop": 8258035,
+  "has_desc": true,
+  "stale": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-22T21:29",
+  "locations": [
+   {
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.66,
+    "lng": -73.94
+   }
+  ],
+  "req": {
+   "sk": [
+    "excel",
+    "onboarding",
+    "powerpoint"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 4,
+  "_kind": "local bank"
+ },
+ {
+  "id": "919e548712",
+  "company": "Lake Michigan Credit Union",
+  "title": "Premier Banking Intern",
+  "category": "Finance & Banking",
+  "role_type": "Internship",
+  "deadline": "2026-10-27",
+  "class_years": [
+   "Junior",
+   "Senior"
+  ],
+  "posted": "2026-10-13",
+  "status": "open",
+  "metro_pop": 196608,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Grand Rapids",
+    "state": "MI",
+    "lat": 42.96,
+    "lng": -85.66
+   }
+  ],
+  "req": {
+   "sk": [
+    "data analysis"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 5,
+  "_kind": "local credit union"
+ },
+ {
+  "id": "4b69dd9d7e",
+  "company": "Lake Michigan Credit Union",
+  "title": "Small Business Lending Intern",
+  "category": "Business & Operations",
+  "role_type": "Internship",
+  "deadline": "2026-10-27",
+  "class_years": [
+   "Junior",
+   "Senior"
+  ],
+  "posted": "2026-10-13",
+  "status": "open",
+  "metro_pop": 196608,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Grand Rapids",
+    "state": "MI",
+    "lat": 42.96,
+    "lng": -85.66
+   }
+  ],
+  "req": {
+   "sk": [
+    "crm",
+    "due diligence",
+    "excel",
+    "onboarding"
+   ]
+  },
+  "_field": "finance",
+  "_tier": 5,
+  "_kind": "local credit union"
+ },
+ {
+  "id": "8e436f7070",
+  "company": "Jane Street",
+  "title": "Quantitative Trader Intern",
+  "category": "Quant & Trading",
+  "role_type": "Internship",
+  "posted": "2026-07-24",
+  "status": "open",
+  "sponsorship": "Offered",
+  "metro_pop": 8258035,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.66,
+    "lng": -73.94
+   }
+  ],
+  "_field": "quant",
+  "_tier": 1,
+  "_kind": "top quant"
+ },
+ {
+  "id": "e0ac455993",
+  "company": "Jane Street",
+  "title": "Software Engineer Intern",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "posted": "2026-07-24",
+  "status": "open",
+  "sponsorship": "Offered",
+  "metro_pop": 8258035,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-22T17:08",
+  "locations": [
+   {
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.66,
+    "lng": -73.94
+   }
+  ],
+  "_field": "swe",
+  "_tier": 1,
+  "_kind": "top quant"
+ },
+ {
+  "id": "579b953326",
+  "company": "Citadel",
+  "title": "Software Engineer Intern",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "posted": "2026-07-07",
+  "status": "open",
+  "metro_pop": 8258035,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "locations": [
+   {
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.66,
+    "lng": -73.94
+   },
+   {
+    "city": "Greenwich",
+    "state": "CT",
+    "lat": 41.03,
+    "lng": -73.63
+   },
+   {
+    "city": "Miami",
+    "state": "FL",
+    "lat": 25.78,
+    "lng": -80.21
+   },
+   {
+    "city": "Houston",
+    "state": "TX",
+    "lat": 29.79,
+    "lng": -95.39
+   }
+  ],
+  "_field": "swe",
+  "_tier": 1,
+  "_kind": "top quant"
+ },
+ {
+  "id": "eaf831d420",
+  "company": "Boston Consulting Group",
+  "title": "Forward Deployed AI Engineer Intern",
+  "category": "Data & AI",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-10-13",
+  "status": "open",
+  "metro_pop": 2664452,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.34,
+    "lng": -71.02
+   },
+   {
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.84,
+    "lng": -87.68
+   }
+  ],
+  "_field": "swe",
+  "_tier": 1,
+  "_kind": "MBB"
+ },
+ {
+  "id": "79dea78e89",
+  "company": "Google",
+  "title": "Software Engineering Intern",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "posted": "2026-07-24",
+  "status": "open",
+  "metro_pop": 8258035,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "locations": [
+   {
+    "city": "Mountain View",
+    "state": "CA",
+    "lat": 38.01,
+    "lng": -122.12
+   },
+   {
+    "city": "Atlanta",
+    "state": "GA",
+    "lat": 33.76,
+    "lng": -84.42
+   },
+   {
+    "city": "Austin",
+    "state": "TX",
+    "lat": 30.3,
+    "lng": -97.75
+   },
+   {
+    "city": "Boulder",
+    "state": "CO",
+    "lat": 40.02,
+    "lng": -105.25
+   },
+   {
+    "city": "Cambridge",
+    "state": "MA",
+    "lat": 42.38,
+    "lng": -71.12
+   },
+   {
+    "city": "Bellevue",
+    "state": "WA",
+    "lat": 47.6,
+    "lng": -122.16
+   },
+   {
+    "city": "Chicago",
+    "state": "IL",
+    "lat": 41.84,
+    "lng": -87.68
+   },
+   {
+    "city": "Houston",
+    "state": "TX",
+    "lat": 29.79,
+    "lng": -95.39
+   },
+   {
+    "city": "Irvine",
+    "state": "CA",
+    "lat": 33.68,
+    "lng": -117.77
+   },
+   {
+    "city": "Kirkland",
+    "state": "WA",
+    "lat": 47.7,
+    "lng": -122.2
+   },
+   {
+    "city": "Los Angeles",
+    "state": "CA",
+    "lat": 34.02,
+    "lng": -118.41
+   },
+   {
+    "city": "Madison",
+    "state": "WI",
+    "lat": 43.09,
+    "lng": -89.43
+   },
+   {
+    "city": "New York",
+    "state": "NY",
+    "lat": 40.66,
+    "lng": -73.94
+   },
+   {
+    "city": "Palo Alto",
+    "state": "CA",
+    "lat": 37.4,
+    "lng": -122.14
+   },
+   {
+    "city": "Portland",
+    "state": "OR",
+    "lat": 45.54,
+    "lng": -122.65
+   },
+   {
+    "city": "Pittsburgh",
+    "state": "PA",
+    "lat": 40.44,
+    "lng": -79.98
+   },
+   {
+    "city": "Raleigh",
+    "state": "NC",
+    "lat": 35.83,
+    "lng": -78.64
+   },
+   {
+    "city": "Durham",
+    "state": "NC",
+    "lat": 35.98,
+    "lng": -78.9
+   },
+   {
+    "city": "Reston",
+    "state": "VA",
+    "lat": 38.95,
+    "lng": -77.35
+   },
+   {
+    "city": "Redmond",
+    "state": "WA",
+    "lat": 47.68,
+    "lng": -122.12
+   },
+   {
+    "city": "Redwood City",
+    "state": "CA",
+    "lat": 37.52,
+    "lng": -122.21
+   },
+   {
+    "city": "San Diego",
+    "state": "CA",
+    "lat": 32.81,
+    "lng": -117.14
+   },
+   {
+    "city": "Goleta",
+    "state": "CA",
+    "lat": 34.44,
+    "lng": -119.86
+   },
+   {
+    "city": "San Bruno",
+    "state": "CA",
+    "lat": 37.63,
+    "lng": -122.43
+   },
+   {
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.62,
+    "lng": -122.35
+   },
+   {
+    "city": "San Francisco",
+    "state": "CA",
+    "lat": 37.73,
+    "lng": -123.03
+   },
+   {
+    "city": "San Jose",
+    "state": "CA",
+    "lat": 37.3,
+    "lng": -121.81
+   },
+   {
+    "city": "Santa Cruz",
+    "state": "CA",
+    "lat": 36.97,
+    "lng": -122.04
+   },
+   {
+    "city": "South San Francisco",
+    "state": "CA",
+    "lat": 37.66,
+    "lng": -122.38
+   },
+   {
+    "city": "Sunnyvale",
+    "state": "CA",
+    "lat": 37.39,
+    "lng": -122.03
+   }
+  ],
+  "_field": "swe",
+  "_tier": 1,
+  "_kind": "big tech"
+ },
+ {
+  "id": "6bce2f338a",
+  "company": "Meta",
+  "title": "Software Engineer Intern",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "posted": "2026-10-06",
+  "status": "open",
+  "metro_pop": 755078,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.62,
+    "lng": -122.35
+   },
+   {
+    "city": "Menlo Park",
+    "state": "CA",
+    "lat": 37.48,
+    "lng": -122.15
+   },
+   {
+    "city": "Bellevue",
+    "state": "WA",
+    "lat": 47.6,
+    "lng": -122.16
+   }
+  ],
+  "_field": "swe",
+  "_tier": 1,
+  "_kind": "big tech"
+ },
+ {
+  "id": "80abb79001",
+  "company": "Microsoft",
+  "title": "Software Engineer Intern, CoreAI",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "posted": "2026-08-03",
+  "status": "open",
+  "loc_label": "Remote/Unspecified",
+  "fs": "2026-10-20",
+  "_field": "swe",
+  "_tier": 2,
+  "_kind": "big tech"
+ },
+ {
+  "id": "08d2e391d4",
+  "company": "Amazon",
+  "title": "Software Development Engineer Intern - Summer",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "terms": [
+   "Winter 2027",
+   "Summer 2027",
+   "Fall 2027"
+  ],
+  "season": "Winter",
+  "year": 2027,
+  "posted": "2026-09-18",
+  "status": "open",
+  "metro_pop": 755078,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Seattle",
+    "state": "WA",
+    "lat": 47.62,
+    "lng": -122.35
+   },
+   {
+    "city": "Arlington",
+    "state": "VA",
+    "lat": 38.88,
+    "lng": -77.1
+   }
+  ],
+  "_field": "swe",
+  "_tier": 2,
+  "_kind": "big tech"
+ },
+ {
+  "id": "93d140a18c",
+  "company": "NVIDIA",
+  "title": "Systems Software Intern, Aerial PHY- Summer 2027",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "status": "open",
+  "ak": "p",
+  "fs": "2026-10-22",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "state": "CA"
+   }
+  ],
+  "_field": "swe",
+  "_tier": 2,
+  "_kind": "big tech"
+ },
+ {
+  "id": "87865ffcdf",
+  "company": "Datadog",
+  "title": "Software Engineer Intern - Summer",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-09-08",
+  "status": "open",
+  "metro_pop": 653833,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Boston",
+    "state": "MA",
+    "lat": 42.34,
+    "lng": -71.02
+   }
+  ],
+  "_field": "swe",
+  "_tier": 2,
+  "_kind": "mid-size tech"
+ },
+ {
+  "id": "66b972393f",
+  "company": "Enterprise Holdings",
+  "title": "Software Engineer Intern - Summer 2027",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-09-16",
+  "status": "open",
+  "metro_pop": 281754,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "St. Louis",
+    "state": "MO",
+    "lat": 38.64,
+    "lng": -90.24
+   }
+  ],
+  "_field": "swe",
+  "_tier": 3,
+  "_kind": "non-tech large"
+ },
+ {
+  "id": "edf93e34fe",
+  "company": "Baird",
+  "title": "Internship \u2013 Software Developer (Year-Round)",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "workplace": "Hybrid",
+  "posted": "2026-10-05",
+  "status": "open",
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Milwaukee",
+    "state": "WI",
+    "lat": 43.06,
+    "lng": -87.97
+   }
+  ],
+  "req": {
+   "sk": [
+    "algorithms",
+    "c#",
+    "data structures",
+    "data visualization",
+    "html",
+    "java",
+    "javascript",
+    "power bi",
+    "python",
+    "sql"
+   ],
+   "mj": [
+    "computer science",
+    "engineering",
+    "information systems"
+   ]
+  },
+  "_field": "swe",
+  "_tier": 3,
+  "_kind": "mid-size bank"
+ },
+ {
+  "id": "4234834e37",
+  "company": "Northrop Grumman",
+  "title": "2027 Software Engineering Intern - Roy UT",
+  "category": "Software & IT",
+  "role_type": "Internship",
+  "deadline": "2026-10-24",
+  "posted": "2026-10-21",
+  "status": "open",
+  "citizenship": true,
+  "paid": true,
+  "gpa_min": 3.7,
+  "metro_pop": 38592,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Roy",
+    "state": "UT",
+    "lat": 41.17,
+    "lng": -112.05
+   }
+  ],
+  "req": {
+   "mj": [
+    "computer science",
+    "engineering"
+   ]
+  },
+  "_field": "swe",
+  "_tier": 3,
+  "_kind": "defense"
+ },
+ {
+  "id": "b33ba30781",
+  "company": "State Farm",
+  "title": "Data Science Intern - Magnet Program",
+  "category": "Data & AI",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027",
+   "Spring 2028",
+   "Summer 2028",
+   "Fall 2028",
+   "Spring 2029"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-09-24",
+  "status": "open",
+  "metro_pop": 189834,
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Tempe",
+    "state": "AZ",
+    "lat": 33.39,
+    "lng": -111.93
+   }
+  ],
+  "_field": "data",
+  "_tier": 3,
+  "_kind": "insurer"
+ },
+ {
+  "id": "870f1d3275",
+  "company": "PricewaterhouseCoopers (PwC)",
+  "title": "Oklahoma City - Audit - Intern - Winter 2027",
+  "category": "Accounting & Audit",
+  "role_type": "Internship",
+  "deadline": "2026-10-24",
+  "terms": [
+   "Winter 2027"
+  ],
+  "season": "Winter",
+  "year": 2027,
+  "posted": "2026-10-16",
+  "status": "open",
+  "metro_pop": 702767,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Oklahoma City",
+    "state": "OK",
+    "lat": 35.47,
+    "lng": -97.51
+   }
+  ],
+  "req": {
+   "sk": [
+    "accounting",
+    "auditing",
+    "data analysis",
+    "gaap"
+   ],
+   "mj": [
+    "accounting"
+   ]
+  },
+  "_field": "acct",
+  "_tier": 3,
+  "_kind": "Big 4"
+ },
+ {
+  "id": "9b839c3735",
+  "company": "Deloitte",
+  "title": "Audit & Assurance Intern (Financial Statement Audit)",
+  "category": "Accounting & Audit",
+  "role_type": "Internship",
+  "deadline": "2026-10-25",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "status": "open",
+  "ak": "p",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Honolulu",
+    "state": "HI",
+    "lat": 21.31,
+    "lng": -157.86
+   }
+  ],
+  "_field": "acct",
+  "_tier": 3,
+  "_kind": "Big 4"
+ },
+ {
+  "id": "da0e9cf243",
+  "company": "Corient",
+  "title": "Tax Intern: Spring 2027",
+  "category": "Accounting & Audit",
+  "role_type": "Internship",
+  "terms": [
+   "Spring 2027"
+  ],
+  "season": "Spring",
+  "year": 2027,
+  "posted": "2026-10-08",
+  "status": "open",
+  "paid": true,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "state": "CT"
+   }
+  ],
+  "req": {
+   "sk": [
+    "accounting",
+    "excel"
+   ],
+   "mj": [
+    "accounting"
+   ]
+  },
+  "_field": "acct",
+  "_tier": 4,
+  "_kind": "mid-size wealth firm"
+ },
+ {
+  "id": "79bca30f8b",
+  "company": "Target",
+  "title": "Store Executive Intern (Store Leadership Intern) \u2013 Greater San Diego, CA (Starting Summer 2027)",
+  "category": "Other",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-10-22",
+  "status": "open",
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-22",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "San Diego",
+    "state": "CA",
+    "lat": 32.81,
+    "lng": -117.14
+   }
+  ],
+  "req": {
+   "sk": [
+    "excel"
+   ],
+   "mj": [
+    "business"
+   ]
+  },
+  "_field": "ops",
+  "_tier": 4,
+  "_kind": "retail"
+ },
+ {
+  "id": "9809d815bd",
+  "company": "Walmart",
+  "title": "2026 Intern Conversion: 2027 Grocery Area Manager",
+  "category": "Other",
+  "role_type": "Internship",
+  "deadline": "2026-10-23",
+  "terms": [
+   "Summer 2026"
+  ],
+  "season": "Summer",
+  "year": 2026,
+  "past_term": true,
+  "posted": "2026-10-16",
+  "status": "open",
+  "sponsorship": "Not offered",
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Belvidere",
+    "state": "IL",
+    "lat": 42.27,
+    "lng": -88.89
+   }
+  ],
+  "req": {
+   "sk": [
+    "logistics"
+   ]
+  },
+  "_field": "ops",
+  "_tier": 4,
+  "_kind": "retail"
+ },
+ {
+  "id": "832f246710",
+  "company": "Target",
+  "title": "Designer Intern, Owned Brands- Minneapolis, MN (Starting Summer, 2027)",
+  "category": "Marketing & Sales",
+  "role_type": "Internship",
+  "terms": [
+   "Summer 2027"
+  ],
+  "season": "Summer",
+  "year": 2027,
+  "posted": "2026-10-22",
+  "status": "open",
+  "paid": true,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-22",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Minneapolis",
+    "state": "MN",
+    "lat": 44.96,
+    "lng": -93.27,
+    "pop": 425115
+   }
+  ],
+  "req": {
+   "sk": [
+    "cad"
+   ]
+  },
+  "_field": "design",
+  "_tier": 3,
+  "_kind": "retail"
+ },
+ {
+  "id": "897f37d2ec",
+  "company": "Sherwin-Williams",
+  "title": "2027 Quality Intern - Grove City, OH",
+  "category": "Engineering & Hardware",
+  "role_type": "Internship",
+  "status": "open",
+  "metro_pop": 42782,
+  "ak": "p",
+  "fs": "2026-10-22",
+  "lv": "2026-10-23T00:05",
+  "locations": [
+   {
+    "city": "Grove City",
+    "state": "OH",
+    "lat": 39.89,
+    "lng": -83.1
+   }
+  ],
+  "_field": "eng",
+  "_tier": 4,
+  "_kind": "manufacturing"
+ },
+ {
+  "id": "55e58dbc24",
+  "company": "Baird",
+  "title": "Internship \u2013 Marketing (Year-Round)",
+  "category": "Marketing & Sales",
+  "role_type": "Internship",
+  "workplace": "Hybrid",
+  "posted": "2026-09-10",
+  "status": "open",
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-21",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Milwaukee",
+    "state": "WI",
+    "lat": 43.06,
+    "lng": -87.97
+   }
+  ],
+  "req": {
+   "sk": [
+    "customer service",
+    "email marketing",
+    "financial markets",
+    "google analytics",
+    "social media"
+   ],
+   "mj": [
+    "business",
+    "communications",
+    "marketing"
+   ]
+  },
+  "_field": "mkt",
+  "_tier": 3,
+  "_kind": "mid-size bank"
+ },
+ {
+  "id": "3c5bc1a76e",
+  "company": "Lake Michigan Credit Union",
+  "title": "Community Relations Intern",
+  "category": "Nonprofit & Education",
+  "role_type": "Internship",
+  "workplace": "On-site",
+  "deadline": "2026-10-27",
+  "class_years": [
+   "Junior",
+   "Senior"
+  ],
+  "terms": [
+   "Winter 2027"
+  ],
+  "season": "Winter",
+  "year": 2027,
+  "posted": "2026-10-20",
+  "status": "open",
+  "metro_pop": 196608,
+  "has_desc": true,
+  "ak": "d",
+  "fs": "2026-10-20",
+  "lv": "2026-10-23T00:35",
+  "locations": [
+   {
+    "city": "Grand Rapids",
+    "state": "MI",
+    "lat": 42.96,
+    "lng": -85.66
+   }
+  ],
+  "req": {
+   "sk": [
+    "logistics"
+   ]
+  },
+  "_field": "mkt",
+  "_tier": 5,
+  "_kind": "local credit union"
+ }
+]

@@ -1,0 +1,2719 @@
+{
+ "_note": "V13.3 \u00a77a: 50 fictional students (made-up names). Schools are real names used only as the school field. _meta is for the test, not the grader.",
+ "g01_elite_swe": {
+  "savedAt": "x",
+  "name": "Avery Alvarez",
+  "school": "Harvard University",
+  "major": "Computer Science",
+  "classYear": "Freshman",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "react",
+   "c++",
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "d3",
+    "mil"
+   ]
+  }
+ },
+ "g02_elite_eng": {
+  "savedAt": "x",
+  "name": "Jordan Hughes",
+  "school": "University of Pennsylvania",
+  "major": "Mechanical Engineering",
+  "classYear": "Sophomore",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "matlab"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Engineering Co-op",
+    "org": "Parts Supplier",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "eng",
+   "internships": 1,
+   "extras": []
+  }
+ },
+ "g03_elite_swe": {
+  "savedAt": "x",
+  "name": "Riley Okafor",
+  "school": "Princeton University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "2.7",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "react"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Startup",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "swe",
+   "internships": 1,
+   "extras": [
+    "res"
+   ]
+  }
+ },
+ "g04_elite_finance": {
+  "savedAt": "x",
+  "name": "Morgan Brooks",
+  "school": "Yale University",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "3.9",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Summer Analyst",
+    "org": "Regional Bank",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Finance Intern",
+    "org": "Local Credit Union",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "finance",
+   "internships": 2,
+   "extras": [
+    "d1",
+    "d3"
+   ]
+  }
+ },
+ "g05_elite_swe": {
+  "savedAt": "x",
+  "name": "Casey Ibarra",
+  "school": "Stanford University",
+  "major": "Computer Science",
+  "classYear": "Freshman",
+  "gpa": "2.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "d3",
+    "res"
+   ]
+  }
+ },
+ "g06_elite_finance": {
+  "savedAt": "x",
+  "name": "Taylor Patel",
+  "school": "Massachusetts Institute of Technology",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Lazard",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Part-time Cashier",
+    "org": "Grocery Store",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "finance",
+   "internships": 1,
+   "extras": [
+    "work"
+   ]
+  }
+ },
+ "g07_elite_finance": {
+  "savedAt": "x",
+  "name": "Quinn Chen",
+  "school": "Columbia University",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.1",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Summer Analyst",
+    "org": "Regional Bank",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "finance",
+   "internships": 1,
+   "extras": [
+    "mil",
+    "found"
+   ]
+  }
+ },
+ "g08_elite_ops": {
+  "savedAt": "x",
+  "name": "Rowan Jensen",
+  "school": "Dartmouth College",
+  "major": "Business Administration",
+  "classYear": "Senior",
+  "gpa": "2.9",
+  "sponsorship": "no",
+  "industries": [
+   "Business & Operations"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "customer service"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Operations Intern",
+    "org": "Distribution Center",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "Treasurer",
+    "org": "Greek chapter",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "ops",
+   "internships": 1,
+   "extras": [
+    "greek"
+   ]
+  }
+ },
+ "g09_elite_design": {
+  "savedAt": "x",
+  "name": "Skyler Ramos",
+  "school": "University of Chicago",
+  "major": "Graphic Design",
+  "classYear": "Freshman",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Design & Creative"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "adobe illustrator",
+   "photoshop",
+   "figma"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Graphic Design class project",
+    "org": "University of Chicago",
+    "bullets": [
+     "Team project for a course"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "design",
+   "internships": 0,
+   "extras": []
+  }
+ },
+ "g10_elite_acct": {
+  "savedAt": "x",
+  "name": "Dakota Diaz",
+  "school": "Duke University",
+  "major": "Accounting",
+  "classYear": "Sophomore",
+  "gpa": "2.7",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "accounting",
+   "excel",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Accounting Intern",
+    "org": "Local CPA Firm",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "elite",
+   "field": "acct",
+   "internships": 1,
+   "extras": [
+    "d1",
+    "lead"
+   ]
+  }
+ },
+ "g11_strong_finance": {
+  "savedAt": "x",
+  "name": "Reese Kim",
+  "school": "University of Michigan",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "powerpoint",
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Finance Intern",
+    "org": "Local Credit Union",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Lazard",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "finance",
+   "internships": 2,
+   "extras": [
+    "lead",
+    "mil"
+   ]
+  }
+ },
+ "g12_strong_acct": {
+  "savedAt": "x",
+  "name": "Parker Shah",
+  "school": "Georgetown University",
+  "major": "Accounting",
+  "classYear": "Senior",
+  "gpa": "2.7",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Accounting Intern",
+    "org": "Local CPA Firm",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Accounting Intern",
+    "org": "Local CPA Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "Treasurer",
+    "org": "Greek chapter",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "acct",
+   "internships": 2,
+   "extras": [
+    "d1",
+    "greek"
+   ]
+  }
+ },
+ "g13_strong_finance": {
+  "savedAt": "x",
+  "name": "Emerson Ellis",
+  "school": "New York University",
+  "major": "Finance",
+  "classYear": "Freshman",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "financial modeling",
+   "excel",
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "finance",
+   "internships": 0,
+   "extras": [
+    "mil",
+    "found"
+   ]
+  }
+ },
+ "g14_strong_design": {
+  "savedAt": "x",
+  "name": "Finley Lopez",
+  "school": "University of Virginia",
+  "major": "Graphic Design",
+  "classYear": "Sophomore",
+  "gpa": "3.1",
+  "sponsorship": "no",
+  "industries": [
+   "Design & Creative"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "figma",
+   "photoshop"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Design Intern",
+    "org": "Local Studio",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "design",
+   "internships": 1,
+   "extras": [
+    "d3",
+    "mil"
+   ]
+  }
+ },
+ "g15_strong_swe": {
+  "savedAt": "x",
+  "name": "Hayden Turner",
+  "school": "Cornell University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Startup",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineer Intern",
+    "org": "Capital One",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "swe",
+   "internships": 2,
+   "extras": [
+    "d3",
+    "lead"
+   ]
+  }
+ },
+ "g16_strong_ops": {
+  "savedAt": "x",
+  "name": "Jesse Foster",
+  "school": "University of California, Berkeley",
+  "major": "Business Administration",
+  "classYear": "Senior",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Business & Operations"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "customer service",
+   "scheduling"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Business Administration class project",
+    "org": "University of California, Berkeley",
+    "bullets": [
+     "Team project for a course"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "ops",
+   "internships": 0,
+   "extras": []
+  }
+ },
+ "g17_strong_mkt": {
+  "savedAt": "x",
+  "name": "Kendall Moreno",
+  "school": "Carnegie Mellon University",
+  "major": "Marketing",
+  "classYear": "Freshman",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "canva",
+   "social media",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "mkt",
+   "internships": 0,
+   "extras": [
+    "res"
+   ]
+  }
+ },
+ "g18_strong_acct": {
+  "savedAt": "x",
+  "name": "Logan Vargas",
+  "school": "University of Notre Dame",
+  "major": "Accounting",
+  "classYear": "Sophomore",
+  "gpa": "2.9",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "quickbooks",
+   "accounting",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "acct",
+   "internships": 0,
+   "extras": [
+    "d3",
+    "found"
+   ]
+  }
+ },
+ "g19_strong_eng": {
+  "savedAt": "x",
+  "name": "Micah Gupta",
+  "school": "Georgia Institute of Technology",
+  "major": "Mechanical Engineering",
+  "classYear": "Junior",
+  "gpa": "4.0",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "matlab"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Engineering Co-op",
+    "org": "Parts Supplier",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "eng",
+   "internships": 1,
+   "extras": [
+    "d3",
+    "mil"
+   ]
+  }
+ },
+ "g20_strong_finance": {
+  "savedAt": "x",
+  "name": "Noel Nguyen",
+  "school": "Northwestern University",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "2.5",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "powerpoint",
+   "accounting",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "strong",
+   "field": "finance",
+   "internships": 0,
+   "extras": [
+    "d1",
+    "res"
+   ]
+  }
+ },
+ "g21_mid_finance": {
+  "savedAt": "x",
+  "name": "Oakley Alvarez",
+  "school": "Pennsylvania State University",
+  "major": "Finance",
+  "classYear": "Freshman",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "accounting",
+   "excel",
+   "financial modeling"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Part-time Cashier",
+    "org": "Grocery Store",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "finance",
+   "internships": 0,
+   "extras": [
+    "work"
+   ]
+  }
+ },
+ "g22_mid_swe": {
+  "savedAt": "x",
+  "name": "Peyton Hughes",
+  "school": "Indiana University",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "2.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++",
+   "java",
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineer Intern",
+    "org": "Capital One",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "swe",
+   "internships": 1,
+   "extras": [
+    "d1",
+    "mil"
+   ]
+  }
+ },
+ "g23_mid_swe": {
+  "savedAt": "x",
+  "name": "Remy Okafor",
+  "school": "Rutgers University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Startup",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "swe",
+   "internships": 1,
+   "extras": [
+    "lead",
+    "found"
+   ]
+  }
+ },
+ "g24_mid_acct": {
+  "savedAt": "x",
+  "name": "Sage Brooks",
+  "school": "University of Arizona",
+  "major": "Accounting",
+  "classYear": "Senior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Accounting Intern",
+    "org": "Local CPA Firm",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Accounting Intern",
+    "org": "Local CPA Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "acct",
+   "internships": 2,
+   "extras": [
+    "d3",
+    "res"
+   ]
+  }
+ },
+ "g25_mid_mkt": {
+  "savedAt": "x",
+  "name": "Tatum Ibarra",
+  "school": "Ohio State University",
+  "major": "Marketing",
+  "classYear": "Freshman",
+  "gpa": "2.7",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "mkt",
+   "internships": 0,
+   "extras": [
+    "lead",
+    "mil"
+   ]
+  }
+ },
+ "g26_mid_data": {
+  "savedAt": "x",
+  "name": "Avery Patel",
+  "school": "Texas A&M University",
+  "major": "Statistics",
+  "classYear": "Sophomore",
+  "gpa": "3.9",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "machine learning"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "data",
+   "internships": 0,
+   "extras": [
+    "d3",
+    "mil"
+   ]
+  }
+ },
+ "g27_mid_quant": {
+  "savedAt": "x",
+  "name": "Jordan Chen",
+  "school": "University of Florida",
+  "major": "Mathematics",
+  "classYear": "Junior",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Quant & Trading"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "statistics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Quantitative Research Intern",
+    "org": "University Lab",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "quant",
+   "internships": 1,
+   "extras": [
+    "found"
+   ]
+  }
+ },
+ "g28_mid_finance": {
+  "savedAt": "x",
+  "name": "Riley Jensen",
+  "school": "Purdue University",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Summer Analyst",
+    "org": "Regional Bank",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Part-time Cashier",
+    "org": "Grocery Store",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "finance",
+   "internships": 1,
+   "extras": [
+    "d1",
+    "work"
+   ]
+  }
+ },
+ "g29_mid_finance": {
+  "savedAt": "x",
+  "name": "Morgan Ramos",
+  "school": "Arizona State University",
+  "major": "Finance",
+  "classYear": "Freshman",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "powerpoint",
+   "accounting",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "finance",
+   "internships": 0,
+   "extras": [
+    "mil",
+    "found"
+   ]
+  }
+ },
+ "g30_mid_finance": {
+  "savedAt": "x",
+  "name": "Casey Diaz",
+  "school": "University of Iowa",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Lazard",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "finance",
+   "internships": 1,
+   "extras": [
+    "d1",
+    "res"
+   ]
+  }
+ },
+ "g31_mid_swe": {
+  "savedAt": "x",
+  "name": "Taylor Kim",
+  "school": "Michigan State University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "react"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Startup",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineer Intern",
+    "org": "Capital One",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "swe",
+   "internships": 2,
+   "extras": [
+    "d3"
+   ]
+  }
+ },
+ "g32_mid_quant": {
+  "savedAt": "x",
+  "name": "Quinn Shah",
+  "school": "University of Maryland",
+  "major": "Mathematics",
+  "classYear": "Senior",
+  "gpa": "3.0",
+  "sponsorship": "no",
+  "industries": [
+   "Quant & Trading"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Trading Intern",
+    "org": "Prop Trading Firm",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "quant",
+   "internships": 1,
+   "extras": [
+    "d1"
+   ]
+  }
+ },
+ "g33_mid_swe": {
+  "savedAt": "x",
+  "name": "Rowan Ellis",
+  "school": "Virginia Tech",
+  "major": "Computer Science",
+  "classYear": "Freshman",
+  "gpa": "2.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++",
+   "java",
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "d3",
+    "found"
+   ]
+  }
+ },
+ "g34_mid_swe": {
+  "savedAt": "x",
+  "name": "Skyler Lopez",
+  "school": "University of Pittsburgh",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++",
+   "react",
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "d1"
+   ]
+  }
+ },
+ "g35_mid_finance": {
+  "savedAt": "x",
+  "name": "Dakota Turner",
+  "school": "Clemson University",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "2.7",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "accounting",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Finance Intern",
+    "org": "Local Credit Union",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "mid",
+   "field": "finance",
+   "internships": 1,
+   "extras": [
+    "d3",
+    "mil"
+   ]
+  }
+ },
+ "g36_lesser_swe": {
+  "savedAt": "x",
+  "name": "Reese Foster",
+  "school": "Kennesaw State University",
+  "major": "Computer Science",
+  "classYear": "Senior",
+  "gpa": "3.1",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineer Intern",
+    "org": "Capital One",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Startup",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "swe",
+   "internships": 2,
+   "extras": [
+    "d1",
+    "res"
+   ]
+  }
+ },
+ "g37_lesser_swe": {
+  "savedAt": "x",
+  "name": "Parker Moreno",
+  "school": "Montclair State University",
+  "major": "Computer Science",
+  "classYear": "Freshman",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Research",
+    "title": "Undergraduate Research Assistant",
+    "org": "Faculty Lab",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "res"
+   ]
+  }
+ },
+ "g38_lesser_finance": {
+  "savedAt": "x",
+  "name": "Emerson Vargas",
+  "school": "University of North Texas",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "4.0",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Sergeant, U.S. Army Reserve",
+    "org": "U.S. Army Reserve",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "finance",
+   "internships": 0,
+   "extras": [
+    "d3",
+    "mil"
+   ]
+  }
+ },
+ "g39_lesser_data": {
+  "savedAt": "x",
+  "name": "Finley Gupta",
+  "school": "Cleveland State University",
+  "major": "Statistics",
+  "classYear": "Junior",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "sql",
+   "machine learning",
+   "statistics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "County Health Department",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "data",
+   "internships": 1,
+   "extras": [
+    "d1"
+   ]
+  }
+ },
+ "g40_lesser_data": {
+  "savedAt": "x",
+  "name": "Hayden Nguyen",
+  "school": "Fresno State University",
+  "major": "Statistics",
+  "classYear": "Senior",
+  "gpa": "3.1",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "sql",
+   "statistics",
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "County Health Department",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "data",
+   "internships": 1,
+   "extras": [
+    "d1"
+   ]
+  }
+ },
+ "g41_lesser_finance": {
+  "savedAt": "x",
+  "name": "Jesse Alvarez",
+  "school": "Wright State University",
+  "major": "Finance",
+  "classYear": "Freshman",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "financial modeling"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "finance",
+   "internships": 0,
+   "extras": [
+    "d1",
+    "lead"
+   ]
+  }
+ },
+ "g42_lesser_data": {
+  "savedAt": "x",
+  "name": "Kendall Hughes",
+  "school": "Miami Dade College",
+  "major": "Statistics",
+  "classYear": "Sophomore",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "machine learning",
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "Treasurer",
+    "org": "Greek chapter",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "data",
+   "internships": 0,
+   "extras": [
+    "found",
+    "greek"
+   ]
+  }
+ },
+ "g43_lesser_swe": {
+  "savedAt": "x",
+  "name": "Logan Okafor",
+  "school": "Valencia College",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "2.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "d1",
+    "d3"
+   ]
+  }
+ },
+ "g44_lesser_mkt": {
+  "savedAt": "x",
+  "name": "Micah Brooks",
+  "school": "Austin Community College",
+  "major": "Marketing",
+  "classYear": "Sophomore",
+  "gpa": "3.9",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "canva",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "mkt",
+   "internships": 0,
+   "extras": [
+    "d1",
+    "d3"
+   ]
+  }
+ },
+ "g45_lesser_quant": {
+  "savedAt": "x",
+  "name": "Noel Ibarra",
+  "school": "Northern Virginia Community College",
+  "major": "Mathematics",
+  "classYear": "Freshman",
+  "gpa": "2.9",
+  "sponsorship": "no",
+  "industries": [
+   "Quant & Trading"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "probability"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "quant",
+   "internships": 0,
+   "extras": [
+    "d1",
+    "found"
+   ]
+  }
+ },
+ "g46_lesser_swe": {
+  "savedAt": "x",
+  "name": "Oakley Patel",
+  "school": "Grand Valley State University",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Part-time Cashier",
+    "org": "Grocery Store",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "work"
+   ]
+  }
+ },
+ "g47_lesser_finance": {
+  "savedAt": "x",
+  "name": "Peyton Chen",
+  "school": "Western Kentucky University",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "financial modeling"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Finance Intern",
+    "org": "Local Credit Union",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Founder",
+    "org": "Campus Tutoring Startup",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "finance",
+   "internships": 1,
+   "extras": [
+    "d3",
+    "found"
+   ]
+  }
+ },
+ "g48_lesser_acct": {
+  "savedAt": "x",
+  "name": "Remy Jensen",
+  "school": "University of Toledo",
+  "major": "Accounting",
+  "classYear": "Senior",
+  "gpa": "2.7",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Accounting Intern",
+    "org": "Local CPA Firm",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Built analyses and presented results to the team"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "President",
+    "org": "Finance Club",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "Treasurer",
+    "org": "Greek chapter",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "acct",
+   "internships": 1,
+   "extras": [
+    "lead",
+    "greek"
+   ]
+  }
+ },
+ "g49_lesser_swe": {
+  "savedAt": "x",
+  "name": "Sage Ramos",
+  "school": "Sam Houston State University",
+  "major": "Computer Science",
+  "classYear": "Freshman",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Part-time Cashier",
+    "org": "Grocery Store",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "swe",
+   "internships": 0,
+   "extras": [
+    "work"
+   ]
+  }
+ },
+ "g50_lesser_quant": {
+  "savedAt": "x",
+  "name": "Tatum Diaz",
+  "school": "Southern Connecticut State University",
+  "major": "Mathematics",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Quant & Trading"
+  ],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "c++",
+   "statistics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   },
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Athlete",
+    "org": "Athletics",
+    "start": "2023-09",
+    "end": "Present",
+    "bullets": [
+     "15+ hours a week alongside classes"
+    ]
+   }
+  ],
+  "_meta": {
+   "schoolTier": "lesser",
+   "field": "quant",
+   "internships": 0,
+   "extras": [
+    "d1",
+    "d3"
+   ]
+  }
+ }
+}

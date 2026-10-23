@@ -204,7 +204,7 @@
    "Sophomore": 0.6,
    "Junior": 1.2,
    "Senior": 1.6,
-   "Graduate / Master\u2019s": 1.6,
+   "Graduate / Master’s": 1.6,
    "PhD": 1.8,
    "Community college (1st year)": 0.3,
    "Community college (2nd year)": 0.5,
@@ -221,9 +221,12 @@
    "accounting"
   ],
   "fitGate": 0.55,
-  "headroom": 0.8,
-  "penalty": 0.4,
-  "scale": 1,
-  "aNeedsRelatedJob": 89
+  "headroom": 0.75,
+  "penalty": 0.2,
+  "scale": 1.0,
+  "aNeedsRelatedJob": 89,
+  "selTilt": 0.5,
+  "tiltAt": 60,
+  "base": 10
  }
 }

@@ -1,0 +1,1991 @@
+{
+ "_note": "V13.3 \u00a77c: written before run.js was run. band = allowed letters (A,B,C,D,F; +/- ignored). Outlier = 2+ steps from the band.",
+ "pairs": [
+  {
+   "persona": "g01_elite_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.2, 0 relevant internship(s), elite school, d3/mil"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.2, 0 relevant internship(s), elite school, d3/mil"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "edf93e34fe",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.2, 0 relevant internship(s), elite school, d3/mil"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.2, 0 relevant internship(s), elite school, d3/mil"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.2, 0 relevant internship(s), elite school, d3/mil"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.2, 0 relevant internship(s), elite school, d3/mil"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "swe profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g01_elite_swe",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g02_elite_eng",
+   "listing": "897f37d2ec",
+   "band": "AB",
+   "why": "tier 4 manufacturing; GPA 3.6, 1 relevant internship(s), elite school"
+  },
+  {
+   "persona": "g02_elite_eng",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "eng profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g02_elite_eng",
+   "listing": "79bca30f8b",
+   "band": "CD",
+   "why": "different field, but a tier-4 retail ops role is open to most majors"
+  },
+  {
+   "persona": "g02_elite_eng",
+   "listing": "3c5bc1a76e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "tier 2 mid-size tech; GPA 2.7, 1 relevant internship(s), elite school, res"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "66b972393f",
+   "band": "CD",
+   "why": "tier 3 non-tech large; GPA 2.7, 1 relevant internship(s), elite school, res"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "4234834e37",
+   "band": "CD",
+   "why": "tier 3 defense; GPA 2.7, 1 relevant internship(s), elite school, res"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.7, 1 relevant internship(s), elite school, res"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 2.7, 1 relevant internship(s), elite school, res"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.7, 1 relevant internship(s), elite school, res"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g03_elite_swe",
+   "listing": "832f246710",
+   "band": "DF",
+   "why": "swe profile vs a design role: little overlap"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "74cb211bc7",
+   "band": "AB",
+   "why": "tier 2 bulge bracket; GPA 3.9, 2 relevant internship(s), elite school, d1/d3"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Senior"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "1d83684849",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.9, 2 relevant internship(s), elite school, d1/d3"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "919e548712",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.9, 2 relevant internship(s), elite school, d1/d3"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "33666f862c",
+   "band": "AB",
+   "why": "tier 2 bulge bracket; GPA 3.9, 2 relevant internship(s), elite school, d1/d3"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "4b69dd9d7e",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.9, 2 relevant internship(s), elite school, d1/d3"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "79bca30f8b",
+   "band": "CD",
+   "why": "different field, but a tier-4 retail ops role is open to most majors"
+  },
+  {
+   "persona": "g04_elite_finance",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "finance profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.5, 0 relevant internship(s), elite school, d3/res"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 2.5, 0 relevant internship(s), elite school, d3/res"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "4234834e37",
+   "band": "DF",
+   "why": "tier 3 defense; GPA 2.5, 0 relevant internship(s), elite school, d3/res"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.5, 0 relevant internship(s), elite school, d3/res"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 2.5, 0 relevant internship(s), elite school, d3/res"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "tier 2 mid-size tech; GPA 2.5, 0 relevant internship(s), elite school, d3/res"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "832f246710",
+   "band": "DF",
+   "why": "swe profile vs a design role: little overlap"
+  },
+  {
+   "persona": "g05_elite_swe",
+   "listing": "da0e9cf243",
+   "band": "DF",
+   "why": "swe profile vs a acct role: little overlap"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "963103fd8b",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.6, 1 relevant internship(s), elite school, work"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "427172e22a",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.6, 1 relevant internship(s), elite school, work"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g06_elite_finance",
+   "listing": "b33ba30781",
+   "band": "DF",
+   "why": "finance profile vs a data role: little overlap"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "963103fd8b",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "4b69dd9d7e",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "919e548712",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "1d83684849",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "d55ae622de",
+   "band": "AB",
+   "why": "tier 4 local bank; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "33666f862c",
+   "band": "CD",
+   "why": "tier 2 bulge bracket; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "da0e9cf243",
+   "band": "BC",
+   "why": "tier 4 mid-size wealth firm; GPA 3.1, 1 relevant internship(s), elite school, mil/found"
+  },
+  {
+   "persona": "g07_elite_finance",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "finance profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g08_elite_ops",
+   "listing": "79bca30f8b",
+   "band": "AB",
+   "why": "tier 4 retail; GPA 2.9, 1 relevant internship(s), elite school, greek"
+  },
+  {
+   "persona": "g08_elite_ops",
+   "listing": "9809d815bd",
+   "band": "AB",
+   "why": "tier 4 retail; GPA 2.9, 1 relevant internship(s), elite school, greek"
+  },
+  {
+   "persona": "g08_elite_ops",
+   "listing": "3c5bc1a76e",
+   "band": "CD",
+   "why": "different field, but a tier-5 local credit union mkt role is open to most majors"
+  },
+  {
+   "persona": "g08_elite_ops",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "ops profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g08_elite_ops",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "ops profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g09_elite_design",
+   "listing": "832f246710",
+   "band": "AB",
+   "why": "tier 3 retail; GPA 3.8, 0 relevant internship(s), elite school"
+  },
+  {
+   "persona": "g09_elite_design",
+   "listing": "66b972393f",
+   "band": "DF",
+   "why": "design profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g09_elite_design",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "design profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g09_elite_design",
+   "listing": "9b839c3735",
+   "band": "DF",
+   "why": "design profile vs a acct role: little overlap"
+  },
+  {
+   "persona": "g10_elite_acct",
+   "listing": "870f1d3275",
+   "band": "BC",
+   "why": "tier 3 Big 4; GPA 2.7, 1 relevant internship(s), elite school, d1/lead"
+  },
+  {
+   "persona": "g10_elite_acct",
+   "listing": "9b839c3735",
+   "band": "BC",
+   "why": "tier 3 Big 4; GPA 2.7, 1 relevant internship(s), elite school, d1/lead"
+  },
+  {
+   "persona": "g10_elite_acct",
+   "listing": "da0e9cf243",
+   "band": "AB",
+   "why": "tier 4 mid-size wealth firm; GPA 2.7, 1 relevant internship(s), elite school, d1/lead"
+  },
+  {
+   "persona": "g10_elite_acct",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g10_elite_acct",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "acct profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g10_elite_acct",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "acct profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "74cb211bc7",
+   "band": "BC",
+   "why": "tier 2 bulge bracket; GPA 3.4, 2 relevant internship(s), strong school, lead/mil"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "919e548712",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.4, 2 relevant internship(s), strong school, lead/mil"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "d55ae622de",
+   "band": "AB",
+   "why": "tier 4 local bank; GPA 3.4, 2 relevant internship(s), strong school, lead/mil"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "4b69dd9d7e",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.4, 2 relevant internship(s), strong school, lead/mil"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "1d83684849",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.4, 2 relevant internship(s), strong school, lead/mil"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "abf0949001",
+   "band": "AB",
+   "why": "tier 3 mid-size wealth firm; GPA 3.4, 2 relevant internship(s), strong school, lead/mil"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g11_strong_finance",
+   "listing": "93d140a18c",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g12_strong_acct",
+   "listing": "870f1d3275",
+   "band": "BC",
+   "why": "tier 3 Big 4; GPA 2.7, 2 relevant internship(s), strong school, d1/greek"
+  },
+  {
+   "persona": "g12_strong_acct",
+   "listing": "9b839c3735",
+   "band": "BC",
+   "why": "tier 3 Big 4; GPA 2.7, 2 relevant internship(s), strong school, d1/greek"
+  },
+  {
+   "persona": "g12_strong_acct",
+   "listing": "da0e9cf243",
+   "band": "AB",
+   "why": "tier 4 mid-size wealth firm; GPA 2.7, 2 relevant internship(s), strong school, d1/greek"
+  },
+  {
+   "persona": "g12_strong_acct",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "acct profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g12_strong_acct",
+   "listing": "832f246710",
+   "band": "DF",
+   "why": "acct profile vs a design role: little overlap"
+  },
+  {
+   "persona": "g12_strong_acct",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "acct profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "963103fd8b",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.4, 0 relevant internship(s), strong school, mil/found"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Freshman"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "edf93e34fe",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g13_strong_finance",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g14_strong_design",
+   "listing": "832f246710",
+   "band": "BC",
+   "why": "tier 3 retail; GPA 3.1, 1 relevant internship(s), strong school, d3/mil"
+  },
+  {
+   "persona": "g14_strong_design",
+   "listing": "4234834e37",
+   "band": "DF",
+   "why": "design profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g14_strong_design",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g14_strong_design",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "87865ffcdf",
+   "band": "AB",
+   "why": "tier 2 mid-size tech; GPA 3.8, 2 relevant internship(s), strong school, d3/lead"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "e0ac455993",
+   "band": "BC",
+   "why": "tier 1 top quant; GPA 3.8, 2 relevant internship(s), strong school, d3/lead"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "edf93e34fe",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.8, 2 relevant internship(s), strong school, d3/lead"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "eaf831d420",
+   "band": "BC",
+   "why": "tier 1 MBB; GPA 3.8, 2 relevant internship(s), strong school, d3/lead"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "579b953326",
+   "band": "BC",
+   "why": "tier 1 top quant; GPA 3.8, 2 relevant internship(s), strong school, d3/lead"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "80abb79001",
+   "band": "AB",
+   "why": "tier 2 big tech; GPA 3.8, 2 relevant internship(s), strong school, d3/lead"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "963103fd8b",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g15_strong_swe",
+   "listing": "427172e22a",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g16_strong_ops",
+   "listing": "79bca30f8b",
+   "band": "BC",
+   "why": "tier 4 retail; GPA 3.2, 0 relevant internship(s), strong school"
+  },
+  {
+   "persona": "g16_strong_ops",
+   "listing": "9809d815bd",
+   "band": "BC",
+   "why": "tier 4 retail; GPA 3.2, 0 relevant internship(s), strong school"
+  },
+  {
+   "persona": "g16_strong_ops",
+   "listing": "3c5bc1a76e",
+   "band": "CD",
+   "why": "different field, but a tier-5 local credit union mkt role is open to most majors"
+  },
+  {
+   "persona": "g16_strong_ops",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "ops profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g16_strong_ops",
+   "listing": "4d8bd83e34",
+   "band": "DF",
+   "why": "ops profile vs a sandt role: little overlap"
+  },
+  {
+   "persona": "g17_strong_mkt",
+   "listing": "55e58dbc24",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.4, 0 relevant internship(s), strong school, res"
+  },
+  {
+   "persona": "g17_strong_mkt",
+   "listing": "3c5bc1a76e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g17_strong_mkt",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "mkt profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g17_strong_mkt",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "mkt profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g17_strong_mkt",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "mkt profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g18_strong_acct",
+   "listing": "870f1d3275",
+   "band": "CD",
+   "why": "tier 3 Big 4; GPA 2.9, 0 relevant internship(s), strong school, d3/found"
+  },
+  {
+   "persona": "g18_strong_acct",
+   "listing": "9b839c3735",
+   "band": "CD",
+   "why": "tier 3 Big 4; GPA 2.9, 0 relevant internship(s), strong school, d3/found"
+  },
+  {
+   "persona": "g18_strong_acct",
+   "listing": "da0e9cf243",
+   "band": "BC",
+   "why": "tier 4 mid-size wealth firm; GPA 2.9, 0 relevant internship(s), strong school, d3/found"
+  },
+  {
+   "persona": "g18_strong_acct",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "acct profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g18_strong_acct",
+   "listing": "74cb211bc7",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior/Graduate and this persona is a Sophomore"
+  },
+  {
+   "persona": "g18_strong_acct",
+   "listing": "edf93e34fe",
+   "band": "DF",
+   "why": "acct profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g19_strong_eng",
+   "listing": "897f37d2ec",
+   "band": "AB",
+   "why": "tier 4 manufacturing; GPA 4.0, 1 relevant internship(s), strong school, d3/mil"
+  },
+  {
+   "persona": "g19_strong_eng",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "eng profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g19_strong_eng",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "eng profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g19_strong_eng",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "eng profile vs a quant role: little overlap"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "74cb211bc7",
+   "band": "DF",
+   "why": "tier 2 bulge bracket; GPA 2.5, 0 relevant internship(s), strong school, d1/res"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Senior"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "919e548712",
+   "band": "BC",
+   "why": "tier 5 local credit union; GPA 2.5, 0 relevant internship(s), strong school, d1/res"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "tier 2 bulge bracket; GPA 2.5, 0 relevant internship(s), strong school, d1/res"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "427172e22a",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 2.5, 0 relevant internship(s), strong school, d1/res"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "1d83684849",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 2.5, 0 relevant internship(s), strong school, d1/res"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g20_strong_finance",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.5, 0 relevant internship(s), strong school, d1/res"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "74cb211bc7",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior/Graduate and this persona is a Freshman"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "427172e22a",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 3.3, 0 relevant internship(s), mid school, work"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Freshman"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "9b839c3735",
+   "band": "CD",
+   "why": "tier 3 Big 4; GPA 3.3, 0 relevant internship(s), mid school, work"
+  },
+  {
+   "persona": "g21_mid_finance",
+   "listing": "66b972393f",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "4234834e37",
+   "band": "CD",
+   "why": "tier 3 defense; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "66b972393f",
+   "band": "CD",
+   "why": "tier 3 non-tech large; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "edf93e34fe",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "93d140a18c",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 2.5, 1 relevant internship(s), mid school, d1/mil"
+  },
+  {
+   "persona": "g22_mid_swe",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "93d140a18c",
+   "band": "CD",
+   "why": "tier 2 big tech; GPA 3.3, 1 relevant internship(s), mid school, lead/found"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.3, 1 relevant internship(s), mid school, lead/found"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "80abb79001",
+   "band": "CD",
+   "why": "tier 2 big tech; GPA 3.3, 1 relevant internship(s), mid school, lead/found"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "4234834e37",
+   "band": "BC",
+   "why": "tier 3 defense; GPA 3.3, 1 relevant internship(s), mid school, lead/found"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "87865ffcdf",
+   "band": "CD",
+   "why": "tier 2 mid-size tech; GPA 3.3, 1 relevant internship(s), mid school, lead/found"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.3, 1 relevant internship(s), mid school, lead/found"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "427172e22a",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g23_mid_swe",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g24_mid_acct",
+   "listing": "870f1d3275",
+   "band": "BC",
+   "why": "tier 3 Big 4; GPA 3.3, 2 relevant internship(s), mid school, d3/res"
+  },
+  {
+   "persona": "g24_mid_acct",
+   "listing": "9b839c3735",
+   "band": "BC",
+   "why": "tier 3 Big 4; GPA 3.3, 2 relevant internship(s), mid school, d3/res"
+  },
+  {
+   "persona": "g24_mid_acct",
+   "listing": "da0e9cf243",
+   "band": "AB",
+   "why": "tier 4 mid-size wealth firm; GPA 3.3, 2 relevant internship(s), mid school, d3/res"
+  },
+  {
+   "persona": "g24_mid_acct",
+   "listing": "919e548712",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.3, 2 relevant internship(s), mid school, d3/res"
+  },
+  {
+   "persona": "g24_mid_acct",
+   "listing": "4d8bd83e34",
+   "band": "DF",
+   "why": "acct profile vs a sandt role: little overlap"
+  },
+  {
+   "persona": "g24_mid_acct",
+   "listing": "963103fd8b",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.3, 2 relevant internship(s), mid school, d3/res"
+  },
+  {
+   "persona": "g25_mid_mkt",
+   "listing": "55e58dbc24",
+   "band": "DF",
+   "why": "tier 3 mid-size bank; GPA 2.7, 0 relevant internship(s), mid school, lead/mil"
+  },
+  {
+   "persona": "g25_mid_mkt",
+   "listing": "3c5bc1a76e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g25_mid_mkt",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g25_mid_mkt",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g25_mid_mkt",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g26_mid_data",
+   "listing": "b33ba30781",
+   "band": "BC",
+   "why": "tier 3 insurer; GPA 3.9, 0 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g26_mid_data",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.9, 0 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g26_mid_data",
+   "listing": "3c5bc1a76e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g26_mid_data",
+   "listing": "79bca30f8b",
+   "band": "CD",
+   "why": "different field, but a tier-4 retail ops role is open to most majors"
+  },
+  {
+   "persona": "g27_mid_quant",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 3.4, 1 relevant internship(s), mid school, found"
+  },
+  {
+   "persona": "g27_mid_quant",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.4, 1 relevant internship(s), mid school, found"
+  },
+  {
+   "persona": "g27_mid_quant",
+   "listing": "b33ba30781",
+   "band": "CD",
+   "why": "tier 3 insurer; GPA 3.4, 1 relevant internship(s), mid school, found"
+  },
+  {
+   "persona": "g27_mid_quant",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.4, 1 relevant internship(s), mid school, found"
+  },
+  {
+   "persona": "g27_mid_quant",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.4, 1 relevant internship(s), mid school, found"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "4b69dd9d7e",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.5, 1 relevant internship(s), mid school, d1/work"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Senior"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "d55ae622de",
+   "band": "AB",
+   "why": "tier 4 local bank; GPA 3.5, 1 relevant internship(s), mid school, d1/work"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "919e548712",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.5, 1 relevant internship(s), mid school, d1/work"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "74cb211bc7",
+   "band": "BC",
+   "why": "tier 2 bulge bracket; GPA 3.5, 1 relevant internship(s), mid school, d1/work"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "1d83684849",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.5, 1 relevant internship(s), mid school, d1/work"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "3c5bc1a76e",
+   "band": "CD",
+   "why": "different field, but a tier-5 local credit union mkt role is open to most majors"
+  },
+  {
+   "persona": "g28_mid_finance",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "963103fd8b",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 3.2, 0 relevant internship(s), mid school, mil/found"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Freshman"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "66b972393f",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g29_mid_finance",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "74cb211bc7",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior/Graduate and this persona is a Sophomore"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 3.4, 1 relevant internship(s), mid school, d1/res"
+  },
+  {
+   "persona": "g30_mid_finance",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "79dea78e89",
+   "band": "CD",
+   "why": "tier 1 big tech; GPA 3.6, 2 relevant internship(s), mid school, d3"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "6bce2f338a",
+   "band": "CD",
+   "why": "tier 1 big tech; GPA 3.6, 2 relevant internship(s), mid school, d3"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "66b972393f",
+   "band": "AB",
+   "why": "tier 3 non-tech large; GPA 3.6, 2 relevant internship(s), mid school, d3"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "93d140a18c",
+   "band": "BC",
+   "why": "tier 2 big tech; GPA 3.6, 2 relevant internship(s), mid school, d3"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "edf93e34fe",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.6, 2 relevant internship(s), mid school, d3"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "87865ffcdf",
+   "band": "BC",
+   "why": "tier 2 mid-size tech; GPA 3.6, 2 relevant internship(s), mid school, d3"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "da0e9cf243",
+   "band": "DF",
+   "why": "swe profile vs a acct role: little overlap"
+  },
+  {
+   "persona": "g31_mid_swe",
+   "listing": "3c5bc1a76e",
+   "band": "CD",
+   "why": "different field, but a tier-5 local credit union mkt role is open to most majors"
+  },
+  {
+   "persona": "g32_mid_quant",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 3.0, 1 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g32_mid_quant",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.0, 1 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g32_mid_quant",
+   "listing": "9b839c3735",
+   "band": "DF",
+   "why": "quant profile vs a acct role: little overlap"
+  },
+  {
+   "persona": "g32_mid_quant",
+   "listing": "66b972393f",
+   "band": "CD",
+   "why": "tier 3 non-tech large; GPA 3.0, 1 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g32_mid_quant",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.0, 1 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "66b972393f",
+   "band": "DF",
+   "why": "tier 3 non-tech large; GPA 2.5, 0 relevant internship(s), mid school, d3/found"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.5, 0 relevant internship(s), mid school, d3/found"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "93d140a18c",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.5, 0 relevant internship(s), mid school, d3/found"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "edf93e34fe",
+   "band": "DF",
+   "why": "tier 3 mid-size bank; GPA 2.5, 0 relevant internship(s), mid school, d3/found"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.5, 0 relevant internship(s), mid school, d3/found"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.5, 0 relevant internship(s), mid school, d3/found"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "427172e22a",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g33_mid_swe",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.3, 0 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "edf93e34fe",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 3.3, 0 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.3, 0 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.3, 0 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "tier 2 mid-size tech; GPA 3.3, 0 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "4234834e37",
+   "band": "CD",
+   "why": "tier 3 defense; GPA 3.3, 0 relevant internship(s), mid school, d1"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g34_mid_swe",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "d55ae622de",
+   "band": "BC",
+   "why": "tier 4 local bank; GPA 2.7, 1 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "1d83684849",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 2.7, 1 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "abf0949001",
+   "band": "CD",
+   "why": "tier 3 mid-size wealth firm; GPA 2.7, 1 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "919e548712",
+   "band": "BC",
+   "why": "tier 5 local credit union; GPA 2.7, 1 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "tier 2 bulge bracket; GPA 2.7, 1 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "963103fd8b",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 2.7, 1 relevant internship(s), mid school, d3/mil"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "66b972393f",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g35_mid_finance",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "93d140a18c",
+   "band": "CD",
+   "why": "tier 2 big tech; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "4234834e37",
+   "band": "BC",
+   "why": "tier 3 defense; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "80abb79001",
+   "band": "CD",
+   "why": "tier 2 big tech; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "edf93e34fe",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Senior"
+  },
+  {
+   "persona": "g36_lesser_swe",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.1, 2 relevant internship(s), lesser school, d1/res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.8, 0 relevant internship(s), lesser school, res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.8, 0 relevant internship(s), lesser school, res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "93d140a18c",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.8, 0 relevant internship(s), lesser school, res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "tier 2 mid-size tech; GPA 3.8, 0 relevant internship(s), lesser school, res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.8, 0 relevant internship(s), lesser school, res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "66b972393f",
+   "band": "BC",
+   "why": "tier 3 non-tech large; GPA 3.8, 0 relevant internship(s), lesser school, res"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "897f37d2ec",
+   "band": "DF",
+   "why": "swe profile vs a eng role: little overlap"
+  },
+  {
+   "persona": "g37_lesser_swe",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "d55ae622de",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "427172e22a",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 4.0, 0 relevant internship(s), lesser school, d3/mil"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g38_lesser_finance",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g39_lesser_data",
+   "listing": "b33ba30781",
+   "band": "AB",
+   "why": "tier 3 insurer; GPA 3.7, 1 relevant internship(s), lesser school, d1"
+  },
+  {
+   "persona": "g39_lesser_data",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.7, 1 relevant internship(s), lesser school, d1"
+  },
+  {
+   "persona": "g39_lesser_data",
+   "listing": "55e58dbc24",
+   "band": "DF",
+   "why": "data profile vs a mkt role: little overlap"
+  },
+  {
+   "persona": "g39_lesser_data",
+   "listing": "edf93e34fe",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.7, 1 relevant internship(s), lesser school, d1"
+  },
+  {
+   "persona": "g40_lesser_data",
+   "listing": "b33ba30781",
+   "band": "BC",
+   "why": "tier 3 insurer; GPA 3.1, 1 relevant internship(s), lesser school, d1"
+  },
+  {
+   "persona": "g40_lesser_data",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.1, 1 relevant internship(s), lesser school, d1"
+  },
+  {
+   "persona": "g40_lesser_data",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "data profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g40_lesser_data",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "data profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "74cb211bc7",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior/Graduate and this persona is a Freshman"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "963103fd8b",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.5, 0 relevant internship(s), lesser school, d1/lead"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "427172e22a",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.5, 0 relevant internship(s), lesser school, d1/lead"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Freshman"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g41_lesser_finance",
+   "listing": "9809d815bd",
+   "band": "CD",
+   "why": "different field, but a tier-4 retail ops role is open to most majors"
+  },
+  {
+   "persona": "g42_lesser_data",
+   "listing": "b33ba30781",
+   "band": "BC",
+   "why": "tier 3 insurer; GPA 3.8, 0 relevant internship(s), lesser school, found/greek"
+  },
+  {
+   "persona": "g42_lesser_data",
+   "listing": "edf93e34fe",
+   "band": "CD",
+   "why": "tier 3 mid-size bank; GPA 3.8, 0 relevant internship(s), lesser school, found/greek"
+  },
+  {
+   "persona": "g42_lesser_data",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.8, 0 relevant internship(s), lesser school, found/greek"
+  },
+  {
+   "persona": "g42_lesser_data",
+   "listing": "919e548712",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 2.5, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 2.5, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "tier 2 mid-size tech; GPA 2.5, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.5, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 2.5, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "edf93e34fe",
+   "band": "DF",
+   "why": "tier 3 mid-size bank; GPA 2.5, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "427172e22a",
+   "band": "DF",
+   "why": "swe profile vs a finance role: little overlap"
+  },
+  {
+   "persona": "g43_lesser_swe",
+   "listing": "74cb211bc7",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior/Graduate and this persona is a Sophomore"
+  },
+  {
+   "persona": "g44_lesser_mkt",
+   "listing": "55e58dbc24",
+   "band": "BC",
+   "why": "tier 3 mid-size bank; GPA 3.9, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g44_lesser_mkt",
+   "listing": "3c5bc1a76e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g44_lesser_mkt",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "mkt profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g44_lesser_mkt",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "mkt profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g44_lesser_mkt",
+   "listing": "4234834e37",
+   "band": "DF",
+   "why": "mkt profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g45_lesser_quant",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 2.9, 0 relevant internship(s), lesser school, d1/found"
+  },
+  {
+   "persona": "g45_lesser_quant",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 2.9, 0 relevant internship(s), lesser school, d1/found"
+  },
+  {
+   "persona": "g45_lesser_quant",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 2.9, 0 relevant internship(s), lesser school, d1/found"
+  },
+  {
+   "persona": "g45_lesser_quant",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 2.9, 0 relevant internship(s), lesser school, d1/found"
+  },
+  {
+   "persona": "g45_lesser_quant",
+   "listing": "9809d815bd",
+   "band": "CD",
+   "why": "different field, but a tier-4 retail ops role is open to most majors"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "80abb79001",
+   "band": "DF",
+   "why": "tier 2 big tech; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "4234834e37",
+   "band": "BC",
+   "why": "tier 3 defense; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "79dea78e89",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g46_lesser_swe",
+   "listing": "1d83684849",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "919e548712",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.8, 1 relevant internship(s), lesser school, d3/found"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "1d83684849",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.8, 1 relevant internship(s), lesser school, d3/found"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "abf0949001",
+   "band": "AB",
+   "why": "tier 3 mid-size wealth firm; GPA 3.8, 1 relevant internship(s), lesser school, d3/found"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "427172e22a",
+   "band": "AB",
+   "why": "tier 3 mid-size bank; GPA 3.8, 1 relevant internship(s), lesser school, d3/found"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "74cb211bc7",
+   "band": "BC",
+   "why": "tier 2 bulge bracket; GPA 3.8, 1 relevant internship(s), lesser school, d3/found"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "4b69dd9d7e",
+   "band": "AB",
+   "why": "tier 5 local credit union; GPA 3.8, 1 relevant internship(s), lesser school, d3/found"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g47_lesser_finance",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "finance profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g48_lesser_acct",
+   "listing": "870f1d3275",
+   "band": "CD",
+   "why": "tier 3 Big 4; GPA 2.7, 1 relevant internship(s), lesser school, lead/greek"
+  },
+  {
+   "persona": "g48_lesser_acct",
+   "listing": "9b839c3735",
+   "band": "CD",
+   "why": "tier 3 Big 4; GPA 2.7, 1 relevant internship(s), lesser school, lead/greek"
+  },
+  {
+   "persona": "g48_lesser_acct",
+   "listing": "da0e9cf243",
+   "band": "BC",
+   "why": "tier 4 mid-size wealth firm; GPA 2.7, 1 relevant internship(s), lesser school, lead/greek"
+  },
+  {
+   "persona": "g48_lesser_acct",
+   "listing": "d55ae622de",
+   "band": "CD",
+   "why": "tier 4 local bank; GPA 2.7, 1 relevant internship(s), lesser school, lead/greek"
+  },
+  {
+   "persona": "g48_lesser_acct",
+   "listing": "edf93e34fe",
+   "band": "DF",
+   "why": "acct profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g48_lesser_acct",
+   "listing": "08d2e391d4",
+   "band": "DF",
+   "why": "acct profile vs a swe role: little overlap"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "579b953326",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "4234834e37",
+   "band": "BC",
+   "why": "tier 3 defense; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "87865ffcdf",
+   "band": "DF",
+   "why": "tier 2 mid-size tech; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "eaf831d420",
+   "band": "DF",
+   "why": "tier 1 MBB; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "e0ac455993",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.8, 0 relevant internship(s), lesser school, work"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "4d8bd83e34",
+   "band": "DF",
+   "why": "swe profile vs a sandt role: little overlap"
+  },
+  {
+   "persona": "g49_lesser_swe",
+   "listing": "abf0949001",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior and this persona is a Freshman"
+  },
+  {
+   "persona": "g50_lesser_quant",
+   "listing": "4957a2c66f",
+   "band": "DF",
+   "why": "tier 1 bulge bracket; GPA 3.4, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g50_lesser_quant",
+   "listing": "8e436f7070",
+   "band": "DF",
+   "why": "tier 1 top quant; GPA 3.4, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g50_lesser_quant",
+   "listing": "6bce2f338a",
+   "band": "DF",
+   "why": "tier 1 big tech; GPA 3.4, 0 relevant internship(s), lesser school, d1/d3"
+  },
+  {
+   "persona": "g50_lesser_quant",
+   "listing": "4b69dd9d7e",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  },
+  {
+   "persona": "g50_lesser_quant",
+   "listing": "33666f862c",
+   "band": "DF",
+   "why": "not eligible: the posting lists Junior/Senior and this persona is a Sophomore"
+  }
+ ]
+}

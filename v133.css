@@ -29,13 +29,7 @@ html.dark .th-tog .th-sun{display:block}html.dark .th-tog .th-moon{display:none}
 @keyframes v133blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.82)}}
 #intro .dot{animation:v133blink var(--bd,1.6s) ease-in-out var(--bdl,0s) infinite;will-change:opacity,transform}
 @media (prefers-reduced-motion:reduce){#intro .dot{animation:none}}
-/* V13.3 #5: header logo is a green radar with a rotating sweep (transform only) */
-#hdr .brand .logo-radar{flex:none;width:32px;height:32px;overflow:visible}
-#hdr .brand .logo-radar .lr-lines,#hdr .brand .logo-radar>circle:last-child{filter:drop-shadow(0 0 2px #4ade80) drop-shadow(0 0 4px rgba(74,222,128,.55))}
-#hdr .brand .logo-radar .lr-sweep{transform-origin:32px 32px;transform-box:view-box;animation:v133sweep 3.5s linear infinite;filter:drop-shadow(0 0 3px rgba(74,222,128,.7))}
-@keyframes v133sweep{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){#hdr .brand .logo-radar .lr-sweep{animation:none}}
-@media (max-width:480px){#hdr .brand .logo-radar{width:28px;height:28px}}
+/* V13.3 #5 (revised): green radar logo reverted; header uses the original white assets/icon.svg */
 /* V13.3 #4b: Build my profile exit = 900ms easeInOut dissolve (zoom in slightly, shrink + fade + blur into the background); card scales .96 -> 1 in place */
 #intro.v13.exit .globe-stage{animation:v133dis .9s cubic-bezier(.65,0,.35,1) forwards;transition:none}
 #intro.v13.gone .globe-stage{transform:scale(.72);opacity:0;transition:none}

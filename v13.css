@@ -218,3 +218,19 @@ html.dark .ap-bell{color:#e5e7eb;background:transparent}
 @media (min-width:1400px){#t-tracker .sheet th.c-link,#t-tracker .sheet td.c-link{min-width:96px;width:96px}#t-tracker .sheet th.c-status,#t-tracker .sheet td.c-status{min-width:200px;width:200px}}
 /* V13.1 #15/#16: status pills and the Open link never clip at desktop widths */
 @media (min-width:861px){#t-tracker .sheet th.c-status,#t-tracker .sheet td.c-status{width:200px;min-width:200px}#t-tracker .sheet .pill{max-width:none;width:164px;min-width:164px;box-sizing:border-box}#t-tracker .sheet th.c-link,#t-tracker .sheet td.c-link{width:96px;min-width:96px}#t-tracker .sheet .c-link .lkopen{white-space:nowrap}}
+/* V13.2 detail panel: header → short description → grade card → why/improve → ways in; Apply row sticks to the bottom */
+.dhead .drow{margin:6px 0 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.d-blurb{margin:12px 0 4px;line-height:1.5;max-width:68ch}
+.fdmore{margin:2px 0 14px;background:none;border:0;padding:4px 0;color:var(--acc,#5b8def);font-weight:600;cursor:pointer;font-size:var(--fs-s,14px)}
+#fdBody .facts{margin-top:0}#fdBody .fdfull h3{font-size:15px;margin:16px 0 6px}
+.fbp2 .fbp-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.fbp2 .fbp-conf{white-space:nowrap}
+.fbp2 .fbp-bd{width:100%;table-layout:fixed;border-collapse:collapse;margin:12px 0 4px}
+.fbp2 .fbp-bd th{width:112px;text-transform:uppercase;letter-spacing:.06em;font-size:12px;text-align:left;padding:9px 8px 9px 0}
+.fbp2 .fbp-bd td.fbp-bv{width:84px;padding:9px 10px 9px 0}.fbp2 .fbp-bd td.fbp-t{padding:9px 0;line-height:1.35;overflow-wrap:break-word}
+.fbp2 .fbp-sec{margin-top:14px}.fbp2 .fbp-sec h4{margin:0 0 6px;font-size:15px}.fbp2 .fbp-sec ul{margin:0;padding-left:20px}.fbp2 .fbp-sec li{margin:3px 0;line-height:1.4}
+#dWays .wp{margin-top:18px}.wp-draft{margin:10px 0}.wp-draft #wpDraft{margin-top:8px}.wp-draft textarea{width:100%;box-sizing:border-box}
+.dact-stick{position:sticky;bottom:0;z-index:3;margin:18px -24px -24px;padding:12px 24px;background:var(--bg2,var(--card,#151a22));border-top:1px solid var(--line,rgba(127,127,127,.25));display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+@media (max-width:480px){.fbp2 .fbp-bd th{width:86px;font-size:11px;letter-spacing:.03em}.fbp2 .fbp-bd td.fbp-bv{width:52px}.dact-stick{margin:14px -16px -16px;padding:10px 16px}.dact-stick .btn.big{width:100%;text-align:center}}
+.fdmore::before,.fdmore::after{content:none!important;display:none!important}
+@media (max-width:480px){#dGrade.fbp2 .fbp-bd th{width:80px;font-size:10.5px;letter-spacing:.02em}#dGrade.fbp2 .fbp-bd td.fbp-bv{width:44px;padding-right:8px}.dact-stick .acts{flex:1}}
+@media (max-width:480px){#dGrade .fbp-bd td.fbp-bv{width:44px!important;min-width:0!important}#dGrade .fbp-bar{width:100%!important;min-width:0!important;max-width:44px}#dGrade .fbp-bd th{padding:9px 6px 9px 8px!important}}

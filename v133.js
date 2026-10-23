@@ -21,11 +21,11 @@ document.querySelectorAll('#intro .dot').forEach(d=>{d.style.setProperty('--bd',
 window.snapRender=function(){const el=document.getElementById('snap');if(!el)return;
  if(typeof MSCORE==='undefined'||!MSCORE.size||!MatchCore.hasProfile(profile)){el.hidden=true;return}
  const P=MatchCore.profile(profile),best=k=>[...MSCORE.entries()].filter(([,m])=>m.tk===k).sort((a,b)=>b[1].pct-a[1].pct).slice(0,30).map(([id])=>BYID.get(id)).filter(Boolean),nRe=best(3).length,top=best(3).concat(best(2));if(!top.length){el.hidden=true;return}
- const acc={},acts=new Map();let nR=0,nP=0;for(const m of MSCORE.values()){if(m.tk===3)nR++;else if(m.tk===2)nP++}
+ const acc={},acts=new Map();let nR=0,nP=0;/* V14 #5: count exactly what the Show: Realistic / Reach filter lists */const ug=typeof UG!=='undefined'&&UG,ok=x=>x&&!x.hidden&&!x.past_term&&(!x.degree||!ug||F.deg)&&!(F.hideTracked==='1'&&TRACKED.has(String(x.id)))&&(!fv('status').length||FD.status[2](x).some(v=>fv('status').includes(v)));for(const [id,m] of MSCORE){if(m.tk!==3&&m.tk!==2)continue;if(!ok(BYID.get(id)))continue;if(m.tk===3)nR++;else nP++}
  for(const x of top){const r=MatchCore.score({...x,industry:x.industry||x.category},P,CFG,MW),f=r.feedback||{};
   for(const b of f.breakdown||[]){if(b.v==null||!b.t||!['School','GPA','Experience','Skills','Fit'].includes(b.k))continue;const a=acc[b.k]||(acc[b.k]={n:0,s:0,t:new Map()});a.n++;a.s+=b.v;a.t.set(b.t,(a.t.get(b.t)||0)+1)}
   for(const s of (f.actions||[]).slice(0,2))acts.set(s,(acts.get(s)||0)+1)}
- const rows=Object.entries(acc).map(([k,a])=>({k,v:Math.round(a.s/a.n),t:[...a.t.entries()].sort((p,q)=>q[1]-p[1])[0][0].replace(/^Your /,'Matches your ')}));
+ const rows=Object.entries(acc).map(([k,a])=>({k,v:Math.round(a.s/a.n),t:[...a.t.entries()].sort((p,q)=>q[1]-p[1])[0][0]}));
  const gaps=rows.filter(r=>r.v<65).sort((a,b)=>a.v-b.v).slice(0,3),str=rows.filter(r=>r.v>=65).sort((a,b)=>b.v-a.v).slice(0,3);
  const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const li=a=>a.map(r=>`<li><b>${e(r.k)}</b> <span class="muted">(${r.v}/100)</span>: ${e(r.t)}</li>`).join('');
  const next=[...acts.entries()].sort((a,b)=>b[1]-a[1])[0];

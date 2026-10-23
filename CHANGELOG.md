@@ -1,6 +1,17 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14 — Audit fixes: honest data, grading and accessibility (2026-10-23)
+Matches `specs/V14.md`; per-issue results in `qa-v14/FIX-REPORT.md`.
+- P0: tracker CSV import with column mapping; resume date-range parser fixed.
+- Data: every term up to Fall 2026 closed; open listings deduped on company + title + location; titles no longer repeat their location; San Francisco geocode fixed; New York city aliases merged.
+- Grading: feedback respects your interests, grades are monotonic, Realistic sort uses your real chance, and Match/Realistic ask for a profile instead of silently falling back.
+- Counts agree everywhere; graduate-degree roles hidden by your profile are counted with a "show all".
+- Intro plays once (Replay intro brings it back) and traps focus; the static globe shows real listing hubs.
+- Detail panel: spec order, actions last, boilerplate stripped, missing facts hidden, generic careers links labelled.
+- Keyboard and mobile: Enter/Space open cards, 44px tap targets, the first-run tip no longer covers cards; light mode follows the OS on first visit; dark-mode links pass AA; no ellipsis truncation in the ticker or advice.
+- Admin link only with ?admin. Screens: `ops/screens/v14-*.png`.
+
 ## V13.4 — Autopilot calendar, Apple Calendar export, site-wide wordmark (2026-10-23)
 Matches `specs/V13.4.md`.
 - Autopilot: the "Due now" list is replaced by a calendar. Left: month/week calendar with prev/next, Today, Month/Week toggle, and type chips that double as the legend and filters (Deadline red, Apply-by reminder purple, Follow-up blue, Interview green). Today has a green ring; the selected day is highlighted; days outside the month are dimmed. Arrow keys move between days, Enter selects.

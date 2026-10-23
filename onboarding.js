@@ -131,8 +131,8 @@ async function reveal(){const p=D0(),box=$o('obM');if(!(p.major||p.industries.le
  if(!TOP.length){box.innerHTML='<p class="lead">No open internships match yet. See the whole database and adjust your profile any time.</p>';$o('obAp').hidden=true;return}
  box.innerHTML=TOP.map(x=>{const m=MSCORE.get(x.id),c=closeLbl(x),loc=x.remote?'Remote':((x.locations||[])[0]?[x.locations[0].city,x.locations[0].state].filter(Boolean).join(', '):'Location not listed');
   return `<div class="m"><div class="lg">${logoHTML(x,false,'sm')}</div><div><b>${E(x.title)}</b><small>${E(x.company)} · ${E(loc)} · ${E(c.t)}</small></div><span class="gp${m.pct<70?' c':m.pct<80?' b':''}">${m.pct}% · ${E(m.grade)}</span></div>`}).join('')}
-function finish(ap){if(ap&&TOP.length&&window.Autopilot){const k=Autopilot.addMany(TOP.map(x=>x.id));setTimeout(()=>typeof toast==='function'&&toast(`Autopilot is on for ${k} internship${k===1?'':'s'}.`),700)}
- window.__introEnd&&window.__introEnd(false);if(typeof F!=='undefined'){F.sort='match';const so=$o('sort');so&&(so.value='match')}setTimeout(()=>{try{go(ap&&window.Autopilot?'autopilot':'db');update();vrender(true)}catch(e){}},40)}
+function finish(ap){if(ap&&TOP.length&&window.Autopilot){/* V14.2: Autopilot follows saved internships, so turning it on here saves them */try{TOP.forEach(x=>{if(typeof T!=='undefined'&&!T.byListing(x.id))track(x.id,'Saved')})}catch(e){}const k=Autopilot.addMany(TOP.map(x=>x.id));setTimeout(()=>typeof toast==='function'&&toast(`Autopilot is on for ${k} internship${k===1?'':'s'}.`),700)}
+ window.__introEnd&&window.__introEnd(false);if(typeof F!=='undefined'){F.sort='match';const so=$o('sort');so&&(so.value='match')}setTimeout(()=>{try{go('db');update();vrender(true)}catch(e){}/* V14.2: first-run tour lands on the homepage */setTimeout(()=>window.Tour&&Tour.maybe(),RM?0:450)},40)}
 $o('goBuild').addEventListener('click',()=>{if(window.__introExit)window.__introExit();setTimeout(()=>show(1),RM?0:340)/* V13.3 #4b: the card scales up in place while the planet dissolves */});
 skipAll.addEventListener('click',()=>{persist();window.__introEnd&&window.__introEnd(false)});
 })();

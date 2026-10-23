@@ -1,0 +1,14 @@
+/* V14.2 first-run tutorial */
+.tour{position:fixed;inset:0;z-index:1000;pointer-events:none}
+.tour .tr-spot{position:fixed;left:0;top:0;border-radius:12px;box-shadow:0 0 0 3px var(--acc),0 0 0 9999px rgba(10,12,24,.55);transition:transform .25s ease,width .25s ease,height .25s ease,opacity .2s;pointer-events:none}
+.tour .tr-card{position:fixed;left:12px;top:12px;width:min(340px,calc(100vw - 24px));box-sizing:border-box;pointer-events:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:16px 16px 12px;box-shadow:0 12px 36px rgba(0,0,0,.3);transition:left .25s ease,top .25s ease}
+.tour .tr-card h2{font-size:18px;margin:0 0 6px;line-height:1.3;white-space:normal}
+.tour .tr-card p{margin:0 0 10px;font-size:15px;line-height:1.45;white-space:normal;overflow-wrap:break-word}
+.tour .tr-n{font-size:13px!important;color:var(--mut);margin:0 0 4px!important}
+.tour .tr-dots{display:flex;gap:6px;margin:0 0 12px}.tour .tr-dots i{width:8px;height:8px;border-radius:50%;background:var(--line2)}.tour .tr-dots i.on{background:var(--acc)}
+.tour .tr-ft{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.tour .tr-ft span{display:flex;gap:8px}
+.tour .tr-ft button{min-height:36px;min-width:44px}
+.tour .tr-skip{background:none;border:0;color:var(--ink);text-decoration:underline;font:inherit;font-size:15px;cursor:pointer;padding:6px 4px}
+@media (prefers-reduced-motion:reduce){.tour .tr-spot,.tour .tr-card{transition:none}}
+#pmMenu #uiTour{white-space:normal}
+.tour .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}

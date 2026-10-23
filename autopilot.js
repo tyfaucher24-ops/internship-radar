@@ -5,6 +5,8 @@ if(typeof APCore==='undefined')return;
 const KEY='autopilot',$a=id=>document.getElementById(id);
 const st=()=>{const s=Store.get(KEY,null);return s&&s.v===1?s:{v:1,items:{}}};
 const put=s=>{Store.set(KEY,s);badge();document.dispatchEvent(new CustomEvent('radar:autopilot'))};
+/* V14.2: Autopilot only ever shows internships you have saved (tracker rows). Unsaved ones keep their stored plan but are hidden until saved again. */
+const savedIds=window.apSavedIds=()=>new Set((typeof T!=='undefined'?T.all():[]).filter(t=>t.listingId!=null).map(t=>String(t.listingId)));
 const L=id=>(typeof BYID!=='undefined'&&BYID.get(id))||null;
 function snapOf(x){return{co:x.company,ti:x.title,dl:x.deadline||'',ro:!!x.rolling}}
 const AP=window.Autopilot={
@@ -12,7 +14,7 @@ const AP=window.Autopilot={
  add(id){const s=st();if(s.items[id])return false;const x=L(id);if(!x)return false;s.items[id]={added:new Date().toISOString(),done:[],snap:snapOf(x)};put(s);return true},
  addMany(ids){let n=0;ids.forEach(id=>{AP.add(id)&&n++});return n},
  remove(id){const s=st();delete s.items[id];put(s)},
- list(){const s=st();return Object.keys(s.items).map(id=>{const it=s.items[id],x=L(id)||{id,company:it.snap.co,title:it.snap.ti,deadline:it.snap.dl,rolling:it.snap.ro,st:L(id)?undefined:'closed'};return{id,it,x,p:APCore.plan(x,it.added)}})},
+ list(){const s=st(),sv=savedIds();return Object.keys(s.items).filter(id=>sv.has(String(id))).map(id=>{const it=s.items[id],x=L(id)||{id,company:it.snap.co,title:it.snap.ti,deadline:it.snap.dl,rolling:it.snap.ro,st:L(id)?undefined:'closed'};return{id,it,x,p:APCore.plan(x,it.added)}})},
  due(){return AP.list().flatMap(r=>APCore.dueSteps(r.p,r.it.done).map(s=>({r,s})))}};
 function done(id,key){const s=st();const it=s.items[id];if(!it)return;it.done=[...new Set(it.done.concat(key))];put(s)}
 /* ---- nav tab + badge ---- */
@@ -30,7 +32,7 @@ if(main&&!sec){sec=document.createElement('section');sec.id='t-autopilot';sec.cl
  const after=$a('t-tracker');after?after.after(sec):main.appendChild(sec)}
 const KL={stated:'Deadline',rolling:'Rolling',unknown:'No deadline listed',closed:'Closed'};
 const fd=d=>new Date(d).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-function render(){if(!sec||sec.hidden)return;const rows=AP.list().sort((a,b)=>(a.p.due?new Date(a.p.due):Infinity)-(b.p.due?new Date(b.p.due):Infinity)),due=AP.due();
+function render(){if(!sec||sec.hidden)return;{const n=typeof T!=='undefined'?T.all().length:0,cal=$a('apCal'),bar=sec.querySelector('.ap-bar');sec.classList.toggle('ap-none',!n);if(bar)bar.hidden=!n;if(!n){cal&&(cal.hidden=true);$a('apList').innerHTML=`<div class="ap-empty ap-empty-saved"><h2>Save internships to build your Autopilot plan</h2><p>Autopilot builds deadlines, reminders and follow-ups only from internships you save. Hit <b>Save</b> on any listing and its plan shows up here.</p><button type="button" class="btn" data-go="db">Browse internships</button></div>`;return}if(cal)cal.hidden=false}const rows=AP.list().sort((a,b)=>(a.p.due?new Date(a.p.due):Infinity)-(b.p.due?new Date(b.p.due):Infinity)),due=AP.due();
  $a('apDue')&&$a('apDue').remove();/* V13.4: the Due now list is replaced by the calendar (ap-cal.js) */
  window.APCal&&APCal.render();
  if(!rows.length){$a('apList').innerHTML=`<div class="ap-empty"><h2>No internships on Autopilot yet</h2><p>Open any internship and choose <b>Add to Autopilot</b>. We'll remind you on this website before its deadline.</p><button type="button" class="btn" data-go="db">Find internships</button>${typeof T!=='undefined'&&T.all().length?` <button type="button" class="btn-ghost" id="apFromT">Add my ${T.all().length} tracked internship${T.all().length===1?'':'s'}</button>`:''}</div>`;const f=$a('apFromT');f&&(f.onclick=()=>{const k=AP.addMany(T.all().map(t=>t.listingId).filter(Boolean));toast(`Autopilot is on for ${k} internship${k===1?'':'s'}.`);render()});return}
@@ -54,6 +56,7 @@ function notifyDue(){const due=AP.due();if(!due.length)return;const seen=Store.g
  else setTimeout(()=>{if(!document.getElementById('intro'))toast(`${fresh.length} Autopilot reminder${fresh.length===1?'':'s'} due. Open Autopilot to see ${fresh.length===1?'it':'them'}.`)},1500)}
 /* drawer: Add to Autopilot next to Apply/Save */
 if(typeof openDrawer==='function'){const od=openDrawer;openDrawer=async function(x){const r=await od.apply(this,arguments);try{const box=$a('dAct');document.getElementById('apDrawer')?.remove();if(box&&x&&x.st!=='closed'){const w=document.createElement('p');w.id='apDrawer';w.className='ap-drawer';const b=document.createElement('button');b.type='button';b.className='btn-ghost ap-add';b.dataset.apadd=x.id;w.appendChild(b);{const dw=document.getElementById('dWays');dw?dw.after(w):box.after(w)}apBtn(b,x.id)}}catch(e){}document.dispatchEvent(new CustomEvent('radar:drawer',{detail:x}));return r}}
+document.addEventListener('radar:tracker',()=>{badge();if(sec&&!sec.hidden)render()});
 document.addEventListener('radar:page',e=>{if(e.detail==='autopilot'){document.title='Deadline Autopilot · Intern Index';render()}});
 let tries=0;(function boot(){if(typeof D==='undefined'||!D.length){if(++tries<200)return setTimeout(boot,150)}badge();notifyDue();if(location.hash==='#autopilot')go('autopilot',false);render()})();
 setInterval(()=>{badge();notifyDue()},6e4);

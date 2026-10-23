@@ -1,6 +1,12 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.2 (saved-only Autopilot + first-run tutorial, per specs/V14.2.md) (2026-10-23)
+- Autopilot, its calendar, day list, Upcoming, badges and the .ics export now come only from saved internships (tracker rows). Unsaving removes that internship's tasks at once; saving adds them. Outreach follow-ups and your own tasks tied to an unsaved internship are hidden too. The .ics keeps stable UIDs and 1-day reminders.
+- Empty state when nothing is saved: "Save internships to build your Autopilot plan" with a Browse internships button. No sample tasks.
+- "Turn on Autopilot" at the end of Build my profile now also saves those internships, so the plan matches the tracker.
+- New 7-step guided tour (tour.js, v142.css) right after Build my profile, on the homepage: search and filters, grade, Apply and Save, My Tracker, Deadline Autopilot and the Apple Calendar export, Outreach, and profile and settings. It spotlights the real UI, has Back, Next and Skip, step dots, and supports Esc and arrow keys with a focus trap. It shows once (stored in localStorage `ir_tour_done`). "Replay tutorial" is in the profile menu.
+
 ## V14.1 (tracker sheet, per specs/V14.1.md) (2026-10-23)
 - P0 fix: selecting every column in Customize sheet no longer blocks clicks. Root cause: the Priority stars used the class `stars`, which is also the full-bleed animated starfield layer (`position:absolute; inset:-20px`), so turning Priority on laid an invisible layer over the sheet that ate clicks. It's renamed to `trk-stars` and guarded. The column list also no longer re-renders under your click.
 - Customize panel: fixed-size popover (max 70vh, fits the space below the button, scrolls inside), Done always visible, closes on Done / Esc / outside click. New "Reset to default columns" button. A corrupted saved column list falls back to the defaults.

@@ -15,7 +15,7 @@ const cput=s=>Store.set('apCal',s);
 const tm=at=>{const d=new Date(at);return d.getHours()===0&&d.getMinutes()===0?'':d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})};
 /* step key -> type. Deadline day = red; warm-path note/follow-up = blue; every other plan reminder points at applying = purple. */
 const STEPTY=k=>k==='d0'?'deadline':(k==='p2'||k==='p4')?'follow':'apply';
-function tasks(){const out=[],seenDl=new Set(),cal=cs(),done=cal.done||{};
+function tasks(){const out=[],seenDl=new Set(),cal=cs(),done=cal.done||{},sv=window.apSavedIds?apSavedIds():new Set();if(typeof T!=='undefined'&&!T.all().length)return out;/* V14.2: saved internships only */
  /* 1. Autopilot plans */
  AP.list().forEach(r=>{r.p.steps.forEach(s=>{const ty=STEPTY(s.key);if(ty==='deadline')seenDl.add(String(r.id));
   out.push({id:'ap:'+r.id+':'+s.key,ty,at:new Date(s.at),label:ty==='deadline'?'Deadline day':s.label,co:r.x.company,ti:r.x.title,lid:r.id,url:r.x.apply_url||'',
@@ -27,10 +27,10 @@ function tasks(){const out=[],seenDl=new Set(),cal=cs(),done=cal.done||{};
   const f=day(t.followUp||t.nextDate);if(f&&!closed){const iv=t.status==='Interviewing';const id='tr:'+t.id+':fu:'+key(f);
    out.push({id,ty:iv?'interview':'follow',at:f,label:t.nextStep||(iv?'Interview':'Follow up on your application'),co:Lx.company,ti:Lx.title,lid:t.listingId,url:'',time:'',done:!!done[id],src:'trfu',tid:t.id})}});
  /* 3. Outreach: people you've messaged get a follow-up one week after the last update */
- const wp=Store.get('warmpaths',null);((wp&&wp.contacts)||[]).forEach(c=>{if(c.status!=='sent')return;const base=day((c.updated||c.added||'').slice(0,10));if(!base)return;const at=addD(base,7),id='wp:'+c.id+':'+key(at);
+ const wp=Store.get('warmpaths',null);((wp&&wp.contacts)||[]).forEach(c=>{if(c.status!=='sent'||c.listingId==null||!sv.has(String(c.listingId)))return;const base=day((c.updated||c.added||'').slice(0,10));if(!base)return;const at=addD(base,7),id='wp:'+c.id+':'+key(at);
   out.push({id,ty:'follow',at,label:'Follow up with '+c.name,co:c.company,ti:c.title,lid:c.listingId,url:'',time:'',done:!!done[id]||!!c.followedUp,src:'wp',cid:c.id})});
  /* 4. Your own tasks */
- (cal.tasks||[]).forEach(u=>{const at=day(u.date);if(!at)return;const x=L(u.lid);out.push({id:'u:'+u.id,ty:u.type,at,label:u.title,co:x?x.company:'',ti:x?x.title:'',lid:u.lid||null,url:x?x.apply_url||'':'',time:'',done:!!u.done,src:'u',uid:u.id})});
+ (cal.tasks||[]).forEach(u=>{const at=day(u.date);if(!at)return;if(u.lid&&!sv.has(String(u.lid)))return;const x=L(u.lid);out.push({id:'u:'+u.id,ty:u.type,at,label:u.title,co:x?x.company:'',ti:x?x.title:'',lid:u.lid||null,url:x?x.apply_url||'':'',time:'',done:!!u.done,src:'u',uid:u.id})});
  return out.sort((a,b)=>a.at-b.at)}
 const APPLIED=['Applied','Online Assessment','Interviewing','Offer','Accepted','Rejected','Ghosted'];
 let view='m',cur=sod(new Date()),sel=sod(new Date()),off=new Set(Store.get('apCalOff',[]));

@@ -17,7 +17,9 @@ const AP=window.Autopilot={
 function done(id,key){const s=st();const it=s.items[id];if(!it)return;it.done=[...new Set(it.done.concat(key))];put(s)}
 /* ---- nav tab + badge ---- */
 const nav=document.querySelector('.nav');if(nav&&!$a('apTab')){const a=document.createElement('a');a.href='#autopilot';a.dataset.go='autopilot';a.dataset.t='autopilot';a.id='apTab';a.innerHTML='Autopilot <span class="nbadge" id="apN" hidden></span>';const tr=nav.querySelector('[data-t=tracker]');tr?tr.after(a):nav.prepend(a)}
-function badge(){const n=AP.due().length,b=$a('apN');if(!b)return;b.hidden=!n;b.textContent=n||'';b.setAttribute('aria-label',n+' reminder'+(n===1?'':'s')+' due')}
+/* V13.1 #24: header bell with the due count; opens Autopilot */
+if(nav&&!$a('apBell')){const bb=document.createElement('button');bb.type='button';bb.id='apBell';bb.className='ap-bell';bb.setAttribute('aria-label','Autopilot reminders');bb.title='Autopilot reminders (Email reminders — coming soon)';bb.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M6 16V11a6 6 0 1112 0v5l2 2H4l2-2zM10 20a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="ap-bn" id="apBellN" hidden></span>';bb.onclick=()=>go('autopilot');nav.after(bb)}
+function badge(){const n=AP.due().length,b=$a('apN'),bn=$a('apBellN');if(bn){bn.hidden=!n;bn.textContent=n>99?'99+':n||'';$a('apBell').setAttribute('aria-label',n?`Autopilot: ${n} reminder${n===1?'':'s'} due`:'Autopilot reminders')}if(!b)return;b.hidden=!n;b.textContent=n||'';b.setAttribute('aria-label',n+' reminder'+(n===1?'':'s')+' due')}
 /* ---- page ---- */
 if(typeof PAGES!=='undefined'&&!PAGES.includes('autopilot'))PAGES.push('autopilot');
 const main=$a('main');let sec=$a('t-autopilot');

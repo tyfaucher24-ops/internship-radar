@@ -5,7 +5,7 @@
 const SCHOOL_SLUGS={'Queens University of Charlotte':'queens-university-of-charlotte'};
 const LI='https://www.linkedin.com';
 const q=s=>encodeURIComponent(String(s||'').replace(/\s+/g,' ').trim());
-function team(title){return String(title||'').replace(/\(.*?\)/g,' ').replace(/\b(20\d\d|summer|fall|spring|winter|intern(ship)?s?|program|analyst|associate|co-?op|undergraduate|graduate|early talent|\(.*?\)|[-–—:|,])/gi,' ').replace(/\s+/g,' ').trim().split(' ').slice(0,4).join(' ')}
+function team(title){return String(title||'').replace(/\(.*?\)/g,' ').replace(/\b(?:20\d\d|summer|fall|spring|winter|interns?|internships?|program|analyst|associate|co-?op|undergraduate|graduate|early talent)\b/gi,' ').replace(/[-–—:|,\/]/g,' ').replace(/\s+/g,' ').trim().split(' ').slice(0,4).join(' ')}
 function links(x,p){p=p||{};const co=x.company,out=[],sc=p.school,slug=sc&&SCHOOL_SLUGS[sc];
  if(sc)out.push({k:'alumni',label:`${sc} alumni at ${co}`,why:'Alumni are the warmest way in. Most will answer a short, specific note.',url:slug?`${LI}/school/${slug}/people/?keywords=${q(co)}`:`${LI}/search/results/people/?keywords=${q(co+' '+sc)}`});
  const t=team(x.title);if(t)out.push({k:'team',label:`People in ${t} at ${co}`,why:'People doing the work can tell you what the team looks for.',url:`${LI}/search/results/people/?keywords=${q(co+' '+t)}`});

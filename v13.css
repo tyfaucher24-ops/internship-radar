@@ -125,3 +125,17 @@
 .subtabs{display:flex;gap:6px;margin-top:14px}.subtabs a{padding:8px 14px;border-radius:var(--r-pill);border:1px solid var(--line);color:var(--mut);text-decoration:none;font-weight:600;display:inline-flex;gap:6px;align-items:center}.subtabs a.on{color:var(--ink);border-color:var(--acc);background:var(--c-surface)}
 @media(max-width:700px){.wp-g{grid-template-columns:1fr}.ap-rem{grid-template-columns:1fr}}
 .ap-drawer{margin:10px 0 0}
+/* V13.1 #23: Save/Unsave in the detail modal keeps a fixed width so its siblings never move */
+#dAct .acts [data-act=save],#dAct .acts [data-act=unsave],#dAct .acts [data-act=tracker]:first-child{min-width:170px;justify-content:center}
+#dAct .trk-link{min-width:auto}
+
+/* V13.1 #13 degree badge */
+.card .dgb{display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:999px;background:rgba(167,139,250,.16);color:#c4b5fd;margin:-2px 0 4px}
+
+.closed-hint .linkbtn{background:none;border:0;color:var(--accent,#93c5fd);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+
+/* V13.1 #24 bell */
+.ap-bell{position:relative;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex:0 0 36px;border-radius:999px;border:1px solid var(--c-line,#3a4452);background:transparent;color:inherit;cursor:pointer;margin-left:6px}
+html.dark .ap-bell{color:#e5e7eb;background:transparent}
+.ap-bell .ap-bn{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;border-radius:999px;background:#ef4444;color:#fff;font-size:11px;font-weight:700;line-height:18px;text-align:center}
+#t-tracker #tTable td.c-company textarea.ta,#t-tracker #tTable td.c-company .ta{word-break:normal!important;overflow-wrap:normal!important;hyphens:none}

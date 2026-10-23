@@ -90,18 +90,19 @@ def github_leads(cache_dir):
                 m=re.match(r'\| \*\*(.+?)\*\* \| (.+?) \| (.+?) \| (.*?) \|.*?\]\((https?://[^)]+)\)',line)
                 if m: leads.append({'company':m.group(1),'title':N.html.unescape(m.group(2)),'url':m.group(5),'locations':[m.group(3)],'posted':None,'terms':'','list':name,'cat':None})
     return leads
-DEAD=re.compile(r'(job|position|posting|requisition|opening)\s+(is\s+)?(no longer|not)\s+(available|active|open|accepting|found)|page (you requested )?(was )?not (be )?found|this (job|position) (has been|was) (filled|closed|removed)|no longer accepting applications',re.I)
+DEAD=re.compile(r'(job|position|posting|requisition|opening)\s+(is\s+)?(no longer|not)\s+(available|active|open|accepting|found)|page (you requested )?(was )?not (be )?found|this (job|position|posting) (has been|was|is) (filled|closed|removed|expired)|no longer accepting( applications)?|(job|posting|position|listing) has expired|this job (ad )?(has )?expired|position has (already )?been filled|job is no longer available',re.I)
 def verify_link(u):
     """True = posting page is live, False = gone, None = could not check (blocked/timeout)."""
     if not u or not u.startswith('http'): return None
     try:
         if not allowed(u): return None
-        r=fetch(u,allow_404=True,tries=2,timeout=20,check_robots=False)
+        r=fetch(u,allow_404=True,tries=2,timeout=20,check_robots=False,headers={'Accept':'text/html'})
         if r.status_code in (404,410): return False
         if r.status_code>=400: return None
         final=r.url
-        if re.search(r'[?&]error=true|/jobs/?$|/careers/?$|job-not-found|/404',final) and final.rstrip('/')!=u.rstrip('/'): return False
+        if re.search(r'[?&]error=true|/jobs/?$|/careers/?$|job-not-found|/404|/search/?(\?|$)|[?&](search|q|keywords)=',final) and final.rstrip('/')!=u.rstrip('/'): return False
         if DEAD.search(r.text[:200000]): return False
+        if re.search(r'"isApplyAvailable"\s*:\s*false|"(active|isActive|open)"\s*:\s*false',r.text[:200000]): return False   # SmartRecruiters & others answer JSON to bots: closed postings say so
         return True
     except Exception: return None
 class Rec(dict):

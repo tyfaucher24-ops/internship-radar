@@ -43,8 +43,8 @@ with sync_playwright() as p:
             ok(f'{w} Tracker: closes merged ("N days · Mon D")',pg.evaluate("[...document.querySelectorAll('#tTable td.c-closes .dv')].some(e=>/·/.test(e.textContent))"))
             ok(f'{w} Tracker: empty dates show —, no mm/dd/yyyy',pg.evaluate("[...document.querySelectorAll('#tTable input[type=date]')].every(i=>i.offsetParent===null)")and pg.locator('#tTable td.c-dateApplied .dv:text("—")').count()>=1)
             bar=pg.evaluate("(()=>{const s=document.getElementById('tStats').getBoundingClientRect(),t=document.querySelector('#t-tracker .tscroll').getBoundingClientRect();return [s.height,Math.abs(s.width-t.width),document.querySelectorAll('#tStats .tst').length]})()")
-            ok(f'{w} Tracker: one slim summary bar, same width as the table',bar[0]<=48 and bar[1]<=2 and bar[2]==5,bar)
-            ok(f'{w} Tracker: offers number green',pg.evaluate("getComputedStyle(document.querySelector('#tStats .tst.up b')).color")=='rgb(14, 124, 90)')
+            ok(f'{w} Tracker: one slim summary bar, same width as the table',bar[0]<=48 and bar[1]<=2 and bar[2]==7,bar)  # V13.1: 7 summary cells (All, Saved, Applied, Interviews, Offers, Rejections, Closing this week)
+            ok(f'{w} Tracker: offers number green',pg.evaluate("getComputedStyle(document.querySelector('#tStats .tst.up b')).color") in ('rgb(14, 124, 90)','rgb(95, 211, 165)'))  # light #0e7c5a / dark default #5fd3a5 (theme --c-up)
             pg.click('#tStats [data-seg="Offers"]');pg.wait_for_timeout(300);ok(f'{w} Tracker: clicking a stat filters the table',pg.locator('#tTable tbody tr').count()==1)
         pg.evaluate("localStorage.clear()");pg.close()
         # profile with real long values

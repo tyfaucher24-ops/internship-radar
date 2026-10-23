@@ -1,0 +1,52 @@
+{
+ "_note": "Hand-checked public facts. City in the posting URL -> state; '*' = single US site; 'HQ' = used only when the posting URL itself says headquarters/corporate.",
+ "GE Vernova": {
+  "Greenville": "SC",
+  "Schenectady": "NY",
+  "Pittsburgh": "PA",
+  "Atlanta": "GA"
+ },
+ "Excellus BCBS": {
+  "Rochester": "NY",
+  "Buffalo": "NY",
+  "Syracuse": "NY",
+  "Utica": "NY",
+  "Binghamton": "NY"
+ },
+ "Rochester Regional Health": {
+  "*": "Rochester|NY"
+ },
+ "The New School": {
+  "*": "New York|NY"
+ },
+ "Mercer University": {
+  "Macon": "GA"
+ },
+ "Dallas Fort Worth International Airport": {
+  "*": "DFW Airport|TX"
+ },
+ "Saint Leo University": {
+  "*": "Saint Leo|FL"
+ },
+ "Ambarella": {
+  "HQ": "Santa Clara|CA"
+ },
+ "Palo Alto Networks": {
+  "HQ": "Santa Clara|CA"
+ },
+ "United Parcel Service (UPS)": {
+  "HQ": "Atlanta|GA"
+ },
+ "Dick's Sporting Goods": {
+  "HQ": "Coraopolis|PA"
+ },
+ "Burlington Stores": {
+  "HQ": "Burlington|NJ"
+ },
+ "FedEx Freight": {
+  "HQ": "Memphis|TN"
+ },
+ "Procter & Gamble (P&G)": {
+  "HQ": "Cincinnati|OH"
+ }
+}

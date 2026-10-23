@@ -18,10 +18,10 @@ function locShort(x){const L=locParts(x);let s=L.slice(0,1).join('')+(L.length>1
 function locFull(x){const L=locParts(x);if(x.remote)L.push('Remote');return L.join(' · ')||(x.loc_label&&x.loc_label!=='Remote/Unspecified'?x.loc_label:'Location not listed')}
 function mbadge(x){const m=MSCORE.get(x.id);if(!m)return UNGR.has(x.id)?'<span class="mbadge gna" title="Not enough info to grade this one. Open it to see what to add.">Not enough info</span>':'';const v=m.pct>=(MW?.grader?.verdict?.strong??75)?['strong','Strong shot']:m.pct>=(MW?.grader?.verdict?.worth??55)?['worth','Worth applying']:['long','Long shot'];return`<span class="mbadge ${m.band}" title="Match ${m.pct}%, grade ${m.grade}">${m.pct}% · ${m.grade}</span><span class="verd v-${v[0]}">${v[1]}</span>`}
 function saveBtn(x){if(x.st==='upcoming'){const on=Store.get('notify',[]).includes(x.id);return`<button class="btn-save${on?' on':''}" data-act="notify" aria-pressed="${on}">${on?'🔔 Notifying':'Notify me'}</button>`}
- const t=T.byListing(x.id);return t?`<button class="btn-save on" data-act="tracker" aria-label="In your tracker: ${esc(t.status)}">✓ ${esc(({'Online Assessment':'OA','Interviewing':'Interview'})[t.status]||t.status)}</button>`:`<button class="btn-save" data-act="save" aria-label="Save ${esc(x.company)} ${esc(x.title)}">Save</button>`}
+ const t=T.byListing(x.id);return t?(t.status==='Saved'?`<button class="btn-save on" data-act="unsave" aria-pressed="true" title="Unsave" aria-label="Saved. Click to unsave ${esc(x.company)} ${esc(x.title)}">✓ Saved</button>`:`<button class="btn-save on" data-act="tracker" aria-label="In your tracker: ${esc(t.status)}. Open tracker">✓ ${esc(({'Online Assessment':'OA','Interviewing':'Interview'})[t.status]||t.status)}</button>`):`<button class="btn-save" data-act="save" aria-label="Save ${esc(x.company)} ${esc(x.title)}">Save</button>`}
 function cardHTML(x){const c=closeLbl(x);return`<div class="card${x.st==='closed'?' isclosed':''}" role="listitem" tabindex="0" data-id="${esc(x.id)}" aria-label="${esc(x.company+', '+x.title)}">
  <div class="c-top">${logoHTML(x)}<div class="c-co" title="${esc(x.company)}">${esc(x.company)}</div></div>
- <h2 class="c-role" title="${esc(x.title)}">${esc(x.title)}</h2>
+ <h2 class="c-role" title="${esc(x.title)}">${esc(x.title)}</h2>${x.degree?`<span class="dgb" title="Aimed at ${esc(x.degree)} students">${esc(x.degree)}</span>`:''}
  <p class="c-loc" title="${esc(locFull(x))}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>${esc(locShort(x))}</p>${(MSCORE.size||UNGR.size)?`<p class="c-verd">${mbadge(x)}</p>`:''}
  <div class="c-foot"><span class="dl dl-${c.c}"${c.b?` title="${esc(c.b)}"`:''}>${c.c==='red'||c.c==='amber'?'<span class="pulse dn" aria-hidden="true"></span>':''}${esc(c.t)}</span>${grpBtn(x)}${saveBtn(x)}</div></div>`}
 function grpBtn(x){const e=GRP.get(x.id);if(!e||e.n<2||e.ids[0]!==x.id)return'';const o=GEXP.has(e.k);return`<button type="button" class="grp" data-grp="${esc(e.k)}" aria-expanded="${o}" title="${o?'Hide':'Show'} ${e.n-1} similar role${e.n>2?'s':''} at ${esc(x.company)}">${o?"Hide":`+${e.n-1} similar`}</button>`}
@@ -56,11 +56,12 @@ const FDEF=[
  ['cy','Class year',x=>x.class_years&&x.class_years.length?x.class_years:['Not listed'],['Freshman','Sophomore','Junior','Senior','Graduate','Not listed']],
  ['size','Company size',x=>[x.size||'Not listed']],
  ['spons','Visa sponsorship',x=>[x.citizenship?'US citizenship required':x.sponsorship==='Not offered'?'Not offered':x.sponsorship==='Offered'?'Offered':'Not listed'],['Offered','Not offered','US citizenship required','Not listed']],
- ['paid','Pay',x=>[x.paid===true?'Paid':x.paid===false?'Unpaid':'Not listed'],['Paid','Unpaid','Not listed']]];
+ ['paid','Pay',x=>[x.paid===true?'Paid':x.paid===false?'Unpaid':'Not listed'],['Paid','Unpaid','Not listed']],
+ ['deg','Degree level',x=>[x.degree?x.degree+' students':'Undergrad'],['Undergrad','MBA students','PhD students','MS students','JD students','Grad students']]];
 const FD=Object.fromEntries(FDEF.map(d=>[d[0],d]));
 const DEFAULTS={status:'Open',sort:'deadline'};
-let F={};const FK=['q','status','cat','rt','loc','state','city','near','radius','wp','dlw','posted','term','cy','size','spons','paid','minm','hideTracked','sort'];
-function loadF(){const u=new URLSearchParams(location.search);const fromUrl=FK.some(k=>u.has(k));const src=fromUrl?Object.fromEntries(FK.filter(k=>u.has(k)).map(k=>[k,u.get(k)])):Store.get('filters',{});F={...DEFAULTS,...src};/* V8 migrate old single-value location keys */if(F.state){F.loc=[...(F.loc?F.loc.split('~'):[]),'st:'+F.state].join('~');F.state=''}if(F.city){F.loc=[...(F.loc?F.loc.split('~'):[]),F.city==='Remote|'?'Remote':'c:'+F.city].join('~');F.city=''}if(F.sort==='new'&&!src.sort)F.sort=DEFAULTS.sort}
+let F={};const FK=['deg','q','status','cat','rt','loc','state','city','near','radius','wp','dlw','posted','term','cy','size','spons','paid','minm','hideTracked','sort'];
+function loadF(){const u=new URLSearchParams(location.search);const fromUrl=FK.some(k=>u.has(k));const src=fromUrl?Object.fromEntries(FK.filter(k=>u.has(k)).map(k=>[k,u.get(k)])):Store.get('filters',{});F={...DEFAULTS,...src};/* V8 migrate old single-value location keys */if(F.state){F.loc=[...(F.loc?F.loc.split('~'):[]),'st:'+F.state].join('~');F.state=''}if(F.city){F.loc=[...(F.loc?F.loc.split('~'):[]),F.city==='Remote|'?'Remote':'c:'+F.city].join('~');F.city=''}if(F.sort==='new'&&!src.sort)F.sort=DEFAULTS.sort;/* V13.1 #17: with a profile, the default sort is match unless the user picked one */if(!u.has('sort')&&!Store.get('sortPicked',false)&&(Store.get('profile',null)||{}).v)F.sort='match'}
 function saveF(){const u=new URL(location);FK.forEach(k=>u.searchParams.delete(k));FK.forEach(k=>{if(F[k]&&F[k]!==DEFAULTS[k])u.searchParams.set(k,F[k])});u.searchParams.delete('intro');u.searchParams.delete('introSlow');history.replaceState(null,'',u);Store.set('filters',F)}
 /* ---------- V8 filters: multi-select, searchable panels with live counts, staged Apply/Clear ---------- */
 const SEP='~';const fv=k=>F[k]?String(F[k]).split(SEP).filter(Boolean):[];const fset=(k,a)=>{F[k]=a.join(SEP)};
@@ -83,9 +84,11 @@ function baseOK(x,q){if(x.hidden)return false;
  if(NEAR&&+F.radius){if(!(x.locations||[]).some(l=>l.lat!=null&&hav(NEAR,l)<=+F.radius))return false}
  if(F.minm&&MSCORE.size){const m=MSCORE.get(x.id);if(!m||m.pct<+F.minm)return false}
  if(F.hideTracked==='1'&&TRACKED.has(String(x.id)))return false;
- if(x.past_term&&!fv('status').includes('Closed'))return false;return true}
-let RES=[],COUNTS={};
-function compute(){const t0=performance.now();const q=parseQ(F.q);TRACKED=new Set(T.all().map(t=>String(t.listingId)));
+ if(x.past_term&&!fv('status').includes('Closed'))return false;
+ /* V13.1 #13: MBA/PhD/MS/JD roles are hidden for undergrad profiles unless the Degree level filter asks for them */
+ if(x.degree&&!F.deg&&UG)return false;return true}
+let RES=[],COUNTS={},UG=false;function UGRAD(){const p=Store.get('profile',null);return!!(p&&p.classYear&&!/grad|master|mba|phd/i.test(p.classYear))}
+function compute(){const t0=performance.now();UG=UGRAD();const q=parseQ(F.q);TRACKED=new Set(T.all().map(t=>String(t.listingId)));
  NEAR=null;if(F.near&&+F.radius){const c=CITYIDX.get(F.near);if(c)NEAR=c}
  const act=FDEF.filter(([k])=>F[k]).map(d=>[d[0],d[2],new Set(fv(d[0]))]);COUNTS=Object.fromEntries(FDEF.map(([k])=>[k,new Map()]));const out=[];
  for(const x of D){if(!baseOK(x,q))continue;let fail=null,nf=0;
@@ -94,7 +97,7 @@ function compute(){const t0=performance.now();const q=parseQ(F.q);TRACKED=new Se
   if(nf===0){out.push(x);for(const [k,,fn] of FDEF)for(const v of fn(x))COUNTS[k].set(v,(COUNTS[k].get(v)||0)+1)}
   else{const fn=FD[fail][2];for(const v of fn(x))COUNTS[fail].set(v,(COUNTS[fail].get(v)||0)+1)}}
  const s=F.sort;const cmpDl=(a,b)=>(a.deadline&&days(a.deadline)>=0?a.deadline:'9999').localeCompare(b.deadline&&days(b.deadline)>=0?b.deadline:'9999');
- out.sort(s==='deadline'?(a,b)=>cmpDl(a,b)||pdate(b).localeCompare(pdate(a)):s==='az'?(a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title):s==='match'?(a,b)=>(MSCORE.get(b.id)?.pct??-1)-(MSCORE.get(a.id)?.pct??-1)||cmpDl(a,b):(a,b)=>pdate(b).localeCompare(pdate(a))||cmpDl(a,b));
+ out.sort(s==='deadline'?(a,b)=>cmpDl(a,b)||pdate(b).localeCompare(pdate(a)):s==='az'?(a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title):s==='match'?(a,b)=>(MSCORE.get(b.id)?.pct??-1)-(MSCORE.get(a.id)?.pct??-1)||cmpDl(a,b):(a,b)=>(b.posted||'').localeCompare(a.posted||'')||pdate(b).localeCompare(pdate(a))||cmpDl(a,b));/* #18 Newest = posted_at desc */
  if(s==='match'){/* V9: one company can't take over the top: each extra role from the same company ranks a few points lower (the score itself is unchanged) */const pen=MW?.grader?.diversityPenalty??3,seen=new Map(),eff=new Map();for(const x of out){const m=MSCORE.get(x.id);if(!m)continue;const k=x.company,n=(seen.get(k)||0);seen.set(k,n+1);eff.set(x.id,m.pct-pen*n)}out.sort((a,b)=>(eff.get(b.id)??-99)-(eff.get(a.id)??-99)||cmpDl(a,b))}
  /* V9: group near-duplicate roles (same company, same title apart from location/year/parentheses) into one card */
  ALLN=out.length;GRP=new Map();const gk=x=>x.company+'|'+x.title.toLowerCase().replace(/\([^)]*\)|\[[^\]]*\]/g,'').replace(/\s[-–—|,:]\s.*$/,'').replace(/\b(19|20)\d\d\b|summer|fall|spring|winter/g,'').replace(/[^a-z]+/g,' ').trim();
@@ -108,7 +111,7 @@ function optList(k){const C=COUNTS[k]||new Map(),o=FD[k][3],sel=fv(k);const all=
   [...C.keys()].filter(v=>v.startsWith('c:')).sort().forEach(v=>add(v,{group:'Cities',alias:LISTS.STATES[v.slice(-2)]||''}));sel.filter(v=>!seen.has(v)).forEach(v=>add(v,{}));return opts}
  return[...new Set([...sel,...all])].map(v=>({v,count:C.get(v)||0}))}
 const PILLS0=[['cat','Industry'],['loc','Location'],['cy','Class year'],['dlw','Closing date'],['minm','Minimum match'],['more','More filters']];const pillList=()=>PILLS0.filter(([k])=>k!=='minm'||MSCORE.size);
-const MOREK=['size','spons','paid','posted','term','status','rt','wp'];
+const MOREK=['deg','size','spons','paid','posted','term','status','rt','wp'];
 const MINM=[['','Any'],['60','60%+ (C or better)'],['75','75%+ (B or better)'],['90','90%+ (A range)']];
 function pillLabel(k,l){if(k==='loc'){const v=fv('loc'),n=v.length+(F.near&&F.radius?1:0);return n===1?`${l}: ${v[0]?locLabel(v[0]):`${F.near} +${F.radius}mi`}`:n?`${l} · ${n}`:l}
  if(k==='more'){const n=MOREK.filter(k=>F[k]&&F[k]!==DEFAULTS[k]).length+(F.hideTracked==='1');return n?`${l} · ${n}`:l}if(k==='minm')return F.minm?`${l}: ${F.minm}%+`:l;const v=fv(k);return v.length===1?`${l}: ${v[0]}`:v.length?`${l} · ${v.length}`:l}
@@ -152,11 +155,11 @@ function update(keepPop){compute();saveF();if(!keepPop)renderPills();else render
  $('chips').innerHTML=chipsHTML();$('chips').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k,v=b.dataset.v;if(k==='__all')return clearAll();if(k==='near'){F.near='';F.radius=''}else if(v&&FD[k]){fset(k,fv(k).filter(x=>x!==v));if(k==='status'&&!F.status)F.status=''}else F[k]='';if(k==='q')$('q').value='';update()});
  $('sort').value=F.sort||'new';const sv=fv('status');
  $('count').innerHTML=`<b>${ALLN.toLocaleString()}</b> ${sv.length===1?({Upcoming:'upcoming',Closed:'closed',Open:'open'})[sv[0]]:''} internship${ALLN===1?'':'s'}${ALLN>RES.length?` <span class="grpn">· similar roles grouped</span>`:''}`;
- $('empty').hidden=RES.length>0;$('empty').innerHTML=`<h3>No internships match all of that</h3><p class="muted">${F.q?'Try fewer or broader search words, or ':''}remove a filter below. Tip: start with just Industry and Location, then narrow down.</p><button class="btn" type="button" onclick="clearAll()">Clear all filters</button>`;
+ $('empty').hidden=RES.length>0;const ncl=RES.length||fv('status').includes('Closed')?0:(()=>{const q=parseQ(F.q);let n=0;for(const x of D)if(x.st==='closed'&&!x.hidden&&baseOK(x,q))n++;return n})();$('empty').innerHTML=`<h3>No internships match all of that</h3>${ncl?`<p class="closed-hint"><b>${ncl.toLocaleString()} closed match${ncl===1?'':'es'}</b> — <button type="button" class="linkbtn" id="showClosed">show closed</button></p>`:''}<p class="muted">${F.q?'Try fewer or broader search words, or ':''}remove a filter below. Tip: start with just Industry and Location, then narrow down.</p><button class="btn" type="button" onclick="clearAll()">Clear all filters</button>`;{const b=$('showClosed');if(b)b.onclick=()=>{F.status='Closed';renderPills&&renderPills();update()}}
  animateNext=true;vrender(true);if(window.mapUpdate)mapUpdate()}
 function renderPillLabels(){document.querySelectorAll('[data-pill]').forEach(b=>{const p=PILLS0.find(p=>p[0]===b.dataset.pill);const l=pillLabel(p[0],p[1]);b.firstChild.textContent=l;b.classList.toggle('active',l!==p[1])})}
 let qTimer;$('q').addEventListener('input',e=>{clearTimeout(qTimer);qTimer=setTimeout(()=>{F.q=e.target.value.trim();update()},120)});
-$('sort').onchange=e=>{F.sort=e.target.value;update()};
+$('sort').onchange=e=>{F.sort=e.target.value;Store.set('sortPicked',true);update()};
 /* ---------- windowed card grid (rows of N cards; only visible rows are in the DOM) ---------- */
 let lastRange='',animateNext=false;
 const gridCols=()=>innerWidth>=1100?3:innerWidth>=700?2:1;
@@ -206,10 +209,10 @@ function summaryHTML(x,d){const t=String(d||'').replace(/\s+/g,' ');const B=[];
  return `<ul class="dsum">${B.map(([k,v])=>`<li><b>${k}:</b> ${esc(v)}</li>`).join('')}</ul>`}
 async function descOf(x){if(!x.has_desc)return null;const sh=shardOf(x.id);if(!descCache[sh])descCache[sh]=fetch(`data/desc/${sh}.json`+DV()).then(r=>r.json()).catch(()=>({}));return (await descCache[sh])[x.id]||null}
 async function onCardClick(e){const gb=e.target.closest('[data-grp]');if(gb){e.stopPropagation();const k=gb.dataset.grp;GEXP.has(k)?GEXP.delete(k):GEXP.add(k);update(true);return}const row=e.target.closest('[data-id]');if(!row)return;const x=BYID.get(row.dataset.id);if(!x)return;const b=e.target.closest('[data-act]');
- if(b){e.stopPropagation();const a=b.dataset.act;if(a==='save'){await ensureDetail(x);track(x.id,'Saved');bump();svIn(x.id)}else if(a==='applied'){await ensureDetail(x);track(x.id,'Applied');bump()}else if(a==='tracker'){go('tracker');const t=T.byListing(x.id);setTimeout(()=>{const r=t&&document.querySelector(`#tTable tr[data-id="${t.id}"]`);if(r){r.scrollIntoView({block:'center'});r.classList.add('flash');r.querySelector('select')?.focus()}},50)}
+ if(b){e.stopPropagation();const a=b.dataset.act;if(a==='save'){await ensureDetail(x);track(x.id,'Saved');bump();svIn(x.id)}else if(a==='applied'){await ensureDetail(x);track(x.id,'Applied');bump()}else if(a==='unsave'){const t=T.byListing(x.id);if(t)T.save(T.all().filter(o=>o!==t&&String(o.listingId)!==String(x.id)));b.blur()}else if(a==='tracker'){go('tracker');const t=T.byListing(x.id);setTimeout(()=>{const r=t&&document.querySelector(`#tTable tr[data-id="${t.id}"]`);if(r){r.scrollIntoView({block:'center'});r.classList.add('flash');r.querySelector('select')?.focus()}},50)}
   else if(a==='notify'){const n=Store.get('notify',[]);const i=n.indexOf(x.id);i<0?n.push(x.id):n.splice(i,1);Store.set('notify',n);vrender(true)}return}
  if(e.target.closest('a'))return;openDrawer(x)}
-function svIn(id){const go=()=>document.querySelectorAll(`[data-id="${CSS.escape(id)}"] [data-act=tracker],#dAct [data-act=tracker]`).forEach(e=>{e.classList.remove('sv-in');void e.offsetWidth;e.classList.add('sv-in')});go();requestAnimationFrame(go)}
+function svIn(id){const go=()=>document.querySelectorAll(`[data-id="${CSS.escape(id)}"] [data-act=unsave],[data-id="${CSS.escape(id)}"] [data-act=tracker],#dAct [data-act=unsave]`).forEach(e=>{e.classList.remove('sv-in');void e.offsetWidth;e.classList.add('sv-in')});go();requestAnimationFrame(go)}
 function blip(b){if(RM)return;const s=document.createElement('span');s.className='blip';b.appendChild(s);setTimeout(()=>s.remove(),700)}
 function bump(){const n=$('trkN');if(!n||RM)return;n.classList.remove('bump');void n.offsetWidth;n.classList.add('bump')}
 ['vl'].forEach(id=>{$(id).addEventListener('click',onCardClick);$(id).addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.card'))onCardClick(e)})});
@@ -228,7 +231,7 @@ function h1bText(x){if(!H1B)return NL;const e=H1B.employers[x.company];const src
  if(!e)return`No record under this exact name <span class="muted small">(${src})</span>`;
  return`${e.new.toLocaleString()} new + ${e.cont.toLocaleString()} continuing H-1B approval${e.new+e.cont===1?'':'s'} <span class="muted small">(${src}; past sponsorship isn't a promise)</span>`}
 function fact(k,v){return`<div class="fact"><dt>${k}</dt><dd>${v}</dd></div>`}
-function actsHTML(x){const t=T.byListing(x.id);return t?`<button class="btn-ghost" data-act="tracker">✓ In tracker: ${esc(t.status)}</button>`:x.st==='upcoming'?saveBtn(x):`<button class="btn-ghost" data-act="save">Save</button><button class="btn-ghost" data-act="applied">Mark applied</button>`}
+function actsHTML(x){const t=T.byListing(x.id);return t?(t.status==='Saved'?`<button class="btn-ghost on" data-act="unsave" aria-pressed="true">✓ Saved · Unsave</button>`:`<button class="btn-ghost" data-act="tracker">✓ In tracker: ${esc(t.status)}</button>`)+`<button class="btn-ghost trk-link" data-act="tracker" aria-label="Open tracker" title="Open tracker">↗ Tracker</button>`:x.st==='upcoming'?saveBtn(x):`<button class="btn-ghost" data-act="save">Save</button><button class="btn-ghost" data-act="applied">Mark applied</button>`}
 async function openDrawer(x){lastFocus=document.activeElement;const m=MSCORE.get(x.id);const c=closeLbl(x);
  $('dbody').innerHTML=`<div class="dhead">${logoHTML(x,true)}<div><p class="lco">${esc(x.company)}</p><h2 id="dTitle">${esc(x.title)}</h2><p class="muted">${esc(locFull(x))}</p></div></div><p class="fbp-co" id="dAbout" hidden></p>
  <div class="drow"><span class="dl dl-${c.c}">${esc(c.t)}</span><span class="muted small">${x.st==='upcoming'?'':postedAgo(x)}</span></div><div class="gloss" id="dGloss">${glossHTML(x.title+' '+c.t+' '+(x.sponsorship||'')+(x.citizenship?' sponsorship':''))}</div>
@@ -293,8 +296,8 @@ function reveal(){document.querySelectorAll('main>section:not([hidden]) .panel, 
 /* ---------- data load ---------- */
 const CITYIDX=new Map();
 function mergeMine(){const mine=Store.get('myListings',[]).map(x=>prepare({...x,_mine:true,_det:true,id:String(x.id),source:'Added by you'}));D=mine.concat(D.filter(x=>!x._mine));BYID=new Map(D.map(x=>[String(x.id),x]));if(META.updated)markLive()}
-/* One shared definition of "open": status open + verified within 24h of the last sync (same rule the sync uses for meta.open), plus listings you added yourself. */
-function markLive(){const cut=META.updated?Date.parse(META.updated)-864e5:0;for(const x of D)x.live=!!x._mine||(x.status==='open'&&x.st!=='closed'&&!x.hidden&&!x.past_term&&!!x.lv&&Date.parse(x.lv+(x.lv.length<=16?':00Z':''))>=cut)}
+/* V13.1: ONE definition of "open", identical to pipeline/hygiene.is_open (which writes meta.open): status open, not hidden, not a past term, deadline today or later. Plus listings you added yourself. */
+function markLive(){const td=new Date(),t=td.getFullYear()+'-'+String(td.getMonth()+1).padStart(2,'0')+'-'+String(td.getDate()).padStart(2,'0');for(const x of D)x.live=!!x._mine||(x.status==='open'&&x.st!=='closed'&&!x.hidden&&!x.past_term&&!(x.deadline&&x.deadline<t))}
 function liveCounts(){if(!D.length||!D.some(x=>'live' in x))return{open:META.open||0,wk:META.closing_this_week||0};let o=0,w=0;for(const x of D)if(x.live){o++;if(x.deadline){const n=days(x.deadline);if(n>=0&&n<=7)w++}}return{open:o,wk:w}}
 function hdrCount(){const LC=liveCounts();{const dc=document.getElementById('dCount'),du=document.getElementById('dUpd');if(dc&&LC.open)dc.textContent=LC.open.toLocaleString();if(du&&META.updated)du.textContent=ago(META.updated)}const age=META.updated?(Date.now()-Date.parse(META.updated))/36e5:0,stale=age>6;const t=META.updated?`${LC.open.toLocaleString()} open internships · ${LC.wk.toLocaleString()} closing this week · Updated ${ago(META.updated)}`:'Live counts unavailable';const qb=document.getElementById('hdrCount');if(qb&&META.updated){/* V12.1 LIVE badge: honest; LIVE only when the last sync is 6h old or less */const et=new Date(META.updated).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' ET',tip=(stale?'Delayed. ':'')+'Last sync '+et;
  const h=`<span class="qbadge ${stale?'q-del':'q-live'}" title="${tip}" aria-label="${tip}" tabindex="0">${stale?'Delayed':'<i class="qdot" aria-hidden="true"></i>LIVE'}</span><span class="q"><b class="mono">${LC.open.toLocaleString()}</b><small>open internships</small></span><span class="q"><b class="mono">${LC.wk.toLocaleString()}</b><small>closing this week</small></span>`;if(qb.dataset.h!==h){qb.dataset.h=h;qb.innerHTML=h}}

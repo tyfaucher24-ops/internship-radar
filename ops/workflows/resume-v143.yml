@@ -1,0 +1,20 @@
+# V14.3 — NOT ACTIVE. Lives in ops/workflows because this repo's token can't write .github/workflows.
+# To turn it on, Ty copies it by hand to .github/workflows/resume-v143.yml.
+# Runs the resume parser accuracy suite (60 synthetic fixtures, PDF/DOCX/TXT) and the V14.3 grading checks.
+name: resume-v143
+on: [push, pull_request]
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '20'}
+      - name: Install the same library versions the website vendors (test-only, not shipped)
+        run: npm install --no-save --prefix "$RUNNER_TEMP/nm" pdfjs-dist@3.11.174 mammoth@1.8.0
+      - name: Resume parser accuracy (exit 1 if any pass bar is missed or anything is invented)
+        run: NODE_PATH="$RUNNER_TEMP/nm/node_modules" node tests/resume-fixtures/run.js -m
+      - name: 2-page PDF timing
+        run: NODE_PATH="$RUNNER_TEMP/nm/node_modules" node tests/resume-fixtures/time.js
+      - name: Grader (50 personas >= 91.8% in band, 20 resume+posting pairs, monotonicity, harsh and varied)
+        run: NODE_PATH="$RUNNER_TEMP/nm/node_modules" node tests/grader/run_resume.js

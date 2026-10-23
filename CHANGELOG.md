@@ -10,6 +10,7 @@
 - Grade and Realistic pills have their own Grade column (default on).
 - Company cell: a narrow checkbox, a 28px logo, a 10px gap, then the name.
 - 15px cells, 13px uppercase headers, zebra rows and row hover. axe AA passes in both themes.
+- Phone header (390): with a Tracker count badge, the theme toggle no longer runs past the screen edge (smaller badge, 32px bell and toggle), so no page scrolls sideways.
 - Assets versioned and version.json bumped.
 
 ## V14.1.1 — Tidier mobile header (2026-10-23)

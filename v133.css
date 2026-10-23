@@ -58,3 +58,23 @@ a.btn-apply:hover{background:var(--acc-ink)}
 #dAct.dact-stick{justify-content:flex-start;gap:8px}
 #dAct.dact-stick .acts{flex:0 1 auto;justify-content:flex-start}
 @media(max-width:480px){#dAct .btn-apply,#dAct .acts [data-act=save],#dAct .acts [data-act=unsave]{min-width:0;width:112px;flex:0 0 112px}#dAct.dact-stick{flex-wrap:nowrap}#dAct.dact-stick .acts{flex:1 1 auto;flex-wrap:nowrap;min-width:0}#dAct .acts [data-act=applied]{min-width:0;flex:1 1 auto;padding:0 8px}}
+
+/* V13.3 #5c: card redesign. One fixed structure, equal heights, 2-line titles, Apply/Save on their own 50/50 bottom row */
+#vl .card,.grid .card{display:flex;flex-direction:column;height:292px;padding:20px 20px 16px;gap:0;box-sizing:border-box}
+body.graded #vl .card,body.graded .grid .card{height:322px}
+#mList .card{height:auto;min-height:292px}
+.card .c-top{flex:none;min-height:36px;margin-bottom:12px}
+.card .c-co{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .c-role{flex:none;margin:0 0 8px;line-height:1.3;height:2.6em;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;overflow-wrap:anywhere;white-space:normal}
+.card .dgb{align-self:flex-start;margin:0 0 6px}
+.card .c-loc{flex:none;margin:0 0 6px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .c-verd{flex:none;margin:0 0 6px}
+.card .c-extra{flex:none}
+.card .c-foot{margin-top:auto;flex:none;display:flex;align-items:center;gap:8px;min-height:28px;padding:0;border:0;flex-wrap:nowrap;overflow:hidden}
+.card .c-foot .dl{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .c-foot .grp{margin-left:auto;flex:none}
+.card .c-act{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line,rgba(127,127,127,.18))}
+.card .c-act>*{min-width:0!important;width:100%;height:40px;min-height:40px;margin:0;padding:0 8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .c-act .c-noap{font-size:12px;opacity:.7;border:1px dashed var(--line,rgba(127,127,127,.3));border-radius:10px}
+#vl .grow{height:292px}
+body.graded #vl .grow{height:322px}

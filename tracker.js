@@ -25,7 +25,7 @@ const COLS=[['company','Company',1],['title','Role',1],['status','Status',1],['c
 const SEG=[['All',()=>true],['Saved',t=>t.status==='Saved'],['Applied',t=>['Applied','Online Assessment'].includes(t.status)],['Interviewing',t=>t.status==='Interviewing'],['Offers',t=>['Offer','Accepted'].includes(t.status)],['Rejections',t=>['Rejected','Ghosted','Withdrawn'].includes(t.status)],['Closing this week',t=>{const c=closesIn(t);return c.n>=0&&c.n<=7&&!CLOSEDST.includes(t.status)},1]];
 let tSeg='All',tSort=Store.get('trackerSort',{k:'closes',d:1});
 /* V12.1: no horizontal scroll. Chosen columns collapse (lowest priority first) until the sheet fits its box. */
-/* V13.1 #21: narrower minimums so every default column fits at 1280 */const MINW={company:160,title:150,status:200,closes:116,dateApplied:104,nextStep:140,notes:140,link:100,location:140,priority:120,followUp:110,contact:150,resumeVersion:140,coverLetter:100,closeReason:140,dateSaved:110};
+/* V13.1 #21: narrower minimums so every default column fits at 1280 */const MINW={company:160,title:180,status:160,closes:116,dateApplied:104,nextStep:140,notes:150,link:84,location:140,priority:120,followUp:110,contact:150,resumeVersion:140,coverLetter:100,closeReason:140,dateSaved:110};
 const DROP=['coverLetter','resumeVersion','contact','closeReason','dateSaved','followUp','priority','location','notes','link','dateApplied','nextStep','title'];
 const chosenCols=()=>{const v=Store.get('trackerCols',null);return COLS.filter(c=>v?v.includes(c[0]):c[2])};
 let tHidden=[];

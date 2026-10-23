@@ -1,6 +1,17 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.1 (tracker sheet, per specs/V14.1.md) (2026-10-23)
+- P0 fix: selecting every column in Customize sheet no longer blocks clicks. Root cause: the Priority stars used the class `stars`, which is also the full-bleed animated starfield layer (`position:absolute; inset:-20px`), so turning Priority on laid an invisible layer over the sheet that ate clicks. It's renamed to `trk-stars` and guarded. The column list also no longer re-renders under your click.
+- Customize panel: fixed-size popover (max 70vh, fits the space below the button, scrolls inside), Done always visible, closes on Done / Esc / outside click. New "Reset to default columns" button. A corrupted saved column list falls back to the defaults.
+- With many columns on, the sheet scrolls sideways inside its own box, with a sticky header row and a sticky Company column. The page never gets wider.
+- Nothing is cut off: no ellipsis anywhere. Headers wrap, and shorter labels (Contact, Resume) carry the full name as a tooltip. Role, Notes, Next step, Location, Contact and the other text fields wrap to their full text, and the footer hint wraps.
+- Alignment: every cell is vertically centred, rows are at least 64px tall with 16px cell padding, and headers share their column's left padding.
+- Grade and Realistic pills have their own Grade column (default on).
+- Company cell: a narrow checkbox, a 28px logo, a 10px gap, then the name.
+- 15px cells, 13px uppercase headers, zebra rows and row hover. axe AA passes in both themes.
+- Assets versioned and version.json bumped.
+
 ## V14.1.1 — Tidier mobile header (2026-10-23)
 - At phone widths the Profile ▾ menu button no longer overlaps "Profile", and the bell and theme toggle are slimmer (36px), so the toggle sits clear of the screen edge.
 - axe WCAG 2.2 AA: 0 violations on the live Find page in both themes at 1440, 1280 and 390.

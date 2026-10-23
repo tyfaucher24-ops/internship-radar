@@ -105,6 +105,13 @@
 "source": "ashby"
 },
 {
+"company": "Amplify",
+"title": "Contract Recruiter (Contractor)",
+"url": "https://jobs.ashbyhq.com/amplify/4640abf7-2a7d-4978-88ec-f632d15ebc44",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
 "company": "Anduril",
 "title": "Contract Recruiter, Production (Technicians)",
 "url": "https://boards.greenhouse.io/andurilindustries/jobs/5236226007?gh_jid=5236226007",
@@ -387,28 +394,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829315002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829623002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8618463002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -422,7 +408,28 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8618463002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829617002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829315002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -506,14 +513,14 @@
 {
 "company": "Axon",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037935003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037936003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Axon",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037936003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037935003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -833,13 +840,6 @@
 "source": "greenhouse"
 },
 {
-"company": "Box",
-"title": "Sales Recruiter",
-"url": "https://job-boards.greenhouse.io/boxinc/jobs/8237828",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
 "company": "Brain",
 "title": "Full Cycle Technical Recruiter",
 "url": "https://jobs.ashbyhq.com/brainco/026974f4-059e-4a7e-be18-863e4c866441",
@@ -877,14 +877,14 @@
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864176002?gh_jid=8864176002",
+"url": "https://www.brex.com/careers/8864174002?gh_jid=8864174002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864174002?gh_jid=8864174002",
+"url": "https://www.brex.com/careers/8864176002?gh_jid=8864176002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -938,9 +938,9 @@
 "source": "ashby"
 },
 {
-"company": "Clera",
-"title": "Strategy & Operations Working Student",
-"url": "https://jobs.ashbyhq.com/clera/ecbac0d0-89bf-4859-aaf9-aac1fb0052a8",
+"company": "Charta Health",
+"title": "Campus Recruiter",
+"url": "https://jobs.ashbyhq.com/chartahealth/3d6e9666-ba82-4700-8691-4b35ece852a5",
 "reason": "ambiguous intern wording",
 "source": "ashby"
 },
@@ -2471,6 +2471,20 @@
 "source": "ashby"
 },
 {
+"company": "Saronic",
+"title": "Recruiter - Franklin, LA ",
+"url": "https://jobs.ashbyhq.com/saronic/f0d7608c-c013-46cf-ae08-0b0763dcc0be",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Saronic",
+"title": "Recruiter - Brownsville, TX ",
+"url": "https://jobs.ashbyhq.com/saronic/d8aa43dd-a0bb-4651-a5af-d1b0ffe84f50",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
 "company": "Scale AI",
 "title": "Finance Fellow - Human Frontier Collective (UK)",
 "url": "https://job-boards.greenhouse.io/scaleai/jobs/4613327005",
@@ -2695,6 +2709,13 @@
 "source": "lever"
 },
 {
+"company": "Shield AI",
+"title": "Software Engineer I - New Grad (R6052)",
+"url": "https://jobs.lever.co/shieldai/633a3038-574c-45ff-babb-7e1b8b7c6196",
+"reason": "ambiguous intern wording",
+"source": "lever"
+},
+{
 "company": "Sierra",
 "title": "Sales Recruiter",
 "url": "https://jobs.ashbyhq.com/Sierra/c0c29aa8-0c94-4d03-858e-201d19ee6937",
@@ -2851,14 +2872,14 @@
 {
 "company": "SpaceX",
 "title": "Recruiter, High Volume Manufacturing (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864583002?gh_jid=8864583002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864552002?gh_jid=8864552002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Recruiter, High Volume Manufacturing (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864552002?gh_jid=8864552002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864583002?gh_jid=8864583002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2942,14 +2963,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8695154002?gh_jid=8695154002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8695154002?gh_jid=8695154002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },

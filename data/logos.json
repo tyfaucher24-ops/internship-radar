@@ -14675,6 +14675,12 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"William Blair": {
+"domain": "williamblair.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/william-blair.webp",
+"src": "gstatic"
+},
 "WindBorne Systems": {
 "domain": "windbornesystems.com",
 "domain_src": "clearbit",

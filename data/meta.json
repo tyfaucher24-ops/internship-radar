@@ -1,25 +1,41 @@
 {
- "updated": "2026-10-23T12:53:22Z",
- "open": 11181,
- "open_all": 11181,
+ "updated": "2026-10-23T17:54:08Z",
+ "open": 11183,
+ "open_all": 11183,
  "closing_this_week": 545,
- "upcoming": 1601,
+ "upcoming": 1603,
  "companies_tracked": 2497,
  "companies_with_listings": 1465,
- "duration_s": 253,
+ "duration_s": 244,
  "apply_links": {
-  "at": "2026-10-23T12:57:36+00:00",
-  "open": 11352,
-  "direct": 10022,
-  "posting": 1268,
-  "none": 62,
-  "checked_this_run": 7375,
-  "ok": 7250,
-  "unknown": 124,
-  "failed": 1,
+  "at": "2026-10-23T17:58:14+00:00",
+  "open": 11354,
+  "direct": 10024,
+  "posting": 1249,
+  "none": 81,
+  "checked_this_run": 7178,
+  "ok": 7033,
+  "unknown": 126,
+  "failed": 19,
   "top_failing_hosts": [
    [
+    "www.optiver.com",
+    7
+   ],
+   [
     "zapply.jobs",
+    7
+   ],
+   [
+    "jobs.jobvite.com",
+    2
+   ],
+   [
+    "specteraerospace.bamboohr.com",
+    2
+   ],
+   [
+    "careers.jhuapl.edu",
     1
    ]
   ],
@@ -65,7 +81,7 @@
     24
    ]
   ],
-  "validated_within_24h": 8950
+  "validated_within_24h": 9051
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

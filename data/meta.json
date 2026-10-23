@@ -1,29 +1,23 @@
 {
- "updated": "2026-10-23T02:02:03Z",
- "open": 11179,
- "open_all": 11179,
- "closing_this_week": 367,
- "upcoming": 1619,
+ "updated": "2026-10-23T07:23:35Z",
+ "open": 11087,
+ "open_all": 11087,
+ "closing_this_week": 443,
+ "upcoming": 1592,
  "companies_tracked": 2497,
- "companies_with_listings": 1465,
- "duration_s": 245,
- "open_rule": "status open, not hidden, not past term, deadline today or later",
- "hygiene": {},
+ "companies_with_listings": 1466,
+ "duration_s": 2094,
  "apply_links": {
-  "at": "2026-10-23T02:24:45+00:00",
-  "open": 11229,
-  "direct": 9950,
-  "posting": 1236,
+  "at": "2026-10-23T07:58:32+00:00",
+  "open": 11368,
+  "direct": 10027,
+  "posting": 1298,
   "none": 43,
-  "checked_this_run": 5258,
-  "ok": 5132,
+  "checked_this_run": 3945,
+  "ok": 3847,
   "failed": 20,
-  "unknown": 106,
+  "unknown": 78,
   "top_failing_hosts": [
-   [
-    "zapply.jobs",
-    6
-   ],
    [
     "careers.itw.com",
     4
@@ -33,8 +27,16 @@
     3
    ],
    [
+    "ats.rippling.com",
+    3
+   ],
+   [
     "ursamajor.com",
     3
+   ],
+   [
+    "zapply.jobs",
+    2
    ],
    [
     "www.databricks.com",
@@ -51,24 +53,32 @@
    [
     "tetramem.hrmdirect.com",
     1
+   ],
+   [
+    "merceruniversity.wd1.myworkdayjobs.com",
+    1
    ]
   ],
   "top_fallback_hosts": [
    [
     "zapply.jobs",
-    145
+    155
    ],
    [
     "www.tesla.com",
-    121
+    123
    ],
    [
     "www.metacareers.com",
-    50
+    51
    ],
    [
     "jobs.bytedance.com",
     46
+   ],
+   [
+    "amazon.jobs",
+    34
    ],
    [
     "careers.withwaymo.com",
@@ -76,7 +86,7 @@
    ],
    [
     "careers.amd.com",
-    28
+    29
    ],
    [
     "careersus-shure.icims.com",
@@ -84,17 +94,17 @@
    ],
    [
     "egup.fa.us2.oraclecloud.com",
-    26
+    27
    ],
    [
-    "apply.careers.microsoft.com",
-    24
-   ],
-   [
-    "fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com",
-    21
+    "egug.fa.us2.oraclecloud.com",
+    25
    ]
   ],
-  "validated_within_24h": 5092
+  "validated_within_24h": 3847
+ },
+ "open_rule": "status open, not hidden, not past term, deadline today or later",
+ "hygiene": {
+  "city_trimmed": 10
  }
 }

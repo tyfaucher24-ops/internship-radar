@@ -1,6 +1,10 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.1.1 — Tidier mobile header (2026-10-23)
+- At phone widths the Profile ▾ menu button no longer overlaps "Profile", and the bell and theme toggle are slimmer (36px), so the toggle sits clear of the screen edge.
+- axe WCAG 2.2 AA: 0 violations on the live Find page in both themes at 1440, 1280 and 390.
+
 ## V14.1 — Cleaner Find page and header (2026-10-23)
 - Find: removed the results summary line ("N open internships · similar roles grouped · N graduate-degree roles hidden by your profile") and its "show all" graduate-roles button. The degree filter still works from the filter bar.
 - Header: the Intern Index wordmark now sits in the top-left corner of the header on every page, in both themes and at desktop and mobile widths.

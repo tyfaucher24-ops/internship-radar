@@ -214,3 +214,5 @@ html.dark .ap-bell{color:#e5e7eb;background:transparent}
 @media (max-width:480px){#hdr .brand{margin-right:10px!important;flex:none}}
 @media (max-width:480px){#hdr .nav{justify-content:flex-start!important;gap:0!important;padding-left:0!important;min-width:0}#hdr .nav>a{padding:6px 6px!important;margin-left:0!important}#hdr .nav>a:first-child{margin-left:0!important}}
 @media (max-width:480px){#hdr .brand{margin-right:4px!important}#hdr .nav{margin-left:2px!important}#hdr .nav>a{padding:6px 5px!important;font-size:12.5px!important}#hdr .nav .nbadge{margin-left:3px}}
+/* V13.1 #21: wider screens have room; keep Link and Status pills unclipped */
+@media (min-width:1400px){#t-tracker .sheet th.c-link,#t-tracker .sheet td.c-link{min-width:96px;width:96px}#t-tracker .sheet th.c-status,#t-tracker .sheet td.c-status{min-width:176px;width:176px}}

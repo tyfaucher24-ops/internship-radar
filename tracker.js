@@ -25,11 +25,11 @@ const COLS=[['company','Company',1],['title','Role',1],['status','Status',1],['c
 const SEG=[['All',()=>true],['Saved',t=>t.status==='Saved'],['Applied',t=>['Applied','Online Assessment'].includes(t.status)],['Interviewing',t=>t.status==='Interviewing'],['Offers',t=>['Offer','Accepted'].includes(t.status)],['Rejections',t=>['Rejected','Ghosted','Withdrawn'].includes(t.status)],['Closing this week',t=>{const c=closesIn(t);return c.n>=0&&c.n<=7&&!CLOSEDST.includes(t.status)},1]];
 let tSeg='All',tSort=Store.get('trackerSort',{k:'closes',d:1});
 /* V12.1: no horizontal scroll. Chosen columns collapse (lowest priority first) until the sheet fits its box. */
-const MINW={company:190,title:220,status:200,closes:140,dateApplied:110,nextStep:170,notes:200,link:104,location:140,priority:120,followUp:110,contact:150,resumeVersion:140,coverLetter:100,closeReason:140,dateSaved:110};
+/* V13.1 #21: narrower minimums so every default column fits at 1280 */const MINW={company:160,title:180,status:160,closes:116,dateApplied:104,nextStep:140,notes:150,link:76,location:140,priority:120,followUp:110,contact:150,resumeVersion:140,coverLetter:100,closeReason:140,dateSaved:110};
 const DROP=['coverLetter','resumeVersion','contact','closeReason','dateSaved','followUp','priority','location','notes','link','dateApplied','nextStep','title'];
 const chosenCols=()=>{const v=Store.get('trackerCols',null);return COLS.filter(c=>v?v.includes(c[0]):c[2])};
 let tHidden=[];
-const visCols=()=>{let c=chosenCols();const box=document.querySelector('#t-tracker .twide')||document.body;const avail=(box.clientWidth||innerWidth)-2;const mob=avail<600;
+const visCols=()=>{let c=chosenCols();if(matchMedia('(max-width:480px)').matches){tHidden=[];/* V13.1 #15: phones get stacked cards with company, role, status and closes */const K=['company','title','status','closes'];return COLS.filter(x=>K.includes(x[0]))}const box=document.querySelector('#t-tracker .twide')||document.body;const avail=(box.clientWidth||innerWidth)-2;const mob=avail<600;
  const w=x=>mob?({company:130,status:128,closes:92}[x[0]]||120):MINW[x[0]]||120;const xw=mob?0:44;tHidden=[];
  for(const k of DROP){if(c.reduce((a,x)=>a+w(x),xw)<=avail)break;const h=c.find(x=>x[0]===k);if(h){c=c.filter(x=>x!==h);tHidden.push(h[1])}}
  return c};

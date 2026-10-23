@@ -9603,6 +9603,12 @@
 "logo": "assets/logos/opengov.webp",
 "src": "gstatic"
 },
+"OpenSesame": {
+"domain": "opensesame.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/opensesame.webp",
+"src": "gstatic"
+},
 "OpenX": {
 "domain": "openx.com",
 "domain_src": "clearbit",
@@ -11447,6 +11453,10 @@
 "domain_src": "clearbit",
 "logo": null,
 "why": "no logo >=48px"
+},
+"STR": {
+"logo": null,
+"why": "no domain"
 },
 "STV": {
 "domain": "stv.tv",

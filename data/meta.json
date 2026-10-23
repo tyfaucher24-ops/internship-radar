@@ -1,21 +1,14 @@
 {
- "updated": "2026-10-22T23:28:17Z",
- "open": 11127,
- "open_all": 11127,
- "closing_this_week": 366,
- "upcoming": 1634,
+ "updated": "2026-10-23T00:35:53Z",
+ "open": 11179,
+ "open_all": 11179,
+ "closing_this_week": 545,
+ "upcoming": 1619,
  "companies_tracked": 2497,
- "companies_with_listings": 1473,
- "duration_s": 242,
- "linkcheck": {
-  "at": "2026-10-23T00:05:18+00:00",
-  "checked": 1399,
-  "live": 1117,
-  "dead": 39,
-  "unknown": 243
- },
+ "companies_with_listings": 1465,
+ "duration_s": 2321,
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {
-  "closed_past_cycle": 7
+  "city_trimmed": 12
  }
 }

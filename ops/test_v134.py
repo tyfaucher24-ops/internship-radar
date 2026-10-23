@@ -25,7 +25,7 @@ with sync_playwright() as p:
         # seed: 5 real open listings with a stated deadline go into the tracker (Saved) and 2 onto Autopilot
         picks=pg.evaluate("""()=>{const t0=new Date();t0.setHours(0,0,0,0);const xs=D.filter(x=>x.deadline&&x.st!=='closed'&&new Date(x.deadline+'T00:00')>=t0).sort((a,b)=>a.deadline.localeCompare(b.deadline)).slice(0,5);
           xs.forEach(x=>track(x.id,'Saved'));xs.slice(0,2).forEach(x=>Autopilot.add(x.id));return xs.map(x=>({id:x.id,dl:x.deadline.slice(0,10),co:x.company}))}""")
-        pg.goto(U+'#autopilot');pg.wait_for_selector('#apCal .apc-d',timeout=20000);pg.wait_for_timeout(600)
+        pg.goto(U+'#autopilot');pg.wait_for_timeout(1500);pg.evaluate("document.getElementById('t-autopilot').hidden&&go('autopilot')");pg.wait_for_selector('#apCal .apc-d',timeout=20000);pg.wait_for_timeout(600)
         if theme=='light':pg.evaluate("document.getElementById('thTog').click()");pg.wait_for_timeout(300)
         tag=f'{w}-{theme}'
         ok(pg.evaluate("document.documentElement.classList.contains('dark')")==(theme=='dark'),f'{tag} theme')

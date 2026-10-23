@@ -1,0 +1,280 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Intern Index//Autopilot Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Intern Index
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:tr:mvla0guxwa2oz:dl@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Deadline: Bristol Myers Squibb\, 2027 Summer Intern Real Estate
+DESCRIPTION:Deadline day\nApply: https://bristolmyerssquibb.wd5.myworkdayj
+ obs.com/BMS/job/Princeton---NJ---US/XMLNAME-2027-Summer-Intern-Real-Estat
+ e_R1607261/apply
+URL:https://bristolmyerssquibb.wd5.myworkdayjobs.com/BMS/job/Princeton---N
+ J---US/XMLNAME-2027-Summer-Intern-Real-Estate_R1607261/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Bristol Myers Squibb\, 2027 Summer Intern Real Estat
+ e
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tr:mvla0guunbwhc:dl@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Deadline: Arizona State University\, Management Intern\, Nutrition
+DESCRIPTION:Deadline day\nApply: https://asu.wd1.myworkdayjobs.com/ASUStaf
+ fCareers/job/Campus-Tempe/Management-Intern--Nutrition_JR125090/apply
+URL:https://asu.wd1.myworkdayjobs.com/ASUStaffCareers/job/Campus-Tempe/Man
+ agement-Intern--Nutrition_JR125090/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Arizona State University\, Management Intern\, Nutri
+ tion
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tr:mvla0gusirlc6:dl@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Deadline: Ankura Consulting Group\, University Intern\, Risk Advis
+ ory\, eDiscovery
+DESCRIPTION:Deadline day\nApply: https://ankura.wd5.myworkdayjobs.com/Anku
+ ra/job/San-Francisco-CA/University-Intern--Risk-Advisory--eDiscovery_R104
+ 976/apply
+URL:https://ankura.wd5.myworkdayjobs.com/Ankura/job/San-Francisco-CA/Unive
+ rsity-Intern--Risk-Advisory--eDiscovery_R104976/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Ankura Consulting Group\, University Intern\, Risk A
+ dvisory\, eDiscovery
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tr:mvla0gupwpvqy:dl@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Deadline: Ameriprise Financial\, Business Development Intern
+DESCRIPTION:Deadline day\nApply: https://ameriprise.wd5.myworkdayjobs.com/
+ Ameriprise/job/Minneapolis-Minnesota/Business-Development-Intern_R26_3848
+ /apply
+URL:https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Mi
+ nnesota/Business-Development-Intern_R26_3848/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Ameriprise Financial\, Business Development Intern
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tr:mvla0gumkawqc:dl@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;VALUE=DATE:20261023
+DTEND;VALUE=DATE:20261024
+SUMMARY:Deadline: ACLU Kentucky\, Spring 2027 Legal Intern\, Disability Ri
+ ghts Program
+DESCRIPTION:Deadline day\nApply: https://job-boards.greenhouse.io/acluinte
+ rnships/jobs/8843540002
+URL:https://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: ACLU Kentucky\, Spring 2027 Legal Intern\, Disabilit
+ y Rights Program
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:55aca6f670:p1@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261024T090000
+DTEND;TZID=America/New_York:20261024T093000
+SUMMARY:Apply-by reminder: ACLU Kentucky\, Spring 2027 Legal Intern\, Disa
+ bility Rights Program
+DESCRIPTION:Week 1: tailor your resume to this posting\nApply: https://job
+ -boards.greenhouse.io/acluinternships/jobs/8843540002
+URL:https://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Week 1: tailor your resume to this posting
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:6e04557749:p1@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261024T090000
+DTEND;TZID=America/New_York:20261024T093000
+SUMMARY:Apply-by reminder: Ameriprise Financial\, Business Development Int
+ ern
+DESCRIPTION:Week 1: tailor your resume to this posting\nApply: https://ame
+ riprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Minnesota/Busine
+ ss-Development-Intern_R26_3848/apply
+URL:https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Mi
+ nnesota/Business-Development-Intern_R26_3848/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Week 1: tailor your resume to this posting
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:55aca6f670:p2@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261026T090000
+DTEND;TZID=America/New_York:20261026T093000
+SUMMARY:Follow-up: ACLU Kentucky\, Spring 2027 Legal Intern\, Disability R
+ ights Program
+DESCRIPTION:Find a warm path: message one person on the team\nApply: https
+ ://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+URL:https://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Find a warm path: message one person on the team
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:6e04557749:p2@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261026T090000
+DTEND;TZID=America/New_York:20261026T093000
+SUMMARY:Follow-up: Ameriprise Financial\, Business Development Intern
+DESCRIPTION:Find a warm path: message one person on the team\nApply: https
+ ://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Minnesota/
+ Business-Development-Intern_R26_3848/apply
+URL:https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Mi
+ nnesota/Business-Development-Intern_R26_3848/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Find a warm path: message one person on the team
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:55aca6f670:p3@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261029T090000
+DTEND;TZID=America/New_York:20261029T093000
+SUMMARY:Apply-by reminder: ACLU Kentucky\, Spring 2027 Legal Intern\, Disa
+ bility Rights Program
+DESCRIPTION:Apply: no deadline is listed\, so apply soon\nApply: https://j
+ ob-boards.greenhouse.io/acluinternships/jobs/8843540002
+URL:https://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Apply: no deadline is listed\, so apply soon
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:6e04557749:p3@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261029T090000
+DTEND;TZID=America/New_York:20261029T093000
+SUMMARY:Apply-by reminder: Ameriprise Financial\, Business Development Int
+ ern
+DESCRIPTION:Apply: no deadline is listed\, so apply soon\nApply: https://a
+ meriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Minnesota/Busi
+ ness-Development-Intern_R26_3848/apply
+URL:https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Mi
+ nnesota/Business-Development-Intern_R26_3848/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Apply: no deadline is listed\, so apply soon
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:55aca6f670:u7@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261031T090000
+DTEND;TZID=America/New_York:20261031T093000
+SUMMARY:Apply-by reminder: ACLU Kentucky\, Spring 2027 Legal Intern\, Disa
+ bility Rights Program
+DESCRIPTION:No deadline listed: check the posting is still open\nApply: ht
+ tps://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+URL:https://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:No deadline listed: check the posting is still open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:6e04557749:u7@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261031T090000
+DTEND;TZID=America/New_York:20261031T093000
+SUMMARY:Apply-by reminder: Ameriprise Financial\, Business Development Int
+ ern
+DESCRIPTION:No deadline listed: check the posting is still open\nApply: ht
+ tps://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Minneso
+ ta/Business-Development-Intern_R26_3848/apply
+URL:https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Mi
+ nnesota/Business-Development-Intern_R26_3848/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:No deadline listed: check the posting is still open
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:55aca6f670:p4@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261105T090000
+DTEND;TZID=America/New_York:20261105T093000
+SUMMARY:Follow-up: ACLU Kentucky\, Spring 2027 Legal Intern\, Disability R
+ ights Program
+DESCRIPTION:Follow up: check your status or send a short note\nApply: http
+ s://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+URL:https://job-boards.greenhouse.io/acluinternships/jobs/8843540002
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Follow up: check your status or send a short note
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ap:6e04557749:p4@intern-index
+DTSTAMP:20261023T180116Z
+DTSTART;TZID=America/New_York:20261105T090000
+DTEND;TZID=America/New_York:20261105T093000
+SUMMARY:Follow-up: Ameriprise Financial\, Business Development Intern
+DESCRIPTION:Follow up: check your status or send a short note\nApply: http
+ s://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Minnesota
+ /Business-Development-Intern_R26_3848/apply
+URL:https://ameriprise.wd5.myworkdayjobs.com/Ameriprise/job/Minneapolis-Mi
+ nnesota/Business-Development-Intern_R26_3848/apply
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Follow up: check your status or send a short note
+TRIGGER:PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -39,4 +39,4 @@ html.dark .apc{--cd-deadline:#f87171;--cd-apply:#a78bfa;--cd-follow:#60a5fa;--cd
 html.dark .brand .wm b{color:#34d399}
 #apcIcs svg{flex:none}
 @media(max-width:640px){.brand .wm{font-size:15px}}
-@media(max-width:420px){.brand .wm{font-size:14px}.brand{margin-right:2px!important}#hdr .nav>a,#hdr .nav .pmenu>a{padding:6px 4px!important}#hdr .nav .ap-bell{padding-left:4px!important;padding-right:4px!important}}
+@media(max-width:420px){.brand .wm{font-size:13px}.brand{margin-right:0!important}#hdr .hd{gap:2px}#hdr .nav>a,#hdr .nav .pmenu>a{padding:6px 2px!important;gap:3px!important}#hdr .nav .ap-bell{padding-left:3px!important;padding-right:3px!important}#hdr .nav .nbadge{padding:0 5px!important;margin-left:3px!important}#hdr .nav .pm-btn{width:18px!important;min-width:18px!important}#hdr .nav>a,#hdr .nav .pmenu>a{font-size:12px!important}}

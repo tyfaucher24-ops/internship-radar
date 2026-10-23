@@ -16,7 +16,7 @@ with sync_playwright() as p:
     ok('Intro: no app wording or banned words',not any(w in pg.inner_text('#intro').lower() for w in (' app ','scr'+'ape')))
     pg.click('#goBuild');pg.wait_for_timeout(1700);pg.screenshot(path=S+'v13-onboard-1.png')
     pg.click('[data-ob=next]');pg.wait_for_timeout(900)
-    pg.fill('#obSchool','Queens Univ');pg.wait_for_timeout(600);pg.click('#obSL li');pg.fill('#obMajor','Finance');pg.fill('#obGpa','3.9');pg.click('[data-year="2029"]');pg.screenshot(path=S+'v13-onboard-2.png')
+    pg.fill('#obSchool','Queens Univ');pg.wait_for_timeout(600);pg.click('#obSL li');pg.fill('#obMajor','Finance');pg.fill('#obGpa','3.9');pg.fill('#obGY','2029');pg.screenshot(path=S+'v13-onboard-2.png')
     pg.click('[data-ob=next]');pg.wait_for_timeout(900);pg.click('[data-int="Investment Banking"]');pg.click('[data-loc="Charlotte, NC"]');pg.screenshot(path=S+'v13-onboard-3.png')
     pg.click('[data-ob=next]');pg.wait_for_timeout(900);pg.fill('#obExp','Queens Investment Club · Analyst');pg.press('#obExp','Enter');pg.click('[data-ath="NCAA Division I Athlete"]');pg.screenshot(path=S+'v13-onboard-4.png')
     pg.click('[data-ob=next]');pg.wait_for_timeout(4500);pg.screenshot(path=S+'v13-onboard-5.png')

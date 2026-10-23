@@ -16,7 +16,7 @@ function end(fast){if(ended)return;ended=true;
 window.__introEnd=end;
 /* V13: approved intro. "Skip to live internship database" ends the intro; "Build my profile" sends the globe away and onboarding.js takes over. */
 $i('goFind').onclick=()=>end(false);
-window.__introEnd=(i)=>end(!!i);window.__introExit=()=>{if(ended)return;{const r=intro.querySelector('.globe-slot').getBoundingClientRect();intro.style.setProperty('--ox',(r.left+r.width/2)+'px');intro.style.setProperty('--oy',(r.top+r.height/2)+'px')}window.__gAct=performance.now()+900;intro.classList.add('exit');setTimeout(()=>{intro.classList.add('gone');intro.classList.remove('exit');stopLoop()},RM?0:820)};
+window.__introEnd=(i)=>end(!!i);window.__introExit=()=>{if(ended)return;{const r=intro.querySelector('.globe-slot').getBoundingClientRect();intro.style.setProperty('--ox',(r.left+r.width/2)+'px');intro.style.setProperty('--oy',(r.top+r.height/2)+'px')}window.__gAct=performance.now()+900;intro.classList.add('exit');setTimeout(()=>{intro.classList.add('gone');intro.classList.remove('exit');stopLoop()},RM?0:920)};
 addEventListener('keydown',function k(e){if(e.key==='Escape'&&!ended&&!intro.classList.contains('gone')&&!intro.classList.contains('exit')){end(true);removeEventListener('keydown',k)}});
 /* ---------- DOM interactions: cursor glow, parallax, sky ripples, magnetic button ---------- */
 const glow=document.createElement('div');
@@ -71,8 +71,8 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
  H.forEach((h,i)=>{hp.set(ll2v(h[0],h[1],1.006),3*i);hs[i]=Math.min(1,.25+Math.log10(1+h[2])*.32);hph[i]=Math.random()*6.28;hid[i]=i});
  const hg=new THREE.BufferGeometry();hg.setAttribute('position',new THREE.BufferAttribute(hp,3));hg.setAttribute('aS',new THREE.BufferAttribute(hs,1));hg.setAttribute('aP',new THREE.BufferAttribute(hph,1));hg.setAttribute('aI',new THREE.BufferAttribute(hid,1));
  const hubMat=new THREE.ShaderMaterial({uniforms:U,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,vertexShader:RADAR+`uniform float uPR,uScale,uHover;attribute float aS,aP,aI;varying float vA,vF;void main(){vec3 n=normalize(position);vec4 w=modelMatrix*vec4(position,1.);vec3 wn=normalize(mat3(modelMatrix)*n);float f=dot(wn,normalize(cameraPosition-w.xyz));
-   vA=smoothstep(0.,.3,f)*(.35+.65*(.5+.5*sin(uTime*(3.14+2.06*fract(aP*7.3))+aP)));/* V13.3 #4: each dot blinks on its own 1.2–2s cycle */float tw=1.;float hv=abs(aI-uHover)<.5?1.+.5*sin(uTime*9.):0.;vF=sweep(n)*1.6+rings(n,uC,uPing)*.8+rings(n,uC2,uPing2)+hv;vec4 mv=viewMatrix*w;gl_PointSize=uPR*uScale*(2.6+aS*4.6)*(1.+vF*.9)*tw*(3.2/-mv.z);gl_Position=projectionMatrix*mv;}`,
-  fragmentShader:`varying float vA,vF;void main(){float d=length(gl_PointCoord-.5);float core=1.-smoothstep(.12,.2,d),halo=pow(1.-smoothstep(0.,.5,d),2.);vec3 c=mix(vec3(1.,.72,.3),vec3(1.,.95,.75),clamp(vF,0.,1.));gl_FragColor=vec4(c*(core+halo*(.55+vF)),(core+halo*.8)*vA);}`});
+   vA=smoothstep(0.,.3,f)*(.3+.7*(.5+.5*sin(6.2832*uTime/(1.2+1.8*fract(aP*7.31))+6.2832*fract(aP*13.17))));/* V13.3 #4a: each dot blinks on its own random 1.2–3s period and phase */float tw=1.;float hv=abs(aI-uHover)<.5?1.+.5*sin(uTime*9.):0.;vF=sweep(n)*1.6+rings(n,uC,uPing)*.8+rings(n,uC2,uPing2)+hv;vec4 mv=viewMatrix*w;gl_PointSize=uPR*uScale*(2.6+aS*4.6)*(1.+vF*.9)*tw*(3.2/-mv.z);gl_Position=projectionMatrix*mv;}`,
+  fragmentShader:`varying float vA,vF;void main(){float d=length(gl_PointCoord-.5);float core=1.-smoothstep(.12,.2,d),halo=pow(1.-smoothstep(0.,.5,d),2.);vec3 c=mix(vec3(.29,.87,.5),vec3(.78,1.,.86),clamp(vF,0.,1.));/* V13.3 #4a: green dots, #4ade80 like the intro lights */gl_FragColor=vec4(c*(core+halo*(.55+vF)),(core+halo*.8)*vA);}`});
  const hubPts=new THREE.Points(hg,hubMat);G.add(hubPts);
  // atmosphere glow
  const atm=new THREE.Mesh(new THREE.SphereGeometry(1.14,PHONE?40:64,PHONE?28:48),new THREE.ShaderMaterial({side:THREE.BackSide,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
@@ -134,8 +134,8 @@ new Promise(r=>{/* start the 3D globe once the page is idle; static planet shows
   const fps=fr.length/(s/1000),tgt=TIERS[qi].fps;if(fps<tgt*.8&&qi<TIERS.length-1){qi++;lastStep=now;fr=[];applyTier()}else if(fps>tgt*.97&&qi>0&&now-lastStep>(TIERS[qi-1].fps>tgt?12000:6000)){qi--;lastStep=now;fr=[];applyTier()}}
  const dead=false;
  let raf,last=performance.now(),shown=false;
- function frame(now){raf=requestAnimationFrame(frame);if(TIERS[qi].fps<60&&now-lastDraw<31)return;lastDraw=now;const dt=Math.min(80,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;if(S.phase==='idle'&&!S.drag&&shown&&Math.abs(S.vy)<2e-4&&Math.abs(S.vx)<2e-4&&now-(window.__gAct||0)>700&&!intro.classList.contains('exit'))return;/* V13: globe stands still, so only render when something changes */U.uTime.value=now/1000;domFrame();
-  if(S.phase==='idle'){if(!S.drag){S.ry+=S.vy*s;S.rx=Math.max(-1.1,Math.min(1.1,S.rx+S.vx*s));const k=Math.pow(.05,s);S.vx*=k;S.vy=S.vy*k}
+ function frame(now){raf=requestAnimationFrame(frame);if(TIERS[qi].fps<60&&now-lastDraw<31)return;lastDraw=now;const dt=Math.min(80,now-last);last=now;const s=dt/1000;if(document.hidden)return;watchdog(dt);if(dead)return;if(S.phase==='idle'&&!S.drag&&shown&&Math.abs(S.vy)<2e-4&&Math.abs(S.vx)<2e-4&&now-(window.__gAct||0)>700&&!intro.classList.contains('exit')&&RM)return;/* V13.3 #4a: the planet spins slowly and dots blink, so it renders every frame (reduced motion: still) */if(!RM)U.uTime.value=now/1000;domFrame();
+  if(S.phase==='idle'){if(!S.drag){S.ry+=S.vy*s+(RM?0:6.2832/75*s);/* V13.3 #4a: one full turn every 75s */S.rx=Math.max(-1.1,Math.min(1.1,S.rx+S.vx*s));const k=Math.pow(.05,s);S.vx*=k;S.vy=S.vy*k}
    S.zoom+=(S.zt-S.zoom)*(1-Math.pow(.004,s))}
   else{const t=(now-S.t0)/1000/SLOW;const a=ease(clamp(t/.6));S.rx=S.from.rx+(S.to.rx-S.from.rx)*a;S.ry=S.from.ry+(S.to.ry-S.from.ry)*a;S.tiltX*=.9;S.tiltY*=.9;
    

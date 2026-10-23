@@ -53,3 +53,5 @@ html body #t-tracker .sheet tbody tr:hover td{background:var(--c-bg-2)}
 #t-tracker .sheet .stars{position:static!important;inset:auto!important;background:none!important;animation:none!important;opacity:1!important}
 @media (min-width:481px){html body #t-tracker .sheet td.c-company .coc{grid-template-columns:28px 28px minmax(0,1fr)!important;column-gap:10px!important}html body #t-tracker .sheet td.c-company .coc>*{margin:0!important}}
 @media (min-width:481px){html body #t-tracker .sheet .tsel{width:24px!important;height:24px!important}html body #t-tracker .sheet th.c-company .th{padding-left:56px!important}}
+#t-tracker .sheet .pill{text-overflow:clip!important}
+#t-tracker .trk-stars .star{min-width:24px;min-height:24px;padding:0!important;line-height:24px}

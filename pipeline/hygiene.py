@@ -118,6 +118,12 @@ def apply(L,DS,today=None):
         if canon.get(k) and canon[k]!=r['company']: r['company']=canon[k];st['company_alias']+=1
         t=clean_title(r.get('title'))
         if t!=r.get('title'): r['title']=t;st['title_note_removed']+=1
+        # a title that ends with its own location (", Waltham, MA") repeats the location line
+        for l in r.get('locations') or []:
+            if l.get('city') and l.get('state'):
+                suf=re.compile(r'[\s,\-–|]+'+re.escape(l['city'])+r',?\s*'+re.escape(l['state'])+r'\s*$',re.I)
+                t2=suf.sub('',r['title'])
+                if t2!=r['title'] and len(t2)>=8: r['title']=t2;st['title_loc_removed']+=1;break
         for l in r.get('locations') or []:
             c=clean_city(l.get('city'))
             if c!=l.get('city'): l['city']=c;st['city_trimmed']+=1

@@ -5,18 +5,19 @@ const intro=document.getElementById('intro');if(!intro)return;
 const html=document.documentElement,body=document.body;
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const Q=new URLSearchParams(location.search);const SLOW=+(Q.get('introSlow')||1);
-document.getElementById('replay')?.addEventListener('click',e=>{e.preventDefault();location.href=location.pathname});
+document.getElementById('replay')?.addEventListener('click',e=>{e.preventDefault();location.href=location.pathname+'?intro=1'});
 if(html.classList.contains('seen')){intro.remove();body.classList.add('arrived');return}
-body.classList.add('intro-on');
+body.classList.add('intro-on');try{localStorage.setItem('idr_intro_seen','1')}catch(_){}
+/* V14 #15: focus stays inside the intro until it ends */const INERT=[...body.children].filter(e=>e!==intro&&!e.contains(intro)&&e.tagName!=='SCRIPT');INERT.forEach(e=>e.inert=true);const unInert=()=>INERT.forEach(e=>e.inert=false);
 const $i=id=>document.getElementById(id);
 let ended=false,stopLoop=()=>{},dispose=()=>{},startTransition=null;
-function arrive(){body.classList.remove('intro-on');body.classList.add('arriving');setTimeout(()=>{body.classList.remove('arriving');body.classList.add('arrived')},900)}
+function arrive(){unInert();body.classList.remove('intro-on');body.classList.add('arriving');setTimeout(()=>{body.classList.remove('arriving');body.classList.add('arrived')},900)}
 function end(fast){if(ended)return;ended=true;
  intro.classList.add(fast||RM?'fade-fast':'fade');arrive();setTimeout(()=>{stopLoop();dispose();intro.remove();const q=$i('q');q&&q.focus({preventScroll:true})},fast||RM?320:650)}
 window.__introEnd=end;
 /* V13: approved intro. "Skip to live internship database" ends the intro; "Build my profile" sends the globe away and onboarding.js takes over. */
 $i('goFind').onclick=()=>end(false);
-window.__introEnd=(i)=>end(!!i);window.__introExit=()=>{if(ended)return;{const r=intro.querySelector('.globe-slot').getBoundingClientRect();intro.style.setProperty('--ox',(r.left+r.width/2)+'px');intro.style.setProperty('--oy',(r.top+r.height/2)+'px')}window.__gAct=performance.now()+900;intro.classList.add('exit');setTimeout(()=>{intro.classList.add('gone');intro.classList.remove('exit');stopLoop()},RM?0:920)};
+window.__introEnd=(i)=>end(!!i);window.__introExit=()=>{if(ended)return;unInert();{const r=intro.querySelector('.globe-slot').getBoundingClientRect();intro.style.setProperty('--ox',(r.left+r.width/2)+'px');intro.style.setProperty('--oy',(r.top+r.height/2)+'px')}window.__gAct=performance.now()+900;intro.classList.add('exit');setTimeout(()=>{intro.classList.add('gone');intro.classList.remove('exit');stopLoop()},RM?0:920)};
 addEventListener('keydown',function k(e){if(e.key==='Escape'&&!ended&&!intro.classList.contains('gone')&&!intro.classList.contains('exit')){end(true);removeEventListener('keydown',k)}});
 /* ---------- DOM interactions: cursor glow, parallax, sky ripples, magnetic button ---------- */
 const glow=document.createElement('div');

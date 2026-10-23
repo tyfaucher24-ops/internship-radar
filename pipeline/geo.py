@@ -39,13 +39,17 @@ def _load():
             for k,p in d.items(): _P[(k,c)]=p
     json.dump({'t':{'|'.join(k):v for k,v in _T.items()},'p':{'|'.join(k):v for k,v in _P.items()}},open(cache,'w'),separators=(',',':'))
 ALIAS={'new york city':'new york','nyc':'new york','manhattan':'new york','washington dc':'washington','dc':'washington','rtp':'durham','research triangle park':'durham','research triangle':'durham','sf':'san francisco','la':'los angeles','arlington county':'arlington','st paul':'st paul','mclean':'mclean','ft worth':'fort worth','ft lauderdale':'fort lauderdale'}
+# Gazetteer centroids that land in water (San Francisco's includes the Farallon Islands): use the city-hall point instead.
+FIXPT={('san francisco','CA'):(37.78,-122.42)}
 def geocode(city,state):
     """returns (lat,lng,population or None) or None"""
     if not city or not state: return None
     _load();k=key(city);k=ALIAS.get(k,k)
     for cand in (k,k.replace(' county',''),k.split(' ')[0] if k.endswith(' heights') and False else k):
         v=_T.get((cand,state))
-        if v: return (v[0],v[1],_P.get((cand,state)))
+        if v:
+            f=FIXPT.get((cand,state))
+            return (f[0],f[1],_P.get((cand,state))) if f else (v[0],v[1],_P.get((cand,state)))
     if state=='DC': v=_T.get(('washington','DC'));return (v[0],v[1],_P.get(('washington','DC'))) if v else None
     return None
 def population(city,state):

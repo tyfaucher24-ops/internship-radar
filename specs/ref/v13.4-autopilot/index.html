@@ -1,0 +1,61 @@
+<!doctype html><html data-theme="dark"><head><meta charset="utf-8"><title>Autopilot · Intern Index (mockup)</title>
+<style>
+:root{--bg:#1a1f26;--sf:#232a33;--sf2:#2b333e;--ln:#343d49;--ink:#f3f5f7;--mut:#aab3bf;--pur:#7c5cff;--grn:#34d399;--red:#f87171;--blu:#60a5fa}
+[data-theme=light]{--bg:#f6f7fb;--sf:#fff;--sf2:#f0f2f7;--ln:#e3e6ee;--ink:#14172b;--mut:#5b6275;--pur:#6d4aff;--grn:#059669;--red:#dc2626;--blu:#2563eb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+header{display:flex;align-items:center;gap:28px;padding:16px 48px;border-bottom:1px solid var(--ln);background:var(--sf)}
+.logo{font-weight:800;font-size:18px}.logo b{color:var(--grn)}nav a{color:var(--mut);margin-right:20px;text-decoration:none}nav a.on{color:var(--ink);font-weight:600;border-bottom:2px solid var(--grn);padding-bottom:16px}
+main{max-width:1240px;margin:0 auto;padding:28px 48px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}h1{margin:0;font-size:24px}.sub{color:var(--mut);margin-top:4px}
+.btn{border:1px solid var(--ln);background:var(--sf2);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;cursor:pointer}.btn.p{background:var(--pur);border-color:var(--pur);color:#fff;font-weight:600}.btn.s{padding:5px 10px;font-size:12.5px}
+.grid{display:grid;grid-template-columns:620px 1fr;gap:28px}.card{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:20px}
+.bar{display:flex;align-items:center;gap:8px;margin-bottom:14px}.bar h2{margin:0 auto 0 6px;font-size:17px}
+.seg{display:inline-flex;background:var(--sf2);border-radius:8px;padding:3px}.seg button{border:0;background:none;color:var(--mut);padding:5px 12px;border-radius:6px;font:inherit;cursor:pointer}.seg .on{background:var(--sf);color:var(--ink);box-shadow:0 1px 2px #0003}
+.filters{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ln);border-radius:99px;padding:4px 11px;font-size:12.5px;cursor:pointer;color:var(--ink);background:none}.chip.off{opacity:.4}
+.d{width:8px;height:8px;border-radius:50%;display:inline-block}.deadline{background:var(--red)}.apply{background:var(--pur)}.follow{background:var(--blu)}.interview{background:var(--grn)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.dow{font-size:11.5px;color:var(--mut);text-align:center;padding:4px 0;text-transform:uppercase;letter-spacing:.05em}
+.day{height:72px;border-radius:9px;padding:6px 8px;cursor:pointer;border:1px solid transparent;display:flex;flex-direction:column;justify-content:space-between}.day:hover{background:var(--sf2)}.day.out{opacity:.35}
+.day .n{font-size:13px;font-weight:500}.day.today .n{background:var(--grn);color:#0b1a13;border-radius:99px;width:24px;height:24px;display:grid;place-items:center;font-weight:700}
+.day.sel{border-color:var(--pur);background:color-mix(in srgb,var(--pur) 14%,transparent)}.dots{display:flex;gap:4px;flex-wrap:wrap}
+.legend{display:flex;gap:16px;color:var(--mut);font-size:12px;margin-top:14px}.legend span{display:flex;align-items:center;gap:6px}
+.side h3{margin:0 0 12px;font-size:15px}.side .k{color:var(--mut);font-weight:400;font-size:13px}
+.task{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--ln);border-radius:11px;margin-bottom:10px;background:var(--sf2)}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;flex:none}
+.task .m{flex:1;min-width:0}.task .r{font-weight:600}.task .t{white-space:nowrap;color:var(--mut);font-size:12.5px;display:flex;align-items:center;gap:6px}.task .acts{display:flex;gap:6px}
+.task.done{opacity:.5}.task.done .r{text-decoration:line-through}
+.up{list-style:none;margin:0;padding:0}.up li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--ln);font-size:13px}.up li:last-child{border:0}.up .dt{width:64px;color:var(--mut);font-size:12px}
+.empty{color:var(--mut);padding:24px;text-align:center;border:1px dashed var(--ln);border-radius:11px;margin-bottom:10px}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:28px}
+</style></head><body>
+<header><div class="logo">Intern <b>Index</b></div><nav><a>Browse</a><a>For You</a><a>Tracker</a><a class="on">Autopilot</a></nav><div style="margin-left:auto"><button class="btn" onclick="tt()">◐ Theme</button></div></header>
+<main><div class="top"><div><h1>Autopilot</h1><div class="sub">Your deadlines, reminders, and follow-ups in one calendar.</div></div><button class="btn p">+ Quick add task</button></div>
+<div class="grid"><section class="card">
+<div class="bar"><button class="btn s" onclick="mv(-1)">‹</button><button class="btn s" onclick="mv(1)">›</button><h2 id="ttl"></h2><button class="btn s" onclick="goT()">Today</button><div class="seg"><button class="on" id="bm" onclick="setV('m')">Month</button><button id="bw" onclick="setV('w')">Week</button></div></div>
+<div class="filters" id="flt"></div><div class="cal" id="cal"></div>
+<div class="legend"><span><i class="d deadline"></i>Deadline</span><span><i class="d apply"></i>Apply-by reminder</span><span><i class="d follow"></i>Follow-up</span><span><i class="d interview"></i>Interview</span></div>
+</section><aside class="side"><div class="card" style="margin-bottom:20px"><h3 id="selT"></h3><div id="selL"></div></div><div class="card"><h3>Upcoming 7 days</h3><ul class="up" id="up"></ul></div></aside></div></main>
+<footer>Mockup with example data · All companies and tasks are fictional</footer>
+<script>
+const TODAY=new Date(2026,9,23),L={deadline:'Deadline',apply:'Apply-by reminder',follow:'Follow-up',interview:'Interview'};
+const C={'Acme Rocketry':'#e86f4f','Globex Labs':'#5b8def','Initech Data':'#8b5cf6','Umbrella Bio':'#10b981','Hooli Cloud':'#f59e0b','Stark Sample Co':'#ec4899','Wayne Example Inc':'#64748b','Pied Piper Demo':'#14b8a6'};
+const raw=[[20,'deadline','Acme Rocketry','Propulsion Intern','11:59 PM'],[21,'follow','Globex Labs','Data Science Intern','10:00 AM'],[23,'deadline','Initech Data','Software Eng. Intern','11:59 PM'],[23,'interview','Umbrella Bio','Lab Research Intern','2:30 PM'],[23,'follow','Hooli Cloud','Product Intern','4:00 PM'],[24,'apply','Stark Sample Co','Hardware Intern','9:00 AM'],[26,'interview','Globex Labs','Data Science Intern','11:00 AM'],[27,'deadline','Wayne Example Inc','Finance Intern','11:59 PM'],[27,'apply','Pied Piper Demo','Backend Intern','9:00 AM'],[28,'follow','Acme Rocketry','Propulsion Intern','10:00 AM'],[29,'apply','Hooli Cloud','UX Research Intern','9:00 AM'],[30,'deadline','Umbrella Bio','Bioinformatics Intern','11:59 PM'],[30,'interview','Initech Data','Software Eng. Intern','1:00 PM'],[30,'follow','Pied Piper Demo','Backend Intern','3:00 PM'],[33,'deadline','Stark Sample Co','Hardware Intern','11:59 PM'],[36,'interview','Wayne Example Inc','Finance Intern','10:30 AM'],[40,'apply','Globex Labs','ML Intern','9:00 AM'],[13,'deadline','Hooli Cloud','Product Intern','11:59 PM'],[8,'follow','Initech Data','Software Eng. Intern','10:00 AM']];
+const T=raw.map(([d,ty,co,ro,tm],i)=>({id:i,date:new Date(2026,9,d),ty,co,ro,tm,done:false}));
+const p=new URLSearchParams(location.search);if(p.get('theme'))document.documentElement.dataset.theme=p.get('theme');
+let sel=p.get('day')?new Date(2026,9,+p.get('day')):new Date(TODAY),view=new Date(sel.getFullYear(),sel.getMonth(),1),mode='m',on=new Set(Object.keys(L));
+const same=(a,b)=>a.toDateString()==b.toDateString(),of=d=>T.filter(t=>same(t.date,d)&&on.has(t.ty)),fmt=(d,o)=>d.toLocaleDateString('en-US',o);
+function tt(){const h=document.documentElement;h.dataset.theme=h.dataset.theme=='dark'?'light':'dark'}
+function mv(n){mode=='m'?view.setMonth(view.getMonth()+n):(sel.setDate(sel.getDate()+7*n),view=new Date(sel.getFullYear(),sel.getMonth(),1));r()}
+function goT(){sel=new Date(TODAY);view=new Date(2026,9,1);r()}
+function setV(v){mode=v;bm.className=v=='m'?'on':'';bw.className=v=='w'?'on':'';r()}
+function r(){flt.innerHTML=Object.entries(L).map(([k,v])=>`<button class="chip ${on.has(k)?'':'off'}" onclick="on.has('${k}')?on.delete('${k}'):on.add('${k}');r()"><i class="d ${k}"></i>${v}</button>`).join('');
+ let start,n;if(mode=='m'){start=new Date(view);start.setDate(1-view.getDay());n=42;ttl.textContent=fmt(view,{month:'long',year:'numeric'})}else{start=new Date(sel);start.setDate(sel.getDate()-sel.getDay());n=7;ttl.textContent='Week of '+fmt(start,{month:'short',day:'numeric'})}
+ let h=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(x=>`<div class="dow">${x}</div>`).join('');
+ for(let i=0;i<n;i++){const d=new Date(start);d.setDate(start.getDate()+i);const ts=of(d);
+  h+=`<div class="day ${mode=='m'&&d.getMonth()!=view.getMonth()?'out':''} ${same(d,TODAY)?'today':''} ${same(d,sel)?'sel':''}" style="${mode=='w'?'height:140px':''}" onclick="sel=new Date(${+d});r()"><span class="n">${d.getDate()}</span><div class="dots">${ts.map(t=>mode=='w'?`<div style="font-size:11px;display:flex;gap:4px;align-items:center;width:100%"><i class="d ${t.ty}"></i>${t.co.split(' ')[0]}</div>`:`<i class="d ${t.ty}"></i>`).join('')}</div></div>`}
+ cal.innerHTML=h;const ts=of(sel);
+ selT.innerHTML=`${same(sel,TODAY)?'Today · ':''}${fmt(sel,{weekday:'long',month:'short',day:'numeric'})} <span class="k">· ${ts.length} task${ts.length==1?'':'s'}</span>`;
+ selL.innerHTML=ts.length?ts.map(t=>`<div class="task ${t.done?'done':''}"><div class="av" style="background:${C[t.co]}">${t.co[0]}</div><div class="m"><div class="r">${t.ro}</div><div class="t">${t.co} · <i class="d ${t.ty}"></i>${L[t.ty]} · ${t.tm}</div></div><div class="acts">${t.ty=='deadline'||t.ty=='apply'?'<button class="btn p s">Apply</button>':''}<button class="btn s" onclick="T[${t.id}].done=!T[${t.id}].done;r()">${t.done?'Undo':'✓ Mark done'}</button></div></div>`).join(''):'<div class="empty">Nothing scheduled. Enjoy the free day ✨</div>';
+ const e=new Date(TODAY);e.setDate(e.getDate()+7);
+ up.innerHTML=T.filter(t=>t.date>TODAY&&t.date<=e&&on.has(t.ty)).sort((a,b)=>a.date-b.date).map(t=>`<li><span class="dt">${fmt(t.date,{weekday:'short',day:'numeric'})}</span><i class="d ${t.ty}"></i><span style="flex:1"><b>${t.co}</b> · ${t.ro}</span><span style="color:var(--mut);font-size:12px">${L[t.ty]}</span></li>`).join('')}
+r();
+</script></body></html>

@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-23T17:54:08Z",
+ "updated": "2026-10-23T21:31:05Z",
  "listings_by_source_type": {
-  "ats": 9855,
+  "ats": 9839,
   "manual": 67,
   "github-verified": 1369
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35293,
+   "postings": 35279,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13627,
+   "postings": 13654,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,41 +61,41 @@
   "lever": {
    "boards": 180,
    "ok": 178,
-   "postings": 8708,
+   "postings": 8723,
    "errors": [
     "CALSTART (calstart): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/calstart?mode=json",
     "Saronic (saronic): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/saronic?mode=json"
    ]
   }
  },
- "pct_verified_24h": 97.4,
+ "pct_verified_24h": 96.7,
  "stale": 371,
  "duplicate_rate_pct": 7.4,
- "review_queue": 493,
+ "review_queue": 488,
  "deadline_coverage_pct": 18.3,
  "stats": {
-  "ats_no": 39750,
-  "ats_ambiguous": 493,
-  "ats_non-US": 15270,
-  "ats_ok": 2115,
+  "ats_no": 39784,
+  "ats_ambiguous": 488,
+  "ats_non-US": 15286,
+  "ats_ok": 2098,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
   "kept_list_unreadable": 1369,
-  "closed_this_sync": 10
+  "closed_this_sync": 23
  },
  "by_category": {
   "Legal": 109,
-  "Marketing & Sales": 629,
-  "Consulting & Strategy": 160,
-  "Other": 1874,
+  "Marketing & Sales": 626,
+  "Consulting & Strategy": 159,
+  "Other": 1871,
   "Real Estate": 61,
-  "Software & IT": 2266,
-  "Accounting & Audit": 459,
-  "Engineering & Hardware": 1763,
+  "Software & IT": 2265,
+  "Accounting & Audit": 458,
+  "Engineering & Hardware": 1759,
   "Finance & Banking": 727,
-  "Data & AI": 1009,
+  "Data & AI": 1007,
   "Design & Creative": 151,
-  "Business & Operations": 500,
+  "Business & Operations": 499,
   "Healthcare & Life Sciences": 396,
   "HR & People": 189,
   "Supply Chain & Logistics": 315,
@@ -107,7 +107,7 @@
   "Research": 5
  },
  "by_state": {
-  "NY": 1181,
+  "NY": 1153,
   "CA": 2384,
   "MN": 427,
   "AZ": 185,
@@ -119,14 +119,14 @@
   "NC": 424,
   "SC": 194,
   "OR": 114,
-  "CO": 437,
+  "CO": 438,
   "IN": 319,
   "FL": 471,
-  "OH": 518,
+  "OH": 519,
   "KY": 141,
-  "TX": 1316,
+  "TX": 1315,
   "GA": 370,
-  "MA": 771,
+  "MA": 768,
   "MI": 447,
   "WI": 529,
   "DE": 48,
@@ -135,7 +135,7 @@
   "MO": 224,
   "IA": 229,
   "CT": 176,
-  "WA": 491,
+  "WA": 492,
   "AL": 112,
   "OK": 119,
   "UT": 153,
@@ -161,14 +161,14 @@
   "VT": 52
  },
  "by_size": {
-  "not listed": 11291
+  "not listed": 11275
  },
  "remote": 364,
- "closed_this_sync": 10,
+ "closed_this_sync": 23,
  "gap_report": {
   "categories_under_25": [
    "Research"
   ],
-  "companies_in_registry_without_listings": 1032
+  "companies_in_registry_without_listings": 1033
  }
 }

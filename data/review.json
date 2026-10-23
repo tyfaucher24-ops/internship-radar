@@ -113,6 +113,13 @@
 },
 {
 "company": "Anduril",
+"title": "2027 New Grad Low Observables Engineer",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5269789007?gh_jid=5269789007",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Anduril",
 "title": "Contract Recruiter, Production (Technicians)",
 "url": "https://boards.greenhouse.io/andurilindustries/jobs/5236226007?gh_jid=5236226007",
 "reason": "ambiguous intern wording",
@@ -142,14 +149,14 @@
 {
 "company": "Anduril",
 "title": "Recruiter, Real Estate, Facilities & EHS (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198717007?gh_jid=5198717007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198716007?gh_jid=5198716007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Recruiter, Real Estate, Facilities & EHS (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198716007?gh_jid=5198716007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5198717007?gh_jid=5198717007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -177,14 +184,14 @@
 {
 "company": "Anduril",
 "title": "Technical Recruiter, Software - Air Dominance and Strike",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5235343007?gh_jid=5235343007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5248804007?gh_jid=5248804007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Technical Recruiter, Software - Air Dominance and Strike",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5248804007?gh_jid=5248804007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5235343007?gh_jid=5235343007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -394,6 +401,27 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8618463002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829315002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829623002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
@@ -408,28 +436,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8618463002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829617002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829315002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -443,21 +450,14 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8558579002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/atoms/jobs/8829620002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8827954002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -471,7 +471,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8558579002",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -484,15 +484,15 @@
 },
 {
 "company": "Atoms",
-"title": "Technical Recruiter - AI/ML",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8828049002",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8827954002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
-"company": "Axon",
-"title": "Corporate Operations Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037929003",
+"company": "Atoms",
+"title": "Technical Recruiter - AI/ML",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8828049002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -512,6 +512,20 @@
 },
 {
 "company": "Axon",
+"title": "Corporate Operations Recruiter",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037929003",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Axon",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8040136003",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Axon",
 "title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/axon/jobs/8037936003",
 "reason": "ambiguous intern wording",
@@ -521,13 +535,6 @@
 "company": "Axon",
 "title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/axon/jobs/8037935003",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Axon",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8040136003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -877,7 +884,7 @@
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864174002?gh_jid=8864174002",
+"url": "https://www.brex.com/careers/8864170002?gh_jid=8864170002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -891,7 +898,7 @@
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864170002?gh_jid=8864170002",
+"url": "https://www.brex.com/careers/8864174002?gh_jid=8864174002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1638,13 +1645,6 @@
 "source": "greenhouse"
 },
 {
-"company": "Jane Street",
-"title": "Workplace Services Rotational Coordinator",
-"url": "https://www.janestreet.com/join-jane-street/apply/8599917002?gh_jid=8599917002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
 "company": "Jencap",
 "title": "Property Damage Claims Adjuster (Entry Level)",
 "url": "https://job-boards.greenhouse.io/jencapinc/jobs/5200158007",
@@ -1765,15 +1765,15 @@
 },
 {
 "company": "Mercury",
-"title": "Sales Recruiter",
+"title": "Recruiter - Sales",
 "url": "https://job-boards.greenhouse.io/mercury/jobs/6233009004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
-"company": "Meriton",
-"title": "Recruiter (Skilled Trades)",
-"url": "https://job-boards.greenhouse.io/meriton/jobs/5440127008",
+"company": "Mercury",
+"title": "Recruiter - Technical",
+"url": "https://job-boards.greenhouse.io/mercury/jobs/6233585004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1781,6 +1781,13 @@
 "company": "Meriton",
 "title": "Recruiter (Skilled Trades)",
 "url": "https://job-boards.greenhouse.io/meriton/jobs/5440119008",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Meriton",
+"title": "Recruiter (Skilled Trades)",
+"url": "https://job-boards.greenhouse.io/meriton/jobs/5440127008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1927,14 +1934,14 @@
 {
 "company": "One Medical",
 "title": "Nurse Practitioner or Physician Associate/Physician Assistant - New Grad Program: North Williams",
-"url": "http://www.onemedical.com/careers/all-departments/8260733?gh_jid=8260733",
+"url": "http://www.onemedical.com/careers/all-departments/8318967?gh_jid=8318967",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "One Medical",
 "title": "Nurse Practitioner or Physician Associate/Physician Assistant - New Grad Program: Pearl ",
-"url": "http://www.onemedical.com/careers/all-departments/8263073?gh_jid=8263073",
+"url": "http://www.onemedical.com/careers/all-departments/8318972?gh_jid=8318972",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2350,41 +2357,6 @@
 "url": "https://jobs.ashbyhq.com/qumulo/e1cebc33-3bfc-4c86-9581-4d558cd5f8cc",
 "reason": "ambiguous intern wording",
 "source": "ashby"
-},
-{
-"company": "Rainmaker",
-"title": "Rainmaker Fellow, Atmospheric Instrumentation",
-"url": "https://jobs.lever.co/make-rain/6b8ee727-b788-4f02-8157-db343181089d",
-"reason": "ambiguous intern wording",
-"source": "lever"
-},
-{
-"company": "Rainmaker",
-"title": "Rainmaker Fellow, Atmospheric Science",
-"url": "https://jobs.lever.co/make-rain/7842e3ba-68d5-489f-bcd2-020cb26e23e2",
-"reason": "ambiguous intern wording",
-"source": "lever"
-},
-{
-"company": "Rainmaker",
-"title": "Rainmaker Fellow, Machine Learning",
-"url": "https://jobs.lever.co/make-rain/12553367-54eb-4fb8-8268-d52b3f05d86b",
-"reason": "ambiguous intern wording",
-"source": "lever"
-},
-{
-"company": "Rainmaker",
-"title": "Rainmaker Fellow, Radar Science",
-"url": "https://jobs.lever.co/make-rain/4cac0840-20c6-4d20-9b66-0eefc109e6a9",
-"reason": "ambiguous intern wording",
-"source": "lever"
-},
-{
-"company": "Rainmaker",
-"title": "Rainmaker Fellow, Satellite Remote Sensing",
-"url": "https://jobs.lever.co/make-rain/c6d0d59b-3995-4c66-b29f-05c0d678280e",
-"reason": "ambiguous intern wording",
-"source": "lever"
 },
 {
 "company": "Ramp",
@@ -2858,14 +2830,14 @@
 {
 "company": "SpaceX",
 "title": "Recruiter, Go-To-Market (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864549002?gh_jid=8864549002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864582002?gh_jid=8864582002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Recruiter, Go-To-Market (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864582002?gh_jid=8864582002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864549002?gh_jid=8864549002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2893,14 +2865,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter",
-"url": "https://boards.greenhouse.io/spacex/jobs/8639384002?gh_jid=8639384002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8521318002?gh_jid=8521318002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter",
-"url": "https://boards.greenhouse.io/spacex/jobs/8521318002?gh_jid=8521318002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8639384002?gh_jid=8639384002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2928,21 +2900,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter, Security",
-"url": "https://boards.greenhouse.io/spacex/jobs/8902884002?gh_jid=8902884002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "SpaceX",
-"title": "Technical Recruiter, Security",
 "url": "https://boards.greenhouse.io/spacex/jobs/8902883002?gh_jid=8902883002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
-"title": "Technical Recruiter, SG&A",
-"url": "https://boards.greenhouse.io/spacex/jobs/8880126002?gh_jid=8880126002",
+"title": "Technical Recruiter, Security",
+"url": "https://boards.greenhouse.io/spacex/jobs/8902884002?gh_jid=8902884002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2950,6 +2915,13 @@
 "company": "SpaceX",
 "title": "Technical Recruiter, SG&A",
 "url": "https://boards.greenhouse.io/spacex/jobs/8883358002?gh_jid=8883358002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "SpaceX",
+"title": "Technical Recruiter, SG&A",
+"url": "https://boards.greenhouse.io/spacex/jobs/8880126002?gh_jid=8880126002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2970,14 +2942,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8695154002?gh_jid=8695154002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694852002?gh_jid=8694852002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694852002?gh_jid=8694852002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8695154002?gh_jid=8695154002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3068,14 +3040,14 @@
 {
 "company": "Stoke Space",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/6227809004",
+"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/5232871004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Stoke Space",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/5232871004",
+"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/6227809004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3400,13 +3372,6 @@
 "url": "https://jobs.lever.co/voltus/8f5825af-5c04-422a-9cd8-ce0fe74ed5b9",
 "reason": "ambiguous intern wording",
 "source": "lever"
-},
-{
-"company": "William Blair",
-"title": "Client Services Associate (Entry-Level)",
-"url": "https://www.williamblair.com/Careers/job-description?gh_jid=5227689007",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
 },
 {
 "company": "William Blair",

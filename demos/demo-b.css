@@ -1,0 +1,4 @@
+@import url(base.css);
+:root{--xl:28px;--r:8px;--bg:#0f172a;--card:#1e293b;--fg:#f1f5f9;--mut:#a8b5c7;--line:#334155;--av:#273449;--good:#4ade80;--bad:#fca5a5;--apply:#6d28d9;--accent:#93c5fd}
+[data-theme=light]{--bg:#f8fafc;--card:#fff;--fg:#0f172a;--mut:#475569;--line:#e2e8f0;--av:#f1f5f9;--good:#15803d;--bad:#b91c1c;--accent:#1d4ed8}
+.pill{border:0;background:color-mix(in srgb,currentColor 14%,transparent)}th{background:var(--av)}

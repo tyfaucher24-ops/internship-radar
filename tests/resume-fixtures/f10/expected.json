@@ -1,0 +1,89 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f10",
+ "format": "table",
+ "field": "marketing",
+ "level": "transfer",
+ "edges": [
+  "weirddates"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Finley Copperfield",
+  "email": "finley.copperfield@example.com",
+  "phone": "(212) 555-0172",
+  "location": "Boston, MA"
+ },
+ "education": [
+  {
+   "school": "Northeastern University",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Communications"
+   ],
+   "minors": [
+    "Mathematics"
+   ],
+   "gpa": "3.13",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "12",
+   "classYear": "Junior"
+  },
+  {
+   "school": "Valencia College",
+   "ambiguous": false,
+   "degree": "AA",
+   "majors": [
+    "General Studies"
+   ],
+   "minors": [],
+   "gpa": "3.67",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2025",
+   "gradMonth": "5",
+   "classYear": "Graduated"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Spotify",
+   "title": "Brand Management Intern",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Club leadership",
+   "org": "Northeastern Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  }
+ ],
+ "certs": [
+  "Google Ads Certification"
+ ],
+ "skills": [
+  "Adobe Photoshop",
+  "Canva",
+  "Excel",
+  "Mailchimp",
+  "HubSpot",
+  "Hootsuite"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

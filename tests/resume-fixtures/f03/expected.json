@@ -1,0 +1,132 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f03",
+ "format": "table",
+ "field": "consulting",
+ "level": "standard",
+ "edges": [
+  "pubs"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Riley Northcott",
+  "email": "riley.northcott@example.com",
+  "phone": "(512) 555-0138",
+  "location": "Middlebury, VT"
+ },
+ "education": [
+  {
+   "school": "Middlebury College",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Political Science"
+   ],
+   "minors": [
+    "Psychology"
+   ],
+   "gpa": "3.65",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Booz Allen Hamilton",
+   "title": "Risk Advisory Intern",
+   "location": "McLean, VA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "EY",
+   "title": "Technology Consulting Intern",
+   "location": "Chicago, IL",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Target",
+   "title": "Sales Associate",
+   "location": "Middlebury, VT",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Northcott Tutoring LLC",
+   "title": "Founder",
+   "location": "Middlebury, VT",
+   "start": "2024-01",
+   "end": "Present",
+   "months": 34
+  },
+  {
+   "type": "Freelance",
+   "org": "Self-Employed",
+   "title": "Freelance Graphic Designer",
+   "location": "Remote",
+   "start": "2024-03",
+   "end": "2025-12",
+   "months": 22
+  },
+  {
+   "type": "Part-time job",
+   "org": "Campus Recreation Center",
+   "title": "Part-Time Front Office Assistant",
+   "location": "Middlebury, VT",
+   "start": "2025-09",
+   "end": "2026-05",
+   "months": 9
+  },
+  {
+   "type": "Club member",
+   "org": "Middlebury College Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Greek life",
+   "org": "Sigma Chi",
+   "title": "Philanthropy Chair",
+   "location": "",
+   "start": "2024-01",
+   "end": "Present",
+   "months": 34
+  }
+ ],
+ "certs": [
+  "Google Data Analytics Certificate",
+  "Six Sigma Yellow Belt"
+ ],
+ "skills": [
+  "Excel",
+  "PowerPoint",
+  "Python",
+  "Power BI"
+ ],
+ "languages": [
+  {
+   "name": "Korean",
+   "level": "Bilingual"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f57",
+ "format": "onecol",
+ "field": "tech",
+ "level": "transfer",
+ "edges": [
+  "noheadings"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Ines Hartwell",
+  "email": "ines.hartwell@example.com",
+  "phone": "(404) 555-0157",
+  "location": "Columbus, OH"
+ },
+ "education": [
+  {
+   "school": "Ohio State University-Main Campus",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Computer Engineering"
+   ],
+   "minors": [],
+   "gpa": "3.55",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  },
+  {
+   "school": "Santa Monica College",
+   "ambiguous": false,
+   "degree": "AA",
+   "majors": [
+    "General Studies"
+   ],
+   "minors": [],
+   "gpa": "3.94",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2025",
+   "gradMonth": "5",
+   "classYear": "Graduated"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Stripe",
+   "title": "Software Engineering Intern",
+   "location": "San Francisco, CA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Intel",
+   "title": "Software Engineer Intern",
+   "location": "Santa Clara, CA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "Ohio State University Department of Psychology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Columbus, OH",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Ohio State University Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Columbus, OH",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Freelance",
+   "org": "Self-Employed",
+   "title": "Freelance Graphic Designer",
+   "location": "Remote",
+   "start": "2024-03",
+   "end": "2025-12",
+   "months": 22
+  },
+  {
+   "type": "Club member",
+   "org": "Ohio State Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club leadership",
+   "org": "Ohio State Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2023-08",
+   "end": "Present",
+   "months": 39
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Columbus, OH",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  },
+  {
+   "type": "Project",
+   "org": "",
+   "title": "Campus Ride Share App",
+   "location": "",
+   "start": "2025-01",
+   "end": "2025-04",
+   "months": 4
+  },
+  {
+   "type": "Hackathon",
+   "org": "HackGT",
+   "title": "Participant",
+   "location": "",
+   "start": "2025-10",
+   "end": "2025-10",
+   "months": 1
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Docker",
+  "React",
+  "JavaScript",
+  "PyTorch",
+  "AWS",
+  "SQL",
+  "Git"
+ ],
+ "languages": [
+  {
+   "name": "Spanish",
+   "level": "Fluent"
+  },
+  {
+   "name": "Mandarin",
+   "level": "Native"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

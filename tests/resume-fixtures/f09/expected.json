@@ -1,0 +1,113 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f09",
+ "format": "twocol",
+ "field": "consulting",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Emerson Inglewood",
+  "email": "emerson.inglewood@example.com",
+  "phone": "(206) 555-0153",
+  "location": "Middlebury, VT"
+ },
+ "education": [
+  {
+   "school": "Middlebury College",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Business Administration"
+   ],
+   "minors": [],
+   "gpa": "3.62",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Accenture",
+   "title": "Summer Associate",
+   "location": "Atlanta, GA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "KPMG",
+   "title": "Strategy Intern",
+   "location": "Dallas, TX",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Starbucks",
+   "title": "Barista",
+   "location": "Middlebury, VT",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Club leadership",
+   "org": "Middlebury College Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club member",
+   "org": "Middlebury College Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Stock pitch competition",
+   "org": "Undergraduate Stock Pitch Competition",
+   "title": "Semifinalist",
+   "location": "",
+   "start": "2025-11",
+   "end": "2025-11",
+   "months": 1
+  },
+  {
+   "type": "Volunteer",
+   "org": "American Red Cross",
+   "title": "Volunteer",
+   "location": "Middlebury, VT",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Alteryx",
+  "Power BI",
+  "Python",
+  "SQL",
+  "PowerPoint",
+  "Excel"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

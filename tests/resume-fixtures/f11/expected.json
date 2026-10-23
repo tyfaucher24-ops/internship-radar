@@ -1,0 +1,99 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f11",
+ "format": "canva",
+ "field": "engineering",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Harper Juniper",
+  "email": "harper.juniper@example.com",
+  "phone": "(617) 555-0178",
+  "location": "Milwaukee, WI"
+ },
+ "education": [
+  {
+   "school": "Marquette University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Aerospace Engineering"
+   ],
+   "minors": [
+    "Economics"
+   ],
+   "gpa": "3.87",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "12",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Siemens",
+   "title": "Structural Engineering Intern",
+   "location": "Charlotte, NC",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "GE Aerospace",
+   "title": "Structural Engineering Intern",
+   "location": "Cincinnati, OH",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Marquette Investment Club",
+   "title": "Portfolio Manager",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Greek life",
+   "org": "Sigma Chi",
+   "title": "Vice President of Finance",
+   "location": "",
+   "start": "2024-01",
+   "end": "Present",
+   "months": 34
+  },
+  {
+   "type": "Volunteer",
+   "org": "Big Brothers Big Sisters",
+   "title": "Mentor",
+   "location": "Milwaukee, WI",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "SolidWorks CSWA",
+  "FE / EIT"
+ ],
+ "skills": [
+  "CATIA",
+  "MATLAB",
+  "Arduino",
+  "Excel",
+  "SolidWorks"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

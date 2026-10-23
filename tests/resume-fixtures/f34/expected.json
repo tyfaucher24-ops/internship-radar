@@ -1,0 +1,112 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f34",
+ "format": "word",
+ "field": "consulting",
+ "level": "standard",
+ "edges": [
+  "weirddates",
+  "abroad"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Cleo Deverell",
+  "email": "cleo.deverell@example.com",
+  "phone": "(617) 555-0144",
+  "location": "Chicago, IL"
+ },
+ "education": [
+  {
+   "school": "Loyola University Chicago",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Business Administration"
+   ],
+   "minors": [
+    "Economics"
+   ],
+   "gpa": "3.23",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "McKinsey & Company",
+   "title": "Risk Advisory Intern",
+   "location": "Washington, DC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Guidehouse",
+   "title": "Strategy Intern",
+   "location": "Arlington, VA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Trader Joe's",
+   "title": "Crew Member",
+   "location": "Chicago, IL",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Family business",
+   "org": "Deverell Hardware",
+   "title": "Operations Assistant",
+   "location": "Chicago, IL",
+   "start": "2023-06",
+   "end": "2025-08",
+   "months": 27
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Loyola Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Loyola Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2025",
+   "end": "Present",
+   "months": null
+  }
+ ],
+ "certs": [
+  "Tableau Desktop Specialist"
+ ],
+ "skills": [
+  "Power BI",
+  "Excel",
+  "SQL",
+  "Python",
+  "PowerPoint",
+  "Tableau",
+  "Alteryx"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

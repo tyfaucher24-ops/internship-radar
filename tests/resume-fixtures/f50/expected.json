@@ -1,0 +1,113 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f50",
+ "format": "onecol",
+ "field": "finance",
+ "level": "standard",
+ "edges": [
+  "nogpa",
+  "majorgpa",
+  "double"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Wynn Tillbrook",
+  "email": "wynn.tillbrook@example.com",
+  "phone": "(206) 555-0117",
+  "location": "New Orleans, LA"
+ },
+ "education": [
+  {
+   "school": "Tulane University of Louisiana",
+   "ambiguous": false,
+   "degree": "BBA",
+   "majors": [
+    "Accounting",
+    "Business Administration"
+   ],
+   "minors": [
+    "Mathematics"
+   ],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "3.54",
+   "gradYear": "2027",
+   "gradMonth": "12",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Baird",
+   "title": "Corporate Finance Intern",
+   "location": "Milwaukee, WI",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "BlackRock",
+   "title": "Investment Banking Summer Analyst",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "Tulane University Department of Computer Science",
+   "title": "Undergraduate Research Assistant",
+   "location": "New Orleans, LA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Family business",
+   "org": "Tillbrook Hardware",
+   "title": "Operations Assistant",
+   "location": "New Orleans, LA",
+   "start": "2022-06",
+   "end": "2024-08",
+   "months": 27
+  },
+  {
+   "type": "Club leadership",
+   "org": "Tulane Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "New Orleans, LA",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Series 7"
+ ],
+ "skills": [
+  "Capital IQ",
+  "PitchBook",
+  "Financial Modeling",
+  "PowerPoint",
+  "Bloomberg Terminal",
+  "Excel"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

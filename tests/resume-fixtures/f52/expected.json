@@ -1,0 +1,107 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f52",
+ "format": "table",
+ "field": "consulting",
+ "level": "freshman",
+ "edges": [
+  "weirddates"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Zane Juxon",
+  "email": "zane.juxon@example.com",
+  "phone": "(312) 555-0144",
+  "location": "Atlanta, GA"
+ },
+ "education": [
+  {
+   "school": "Georgia Institute of Technology-Main Campus",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Political Science"
+   ],
+   "minors": [
+    "History"
+   ],
+   "gpa": "3.94",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2030",
+   "gradMonth": "5",
+   "classYear": "Freshman"
+  },
+  {
+   "school": "Westfield High School",
+   "ambiguous": false,
+   "degree": "High School Diploma",
+   "majors": [],
+   "minors": [],
+   "gpa": "3.92",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2026",
+   "gradMonth": "6",
+   "classYear": ""
+  }
+ ],
+ "experience": [
+  {
+   "type": "Service job",
+   "org": "Starbucks",
+   "title": "Barista",
+   "location": "Austin, TX",
+   "start": "2025-06",
+   "end": "2026-08",
+   "months": 15
+  },
+  {
+   "type": "Club leadership",
+   "org": "Key Club",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-06",
+   "months": 22
+  },
+  {
+   "type": "Research assistant",
+   "org": "Georgia Institute of Technology Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Atlanta, GA",
+   "start": "2025",
+   "end": "Present",
+   "months": null
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Georgia Institute of Technology Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Atlanta, GA",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Tableau",
+  "Alteryx",
+  "Python",
+  "PowerPoint",
+  "Kanban"
+ ],
+ "languages": [
+  {
+   "name": "Hindi",
+   "level": "Native"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

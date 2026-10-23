@@ -1,0 +1,79 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f23",
+ "format": "twocol",
+ "field": "engineering",
+ "level": "athlete",
+ "edges": [
+  "majorgpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Kai Kingsley-Vale",
+  "email": "kai.kingsleyvale@example.com",
+  "phone": "(512) 555-0186",
+  "location": "Ann Arbor, MI"
+ },
+ "education": [
+  {
+   "school": "University of Michigan-Ann Arbor",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Industrial Engineering"
+   ],
+   "minors": [],
+   "gpa": "3.16",
+   "gpaScale": "",
+   "majorGpa": "3.67",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Co-op",
+   "org": "GE Aerospace",
+   "title": "Manufacturing Engineering Co-op",
+   "location": "Cincinnati, OH",
+   "start": "2025-01",
+   "end": "2025-06",
+   "months": 6
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Michigan Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Varsity athlete",
+   "org": "Michigan Varsity Swimming & Diving",
+   "title": "Team Captain",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "LabVIEW",
+  "CATIA",
+  "MATLAB",
+  "Excel",
+  "AutoCAD",
+  "Python"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f26",
+ "format": "jake",
+ "field": "finance",
+ "level": "freshman",
+ "edges": [
+  "nogpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Oakley Hazelmere",
+  "email": "oakley.hazelmere@example.com",
+  "phone": "(212) 555-0115",
+  "location": "Gainesville, FL"
+ },
+ "education": [
+  {
+   "school": "University of Florida",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Economics"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2030",
+   "gradMonth": "5",
+   "classYear": "Freshman"
+  },
+  {
+   "school": "Riverside High School",
+   "ambiguous": false,
+   "degree": "High School Diploma",
+   "majors": [],
+   "minors": [],
+   "gpa": "3.90",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2026",
+   "gradMonth": "6",
+   "classYear": ""
+  }
+ ],
+ "experience": [
+  {
+   "type": "Service job",
+   "org": "Target",
+   "title": "Sales Associate",
+   "location": "Raleigh, NC",
+   "start": "2025-06",
+   "end": "2026-08",
+   "months": 15
+  },
+  {
+   "type": "Club leadership",
+   "org": "National Honor Society",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-06",
+   "months": 22
+  }
+ ],
+ "certs": [
+  "Dale Carnegie Leadership Training Certificate"
+ ],
+ "skills": [
+  "Bloomberg Terminal",
+  "DCF",
+  "Excel",
+  "Capital IQ"
+ ],
+ "languages": [
+  {
+   "name": "Mandarin",
+   "level": "Native"
+  },
+  {
+   "name": "Arabic",
+   "level": "Basic"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

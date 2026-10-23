@@ -1,0 +1,123 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f44",
+ "format": "twocol",
+ "field": "finance",
+ "level": "transfer",
+ "edges": [
+  "nogpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Priya Ashgrove",
+  "email": "priya.ashgrove@example.com",
+  "phone": "(919) 555-0151",
+  "location": "Notre Dame, IN"
+ },
+ "education": [
+  {
+   "school": "University of Notre Dame",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Finance"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  },
+  {
+   "school": "Northern Virginia Community College",
+   "ambiguous": false,
+   "degree": "AA",
+   "majors": [
+    "General Studies"
+   ],
+   "minors": [],
+   "gpa": "3.87",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2026",
+   "gradMonth": "5",
+   "classYear": "Graduated"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Wells Fargo",
+   "title": "Summer Analyst",
+   "location": "Charlotte, NC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Truist",
+   "title": "Wealth Management Intern",
+   "location": "Atlanta, GA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "University of Notre Dame Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Notre Dame, IN",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Ashgrove Tutoring LLC",
+   "title": "Founder",
+   "location": "Notre Dame, IN",
+   "start": "2025-01",
+   "end": "Present",
+   "months": 22
+  },
+  {
+   "type": "Club leadership",
+   "org": "Notre Dame Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Notre Dame Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  }
+ ],
+ "certs": [
+  "Wall Street Prep"
+ ],
+ "skills": [
+  "VBA",
+  "FactSet",
+  "PitchBook",
+  "Excel"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

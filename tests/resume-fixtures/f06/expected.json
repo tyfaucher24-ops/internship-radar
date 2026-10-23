@@ -1,0 +1,120 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f06",
+ "format": "word",
+ "field": "health",
+ "level": "standard",
+ "edges": [
+  "double"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Quinn Lockridge",
+  "email": "quinn.lockridge@example.com",
+  "phone": "(512) 555-0178",
+  "location": "Winston-Salem, NC"
+ },
+ "education": [
+  {
+   "school": "Wake Forest University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Neuroscience",
+    "Public Health"
+   ],
+   "minors": [],
+   "gpa": "3.60",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Job",
+   "org": "Massachusetts General Hospital",
+   "title": "Medical Scribe",
+   "location": "Boston, MA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Chipotle Mexican Grill",
+   "title": "Crew Member",
+   "location": "Winston-Salem, NC",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "Wake Forest University Department of Computer Science",
+   "title": "Undergraduate Research Assistant",
+   "location": "Winston-Salem, NC",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Family business",
+   "org": "Lockridge Hardware",
+   "title": "Operations Assistant",
+   "location": "Winston-Salem, NC",
+   "start": "2023-06",
+   "end": "2025-08",
+   "months": 27
+  },
+  {
+   "type": "Club member",
+   "org": "Wake Forest Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  }
+ ],
+ "certs": [
+  "CPR"
+ ],
+ "skills": [
+  "Vital Signs",
+  "Microsoft Office",
+  "Excel",
+  "EMR",
+  "SPSS",
+  "Patient Care",
+  "Epic",
+  "Kanban"
+ ],
+ "languages": [
+  {
+   "name": "Portuguese",
+   "level": "Intermediate"
+  },
+  {
+   "name": "French",
+   "level": "Conversational"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

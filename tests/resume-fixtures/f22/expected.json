@@ -1,0 +1,101 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f22",
+ "format": "onecol",
+ "field": "marketing",
+ "level": "standard",
+ "edges": [
+  "weirddates"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Jules Crestmoor",
+  "email": "jules.crestmoor@example.com",
+  "phone": "(404) 555-0182",
+  "location": "Middlebury, VT"
+ },
+ "education": [
+  {
+   "school": "Middlebury College",
+   "ambiguous": false,
+   "degree": "BBA",
+   "majors": [
+    "Journalism"
+   ],
+   "minors": [],
+   "gpa": "3.39",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Procter & Gamble",
+   "title": "Social Media Intern",
+   "location": "Cincinnati, OH",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Nike",
+   "title": "Brand Management Intern",
+   "location": "Beaverton, OR",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Part-time job",
+   "org": "Campus Recreation Center",
+   "title": "Part-Time Front Office Assistant",
+   "location": "Middlebury, VT",
+   "start": "2025",
+   "end": "2026",
+   "months": null
+  },
+  {
+   "type": "Club leadership",
+   "org": "Middlebury College Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Case competition",
+   "org": "Net Impact Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  }
+ ],
+ "certs": [
+  "HubSpot Inbound Marketing"
+ ],
+ "skills": [
+  "SEO",
+  "Adobe Photoshop",
+  "Canva",
+  "Excel",
+  "Google Analytics",
+  "HubSpot",
+  "Mailchimp",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

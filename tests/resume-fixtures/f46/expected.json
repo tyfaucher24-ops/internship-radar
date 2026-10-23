@@ -1,0 +1,127 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f46",
+ "format": "canva",
+ "field": "consulting",
+ "level": "career",
+ "edges": [
+  "weirddates"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Soren Oakhurst",
+  "email": "soren.oakhurst@example.com",
+  "phone": "(212) 555-0199",
+  "location": "New Orleans, LA"
+ },
+ "education": [
+  {
+   "school": "Tulane University of Louisiana",
+   "ambiguous": false,
+   "degree": "BBA",
+   "majors": [
+    "Economics"
+   ],
+   "minors": [],
+   "gpa": "3.39",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "12",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "PwC",
+   "title": "Summer Associate",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "FedEx Ground",
+   "title": "Operations Coordinator",
+   "location": "Memphis, TN",
+   "start": "2018-03",
+   "end": "2023-07",
+   "months": 65
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "U.S. Army",
+   "title": "Logistics Specialist",
+   "location": "Fort Liberty, NC",
+   "start": "2014-06",
+   "end": "2018-02",
+   "months": 45
+  },
+  {
+   "type": "Research assistant",
+   "org": "Tulane University Department of Economics",
+   "title": "Undergraduate Research Assistant",
+   "location": "New Orleans, LA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Family business",
+   "org": "Oakhurst Hardware",
+   "title": "Operations Assistant",
+   "location": "New Orleans, LA",
+   "start": "2022-06",
+   "end": "2024-08",
+   "months": 27
+  },
+  {
+   "type": "Club member",
+   "org": "Tulane Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Volunteer",
+   "org": "American Red Cross",
+   "title": "Volunteer",
+   "location": "New Orleans, LA",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Tableau Desktop Specialist"
+ ],
+ "skills": [
+  "Excel",
+  "Power BI",
+  "SQL",
+  "Tableau",
+  "Alteryx",
+  "PowerPoint",
+  "Python"
+ ],
+ "languages": [
+  {
+   "name": "Spanish",
+   "level": "Fluent"
+  },
+  {
+   "name": "Hindi",
+   "level": "Native"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

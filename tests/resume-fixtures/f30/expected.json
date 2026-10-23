@@ -1,0 +1,183 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f30",
+ "format": "word",
+ "field": "health",
+ "level": "dense",
+ "edges": [
+  "twopage"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Teagan Yarborough",
+  "email": "teagan.yarborough@example.com",
+  "phone": "(704) 555-0199",
+  "location": "Golden, CO"
+ },
+ "education": [
+  {
+   "school": "Colorado School of Mines",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Biology"
+   ],
+   "minors": [],
+   "gpa": "3.40",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Job",
+   "org": "CVS Health",
+   "title": "Patient Care Technician",
+   "location": "Woonsocket, RI",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "NYU Langone Health",
+   "title": "Nursing Extern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Duke University Hospital",
+   "title": "Clinical Research Intern",
+   "location": "Durham, NC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "Colorado School of Mines Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Golden, CO",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Colorado School of Mines Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Golden, CO",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Colorado School of Mines Investment Club",
+   "title": "Portfolio Manager",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Colorado School of Mines Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club member",
+   "org": "Colorado School of Mines Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Case competition",
+   "org": "Net Impact Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  },
+  {
+   "type": "Job",
+   "org": "Duke University Hospital",
+   "title": "Pharmacy Technician",
+   "location": "Durham, NC",
+   "start": "2024-06",
+   "end": "2024-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "CVS Health",
+   "title": "Pharmacy Technician",
+   "location": "Woonsocket, RI",
+   "start": "2023-06",
+   "end": "2023-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "Mayo Clinic",
+   "title": "Pharmacy Technician",
+   "location": "Rochester, MN",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Cleveland Clinic",
+   "title": "Clinical Research Intern",
+   "location": "Cleveland, OH",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Massachusetts General Hospital",
+   "title": "Nursing Extern",
+   "location": "Boston, MA",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  }
+ ],
+ "certs": [
+  "EMT",
+  "First Aid",
+  "BLS"
+ ],
+ "skills": [
+  "SPSS",
+  "Epic",
+  "Vital Signs",
+  "Microsoft Office",
+  "Excel",
+  "Patient Care",
+  "EMR"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

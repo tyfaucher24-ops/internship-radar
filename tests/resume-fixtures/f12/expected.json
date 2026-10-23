@@ -1,0 +1,108 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f12",
+ "format": "jake",
+ "field": "health",
+ "level": "career",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Kendall Ravensworth",
+  "email": "kendall.ravensworth@example.com",
+  "phone": "(704) 555-0113",
+  "location": "Wellesley, MA"
+ },
+ "education": [
+  {
+   "school": "Babson College",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Health Sciences"
+   ],
+   "minors": [],
+   "gpa": "3.49",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Job",
+   "org": "NYU Langone Health",
+   "title": "Pharmacy Technician",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "FedEx Ground",
+   "title": "Operations Coordinator",
+   "location": "Memphis, TN",
+   "start": "2018-03",
+   "end": "2023-07",
+   "months": 65
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "U.S. Army",
+   "title": "Logistics Specialist",
+   "location": "Fort Liberty, NC",
+   "start": "2014-06",
+   "end": "2018-02",
+   "months": 45
+  },
+  {
+   "type": "Family business",
+   "org": "Ravensworth Hardware",
+   "title": "Operations Assistant",
+   "location": "Wellesley, MA",
+   "start": "2022-06",
+   "end": "2024-08",
+   "months": 27
+  },
+  {
+   "type": "Club leadership",
+   "org": "Babson College Consulting Club",
+   "title": "Vice President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Case competition",
+   "org": "KPMG Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  }
+ ],
+ "certs": [
+  "CITI Human Subjects Research"
+ ],
+ "skills": [
+  "Patient Care",
+  "Epic",
+  "EMR",
+  "Microsoft Office",
+  "Excel",
+  "SPSS",
+  "Vital Signs",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

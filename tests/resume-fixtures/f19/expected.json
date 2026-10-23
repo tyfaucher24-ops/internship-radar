@@ -1,0 +1,114 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f19",
+ "format": "jake",
+ "field": "libarts",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Dakota Fairbourne",
+  "email": "dakota.fairbourne@example.com",
+  "phone": "(512) 555-0122",
+  "location": "Oxford, OH"
+ },
+ "education": [
+  {
+   "school": "Miami University-Oxford",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Psychology"
+   ],
+   "minors": [],
+   "gpa": "3.89",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Teach For America",
+   "title": "Policy Intern",
+   "location": "Chicago, IL",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "The Brookings Institution",
+   "title": "Archives Intern",
+   "location": "Washington, DC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "Miami University Department of Computer Science",
+   "title": "Undergraduate Research Assistant",
+   "location": "Oxford, OH",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Miami University Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Oxford, OH",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Family business",
+   "org": "Fairbourne Hardware",
+   "title": "Operations Assistant",
+   "location": "Oxford, OH",
+   "start": "2022-06",
+   "end": "2024-08",
+   "months": 27
+  },
+  {
+   "type": "Club leadership",
+   "org": "Miami Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Case competition",
+   "org": "Net Impact Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  }
+ ],
+ "certs": [
+  "Google Project Management Certificate"
+ ],
+ "skills": [
+  "WordPress",
+  "Google Workspace",
+  "Microsoft Office",
+  "Qualtrics",
+  "Adobe InDesign"
+ ],
+ "languages": [],
+ "workAuth": "U.S. citizen",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

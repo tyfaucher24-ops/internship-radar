@@ -1,0 +1,46 @@
+HAYDEN UNDERHILL
+Columbus, OH | hayden.underhill@example.com | (212) 555-0169 | linkedin.com/in/haydenunderhill
+
+EDUCATION
+The Ohio State University      Columbus, OH
+B.S., Computer Engineering      May 2028
+GPA: 3.42/4.0
+Relevant Coursework: Microeconomics, Corporate Finance, Algorithms
+London School of Economics – Study Abroad, Spring 2026
+
+EXPERIENCE
+Intel      Santa Clara, CA
+Software Engineering Intern      Summer 2025
+- Migrated 3 batch jobs to AWS Lambda, saving about $2K per month
+- Shipped a caching layer in Go that cut p95 latency from 410ms to 120ms
+- Trained a gradient-boosted model that improved fraud recall by 6 points
+Amazon      Seattle, WA
+Machine Learning Intern      Jun 2026 – Aug 2026
+- Wrote 60+ unit tests and raised coverage from 54% to 81%
+- Shipped a caching layer in Go that cut p95 latency from 410ms to 120ms
+Ohio State University Department of Mathematics      Columbus, OH
+Teaching Assistant      Jan 2026 – Present
+- Held weekly office hours for 60 students in Calculus I
+Self-Employed      Remote
+Freelance Graphic Designer      Mar 2025 – Present
+- Designed logos and menus for 9 local businesses
+Campus Recreation Center      Columbus, OH
+Part-Time Front Office Assistant      September 2026 – Present
+- Checked in 300 members per shift and answered phones
+
+TECHNICAL PROJECTS
+Portfolio Tracker
+Jan 2026 – Apr 2026
+- Built a web app with React and Flask used by 150 students
+HackGT
+Participant      Oct 2026 – Oct 2026
+- Built a transit alert bot in a 36-hour hackathon; won Best Use of Data
+
+ACTIVITIES
+Ohio State Model United Nations
+Secretary-General      September 2025 – Present
+- Recruited 25 new members and ran 10 weekly meetings
+
+TECHNICAL SKILLS
+Technical Skills: JavaScript, Java, TypeScript, Linux, AWS, C++
+Certifications: AWS Certified Cloud Practitioner

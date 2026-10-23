@@ -1,0 +1,116 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f36",
+ "format": "onecol",
+ "field": "health",
+ "level": "athlete",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Ezra Everhart",
+  "email": "ezra.everhart@example.com",
+  "phone": "(206) 555-0127",
+  "location": "Pittsburgh, PA"
+ },
+ "education": [
+  {
+   "school": "University of Pittsburgh-Pittsburgh Campus",
+   "ambiguous": false,
+   "degree": "BSN",
+   "majors": [
+    "Nursing"
+   ],
+   "minors": [
+    "Psychology"
+   ],
+   "gpa": "3.71",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Job",
+   "org": "Johns Hopkins Hospital",
+   "title": "Medical Scribe",
+   "location": "Baltimore, MD",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "NYU Langone Health",
+   "title": "Pharmacy Technician",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Club leadership",
+   "org": "Pittsburgh Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club member",
+   "org": "Pittsburgh Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Case competition",
+   "org": "Net Impact Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2026-02",
+   "end": "2026-02",
+   "months": 1
+  },
+  {
+   "type": "Varsity athlete",
+   "org": "Pittsburgh Varsity Swimming & Diving",
+   "title": "Team Captain",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Pittsburgh, PA",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "CNA"
+ ],
+ "skills": [
+  "EMR",
+  "Excel",
+  "Epic",
+  "Microsoft Office",
+  "Patient Care"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

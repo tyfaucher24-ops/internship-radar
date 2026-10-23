@@ -1,0 +1,209 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f51",
+ "format": "word",
+ "field": "tech",
+ "level": "dense",
+ "edges": [
+  "twopage"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Yara Coldharbour",
+  "email": "yara.coldharbour@example.com",
+  "phone": "(512) 555-0167",
+  "location": "Atlanta, GA"
+ },
+ "education": [
+  {
+   "school": "Spelman College",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Computer Engineering"
+   ],
+   "minors": [
+    "Mathematics"
+   ],
+   "gpa": "3.82",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Cisco",
+   "title": "Machine Learning Intern",
+   "location": "San Jose, CA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Intel",
+   "title": "Machine Learning Intern",
+   "location": "Santa Clara, CA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "IBM",
+   "title": "Software Engineer Intern",
+   "location": "Armonk, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Target",
+   "title": "Sales Associate",
+   "location": "Atlanta, GA",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "Spelman College Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Atlanta, GA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Spelman College Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Atlanta, GA",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club leadership",
+   "org": "Spelman College Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club leadership",
+   "org": "Spelman College Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Club leadership",
+   "org": "Spelman College Entrepreneurship Club",
+   "title": "Director of Events",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Volunteer",
+   "org": "Habitat for Humanity",
+   "title": "Volunteer",
+   "location": "Atlanta, GA",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  },
+  {
+   "type": "Project",
+   "org": "",
+   "title": "Portfolio Tracker",
+   "location": "",
+   "start": "2025-01",
+   "end": "2025-04",
+   "months": 4
+  },
+  {
+   "type": "Hackathon",
+   "org": "HackGT",
+   "title": "Participant",
+   "location": "",
+   "start": "2025-10",
+   "end": "2025-10",
+   "months": 1
+  },
+  {
+   "type": "Internship",
+   "org": "Datadog",
+   "title": "Backend Engineering Intern",
+   "location": "New York, NY",
+   "start": "2024-06",
+   "end": "2024-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Google",
+   "title": "Software Engineering Intern",
+   "location": "Mountain View, CA",
+   "start": "2023-06",
+   "end": "2023-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Intel",
+   "title": "Site Reliability Engineering Intern",
+   "location": "Santa Clara, CA",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Capital One",
+   "title": "Software Engineer Intern",
+   "location": "McLean, VA",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Salesforce",
+   "title": "Site Reliability Engineering Intern",
+   "location": "San Francisco, CA",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  }
+ ],
+ "certs": [
+  "AWS Certified Cloud Practitioner",
+  "CompTIA Security+",
+  "Microsoft Azure Fundamentals (AZ-900)"
+ ],
+ "skills": [
+  "Git",
+  "PyTorch",
+  "AWS",
+  "SQL"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

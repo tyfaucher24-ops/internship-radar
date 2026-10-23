@@ -1,0 +1,110 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f28",
+ "format": "text",
+ "field": "consulting",
+ "level": "athlete",
+ "edges": [
+  "weirddates",
+  "double"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Remy Ivesdale",
+  "email": "remy.ivesdale@example.com",
+  "phone": "(312) 555-0120",
+  "location": "University Park, PA"
+ },
+ "education": [
+  {
+   "school": "Pennsylvania State University-Main Campus",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Economics",
+    "Political Science"
+   ],
+   "minors": [],
+   "gpa": "3.46",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2029",
+   "gradMonth": "12",
+   "classYear": "Freshman"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Accenture",
+   "title": "Technology Consulting Intern",
+   "location": "Atlanta, GA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "McKinsey & Company",
+   "title": "Strategy Intern",
+   "location": "Washington, DC",
+   "start": "2025",
+   "end": "2025",
+   "months": null
+  },
+  {
+   "type": "Service job",
+   "org": "Starbucks",
+   "title": "Barista",
+   "location": "University Park, PA",
+   "start": "2026-05",
+   "end": "2026-08",
+   "months": 4
+  },
+  {
+   "type": "Freelance",
+   "org": "Self-Employed",
+   "title": "Freelance Graphic Designer",
+   "location": "Remote",
+   "start": "2026-03",
+   "end": "Present",
+   "months": 8
+  },
+  {
+   "type": "Club leadership",
+   "org": "Pennsylvania State Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  },
+  {
+   "type": "Varsity athlete",
+   "org": "Pennsylvania State Varsity Volleyball",
+   "title": "Team Captain",
+   "location": "",
+   "start": "2025-08",
+   "end": "Present",
+   "months": 15
+  }
+ ],
+ "certs": [
+  "Six Sigma Yellow Belt"
+ ],
+ "skills": [
+  "Power BI",
+  "Python",
+  "Excel",
+  "Alteryx",
+  "SQL"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

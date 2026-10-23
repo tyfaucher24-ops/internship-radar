@@ -1,0 +1,95 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f35",
+ "format": "text",
+ "field": "marketing",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Daria Knightley",
+  "email": "daria.knightley@example.com",
+  "phone": "(212) 555-0190",
+  "location": "Ithaca, NY"
+ },
+ "education": [
+  {
+   "school": "Cornell University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Journalism"
+   ],
+   "minors": [
+    "Economics"
+   ],
+   "gpa": "3.77",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "HubSpot",
+   "title": "Social Media Intern",
+   "location": "Cambridge, MA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "L'Oréal USA",
+   "title": "Content Marketing Intern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Cornell University Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Ithaca, NY",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club member",
+   "org": "Cornell Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  }
+ ],
+ "certs": [
+  "Google Analytics Certification",
+  "HubSpot Inbound Marketing",
+  "Dale Carnegie Leadership Training Certificate"
+ ],
+ "skills": [
+  "Canva",
+  "HubSpot",
+  "SEO",
+  "Excel",
+  "Mailchimp",
+  "Adobe Illustrator",
+  "Google Analytics",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

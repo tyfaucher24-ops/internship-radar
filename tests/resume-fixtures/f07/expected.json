@@ -1,0 +1,97 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f07",
+ "format": "text",
+ "field": "libarts",
+ "level": "international",
+ "edges": [
+  "noheadings",
+  "scale10"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Rowan Stonebridge",
+  "email": "rowan.stonebridge@example.com",
+  "phone": "(212) 555-0139",
+  "location": "Athens, GA"
+ },
+ "education": [
+  {
+   "school": "University of Georgia",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Sociology"
+   ],
+   "minors": [
+    "Mathematics"
+   ],
+   "gpa": "9.4",
+   "gpaScale": "10.0",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Smithsonian Institution",
+   "title": "Research Intern",
+   "location": "Washington, DC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Penguin Random House",
+   "title": "Communications Intern",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Club leadership",
+   "org": "Georgia National Society of Black Engineers",
+   "title": "Secretary",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club member",
+   "org": "Georgia Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  }
+ ],
+ "certs": [
+  "Google Project Management Certificate"
+ ],
+ "skills": [
+  "Microsoft Office",
+  "Canva",
+  "Stata",
+  "WordPress"
+ ],
+ "languages": [
+  {
+   "name": "Portuguese",
+   "level": "Intermediate"
+  }
+ ],
+ "workAuth": "Authorized to work in the U.S. (no sponsorship needed)",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

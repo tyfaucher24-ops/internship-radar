@@ -1,0 +1,100 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f29",
+ "format": "onecol",
+ "field": "engineering",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Sloane Pemberton",
+  "email": "sloane.pemberton@example.com",
+  "phone": "(512) 555-0190",
+  "location": "Baltimore, MD"
+ },
+ "education": [
+  {
+   "school": "Johns Hopkins University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Civil Engineering"
+   ],
+   "minors": [],
+   "gpa": "3.85",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Raytheon",
+   "title": "Quality Engineering Intern",
+   "location": "Tucson, AZ",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "YMCA",
+   "title": "Lifeguard",
+   "location": "Baltimore, MD",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Part-time job",
+   "org": "Campus Recreation Center",
+   "title": "Part-Time Front Office Assistant",
+   "location": "Baltimore, MD",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Johns Hopkins Investment Club",
+   "title": "Portfolio Manager",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Greek life",
+   "org": "Alpha Kappa Psi",
+   "title": "Vice President of Finance",
+   "location": "",
+   "start": "2025-01",
+   "end": "Present",
+   "months": 22
+  }
+ ],
+ "certs": [
+  "FE / EIT",
+  "SolidWorks CSWA"
+ ],
+ "skills": [
+  "AutoCAD",
+  "CATIA",
+  "SolidWorks",
+  "LabVIEW",
+  "Arduino",
+  "ANSYS",
+  "Python",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

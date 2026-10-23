@@ -1,0 +1,85 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f39",
+ "format": "canva",
+ "field": "tech",
+ "level": "freshman",
+ "edges": [
+  "double"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Juno Blackthorn",
+  "email": "juno.blackthorn@example.com",
+  "phone": "(312) 555-0142",
+  "location": "Columbus, OH"
+ },
+ "education": [
+  {
+   "school": "Ohio State University-Main Campus",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Information Science",
+    "Computer Science"
+   ],
+   "minors": [],
+   "gpa": "3.68",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2030",
+   "gradMonth": "5",
+   "classYear": "Freshman"
+  },
+  {
+   "school": "Jefferson High School",
+   "ambiguous": false,
+   "degree": "High School Diploma",
+   "majors": [],
+   "minors": [],
+   "gpa": "3.76",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2026",
+   "gradMonth": "6",
+   "classYear": ""
+  }
+ ],
+ "experience": [
+  {
+   "type": "Service job",
+   "org": "Starbucks",
+   "title": "Barista",
+   "location": "Raleigh, NC",
+   "start": "2025-06",
+   "end": "2026-08",
+   "months": 15
+  },
+  {
+   "type": "Club leadership",
+   "org": "Key Club",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-06",
+   "months": 22
+  }
+ ],
+ "certs": [
+  "Dale Carnegie Leadership Training Certificate"
+ ],
+ "skills": [
+  "Linux",
+  "Python",
+  "React",
+  "Git",
+  "AWS"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

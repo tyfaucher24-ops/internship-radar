@@ -1,0 +1,106 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f16",
+ "format": "twocol",
+ "field": "marketing",
+ "level": "standard",
+ "edges": [
+  "weirddates"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Skyler Valewood",
+  "email": "skyler.valewood@example.com",
+  "phone": "(704) 555-0172",
+  "location": "Bloomington, IN"
+ },
+ "education": [
+  {
+   "school": "Indiana University-Bloomington",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Journalism"
+   ],
+   "minors": [],
+   "gpa": "3.83",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2029",
+   "gradMonth": "12",
+   "classYear": "Freshman"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Nike",
+   "title": "Brand Management Intern",
+   "location": "Beaverton, OR",
+   "start": "2025",
+   "end": "2025",
+   "months": null
+  },
+  {
+   "type": "Internship",
+   "org": "Ogilvy",
+   "title": "Digital Marketing Intern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Starbucks",
+   "title": "Barista",
+   "location": "Bloomington, IN",
+   "start": "2026-05",
+   "end": "2026-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "Indiana University Bloomington Department of Economics",
+   "title": "Undergraduate Research Assistant",
+   "location": "Bloomington, IN",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Valewood Tutoring LLC",
+   "title": "Founder",
+   "location": "Bloomington, IN",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Indiana Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  }
+ ],
+ "certs": [
+  "Meta Digital Marketing Associate"
+ ],
+ "skills": [
+  "Mailchimp",
+  "Excel",
+  "Adobe Photoshop",
+  "Canva"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

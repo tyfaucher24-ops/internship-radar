@@ -1,0 +1,126 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f27",
+ "format": "word",
+ "field": "tech",
+ "level": "standard",
+ "edges": [
+  "noheadings"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Peyton Brindlewood",
+  "email": "peyton.brindlewood@example.com",
+  "phone": "(206) 555-0144",
+  "location": "University Park, PA"
+ },
+ "education": [
+  {
+   "school": "Pennsylvania State University-Main Campus",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Information Science"
+   ],
+   "minors": [],
+   "gpa": "3.58",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Capital One",
+   "title": "Data Science Intern",
+   "location": "McLean, VA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Google",
+   "title": "Software Engineer Intern",
+   "location": "Mountain View, CA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Starbucks",
+   "title": "Barista",
+   "location": "University Park, PA",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "Pennsylvania State University Department of Psychology",
+   "title": "Undergraduate Research Assistant",
+   "location": "University Park, PA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Pennsylvania State Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Greek life",
+   "org": "Sigma Chi",
+   "title": "Vice President of Finance",
+   "location": "",
+   "start": "2025-01",
+   "end": "Present",
+   "months": 22
+  },
+  {
+   "type": "Volunteer",
+   "org": "Habitat for Humanity",
+   "title": "Volunteer",
+   "location": "University Park, PA",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  },
+  {
+   "type": "Project",
+   "org": "",
+   "title": "Course Planner",
+   "location": "",
+   "start": "2026-01",
+   "end": "2026-04",
+   "months": 4
+  }
+ ],
+ "certs": [
+  "Microsoft Azure Fundamentals (AZ-900)"
+ ],
+ "skills": [
+  "Python",
+  "SQL",
+  "JavaScript",
+  "Linux",
+  "Java",
+  "AWS"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

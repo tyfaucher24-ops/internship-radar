@@ -1,0 +1,122 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f31",
+ "format": "table",
+ "field": "libarts",
+ "level": "transfer",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Wren Foxcroft",
+  "email": "wren.foxcroft@example.com",
+  "phone": "(512) 555-0186",
+  "location": "Atlanta, GA"
+ },
+ "education": [
+  {
+   "school": "Georgia Institute of Technology-Main Campus",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Sociology"
+   ],
+   "minors": [],
+   "gpa": "3.45",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  },
+  {
+   "school": "Santa Monica College",
+   "ambiguous": false,
+   "degree": "AA",
+   "majors": [
+    "General Studies"
+   ],
+   "minors": [],
+   "gpa": "3.51",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2025",
+   "gradMonth": "5",
+   "classYear": "Graduated"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Boston Public Library",
+   "title": "Communications Intern",
+   "location": "Boston, MA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Penguin Random House",
+   "title": "Policy Intern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Georgia Institute of Technology Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Atlanta, GA",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club leadership",
+   "org": "Georgia Institute of Technology Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Case competition",
+   "org": "KPMG Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  },
+  {
+   "type": "Volunteer",
+   "org": "American Red Cross",
+   "title": "Volunteer",
+   "location": "Atlanta, GA",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Google Project Management Certificate"
+ ],
+ "skills": [
+  "Stata",
+  "Canva",
+  "Microsoft Office",
+  "WordPress",
+  "Qualtrics",
+  "Adobe InDesign",
+  "Google Workspace"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

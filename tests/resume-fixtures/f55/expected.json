@@ -1,0 +1,96 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f55",
+ "format": "word",
+ "field": "health",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Callum Silverline",
+  "email": "callum.silverline@example.com",
+  "phone": "(212) 555-0186",
+  "location": "Columbus, OH"
+ },
+ "education": [
+  {
+   "school": "Ohio State University-Main Campus",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Biology"
+   ],
+   "minors": [],
+   "gpa": "3.82",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2029",
+   "gradMonth": "5",
+   "classYear": "Sophomore"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Atrium Health",
+   "title": "Public Health Intern",
+   "location": "Charlotte, NC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "Cleveland Clinic",
+   "title": "Medical Scribe",
+   "location": "Cleveland, OH",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Olive Garden",
+   "title": "Server",
+   "location": "Columbus, OH",
+   "start": "2026-05",
+   "end": "2026-08",
+   "months": 4
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Silverline Tutoring LLC",
+   "title": "Founder",
+   "location": "Columbus, OH",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club leadership",
+   "org": "Ohio State Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  }
+ ],
+ "certs": [
+  "CITI Human Subjects Research",
+  "CPR"
+ ],
+ "skills": [
+  "Excel",
+  "EMR",
+  "Microsoft Office",
+  "SPSS"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

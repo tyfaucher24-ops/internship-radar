@@ -1,0 +1,108 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f48",
+ "format": "word",
+ "field": "engineering",
+ "level": "standard",
+ "edges": [
+  "pubs"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Uma Elmswell",
+  "email": "uma.elmswell@example.com",
+  "phone": "(704) 555-0158",
+  "location": "Villanova, PA"
+ },
+ "education": [
+  {
+   "school": "Villanova University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Aerospace Engineering"
+   ],
+   "minors": [
+    "Psychology"
+   ],
+   "gpa": "3.32",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "12",
+   "classYear": "Sophomore"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "3M",
+   "title": "Quality Engineering Intern",
+   "location": "St. Paul, MN",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Ford Motor Company",
+   "title": "Systems Engineering Intern",
+   "location": "Dearborn, MI",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "YMCA",
+   "title": "Lifeguard",
+   "location": "Villanova, PA",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "Villanova University Department of Economics",
+   "title": "Undergraduate Research Assistant",
+   "location": "Villanova, PA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Villanova Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Volunteer",
+   "org": "Habitat for Humanity",
+   "title": "Volunteer",
+   "location": "Villanova, PA",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Excel",
+  "AutoCAD",
+  "LabVIEW",
+  "ANSYS",
+  "SolidWorks",
+  "Arduino"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

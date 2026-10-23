@@ -1,0 +1,117 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f60",
+ "format": "canva",
+ "field": "engineering",
+ "level": "standard",
+ "edges": [
+  "abroad"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Mateo Fennimore",
+  "email": "mateo.fennimore@example.com",
+  "phone": "(312) 555-0186",
+  "location": "Austin, TX"
+ },
+ "education": [
+  {
+   "school": "The University of Texas at Austin",
+   "ambiguous": false,
+   "degree": "BSE",
+   "majors": [
+    "Mechanical Engineering"
+   ],
+   "minors": [
+    "History"
+   ],
+   "gpa": "3.67",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Co-op",
+   "org": "Lockheed Martin",
+   "title": "Manufacturing Engineering Co-op",
+   "location": "Fort Worth, TX",
+   "start": "2026-01",
+   "end": "2026-06",
+   "months": 6
+  },
+  {
+   "type": "Internship",
+   "org": "Siemens",
+   "title": "Mechanical Engineering Intern",
+   "location": "Charlotte, NC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Olive Garden",
+   "title": "Server",
+   "location": "Austin, TX",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "University of Texas at Austin Department of Computer Science",
+   "title": "Undergraduate Research Assistant",
+   "location": "Austin, TX",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Texas at Austin Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Stock pitch competition",
+   "org": "Undergraduate Stock Pitch Competition",
+   "title": "Semifinalist",
+   "location": "",
+   "start": "2025-11",
+   "end": "2025-11",
+   "months": 1
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2023-08",
+   "end": "Present",
+   "months": 39
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "CATIA",
+  "LabVIEW",
+  "SolidWorks",
+  "Arduino",
+  "MATLAB",
+  "Excel"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

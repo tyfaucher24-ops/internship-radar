@@ -1,0 +1,113 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f33",
+ "format": "jake",
+ "field": "tech",
+ "level": "international",
+ "edges": [
+  "scale10",
+  "pubs"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Briar Umberfield",
+  "email": "briar.umberfield@example.com",
+  "phone": "(512) 555-0130",
+  "location": "Waltham, MA"
+ },
+ "education": [
+  {
+   "school": "Bentley University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Data Science"
+   ],
+   "minors": [],
+   "gpa": "8.4",
+   "gpaScale": "10.0",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Adobe",
+   "title": "Software Engineering Intern",
+   "location": "San Jose, CA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Capital One",
+   "title": "Software Engineer Intern",
+   "location": "McLean, VA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Part-time job",
+   "org": "Campus Recreation Center",
+   "title": "Part-Time Front Office Assistant",
+   "location": "Waltham, MA",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Bentley Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  },
+  {
+   "type": "Project",
+   "org": "",
+   "title": "Campus Ride Share App",
+   "location": "",
+   "start": "2026-01",
+   "end": "2026-04",
+   "months": 4
+  }
+ ],
+ "certs": [
+  "Microsoft Azure Fundamentals (AZ-900)"
+ ],
+ "skills": [
+  "Node.js",
+  "C++",
+  "JavaScript",
+  "TypeScript",
+  "Docker"
+ ],
+ "languages": [
+  {
+   "name": "Arabic",
+   "level": "Basic"
+  }
+ ],
+ "workAuth": "Authorized to work in the U.S. (no sponsorship needed)",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

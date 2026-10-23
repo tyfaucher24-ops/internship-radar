@@ -1,0 +1,106 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f56",
+ "format": "text",
+ "field": "libarts",
+ "level": "standard",
+ "edges": [
+  "nogpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Delphine Alderwick",
+  "email": "delphine.alderwick@example.com",
+  "phone": "(312) 555-0154",
+  "location": "Villanova, PA"
+ },
+ "education": [
+  {
+   "school": "Villanova University",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Philosophy"
+   ],
+   "minors": [],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2029",
+   "gradMonth": "5",
+   "classYear": "Sophomore"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Teach For America",
+   "title": "Communications Intern",
+   "location": "Chicago, IL",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "American Civil Liberties Union",
+   "title": "Communications Intern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Club leadership",
+   "org": "Villanova Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  },
+  {
+   "type": "Club leadership",
+   "org": "Villanova Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2026-09",
+   "end": "Present",
+   "months": 2
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2025-08",
+   "end": "Present",
+   "months": 15
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Canva",
+  "Microsoft Office",
+  "WordPress",
+  "Stata",
+  "Google Workspace"
+ ],
+ "languages": [
+  {
+   "name": "Spanish",
+   "level": "Fluent"
+  },
+  {
+   "name": "Korean",
+   "level": "Bilingual"
+  }
+ ],
+ "workAuth": "U.S. citizen",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

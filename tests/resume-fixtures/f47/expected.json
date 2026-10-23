@@ -1,0 +1,99 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f47",
+ "format": "jake",
+ "field": "marketing",
+ "level": "standard",
+ "edges": [
+  "abroad"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Thea Westerly",
+  "email": "thea.westerly@example.com",
+  "phone": "(206) 555-0121",
+  "location": "Baltimore, MD"
+ },
+ "education": [
+  {
+   "school": "Johns Hopkins University",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Communications"
+   ],
+   "minors": [],
+   "gpa": "3.83",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Ogilvy",
+   "title": "Social Media Intern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Unilever",
+   "title": "Digital Marketing Intern",
+   "location": "Englewood Cliffs, NJ",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Family business",
+   "org": "Westerly Hardware",
+   "title": "Operations Assistant",
+   "location": "Baltimore, MD",
+   "start": "2023-06",
+   "end": "2025-08",
+   "months": 27
+  },
+  {
+   "type": "Club leadership",
+   "org": "Johns Hopkins Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Baltimore, MD",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Google Analytics Certification",
+  "Meta Digital Marketing Associate"
+ ],
+ "skills": [
+  "SEO",
+  "Adobe Photoshop",
+  "Mailchimp",
+  "Google Analytics",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "U.S. citizen",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

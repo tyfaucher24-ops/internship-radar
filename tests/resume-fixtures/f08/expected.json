@@ -1,0 +1,127 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f08",
+ "format": "onecol",
+ "field": "tech",
+ "level": "standard",
+ "edges": [
+  "nogpa",
+  "abroad"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Sage Birchmere",
+  "email": "sage.birchmere@example.com",
+  "phone": "(404) 555-0149",
+  "location": "Austin, TX"
+ },
+ "education": [
+  {
+   "school": "The University of Texas at Austin",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Computer Science"
+   ],
+   "minors": [],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Google",
+   "title": "Software Engineer Intern",
+   "location": "Mountain View, CA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Adobe",
+   "title": "Site Reliability Engineering Intern",
+   "location": "San Jose, CA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Chipotle Mexican Grill",
+   "title": "Crew Member",
+   "location": "Austin, TX",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "University of Texas at Austin Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Austin, TX",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club member",
+   "org": "Texas at Austin Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Case competition",
+   "org": "Deloitte Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  },
+  {
+   "type": "Project",
+   "org": "",
+   "title": "Campus Ride Share App",
+   "location": "",
+   "start": "2025-01",
+   "end": "2025-04",
+   "months": 4
+  },
+  {
+   "type": "Hackathon",
+   "org": "HackGT",
+   "title": "Participant",
+   "location": "",
+   "start": "2025-10",
+   "end": "2025-10",
+   "months": 1
+  }
+ ],
+ "certs": [
+  "AWS Certified Cloud Practitioner"
+ ],
+ "skills": [
+  "Python",
+  "C++",
+  "AWS",
+  "Linux",
+  "React",
+  "Git"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

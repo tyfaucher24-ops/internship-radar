@@ -1,0 +1,99 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f14",
+ "format": "text",
+ "field": "finance",
+ "level": "standard",
+ "edges": [
+  "nogpa",
+  "majorgpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Parker Greywater",
+  "email": "parker.greywater@example.com",
+  "phone": "(704) 555-0198",
+  "location": "Seattle, WA"
+ },
+ "education": [
+  {
+   "school": "University of Washington-Seattle Campus",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Finance"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "3.50",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Evercore",
+   "title": "Sales and Trading Summer Analyst",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Part-time job",
+   "org": "Campus Recreation Center",
+   "title": "Part-Time Front Office Assistant",
+   "location": "Seattle, WA",
+   "start": "2025-09",
+   "end": "2026-05",
+   "months": 9
+  },
+  {
+   "type": "Club leadership",
+   "org": "Washington Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Club leadership",
+   "org": "Washington Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Financial Modeling",
+  "FactSet",
+  "VBA",
+  "Capital IQ"
+ ],
+ "languages": [
+  {
+   "name": "Mandarin",
+   "level": "Native"
+  },
+  {
+   "name": "French",
+   "level": "Conversational"
+  }
+ ],
+ "workAuth": "U.S. citizen",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

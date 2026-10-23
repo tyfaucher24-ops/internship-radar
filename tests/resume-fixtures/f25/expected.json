@@ -1,0 +1,115 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f25",
+ "format": "canva",
+ "field": "libarts",
+ "level": "career",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Noel Ambleside",
+  "email": "noel.ambleside@example.com",
+  "phone": "(212) 555-0171",
+  "location": "Durham, NC"
+ },
+ "education": [
+  {
+   "school": "Duke University",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "History"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "3.94",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "The Brookings Institution",
+   "title": "Communications Intern",
+   "location": "Washington, DC",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "FedEx Ground",
+   "title": "Operations Coordinator",
+   "location": "Memphis, TN",
+   "start": "2018-03",
+   "end": "2023-07",
+   "months": 65
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "U.S. Army",
+   "title": "Logistics Specialist",
+   "location": "Fort Liberty, NC",
+   "start": "2014-06",
+   "end": "2018-02",
+   "months": 45
+  },
+  {
+   "type": "Research assistant",
+   "org": "Duke University Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Durham, NC",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club member",
+   "org": "Duke Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Greek life",
+   "org": "Delta Sigma Pi",
+   "title": "Vice President of Finance",
+   "location": "",
+   "start": "2024-01",
+   "end": "Present",
+   "months": 34
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Durham, NC",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "WordPress",
+  "Canva",
+  "Google Workspace",
+  "Stata",
+  "Microsoft Office",
+  "Adobe InDesign"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f37",
+ "format": "twocol",
+ "field": "libarts",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Greer Larkspur",
+  "email": "greer.larkspur@example.com",
+  "phone": "(312) 555-0118",
+  "location": "Los Angeles, CA"
+ },
+ "education": [
+  {
+   "school": "University of Southern California",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Philosophy"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "3.39",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "American Civil Liberties Union",
+   "title": "Policy Intern",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "National Park Service",
+   "title": "Research Intern",
+   "location": "Philadelphia, PA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "University of Southern California Department of Psychology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Los Angeles, CA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Southern California Investment Club",
+   "title": "Portfolio Manager",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club member",
+   "org": "Southern California Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Case competition",
+   "org": "Deloitte Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Los Angeles, CA",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Microsoft Office",
+  "Qualtrics",
+  "WordPress",
+  "Canva",
+  "Stata",
+  "Google Workspace"
+ ],
+ "languages": [
+  {
+   "name": "Portuguese",
+   "level": "Intermediate"
+  },
+  {
+   "name": "Hindi",
+   "level": "Native"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

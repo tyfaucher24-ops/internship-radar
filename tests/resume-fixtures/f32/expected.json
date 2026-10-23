@@ -1,0 +1,109 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f32",
+ "format": "canva",
+ "field": "finance",
+ "level": "standard",
+ "edges": [
+  "nogpa",
+  "majorgpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Ari Nettleford",
+  "email": "ari.nettleford@example.com",
+  "phone": "(212) 555-0114",
+  "location": "Miami, FL"
+ },
+ "education": [
+  {
+   "school": "Florida International University",
+   "ambiguous": false,
+   "degree": "BSBA",
+   "majors": [
+    "Accounting"
+   ],
+   "minors": [],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "3.95",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "PNC",
+   "title": "Summer Analyst",
+   "location": "Pittsburgh, PA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Target",
+   "title": "Sales Associate",
+   "location": "Miami, FL",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Club leadership",
+   "org": "Florida International Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Case competition",
+   "org": "Net Impact Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2026-02",
+   "end": "2026-02",
+   "months": 1
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  },
+  {
+   "type": "Volunteer",
+   "org": "Big Brothers Big Sisters",
+   "title": "Mentor",
+   "location": "Miami, FL",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Breaking Into Wall Street (BIWS)"
+ ],
+ "skills": [
+  "VBA",
+  "Capital IQ",
+  "Financial Modeling",
+  "Python",
+  "Bloomberg Terminal",
+  "Excel"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f24",
+ "format": "table",
+ "field": "health",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Marlowe Rookwood",
+  "email": "marlowe.rookwood@example.com",
+  "phone": "(206) 555-0171",
+  "location": "Seattle, WA"
+ },
+ "education": [
+  {
+   "school": "University of Washington-Seattle Campus",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Nursing"
+   ],
+   "minors": [],
+   "gpa": "3.83",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "12",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Cleveland Clinic",
+   "title": "Nursing Extern",
+   "location": "Cleveland, OH",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "YMCA",
+   "title": "Lifeguard",
+   "location": "Seattle, WA",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "University of Washington Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Seattle, WA",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club member",
+   "org": "Washington Debate Society",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Club member",
+   "org": "Washington Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2023-08",
+   "end": "Present",
+   "months": 39
+  }
+ ],
+ "certs": [
+  "CPR",
+  "CITI Human Subjects Research"
+ ],
+ "skills": [
+  "EMR",
+  "Patient Care",
+  "Excel",
+  "SPSS",
+  "Microsoft Office"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

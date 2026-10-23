@@ -1,0 +1,202 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f43",
+ "format": "onecol",
+ "field": "libarts",
+ "level": "dense",
+ "edges": [
+  "twopage"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Orion Gallowglass",
+  "email": "orion.gallowglass@example.com",
+  "phone": "(404) 555-0155",
+  "location": "Madison, WI"
+ },
+ "education": [
+  {
+   "school": "University of Wisconsin-Madison",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Philosophy"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "3.77",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Penguin Random House",
+   "title": "Research Intern",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Smithsonian Institution",
+   "title": "Communications Intern",
+   "location": "Washington, DC",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Teach For America",
+   "title": "Editorial Intern",
+   "location": "Chicago, IL",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Target",
+   "title": "Sales Associate",
+   "location": "Madison, WI",
+   "start": "2024-05",
+   "end": "2024-08",
+   "months": 4
+  },
+  {
+   "type": "Research assistant",
+   "org": "University of Wisconsin–Madison Department of Psychology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Madison, WI",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "University of Wisconsin–Madison Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Madison, WI",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Gallowglass Tutoring LLC",
+   "title": "Founder",
+   "location": "Madison, WI",
+   "start": "2024-01",
+   "end": "Present",
+   "months": 34
+  },
+  {
+   "type": "Club leadership",
+   "org": "Wisconsin–Madison Pre-Health Society",
+   "title": "Treasurer",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club leadership",
+   "org": "Wisconsin–Madison National Society of Black Engineers",
+   "title": "Secretary",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club leadership",
+   "org": "Wisconsin–Madison Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Volunteer",
+   "org": "Habitat for Humanity",
+   "title": "Volunteer",
+   "location": "Madison, WI",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  },
+  {
+   "type": "Internship",
+   "org": "Boston Public Library",
+   "title": "Communications Intern",
+   "location": "Boston, MA",
+   "start": "2024-06",
+   "end": "2024-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Teach For America",
+   "title": "Communications Intern",
+   "location": "Chicago, IL",
+   "start": "2023-06",
+   "end": "2023-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Teach For America",
+   "title": "Program Intern",
+   "location": "Chicago, IL",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Smithsonian Institution",
+   "title": "Research Intern",
+   "location": "Washington, DC",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Boston Public Library",
+   "title": "Policy Intern",
+   "location": "Boston, MA",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  }
+ ],
+ "certs": [
+  "Google Project Management Certificate"
+ ],
+ "skills": [
+  "Canva",
+  "Google Workspace",
+  "Qualtrics",
+  "Stata",
+  "WordPress",
+  "Adobe InDesign",
+  "Microsoft Office",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "U.S. citizen",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

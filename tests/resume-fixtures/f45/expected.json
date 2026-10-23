@@ -1,0 +1,122 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f45",
+ "format": "table",
+ "field": "tech",
+ "level": "standard",
+ "edges": [
+  "ambiguous"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Rafael Halloway",
+  "email": "rafael.halloway@example.com",
+  "phone": "(617) 555-0155",
+  "location": "Durham, NC"
+ },
+ "education": [
+  {
+   "school": "",
+   "ambiguous": true,
+   "degree": "BS",
+   "majors": [
+    "Computer Science"
+   ],
+   "minors": [],
+   "gpa": "3.71",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "12",
+   "classYear": "Sophomore"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Google",
+   "title": "Machine Learning Intern",
+   "location": "Mountain View, CA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Cisco",
+   "title": "Site Reliability Engineering Intern",
+   "location": "San Jose, CA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "Queens Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "New York, NY",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Queens Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "New York, NY",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Club leadership",
+   "org": "Queens Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "New York, NY",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  },
+  {
+   "type": "Project",
+   "org": "",
+   "title": "Portfolio Tracker",
+   "location": "",
+   "start": "2026-01",
+   "end": "2026-04",
+   "months": 4
+  },
+  {
+   "type": "Open source",
+   "org": "pandas",
+   "title": "Open Source Contributor",
+   "location": "",
+   "start": "2026-06",
+   "end": "Present",
+   "months": 5
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "JavaScript",
+  "React",
+  "SQL",
+  "AWS"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

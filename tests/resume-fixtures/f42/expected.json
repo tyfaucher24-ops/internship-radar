@@ -1,0 +1,91 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f42",
+ "format": "text",
+ "field": "engineering",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Nico Yewdale",
+  "email": "nico.yewdale@example.com",
+  "phone": "(404) 555-0168",
+  "location": "Philadelphia, PA"
+ },
+ "education": [
+  {
+   "school": "Drexel University",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Mechanical Engineering"
+   ],
+   "minors": [
+    "Mathematics"
+   ],
+   "gpa": "3.76",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Caterpillar",
+   "title": "Structural Engineering Intern",
+   "location": "Peoria, IL",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "YMCA",
+   "title": "Lifeguard",
+   "location": "Philadelphia, PA",
+   "start": "2025-05",
+   "end": "2025-08",
+   "months": 4
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Drexel Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Case competition",
+   "org": "Deloitte Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2026-02",
+   "end": "2026-02",
+   "months": 1
+  }
+ ],
+ "certs": [
+  "Six Sigma Green Belt"
+ ],
+ "skills": [
+  "LabVIEW",
+  "Python",
+  "CATIA",
+  "AutoCAD",
+  "ANSYS",
+  "Excel"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

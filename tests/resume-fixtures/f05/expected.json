@@ -1,0 +1,109 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f05",
+ "format": "jake",
+ "field": "engineering",
+ "level": "freshman",
+ "edges": [
+  "majorgpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Morgan Dovecote",
+  "email": "morgan.dovecote@example.com",
+  "phone": "(312) 555-0188",
+  "location": "Los Angeles, CA"
+ },
+ "education": [
+  {
+   "school": "University of Southern California",
+   "ambiguous": false,
+   "degree": "BS",
+   "majors": [
+    "Civil Engineering"
+   ],
+   "minors": [],
+   "gpa": "3.81",
+   "gpaScale": "",
+   "majorGpa": "3.90",
+   "gradYear": "2030",
+   "gradMonth": "5",
+   "classYear": "Freshman"
+  },
+  {
+   "school": "Westfield High School",
+   "ambiguous": false,
+   "degree": "High School Diploma",
+   "majors": [],
+   "minors": [],
+   "gpa": "3.66",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2026",
+   "gradMonth": "6",
+   "classYear": ""
+  }
+ ],
+ "experience": [
+  {
+   "type": "Service job",
+   "org": "Chipotle Mexican Grill",
+   "title": "Crew Member",
+   "location": "Columbus, OH",
+   "start": "2025-06",
+   "end": "2026-08",
+   "months": 15
+  },
+  {
+   "type": "Club leadership",
+   "org": "National Honor Society",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-06",
+   "months": 22
+  },
+  {
+   "type": "Research assistant",
+   "org": "University of Southern California Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Los Angeles, CA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "University of Southern California Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Los Angeles, CA",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Arduino",
+  "LabVIEW",
+  "ANSYS",
+  "CATIA",
+  "Excel"
+ ],
+ "languages": [
+  {
+   "name": "French",
+   "level": "Conversational"
+  },
+  {
+   "name": "Korean",
+   "level": "Bilingual"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f15",
+ "format": "onecol",
+ "field": "consulting",
+ "level": "athlete",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Reese Ormsby",
+  "email": "reese.ormsby@example.com",
+  "phone": "(212) 555-0140",
+  "location": "San Diego, CA"
+ },
+ "education": [
+  {
+   "school": "San Diego State University",
+   "ambiguous": false,
+   "degree": "BBA",
+   "majors": [
+    "Political Science"
+   ],
+   "minors": [],
+   "gpa": "3.64",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Guidehouse",
+   "title": "Strategy Intern",
+   "location": "Arlington, VA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Freelance",
+   "org": "Self-Employed",
+   "title": "Freelance Graphic Designer",
+   "location": "Remote",
+   "start": "2025-03",
+   "end": "Present",
+   "months": 20
+  },
+  {
+   "type": "Club leadership",
+   "org": "San Diego State Consulting Club",
+   "title": "Vice President",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club member",
+   "org": "San Diego State Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Varsity athlete",
+   "org": "San Diego State Varsity Tennis",
+   "title": "Student-Athlete",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "SQL",
+  "Alteryx",
+  "PowerPoint",
+  "Excel"
+ ],
+ "languages": [
+  {
+   "name": "Hindi",
+   "level": "Native"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

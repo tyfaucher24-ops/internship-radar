@@ -1,0 +1,182 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f17",
+ "format": "jake",
+ "field": "engineering",
+ "level": "dense",
+ "edges": [
+  "double",
+  "twopage"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Tatum Eastwick",
+  "email": "tatum.eastwick@example.com",
+  "phone": "(512) 555-0179",
+  "location": "Wellesley, MA"
+ },
+ "education": [
+  {
+   "school": "Babson College",
+   "ambiguous": false,
+   "degree": "BSE",
+   "majors": [
+    "Mechanical Engineering",
+    "Aerospace Engineering"
+   ],
+   "minors": [],
+   "gpa": "3.13",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Honeywell",
+   "title": "Systems Engineering Intern",
+   "location": "Phoenix, AZ",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "GE Aerospace",
+   "title": "Structural Engineering Intern",
+   "location": "Cincinnati, OH",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Co-op",
+   "org": "Boeing",
+   "title": "Manufacturing Engineering Co-op",
+   "location": "Seattle, WA",
+   "start": "2025-01",
+   "end": "2025-06",
+   "months": 6
+  },
+  {
+   "type": "Research assistant",
+   "org": "Babson College Department of Psychology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Wellesley, MA",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Teaching assistant",
+   "org": "Babson College Department of Mathematics",
+   "title": "Teaching Assistant",
+   "location": "Wellesley, MA",
+   "start": "2026-01",
+   "end": "Present",
+   "months": 10
+  },
+  {
+   "type": "Family business",
+   "org": "Eastwick Hardware",
+   "title": "Operations Assistant",
+   "location": "Wellesley, MA",
+   "start": "2022-06",
+   "end": "2024-08",
+   "months": 27
+  },
+  {
+   "type": "Club leadership",
+   "org": "Babson College Model United Nations",
+   "title": "Secretary-General",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Club member",
+   "org": "Babson College Society of Women Engineers",
+   "title": "Member",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Club leadership",
+   "org": "Babson College Consulting Club",
+   "title": "Vice President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Internship",
+   "org": "3M",
+   "title": "Quality Engineering Intern",
+   "location": "St. Paul, MN",
+   "start": "2024-06",
+   "end": "2024-08",
+   "months": 3
+  },
+  {
+   "type": "Co-op",
+   "org": "Caterpillar",
+   "title": "Manufacturing Engineering Co-op",
+   "location": "Peoria, IL",
+   "start": "2023-06",
+   "end": "2023-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "General Motors",
+   "title": "Systems Engineering Intern",
+   "location": "Warren, MI",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Honeywell",
+   "title": "Electrical Engineering Intern",
+   "location": "Phoenix, AZ",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  },
+  {
+   "type": "Co-op",
+   "org": "Siemens",
+   "title": "Manufacturing Engineering Co-op",
+   "location": "Charlotte, NC",
+   "start": "2022-06",
+   "end": "2022-08",
+   "months": 3
+  }
+ ],
+ "certs": [
+  "Six Sigma Green Belt",
+  "OSHA 10",
+  "SolidWorks CSWA"
+ ],
+ "skills": [
+  "Arduino",
+  "LabVIEW",
+  "ANSYS",
+  "MATLAB"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f13",
+ "format": "word",
+ "field": "libarts",
+ "level": "freshman",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Logan Zellwood",
+  "email": "logan.zellwood@example.com",
+  "phone": "(404) 555-0128",
+  "location": "Clemson, SC"
+ },
+ "education": [
+  {
+   "school": "Clemson University",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "History"
+   ],
+   "minors": [],
+   "gpa": "3.90",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2030",
+   "gradMonth": "5",
+   "classYear": "Freshman"
+  },
+  {
+   "school": "Jefferson High School",
+   "ambiguous": false,
+   "degree": "High School Diploma",
+   "majors": [],
+   "minors": [],
+   "gpa": "3.79",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2026",
+   "gradMonth": "6",
+   "classYear": ""
+  }
+ ],
+ "experience": [
+  {
+   "type": "Service job",
+   "org": "YMCA",
+   "title": "Lifeguard",
+   "location": "Raleigh, NC",
+   "start": "2025-06",
+   "end": "2026-08",
+   "months": 15
+  },
+  {
+   "type": "Club leadership",
+   "org": "National Honor Society",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-06",
+   "months": 22
+  },
+  {
+   "type": "Research assistant",
+   "org": "Clemson University Department of Psychology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Clemson, SC",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Clemson, SC",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "Google Workspace",
+  "Microsoft Office",
+  "Stata",
+  "Canva",
+  "Adobe InDesign"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

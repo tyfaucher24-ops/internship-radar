@@ -1,0 +1,85 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f01",
+ "format": "onecol",
+ "field": "finance",
+ "level": "standard",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Avery Quillfeather",
+  "email": "avery.quillfeather@example.com",
+  "phone": "(512) 555-0195",
+  "location": "Champaign, IL"
+ },
+ "education": [
+  {
+   "school": "University of Illinois Urbana-Champaign",
+   "ambiguous": false,
+   "degree": "BBA",
+   "majors": [
+    "Finance"
+   ],
+   "minors": [],
+   "gpa": "3.57",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "12",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Baird",
+   "title": "Corporate Finance Intern",
+   "location": "Milwaukee, WI",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "University of Illinois Urbana-Champaign Department of Computer Science",
+   "title": "Undergraduate Research Assistant",
+   "location": "Champaign, IL",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Illinois Urbana-Champaign Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Case competition",
+   "org": "Deloitte Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2025-02",
+   "end": "2025-02",
+   "months": 1
+  }
+ ],
+ "certs": [],
+ "skills": [
+  "FactSet",
+  "DCF",
+  "Financial Modeling",
+  "Python",
+  "PowerPoint"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

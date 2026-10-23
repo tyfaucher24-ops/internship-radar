@@ -1,0 +1,103 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f38",
+ "format": "table",
+ "field": "finance",
+ "level": "career",
+ "edges": [
+  "nogpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Indie Thornbury",
+  "email": "indie.thornbury@example.com",
+  "phone": "(206) 555-0196",
+  "location": "Villanova, PA"
+ },
+ "education": [
+  {
+   "school": "Villanova University",
+   "ambiguous": false,
+   "degree": "BSBA",
+   "majors": [
+    "Finance"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Fidelity Investments",
+   "title": "Investment Banking Summer Analyst",
+   "location": "Boston, MA",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Job",
+   "org": "FedEx Ground",
+   "title": "Operations Coordinator",
+   "location": "Memphis, TN",
+   "start": "2018-03",
+   "end": "2023-07",
+   "months": 65
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "U.S. Army",
+   "title": "Logistics Specialist",
+   "location": "Fort Liberty, NC",
+   "start": "2014-06",
+   "end": "2018-02",
+   "months": 45
+  },
+  {
+   "type": "Club leadership",
+   "org": "Villanova Consulting Club",
+   "title": "Vice President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Volunteer",
+   "org": "Big Brothers Big Sisters",
+   "title": "Mentor",
+   "location": "Villanova, PA",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Wall Street Prep",
+  "Series 7"
+ ],
+ "skills": [
+  "PitchBook",
+  "DCF",
+  "PowerPoint",
+  "VBA",
+  "FactSet",
+  "Python",
+  "Kanban"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

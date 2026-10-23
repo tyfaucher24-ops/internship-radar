@@ -1,0 +1,149 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f58",
+ "format": "twocol",
+ "field": "consulting",
+ "level": "standard",
+ "edges": [
+  "weirddates"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Kofi Pendergrast",
+  "email": "kofi.pendergrast@example.com",
+  "phone": "(404) 555-0162",
+  "location": "Gambier, OH"
+ },
+ "education": [
+  {
+   "school": "Kenyon College",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Political Science"
+   ],
+   "minors": [
+    "Statistics"
+   ],
+   "gpa": "3.52",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2028",
+   "gradMonth": "5",
+   "classYear": "Junior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Guidehouse",
+   "title": "Business Analyst Intern",
+   "location": "Arlington, VA",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "PwC",
+   "title": "Risk Advisory Intern",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Service job",
+   "org": "Trader Joe's",
+   "title": "Crew Member",
+   "location": "Gambier, OH",
+   "start": "2025",
+   "end": "2025",
+   "months": null
+  },
+  {
+   "type": "Research assistant",
+   "org": "Kenyon College Department of Economics",
+   "title": "Undergraduate Research Assistant",
+   "location": "Gambier, OH",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Pendergrast Tutoring LLC",
+   "title": "Founder",
+   "location": "Gambier, OH",
+   "start": "2025-01",
+   "end": "Present",
+   "months": 22
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Kenyon College Investment Club",
+   "title": "Portfolio Manager",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Kenyon College National Society of Black Engineers",
+   "title": "Secretary",
+   "location": "",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Case competition",
+   "org": "KPMG Case Competition",
+   "title": "Finalist",
+   "location": "",
+   "start": "2026-02",
+   "end": "2026-02",
+   "months": 1
+  },
+  {
+   "type": "Military / ROTC",
+   "org": "Army ROTC",
+   "title": "Cadet",
+   "location": "",
+   "start": "2024-08",
+   "end": "Present",
+   "months": 27
+  },
+  {
+   "type": "Volunteer",
+   "org": "Feeding America Food Bank",
+   "title": "Volunteer",
+   "location": "Gambier, OH",
+   "start": "2024-01",
+   "end": "2025-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "Six Sigma Yellow Belt"
+ ],
+ "skills": [
+  "Tableau",
+  "PowerPoint",
+  "Alteryx",
+  "Excel"
+ ],
+ "languages": [
+  {
+   "name": "Spanish",
+   "level": "Fluent"
+  }
+ ],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

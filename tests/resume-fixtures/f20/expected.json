@@ -1,0 +1,110 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f20",
+ "format": "word",
+ "field": "finance",
+ "level": "international",
+ "edges": [
+  "nogpa"
+ ],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Elliot Merriweather",
+  "email": "elliot.merriweather@example.com",
+  "phone": "(919) 555-0137",
+  "location": "Austin, TX"
+ },
+ "education": [
+  {
+   "school": "The University of Texas at Austin",
+   "ambiguous": false,
+   "degree": "BA",
+   "majors": [
+    "Economics"
+   ],
+   "minors": [],
+   "gpa": "",
+   "gpaScale": "",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "Goldman Sachs",
+   "title": "Sales and Trading Summer Analyst",
+   "location": "New York, NY",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Internship",
+   "org": "Morgan Stanley",
+   "title": "Private Equity Intern",
+   "location": "New York, NY",
+   "start": "2025-06",
+   "end": "2025-08",
+   "months": 3
+  },
+  {
+   "type": "Research assistant",
+   "org": "University of Texas at Austin Department of Biology",
+   "title": "Undergraduate Research Assistant",
+   "location": "Austin, TX",
+   "start": "2025-09",
+   "end": "Present",
+   "months": 14
+  },
+  {
+   "type": "Club leadership",
+   "org": "Texas at Austin Marketing Association",
+   "title": "President",
+   "location": "",
+   "start": "2024-09",
+   "end": "2026-05",
+   "months": 21
+  },
+  {
+   "type": "Club leadership",
+   "org": "Texas at Austin Consulting Club",
+   "title": "Vice President",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  }
+ ],
+ "certs": [
+  "Bloomberg Market Concepts (BMC)",
+  "Breaking Into Wall Street (BIWS)"
+ ],
+ "skills": [
+  "Excel",
+  "Bloomberg Terminal",
+  "PowerPoint",
+  "Capital IQ",
+  "FactSet",
+  "PitchBook",
+  "Kanban"
+ ],
+ "languages": [
+  {
+   "name": "Arabic",
+   "level": "Basic"
+  },
+  {
+   "name": "Mandarin",
+   "level": "Native"
+  }
+ ],
+ "workAuth": "Authorized to work in the U.S. (no sponsorship needed)",
+ "files": [
+  "resume.docx",
+  "resume.pdf"
+ ]
+}

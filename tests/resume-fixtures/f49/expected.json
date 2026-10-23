@@ -1,0 +1,118 @@
+{
+ "_synthetic": true,
+ "_note": "Fictional test person. Not a real resume.",
+ "id": "f49",
+ "format": "text",
+ "field": "health",
+ "level": "athlete",
+ "edges": [],
+ "today": "2026-10-23",
+ "contact": {
+  "name": "Vera Marchbanks",
+  "email": "vera.marchbanks@example.com",
+  "phone": "(704) 555-0130",
+  "location": "College Station, TX"
+ },
+ "education": [
+  {
+   "school": "Texas A & M University-College Station",
+   "ambiguous": false,
+   "degree": "BSN",
+   "majors": [
+    "Nursing"
+   ],
+   "minors": [
+    "Mathematics"
+   ],
+   "gpa": "3.50",
+   "gpaScale": "4.0",
+   "majorGpa": "",
+   "gradYear": "2027",
+   "gradMonth": "5",
+   "classYear": "Senior"
+  }
+ ],
+ "experience": [
+  {
+   "type": "Internship",
+   "org": "CVS Health",
+   "title": "Nursing Extern",
+   "location": "Woonsocket, RI",
+   "start": "2026-06",
+   "end": "2026-08",
+   "months": 3
+  },
+  {
+   "type": "Founder / own business",
+   "org": "Marchbanks Tutoring LLC",
+   "title": "Founder",
+   "location": "College Station, TX",
+   "start": "2024-01",
+   "end": "Present",
+   "months": 34
+  },
+  {
+   "type": "Part-time job",
+   "org": "Campus Recreation Center",
+   "title": "Part-Time Front Office Assistant",
+   "location": "College Station, TX",
+   "start": "2025-09",
+   "end": "2026-05",
+   "months": 9
+  },
+  {
+   "type": "Student investment fund",
+   "org": "Texas A&M Student Managed Investment Fund",
+   "title": "Equity Analyst",
+   "location": "",
+   "start": "2024-09",
+   "end": "Present",
+   "months": 26
+  },
+  {
+   "type": "Stock pitch competition",
+   "org": "Undergraduate Stock Pitch Competition",
+   "title": "Semifinalist",
+   "location": "",
+   "start": "2025-11",
+   "end": "2025-11",
+   "months": 1
+  },
+  {
+   "type": "Varsity athlete",
+   "org": "Texas A&M Varsity Baseball",
+   "title": "Team Captain",
+   "location": "",
+   "start": "2023-08",
+   "end": "Present",
+   "months": 39
+  },
+  {
+   "type": "Volunteer",
+   "org": "Habitat for Humanity",
+   "title": "Volunteer",
+   "location": "College Station, TX",
+   "start": "2023-01",
+   "end": "2024-12",
+   "months": 24
+  }
+ ],
+ "certs": [
+  "CPR",
+  "CITI Human Subjects Research"
+ ],
+ "skills": [
+  "SPSS",
+  "Excel",
+  "Vital Signs",
+  "Epic",
+  "EMR"
+ ],
+ "languages": [],
+ "workAuth": "",
+ "files": [
+  "resume.docx",
+  "resume.pdf",
+  "resume.txt"
+ ]
+}

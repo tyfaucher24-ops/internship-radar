@@ -1,14 +1,12 @@
 {
- "updated": "2026-10-23T00:35:53Z",
+ "updated": "2026-10-23T02:02:03Z",
  "open": 11179,
  "open_all": 11179,
  "closing_this_week": 545,
- "upcoming": 1619,
+ "upcoming": 1634,
  "companies_tracked": 2497,
  "companies_with_listings": 1465,
- "duration_s": 2321,
+ "duration_s": 245,
  "open_rule": "status open, not hidden, not past term, deadline today or later",
- "hygiene": {
-  "city_trimmed": 12
- }
+ "hygiene": {}
 }

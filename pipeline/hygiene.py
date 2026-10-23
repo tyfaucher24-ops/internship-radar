@@ -4,6 +4,7 @@ when a value cannot be read from the posting it stays empty."""
 import re,json,os,datetime,collections
 from . import geo
 from .norm import ST,SN,to_iso
+from . import norm as N
 D=os.path.join(os.path.dirname(__file__),'..','data')
 SITES={k:v for k,v in json.load(open(os.path.join(os.path.dirname(__file__),"company_sites.json"))).items() if not k.startswith("_")}  # hand-checked: company's named campus -> state, from the company's own site list
 TRIM=re.compile(r'^[\s,\-–—]+|[\s,\-–—]+$')
@@ -120,6 +121,16 @@ def apply(L,DS,today=None):
         for l in r.get('locations') or []:
             c=clean_city(l.get('city'))
             if c!=l.get('city'): l['city']=c;st['city_trimmed']+=1
+        # V13.3 #6: the title is the strongest season/year signal ('2027 Summer Internships', 'Summer Intern (2027)')
+        _tt=N.terms_from(r.get('title') or '');_ty=[int(y) for y in re.findall(r'\b(20\d\d)\b',r.get('title') or '')]
+        if not _tt and _ty and len(set(_ty))==1:
+            _sw={w.title().replace('Autumn','Fall') for w in re.findall(r'(?i)\b(summer|fall|autumn|winter|spring)\b',r['title'])}
+            if len(_sw)==1: _tt=[f'{_sw.pop()} {_ty[0]}']
+        if _tt and (not r.get('season') or r.get('past_term')) and not N.past_term(_tt):
+            up=[t for t in _tt if (int(t[-4:]),N.ORDER[t.split()[0]])>N.cur_term_tuple()] or _tt
+            r['terms']=_tt;r['season'],r['year']=up[0].split()[0],int(up[0][-4:]);r['past_term']=False;st['season_from_title']+=1
+        elif not _tt and _ty and min(_ty)>N.TODAY.year and r.get('past_term'):
+            r['terms']=[];r['season']=None;r['year']=max(_ty);r['past_term']=False;st['past_term_cleared_by_title_year']+=1
         dg=degree(r.get('title'))
         if dg: r['degree']=dg
         else: r.pop('degree',None)

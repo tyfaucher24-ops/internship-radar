@@ -1,0 +1,16 @@
+[
+ {
+  "at": "2026-10-23T03:23:40Z",
+  "open": 11179,
+  "prev_open": 11179,
+  "open_change_pct": 0.0,
+  "links_checked": 5258,
+  "links_dead": 20,
+  "dead_pct": 0.38,
+  "failed_sources": 40,
+  "stale": 332,
+  "pct_verified_24h": 97.9,
+  "ok": true,
+  "problems": []
+ }
+]

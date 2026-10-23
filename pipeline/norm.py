@@ -32,6 +32,8 @@ def parse_place(p):
 def _parse_place(p):
     p=re.sub(r'\s*\+\d+ more$','',(p or '')).strip().strip('.;,').strip()
     if not p: return None
+    _m=re.match(r'^(?:US|USA|United States)\s*[,\-]\s*([A-Z]{2})\s*[,\-]\s*(.+)$',p)  # Workday style 'US, CA, Santa Clara'
+    if _m and _m.group(1) in SN.values(): p=f'{_m.group(2)}, {_m.group(1)}'
     if re.search(r'remote|anywhere|virtual|work from home|telework',p,re.I):
         if FOREIGN.search(p) and not USHINT.search(p): return None
         m=re.search(r',\s*([A-Z]{2})\b',p);st=m.group(1) if m and m.group(1) in ST else None
@@ -114,11 +116,13 @@ def role_type(t):
     return 'Internship'
 # ---------- season / class year / text facts ----------
 TERM=re.compile(r'\b(Summer|Fall|Spring|Winter)\s*(?:\'|20)(\d\d)\b',re.I)
+TERM_R=re.compile(r'\b20(\d\d)\s*[-–:]?\s*(Summer|Fall|Spring|Winter)\b',re.I)  # '2027 Summer Internships'
 ORDER={'Winter':0,'Spring':1,'Summer':2,'Fall':3}
 def terms_from(*texts):
     out=set()
     for tx in texts:
         for s,y in TERM.findall(tx or ''): out.add(f'{s.title()} 20{y[-2:]}')
+        for y,s in TERM_R.findall(tx or ''): out.add(f'{s.title()} 20{y}')
     return sorted(out,key=lambda t:(int(t[-4:]),ORDER[t.split()[0]]))
 def cur_term_tuple():
     m=TODAY.month;return (TODAY.year,0 if m<=2 else 1 if m<=5 else 2 if m<=8 else 3)

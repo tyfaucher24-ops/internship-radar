@@ -79,3 +79,4 @@ body.graded #vl .card,body.graded .grid .card{height:322px}
 #vl .grow{height:292px}
 body.graded #vl .grow{height:322px}
 .ap-ask{bottom:auto;top:84px}/* V13.3 #5b: prompt sits under the header so it never covers the Apply/Save row */
+.card .c-ver{flex:none;margin:0 0 6px;font-size:12px;opacity:.68;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}/* V13.3 #6 */

@@ -38,6 +38,8 @@ jobs:
           python -m pipeline.sync --workers 24 $ARGS
       - name: Accuracy checks + sync report (fails the run if checks fail)
         run: python -m pipeline.qa --prev /tmp/prev_listings.json
+      - name: Sync health gate (fails on ±30% open-count swing or >2% dead links)
+        run: python ops/health_check.py
       - name: Company logos (new companies only; robots.txt respected; keeps the old logos on failure)
         timeout-minutes: 30
         run: python -m pipeline.logos || echo "logo step failed; keeping previous logos"

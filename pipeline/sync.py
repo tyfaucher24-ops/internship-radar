@@ -21,6 +21,12 @@ def build_record(raw,company_row,source,source_type):
     if cls!='yes': return None,cls
     company=N.norm_company(raw.get('company_override') or company_row.get('name'))
     terms=N.terms_from(title,desc[:1500],raw.get('term_hint') or '')
+    # V13.3 #6: a future year stated in the title beats a past term read from the description ("Summer Intern (2027)")
+    _ty=[int(y) for y in re.findall(r'\b(20\d\d)\b',title)]
+    if _ty and min(_ty)>N.TODAY.year and N.past_term(terms):
+        _tt=N.terms_from(title);_sw={w.title().replace('Autumn','Fall') for w in re.findall(r'(?i)\b(summer|fall|autumn|winter|spring)\b',title)}
+        if not _tt and len(_sw)==1 and len(set(_ty))==1: _tt=[f'{_sw.pop()} {_ty[0]}']
+        terms=_tt
     posted=raw.get('posted')
     dl,dlsrc=None,None
     if raw.get('deadline'): dl,dlsrc=raw['deadline'],raw.get('deadline_source') or ('JSON-LD validThrough' if source_type=='jsonld' else 'ATS close date')
@@ -42,6 +48,7 @@ def build_record(raw,company_row,source,source_type):
       'metro_pop':max([l.get('pop') or 0 for l in locs] or [0]) or None,'ats_id':raw.get('ats_id'),'_desc':desc[:3000]}
     up=[t for t in terms if (int(t[-4:]),N.ORDER[t.split()[0]])>N.cur_term_tuple()] or terms
     if up: rec['season'],rec['year']=up[0].split()[0],int(up[0][-4:])
+    elif _ty and min(_ty)>N.TODAY.year: rec['year']=max(_ty)
     key=N.dedupe_key(company,title,rec['locations'],terms);rec['key']=key;rec['id']=N.stable_id(key)
     return rec,'ok'
 def run_registry(reg,workers,only=None,limit=None):

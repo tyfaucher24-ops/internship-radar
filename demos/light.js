@@ -1,0 +1,3 @@
+(function(){var t=document.documentElement,b=document.getElementById('theme');try{if(localStorage.demoTheme)t.dataset.theme=localStorage.demoTheme}catch(e){}
+function s(){var d=t.dataset.theme==='dark';b.textContent=d?'Light mode':'Dark mode';b.setAttribute('aria-pressed',String(d))}s();
+b.onclick=function(){t.dataset.theme=t.dataset.theme==='dark'?'light':'dark';try{localStorage.demoTheme=t.dataset.theme}catch(e){}s()}})();

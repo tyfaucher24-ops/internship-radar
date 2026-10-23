@@ -7,7 +7,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const E=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 /* ---- live ticker: real "added" events from changes.json ---- */
 (async function(){try{const r=await fetch('data/changes.json'+(self.BV||''));if(!r.ok)return;const c=await r.json();
- const A=(c.events||[]).filter(e=>e.co&&e.ti),N=A.filter(e=>e.k==='new').slice(0,30),C=A.filter(e=>e.k==='closed').slice(0,10),ev=[];while(N.length||C.length){ev.push(...N.splice(0,2));C.length&&ev.push(C.shift())}const T=t=>t.length>44?t.slice(0,43).trim()+'…':t;if(!ev.length)return;
+ const A=(c.events||[]).filter(e=>e.co&&e.ti),N=A.filter(e=>e.k==='new').slice(0,30),C=A.filter(e=>e.k==='closed').slice(0,10),ev=[];while(N.length||C.length){ev.push(...N.splice(0,2));C.length&&ev.push(C.shift())}const T=t=>t;if(!ev.length)return;
  const one=ev.map(e=>`<span class="tk-i"><span class="${e.k==='new'?'up':'dn'}">${e.k==='new'?'▲':'▼'}</span> <span class="tk-co">${E(e.co)}</span> · ${E(T(e.ti))} · ${e.k==='new'?'added':'closed'}</span>`).join('');
  const tr=$o('iTkTrack');tr.innerHTML=one+one;tr.style.setProperty('--tk-dur',Math.max(40,ev.length*4)+'s');$o('iTk').hidden=false}catch(e){}})();
 /* ---- the draft we edit: the same PF draft the Profile page uses ---- */

@@ -42,4 +42,16 @@ function fold(l){const o=[];while(l.length>74){o.push(l.slice(0,74));l=' '+l.sli
 function ics(items,now){now=now?new Date(now):new Date();const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Intern Index//Deadline Autopilot//EN','CALSCALE:GREGORIAN',...VTZ];
  items.forEach(({x,p,url})=>{(p.steps||[]).filter(s=>new Date(s.at)>now).forEach(s=>{L.push('BEGIN:VEVENT','UID:'+icsEsc(x.id+'-'+s.key)+'@intern-index','DTSTAMP:'+stamp(now),'DTSTART;TZID=America/New_York:'+nyLocal(s.at),'DTEND;TZID=America/New_York:'+nyLocal(new Date(new Date(s.at).getTime()+18e5)),'SUMMARY:'+icsEsc(x.company+': '+s.label),'DESCRIPTION:'+icsEsc(x.title+(url?'\n'+url:'')),'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEsc(s.label),'TRIGGER:PT0M','END:VALARM','END:VEVENT')})});
  L.push('END:VCALENDAR');return L.map(fold).join('\r\n')+'\r\n'}
-return{plan,dueSteps,nextStep,ics,parseDay,next9,nyLocal}});
+/* V13.4 calendar export: one event per task. Stable UID = task id, so re-importing updates instead of duplicating.
+   Untimed tasks are all-day; deadlines get a 1-day-before alarm. */
+const TYL={deadline:'Deadline',apply:'Apply-by reminder',follow:'Follow-up',interview:'Interview'};
+function ymd(d){d=new Date(d);return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')}
+function icsTasks(tasks,now){now=now?new Date(now):new Date();const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Intern Index//Autopilot Calendar//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Intern Index',...VTZ];
+ tasks.forEach(t=>{const at=new Date(t.at),who=[t.co,t.ti].filter(Boolean).join(', ');L.push('BEGIN:VEVENT','UID:'+String(t.id).replace(/[^A-Za-z0-9._:-]/g,'-')+'@intern-index','DTSTAMP:'+stamp(now));
+  if(t.time)L.push('DTSTART;TZID=America/New_York:'+nyLocal(at),'DTEND;TZID=America/New_York:'+nyLocal(at.getTime()+18e5));else{const e=new Date(at);e.setDate(e.getDate()+1);L.push('DTSTART;VALUE=DATE:'+ymd(at),'DTEND;VALUE=DATE:'+ymd(e))}
+  L.push('SUMMARY:'+icsEsc((TYL[t.ty]||'Task')+': '+(who||t.label)),'DESCRIPTION:'+icsEsc([t.label,t.url?'Apply: '+t.url:''].filter(Boolean).join('\n')));if(t.url)L.push('URL:'+t.url);
+  if(t.ty==='deadline')L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEsc('Tomorrow: '+(who||t.label)),'TRIGGER:-P1D','END:VALARM');
+  else if(t.time)L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEsc(t.label),'TRIGGER:PT0M','END:VALARM');
+  L.push('END:VEVENT')});
+ L.push('END:VCALENDAR');return L.map(fold).join('\r\n')+'\r\n'}
+return{plan,dueSteps,nextStep,ics,icsTasks,parseDay,next9,nyLocal}});

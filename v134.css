@@ -34,3 +34,9 @@ html.dark .apc{--cd-deadline:#f87171;--cd-apply:#a78bfa;--cd-follow:#60a5fa;--cd
 @media(max-width:1100px){.apc-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:640px){.apc-card{padding:16px}.apc-d{height:56px;padding:4px}.apc-days{min-height:calc(6 * 56px + 20px)}.apc-n{font-size:12px}.apc-t{flex-wrap:wrap}.apc-acts{max-width:none;width:100%;justify-content:flex-start}.apc-ui{grid-template-columns:64px auto minmax(0,1fr)}.apc-ty{grid-column:3}.apc-bar h2{flex-basis:100%;order:-1;margin:0 0 4px}}
 @media(prefers-reduced-motion:reduce){.apc *{transition:none!important}}
+/* V13.4 site-wide wordmark: "Intern" in text color, "Index" in green */
+.brand .wm{display:inline!important;font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--c-ink);white-space:nowrap}.brand .wm b{color:var(--c-green);font-weight:800}
+html.dark .brand .wm b{color:#34d399}
+#apcIcs svg{flex:none}
+@media(max-width:640px){.brand .wm{font-size:15px}}
+@media(max-width:420px){.brand .wm{font-size:14px}.brand{margin-right:2px!important}#hdr .nav>a,#hdr .nav .pmenu>a{padding:6px 4px!important}#hdr .nav .ap-bell{padding-left:4px!important;padding-right:4px!important}}

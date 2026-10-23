@@ -41,7 +41,7 @@ const fdW=d=>d.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'num
 function mount(){const list=$c('apList');if(!list||$c('apCal'))return!!$c('apCal');
  const w=document.createElement('div');w.id='apCal';w.className='apc';
  w.innerHTML=`<div class="apc-top"><p class="apc-sub">Your deadlines, reminders and follow-ups in one calendar.</p><button type="button" class="btn sm" id="apcAdd">+ Quick add task</button></div>
- <div class="apc-grid"><section class="apc-card apc-calc" aria-label="Calendar"><div class="apc-bar"><button type="button" class="btn-ghost sm apc-nv" id="apcPrev" aria-label="Previous">‹</button><button type="button" class="btn-ghost sm apc-nv" id="apcNext" aria-label="Next">›</button><h2 id="apcTtl" aria-live="polite"></h2><button type="button" class="btn-ghost sm" id="apcToday">Today</button><div class="apc-seg" role="group" aria-label="Calendar view"><button type="button" data-v="m" aria-pressed="true">Month</button><button type="button" data-v="w" aria-pressed="false">Week</button></div></div>
+ <div class="apc-grid"><section class="apc-card apc-calc" aria-label="Calendar"><div class="apc-bar"><button type="button" class="btn-ghost sm apc-nv" id="apcPrev" aria-label="Previous">‹</button><button type="button" class="btn-ghost sm apc-nv" id="apcNext" aria-label="Next">›</button><h2 id="apcTtl" aria-live="polite"></h2><button type="button" class="btn-ghost sm" id="apcToday">Today</button><button type="button" class="btn-ghost sm" id="apcIcs"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg>Add to Apple Calendar</button><div class="apc-seg" role="group" aria-label="Calendar view"><button type="button" data-v="m" aria-pressed="true">Month</button><button type="button" data-v="w" aria-pressed="false">Week</button></div></div>
  <div class="apc-chips" role="group" aria-label="Show task types">${Object.entries(TY).map(([k,v])=>`<button type="button" class="apc-chip" data-ty="${k}" aria-pressed="true">${dot(k)}${v}</button>`).join('')}</div>
  <div class="apc-dow" aria-hidden="true">${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d=>`<span>${d}</span>`).join('')}</div><div class="apc-days" id="apcDays" role="grid" aria-label="Days"></div></section>
  <aside class="apc-side"><section class="apc-card apc-day" aria-labelledby="apcSelT"><h3 id="apcSelT"></h3><div class="apc-scroll" id="apcSelL"></div></section>
@@ -94,6 +94,7 @@ document.addEventListener('click',e=>{const t=e.target;if(!t.closest||!t.closest
  const v=t.closest('.apc-seg [data-v]');if(v){view=v.dataset.v;cur=new Date(sel);render();return}
  const c=t.closest('.apc-chip');if(c){const ty=c.dataset.ty;off.has(ty)?off.delete(ty):off.add(ty);Store.set('apCalOff',[...off]);render();return}
  if(t.closest('#apcAdd')){quickAdd();return}
+ if(t.closest('#apcIcs')){exportIcs();return}
  const all=()=>tasks();
  const o=t.closest('[data-apcopen]');if(o){const k=all().find(z=>z.id===o.dataset.apcopen);if(!k)return;const x=L(k.lid);if(o.closest('.apc-ui')){sel=sod(k.at);cur=new Date(sel);render();if(x)openDrawer(x);else $c('apcSelL')?.scrollIntoView({block:'nearest',behavior:'smooth'})}else if(x)openDrawer(x);return}
  const dn=t.closest('[data-apcdone]');if(dn){const k=all().find(z=>z.id===dn.dataset.apcdone);k&&markDone(k);return}
@@ -101,6 +102,10 @@ document.addEventListener('click',e=>{const t=e.target;if(!t.closest||!t.closest
 document.addEventListener('keydown',e=>{const d=e.target.closest&&e.target.closest('.apc-d');if(!d)return;const mv={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key];
  if(mv){e.preventDefault();pick(key(addD(day(d.dataset.day),mv)),true)}else if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(d.dataset.day,true)}});
 ['radar:autopilot','radar:tracker'].forEach(ev=>document.addEventListener(ev,()=>{if(!$c('t-autopilot')?.hidden)render()}));
-window.APCal={render,tasks};
+/* Add to Apple Calendar: open tasks in the shown types, with job-specific apply links (loaded with listing detail). */
+async function exportIcs(){const list=tasks().filter(t=>!off.has(t.ty)&&!t.done);if(!list.length){toast('Nothing to export yet. Save internships or add tasks first.');return}
+ await Promise.all(list.map(async t=>{const x=L(t.lid);if(x&&!x.apply_link&&typeof ensureDetail==='function'){try{await ensureDetail(x)}catch(e){}}if(x&&x.apply_link)t.url=x.apply_link}));
+ const txt=APCore.icsTasks(list);window._apcLastIcs=txt;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/calendar'}));a.download='intern-index-calendar.ics';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);toast(`Exported ${list.length} event${list.length===1?'':'s'}. Open the file to add them to Apple Calendar.`)}
+window.APCal={render,tasks,exportIcs};
 })();
 document.addEventListener('radar:page',e=>{if(e.detail==='autopilot'&&window.APCal)APCal.render()});

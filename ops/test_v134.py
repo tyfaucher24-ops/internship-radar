@@ -78,7 +78,21 @@ with sync_playwright() as p:
             ok(pg.locator('#apcSelL .apc-t.done',has_text='V13.4 QA task').count()==1,'complete task')
             pg.locator('#apcSelL .apc-t',has_text='V13.4 QA task').locator('[data-apcdel]').click();pg.wait_for_timeout(200)
             ok(pg.locator('#apcSelL .apc-t',has_text='V13.4 QA task').count()==0,'delete task')
-            # apply-by done marks tracker Applied
+            # .ics export twice: parse, check fields, stable UIDs
+            from icalendar import Calendar
+            outs=[]
+            for i in range(2):
+                with pg.expect_download() as d: pg.click('#apcIcs')
+                path=d.value.path();outs.append(open(path,'rb').read())
+            open('ops/screens/v13.4-export.ics','wb').write(outs[0])
+            cals=[Calendar.from_ical(o) for o in outs];evs=[[e for e in c.walk('VEVENT')] for c in cals]
+            u0=[str(e['UID']) for e in evs[0]];u1=[str(e['UID']) for e in evs[1]]
+            ok(len(u0)>0 and u0==u1 and len(set(u0))==len(u0),f'ics: {len(u0)} events, UIDs unique and identical across exports')
+            dl=[e for e in evs[0] if str(e['SUMMARY']).startswith('Deadline')]
+            ok(dl and all(any(str(a['TRIGGER'].to_ical(),'ascii')=='-P1D' for a in e.walk('VALARM')) for e in dl),f'ics: {len(dl)} deadlines with 1-day alarm')
+            ok(all(e['DTSTART'].dt.isoformat()[:10] in [x['dl'] for x in picks] for e in dl),'ics: deadline dates match listings')
+            ok(all('URL' in e and str(e['URL']).startswith('http') for e in dl),'ics: deadlines carry apply link')
+            print('ics sample:',[(str(e['SUMMARY']),e['DTSTART'].dt.isoformat(),str(e.get('URL',''))[:60]) for e in evs[0][:4]])
         tr=pg.evaluate(TRUNC);ok(not tr,f'{tag} no truncation/clipping {tr[:5]}')
         if w in (1280,390):
             pg.add_script_tag(path=AXE)
@@ -88,6 +102,12 @@ with sync_playwright() as p:
             # pick the first day with tasks for the shot, so the panel shows real cards
             pg.click('#apcToday');pg.wait_for_timeout(200)
             pg.screenshot(path=f'ops/screens/v13.4-autopilot-{w}-{theme}.png',full_page=True)
+        if SHOTS and w!=390 or (SHOTS and w==390):
+            for pgn in ['db','tracker','autopilot','profile']:
+                pg.goto(U+'#'+pgn);pg.wait_for_timeout(700)
+                pg.screenshot(path=f'ops/screens/v13.4-header-{pgn}-{w}-{theme}.png',clip={'x':0,'y':0,'width':w,'height':80})
+            ok(pg.evaluate("(()=>{const b=document.querySelector('.brand .wm b');return b&&b.textContent==='Index'&&getComputedStyle(b).display!=='none'&&b.getBoundingClientRect().width>0})()"),f'{tag} wordmark visible')
+            ok(pg.evaluate('document.documentElement.scrollWidth<=innerWidth'),f'{tag} header fits, no horizontal overflow')
         ok(not errs,f'{tag} console errors {errs[:3]}')
         c.close()
     b.close()

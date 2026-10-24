@@ -1,64 +1,22 @@
 {
- "updated": "2026-10-24T09:10:34Z",
+ "updated": "2026-10-24T13:24:29Z",
  "open": 11054,
  "open_all": 11054,
  "closing_this_week": 577,
  "upcoming": 1606,
  "companies_tracked": 2497,
  "companies_with_listings": 1462,
- "duration_s": 243,
+ "duration_s": 241,
  "apply_links": {
-  "at": "2026-10-24T09:14:38+00:00",
+  "at": "2026-10-24T13:28:32+00:00",
   "open": 11219,
-  "direct": 9749,
-  "posting": 1341,
+  "direct": 9750,
+  "posting": 1340,
   "none": 129,
-  "checked_this_run": 7320,
-  "ok": 7050,
-  "unknown": 138,
-  "failed": 132,
-  "top_failing_hosts": [
-   [
-    "vrtx.wd501.myworkdayjobs.com",
-    23
-   ],
-   [
-    "graco.wd501.myworkdayjobs.com",
-    22
-   ],
-   [
-    "werner.wd501.myworkdayjobs.com",
-    22
-   ],
-   [
-    "marmon.wd501.myworkdayjobs.com",
-    14
-   ],
-   [
-    "nordsonhcm.wd501.myworkdayjobs.com",
-    12
-   ],
-   [
-    "zebra.wd501.myworkdayjobs.com",
-    9
-   ],
-   [
-    "alliedsolutions.wd501.myworkdayjobs.com",
-    7
-   ],
-   [
-    "directsupply.wd501.myworkdayjobs.com",
-    7
-   ],
-   [
-    "ancestry.wd501.myworkdayjobs.com",
-    4
-   ],
-   [
-    "pipersandler.wd501.myworkdayjobs.com",
-    3
-   ]
-  ],
+  "checked_this_run": 7868,
+  "ok": 7738,
+  "unknown": 130,
+  "top_failing_hosts": [],
   "top_fallback_hosts": [
    [
     "zapply.jobs",
@@ -101,7 +59,7 @@
     24
    ]
   ],
-  "validated_within_24h": 8996
+  "validated_within_24h": 9009
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

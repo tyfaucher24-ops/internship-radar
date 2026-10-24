@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T09:10:34Z",
+ "updated": "2026-10-24T13:24:29Z",
  "listings_by_source_type": {
   "ats": 9728,
   "manual": 66,
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35293,
+   "postings": 35300,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 178,
-   "postings": 8731,
+   "postings": 8732,
    "errors": [
     "CALSTART (calstart): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/calstart?mode=json",
     "Saronic (saronic): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/saronic?mode=json"
@@ -74,9 +74,9 @@
  "review_queue": 488,
  "deadline_coverage_pct": 17.5,
  "stats": {
-  "ats_no": 39796,
+  "ats_no": 39799,
   "ats_ambiguous": 488,
-  "ats_non-US": 15289,
+  "ats_non-US": 15294,
   "ats_ok": 2095,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
@@ -85,10 +85,10 @@
  "by_category": {
   "Engineering & Hardware": 1739,
   "Accounting & Audit": 455,
-  "Software & IT": 2245,
+  "Software & IT": 2246,
   "Data & AI": 1003,
   "Product Management": 112,
-  "Other": 1857,
+  "Other": 1856,
   "Healthcare & Life Sciences": 395,
   "Supply Chain & Logistics": 312,
   "Marketing & Sales": 618,
@@ -114,7 +114,7 @@
   "GA": 367,
   "PR": 13,
   "IA": 228,
-  "NY": 1146,
+  "NY": 1145,
   "CT": 172,
   "OR": 111,
   "UT": 147,

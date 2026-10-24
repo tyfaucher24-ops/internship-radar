@@ -5398,6 +5398,7 @@
 "src": "gstatic"
 },
 "Frost": {
+"board_tried": true,
 "why": "too light to see on white"
 },
 "Fullsteam": {

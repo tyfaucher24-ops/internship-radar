@@ -1,33 +1,33 @@
 {
- "updated": "2026-10-23T21:31:05Z",
- "open": 11165,
- "open_all": 11165,
- "closing_this_week": 544,
- "upcoming": 1603,
+ "updated": "2026-10-24T00:05:36Z",
+ "open": 11055,
+ "open_all": 11055,
+ "closing_this_week": 577,
+ "upcoming": 1604,
  "companies_tracked": 2497,
- "companies_with_listings": 1464,
- "duration_s": 280,
+ "companies_with_listings": 1462,
+ "duration_s": 234,
  "apply_links": {
-  "at": "2026-10-23T21:35:47+00:00",
-  "open": 11337,
-  "direct": 10007,
-  "posting": 1232,
-  "none": 98,
-  "checked_this_run": 7543,
-  "ok": 7402,
-  "unknown": 124,
-  "failed": 17,
+  "at": "2026-10-24T00:09:31+00:00",
+  "open": 11220,
+  "direct": 9889,
+  "posting": 1213,
+  "none": 118,
+  "checked_this_run": 8325,
+  "ok": 8167,
+  "unknown": 138,
+  "failed": 20,
   "top_failing_hosts": [
    [
     "zapply.jobs",
-    15
+    18
    ],
    [
-    "deka.applytojob.com",
+    "careersus-shure.icims.com",
     1
    ],
    [
-    "www.optiver.com",
+    "apply.workable.com",
     1
    ]
   ],
@@ -73,7 +73,7 @@
     24
    ]
   ],
-  "validated_within_24h": 9090
+  "validated_within_24h": 9034
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

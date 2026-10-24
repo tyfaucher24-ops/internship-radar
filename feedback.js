@@ -1,71 +1,104 @@
-/* V6.2 Honest feedback page. Everything is computed from the live listings, the user's saved profile and the same
-   scoring engine (match-core.js) that grades the homepage. "What if" lifts are real re-scores in the match worker. Local only. */
+/* V14.4 Honest feedback, rebuilt around three questions: How strong am I? What helps me? What should I do next?
+   Every number comes from the same grader (match-core.js) that grades the cards, run on the live listings and the
+   saved profile. Quotes come from the profile itself. Nothing is invented: a factor with no data is hidden. Local only. */
 (function(){
-const norm=s=>(s||'').toLowerCase().replace(/[^a-z0-9&+# ]/g,' ').replace(/\s+/g,' ').trim();
 const N=n=>Number(n).toLocaleString();
-const GR=()=>(MW.grades||[]).map(g=>g[1]);              // A+ ... F
-const gIdx=p=>GR().indexOf(MatchCore.grade(p,MW));     // 0 = best
-const letter=g=>g[0];
-function kwsFor(x){const ind=x.industry||x.category||'';return new Set([...String((CFG.industryKeywords||{})[ind]||'').split(',').map(norm).filter(Boolean),...norm(x.title).split(' ').filter(w=>w.length>2)])}
-function skillHit(s,k){return k.has(s)||[...k].some(w=>s.length>3&&(w.includes(s)||s.includes(w)))}
-function resumeChecks(){const t=Store.get('resumeText','')||'';const out=[];const pr=profile;
- if(t){const words=t.split(/\s+/).filter(Boolean).length;
-  if(words<250)out.push(['bad',`Your resume is ${N(words)} words. Most one-page student resumes run 350–600; yours is probably missing detail.`]);else out.push(['ok',`Length: ${N(words)} words.`]);
-  const lines=t.split(/\n+/).map(s=>s.trim()).filter(Boolean),bul=lines.filter(l=>/^[•\-–*▪●]/.test(l)||l.length>60),q=bul.filter(l=>/\d|%|\$/.test(l));
-  if(bul.length)out.push([q.length/bul.length<0.3?'bad':'ok',`${N(q.length)} of ${N(bul.length)} bullet lines contain a number (%, $, counts).${q.length/bul.length<0.3?' Recruiters skim for results; add numbers.':''}`]);
-  const dates=(t.match(/\b(19|20)\d{2}\b|\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s+(19|20)\d{2}/gi)||[]).length;
-  out.push([dates<2?'bad':'ok',dates<2?'Almost no dates found. Every role and your graduation need a month and year.':`${N(dates)} dates found.`]);
-  out.push([/\bskills?\b/i.test(t)?'ok':'bad',/\bskills?\b/i.test(t)?'Has a skills section.':'No skills section found. Applicant tracking systems look for one.']);
-  out.push([/@/.test(t)?'ok':'bad',/@/.test(t)?'Has an email address.':'No email address found.'])}
- else out.push(['bad','No resume uploaded, so these checks use your profile entries only. Upload one on My Profile for a full check.']);
- const ex=pr.experience||[];if(ex.length){const nd=ex.filter(e=>!e.start&&!e.end).length,nb=ex.filter(e=>!(e.bullets||[]).filter(Boolean).length).length;
-  if(nd)out.push(['bad',`${nd} of ${ex.length} experience entr${ex.length===1?'y has':'ies have'} no dates.`]);if(nb)out.push(['bad',`${nb} of ${ex.length} experience entr${ex.length===1?'y has':'ies have'} no bullet points describing what you did.`])}
- return out}
+const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const RM=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tick=()=>new Promise(r=>setTimeout(r,0));
+const FACT=[['GPA','GPA'],['Experience','Relevant experience'],['Skills','Skills and certifications'],['School','School']];
+const lvl=v=>v>=70?'hi':v>=50?'mid':'lo';
+const TAGW={safety:'Safety',target:'Target',reach:'Reach'};
+const LEAD=/\b(president|vice president|captain|co-?captain|chair|founder|co-?founder|head|director|treasurer|lead|leader|officer|manager|coordinator)\b/i;
+const ATH=/\b(varsity|ncaa|athlet\w*|division (i|ii|iii|1|2|3)|d1|d2|d3)\b/i;
+const expLine=e=>[e.title,e.org].filter(Boolean).join(', ');
+/* real quotes from the saved profile; empty when the profile has none */
+function quotes(pr){const ex=(pr.experience||[]).filter(e=>e&&(e.title||e.org));const rel=ex.find(e=>/intern|job/i.test(e.kind||e.type||''))||ex[0];
+ const sk=(pr.skills||[]).slice(0,3),ce=(pr.certs||[]).slice(0,2);
+ const lead=ex.find(e=>/leadership/i.test(e.kind||e.type||'')||LEAD.test(e.title||''));
+ const ath=ex.find(e=>ATH.test([e.title,e.org,e.kind,...(e.bullets||[])].join(' ')));
+ return{GPA:pr.gpa?`GPA ${pr.gpa}`:'',Experience:rel?expLine(rel):'',Skills:[...sk,...ce].join(', '),School:pr.school||'',lead:lead?expLine(lead):'',ath:ath?expLine(ath):''}}
 async function multi(profiles){const rows=slimRows();if(!window._fbW){window._fbW=new Worker('match-worker.js'+self.BV);window._fbW.postMessage({t:'init',rows,cfg:CFG,w:MW})}
  const w=window._fbW;return new Promise(res=>{w.onmessage=e=>{if(e.data.t==='multi')res(e.data)};w.postMessage({t:'multi',profiles})})}
-window.renderFeedback=async function(){const el=$('fbBody');if(!MatchCore.hasProfile(profile)){el.innerHTML=`<div class="fb-card"><h2>Save your profile first</h2><p class="muted">Feedback is based on your saved profile and your grades on real listings.</p><a class="btn pri" href="#profile" data-go="profile">Go to My Profile</a></div>`;return}
- el.innerHTML='<p class="muted">Reviewing your profile against every live listing…</p>';const t0=performance.now();
- await cfgReady;await MWready;if(!MSCORE.size)await rescore();
- const P=MatchCore.profile(profile),live=D.filter(x=>x.live&&MSCORE.has(x.id)),ints=P.industries.length?live.filter(x=>P.industries.includes(x.industry||x.category)):live;
- // 1. standing
- const cnt={A:0,B:0,C:0,D:0,F:0};live.forEach(x=>cnt[letter(MSCORE.get(x.id).grade)]++);const ab=cnt.A+cnt.B,pcts=live.map(x=>MSCORE.get(x.id).pct).sort((a,b)=>a-b),med=pcts[pcts.length>>1];
- const verdict=cnt.A>=20?'You are competitive for a real set of roles. Apply to your A’s first and widely.':ab>=100?'You have realistic shots, but mostly at B-level roles. Most of the market grades you C or lower.':ab>=10?'Right now only a small slice of the market is a realistic fit. You need to apply broadly and improve the gaps below.':'Honestly, you are not competitive for most internships yet. That is fixable, but it starts with the changes below, not with more applications.';
- // 2. gaps
- const sk=new Map();ints.forEach(x=>{const k=kwsFor(x);for(const s of (typeof SKILLS!=='undefined'?SKILLS:[]))if(!P.skills.includes(s)&&skillHit(s,k))sk.set(s,(sk.get(s)||0)+1)});
- const topSk=[...sk].sort((a,b)=>b[1]-a[1]).slice(0,5);
- const gaps=[];if(topSk.length)gaps.push(`<b>Skills you have not listed that the matcher looks for</b> in your interest areas (number of the ${N(ints.length)} live listings that ask for each): ${topSk.map(([s,n])=>`${esc(s)} (${N(n)})`).join(', ')}.`);
- if(!P.exp.length)gaps.push('<b>No experience listed.</b> The scorer counts jobs, internships, clubs and projects. With none, your odds are rated low everywhere, and capped at elite firms.');
- const cyN=P.classYear?ints.filter(x=>(x.class_years||[]).length&&!(x.class_years||[]).includes(P.classYear)).length:0;if(cyN)gaps.push(`<b>Class year:</b> ${N(cyN)} listings in your interests are limited to other class years, so you’re not eligible.`);
- if(P.gpa){const gb=ints.filter(x=>x.gpa_min&&+x.gpa_min>P.gpa).length;if(gb)gaps.push(`<b>GPA:</b> ${N(gb)} listings in your interests state a minimum GPA above your ${P.gpa}.`)}else gaps.push('<b>No GPA given.</b> Firms with GPA bars can’t be scored in your favor without it.');
- if(P.sponsor===true){const sp=ints.filter(x=>x.sponsorship==='Not offered'||x.citizenship===true).length;if(sp)gaps.push(`<b>Sponsorship:</b> ${N(sp)} listings in your interests don’t sponsor visas or require citizenship.`)}
- const elite=live.filter(x=>{const n=norm(x.company);return (CFG.firmTiers||[]).some(f=>!f.placeholder&&+f.tier<=1&&[f.firm,...(f.aliases||[])].map(norm).some(k=>n===k||n.startsWith(k+' ')))});
- if(elite.length){const ef=elite.filter(x=>MSCORE.get(x.id).pct<55).length;if(ef)gaps.push(`<b>Elite firms:</b> you grade D or F at ${N(ef)} of ${N(elite.length)} live listings at firms that accept under 1% of applicants.`)}
- // 3. where you can land
- const byInd=new Map();live.forEach(x=>{const k=x.industry||x.category||'Other',m=MSCORE.get(x.id);const a=byInd.get(k)||{n:0,good:0,sum:0};a.n++;a.sum+=m.pct;if(/^[AB]/.test(m.grade))a.good++;byInd.set(k,a)});
- const bestInd=[...byInd].filter(([,a])=>a.n>=10).sort((p,q)=>q[1].good-p[1].good||q[1].sum/q[1].n-p[1].sum/p[1].n).slice(0,3);
- const cb={low:[],mid:[],high:[]};live.forEach(x=>{const c=MatchCore.competition(x,null).score;if(c!=null)cb[c<45?'low':c<60?'mid':'high'].push(MSCORE.get(x.id).pct)});const avg=a=>a.length?Math.round(a.reduce((s,v)=>s+v,0)/a.length):null;
- const best=live.slice().sort((a,b)=>MSCORE.get(b.id).pct-MSCORE.get(a.id).pct).slice(0,6);
- // 4. what-if re-scores
- const base=profile,cands=[];const add=(label,pr)=>cands.push({label,pr:{...JSON.parse(JSON.stringify(base)),...pr}});
- topSk.slice(0,3).forEach(([s])=>add(`Add ${s} to your skills (only if you can back it up)`,{skills:[...(base.skills||[]),s]}));
- const ti=P.industries[0]||(bestInd[0]&&bestInd[0][0])||'';const tk=[...String((CFG.industryKeywords||{})[ti]||'').split(',').map(s=>s.trim()).filter(Boolean)].slice(0,3);
- if(ti)add(`Add one relevant experience entry in ${ti} (a project, club role or part-time job using ${tk.join(', ')||'the core skills'})`,{experience:[...(base.experience||[]),{kind:'Project',title:`${ti} project`,org:'',bullets:[tk.join(' ')]}]});
- if(!P.gpa)add('Add your GPA (shown here for a 3.5)',{gpa:'3.5'});
- if(!base.relocate)add('Say you’re open to relocating',{relocate:true});
- if(!base.remoteOK)add('Say remote is OK',{remoteOK:true});
- const r=await multi(cands.map(c=>c.pr));const ids=r.ids,idx=new Map(ids.map((id,i)=>[id,i]));
- const lifts=cands.map((c,j)=>{const arr=r.pcts[j];let up=0,toB=0;for(const x of live){const i=idx.get(x.id);if(i==null)continue;const o=MSCORE.get(x.id).pct,nw=arr[i]===255?o:arr[i];if(gIdx(nw)<gIdx(o)){up++;if(!/^[AB]/.test(MatchCore.grade(o,MW))&&/^[AB]/.test(MatchCore.grade(nw,MW)))toB++}}return{...c,up,toB}}).filter(c=>c.up>0).sort((a,b)=>b.up-a.up).slice(0,3);
- const checks=resumeChecks();window._fbMs=Math.round(performance.now()-t0);
- const bar=Object.entries(cnt).map(([g,n])=>`<div class="fb-g"><span class="mbadge ${({A:'g5',B:'g4',C:'g3',D:'g2',F:'g0'})[g]}">${g}</span><b>${N(n)}</b><i style="width:${Math.max(1,Math.round(100*n/live.length))}%"></i></div>`).join('');
- el.innerHTML=`
- <div class="fb-card"><h2>1. Where you stand</h2><p class="fb-lede">${verdict}</p><div class="fb-dist">${bar}</div>
-  <p class="muted">${N(live.length)} live internships graded. Median match ${med}%. ${N(ab)} are a B- or better (${(100*ab/live.length).toFixed(1)}%).</p></div>
- <div class="fb-card"><h2>2. What’s holding you back</h2>${gaps.length?`<ul class="fb-list">${gaps.map(g=>`<li>${g}</li>`).join('')}</ul>`:'<p>No major gaps found against the listings in your interests.</p>'}</div>
- <div class="fb-card"><h2>3. Where you can realistically land now</h2>
-  <ul class="fb-list">${bestInd.map(([k,a])=>`<li><b>${esc(k)}</b>: ${N(a.good)} of ${N(a.n)} listings at B- or better, average ${Math.round(a.sum/a.n)}%</li>`).join('')}
-  <li><b>By competition</b>: average ${avg(cb.low)??'n/a'}% at low-competition roles, ${avg(cb.mid)??'n/a'}% at medium, ${avg(cb.high)??'n/a'}% at crowded ones.${avg(cb.low)>avg(cb.high)+5?' Smaller firms and less crowded locations are your best bet.':''}</li></ul>
-  <h3>Your best matches right now</h3><ol class="fb-top">${best.map(x=>{const m=MSCORE.get(x.id);return `<li>${logoHTML(x,false,'sm')}<a href="#" data-fbopen="${esc(x.id)}">${esc(x.title)}</a> <span class="muted">${esc(x.company)}</span> <span class="mbadge ${m.band}">${m.pct}% · ${m.grade}</span></li>`}).join('')}</ol></div>
- <div class="fb-card"><h2>4. The changes that would move your grades most</h2>${lifts.length?`<ol class="fb-list">${lifts.map(l=>`<li><b>${esc(l.label)}</b>: raises <b>${N(l.up)}</b> listings by one grade or more${l.toB?`, and ${N(l.toB)} of them up to a B- or better`:''}.</li>`).join('')}</ol><p class="muted small">Each number comes from re-scoring every live listing with that one change. It is an estimate of grades, not of offers.</p>`:'<p>None of the simple changes we can test would raise a grade. Your gaps are in experience depth, so build more of it.</p>'}</div>
- <div class="fb-card"><h2>5. Resume checks</h2><ul class="fb-checks">${checks.map(([k,t])=>`<li class="${k}">${k==='ok'?'✓':'✗'} ${esc(t)}</li>`).join('')}</ul></div>`;
- el.querySelectorAll('[data-fbopen]').forEach(a=>a.onclick=e=>{e.preventDefault();const x=BYID.get(a.dataset.fbopen);if(x)openDrawer(x)})};
+async function scoreAll(rows,P){const out=[];for(let i=0;i<rows.length;i++){if(i%200===199)await tick();let r=null;try{r=MatchCore.score(rows[i],P,CFG,MW)}catch(_){}if(r&&r.pct!=null)out.push({x:rows[i],r})}return out}
+const ring=(pct,grade,label)=>{const C=2*Math.PI*52;return`<div class="fx-ring" role="img" aria-label="${E(label)}: ${pct} of 100, grade ${E(grade)}"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="fx-ring-bg" cx="60" cy="60" r="52"/><circle class="fx-ring-fg fx-${lvl(pct)}" cx="60" cy="60" r="52" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${C.toFixed(1)}" data-off="${(C*(1-pct/100)).toFixed(1)}"/></svg><div class="fx-ring-in" aria-hidden="true"><b data-count="${pct}">0</b><span>${E(grade)}</span></div></div>`};
+function barsHTML(rows){return`<ul class="fx-bars">${rows.map((b,i)=>b.v==null?`<li class="fx-row fx-flag"><span class="fx-k">${E(b.label)}</span><span class="fx-chip ${b.q?'fx-yes':'fx-no'}">${b.q?'On your resume':'Not on your profile'}</span>${b.q?`<button type="button" class="fx-i" aria-describedby="fxt${i}" aria-label="${E(b.label)} details">i</button><span class="fx-tip" role="tooltip" id="fxt${i}">Your resume: “${E(b.q)}”</span>`:''}</li>`
+ :`<li class="fx-row" style="--i:${i}"><button type="button" class="fx-btn" aria-describedby="fxt${i}"><span class="fx-k">${E(b.label)}</span><span class="fx-n" data-count="${b.v}">0</span><span class="fx-track" aria-hidden="true"><i class="fx-fill fx-${lvl(b.v)}" style="--w:${b.v}%"></i></span><span class="sr-only">${b.v} of 100</span></button><span class="fx-tip" role="tooltip" id="fxt${i}">${b.q?`Your resume: “${E(b.q)}”. `:''}${E(b.t||'')}</span></li>`).join('')}</ul>`}
+function cardsHTML(title,items,cls){if(!items.length)return'';return`<section class="fx-card ${cls}" aria-labelledby="h-${cls}"><h2 id="h-${cls}">${title}</h2><ul class="fx-list">${items.map(s=>`<li><b>${E(s.t)}</b>${s.q?`<span class="fx-q">${E(s.q)}</span>`:''}${s.n?`<span class="fx-m">${E(s.n)}</span>`:''}</li>`).join('')}</ul></section>`}
+function animate(root){const rm=RM();root.querySelectorAll('.fx-ring-fg').forEach(c=>{if(rm){c.style.transition='none';c.style.strokeDashoffset=c.dataset.off}else requestAnimationFrame(()=>requestAnimationFrame(()=>c.style.strokeDashoffset=c.dataset.off))});
+ if(rm)root.classList.add('fx-rm','fx-go');else requestAnimationFrame(()=>requestAnimationFrame(()=>root.classList.add('fx-go')));
+ root.querySelectorAll('[data-count]').forEach((el,k)=>{const to=+el.dataset.count;if(rm){el.textContent=to;return}const row=el.closest('.fx-row'),d=row?(+getComputedStyle(row).getPropertyValue('--i')||0)*110:0,dur=row?750:900,t0=performance.now()+d;
+  const f=t=>{const p=Math.min(1,Math.max(0,(t-t0)/dur)),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}
+function wire(el){el.querySelectorAll('[data-fbopen]').forEach(a=>a.onclick=e=>{e.preventDefault();const x=BYID.get(a.dataset.fbopen);if(x)openDrawer(x)});
+ el.querySelectorAll('[data-tagf]').forEach(a=>a.onclick=e=>{e.preventDefault();F.tagf=a.dataset.tagf;const s=document.getElementById('tagf');if(s)s.value=F.tagf;go('db');update()});
+ el.querySelectorAll('.fx-more').forEach(b=>b.onclick=()=>{const t=document.getElementById(b.getAttribute('aria-controls'));const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));t.hidden=o;b.textContent=o?'Show more':'Show less'});
+ el.querySelectorAll('.fx-btn,.fx-i').forEach(b=>b.addEventListener('click',()=>{const on=!b.parentElement.classList.contains('tip-on');el.querySelectorAll('.tip-on').forEach(x=>x.classList.remove('tip-on'));if(on)b.parentElement.classList.add('tip-on')}))}
+function emptyState(el){el.innerHTML=`<section class="fx-card fx-empty"><h2>Upload your resume to see your honest feedback</h2><p>We grade you against real, live internships. Nothing leaves this browser.</p><a class="btn pri" href="#profile" data-go="profile" id="fxUpload">Upload your resume</a></section>`}
+/* ---------- per-posting view ---------- */
+async function renderPosting(el,id,pr,P){const x=BYID.get(String(id));if(!x){window.FB_FOR=null;return renderOverall(el,pr,P)}
+ try{await ensureDetail(x)}catch(_){}const row=slimRows().find(o=>String(o.id)===String(id))||{...x,industry:x.industry||x.category};
+ let r=null;try{r=MatchCore.score(row,P,CFG,MW)}catch(_){}
+ const back=`<p class="fx-back"><a href="#feedback" id="fxAll">← Your overall feedback</a></p>`;
+ const head=`<h2 class="fx-ph">${E(x.title)} <span>at ${E(x.company)}</span></h2>`;
+ if(!r||r.pct==null){el.innerHTML=`${back}<section class="fx-card">${head}<p>We can’t grade this one yet. ${r&&r.need&&r.need.length?'Add '+E(r.need.join(', '))+' to your profile to see it.':'The posting doesn’t give enough to grade against.'}</p></section>`;bindBack(el);return}
+ const Q=quotes(pr),v=r.v143||{},bd=((r.feedback||{}).breakdown||[]);
+ const bars=FACT.map(([k,label])=>{const b=bd.find(o=>o.k===k&&o.v!=null);return b?{label,v:Math.round(b.v),t:b.t||'',q:Q[k]}:null}).filter(Boolean);
+ const gates=[];if(v.eligible===false)gates.push({ok:false,t:v.reason||'This posting has a hard requirement you don’t meet.'});
+ if(x.gpa_min){const g=parseFloat(pr.gpa);gates.push(g?{ok:g>=+x.gpa_min,t:`Minimum GPA ${x.gpa_min}. Yours is ${pr.gpa}.`}:{ok:null,t:`Minimum GPA ${x.gpa_min}. Your profile has no GPA.`})}
+ if((x.class_years||[]).length){gates.push(pr.classYear?{ok:x.class_years.includes(pr.classYear),t:`Open to ${x.class_years.join(', ')}. You are a ${pr.classYear}.`}:{ok:null,t:`Open to ${x.class_years.join(', ')}. Your profile has no class year.`})}
+ if(x.sponsorship==='Not offered'||x.citizenship===true){const s=pr.sponsorship;gates.push({ok:s==='yes'?false:s==='no'?true:null,t:x.citizenship===true?'Requires US citizenship.':'Does not sponsor visas.'})}
+ const tag=v.tag,tl=tag?TAGW[tag]:'Not eligible',say=v.eligible===false?'You can’t apply to this one as your profile stands.':tag==='safety'?'This is a realistic shot. Apply.':tag==='target'?'This is a fair shot, not a sure thing.':'This is a long shot. Apply only alongside safer picks.';
+ el.innerHTML=`${back}<section class="fx-card fx-snap">${head}<div class="fx-top">${ring(r.pct,r.grade,'Your fit for this posting')}<div><p class="fx-tag"><span class="fx-chip fx-t-${tag||'ne'}">${tl}</span></p><p class="fx-say">${E(say)}</p></div></div></section>
+ ${gates.length?`<section class="fx-card" aria-labelledby="h-gates"><h2 id="h-gates">Eligibility</h2><ul class="fx-gates">${gates.map(g=>`<li class="${g.ok===true?'ok':g.ok===false?'bad':'unk'}"><span aria-hidden="true">${g.ok===true?'✓':g.ok===false?'✗':'?'}</span> <span class="sr-only">${g.ok===true?'Met':g.ok===false?'Not met':'Unknown'}: </span>${E(g.t)}</li>`).join('')}</ul></section>`:''}
+ ${bars.length?`<section class="fx-card" aria-labelledby="h-bars"><h2 id="h-bars">You vs. this posting</h2>${barsHTML(bars)}</section>`:''}
+ <div class="fx-two">${cardsHTML('Working for you',(v.pos||[]).map(f=>({t:f.t,q:f.resume?`Your resume: ${f.resume}`:''})),'fx-str')}${cardsHTML('Working against you',(v.neg||[]).map(f=>({t:f.t,q:f.posting?`The posting: ${f.posting}`:''})),'fx-gap')}</div>
+ ${(v.next||[]).length?`<section class="fx-card" aria-labelledby="h-next"><h2 id="h-next">Next steps</h2><ol class="fx-steps">${v.next.map(t=>`<li><b>${E(t)}</b></li>`).join('')}</ol></section>`:''}
+ <p class="fx-note">${E((v.confidence||{}).note||'')}</p>`;
+ bindBack(el);wire(el);animate(el)}
+function bindBack(el){const a=el.querySelector('#fxAll');if(a)a.onclick=e=>{e.preventDefault();window.FB_FOR=null;renderFeedback()}}
+/* ---------- overall view ---------- */
+async function renderOverall(el,pr,P){
+ const rowsAll=slimRows().filter(x=>MSCORE.has(x.id));const inInt=P.industries.length?rowsAll.filter(x=>P.industries.includes(x.industry)):rowsAll;const rows=inInt.length?inInt:rowsAll;
+ const S=await scoreAll(rows,P);if(!S.length){emptyState(el);return}
+ const Q=quotes(pr),pcts=S.map(o=>o.r.pct).sort((a,b)=>a-b),med=pcts[pcts.length>>1],grade=MatchCore.grade(med,MW);
+ const cnt={safety:0,target:0,reach:0,ne:0};S.forEach(o=>{const t=o.r.v143&&o.r.v143.tag;cnt[t||'ne']++});
+ const elite=S.filter(o=>o.r.feedback&&o.r.feedback.tier&&+o.r.feedback.tier.t<=1),eliteR=elite.filter(o=>!o.r.v143||o.r.v143.tag!=='safety'&&o.r.v143.tag!=='target').length;
+ const n=S.length,good=cnt.safety+cnt.target,area=P.industries.length===1?` in ${P.industries[0]}`:'';
+ let say=good>=.3*n?`You’re competitive for a real share of internships${area}: ${N(good)} of ${N(n)} are targets or safeties.`:good>0?`You have some realistic shots${area}, but most are reaches: ${N(good)} of ${N(n)} are targets or safeties.`:`Right now internships${area} are long shots for you: none of ${N(n)} grade as a target or safety.`;
+ if(elite.length>=3&&eliteR/elite.length>=.8)say+=` The most selective firms are reaches right now.`;
+ /* factor bars: average of the grader's own per-posting scores */
+ const bars=FACT.map(([k,label])=>{const vs=[];S.forEach(o=>{const b=((o.r.feedback||{}).breakdown||[]).find(z=>z.k===k&&z.v!=null);if(b)vs.push(b)});if(!vs.length)return null;
+  const avg=Math.round(vs.reduce((s,b)=>s+b.v,0)/vs.length),rep=vs.slice().sort((a,b)=>Math.abs(a.v-avg)-Math.abs(b.v-avg))[0];return{label,v:avg,t:rep.t||'',q:Q[k]}}).filter(Boolean);
+ bars.push({label:'Leadership',v:null,q:Q.lead},{label:'Athletics',v:null,q:Q.ath});
+ /* strengths and gaps: the grader's own factors, most common across your matches */
+ const agg=(key,qk)=>{const m=new Map();S.forEach(o=>((o.r.v143||{})[key]||[]).forEach(f=>{const t=f.k==='gate'?'Not eligible at some postings':f.t;const a=m.get(t)||{t,c:0,qs:new Map()};a.c++;const q=f[qk];if(q)a.qs.set(q,(a.qs.get(q)||0)+1);m.set(t,a)}));
+  return[...m.values()].sort((a,b)=>b.c-a.c).slice(0,3).map(a=>{const q=[...a.qs].sort((x,y)=>y[1]-x[1])[0];return{t:a.t,q:q?(qk==='resume'?'Your resume: ':'Postings ask for: ')+q[0]:'',n:`At ${N(a.c)} of ${N(n)} of your matches`}})};
+ const str=agg('pos','resume'),gap=agg('neg','posting');
+ if(Q.lead&&str.length<3)str.push({t:'Leadership role',q:'Your resume: '+Q.lead,n:''});if(Q.ath&&str.length<3)str.push({t:'Athletics',q:'Your resume: '+Q.ath,n:''});
+ const sv=new Set(T.all().map(t=>String(t.listingId)));const saved=S.filter(o=>sv.has(String(o.x.id))),sc={safety:0,target:0,reach:0};saved.forEach(o=>{const t=o.r.v143&&o.r.v143.tag;if(t)sc[t]++});
+ const best=S.filter(o=>o.r.v143&&o.r.v143.eligible).sort((a,b)=>b.r.v143.fitXchance-a.r.v143.fitXchance||b.r.pct-a.r.pct).slice(0,5);
+ el.innerHTML=`<section class="fx-card fx-snap" aria-labelledby="h-snap"><h2 id="h-snap" class="sr-only">How strong am I?</h2><div class="fx-top">${ring(med,grade,'Your typical match')}<div><p class="fx-kicker">How strong am I?</p><p class="fx-say">${E(say)}</p><p class="fx-m">Your median match across ${N(n)} live internships${area}.</p></div></div></section>
+ <section class="fx-card" aria-labelledby="h-bars"><h2 id="h-bars">What drives your grades</h2><p class="fx-m">Tap or hover a bar to see why.</p>${barsHTML(bars)}</section>
+ <div class="fx-two">${cardsHTML('What helps you',str,'fx-str')}${cardsHTML('What holds you back',gap,'fx-gap')}</div>
+ <section class="fx-card" aria-labelledby="h-next"><h2 id="h-next">What should I do next?</h2><div id="fxNext"><p class="fx-m">Testing which changes would raise your grades…</p></div></section>
+ <section class="fx-card" aria-labelledby="h-odds"><h2 id="h-odds">Your odds by tier</h2><div class="fx-tiers">${['reach','target','safety'].map(k=>`<div class="fx-tier fx-t-${k}"><b>${N(cnt[k])}</b><span>${TAGW[k]}</span></div>`).join('')}</div>
+  <p class="fx-m">Of ${N(n)} live matches${area}.${cnt.ne?` ${N(cnt.ne)} more you’re not eligible for.`:''}${saved.length?` Your ${N(saved.length)} saved: ${N(sc.reach)} reach, ${N(sc.target)} target, ${N(sc.safety)} safety.`:''}</p>
+  <p class="fx-links"><a href="#" data-tagf="reach">See your reaches</a><a href="#" data-tagf="realistic">See your realistic picks</a></p>
+  ${best.length?`<button type="button" class="btn gh small fx-more" aria-expanded="false" aria-controls="fxBest">Show more</button><div id="fxBest" hidden><h3>Your best odds right now</h3><ol class="fx-best">${best.map(o=>{const x=BYID.get(String(o.x.id));return x?`<li><a href="#" data-fbopen="${E(x.id)}">${E(x.title)}</a> <span class="fx-m">${E(x.company)} · ${o.r.pct}% · ${E(o.r.grade)} · ${TAGW[o.r.v143.tag]}</span></li>`:''}).join('')}</ol></div>`:''}</section>`;
+ wire(el);animate(el);
+ /* next steps: real re-scores of every live listing with one change each */
+ const base=pr,cands=[],add=(label,gain,p2)=>cands.push({label,gain,pr:{...JSON.parse(JSON.stringify(base)),...p2}});
+ const miss=new Map();S.forEach(o=>((o.x.req||{}).sk||[]).forEach(s=>{const k=String(s).toLowerCase();if(!P.skills.includes(k))miss.set(s,(miss.get(s)||0)+1)}));
+ [...miss].sort((a,b)=>b[1]-a[1]).slice(0,3).forEach(([s,c])=>add(`Learn ${s} and add it to your skills`,`Skills: ${N(c)} of your matches ask for it`,{skills:[...(base.skills||[]),s]}));
+ if(!base.relocate)add('Say you’re open to relocating','Location',{relocate:true});
+ if(!base.remoteOK)add('Say remote roles are OK','Location',{remoteOK:true});
+ let steps=[];try{if(cands.length){const r=await multi(cands.map(c=>c.pr));const idx=new Map(r.ids.map((id,i)=>[id,i])),gi=p=>(MW.grades||[]).findIndex(g=>p>=g[0]);
+  steps=cands.map((c,j)=>{let up=0;for(const o of S){const i=idx.get(o.x.id);if(i==null)continue;const nw=r.pcts[j][i];if(nw===255)continue;if(gi(nw)<gi(o.r.pct))up++}return{...c,up}}).filter(c=>c.up>0).sort((a,b)=>b.up-a.up).slice(0,3)}}catch(_){}
+ if(!steps.length){const m=new Map();S.forEach(o=>(((o.r.feedback||{}).actions)||[]).forEach(a=>m.set(a,(m.get(a)||0)+1)));steps=[...m].sort((a,b)=>b[1]-a[1]).slice(0,3).map(([label,c])=>({label,gain:`Comes up at ${N(c)} of your matches`,up:0}))}
+ const nx=el.querySelector('#fxNext');if(nx)nx.innerHTML=steps.length?`<ol class="fx-steps">${steps.map(s=>`<li><b>${E(s.label)}</b><span class="fx-m">${s.up?`Raises ${N(s.up)} of your ${N(n)} matches by a grade or more. Improves: ${E(s.gain)}.`:E(s.gain)}</span></li>`).join('')}</ol><p class="fx-m">Each count comes from re-grading your matches with that one change. It estimates grades, not offers.</p>`:'<p>None of the simple changes we can test would raise a grade. Your gap is depth of experience, so build more of it.</p>'}
+window.renderFeedback=async function(){const el=$('fbBody');if(!el)return;el.classList.remove('fx-go','fx-rm');
+ if(!MatchCore.hasProfile(profile)){emptyState(el);return}
+ el.dataset.ready='';el.innerHTML='<p class="fx-m fx-load">Grading you against every live internship…</p>';const t0=performance.now();
+ await cfgReady;await MWready;if(!MSCORE.size)await rescore();const pr=profile,P=MatchCore.profile(pr);
+ if(window.FB_FOR)await renderPosting(el,window.FB_FOR,pr,P);else await renderOverall(el,pr,P);window._fbMs=Math.round(performance.now()-t0);el.dataset.ready='1'};
 })();

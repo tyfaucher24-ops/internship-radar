@@ -1,6 +1,16 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.4 (Honest Feedback page, no tutorial, no review screen, per specs/V14.4.md) (2026-10-24)
+- The tutorial is gone: tour.js and its styles are deleted, and old ir_tour* keys are cleared from browsers that saw it.
+- The "check what we read" review screen is gone. A resume upload asks only what a resume can't tell us (locations, industries, roles, season, remote, relocation), then goes straight to your filled-in profile, where everything stays editable. The "Check this" and "Not found" flags are removed.
+- Honest Feedback is now a top nav item (Feedback). Every graded card and the detail panel have a "Why this grade?" link that opens feedback for that posting.
+- Redesigned feedback page: a score ring with your median match and grade, factor bars (GPA, relevant experience, skills, school) that fill in a stagger, with a tap or hover tooltip quoting your resume and the grader's reason. Leadership and athletics show whether they are on your profile, with no made-up number. Also: what helps you and what holds you back, each citing your resume and how many postings it affects; next steps measured by re-grading your matches with one change; and your counts of reach, target and safety picks with links. Reduced motion shows final states with no animation.
+- Per-posting view: ring, safety/target/reach tag, eligibility gates (minimum GPA, class years, sponsorship, citizenship, only when the posting states them), your factor bars for that posting, what works for and against you, next steps and a confidence note.
+- Empty state: "Upload your resume to see your honest feedback" with an upload button.
+- At 390px the nav moves to its own row under the brand so all items fit. Graded cards are 31px taller to fit the new link with nothing clipped.
+- Grader accuracy unchanged at 91.8%. New test: tests/test_v144_feedback.py.
+
 ## V14.3 (resume reading, review-and-confirm, resume-aware grading, per specs/V14.3.md) (2026-10-23)
 - Resume upload (PDF, DOCX, TXT, up to 10 MB) is read on your device in a Web Worker, using vendored pdf.js 3.11.174 and mammoth 1.8.0 with no CDN. Nothing is uploaded. The privacy note says so, and a "Delete my resume data" button clears the resume text, the parse and the stored resume.
 - New review-and-confirm screen: your resume on one side and editable cards on the other (contact, education, each experience with a type dropdown, skills, certifications, languages, work authorization). Focusing a card highlights the resume lines it came from. "Check this" marks inferred values and "Not found. Add it?" marks blanks. An ambiguous school must be picked from a list. GPA is filled only on a 4.0 scale. Step 2 asks what a resume can't tell us: locations, industries, roles, season and year, remote, relocation. "Build manually instead" is kept. Nothing is filled in until you confirm, and the V14.2 tutorial still runs afterwards.

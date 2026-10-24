@@ -55,36 +55,5 @@ with sync_playwright() as pw:
       p.evaluate("T.save([])");p.wait_for_timeout(400)
       ck('unsave all -> empty '+tg,p.evaluate("!!document.querySelector('.ap-empty-saved')") and p.evaluate("APCal.tasks().length")==0)
       cx.close()
-      # tutorial
-      cx=br.new_context(viewport={'width':W,'height':H});p=cx.new_page()
-      p.goto(URL);wf(p,"()=>typeof BYID!=='undefined'&&BYID.size>0");theme(p,dark);p.wait_for_timeout(800)
-      p.click('#goBuild');p.wait_for_timeout(900)
-      for k in range(8):
-          if p.locator('[data-ob=all]:visible').count(): break
-          b2=p.locator('[data-ob=skip]:visible, [data-ob=next]:visible').first;b2.click();p.wait_for_timeout(500)
-      p.locator('[data-ob=all]:visible').first.click()
-      try: p.wait_for_selector('#tour .tr-card',timeout=15000);ok=True
-      except Exception: ok=False
-      ck('tour after build '+tg,ok)
-      if ok:
-        n=0;good=True;seen=[]
-        while p.locator('#tour').count() and n<10:
-            p.wait_for_timeout(450);n+=1
-            info=p.evaluate("""()=>{const c=document.querySelector('#tour .tr-card').getBoundingClientRect(),s=document.querySelector('#tour .tr-spot');const tr=[...document.querySelectorAll('#tour .tr-card *:not(.sr-only)')].some(e=>e.scrollWidth>e.clientWidth+1&&getComputedStyle(e).overflow!=='visible');return {in:c.left>=0&&c.top>=0&&c.right<=innerWidth&&c.bottom<=innerHeight,spot:s.style.opacity==='1',t:document.getElementById('trT').textContent,n:document.querySelector('.tr-n').textContent,tr}}""")
-            seen.append(info['n'])
-            if not(info['in'] and info['spot'] and not info['tr']): good=False;print(info)
-            if OUT and n in(2,5): p.screenshot(path=f"{OUT}/v14.2-tour-step{n}-{tg}.png")
-            if n==2: axe(p,'tour '+tg)
-            if n==2: p.keyboard.press('ArrowLeft');p.wait_for_timeout(300);ck('back works '+tg,p.evaluate("document.querySelector('.tr-n').textContent").startswith('1'));p.keyboard.press('ArrowRight');p.wait_for_timeout(300)
-            p.keyboard.press('Enter') if p.evaluate("document.activeElement?.dataset?.tr==='next'") else p.click('#tour [data-tr=next]')
-        ck('tour steps targets/onscreen '+tg,good and len(seen)==7,seen)
-        ck('done persisted '+tg,p.evaluate("localStorage.getItem('ir_tour_done')")=='done')
-        el=p.evaluate("(()=>{const e=document.elementFromPoint(innerWidth/2,innerHeight/2);return !e.closest('#tour')})()");ck('no blocker after '+tg,el)
-        p.reload();p.wait_for_timeout(2500);ck('not again on reload '+tg,p.locator('#tour').count()==0)
-        p.evaluate("window.__introEnd&&__introEnd(false)");p.wait_for_timeout(500)
-        p.click('#pmBtn');p.click('#uiTour');p.wait_for_selector('#tour .tr-card',timeout=8000);ck('replay '+tg,True)
-        p.keyboard.press('Escape');p.wait_for_timeout(300);ck('esc closes '+tg,p.locator('#tour').count()==0)
-        p.evaluate("localStorage.removeItem('ir_tour_done');Tour.start()");p.click('#tour [data-tr=skip]');ck('skip persists '+tg,p.evaluate("localStorage.getItem('ir_tour_done')")=='skipped')
-      cx.close()
   br.close()
 f=[n for n,c in R if not c];print(f"{len(R)-len(f)}/{len(R)} passed");print('FAILS',f)

@@ -35,27 +35,6 @@ function wire(el){el.querySelectorAll('[data-fbopen]').forEach(a=>a.onclick=e=>{
  el.querySelectorAll('.fx-btn,.fx-i').forEach(b=>b.addEventListener('click',()=>{const on=!b.parentElement.classList.contains('tip-on');el.querySelectorAll('.tip-on').forEach(x=>x.classList.remove('tip-on'));if(on)b.parentElement.classList.add('tip-on')}))}
 function emptyState(el){el.innerHTML=`<section class="fx-card fx-empty"><h2>Upload your resume to see your honest feedback</h2><p>We grade you against real, live internships. Nothing leaves this browser.</p><a class="btn pri" href="#profile" data-go="profile" id="fxUpload">Upload your resume</a></section>`}
 /* ---------- per-posting view ---------- */
-async function renderPosting(el,id,pr,P){const x=BYID.get(String(id));if(!x){window.FB_FOR=null;return renderOverall(el,pr,P)}
- try{await ensureDetail(x)}catch(_){}const row=slimRows().find(o=>String(o.id)===String(id))||{...x,industry:x.industry||x.category};
- let r=null;try{r=MatchCore.score(row,P,CFG,MW)}catch(_){}
- const back=`<p class="fx-back"><a href="#feedback" id="fxAll">← Your overall feedback</a></p>`;
- const head=`<h2 class="fx-ph">${E(x.title)} <span>at ${E(x.company)}</span></h2>`;
- if(!r||r.pct==null){el.innerHTML=`${back}<section class="fx-card">${head}<p>We can’t grade this one yet. ${r&&r.need&&r.need.length?'Add '+E(r.need.join(', '))+' to your profile to see it.':'The posting doesn’t give enough to grade against.'}</p></section>`;bindBack(el);return}
- const Q=quotes(pr),v=r.v143||{},bd=((r.feedback||{}).breakdown||[]);
- const bars=FACT.map(([k,label])=>{const b=bd.find(o=>o.k===k&&o.v!=null);return b?{label,v:Math.round(b.v),t:b.t||'',q:Q[k]}:null}).filter(Boolean);
- const gates=[];if(v.eligible===false)gates.push({ok:false,t:v.reason||'This posting has a hard requirement you don’t meet.'});
- if(x.gpa_min){const g=parseFloat(pr.gpa);gates.push(g?{ok:g>=+x.gpa_min,t:`Minimum GPA ${x.gpa_min}. Yours is ${pr.gpa}.`}:{ok:null,t:`Minimum GPA ${x.gpa_min}. Your profile has no GPA.`})}
- if((x.class_years||[]).length){gates.push(pr.classYear?{ok:x.class_years.includes(pr.classYear),t:`Open to ${x.class_years.join(', ')}. You are a ${pr.classYear}.`}:{ok:null,t:`Open to ${x.class_years.join(', ')}. Your profile has no class year.`})}
- if(x.sponsorship==='Not offered'||x.citizenship===true){const s=pr.sponsorship;gates.push({ok:s==='yes'?false:s==='no'?true:null,t:x.citizenship===true?'Requires US citizenship.':'Does not sponsor visas.'})}
- const tag=v.tag,tl=tag?TAGW[tag]:'Not eligible',say=v.eligible===false?'You can’t apply to this one as your profile stands.':tag==='safety'?'This is a realistic shot. Apply.':tag==='target'?'This is a fair shot, not a sure thing.':'This is a long shot. Apply only alongside safer picks.';
- el.innerHTML=`${back}<section class="fx-card fx-snap">${head}<div class="fx-top">${ring(r.pct,r.grade,'Your fit for this posting')}<div><p class="fx-tag"><span class="fx-chip fx-t-${tag||'ne'}">${tl}</span></p><p class="fx-say">${E(say)}</p></div></div></section>
- ${gates.length?`<section class="fx-card" aria-labelledby="h-gates"><h2 id="h-gates">Eligibility</h2><ul class="fx-gates">${gates.map(g=>`<li class="${g.ok===true?'ok':g.ok===false?'bad':'unk'}"><span aria-hidden="true">${g.ok===true?'✓':g.ok===false?'✗':'?'}</span> <span class="sr-only">${g.ok===true?'Met':g.ok===false?'Not met':'Unknown'}: </span>${E(g.t)}</li>`).join('')}</ul></section>`:''}
- ${bars.length?`<section class="fx-card" aria-labelledby="h-bars"><h2 id="h-bars">You vs. this posting</h2>${barsHTML(bars)}</section>`:''}
- <div class="fx-two">${cardsHTML('Working for you',(v.pos||[]).map(f=>({t:f.t,q:f.resume?`Your resume: ${f.resume}`:''})),'fx-str')}${cardsHTML('Working against you',(v.neg||[]).map(f=>({t:f.t,q:f.posting?`The posting: ${f.posting}`:''})),'fx-gap')}</div>
- ${(v.next||[]).length?`<section class="fx-card" aria-labelledby="h-next"><h2 id="h-next">Next steps</h2><ol class="fx-steps">${v.next.map(t=>`<li><b>${E(t)}</b></li>`).join('')}</ol></section>`:''}
- <p class="fx-note">${E((v.confidence||{}).note||'')}</p>`;
- bindBack(el);wire(el);animate(el)}
-function bindBack(el){const a=el.querySelector('#fxAll');if(a)a.onclick=e=>{e.preventDefault();window.FB_FOR=null;renderFeedback()}}
 /* ---------- overall view ---------- */
 async function renderOverall(el,pr,P){
  const rowsAll=slimRows().filter(x=>MSCORE.has(x.id));const inInt=P.industries.length?rowsAll.filter(x=>P.industries.includes(x.industry)):rowsAll;const rows=inInt.length?inInt:rowsAll;
@@ -100,5 +79,5 @@ window.renderFeedback=async function(){const el=$('fbBody');if(!el)return;el.cla
  if(!MatchCore.hasProfile(profile)){emptyState(el);return}
  el.dataset.ready='';el.innerHTML='<p class="fx-m fx-load">Grading you against every live internship…</p>';const t0=performance.now();
  await cfgReady;await MWready;if(!MSCORE.size)await rescore();const pr=profile,P=MatchCore.profile(pr);
- if(window.FB_FOR)await renderPosting(el,window.FB_FOR,pr,P);else await renderOverall(el,pr,P);window._fbMs=Math.round(performance.now()-t0);el.dataset.ready='1'};
+ await renderOverall(el,pr,P);window._fbMs=Math.round(performance.now()-t0);el.dataset.ready='1'};
 })();

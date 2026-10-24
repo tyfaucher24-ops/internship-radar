@@ -1,11 +1,11 @@
-/* V14.4: the parse from resume-worker.js goes straight into the profile; only the preferences step is asked. Re-uploads merge: a value the person already has is never overwritten. The difference is listed instead. */
+/* V14.5: the parse from resume-worker.js goes straight into the profile with no pop-up; preferences are set only on the profile page. Re-uploads merge: a value the person already has is never overwritten. The difference is listed instead. */
 (function(){
 const $r=id=>document.getElementById(id);
 const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const TYPES=(self.RDICT&&RDICT.TYPES)||[['Internship','Internship'],['Job','Job'],['Research assistant','Research'],['Project','Project'],['Club member','Club'],['Club leadership','Leadership'],['Volunteer','Volunteer']];
 const KIND=Object.fromEntries(TYPES);
-let ST=null,DONE=null,lastFocus=null;
+let ST=null,lastFocus=null;
 /* ---- worker result cache so onboarding's readFile → ingest(text) reuses the layout-aware parse ---- */
 const _readFile=window.readFile;
 window.readFile=async function(f){const r=await RI.analyze(f);window.__rvLast={text:r.text,res:r};return r.text};
@@ -30,9 +30,7 @@ function build(res){const R=res.result;const c=R.contact||{};const e=R.education
   <div class="rv-f"><label>End ${x.end?'':''}<input data-xk="end" type="month" value="${E(x.current?'':x.end)}"${x.current?' disabled':''}></label><label class="rv-inl"><input type="checkbox" data-xk="cur"${x.current?' checked':''}> Current</label></div></div></fieldset>`).join('');
  const sk=R.skills.hard.map(s=>s.name).join(', '),ce=R.certs.map(s=>s.name).join(', '),la=R.skills.languages.map(s=>s.name+(s.level?' ('+s.level+')':'')).join(', ');
  const ssrc=R.skills.hard.flatMap(s=>s.src||[]),csrc=R.certs.flatMap(s=>s.src||[]),lsrc=R.skills.languages.flatMap(s=>s.src||[]);
- return `<div class="mbox rv-box" role="document"><h2 id="rvH" tabindex="-1">Your preferences</h2>
- <p class="rv-priv">🔒 Your resume is read on your device and never uploaded. What we read goes straight into your profile, where you can edit anything.</p>
- <div class="rv-step" id="rvS1" hidden><div><section class="rv-cards">
+ return `<div class="mbox rv-box" role="document"> <div class="rv-step" id="rvS1" hidden><div><section class="rv-cards">
  <fieldset class="rv-card"${srcAttr(c.src)}><legend>Contact</legend><div class="rv-g">${fld('Name','name',c.name||'','high',c.src)}${fld('Email','email',c.email||'','high',c.src,{type:'email'})}${fld('Phone','phone',c.phone||'','high',c.src,{type:'tel'})}</div></fieldset>
  <fieldset class="rv-card"${srcAttr(e.src)}><legend>Education</legend><div class="rv-g">
  ${schoolSel?fld('School','school','',ed.school||'low',e.src,{mk:'<span class="rv-ck">Pick one</span>',select:[['','Pick your school…'],...e.candidates.map(n=>[n,n]),['__none','None of these']],help:`Your resume says “${E(e.schoolRaw)}”, which matches more than one school. Please pick yours.`}):fld('School','school',e.school||'',ed.school,e.src,{help:e.schoolRaw&&!e.school?`Your resume says “${E(e.schoolRaw)}”. We couldn’t match it to a school.`:''})}
@@ -47,21 +45,7 @@ function build(res){const R=res.result;const c=R.contact||{};const e=R.education
  ${fld('Work authorization','workAuth',authOf(R.workAuth&&R.workAuth.value),R.workAuth?'medium':'',R.workAuth&&R.workAuth.src,{select:[['','Not stated'],...Object.entries(AUTHL)],help:R.workAuth?`Your resume says: “${E(R.workAuth.raw)}”.`:'Only filled when your resume states it.'})}
  </fieldset></section></div>
  </div>
- <div class="rv-step" id="rvS2"><p class="rv-help">These aren’t on a resume, so we ask. You can change them later.</p>
- ${fld('Where do you want to work? (comma-separated)','locations',(PF.locations||[]).join(', ')||(c.location||''),c.location&&!(PF.locations||[]).length?'medium':'high',null,{ph:'e.g. New York, NY, Remote'})}
- ${fld('Industries you’re interested in (comma-separated)','industries',(PF.industries||[]).join(', '),'high',null,{ph:'e.g. Finance & Banking'})}
- ${fld('Roles you want (comma-separated)','interests',(PF.interests||[]).join(', '),'high',null,{ph:'e.g. Data analyst, Marketing'})}
- <div class="rv-g">${fld('Season','season',PF.season||'','high',null,{select:[['','Any season'],['Summer','Summer'],['Fall','Fall'],['Spring','Spring'],['Winter','Winter']]})}${fld('Year','seasonYear',PF.seasonYear||'','high',null,{select:[['','Any year'],...[0,1,2].map(i=>{const y=String(new Date().getFullYear()+i);return[y,y]})]})}</div>
- <label class="rv-inl"><input type="checkbox" id="rvRemote"${PF.remoteOK?' checked':''}> Remote roles are fine</label>
- <label class="rv-inl"><input type="checkbox" id="rvReloc"${PF.relocate?' checked':''}> I'm willing to relocate</label>
- <div class="rv-foot"><button type="button" class="btn gh" id="rvManual">Build manually instead</button><button type="button" class="btn gh" id="rvCancel">Cancel</button><button type="button" class="btn pri" id="rvOk">Save and see my profile</button></div></div></div>`}
-function close(v){const m=$r('rvDlg');if(m){m.remove();document.body.classList.remove('rv-open')}lastFocus&&lastFocus.focus&&lastFocus.focus();const d=DONE;DONE=null;d&&d(v)}
-function open(res){lastFocus=document.activeElement;$r('rvDlg')?.remove();ST=res;const m=document.createElement('div');m.className='modal wide rv-ov';m.id='rvDlg';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','rvH');
- m.innerHTML=build(res);document.body.appendChild(m);document.body.classList.add('rv-open');$r('rvH').focus();
- m.addEventListener('change',ev=>{if(ev.target.dataset.xk==='cur'){const en=ev.target.closest('.rv-exp').querySelector('[data-xk=end]');en.disabled=ev.target.checked;if(ev.target.checked)en.value=''}});
- m.addEventListener('keydown',ev=>{if(ev.key==='Escape')close(null);if(ev.key==='Tab'){const f=[...m.querySelectorAll('button,input,select,textarea,[tabindex="0"]')].filter(x=>!x.disabled&&x.offsetParent);if(!f.length)return;if(ev.shiftKey&&document.activeElement===f[0]){ev.preventDefault();f[f.length-1].focus()}else if(!ev.shiftKey&&document.activeElement===f[f.length-1]){ev.preventDefault();f[0].focus()}}});
- $r('rvCancel').onclick=()=>close(null);$r('rvManual').onclick=()=>{close(null);try{go('profile')}catch(_){}$r('cbSchool')?.querySelector('input')?.focus()};
- $r('rvOk').onclick=()=>{const v=collect(m);close(v);apply(v);try{go('profile')}catch(_){}}}
+ </div>`}
 function val(m,k){const e=m.querySelector(`[data-k="${k}"]`);return e?String(e.value||'').trim():''}
 const list=s=>String(s||'').split(/\s*[,;]\s*/).map(x=>x.trim()).filter(Boolean);
 function collect(m){const o={};['name','email','phone','school','degree','major','minor','gpa','gradDate','classYear','workAuth'].forEach(k=>o[k]=val(m,k));if(o.school==='__none')o.school='';
@@ -85,18 +69,21 @@ function apply(v){if(!v)return;pfRead();const diff=[];const conf=new Set(PF.conf
  const st=$r('rstat');if(st){st.innerHTML=`<div class="pf-review" role="status"><b>Profile updated from your resume.</b> Added ${addX} experience${addX===1?'':'s'}. ${diff.length?`We kept your values where they differ from the resume:<ul class="rv-diff">${diff.map(k=>`<li><b>${E(scal[k])}</b>: you have “${E(PF[k])}”, the resume says “${E(v[k])}”. <button type="button" class="btn small" data-rvuse="${k}">Use resume value</button></li>`).join('')}</ul>`:''}</div>`;
   st.querySelectorAll('[data-rvuse]').forEach(b=>b.onclick=()=>{const k=b.dataset.rvuse;PF[k]=v[k];if(k==='school'&&typeof SCHOOLS!=='undefined'&&SCHOOLS&&!SCHOOLS.includes(v.school))PF.schoolSrc='ipeds';pfRender();Store.set('profileDraft',PF);b.closest('li').innerHTML=`<b>${E(scal[k])}</b> now uses the resume value.`})}
 }
+/* V14.5: no pop-up. The parse fills the profile directly. Preferences (locations, industries, roles, season, remote, relocation) are never taken or guessed from a resume. */
+function fill(res){ST=res;const m=document.createElement('div');m.innerHTML=build(res);const v=collect(m);
+ Object.assign(v,{locations:[],industries:[],interests:[],season:'',seasonYear:'',remoteOK:false,relocate:false});apply(v);return v}
 async function fromSource(src,label){const st=$r('rstat');if(st)st.textContent='Reading '+label+' on your device…';
  try{const res=(typeof src==='string'&&window.__rvLast&&window.__rvLast.text===src)?window.__rvLast.res:await RI.analyze(src);window.__rvLast=null;if(st)st.textContent='';
-  Store.set('resumeText',String(res.text||'').slice(0,30000));return await new Promise(ok=>{DONE=ok;open(res)})}
+  Store.set('resumeText',String(res.text||'').slice(0,30000));return fill(res)}
  catch(err){if(st)st.textContent='Could not read that: '+err.message+' You can paste the text instead, or build your profile manually.';throw err}}
-window.RVU={fromSource,open,apply,
+window.RVU={fromSource,fill,apply,
  paste(){lastFocus=document.activeElement;const m=document.createElement('div');m.className='modal rv-ov';m.id='rvPaste';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','rvPH');
   m.innerHTML=`<div class="mbox"><h2 id="rvPH">Paste your resume text</h2><p class="rv-priv">🔒 Read on your device, never uploaded.</p><label for="rvPT">Resume text</label><textarea id="rvPT" rows="12"></textarea><div class="rv-foot"><button type="button" class="btn gh" id="rvPC">Cancel</button><button type="button" class="btn pri" id="rvPG">Read it</button></div></div>`;
   document.body.appendChild(m);$r('rvPT').focus();const done=()=>{m.remove();lastFocus&&lastFocus.focus()};$r('rvPC').onclick=done;m.addEventListener('keydown',e=>{if(e.key==='Escape')done()});
   $r('rvPG').onclick=()=>{const t=$r('rvPT').value;if(t.trim().length<40){$r('rvPT').setAttribute('aria-invalid','true');return}m.remove();fromSource(t,'your text').catch(()=>{})}},
  del(){['resumeText','resume','resumeParse'].forEach(k=>Store.remove(k));window.__rvLast=null;if(typeof PF!=='undefined'){delete PF.resumeConfirmedAt;Store.set('profileDraft',PF)}const st=$r('rstat');if(st)st.textContent='Your resume data was deleted from this device. Fields you confirmed stay on your profile until you edit or reset them.'}};
 /* hooks: profile upload, LinkedIn PDF/text and onboarding all fill the profile directly */
-readIn=async file=>{try{await fromSource(file,file.name)}catch(_){}};
+readIn=async file=>{try{await fromSource(file,file.name);if(typeof saveAndSearch==='function'&&!$r('t-profile').hidden)await saveAndSearch()}catch(_){}};
 ingest=async text=>{try{await fromSource(String(text||''),'your text')}catch(_){}};
 function mountBar(){const d=$r('pfDrop');if(!d||$r('rvBar'))return;const b=document.createElement('div');b.id='rvBar';b.className='rv-bar';
  b.innerHTML=`<p class="rv-priv">🔒 Your resume is read on your device and never uploaded.</p><div class="rv-acts"><button type="button" class="btn gh small" id="rvPasteBtn">Paste text instead</button><button type="button" class="btn gh small" id="rvDelBtn">Delete my resume data</button></div>`;
@@ -105,10 +92,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 /* V14.3: auto-grow textareas (fallback where field-sizing is unsupported) */
 (function(){if(CSS.supports&&CSS.supports('field-sizing','content'))return;const g=t=>{t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'};document.addEventListener('input',e=>{const t=e.target;if(t.tagName==='TEXTAREA'&&t.closest('#t-profile,.rv-box'))g(t)})})();
-/* V14.3 §5: "Why this grade" in the listing detail: reach/target/safety, Not-eligible reason, top 3 for/against with quotes, next steps, confidence */
+/* V14.3 §5: "How you match this posting" in the listing detail: reach/target/safety, Not-eligible reason, top 3 for/against with quotes, next steps, confidence */
 (function(){if(typeof fbPanel!=='function')return;const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const _fb=fbPanel;
  const TAG={safety:'Safety',target:'Target',reach:'Reach'};
  const fx=f=>`<li><strong>${E(f.t)}</strong>${f.resume?`<br><span class="v143-q">Your resume: ${E(f.resume)}</span>`:''}${f.posting?`<br><span class="v143-q">The posting: ${E(f.posting)}</span>`:''}</li>`;
  fbPanel=function(d){const base=_fb(d);const v=d&&d.v143;if(!v)return base;
   const head=v.eligible?`<p class="v143-tag"><span class="v143-chip v143-${v.tag}">${TAG[v.tag]||''}</span> Fit × chance: ${v.fitXchance} of 100</p>`:`<p class="v143-ne"><strong>Not eligible:</strong> ${E(v.reason)}</p>`;
-  return base+`<section class="v143" aria-label="Why this grade"><h4>Why this grade</h4>${head}<div class="v143-cols">${v.pos.length?`<div><h5>Working for you</h5><ul>${v.pos.map(fx).join('')}</ul></div>`:''}${v.neg.length?`<div><h5>Working against you</h5><ul>${v.neg.map(fx).join('')}</ul></div>`:''}</div>${v.next.length?`<h5>Next steps</h5><ul>${v.next.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`:''}<p class="v143-conf">${E(v.confidence.note)}</p></section>`}})();
+  return base+`<section class="v143" aria-label="How you match this posting"><h4>How you match this posting</h4>${head}<div class="v143-cols">${v.pos.length?`<div><h5>Working for you</h5><ul>${v.pos.map(fx).join('')}</ul></div>`:''}${v.neg.length?`<div><h5>Working against you</h5><ul>${v.neg.map(fx).join('')}</ul></div>`:''}</div>${v.next.length?`<h5>Next steps</h5><ul>${v.next.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`:''}<p class="v143-conf">${E(v.confidence.note)}</p></section>`}})();

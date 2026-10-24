@@ -1,8 +1,4 @@
-/* V14.4 Honest feedback redesign + "Why this grade?" links */
-.c-why{margin:2px 0 0;min-height:22px;font-size:14px;line-height:22px}
-.why-g{color:var(--c-pri-ink,#3b2fc9);text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:normal}
-.why-g:hover{text-decoration-thickness:2px}
-.why-d{margin:10px 0 0;font-size:15px}
+/* V14.4 Honest feedback redesign */
 .sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0;padding:0}
 #fbBody{min-height:60vh}
 .fx-card{background:var(--c-surface);border:1px solid var(--c-line);border-radius:14px;padding:22px 24px;margin:0 0 16px;color:var(--c-ink)}
@@ -15,7 +11,6 @@
 .fx-kicker{margin:0 0 4px;font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--c-mut)}
 .fx-say{font-size:1.15rem;font-weight:600;line-height:1.4;margin:0}
 .fx-ph{font-size:1.2rem!important}.fx-ph span{font-weight:500;color:var(--c-mut)}
-.fx-back{margin:0 0 12px}
 .fx-ring{position:relative;width:132px;height:132px;flex:0 0 132px}
 .fx-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
 .fx-ring circle{fill:none;stroke-width:11}
@@ -56,17 +51,12 @@ html.dark .fx-str .fx-list li{border-color:#3fbf8f}html.dark .fx-gap .fx-list li
 .fx-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .fx-tier{border:1px solid var(--c-line);border-radius:12px;padding:14px;text-align:center;background:var(--c-bg-2)}
 .fx-tier b{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}.fx-tier span{font-weight:600}
-.fx-links{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}.fx-links a,.fx-best a,.fx-back a{color:var(--c-pri-ink,#3b2fc9);font-weight:600}
+.fx-links{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0}.fx-links a,.fx-best a{color:var(--c-pri-ink,#3b2fc9);font-weight:600}
 .fx-best{padding-left:22px;line-height:1.6}
-.fx-gates{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.fx-gates li.ok span[aria-hidden]{color:#1f7a4d}.fx-gates li.bad span[aria-hidden]{color:#b42318}
-html.dark .fx-gates li.ok span[aria-hidden]{color:#3fbf8f}html.dark .fx-gates li.bad span[aria-hidden]{color:#f2766b}
-.fx-t-safety{background:var(--c-green-soft)}.fx-t-target{background:var(--c-blue-soft)}.fx-t-reach,.fx-t-ne{background:var(--c-amber-soft)}
+html.dark .fx-t-safety{background:var(--c-green-soft)}.fx-t-target{background:var(--c-blue-soft)}.fx-t-reach,.fx-t-ne{background:var(--c-amber-soft)}
 .fx-note{color:var(--c-mut);font-size:.9rem}
 .fx-empty{text-align:center;padding:40px 24px}
 @media (max-width:700px){.fx-two{grid-template-columns:1fr}.fx-card{padding:18px 16px}.fx-btn{grid-template-columns:1fr 3.2ch;row-gap:6px}.fx-track{grid-column:1/-1}.fx-ring{width:112px;height:112px;flex-basis:112px}.fx-tiers{gap:8px}.fx-flag .fx-k{width:auto}}
 @media (prefers-reduced-motion:reduce){.fx-fill,.fx-ring-fg,.fx-tip{transition:none!important}}
 /* 390px: four nav items plus bell and theme no longer fit beside the brand; give the nav its own row */
 @media (max-width:480px){#hdr .hd{flex-wrap:wrap!important;row-gap:2px}#hdr .brand{flex:1 0 100%}#hdr .nav{margin-left:0!important;width:100%;justify-content:space-between}}
-/* Graded cards carry the Why this grade? line: 31px taller, matching ROWH in app.js */
-body.graded #vl .card,body.graded .grid .card{height:353px}

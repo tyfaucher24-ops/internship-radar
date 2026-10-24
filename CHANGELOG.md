@@ -1,6 +1,13 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.5 (no "Why this grade?", no preferences pop-up, per specs/V14.5.md) (2026-10-24)
+- "Why this grade?" is removed from every internship card and from the detail panel. Cards are back to the V13.3 layout: logo and name, a title of up to 2 lines, location and deadline, grade, and Apply and Save side by side on the bottom row. All cards are the same height (322px when graded) and no button is clipped at any width. The panel's match section is now headed "How you match this posting".
+- The per-posting feedback view and its code are removed. The Feedback page stays in the nav.
+- The "Your preferences" pop-up is gone. A resume upload fills your profile and goes straight to the homepage with your matches graded. Manual build does the same. Preferences (locations, industries, roles, season, remote, relocation) are never taken or guessed from a resume. They stay optional, are edited only on the profile page, and when unset nothing is filtered or boosted.
+- Light mode is the default again for first-time visitors. An explicit choice wins, and a device set to dark mode is followed.
+- Grader accuracy unchanged at 91.8%. New test: tests/test_v145_cards_prefs.py. tests/test_v144_feedback.py no longer checks card links or the per-posting view.
+
 ## V14.4 (Honest Feedback page, no tutorial, no review screen, per specs/V14.4.md) (2026-10-24)
 - The tutorial is gone: tour.js and its styles are deleted, and old ir_tour* keys are cleared from browsers that saw it.
 - The "check what we read" review screen is gone. A resume upload asks only what a resume can't tell us (locations, industries, roles, season, remote, relocation), then goes straight to your filled-in profile, where everything stays editable. The "Check this" and "Not found" flags are removed.

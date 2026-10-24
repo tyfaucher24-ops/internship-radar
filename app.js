@@ -28,7 +28,7 @@ function saveBtn(x){if(x.st==='upcoming'){const on=Store.get('notify',[]).includ
 function cardHTML(x){const c=closeLbl(x);return`<div class="card${x.st==='closed'?' isclosed':''}" role="listitem" tabindex="0" data-id="${esc(x.id)}" aria-label="${esc(x.company+', '+x.title)}">
  <div class="c-top">${logoHTML(x)}<div class="c-co" title="${esc(x.company)}">${esc(x.company)}</div></div>
  <h2 class="c-role" title="${esc(x.title)}">${esc(x.title)}</h2>${x.degree?`<span class="dgb" title="Aimed at ${esc(x.degree)} students">${esc(x.degree)}</span>`:''}
- <p class="c-loc" title="${esc(locFull(x))}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>${esc(locShort(x))}</p>${x.st!=='closed'?`<p class="c-ver">${x.lv?'Verified '+ago(x.lv):'Not verified yet'}</p>`:''}${(MSCORE.size||UNGR.size)?`<p class="c-verd">${mbadge(x)}</p>${MSCORE.has(x.id)?`<p class="c-why"><a href="#feedback" class="why-g" data-why="${esc(x.id)}">Why this grade?</a></p>`:'<p class="c-why" aria-hidden="true"></p>'}`:''}
+ <p class="c-loc" title="${esc(locFull(x))}"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>${esc(locShort(x))}</p>${x.st!=='closed'?`<p class="c-ver">${x.lv?'Verified '+ago(x.lv):'Not verified yet'}</p>`:''}${(MSCORE.size||UNGR.size)?`<p class="c-verd">${mbadge(x)}</p>`:''}
  <div class="c-foot"><span class="dl dl-${c.c}"${c.b?` title="${esc(c.b)}"`:''}>${c.c==='red'||c.c==='amber'?'<span class="pulse dn" aria-hidden="true"></span>':''}${esc(c.t)}</span>${grpBtn(x)}</div><div class="c-act">${applyBtn(x)||'<span class="c-noap" title="No job-specific link confirmed yet">No direct link yet</span>'}${saveBtn(x)}</div></div>`}
 function grpBtn(x){const e=GRP.get(x.id);if(!e||e.n<2||e.ids[0]!==x.id)return'';const o=GEXP.has(e.k);return`<button type="button" class="grp" data-grp="${esc(e.k)}" aria-expanded="${o}" title="${o?'Hide':'Show'} ${e.n-1} similar role${e.n>2?'s':''} at ${esc(x.company)}">${o?"Hide":`+${e.n-1} similar`}</button>`}
 const card=(x,extra='')=>cardHTML(x).replace('<div class="c-foot">',extra?`<div class="c-extra">${extra}</div><div class="c-foot">`:'<div class="c-foot">');
@@ -172,7 +172,7 @@ $('sort').onchange=e=>{F.sort=e.target.value;Store.set('sortPicked',true);update
 /* ---------- windowed card grid (rows of N cards; only visible rows are in the DOM) ---------- */
 let lastRange='',animateNext=false;
 const gridCols=()=>innerWidth>=1100?3:innerWidth>=700?2:1;
-const ROWH=()=>(innerWidth>=700?316:306)+((MSCORE.size||UNGR.size)?61:0);/* V14.4: +31 for the Why this grade? line */
+const ROWH=()=>(innerWidth>=700?316:306)+((MSCORE.size||UNGR.size)?30:0);
 function vrender(force){document.body.classList.toggle('graded',!!(MSCORE.size||UNGR.size));const vl=$('vl');if($('t-db').hidden)return;const n=gridCols(),rh=ROWH(),rows=Math.ceil(RES.length/n);vl.style.height=rows*rh+'px';vl.style.setProperty('--cols',n);
  const top=vl.getBoundingClientRect().top+scrollY,vh=innerHeight;const s=Math.max(0,Math.floor((scrollY-top)/rh)-3),e=Math.min(rows,Math.ceil((scrollY-top+vh)/rh)+3);
  const key=s+':'+e+':'+RES.length+':'+n;if(!force&&key===lastRange)return;

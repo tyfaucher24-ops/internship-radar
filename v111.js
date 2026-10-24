@@ -20,7 +20,7 @@ const dc=$('dCount');if(dc)new MutationObserver(()=>{const v=dc.textContent;if(/
 /* market stats roll in when the panel opens */
 document.addEventListener('click',e=>{if(!e.target.closest('#tkMarket'))return;setTimeout(()=>document.querySelectorAll('.mk-s b').forEach(b=>{const m=b.textContent.match(/^(\D*?)([\d,]+)$/);if(!m)return;const n=+m[2].replace(/,/g,'');b.textContent=m[1];const sp=document.createElement('span');b.appendChild(sp);roll(sp,0);requestAnimationFrame(()=>requestAnimationFrame(()=>roll(sp,n)))}),30)});
 /* ---- theme + colour-blind toggles (menu) ---- */
-const H=document.documentElement,P=(()=>{try{return JSON.parse(localStorage.getItem('ir_ui')||'{}')}catch(e){return {}}})();if(P.theme!=='light')P.theme='dark';/* V12.1: dark is the default for first-time visitors */
+const H=document.documentElement,P=(()=>{try{return JSON.parse(localStorage.getItem('ir_ui')||'{}')}catch(e){return {}}})();if(P.theme!=='light'&&P.theme!=='dark')P.theme=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';/* V14.5: light is the default; an explicit choice wins, and an OS set to dark is followed */
 function apply(){H.classList.toggle('dark',P.theme==='dark');H.classList.toggle('cb',!!P.cb);const t=$('uiTheme'),c=$('uiCb');
  if(t){t.textContent=P.theme==='dark'?'☀ Light mode':'☾ Dark mode';t.setAttribute('aria-pressed',P.theme==='dark')}if(c){c.textContent='Colour-blind grades: '+(P.cb?'On':'Off');c.setAttribute('aria-pressed',!!P.cb)}
  const tg=$('thTog');if(tg){const l=P.theme==='dark'?'Switch to light mode':'Switch to dark mode';tg.setAttribute('aria-label',l);tg.title=l;tg.setAttribute('aria-pressed',P.theme==='light')}

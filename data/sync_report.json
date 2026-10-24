@@ -1,5 +1,5 @@
 {
- "at": "2026-10-24T19:50:06Z",
+ "at": "2026-10-24T22:14:54Z",
  "open_visible": 11056,
  "fixes": {
   "city_dropped_unverifiable": 148,
@@ -173,10 +173,10 @@
    "issue": "company looks like a job title"
   }
  ],
- "added": 1,
+ "added": 0,
  "removed": 41,
  "changed": 0,
- "previous_open": 11096,
+ "previous_open": 11097,
  "events": {
   "new": 0,
   "deadline": 0,

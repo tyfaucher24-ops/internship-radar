@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T19:34:26Z",
+ "updated": "2026-10-24T21:59:36Z",
  "listings_by_source_type": {
   "ats": 9730,
   "manual": 66,
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35305,
+   "postings": 35307,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13644,
+   "postings": 13640,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 178,
-   "postings": 8731,
+   "postings": 8732,
    "errors": [
     "CALSTART (calstart): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/calstart?mode=json",
     "Saronic (saronic): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/saronic?mode=json"
@@ -76,7 +76,7 @@
  "stats": {
   "ats_no": 39805,
   "ats_ambiguous": 488,
-  "ats_non-US": 15290,
+  "ats_non-US": 15289,
   "ats_ok": 2097,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,

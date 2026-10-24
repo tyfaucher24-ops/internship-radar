@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-24T17:02:01Z",
+ "updated": "2026-10-24T19:34:26Z",
  "listings_by_source_type": {
-  "ats": 9729,
+  "ats": 9730,
   "manual": 66,
   "github-verified": 1369
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35304,
+   "postings": 35305,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13615,
+   "postings": 13644,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -71,17 +71,16 @@
  "pct_verified_24h": 18.1,
  "stale": 9145,
  "duplicate_rate_pct": 8.6,
- "review_queue": 487,
+ "review_queue": 488,
  "deadline_coverage_pct": 17.5,
  "stats": {
-  "ats_no": 39791,
-  "ats_ambiguous": 487,
-  "ats_non-US": 15276,
-  "ats_ok": 2096,
+  "ats_no": 39805,
+  "ats_ambiguous": 488,
+  "ats_non-US": 15290,
+  "ats_ok": 2097,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
-  "kept_list_unreadable": 1369,
-  "closed_this_sync": 1
+  "kept_list_unreadable": 1369
  },
  "by_category": {
   "Engineering & Hardware": 1739,
@@ -98,7 +97,7 @@
   "Consulting & Strategy": 155,
   "Government & Policy": 98,
   "Nonprofit & Education": 88,
-  "Business & Operations": 494,
+  "Business & Operations": 495,
   "Real Estate": 57,
   "HR & People": 177,
   "Quant & Trading": 159,
@@ -109,7 +108,7 @@
  "by_state": {
   "OH": 513,
   "NC": 411,
-  "CA": 2339,
+  "CA": 2340,
   "MO": 195,
   "KY": 140,
   "GA": 367,
@@ -161,10 +160,10 @@
   "VT": 52
  },
  "by_size": {
-  "not listed": 11164
+  "not listed": 11165
  },
  "remote": 360,
- "closed_this_sync": 1,
+ "closed_this_sync": 0,
  "gap_report": {
   "categories_under_25": [
    "Research"

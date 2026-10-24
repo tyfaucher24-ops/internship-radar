@@ -1,28 +1,22 @@
 {
- "updated": "2026-10-24T17:02:01Z",
- "open": 11055,
- "open_all": 11055,
+ "updated": "2026-10-24T19:34:26Z",
+ "open": 11056,
+ "open_all": 11056,
  "closing_this_week": 577,
  "upcoming": 1606,
  "companies_tracked": 2497,
  "companies_with_listings": 1462,
- "duration_s": 235,
+ "duration_s": 269,
  "apply_links": {
-  "at": "2026-10-24T17:05:58+00:00",
-  "open": 11220,
-  "direct": 9750,
+  "at": "2026-10-24T19:38:56+00:00",
+  "open": 11221,
+  "direct": 9751,
   "posting": 1341,
   "none": 129,
-  "checked_this_run": 8676,
-  "ok": 8522,
-  "unknown": 153,
-  "failed": 1,
-  "top_failing_hosts": [
-   [
-    "pg.wd5.myworkdayjobs.com",
-    1
-   ]
-  ],
+  "checked_this_run": 8142,
+  "ok": 8009,
+  "unknown": 133,
+  "top_failing_hosts": [],
   "top_fallback_hosts": [
    [
     "zapply.jobs",
@@ -65,7 +59,7 @@
     24
    ]
   ],
-  "validated_within_24h": 9065
+  "validated_within_24h": 9021
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

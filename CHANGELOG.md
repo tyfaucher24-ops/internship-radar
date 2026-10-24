@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V14.6 (profile entries show full text, per specs/V14.6.md) (2026-10-24)
+- Profile page: no truncation anywhere. Experience titles, organizations, dates and bullets, plus school, major, skills and other chips, wrap in full at every width. There are no ellipses or line clamps, and long words break cleanly.
+- The profile columns no longer have fixed-height inner scrolling or a bottom fade that hid content. They grow with their content and the page scrolls.
+- Edit fields grow to fit: Title and Organization are now auto-growing one-line fields (Enter does not add a line), and every growing field re-measures when its width changes or the LinkedIn box opens. The 400px cap is removed.
+- Fixed: the experience edit fields (Title, Organization, What you did) were invisible because they shared the card grid's "grow" class.
+- Fixed: the "one point per line" hint now meets AA contrast.
+- Card titles keep the 2-line clamp with "…" (an exception Ty approved). The full title is in the hover title and the detail panel.
+- Grader accuracy unchanged at 91.8%. New test: tests/test_v146_profile_full.py.
+
 ## V14.5 (no "Why this grade?", no preferences pop-up, per specs/V14.5.md) (2026-10-24)
 - "Why this grade?" is removed from every internship card and from the detail panel. Cards are back to the V13.3 layout: logo and name, a title of up to 2 lines, location and deadline, grade, and Apply and Save side by side on the bottom row. All cards are the same height (322px when graded) and no button is clipped at any width. The panel's match section is now headed "How you match this posting".
 - The per-posting feedback view and its code are removed. The Feedback page stays in the nav.

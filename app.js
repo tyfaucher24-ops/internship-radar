@@ -381,7 +381,7 @@ const ymLabel=v=>v==='present'?'Present':v?`${LISTS.MONTHS[+v.slice(5)-1]?.slice
 function expHTML(e,i){const sum=[e.title||'Untitled',e.org].filter(Boolean).join(' · '),dt=[ymLabel(e.start),ymLabel(e.end||(e.start?'present':''))].filter(Boolean).join(' – ');
  return`<div class="pf-exp${i===OPENEXP?' open':''}" data-i="${i}"><button type="button" class="pf-expsum" data-tog="${i}" aria-expanded="${i===OPENEXP}"><span class="pf-kind">${esc(e.kind||'Job')}</span><span class="pf-et">${esc(sum)}</span><span class="pf-ed muted">${esc(dt||'Add dates')}</span></button>
  ${i===OPENEXP?`<div class="pf-expbody"><div class="pf-f"><span class="pf-lab">Type</span><div class="cbx" data-c="kind"></div></div>
- <label class="pf-l">Title<input data-e="title" value="${esc(e.title||'')}" placeholder="e.g. Sales Associate"></label><label class="pf-l">Organization<input data-e="org" value="${esc(e.org||'')}" placeholder="e.g. Target"></label>
+ <label class="pf-l">Title<textarea class="grow one" data-e="title" rows="1" placeholder="e.g. Sales Associate">${esc(e.title||'')}</textarea></label><label class="pf-l">Organization<textarea class="grow one" data-e="org" rows="1" placeholder="e.g. Target">${esc(e.org||'')}</textarea></label>
  <div class="pf-row2"><div class="pf-f"><span class="pf-lab">Start</span><div class="cbx" data-c="start"></div></div><div class="pf-f"><span class="pf-lab">End</span><div class="cbx" data-c="end"></div></div></div>
  <label class="pf-l">What you did <small>one point per line</small><textarea class="grow" data-e="bullets" rows="3" placeholder="e.g. Trained 4 new hires&#10;Cut checkout wait time by 20%">${esc((e.bullets||[]).join('\n'))}</textarea></label>
  <div class="pf-expfoot"><button type="button" class="link" data-delexp="${i}">Remove</button><button type="button" class="btn-ghost btn-sz sm" data-tog="${i}">Done</button></div></div>`:''}</div>`}
@@ -399,6 +399,7 @@ function pfProgress(){const items=[['school',!!PF.school],['major',!!PF.major],[
 let pfT;function pfDraft(){clearTimeout(pfT);pfT=setTimeout(()=>{pfRead();Store.set('profileDraft',PF);pfProgress();$('pfMsg').textContent='Draft saved'},250)}
 function profileInit(){const f=$('pf');pfMake();pfRender();
  f.addEventListener('change',e=>{if(e.target.name==='remoteOK'||e.target.name==='relocate')pfDraft()});
+ $('expList').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('textarea.one'))e.preventDefault()});
  $('expList').addEventListener('input',e=>{const t=e.target.closest('[data-e]');if(!t)return;const i=+t.closest('.pf-exp').dataset.i,ex=PF.experience[i];if(t.dataset.e==='bullets')ex.bullets=t.value.split('\n').map(s=>s.replace(/^[•\-–*]\s*/,'').trim()).filter(Boolean);else ex[t.dataset.e]=t.value;
   const sm=t.closest('.pf-exp').querySelector('.pf-et');if(sm)sm.textContent=[ex.title||'Untitled',ex.org].filter(Boolean).join(' · ');pfDraft()});
  $('expList').addEventListener('click',e=>{const tg=e.target.closest('[data-tog]');if(tg){const i=+tg.dataset.tog;OPENEXP=OPENEXP===i?-1:i;expRender();const d=$('expList').querySelector('.pf-exp.open [data-e=title]');d&&d.focus();if(OPENEXP<0)$('expList').querySelector(`[data-tog="${i}"]`)?.focus();return}

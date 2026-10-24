@@ -80,6 +80,6 @@ function list(host,o){const st={multi:true,value:[...(o.value||[])],label:o.labe
  st.pick=v=>{const i=st.value.indexOf(v);if(i>=0)st.value.splice(i,1);else{if(o.single)st.value=[];st.value.push(v)}o.onChange&&o.onChange([...st.value])};
  host.classList.add('cb-inline');const L=makeList(host,st);L.build();return{get value(){return[...st.value]},set(v){st.value=[...v];L.build()},focus:()=>L.inp.focus({preventScroll:true}),inp:L.inp,rebuild(){raw=null;L.build()}}}
 /* auto-growing textareas */
-function autogrow(root){(root||document).querySelectorAll('textarea.grow').forEach(t=>{if(t._g)return;t._g=1;const f=()=>{t.style.height='auto';t.style.height=Math.min(400,t.scrollHeight+2)+'px'};t.addEventListener('input',f);requestAnimationFrame(f)})}
+function autogrow(root){(root||document).querySelectorAll('textarea.grow').forEach(t=>{if(t._g)return;t._g=1;const f=()=>{t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'};t.addEventListener('input',f);requestAnimationFrame(f);const dt=t.closest('details');dt&&dt.addEventListener('toggle',()=>dt.open&&f());if(window.ResizeObserver){let w=0;new ResizeObserver(()=>{const n=t.clientWidth;if(n&&n!==w){w=n;f()}}).observe(t)}})}
 G.Combo={field,list,autogrow,norm:nrm,filter:(opts,q)=>filter(opts.map(prep),q,false),lastSearchMs:0};
 })(window);

@@ -1,33 +1,53 @@
 {
- "updated": "2026-10-24T00:05:36Z",
- "open": 11055,
- "open_all": 11055,
+ "updated": "2026-10-24T05:37:56Z",
+ "open": 11054,
+ "open_all": 11054,
  "closing_this_week": 577,
- "upcoming": 1604,
+ "upcoming": 1606,
  "companies_tracked": 2497,
  "companies_with_listings": 1462,
- "duration_s": 234,
+ "duration_s": 222,
  "apply_links": {
-  "at": "2026-10-24T00:09:31+00:00",
-  "open": 11220,
-  "direct": 9889,
-  "posting": 1213,
-  "none": 118,
-  "checked_this_run": 8325,
-  "ok": 8167,
-  "unknown": 138,
-  "failed": 20,
+  "at": "2026-10-24T05:41:40+00:00",
+  "open": 11219,
+  "direct": 9881,
+  "posting": 1209,
+  "none": 129,
+  "checked_this_run": 8147,
+  "ok": 7994,
+  "unknown": 135,
+  "failed": 18,
   "top_failing_hosts": [
    [
     "zapply.jobs",
-    18
+    9
    ],
    [
-    "careersus-shure.icims.com",
+    "firstnational.wd12.myworkdayjobs.com",
+    3
+   ],
+   [
+    "careers-gdeb.icims.com",
     1
    ],
    [
-    "apply.workable.com",
+    "careers.hrblock.com",
+    1
+   ],
+   [
+    "hmhw.wd12.myworkdayjobs.com",
+    1
+   ],
+   [
+    "wilburellis.wd12.myworkdayjobs.com",
+    1
+   ],
+   [
+    "andersen.wd12.myworkdayjobs.com",
+    1
+   ],
+   [
+    "greatamerica.wd12.myworkdayjobs.com",
     1
    ]
   ],
@@ -73,7 +93,7 @@
     24
    ]
   ],
-  "validated_within_24h": 9034
+  "validated_within_24h": 9036
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

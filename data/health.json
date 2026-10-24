@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-24T00:05:36Z",
+ "updated": "2026-10-24T05:37:56Z",
  "listings_by_source_type": {
-  "ats": 9729,
+  "ats": 9728,
   "manual": 66,
   "github-verified": 1369
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35282,
+   "postings": 35287,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13639,
+   "postings": 13643,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,35 +61,35 @@
   "lever": {
    "boards": 180,
    "ok": 178,
-   "postings": 8728,
+   "postings": 8731,
    "errors": [
     "CALSTART (calstart): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/calstart?mode=json",
     "Saronic (saronic): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/saronic?mode=json"
    ]
   }
  },
- "pct_verified_24h": 87.4,
- "stale": 1407,
+ "pct_verified_24h": 18.0,
+ "stale": 9150,
  "duplicate_rate_pct": 8.6,
  "review_queue": 488,
  "deadline_coverage_pct": 17.5,
  "stats": {
-  "ats_no": 39783,
+  "ats_no": 39792,
   "ats_ambiguous": 488,
-  "ats_non-US": 15282,
-  "ats_ok": 2096,
+  "ats_non-US": 15286,
+  "ats_ok": 2095,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
   "kept_list_unreadable": 1369,
-  "closed_this_sync": 4
+  "closed_this_sync": 1
  },
  "by_category": {
   "Engineering & Hardware": 1739,
   "Accounting & Audit": 455,
-  "Software & IT": 2245,
+  "Software & IT": 2246,
   "Data & AI": 1003,
-  "Product Management": 113,
-  "Other": 1857,
+  "Product Management": 112,
+  "Other": 1856,
   "Healthcare & Life Sciences": 395,
   "Supply Chain & Logistics": 312,
   "Marketing & Sales": 618,
@@ -109,13 +109,13 @@
  "by_state": {
   "OH": 513,
   "NC": 411,
-  "CA": 2340,
+  "CA": 2339,
   "MO": 195,
   "KY": 140,
   "GA": 367,
   "PR": 13,
   "IA": 228,
-  "NY": 1146,
+  "NY": 1145,
   "CT": 172,
   "OR": 111,
   "UT": 147,
@@ -161,10 +161,10 @@
   "VT": 52
  },
  "by_size": {
-  "not listed": 11164
+  "not listed": 11163
  },
  "remote": 360,
- "closed_this_sync": 4,
+ "closed_this_sync": 1,
  "gap_report": {
   "categories_under_25": [
    "Research"

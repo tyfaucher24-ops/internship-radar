@@ -5898,6 +5898,7 @@
 "src": "gstatic"
 },
 "Gorbel": {
+"board_tried": true,
 "domain": "gorbel.com",
 "domain_src": "clearbit",
 "why": "too light to see on white"

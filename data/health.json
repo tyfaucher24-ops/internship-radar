@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T05:37:56Z",
+ "updated": "2026-10-24T09:10:34Z",
  "listings_by_source_type": {
   "ats": 9728,
   "manual": 66,
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35287,
+   "postings": 35293,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13643,
+   "postings": 13644,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -74,22 +74,21 @@
  "review_queue": 488,
  "deadline_coverage_pct": 17.5,
  "stats": {
-  "ats_no": 39792,
+  "ats_no": 39796,
   "ats_ambiguous": 488,
-  "ats_non-US": 15286,
+  "ats_non-US": 15289,
   "ats_ok": 2095,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
-  "kept_list_unreadable": 1369,
-  "closed_this_sync": 1
+  "kept_list_unreadable": 1369
  },
  "by_category": {
   "Engineering & Hardware": 1739,
   "Accounting & Audit": 455,
-  "Software & IT": 2246,
+  "Software & IT": 2245,
   "Data & AI": 1003,
   "Product Management": 112,
-  "Other": 1856,
+  "Other": 1857,
   "Healthcare & Life Sciences": 395,
   "Supply Chain & Logistics": 312,
   "Marketing & Sales": 618,
@@ -115,7 +114,7 @@
   "GA": 367,
   "PR": 13,
   "IA": 228,
-  "NY": 1145,
+  "NY": 1146,
   "CT": 172,
   "OR": 111,
   "UT": 147,
@@ -164,7 +163,7 @@
   "not listed": 11163
  },
  "remote": 360,
- "closed_this_sync": 1,
+ "closed_this_sync": 0,
  "gap_report": {
   "categories_under_25": [
    "Research"

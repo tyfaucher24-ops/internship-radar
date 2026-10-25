@@ -1,6 +1,17 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V15.1 (V15 misses: answer key, gold pairs, top-10 relevance) (2026-10-24)
+- The persona answer key was re-derived under one written rule set (tests/grader/rekey_v151.py). K1: school credit only where the spec gives it weight. K2: no relevant internship means no A in any field. K3 was checked and changes nothing. 9 pairs changed; every one is listed with its reason in ops/audit/v15.1-key-changes.md. No key was edited by hand, and no gold label changed.
+- Grader: an adjacent major's fit is no longer charged twice (75 floor in the fit gate), and an adjacent interest costs 4 instead of 9.
+- Grader: the title's role group now beats a wrong source category for interest and major fit (a Goldman sales & trading role filed under Marketing & Sales).
+- Grader: sales & trading titles are matched before quant, and Finance & Banking covers IB, PE and S&T.
+- Grader: pharmacy-intern roles expect PharmD majors (they need a state intern license). Media & Communications maps to marketing, and English counts as a communications major.
+- Grader: lab titles no longer land in health just for saying "Lab", and systems-administrator, help-desk and IT titles count as software/IT.
+- Top 10: core-field roles (the fields you picked, otherwise your major's) rank ahead of cross-field ones, both in the top-10 list and in the best-match sort (e.g. a data role for a software target).
+- Measured: top-10 relevance 92.6% → 100%; all-four recommend 91.8% → 99.1%; persona in-band 92.1% → 95.8%; gold in-band 77.5% → 90% with 0 pairs 2+ letters off; preferred-location share 90.6% → 83.9% (bar ≥ 80%); 30/30 V15 bars pass.
+- Still open: g39 is D- 43 against a B–C band (one letter low, no longer an outlier), and gold20 is D- 41 against B–C.
+
 ## V15 (Fairer grading, honest tags, faster Feedback, per specs/V15.md) (2026-10-24)
 - School weight in IB/PE/consulting cut from 25% to 12%; unlisted schools score 55 (was 35); blank school no longer beats a listed one; school weight 0 in all other fields
 - Blank GPA scored as 3.0 (was ~3.3 equivalent); tier-1 standout rule now keyed on in-industry internships, not school

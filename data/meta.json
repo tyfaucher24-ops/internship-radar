@@ -1,22 +1,64 @@
 {
- "updated": "2026-10-24T21:59:36Z",
- "open": 11056,
- "open_all": 11056,
- "closing_this_week": 577,
+ "updated": "2026-10-25T00:23:21Z",
+ "open": 10979,
+ "open_all": 10979,
+ "closing_this_week": 546,
  "upcoming": 1606,
  "companies_tracked": 2497,
- "companies_with_listings": 1462,
- "duration_s": 238,
+ "companies_with_listings": 1461,
+ "duration_s": 217,
  "apply_links": {
-  "at": "2026-10-24T22:03:35+00:00",
-  "open": 11221,
-  "direct": 9751,
-  "posting": 1341,
+  "at": "2026-10-25T00:26:59+00:00",
+  "open": 11143,
+  "direct": 9657,
+  "posting": 1357,
   "none": 129,
-  "checked_this_run": 7509,
-  "ok": 7383,
-  "unknown": 126,
-  "top_failing_hosts": [],
+  "checked_this_run": 9540,
+  "ok": 9275,
+  "unknown": 249,
+  "failed": 16,
+  "top_failing_hosts": [
+   [
+    "rfcuny.wd108.myworkdayjobs.com",
+    2
+   ],
+   [
+    "rjet.wd108.myworkdayjobs.com",
+    2
+   ],
+   [
+    "ambarella.wd108.myworkdayjobs.com",
+    2
+   ],
+   [
+    "cir.wd108.myworkdayjobs.com",
+    2
+   ],
+   [
+    "expedia.wd108.myworkdayjobs.com",
+    2
+   ],
+   [
+    "realtyincome.wd108.myworkdayjobs.com",
+    1
+   ],
+   [
+    "verdantas.wd108.myworkdayjobs.com",
+    1
+   ],
+   [
+    "nc.wd108.myworkdayjobs.com",
+    1
+   ],
+   [
+    "novoco.wd108.myworkdayjobs.com",
+    1
+   ],
+   [
+    "imh.wd108.myworkdayjobs.com",
+    1
+   ]
+  ],
   "top_fallback_hosts": [
    [
     "zapply.jobs",
@@ -59,7 +101,7 @@
     24
    ]
   ],
-  "validated_within_24h": 8986
+  "validated_within_24h": 9295
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

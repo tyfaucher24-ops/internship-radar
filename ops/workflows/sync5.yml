@@ -1,0 +1,40 @@
+# V15 addendum 2: 5-minute incremental listings sync.
+# Ty: copy this file to .github/workflows/sync5.yml (the build token cannot write .github/workflows).
+# The existing .github/workflows/sync.yml (2-hour full sync) stays as is; both share the "data-sync" concurrency group,
+# so a 5-minute run never overlaps the full sync or another 5-minute run.
+name: Sync listings (5-minute incremental)
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # GitHub's minimum; runs may be delayed under load, which is fine
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: data-sync
+  cancel-in-progress: false   # wait for the running sync instead of overlapping it
+jobs:
+  sync5:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5        # a run must finish inside the 5-minute window
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - name: Restore conditional-request cache (ETag / Last-Modified)
+        uses: actions/cache@v4
+        with:
+          path: pipeline/cache/http
+          key: http-cond-${{ github.run_id }}
+          restore-keys: http-cond-
+      - name: Incremental sync (next slice of the board rotation; robots.txt, per-host rate limits, 429/5xx backoff)
+        env: { RADAR_COND_DIR: pipeline/cache/http }
+        run: timeout 240 python -m pipeline.sync --workers 24 --incremental 300
+      - name: Commit only real changes (no empty commits)
+        run: |
+          git config user.name "radar-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          python ops/sync_gate.py || exit 0
+          git commit -m "data: 5-min sync $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 5; done; exit 1

@@ -25,20 +25,52 @@ def intern_class(title):
     if AMBIG.search(t) and not SENIOR.search(t): return 'ambiguous'
     return 'no'
 # ---------- location ----------
+# V15 addendum: common city aliases and work-mode prefixes, normalised before parsing (never guessed: unknown stays unknown)
+CITY_ALIAS={'nyc':('New York','NY'),'new york city':('New York','NY'),'manhattan':('New York','NY'),'sf':('San Francisco','CA'),'san fran':('San Francisco','CA'),
+ 'la':('Los Angeles','CA'),'dc':('Washington','DC'),'washington dc':('Washington','DC'),'washington d.c.':('Washington','DC'),'philly':('Philadelphia','PA'),'st louis':('St. Louis','MO'),'saint louis':('St. Louis','MO'),
+ 'st paul':('St. Paul','MN'),'saint paul':('St. Paul','MN'),'ft worth':('Fort Worth','TX'),'ft lauderdale':('Fort Lauderdale','FL'),'nola':('New Orleans','LA'),'new york':('New York','NY'),'new york, new york':('New York','NY'),'new york, ny':('New York','NY')}
+CITY_FIX={('New York City','NY'):'New York',('Washington D.C.','DC'):'Washington',('Washington DC','DC'):'Washington',('Saint Louis','MO'):'St. Louis',('St Louis','MO'):'St. Louis',('Ft. Worth','TX'):'Fort Worth',('Ft Worth','TX'):'Fort Worth'}
+MODE=re.compile(r'^\s*(hybrid|on[- ]?site|in[- ]office|onsite)\s*(?:[-–—:|(]\s*|\s+in\s+)',re.I)
 def parse_place(p):
+    p=p or '';hy=bool(re.search(r'\bhybrid\b',p,re.I))
+    p=MODE.sub('',p);p=re.sub(r'\s*\((hybrid|on[- ]?site|in[- ]office)\)\s*$','',p,flags=re.I)
+    p=re.sub(r'\bwashington,?\s*d\.?\s?c\.?(?=\W|$)','Washington, DC',p,flags=re.I)
+    p=re.sub(r'^\s*d\.?c\.?\s*(?=$|[-–,])','Washington, DC',p,flags=re.I)
+    p=re.sub(r'\s+(office|campus|hq|headquarters|site|plant|branch)\b(?=\s*(,|$|-))','',p,flags=re.I)
+    p=re.sub(r'\s+-\s+(national|corporate|main)\s*$','',p,flags=re.I)
+    key=re.sub(r'[,\s]+(us|usa|united states( of america)?)$','',p.strip().lower()).strip(' ,.')
+    if key=='washington':return None  # bare "Washington" is ambiguous (state or DC): unknown stays unknown
+    a=CITY_ALIAS.get(key)
+    if a:return {'city':a[0],'state':a[1],**({'hybrid':True} if hy else {})}
     r=_parse_place(p)
-    if r and isinstance(r.get('city'),str): r['city']=re.sub(r'^[\s,\-–—]+|[\s,\-–—]+$','',r['city']) or None
+    if r and isinstance(r.get('city'),str):
+        r['city']=re.sub(r'^[\s,\-–—]+|[\s,\-–—]+$','',re.split(r'\s+[-–—]\s+',r['city'])[-1]) or None
+        if r['city']:
+            r['city']=CITY_FIX.get((r['city'],r.get('state')),r['city'])
+            a=CITY_ALIAS.get(r['city'].lower())
+            if a and a[1]==r.get('state'):r['city']=a[0]
+    if r and hy and not r.get('remote'):r['hybrid']=True
     return r
 def _parse_place(p):
     p=re.sub(r'\s*\+\d+ more$','',(p or '')).strip().strip('.;,').strip()
     if not p: return None
-    _m=re.match(r'^(?:US|USA|United States)\s*[,\-]\s*([A-Z]{2})\s*[,\-]\s*(.+)$',p)  # Workday style 'US, CA, Santa Clara'
-    if _m and _m.group(1) in SN.values(): p=f'{_m.group(2)}, {_m.group(1)}'
+    _m=re.match(r'^(?:US|USA|United States)\s*[,\-\s]\s*([A-Z]{2})\s*[,\-\s]\s*(.+)$',p)  # Workday style 'US, CA, Santa Clara'
+    if _m and _m.group(1) in SN.values():
+        c=_m.group(2).strip().split(',')[0].strip()
+        if _m.group(1)=='DC':c='Washington'
+        if '-' in c and ' ' not in c:
+            c2=c.replace('-',' ')
+            if geocode(c2,_m.group(1)) or not geocode(c,_m.group(1)):c=c2
+        p=f'{c}, {_m.group(1)}'
+    _m=re.match(r'^([A-Za-z .\'-]+?)\s+([A-Z]{2})\s+(?:US|USA)$',p)
+    if _m and _m.group(2) in SN.values():p=f'{_m.group(1)}, {_m.group(2)}'
     if re.search(r'remote|anywhere|virtual|work from home|telework',p,re.I):
         if FOREIGN.search(p) and not USHINT.search(p): return None
         m=re.search(r',\s*([A-Z]{2})\b',p);st=m.group(1) if m and m.group(1) in ST else None
         return {'remote':True,'state':st}
     if FOREIGN.search(p) and not re.search(r',\s*(%s)\b'%'|'.join(ST),p): return None
+    m=re.match(r'^(?:[^,;]+,\s*)?([^,;]+?),\s*([A-Z]{2})\s*(?:,\s*(US|USA|United States( of America)?)\s*)?(?:[-–]\s*.*)?$',p)
+    if m and m.group(2) in ST: return {'city':m.group(1).strip(),'state':m.group(2)}
     m=re.match(r'^([^,;]+?),\s*([A-Z]{2})\b(?:,?\s*(US|USA|United States)?)?',p)
     if m and m.group(2) in ST: return {'city':m.group(1).strip(),'state':m.group(2)}
     m=re.match(r'^(.+),\s*([A-Z]{2})$',p)
@@ -47,6 +79,14 @@ def _parse_place(p):
     if m:
         st=m.group(1) if m.group(1) in ST else SN.get(m.group(1).strip().title())
         if st: return {'city':m.group(2).strip(' -,'),'state':st}
+    # 'City, State' with the state spelled out: the city is the part right before the state ('Wyoming, Michigan', 'Douglas Boulevard, Roseville, California')
+    parts=[x.strip() for x in re.split(r'\s*,\s*|\s+[-–|/]\s+',p) if x.strip()]
+    parts=[x for x in parts if x.lower() not in ('us','usa','united states','united states of america')]
+    for i in range(len(parts)-1,-1,-1):
+        if parts[i].title() in SN:
+            c=parts[i-1] if i>0 else None
+            if c and (c.title() in SN and i-1==0 and len(parts)==2 and c.title()==parts[i].title()):c=None
+            return {'city':c,'state':SN[parts[i].title()]}
     for name in sorted(SN,key=len,reverse=True):
         if re.search(r'\b'+name+r'\b',p,re.I):
             parts=[s.strip() for s in re.split(r'[,\-–|/]',p) if s.strip()]
@@ -59,16 +99,21 @@ def parse_locations(strings):
     """returns (locations[], remote_bool, us_bool)"""
     locs=[];remote=False;us=False
     for s in strings or []:
-        for part in re.split(r'\s*;\s*|\s+\|\s+|\s+or\s+',s or ''):
+        for part in re.split(r'\s*;\s*|\s+\|\s+|\s+or\s+|(?<=, [A-Z]{2})\s*/\s*',s or ''):
             x=parse_place(part)
             if not x: continue
             us=True
             if x.get('remote'): remote=True;continue
+            hyb=x.pop('hybrid',False)
             if x.get('city') and x.get('state'):
                 g=geocode(x['city'],x['state'])
                 if g: x.update(lat=g[0],lng=g[1],pop=g[2])
             x.pop('country',None)
+            if hyb: x['hybrid']=True
             if (x.get('city') or x.get('state')) and not any(l==x or (x.get('lat') and l.get('lat')==x.get('lat') and l.get('lng')==x.get('lng')) for l in locs): locs.append(x)
+    # a bare state is redundant when a city in that state is listed ("New York" office + "New York, NY")
+    cs={l['state'] for l in locs if l.get('city') and l.get('state')}
+    locs=[l for l in locs if l.get('city') or l.get('state') not in cs]
     return locs,remote,us
 # ---------- category (role function) ----------
 CATS=[('Healthcare & Life Sciences',r'clinical|health|medical|pharma|biolog|nurs|patient|hospital|life science|regulatory affairs|biotech|laborator|chemist|pharmac'),

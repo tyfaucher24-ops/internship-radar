@@ -110,6 +110,9 @@ def workday(c):
                 try: det=fetch(base+p,check_robots=False).json().get('jobPostingInfo',{})
                 except Exception: pass
                 locs=[det.get('location') or x.get('locationsText') or '']+(det.get('additionalLocations') or [])
+                # V15 addendum: Workday paths carry the site's own location code (/job/USA-OH-Cleveland/...); use it when the label has no city
+                mloc=re.match(r'/job/([^/]+)/',p or '')
+                if mloc and re.match(r'^(US|USA)-[A-Z]{2}-',mloc.group(1)) and not re.search(r',',locs[0] or ''):locs.append(mloc.group(1))
                 if det.get('country',{}).get('descriptor') and det['country']['descriptor'] not in ('United States of America','United States'): 
                     if not any('United States' in (l or '') or re.search(r',\s*[A-Z]{2}\b',l or '') for l in locs): continue
                 out.append({'title':x['title'],'url':det.get('externalUrl') or f'https://{host}/{site}{p}','locations':locs+([ 'United States' ] if (det.get('country') or {}).get('descriptor','').startswith('United States') else []),'desc':det.get('jobDescription'),

@@ -155,8 +155,23 @@ def predict_upcoming(open_recs,history,registry):
           'deadline':None,'rolling':False,'terms':[target],'season':'Summer','year':ty,'past_term':False,'class_years':[],'apply_url':board,'source':'Prediction from posting history','source_type':'prediction',
           'status':'upcoming','pred':{'label':label,'date':med.isoformat(),'confidence':conf,'basis':basis}})
     return out
+def incremental_slice(reg,n,only=None):
+    """V15 addendum 2: the next n boards in a fixed rotation, so every source is still read within the 2h full-sync window.
+    The cursor lives in data/sync_cursor.json."""
+    rows=[r for r in reg if r['ats'] in ADAPTERS and (not only or r['ats'] in only)]
+    seen=set();uniq=[]
+    for r in rows:
+        k=(r['ats'],r['slug'].lower())
+        if k not in seen:seen.add(k);uniq.append(r)
+    uniq.sort(key=lambda r:(r['ats'],r['slug'].lower()))
+    if not uniq:return []
+    cp=os.path.join(D,'sync_cursor.json');c=jload(cp,{}).get('pos',0)%len(uniq)
+    sl=(uniq+uniq)[c:c+min(n,len(uniq))]
+    json.dump({'pos':(c+len(sl))%len(uniq),'total':len(uniq),'at':NOWS},open(cp,'w'))
+    print(f'incremental: boards {c}..{c+len(sl)} of {len(uniq)}',file=sys.stderr)
+    return sl
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--workers',type=int,default=24);ap.add_argument('--only');ap.add_argument('--limit',type=int);ap.add_argument('--skip-leads',action='store_true');ap.add_argument('--lead-limit',type=int,default=4000)
+    ap=argparse.ArgumentParser();ap.add_argument('--workers',type=int,default=24);ap.add_argument('--only');ap.add_argument('--limit',type=int);ap.add_argument('--skip-leads',action='store_true');ap.add_argument('--lead-limit',type=int,default=4000);ap.add_argument('--incremental',type=int,default=0,help='V15 add.2: read only the next N registry boards (rotating cursor in data/sync_cursor.json)')
     a=ap.parse_args();t0=time.time()
     reg=load_registry();prev=jload(os.path.join(D,'listings.json'),{'listings':[]});prevL={x['id']:x for x in prev.get('listings',[])}
     state=jload(os.path.join(D,'state.json'),{});cache=os.path.join(ROOT,'pipeline','cache');os.makedirs(cache,exist_ok=True)
@@ -169,7 +184,10 @@ def main():
         else: o.setdefault('also_on',[]).append(rec['source'])
     # 1) official boards
     print('registry rows',len(reg),file=sys.stderr)
-    res,logs=run_registry(reg,a.workers,set(a.only.split(',')) if a.only else None,a.limit)
+    regr=reg
+    if a.incremental:
+        regr=incremental_slice(reg,a.incremental,set(a.only.split(',')) if a.only else None);a.skip_leads=True
+    res,logs=run_registry(regr,a.workers,set(a.only.split(',')) if a.only else None,a.limit)
     ok_boards=set();board_of={}
     for (ats,slug),(r,posts,err) in res.items():
         if err: continue
@@ -238,7 +256,7 @@ def main():
         lead_unread=p.get('source_type')=='github-verified' and lead_list is not None and lead_list not in LOADED
         if lead_unread and p.get('status')=='open': recs[p['key']]=p;stats['kept_list_unreadable']+=1;continue
         out_of_scope=(p.get('source_type') in ('ats','jsonld') and b not in ran) or (p.get('source_type')=='github-verified' and a.skip_leads)
-        if (a.only or a.limit or a.skip_leads) and out_of_scope:
+        if (a.only or a.limit or a.skip_leads or a.incremental) and out_of_scope:
             recs[p['key']]=p;stats['kept_out_of_scope']+=1;continue
         if p.get('source_type') in ('ats','jsonld') and b in failed and p.get('status')=='open':
             p['stale']=True;recs[p['key']]=p;stats['kept_last_good']+=1
@@ -288,7 +306,9 @@ def main():
     V24={id(r) for r in ver24}
     wk=[r for r in op if r.get('deadline') and 0<=(datetime.date.fromisoformat(r['deadline'])-N.TODAY).days<=7]
     meta={'updated':NOWS,'open':len(ver24),'open_all':len(op),'closing_this_week':len([r for r in wk if id(r) in V24]),'upcoming':sum(1 for r in out if r.get('status')=='upcoming'),
-      'companies_tracked':len({(r['ats'],r['slug'].lower()) for r in reg}),'companies_with_listings':len({N.nkey(r['company']) for r in op}),'duration_s':round(time.time()-t0)}
+      'companies_tracked':len({(r['ats'],r['slug'].lower()) for r in reg}),'companies_with_listings':len({N.nkey(r['company']) for r in op}),'duration_s':round(time.time()-t0),'mode':'incremental' if a.incremental else ('partial' if (a.only or a.limit or a.skip_leads) else 'full')}
+    if a.incremental:
+        from . import net as _n;meta['conditional']=dict(_n.COND_STATS)
     srcs=collections.Counter(r['source_type'] for r in op);dl=sum(1 for r in op if r.get('deadline'))
     logsd=collections.defaultdict(lambda:{'boards':0,'ok':0,'postings':0,'errors':[]})
     for l in logs:
@@ -307,6 +327,7 @@ def main():
     print(json.dumps(meta),file=sys.stderr);print(json.dumps({'by_source':srcs,'deadline_pct':health['deadline_coverage_pct'],'stats':stats},default=dict),file=sys.stderr)
 def _compact():
     from . import locfill, compact, applylink; locfill.main()
+    if '--incremental' in sys.argv: compact.main();return  # V15 add.2: the 2h full sync re-checks apply links; the 5-min pass stays under 5 minutes
     try: applylink.main()  # V13.3 #5b: classify + re-validate job-specific Apply links (time-budgeted rotation)
     except Exception: traceback.print_exc()
     compact.main()

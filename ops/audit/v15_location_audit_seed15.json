@@ -1,0 +1,8503 @@
+{
+ "sampled": 200,
+ "skipped": 87,
+ "stored": {
+  "exact_city_state_pct": 86.0,
+  "remote_flag_pct": 99.5
+ },
+ "v15_parser": {
+  "exact_city_state_pct": 100.0,
+  "remote_flag_pct": 100.0
+ },
+ "by_ats": {
+  "workday": 147,
+  "greenhouse": 34,
+  "ashby": 11,
+  "lever": 8
+ },
+ "misses_v15": [],
+ "skipped_detail": [
+  {
+   "id": "0e59f7c45c",
+   "company": "Aptiv",
+   "why": "live page lists no US location: Troy, MI - USA"
+  },
+  {
+   "id": "ba55754beb",
+   "company": "Ferrovial",
+   "why": "live page lists no US location: Tampa"
+  },
+  {
+   "id": "fc1bc8a6d2",
+   "company": "Marriott Vacations Worldwide",
+   "why": "live page lists no US location: Hilton Head Island M&S"
+  },
+  {
+   "id": "8008576bf3",
+   "company": "Uber Freight",
+   "why": "live page lists no US location: Rogers, AR 72758, United States; United States"
+  },
+  {
+   "id": "b9b8719c9e",
+   "company": "University of Texas at Austin",
+   "why": "live page lists no US location: UT MAIN CAMPUS"
+  },
+  {
+   "id": "c2242a6372",
+   "company": "Lowe's",
+   "why": "live page lists no US location: Mooresville, NC (SSC) 1999"
+  },
+  {
+   "id": "bfb2d15b61",
+   "company": "Applied Intuition",
+   "why": "live page lists no US location: Sunnyvale"
+  },
+  {
+   "id": "a2ca60628b",
+   "company": "Excellus BCBS",
+   "why": "live page lists no US location: Rochester"
+  },
+  {
+   "id": "0db49c2b59",
+   "company": "The New School",
+   "why": "live page lists no US location: B - 65 West 11th Street"
+  },
+  {
+   "id": "e56a3f59c9",
+   "company": "Zoetis",
+   "why": "live page lists no US location: Lincoln"
+  },
+  {
+   "id": "67b5ed9771",
+   "company": "Highmark Health",
+   "why": "live page lists no US location: Erie PA, 16502, 232 West 25th St"
+  },
+  {
+   "id": "c9608ffc16",
+   "company": "Nexstar",
+   "why": "live page lists no US location: AL, Webb"
+  },
+  {
+   "id": "df7ab5477e",
+   "company": "Medical University of South Carolina",
+   "why": "live page lists no US location: Charleston"
+  },
+  {
+   "id": "77d5f17de7",
+   "company": "Republic Airways",
+   "why": "live page lists no US location: Carmel Headquarters"
+  },
+  {
+   "id": "914c92a181",
+   "company": "LEGO Group",
+   "why": "live page lists no US location: Boston Hub"
+  },
+  {
+   "id": "c2933e5bf6",
+   "company": "Zekelman Industries",
+   "why": "live page lists no US location: Birmingham, AL - Atlas"
+  },
+  {
+   "id": "646bba05a2",
+   "company": "University of Rochester",
+   "why": "live page lists no US location: 120 Corporate Woods"
+  },
+  {
+   "id": "30bb47e753",
+   "company": "Schweitzer Engineering Laboratories",
+   "why": "live page lists no US location: Washington - Pullman"
+  },
+  {
+   "id": "b5a4210b79",
+   "company": "Palo Alto Networks",
+   "why": "live page lists no US location: Office - USA - CA - Headquarters"
+  },
+  {
+   "id": "68629bed8a",
+   "company": "Wawa",
+   "why": "live page lists no US location: WAWA - Wawa, Inc. - Corporate Office"
+  },
+  {
+   "id": "da660b6e5d",
+   "company": "Newrez",
+   "why": "live page lists no US location: PA, Fort Washington"
+  },
+  {
+   "id": "40bb6788ff",
+   "company": "GlobalFoundries",
+   "why": "live page lists no US location: USA - Vermont - Essex Junction"
+  },
+  {
+   "id": "2823c115d2",
+   "company": "The New School",
+   "why": "live page lists no US location: JJ - 39 West 13th Street; U - 63 Fifth Avenue; L - 2 West 13th Street"
+  },
+  {
+   "id": "d0e3208122",
+   "company": "Cherry Bekaert",
+   "why": "live page lists no US location: Palm Beach Gardens"
+  },
+  {
+   "id": "1867c2c9f6",
+   "company": "Nordson",
+   "why": "live page lists no US location: USA - South Carolina - Clinton"
+  },
+  {
+   "id": "b177d944cb",
+   "company": "Hendrick Motorsports",
+   "why": "HTTPError: 403 Client Error: Forbidden for url: https://hendrick.wd5.myworkdayjobs.com/wday"
+  },
+  {
+   "id": "ff005106f8",
+   "company": "Johnson Controls",
+   "why": "live page lists no US location: New Freedom-Pennsylvania-United States of America"
+  },
+  {
+   "id": "a968d13ed7",
+   "company": "Zillow",
+   "why": "live page lists no US location: Seattle-WA-2nd Ave"
+  },
+  {
+   "id": "625331d959",
+   "company": "Hendrick Motorsports",
+   "why": "live page lists no US location: Hendrick Motorsports"
+  },
+  {
+   "id": "7db936d7b0",
+   "company": "Nissan",
+   "why": "live page lists no US location: Franklin, Tennessee - United States of America"
+  },
+  {
+   "id": "58a9e913b4",
+   "company": "Itron",
+   "why": "live page lists no US location: United States of America, Texas, Austin"
+  },
+  {
+   "id": "dfb6d70bf0",
+   "company": "Mass General Brigham",
+   "why": "live page lists no US location: Boston-MA"
+  },
+  {
+   "id": "3002701eea",
+   "company": "Henry Schein",
+   "why": "live page lists no US location: West Allis - Wisconsin"
+  },
+  {
+   "id": "255d1a216c",
+   "company": "Commerce Bank",
+   "why": "live page lists no US location: MO - Kansas City Downtown/Plaza - Kansas City - KC Downtown Bank Building (1000 "
+  },
+  {
+   "id": "c6abc563e0",
+   "company": "Ryan Companies",
+   "why": "live page lists no US location: Phoenix; Denver"
+  },
+  {
+   "id": "813368f659",
+   "company": "University of Arkansas",
+   "why": "live page lists no US location: Little Rock"
+  },
+  {
+   "id": "82d0325256",
+   "company": "Cadence Design Systems",
+   "why": "live page lists no US location: SAN JOSE"
+  },
+  {
+   "id": "64118b3740",
+   "company": "State of Wisconsin Investment Board",
+   "why": "live page lists no US location: Madison Wisconsin"
+  },
+  {
+   "id": "2072c1a2e4",
+   "company": "Johnson Controls",
+   "why": "live page lists no US location: Lubbock-Texas-United States of America"
+  },
+  {
+   "id": "d1aa613ef8",
+   "company": "Merck",
+   "why": "live page lists no US location: USA - New Jersey - Rahway"
+  },
+  {
+   "id": "00ef427aae",
+   "company": "BGE",
+   "why": "live page lists no US location: 10777 Westheimer Road, Suite 400, Houston, Texas 77042; Houston"
+  },
+  {
+   "id": "3b0ec2c10b",
+   "company": "The New School",
+   "why": "live page lists no US location: E - 25 East 13th Street"
+  },
+  {
+   "id": "3e993c73df",
+   "company": "Symbotic",
+   "why": "live page lists no US location: USA Wilmington,  MA - HQ"
+  },
+  {
+   "id": "06780d831c",
+   "company": "DPR Family of Companies",
+   "why": "HTTPError: 403 Client Error: Forbidden for url: https://mydpr.wd5.myworkdayjobs.com/wday/cx"
+  },
+  {
+   "id": "aed9e5611e",
+   "company": "Merck",
+   "why": "live page lists no US location: USA - Pennsylvania - North Wales (Upper Gwynedd); USA - New Jersey - Rahway"
+  },
+  {
+   "id": "b28b66c96d",
+   "company": "GlobalFoundries",
+   "why": "live page lists no US location: USA - California - Santa Clara; USA - Texas - Richardson"
+  },
+  {
+   "id": "6766f19e3e",
+   "company": "Merck",
+   "why": "live page lists no US location: USA - Massachusetts - Boston (MA Parcel B Laboratory)"
+  },
+  {
+   "id": "0e88f3ef5f",
+   "company": "LabCorp",
+   "why": "live page lists no US location: Burlington NC"
+  },
+  {
+   "id": "e05303a3c6",
+   "company": "Miami University",
+   "why": "live page lists no US location: Millett Hall"
+  },
+  {
+   "id": "73fa132971",
+   "company": "LabCorp",
+   "why": "live page lists no US location: Indianapolis IN"
+  },
+  {
+   "id": "54bb343e2b",
+   "company": "Amcor",
+   "why": "live page lists no US location: RPSNA Evansville Tool Shop IN"
+  },
+  {
+   "id": "9b5aa631e4",
+   "company": "Republic Airways",
+   "why": "live page lists no US location: Carmel Headquarters"
+  },
+  {
+   "id": "2f7ffa3c98",
+   "company": "The New School",
+   "why": "live page lists no US location: L - 2 West 13th Street"
+  },
+  {
+   "id": "d87dd3dcc8",
+   "company": "F5",
+   "why": "live page lists no US location: San Jose"
+  },
+  {
+   "id": "9f8e176f53",
+   "company": "Granite Construction",
+   "why": "HTTPError: 404 Client Error: Not Found for url: https://granite.wd1.myworkdayjobs.com/wday/"
+  },
+  {
+   "id": "99d04d1166",
+   "company": "Allegion",
+   "why": "live page lists no US location: Indianapolis, IN - Hague Rd"
+  },
+  {
+   "id": "3711ec830d",
+   "company": "IJM",
+   "why": "live page lists no US location: District of Columbia - Hybrid"
+  },
+  {
+   "id": "416ee516f5",
+   "company": "Patreon",
+   "why": "live page lists no US location: San Francisco"
+  },
+  {
+   "id": "5780a9d0a9",
+   "company": "Northrop Grumman",
+   "why": "HTTPError: 403 Client Error: Forbidden for url: https://ngc.wd1.myworkdayjobs.com/wday/cxs/"
+  },
+  {
+   "id": "85adbaea5c",
+   "company": "International Rescue Committee (IRC)",
+   "why": "live page lists no US location: New York, NY RAI USA"
+  },
+  {
+   "id": "810ca03c6a",
+   "company": "Excellus BCBS",
+   "why": "live page lists no US location: Rochester; Buffalo; Utica; Dewitt; Binghamton; Albany"
+  },
+  {
+   "id": "cbc6fa207b",
+   "company": "Guardian Life",
+   "why": "live page lists no US location: Atlanta - Regional Office"
+  },
+  {
+   "id": "5c4d6342d8",
+   "company": "Amcor",
+   "why": "live page lists no US location: ASC Atlanta HQ GA"
+  },
+  {
+   "id": "892e3bb602",
+   "company": "Dow Chemical Company",
+   "why": "live page lists no US location: Midland (MI, USA); Wilmington (DE, USA); Deer Park (TX, USA); Carrollton (KY, US"
+  },
+  {
+   "id": "261e3c22fb",
+   "company": "Lowe's",
+   "why": "live page lists no US location: Mooresville, NC (SSC) 1999"
+  },
+  {
+   "id": "a7b013d041",
+   "company": "GE Healthcare",
+   "why": "HTTPError: 404 Client Error: Not Found for url: https://gehc.wd5.myworkdayjobs.com/wday/cxs"
+  },
+  {
+   "id": "0cc6b9366e",
+   "company": "Marsh",
+   "why": "live page lists no US location: Walnut Creek - 1255 Treat"
+  },
+  {
+   "id": "d789ae5785",
+   "company": "AIG",
+   "why": "live page lists no US location: CA-Los Angeles"
+  },
+  {
+   "id": "0d5f90f245",
+   "company": "Protiviti",
+   "why": "live page lists no US location: ATLANTA - PEACHTREE RD"
+  },
+  {
+   "id": "e7705b8e7c",
+   "company": "CWAN",
+   "why": "live page lists no US location: Office - New York"
+  },
+  {
+   "id": "f433897350",
+   "company": "FNBO",
+   "why": "live page lists no US location: Fort Collins, CO - Oak Branch"
+  },
+  {
+   "id": "49ae7b3ce6",
+   "company": "Newrez",
+   "why": "live page lists no US location: PA, Fort Washington"
+  },
+  {
+   "id": "e29849bdab",
+   "company": "Excellus BCBS",
+   "why": "live page lists no US location: Rochester; Buffalo; Utica; Dewitt; Binghamton; Albany"
+  },
+  {
+   "id": "1e22bd8ba6",
+   "company": "IJM",
+   "why": "live page lists no US location: District of Columbia - Hybrid"
+  },
+  {
+   "id": "6d072714a4",
+   "company": "BGE",
+   "why": "live page lists no US location: 101 W Louis Henna Blvd, Suite 400, Austin, Texas 78728; North Austin"
+  },
+  {
+   "id": "1be2effb28",
+   "company": "Sezzle",
+   "why": "live page lists no US location: Latin America; Bogota, Colombia"
+  },
+  {
+   "id": "ee982bef76",
+   "company": "United Parcel Service (UPS)",
+   "why": "live page lists no US location: US - UPS CORPORATE OFFICES (GACOR)"
+  },
+  {
+   "id": "683881a51b",
+   "company": "Avis Budget Group",
+   "why": "live page lists no US location: 379 Interpace Pkwy, Parsippany, 07054"
+  },
+  {
+   "id": "2f51022af8",
+   "company": "Genentech",
+   "why": "live page lists no US location: South San Francisco"
+  },
+  {
+   "id": "8648b3e19a",
+   "company": "Netflix",
+   "why": "live page lists no US location: Los Gatos"
+  },
+  {
+   "id": "1f56444883",
+   "company": "Highmark Health",
+   "why": "live page lists no US location: Pittsburgh PA, 15222, PAP, Penn Avenue Place"
+  },
+  {
+   "id": "7468b200ba",
+   "company": "Oklahoma State Government",
+   "why": "live page lists no US location: Statewide"
+  },
+  {
+   "id": "fba3311e5b",
+   "company": "Excellus BCBS",
+   "why": "live page lists no US location: Rochester; Buffalo; Utica; Dewitt; Binghamton; Albany"
+  },
+  {
+   "id": "ca167cab8b",
+   "company": "Baird",
+   "why": "live page lists no US location: KY-Louisville"
+  },
+  {
+   "id": "625c534197",
+   "company": "AstraZeneca",
+   "why": "live page lists no US location: US - Frederick - MD"
+  },
+  {
+   "id": "71d7345cfb",
+   "company": "SingleStore",
+   "why": "live page lists no US location: United States; Seattle"
+  },
+  {
+   "id": "b956d3a81c",
+   "company": "Target",
+   "why": "live page lists no US location: 6419 Skillman St, Dallas,TX 75231-7109; 2200 Dallas Pkwy, Plano,TX 75093-4300"
+  }
+ ],
+ "rows": [
+  {
+   "id": "99cb903979",
+   "company": "Gordon Food Service",
+   "ats": "workday",
+   "live": [
+    "Wyoming, Michigan"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "wyoming",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Wyoming",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "aae1645014",
+   "company": "Daimler Truck",
+   "ats": "workday",
+   "live": [
+    "Fort Mill, SC US"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "ftmill",
+     "SC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Fort Mill",
+     "SC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Fort Mill",
+     "SC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "00fbde5197",
+   "company": "Altar'd State",
+   "ats": "workday",
+   "live": [
+    "Knoxville, TN"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "knoxville",
+     "TN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Knoxville",
+     "TN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Knoxville",
+     "TN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f51ce49573",
+   "company": "Rocket Lab USA",
+   "ats": "greenhouse",
+   "live": [
+    "Silver Spring, MD",
+    "PSC Office"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "silverspring",
+     "MD"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Silver Spring",
+     "MD"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Silver Spring",
+     "MD"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c801c171fd",
+   "company": "AES",
+   "ats": "workday",
+   "live": [
+    "US, Louisville, CO"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "louisville",
+     "CO"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Louisville",
+     "CO"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Louisville",
+     "CO"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "598bc5c6d1",
+   "company": "MKS Instruments",
+   "ats": "workday",
+   "live": [
+    "Andover, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "andover",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Andover",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Andover",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "107979c39b",
+   "company": "thyssenkrupp",
+   "ats": "workday",
+   "live": [
+    "Southfield, Michigan USA"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "southfield",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Southfield",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Southfield",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "8f20d347d4",
+   "company": "Tenet3",
+   "ats": "greenhouse",
+   "live": [
+    "Dayton, Ohio",
+    "Dayton, Ohio"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "dayton",
+     "OH"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Dayton",
+     "OH"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Dayton",
+     "OH"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a152ac4898",
+   "company": "WSFS Bank",
+   "ats": "workday",
+   "live": [
+    "Berwyn, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "berwyn",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Berwyn",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Berwyn",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6b9d386e68",
+   "company": "Workday",
+   "ats": "workday",
+   "live": [
+    "USA, GA, Atlanta",
+    "USA-GA-Atlanta"
+   ],
+   "workplace": "Flex",
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "GA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Atlanta",
+     "GA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e45e8f3aaf",
+   "company": "Helion Energy",
+   "ats": "ashby",
+   "live": [
+    "Everett, WA"
+   ],
+   "workplace": "OnSite",
+   "truth": [
+    [
+     "everett",
+     "WA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Everett",
+     "WA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Everett",
+     "WA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "414e7fac4f",
+   "company": "National Laboratory of the Rockies",
+   "ats": "workday",
+   "live": [
+    "Golden, CO"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "golden",
+     "CO"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Golden",
+     "CO"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Golden",
+     "CO"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "8e4356ee09",
+   "company": "Motorola",
+   "ats": "workday",
+   "live": [
+    "Chicago, IL"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "chicago",
+     "IL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Chicago",
+     "IL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Chicago",
+     "IL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e16283c938",
+   "company": "Stryker",
+   "ats": "workday",
+   "live": [
+    "Kalamazoo, Michigan",
+    "Portage, Michigan"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "kalamazoo",
+     "MI"
+    ],
+    [
+     "portage",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Kalamazoo",
+     "MI"
+    ],
+    [
+     "Portage",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Kalamazoo",
+     "MI"
+    ],
+    [
+     "Portage",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "bfac72bca8",
+   "company": "STV",
+   "ats": "workday",
+   "live": [
+    "Los Angeles, California",
+    "Douglas Boulevard, Roseville, California"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "losangeles",
+     "CA"
+    ],
+    [
+     "roseville",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Los Angeles",
+     "CA"
+    ],
+    [
+     null,
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Los Angeles",
+     "CA"
+    ],
+    [
+     "Roseville",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c4ed96354d",
+   "company": "AeroVironment",
+   "ats": "workday",
+   "live": [
+    "Melbourne, FL"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "melbourne",
+     "FL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Melbourne",
+     "FL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Melbourne",
+     "FL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6f888422c3",
+   "company": "Heidelberg Materials",
+   "ats": "workday",
+   "live": [
+    "Fleetwood, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "fleetwood",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Fleetwood",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Fleetwood",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "796661bba5",
+   "company": "Manulife Financial",
+   "ats": "workday",
+   "live": [
+    "Boston, Massachusetts"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "02a37799fc",
+   "company": "Syska Hennessy Group",
+   "ats": "greenhouse",
+   "live": [
+    "Hamilton, NJ",
+    "Hamilton"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "hamilton",
+     "NJ"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Hamilton",
+     "NJ"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Hamilton",
+     "NJ"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d74dd131cf",
+   "company": "Creative Artists Agency",
+   "ats": "workday",
+   "live": [
+    "Denver, CO"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "denver",
+     "CO"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Denver",
+     "CO"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Denver",
+     "CO"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d541d1bcd7",
+   "company": "Mizuho Securities USA",
+   "ats": "workday",
+   "live": [
+    "New York, NY (1271 AOA/6th Ave)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2c7a9abbd3",
+   "company": "Trane Technologies",
+   "ats": "workday",
+   "live": [
+    "Charlotte, North Carolina"
+   ],
+   "workplace": "On-Site (5 days)",
+   "truth": [
+    [
+     "charlotte",
+     "NC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Charlotte",
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Charlotte",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2ee00b1d59",
+   "company": "Saab",
+   "ats": "workday",
+   "live": [
+    "East Syracuse, NY (Collamer)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "eastsyracuse",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "East Syracuse",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "East Syracuse",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "7627930aec",
+   "company": "Rocket Lab USA",
+   "ats": "greenhouse",
+   "live": [
+    "Silver Spring, MD",
+    "PSC Office"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "silverspring",
+     "MD"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Silver Spring",
+     "MD"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Silver Spring",
+     "MD"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "8f122ee9d6",
+   "company": "Cisco",
+   "ats": "workday",
+   "live": [
+    "San Jose, California, US"
+   ],
+   "workplace": "Onsite Only",
+   "truth": [
+    [
+     "sanjose",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Jose",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Jose",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "27a5005362",
+   "company": "Diamondback Energy",
+   "ats": "workday",
+   "live": [
+    "Midland, TX"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "midland",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Midland",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Midland",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2b66a47fab",
+   "company": "Air Products",
+   "ats": "workday",
+   "live": [
+    "Allentown, Pennsylvania"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "allentown",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Allentown",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Allentown",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2213dd28cc",
+   "company": "ONEOK",
+   "ats": "workday",
+   "live": [
+    "Midland, TX"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "midland",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Midland",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Midland",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "97b1845f29",
+   "company": "Cerity Partners",
+   "ats": "workday",
+   "live": [
+    "Bowling Green, KY"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "bowlinggreen",
+     "KY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Bowling Green",
+     "KY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Bowling Green",
+     "KY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "129391d8c0",
+   "company": "TensorWave",
+   "ats": "ashby",
+   "live": [
+    "Las Vegas, Nevada"
+   ],
+   "workplace": "OnSite",
+   "truth": [
+    [
+     "lasvegas",
+     "NV"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Las Vegas",
+     "NV"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Las Vegas",
+     "NV"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "57b2395a8e",
+   "company": "Rockwell Automation",
+   "ats": "workday",
+   "live": [
+    "Mequon, Wisconsin, United States",
+    "United States of America Milwaukee (South 2nd Street)"
+   ],
+   "workplace": "On-site",
+   "truth": [
+    [
+     "mequon",
+     "WI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Mequon",
+     "WI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Mequon",
+     "WI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f59c6fc4e6",
+   "company": "International Rescue Committee (IRC)",
+   "ats": "workday",
+   "live": [
+    "Baltimore, MD USA"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "baltimore",
+     "MD"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Baltimore",
+     "MD"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Baltimore",
+     "MD"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "75486a8c81",
+   "company": "Aprio",
+   "ats": "lever",
+   "live": [
+    "Philadelphia, PA"
+   ],
+   "workplace": "hybrid",
+   "truth": [
+    [
+     "philadelphia",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Philadelphia",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Philadelphia",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "4fb46f5fe9",
+   "company": "K2 Space",
+   "ats": "greenhouse",
+   "live": [
+    "Los Angeles, CA",
+    "Los Angeles"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "losangeles",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "820da6636f",
+   "company": "HP IQ",
+   "ats": "greenhouse",
+   "live": [
+    "San Francisco, CA",
+    "San Francisco, CA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "sanfrancisco",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "740e195e92",
+   "company": "Insperity",
+   "ats": "workday",
+   "live": [
+    "Kingwood, TX"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "kingwood",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Kingwood",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Kingwood",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c2e0b978b9",
+   "company": "Tyson Foods",
+   "ats": "workday",
+   "live": [
+    "Corporate - Springdale, Arkansas"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "springdale",
+     "AR"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "AR"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Springdale",
+     "AR"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f26cc1eccc",
+   "company": "Hewlett Packard Enterprise",
+   "ats": "workday",
+   "live": [
+    "Sunnyvale, California, United States of America"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "sunnyvale",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Sunnyvale",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Sunnyvale",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "63a2757bb8",
+   "company": "Symbotic",
+   "ats": "workday",
+   "live": [
+    "USA Melrose Park, IL"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "usamelrosepark",
+     "IL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "IL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "USA Melrose Park",
+     "IL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b477bb4b63",
+   "company": "Sonoco",
+   "ats": "workday",
+   "live": [
+    "Hartsville, SC, USA"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "hartsville",
+     "SC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Hartsville",
+     "SC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Hartsville",
+     "SC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "694a908546",
+   "company": "Creative Artists Agency",
+   "ats": "workday",
+   "live": [
+    "Washington, DC"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "washington",
+     "DC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Washington",
+     "DC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Washington",
+     "DC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "114217bda7",
+   "company": "Walmart",
+   "ats": "workday",
+   "live": [
+    "Wichita Falls, TX"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "wichitafalls",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Wichita Falls",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Wichita Falls",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "9cc3cc4d23",
+   "company": "Palantir",
+   "ats": "lever",
+   "live": [
+    "New York, NY"
+   ],
+   "workplace": "onsite",
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "287096f741",
+   "company": "Flagship Pioneering",
+   "ats": "greenhouse",
+   "live": [
+    "Cambridge, MA USA",
+    "ProFound Therapeutics, Inc."
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cambridge",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "32638d05d6",
+   "company": "Insulet",
+   "ats": "workday",
+   "live": [
+    "Acton, Massachusetts"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "acton",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Acton",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Acton",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "70f2bfe30e",
+   "company": "Rockwell Automation",
+   "ats": "workday",
+   "live": [
+    "Mequon, Wisconsin, United States",
+    "Eden Prairie, Minnesota, United States"
+   ],
+   "workplace": "On-site",
+   "truth": [
+    [
+     "edenprairie",
+     "MN"
+    ],
+    [
+     "mequon",
+     "WI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Mequon",
+     "WI"
+    ],
+    [
+     "Eden Prairie",
+     "MN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Mequon",
+     "WI"
+    ],
+    [
+     "Eden Prairie",
+     "MN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "69bce6bbb6",
+   "company": "Fannie Mae",
+   "ats": "workday",
+   "live": [
+    "Reston, VA",
+    "Plano, TX"
+   ],
+   "workplace": "Flex",
+   "truth": [
+    [
+     "plano",
+     "TX"
+    ],
+    [
+     "reston",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Reston",
+     "VA"
+    ],
+    [
+     "Plano",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Reston",
+     "VA"
+    ],
+    [
+     "Plano",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "117dd6d0fd",
+   "company": "MegazoneCloud",
+   "ats": "ashby",
+   "live": [
+    "Rochester, NY"
+   ],
+   "workplace": "OnSite",
+   "truth": [
+    [
+     "rochester",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Rochester",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Rochester",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "28b34fdde9",
+   "company": "Brevan Howard",
+   "ats": "workday",
+   "live": [
+    "New York"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a8e1b30958",
+   "company": "Axos Bank",
+   "ats": "workday",
+   "live": [
+    "Centennial, CO"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "centennial",
+     "CO"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Centennial",
+     "CO"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Centennial",
+     "CO"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6c901c78cf",
+   "company": "General Matter",
+   "ats": "greenhouse",
+   "live": [
+    "Los Angeles, CA",
+    "Los Angeles, CA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "losangeles",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5a8d6efbeb",
+   "company": "RFCUNY",
+   "ats": "workday",
+   "live": [
+    "New York, NY"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c59e072e63",
+   "company": "NCR Voyix",
+   "ats": "workday",
+   "live": [
+    "ATLANTA, GA, USA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Atlanta",
+     "GA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "ATLANTA",
+     "GA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "80b35550fb",
+   "company": "Patreon",
+   "ats": "ashby",
+   "live": [
+    "New York",
+    "San Francisco"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ],
+    [
+     "New York City",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "1574a4a7fa",
+   "company": "Hy-Vee",
+   "ats": "workday",
+   "live": [
+    "Ankeny #1, 410 N Ankeny Blvd., Ankeny, IA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "ankeny",
+     "IA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Ankeny",
+     "IA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Ankeny",
+     "IA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e4cdbc1187",
+   "company": "Freeform",
+   "ats": "greenhouse",
+   "live": [
+    "Los Angeles, CA (On-site)",
+    "Headquarters"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "losangeles",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "9778668bb6",
+   "company": "Amplify",
+   "ats": "ashby",
+   "live": [
+    "Remote - United States"
+   ],
+   "workplace": "Remote",
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "20dd954834",
+   "company": "Astera Labs",
+   "ats": "greenhouse",
+   "live": [
+    "Cary, NC",
+    "San Jose"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cary",
+     "NC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cary",
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cary",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "1da1203473",
+   "company": "Novogradac",
+   "ats": "workday",
+   "live": [
+    "San Francisco, CA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "sanfrancisco",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d037fc12d5",
+   "company": "McKesson",
+   "ats": "workday",
+   "live": [
+    "USA, TX, Irving",
+    "Atlanta, GA, USA - 1564 Northeast Expressway (S327)",
+    "USA, VA, Richmond",
+    "USA-TX-Irving"
+   ],
+   "workplace": "Fully Remote",
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ],
+    [
+     "irving",
+     "TX"
+    ],
+    [
+     "richmond",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [
+    [
+     null,
+     "TX"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     null,
+     "VA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Irving",
+     "TX"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Richmond",
+     "VA"
+    ]
+   ],
+   "parsed_remote": true,
+   "stored_exact": false,
+   "stored_remote_ok": false,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d7b1687bf1",
+   "company": "DraftKings",
+   "ats": "workday",
+   "live": [
+    "Boston, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c0b2e547a2",
+   "company": "Novogradac",
+   "ats": "workday",
+   "live": [
+    "Andover, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "andover",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Andover",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Andover",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "3b68c3b06c",
+   "company": "Crowe",
+   "ats": "workday",
+   "live": [
+    "Chicago IL USA",
+    "New York NY USA",
+    "Washington DC USA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "chicago",
+     "IL"
+    ],
+    [
+     "newyork",
+     "NY"
+    ],
+    [
+     "washington",
+     "DC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ],
+    [
+     null,
+     "WA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Chicago",
+     "IL"
+    ],
+    [
+     "New York",
+     "NY"
+    ],
+    [
+     "Washington",
+     "DC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b95e11b39d",
+   "company": "Watts Water",
+   "ats": "workday",
+   "live": [
+    "Blauvelt, NY"
+   ],
+   "workplace": "On-Site",
+   "truth": [
+    [
+     "blauvelt",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Blauvelt",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Blauvelt",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c6da7b55d7",
+   "company": "American Bankers Association",
+   "ats": "workday",
+   "live": [
+    "US DC Main Office",
+    "US-DC-Main-Office"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "washington",
+     "DC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Main Office",
+     "DC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Washington",
+     "DC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b198dd4bf6",
+   "company": "Guardian Life",
+   "ats": "workday",
+   "live": [
+    "New York",
+    "Bethlehem",
+    "Holmdel"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b997d7623d",
+   "company": "Pentair",
+   "ats": "workday",
+   "live": [
+    "Golden Valley, MN"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "goldenvalley",
+     "MN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Golden Valley",
+     "MN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Golden Valley",
+     "MN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "cacfd2ed7b",
+   "company": "Cisco",
+   "ats": "workday",
+   "live": [
+    "RTP, North Carolina, US",
+    "San Jose, California, US",
+    "Atlanta, Georgia, US",
+    "Washington, District of Columbia, US",
+    "Seattle, Washington, US"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ],
+    [
+     "rtp",
+     "NC"
+    ],
+    [
+     "sanjose",
+     "CA"
+    ],
+    [
+     "seattle",
+     "WA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "RTP",
+     "NC"
+    ],
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     null,
+     "DC"
+    ],
+    [
+     "Seattle",
+     "WA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "RTP",
+     "NC"
+    ],
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Seattle",
+     "WA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b7bcaea12a",
+   "company": "General Motors",
+   "ats": "workday",
+   "live": [
+    "Detroit, Michigan, United States of America",
+    "Romulus, Michigan, United States of America",
+    "Lake Orion, Michigan, United States of America",
+    "Buffalo, New York, United States of America",
+    "Toledo, Ohio, United States of America",
+    "Rochester, New York, United States of America",
+    "Flint, Michigan, United States of America"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "buffalo",
+     "NY"
+    ],
+    [
+     "detroit",
+     "MI"
+    ],
+    [
+     "flint",
+     "MI"
+    ],
+    [
+     "lakeorion",
+     "MI"
+    ],
+    [
+     "rochester",
+     "NY"
+    ],
+    [
+     "romulus",
+     "MI"
+    ],
+    [
+     "toledo",
+     "OH"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Detroit",
+     "MI"
+    ],
+    [
+     "Romulus",
+     "MI"
+    ],
+    [
+     "Lake Orion",
+     "MI"
+    ],
+    [
+     "Buffalo",
+     "NY"
+    ],
+    [
+     "Toledo",
+     "OH"
+    ],
+    [
+     "Rochester",
+     "NY"
+    ],
+    [
+     "Flint",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Detroit",
+     "MI"
+    ],
+    [
+     "Romulus",
+     "MI"
+    ],
+    [
+     "Lake Orion",
+     "MI"
+    ],
+    [
+     "Buffalo",
+     "NY"
+    ],
+    [
+     "Toledo",
+     "OH"
+    ],
+    [
+     "Rochester",
+     "NY"
+    ],
+    [
+     "Flint",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6b91243cb6",
+   "company": "Hy-Vee",
+   "ats": "workday",
+   "live": [
+    "West Des Moines #3, Jordan Creek Pkwy, West Des Moines, IA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "westdesmoines",
+     "IA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "West Des Moines",
+     "IA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "West Des Moines",
+     "IA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "fe9e7cbf41",
+   "company": "Great American Insurance Company",
+   "ats": "workday",
+   "live": [
+    "Cincinnati, OH (USA)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cincinnati",
+     "OH"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cincinnati",
+     "OH"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cincinnati",
+     "OH"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "bc01e8d702",
+   "company": "Danaher",
+   "ats": "workday",
+   "live": [
+    "Fargo, North Dakota, United States"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "fargo",
+     "ND"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Fargo",
+     "ND"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Fargo",
+     "ND"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "40887a2aea",
+   "company": "First Bank & Trust",
+   "ats": "workday",
+   "live": [
+    "Sioux Falls, SD (Main)",
+    "Brookings, SD (East)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "brookings",
+     "SD"
+    ],
+    [
+     "siouxfalls",
+     "SD"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Sioux Falls",
+     "SD"
+    ],
+    [
+     "Brookings",
+     "SD"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Sioux Falls",
+     "SD"
+    ],
+    [
+     "Brookings",
+     "SD"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d681945b7d",
+   "company": "Insulet",
+   "ats": "workday",
+   "live": [
+    "Acton, Massachusetts"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "acton",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Acton",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Acton",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "0e9068c30f",
+   "company": "Protech Automotive Solutions",
+   "ats": "workday",
+   "live": [
+    "Columbia, SC"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "columbia",
+     "SC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Columbia",
+     "SC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Columbia",
+     "SC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "730cb13b32",
+   "company": "Vertex Pharmaceuticals",
+   "ats": "workday",
+   "live": [
+    "Boston, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c2ec34fb42",
+   "company": "Sonoco",
+   "ats": "workday",
+   "live": [
+    "Hartselle, AL, USA"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "hartselle",
+     "AL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Hartselle",
+     "AL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Hartselle",
+     "AL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "71fbd25906",
+   "company": "Axcelis Technologies",
+   "ats": "workday",
+   "live": [
+    "Beverly, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "beverly",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Beverly",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Beverly",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "10fc4dfbbb",
+   "company": "Zendesk",
+   "ats": "workday",
+   "live": [
+    "Madison, Wisconsin, United States of America"
+   ],
+   "workplace": "In Office",
+   "truth": [
+    [
+     "madison",
+     "WI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Madison",
+     "WI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Madison",
+     "WI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "388da05116",
+   "company": "Guardian Life",
+   "ats": "workday",
+   "live": [
+    "New York"
+   ],
+   "workplace": "Hybrid - In office 3 days per week",
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a956faab5b",
+   "company": "Leidos",
+   "ats": "workday",
+   "live": [
+    "6314 Remote/Teleworker US"
+   ],
+   "workplace": null,
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "eb544ee72d",
+   "company": "Lightmatter",
+   "ats": "greenhouse",
+   "live": [
+    "Boston, MA",
+    "Boston, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "1a18867d34",
+   "company": "Trane Technologies",
+   "ats": "workday",
+   "live": [
+    "Clarksville, Tennessee"
+   ],
+   "workplace": "Monday to Thursday, work onsite with your colleagues. Fridays, choose your work location, balancing what your work requires.",
+   "truth": [
+    [
+     "clarksville",
+     "TN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Clarksville",
+     "TN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Clarksville",
+     "TN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "8514172c6f",
+   "company": "WSFS Bank",
+   "ats": "workday",
+   "live": [
+    "Philadelphia, PA",
+    "Wilmington, DE"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "philadelphia",
+     "PA"
+    ],
+    [
+     "wilmington",
+     "DE"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Philadelphia",
+     "PA"
+    ],
+    [
+     "Wilmington",
+     "DE"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Philadelphia",
+     "PA"
+    ],
+    [
+     "Wilmington",
+     "DE"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "25e04df10c",
+   "company": "Uline",
+   "ats": "workday",
+   "live": [
+    "Aurora, CO"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "aurora",
+     "CO"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Aurora",
+     "CO"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Aurora",
+     "CO"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5d4688d1a3",
+   "company": "Anduril",
+   "ats": "greenhouse",
+   "live": [
+    "Costa Mesa, California, United States; Fort Collins, Colorado, United States; Quincy, Massachusetts, United States; Santa Ana, California, United States; Waltham, Massachusetts, United States",
+    "Costa Mesa, CA (OC-00)",
+    "Fort Collins, CO (CO-11)",
+    "Quincy, MA (QCY-01)",
+    "Santa Ana, CA (OC-21)",
+    "Waltham, MA (WMA-01)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "costamesa",
+     "CA"
+    ],
+    [
+     "ftcollins",
+     "CO"
+    ],
+    [
+     "quincy",
+     "MA"
+    ],
+    [
+     "santaana",
+     "CA"
+    ],
+    [
+     "waltham",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Costa Mesa",
+     "CA"
+    ],
+    [
+     "Fort Collins",
+     "CO"
+    ],
+    [
+     "Quincy",
+     "MA"
+    ],
+    [
+     "Santa Ana",
+     "CA"
+    ],
+    [
+     "Waltham",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Costa Mesa",
+     "CA"
+    ],
+    [
+     "Fort Collins",
+     "CO"
+    ],
+    [
+     "Quincy",
+     "MA"
+    ],
+    [
+     "Santa Ana",
+     "CA"
+    ],
+    [
+     "Waltham",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d17c88fff0",
+   "company": "Crane",
+   "ats": "workday",
+   "live": [
+    "Spartanburg, South Carolina"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "spartanburg",
+     "SC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Spartanburg",
+     "SC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Spartanburg",
+     "SC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a536a5ca84",
+   "company": "Shield AI",
+   "ats": "lever",
+   "live": [
+    "Seattle, Washington",
+    "Dallas, Texas"
+   ],
+   "workplace": "onsite",
+   "truth": [
+    [
+     "dallas",
+     "TX"
+    ],
+    [
+     "seattle",
+     "WA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Seattle",
+     "WA"
+    ],
+    [
+     "Dallas",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Seattle",
+     "WA"
+    ],
+    [
+     "Dallas",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c25eb6d399",
+   "company": "Rocket Lab USA",
+   "ats": "greenhouse",
+   "live": [
+    "Long Beach, CA",
+    "EDC"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "longbeach",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Long Beach",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Long Beach",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e4e7a7c9b3",
+   "company": "Sigma Computing",
+   "ats": "greenhouse",
+   "live": [
+    "New York, NY",
+    "NYC",
+    "San Francisco"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "afe34397af",
+   "company": "Hy-Vee",
+   "ats": "workday",
+   "live": [
+    "Corporate Office, Westown Pkwy., West Des Moines, IA"
+   ],
+   "workplace": "In Person",
+   "truth": [
+    [
+     "westdesmoines",
+     "IA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "West Des Moines",
+     "IA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "West Des Moines",
+     "IA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "83bda74b67",
+   "company": "Audax Group",
+   "ats": "greenhouse",
+   "live": [
+    "Boston, MA",
+    "Boston"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c8ae51e8d5",
+   "company": "National Life",
+   "ats": "greenhouse",
+   "live": [
+    "Addison, TX; Montpelier, VT",
+    "Addison, TX",
+    "Montpelier, VT"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "addison",
+     "TX"
+    ],
+    [
+     "montpelier",
+     "VT"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Addison",
+     "TX"
+    ],
+    [
+     "Montpelier",
+     "VT"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Addison",
+     "TX"
+    ],
+    [
+     "Montpelier",
+     "VT"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "11cde4b0cc",
+   "company": "Cherry Bekaert",
+   "ats": "workday",
+   "live": [
+    "Coral Gables, FL"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "coralgables",
+     "FL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Coral Gables",
+     "FL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Coral Gables",
+     "FL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "064352dc3d",
+   "company": "Ferrovial",
+   "ats": "workday",
+   "live": [
+    "Irving, TX"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "irving",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Irving",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Irving",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "85e7ad71b0",
+   "company": "Uline",
+   "ats": "workday",
+   "live": [
+    "Fremont, CA",
+    "Redwood City, CA",
+    "Hayward, CA",
+    "San Jose, CA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "fremont",
+     "CA"
+    ],
+    [
+     "hayward",
+     "CA"
+    ],
+    [
+     "redwoodcity",
+     "CA"
+    ],
+    [
+     "sanjose",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Fremont",
+     "CA"
+    ],
+    [
+     "Redwood City",
+     "CA"
+    ],
+    [
+     "Hayward",
+     "CA"
+    ],
+    [
+     "San Jose",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Fremont",
+     "CA"
+    ],
+    [
+     "Redwood City",
+     "CA"
+    ],
+    [
+     "Hayward",
+     "CA"
+    ],
+    [
+     "San Jose",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "0e80b03d56",
+   "company": "ACLU Kentucky",
+   "ats": "greenhouse",
+   "live": [
+    "Hybrid-New York City",
+    "New York, NY - National"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ],
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6105048275",
+   "company": "ONE Finance",
+   "ats": "ashby",
+   "live": [
+    "New York City (Hybrid)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York City (Hybrid)",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5de0e71f86",
+   "company": "Ameren",
+   "ats": "workday",
+   "live": [
+    "St. Louis, MO",
+    "308 Remote or Hybrid Worker - IL"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "stlouis",
+     "MO"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [
+    [
+     "St. Louis",
+     "MO"
+    ]
+   ],
+   "stored_remote": true,
+   "parsed_v15": [
+    [
+     "St. Louis",
+     "MO"
+    ]
+   ],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "fbb493cf8e",
+   "company": "State of North Carolina",
+   "ats": "workday",
+   "live": [
+    "Wake County, NC"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "wakecounty",
+     "NC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Wake County",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e9e1caa560",
+   "company": "Applied Materials",
+   "ats": "workday",
+   "live": [
+    "Santa Clara,CA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "santaclara",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Santa Clara",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Santa Clara",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d7f1963a64",
+   "company": "Allegion",
+   "ats": "workday",
+   "live": [
+    "Princeton, IL"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "princeton",
+     "IL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Princeton",
+     "IL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Princeton",
+     "IL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "dfda664110",
+   "company": "Cartesian",
+   "ats": "greenhouse",
+   "live": [
+    "Cambridge, MA",
+    "Cambridge, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cambridge",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b0359759f7",
+   "company": "Hewlett Packard Enterprise",
+   "ats": "workday",
+   "live": [
+    "San Jose, California, United States of America",
+    "Houston, Texas, United States of America"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "houston",
+     "TX"
+    ],
+    [
+     "sanjose",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "0b64933efe",
+   "company": "Flagship Pioneering",
+   "ats": "greenhouse",
+   "live": [
+    "Cambridge, MA USA",
+    "Terrana Biosciences, Inc."
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cambridge",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a6f67d7938",
+   "company": "1Password",
+   "ats": "ashby",
+   "live": [
+    "Remote (United States | Canada)"
+   ],
+   "workplace": "Remote",
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a5ca3de1fc",
+   "company": "SpartanNash",
+   "ats": "workday",
+   "live": [
+    "Byron Center, Michigan"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "byroncenter",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Byron Center",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Byron Center",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f3236ed463",
+   "company": "Rivian and Volkswagen Group Technologies",
+   "ats": "ashby",
+   "live": [
+    "Palo Alto, California",
+    "Irvine, California"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "irvine",
+     "CA"
+    ],
+    [
+     "paloalto",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Palo Alto",
+     "CA"
+    ],
+    [
+     "Irvine",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Palo Alto",
+     "CA"
+    ],
+    [
+     "Irvine",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d0608c8bba",
+   "company": "Philips",
+   "ats": "workday",
+   "live": [
+    "Nashville, Tennessee, United States"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "nashville",
+     "TN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Nashville",
+     "TN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Nashville",
+     "TN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "bc1f077479",
+   "company": "DIRECTV",
+   "ats": "workday",
+   "live": [
+    "El Segundo, CA",
+    "United States - Virtual"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "elsegundo",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [
+    [
+     "El Segundo",
+     "CA"
+    ]
+   ],
+   "stored_remote": true,
+   "parsed_v15": [
+    [
+     "El Segundo",
+     "CA"
+    ]
+   ],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "0e17174aa9",
+   "company": "NextGen Federal Systems",
+   "ats": "lever",
+   "live": [
+    "Morgantown, West Virginia"
+   ],
+   "workplace": "hybrid",
+   "truth": [
+    [
+     "morgantown",
+     "WV"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Morgantown",
+     "WV"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Morgantown",
+     "WV"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "0b252037e2",
+   "company": "Rocket Mortgage",
+   "ats": "workday",
+   "live": [
+    "Detroit, MI"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "detroit",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Detroit",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Detroit",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c3b28b3530",
+   "company": "Aprio",
+   "ats": "lever",
+   "live": [
+    "Dedham, MA"
+   ],
+   "workplace": "hybrid",
+   "truth": [
+    [
+     "dedham",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Dedham",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Dedham",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "525c21e798",
+   "company": "Hitachi Energy",
+   "ats": "workday",
+   "live": [
+    "Alamo, Tennessee, United States of America"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "alamo",
+     "TN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Alamo",
+     "TN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Alamo",
+     "TN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5e4f8649ae",
+   "company": "Stoke Space",
+   "ats": "greenhouse",
+   "live": [
+    "Kent, Washington",
+    "Kent"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "kent",
+     "WA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Kent",
+     "WA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Kent",
+     "WA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "650f488337",
+   "company": "PatientPoint",
+   "ats": "greenhouse",
+   "live": [
+    "Cincinnati, Ohio, United States",
+    "Cincinnati, OH"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cincinnati",
+     "OH"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cincinnati",
+     "OH"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cincinnati",
+     "OH"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d30351b8e4",
+   "company": "Dairyland Power Cooperative",
+   "ats": "workday",
+   "live": [
+    "La Crosse, Wisconsin"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "lacrosse",
+     "WI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "La Crosse",
+     "WI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "La Crosse",
+     "WI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "3e8be3450b",
+   "company": "Marathon Petroleum",
+   "ats": "workday",
+   "live": [
+    "Canonsburg, Pennsylvania",
+    "Houston, Texas",
+    "Oklahoma City, Oklahoma",
+    "Washington, Pennsylvania",
+    "Kingfisher, Oklahoma",
+    "West Union, West Virginia",
+    "Jewett, Ohio",
+    "Tulsa, Oklahoma",
+    "Cadiz, Ohio",
+    "Denver, Colorado",
+    "Midland, Texas",
+    "Bulger, Pennsylvania",
+    "San Antonio, Texas"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "bulger",
+     "PA"
+    ],
+    [
+     "cadiz",
+     "OH"
+    ],
+    [
+     "canonsburg",
+     "PA"
+    ],
+    [
+     "denver",
+     "CO"
+    ],
+    [
+     "houston",
+     "TX"
+    ],
+    [
+     "jewett",
+     "OH"
+    ],
+    [
+     "kingfisher",
+     "OK"
+    ],
+    [
+     "midland",
+     "TX"
+    ],
+    [
+     "oklahomacity",
+     "OK"
+    ],
+    [
+     "sanantonio",
+     "TX"
+    ],
+    [
+     "tulsa",
+     "OK"
+    ],
+    [
+     "washington",
+     "PA"
+    ],
+    [
+     "westunion",
+     "WV"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Canonsburg",
+     "PA"
+    ],
+    [
+     "Houston",
+     "TX"
+    ],
+    [
+     "Oklahoma City",
+     "OK"
+    ],
+    [
+     null,
+     "PA"
+    ],
+    [
+     "Kingfisher",
+     "OK"
+    ],
+    [
+     "West Union",
+     "WV"
+    ],
+    [
+     "Jewett",
+     "OH"
+    ],
+    [
+     "Tulsa",
+     "OK"
+    ],
+    [
+     "Cadiz",
+     "OH"
+    ],
+    [
+     "Denver",
+     "CO"
+    ],
+    [
+     "Midland",
+     "TX"
+    ],
+    [
+     "Bulger",
+     "PA"
+    ],
+    [
+     "San Antonio",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Canonsburg",
+     "PA"
+    ],
+    [
+     "Houston",
+     "TX"
+    ],
+    [
+     "Oklahoma City",
+     "OK"
+    ],
+    [
+     "Washington",
+     "PA"
+    ],
+    [
+     "Kingfisher",
+     "OK"
+    ],
+    [
+     "West Union",
+     "WV"
+    ],
+    [
+     "Jewett",
+     "OH"
+    ],
+    [
+     "Tulsa",
+     "OK"
+    ],
+    [
+     "Cadiz",
+     "OH"
+    ],
+    [
+     "Denver",
+     "CO"
+    ],
+    [
+     "Midland",
+     "TX"
+    ],
+    [
+     "Bulger",
+     "PA"
+    ],
+    [
+     "San Antonio",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "4413615b4f",
+   "company": "QTS",
+   "ats": "workday",
+   "live": [
+    "US AZ Phoenix 2 DC2",
+    "US-AZ-Phoenix-2-DC2"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "phoenixdc",
+     "AZ"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Phoenix",
+     "AZ"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Phoenix 2 DC2",
+     "AZ"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "ec0c299e8b",
+   "company": "Chemours",
+   "ats": "workday",
+   "live": [
+    "US - Remote"
+   ],
+   "workplace": null,
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [
+    [
+     "Wilmington",
+     "DE"
+    ]
+   ],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a123f5787b",
+   "company": "FOX",
+   "ats": "workday",
+   "live": [
+    "New York, New York, USA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "1ab70ee990",
+   "company": "Interplay",
+   "ats": "ashby",
+   "live": [
+    "New York"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "7e32de9eee",
+   "company": "HNTB",
+   "ats": "workday",
+   "live": [
+    "Houston, TX (Fannin)",
+    "Houston, TX (Washington Avenue)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "houston",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "3fb145e1c0",
+   "company": "TC Energy",
+   "ats": "workday",
+   "live": [
+    "Stanton, Kentucky"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "stanton",
+     "KY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Stanton",
+     "KY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Stanton",
+     "KY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "3e8f5f1ec9",
+   "company": "KnowBe4",
+   "ats": "greenhouse",
+   "live": [
+    "Arlington, Virginia",
+    "Arlington, Virginia"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "arlington",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Arlington",
+     "VA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Arlington",
+     "VA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d06f9fb514",
+   "company": "General Motors",
+   "ats": "workday",
+   "live": [
+    "Arlington, Texas, United States of America",
+    "Romulus, Michigan, United States of America",
+    "Lake Orion, Michigan, United States of America",
+    "Buffalo, New York, United States of America",
+    "Rochester, New York, United States of America",
+    "Saginaw, Michigan, United States of America",
+    "Lansing, Michigan, United States of America",
+    "Flint, Michigan, United States of America",
+    "Detroit, Michigan, United States of America"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "arlington",
+     "TX"
+    ],
+    [
+     "buffalo",
+     "NY"
+    ],
+    [
+     "detroit",
+     "MI"
+    ],
+    [
+     "flint",
+     "MI"
+    ],
+    [
+     "lakeorion",
+     "MI"
+    ],
+    [
+     "lansing",
+     "MI"
+    ],
+    [
+     "rochester",
+     "NY"
+    ],
+    [
+     "romulus",
+     "MI"
+    ],
+    [
+     "saginaw",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Arlington",
+     "TX"
+    ],
+    [
+     "Romulus",
+     "MI"
+    ],
+    [
+     "Lake Orion",
+     "MI"
+    ],
+    [
+     "Buffalo",
+     "NY"
+    ],
+    [
+     "Rochester",
+     "NY"
+    ],
+    [
+     "Saginaw",
+     "MI"
+    ],
+    [
+     "Lansing",
+     "MI"
+    ],
+    [
+     "Flint",
+     "MI"
+    ],
+    [
+     "Detroit",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Arlington",
+     "TX"
+    ],
+    [
+     "Romulus",
+     "MI"
+    ],
+    [
+     "Lake Orion",
+     "MI"
+    ],
+    [
+     "Buffalo",
+     "NY"
+    ],
+    [
+     "Rochester",
+     "NY"
+    ],
+    [
+     "Saginaw",
+     "MI"
+    ],
+    [
+     "Lansing",
+     "MI"
+    ],
+    [
+     "Flint",
+     "MI"
+    ],
+    [
+     "Detroit",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "986ee6472c",
+   "company": "Primient",
+   "ats": "workday",
+   "live": [
+    "Duluth, MN"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "duluth",
+     "MN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Duluth",
+     "MN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Duluth",
+     "MN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a6840d9559",
+   "company": "Stand Together",
+   "ats": "lever",
+   "live": [
+    "Arlington, Virginia"
+   ],
+   "workplace": "onsite",
+   "truth": [
+    [
+     "arlington",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Arlington",
+     "VA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Arlington",
+     "VA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d76df6c574",
+   "company": "UHY",
+   "ats": "workday",
+   "live": [
+    "Albany, NY",
+    "Hudson RBT, NY",
+    "Queensbury, NY",
+    "Kingston, NY",
+    "Hudson, NY",
+    "Newburgh, NY"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "albany",
+     "NY"
+    ],
+    [
+     "hudson",
+     "NY"
+    ],
+    [
+     "hudsonrbt",
+     "NY"
+    ],
+    [
+     "kingston",
+     "NY"
+    ],
+    [
+     "newburgh",
+     "NY"
+    ],
+    [
+     "queensbury",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Albany",
+     "NY"
+    ],
+    [
+     null,
+     "NY"
+    ],
+    [
+     "Queensbury",
+     "NY"
+    ],
+    [
+     "Kingston",
+     "NY"
+    ],
+    [
+     "Hudson",
+     "NY"
+    ],
+    [
+     "Newburgh",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Albany",
+     "NY"
+    ],
+    [
+     "Hudson RBT",
+     "NY"
+    ],
+    [
+     "Queensbury",
+     "NY"
+    ],
+    [
+     "Kingston",
+     "NY"
+    ],
+    [
+     "Hudson",
+     "NY"
+    ],
+    [
+     "Newburgh",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f6d4f7f6f4",
+   "company": "ACLU Kentucky",
+   "ats": "greenhouse",
+   "live": [
+    "Remote/Hybrid-New York City or Washington D.C.",
+    "New York, NY - National",
+    "Washington, D.C. - National"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ],
+    [
+     "washington",
+     "DC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [
+    [
+     null,
+     "WA"
+    ],
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": true,
+   "parsed_v15": [
+    [
+     "Washington",
+     "DC"
+    ],
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": true,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "13b1a56440",
+   "company": "ICF International",
+   "ats": "workday",
+   "live": [
+    "Reston, VA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "reston",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Reston",
+     "VA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Reston",
+     "VA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e5b770f8c1",
+   "company": "Rakuten International",
+   "ats": "workday",
+   "live": [
+    "San Mateo, California"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "sanmateo",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Mateo",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Mateo",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a738ca5121",
+   "company": "Evolver",
+   "ats": "greenhouse",
+   "live": [
+    "Palo Alto, CA",
+    "Palo Alto"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "paloalto",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Palo Alto",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Palo Alto",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "733384c358",
+   "company": "Uline",
+   "ats": "workday",
+   "live": [
+    "Burlington, MA",
+    "Waltham, MA",
+    "Cambridge, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "burlington",
+     "MA"
+    ],
+    [
+     "cambridge",
+     "MA"
+    ],
+    [
+     "waltham",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Burlington",
+     "MA"
+    ],
+    [
+     "Waltham",
+     "MA"
+    ],
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Burlington",
+     "MA"
+    ],
+    [
+     "Waltham",
+     "MA"
+    ],
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "44a515cf1c",
+   "company": "Auto-Owners Insurance",
+   "ats": "workday",
+   "live": [
+    "Lansing, MI"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "lansing",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Lansing",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Lansing",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e85f0391fd",
+   "company": "Moderna",
+   "ats": "workday",
+   "live": [
+    "Norwood, Massachusetts",
+    "Supply Chain"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "norwood",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Norwood",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Norwood",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "70ec47d3bf",
+   "company": "RTX",
+   "ats": "workday",
+   "live": [
+    "US-AZ-TUCSON-805 ~ 1151 E Hermans Rd ~ BLDG 805",
+    "US-AZ-TUCSON-805--1151-E-Hermans-Rd--BLDG-805"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "tucsonehermansrdbldg",
+     "AZ"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Tucson",
+     "AZ"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "TUCSON-805 ~ 1151 E Hermans Rd ~ BLDG 805",
+     "AZ"
+    ],
+    [
+     "TUCSON 805  1151 E Hermans Rd  BLDG 805",
+     "AZ"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5de91237ca",
+   "company": "HNTB",
+   "ats": "workday",
+   "live": [
+    "Chicago, IL"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "chicago",
+     "IL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Chicago",
+     "IL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Chicago",
+     "IL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5b7f5af384",
+   "company": "Cadence Solutions",
+   "ats": "greenhouse",
+   "live": [
+    "Remote",
+    "Remote"
+   ],
+   "workplace": null,
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "984e564824",
+   "company": "Daimler Truck",
+   "ats": "workday",
+   "live": [
+    "Detroit, MI US"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "detroit",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Detroit",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Detroit",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "158bf39e4f",
+   "company": "Philips",
+   "ats": "workday",
+   "live": [
+    "Reedsville, Pennsylvania, United States"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "reedsville",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Reedsville",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Reedsville",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "552c7a3f99",
+   "company": "Rehlko",
+   "ats": "workday",
+   "live": [
+    "Sheboygan,WI",
+    "Kohler,WI"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "kohler",
+     "WI"
+    ],
+    [
+     "sheboygan",
+     "WI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Sheboygan",
+     "WI"
+    ],
+    [
+     "Kohler",
+     "WI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Sheboygan",
+     "WI"
+    ],
+    [
+     "Kohler",
+     "WI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "bdb623be90",
+   "company": "Palantir",
+   "ats": "lever",
+   "live": [
+    "New York, NY"
+   ],
+   "workplace": "onsite",
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "8cc2863100",
+   "company": "Entegris",
+   "ats": "workday",
+   "live": [
+    "Bedford, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "bedford",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Bedford",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Bedford",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a56d4c00df",
+   "company": "Stevens Capital Management",
+   "ats": "greenhouse",
+   "live": [
+    "Radnor, PA",
+    "Stevens Capital Management LP"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "radnor",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Radnor",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Radnor",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b0a33c653d",
+   "company": "RTX",
+   "ats": "workday",
+   "live": [
+    "US-AZ-TUCSON-M10 ~ 3360 E Hemisphere Loop ~ BLDG M10",
+    "US-AZ-TUCSON-M10--3360-E-Hemisphere-Loop--BLDG-M10"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "tucsonmehemisphereloopbldgm",
+     "AZ"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Tucson",
+     "AZ"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "TUCSON-M10 ~ 3360 E Hemisphere Loop ~ BLDG M10",
+     "AZ"
+    ],
+    [
+     "TUCSON M10  3360 E Hemisphere Loop  BLDG M10",
+     "AZ"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "1c8205ce88",
+   "company": "HMH",
+   "ats": "workday",
+   "live": [
+    "Houston, TX"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "houston",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "bedd0a1c97",
+   "company": "Entegris",
+   "ats": "workday",
+   "live": [
+    "Billerica, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "billerica",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Billerica",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Billerica",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b0705e48b8",
+   "company": "Huntington Bancshares",
+   "ats": "workday",
+   "live": [
+    "Austin, TX",
+    "Chicago, IL",
+    "Pittsburgh, PA",
+    "Denver, CO",
+    "Charlotte, NC",
+    "Grand Rapids, MI",
+    "Atlanta, GA",
+    "Cleveland, OH",
+    "Macon, GA"
+   ],
+   "workplace": "Office",
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ],
+    [
+     "austin",
+     "TX"
+    ],
+    [
+     "charlotte",
+     "NC"
+    ],
+    [
+     "chicago",
+     "IL"
+    ],
+    [
+     "cleveland",
+     "OH"
+    ],
+    [
+     "denver",
+     "CO"
+    ],
+    [
+     "grandrapids",
+     "MI"
+    ],
+    [
+     "macon",
+     "GA"
+    ],
+    [
+     "pittsburgh",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Austin",
+     "TX"
+    ],
+    [
+     "Chicago",
+     "IL"
+    ],
+    [
+     "Pittsburgh",
+     "PA"
+    ],
+    [
+     "Denver",
+     "CO"
+    ],
+    [
+     "Charlotte",
+     "NC"
+    ],
+    [
+     "Grand Rapids",
+     "MI"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Cleveland",
+     "OH"
+    ],
+    [
+     "Macon",
+     "GA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Austin",
+     "TX"
+    ],
+    [
+     "Chicago",
+     "IL"
+    ],
+    [
+     "Pittsburgh",
+     "PA"
+    ],
+    [
+     "Denver",
+     "CO"
+    ],
+    [
+     "Charlotte",
+     "NC"
+    ],
+    [
+     "Grand Rapids",
+     "MI"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Cleveland",
+     "OH"
+    ],
+    [
+     "Macon",
+     "GA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "ca168f1d69",
+   "company": "Cherry Bekaert",
+   "ats": "workday",
+   "live": [
+    "Ft. Lauderdale, FL"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "ftlauderdale",
+     "FL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Ft. Lauderdale",
+     "FL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Ft. Lauderdale",
+     "FL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a53fec98d2",
+   "company": "Varda Space",
+   "ats": "greenhouse",
+   "live": [
+    "El Segundo, California, United States",
+    "225 S Aviation"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "elsegundo",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "El Segundo",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "El Segundo",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "e73fedda19",
+   "company": "PIMCO",
+   "ats": "workday",
+   "live": [
+    "Newport Beach, CA USA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newportbeach",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Newport Beach",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Newport Beach",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "967341f61a",
+   "company": "PIMCO",
+   "ats": "workday",
+   "live": [
+    "Newport Beach, CA USA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newportbeach",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Newport Beach",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Newport Beach",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "db207106ad",
+   "company": "Air Products",
+   "ats": "workday",
+   "live": [
+    "Allentown, Pennsylvania"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "allentown",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Allentown",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Allentown",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2d6674a90e",
+   "company": "Anduril",
+   "ats": "greenhouse",
+   "live": [
+    "Costa Mesa, California, United States",
+    "Costa Mesa, CA (OC-00)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "costamesa",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Costa Mesa",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Costa Mesa",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "18adc96828",
+   "company": "ICF International",
+   "ats": "workday",
+   "live": [
+    "Reston, VA",
+    "New York, NY (NY18)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ],
+    [
+     "reston",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Reston",
+     "VA"
+    ],
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Reston",
+     "VA"
+    ],
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "79076ce31c",
+   "company": "Werner Enterprises",
+   "ats": "workday",
+   "live": [
+    "Omaha, NE",
+    "Oakbrook Terrace, IL"
+   ],
+   "workplace": "Onsite",
+   "truth": [
+    [
+     "oakbrookterrace",
+     "IL"
+    ],
+    [
+     "omaha",
+     "NE"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Omaha",
+     "NE"
+    ],
+    [
+     "Oakbrook Terrace",
+     "IL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Omaha",
+     "NE"
+    ],
+    [
+     "Oakbrook Terrace",
+     "IL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "fc598360a7",
+   "company": "STV",
+   "ats": "workday",
+   "live": [
+    "Hillsborough Street, Raleigh, North Carolina",
+    "Charlotte, North Carolina"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "charlotte",
+     "NC"
+    ],
+    [
+     "raleigh",
+     "NC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NC"
+    ],
+    [
+     "Charlotte",
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Raleigh",
+     "NC"
+    ],
+    [
+     "Charlotte",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "fbd77f6fcd",
+   "company": "Prologis",
+   "ats": "workday",
+   "live": [
+    "Houston, Texas"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "houston",
+     "TX"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Houston",
+     "TX"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "dbcf3c66f4",
+   "company": "Advocate Health Care",
+   "ats": "workday",
+   "live": [
+    "Atrium Health Navicent The Medical Center - 777 Hemlock St, Macon, GA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "macon",
+     "GA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Macon",
+     "GA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Macon",
+     "GA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2d3d2fc006",
+   "company": "Vertex Pharmaceuticals",
+   "ats": "workday",
+   "live": [
+    "Boston, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "00cb7dbfd3",
+   "company": "Menasha",
+   "ats": "workday",
+   "live": [
+    "Northwood, Ohio",
+    "Mentor, Ohio"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "mentor",
+     "OH"
+    ],
+    [
+     "northwood",
+     "OH"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Northwood",
+     "OH"
+    ],
+    [
+     "Mentor",
+     "OH"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Northwood",
+     "OH"
+    ],
+    [
+     "Mentor",
+     "OH"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "933f6a3f81",
+   "company": "Ameriprise Financial",
+   "ats": "workday",
+   "live": [
+    "Minneapolis, Minnesota"
+   ],
+   "workplace": "Hybrid",
+   "truth": [
+    [
+     "minneapolis",
+     "MN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Minneapolis",
+     "MN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Minneapolis",
+     "MN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "634ca5ac66",
+   "company": "Analog Devices",
+   "ats": "workday",
+   "live": [
+    "US, MA, Wilmington",
+    "US, CA, San Jose, Rio Robles",
+    "US, NC, Durham",
+    "US-MA-Wilmington"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "durham",
+     "NC"
+    ],
+    [
+     "sanjose",
+     "CA"
+    ],
+    [
+     "wilmington",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "MA"
+    ],
+    [
+     null,
+     "CA"
+    ],
+    [
+     null,
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Wilmington",
+     "MA"
+    ],
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Durham",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c5d2fcc20b",
+   "company": "Found Energy",
+   "ats": "greenhouse",
+   "live": [
+    "Cambridge, MA",
+    "Cambridge"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "cambridge",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Cambridge",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "450b791011",
+   "company": "Uline",
+   "ats": "workday",
+   "live": [
+    "Allentown, PA",
+    "Bethlehem, PA",
+    "Easton, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "allentown",
+     "PA"
+    ],
+    [
+     "bethlehem",
+     "PA"
+    ],
+    [
+     "easton",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Allentown",
+     "PA"
+    ],
+    [
+     "Bethlehem",
+     "PA"
+    ],
+    [
+     "Easton",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Allentown",
+     "PA"
+    ],
+    [
+     "Bethlehem",
+     "PA"
+    ],
+    [
+     "Easton",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2b156a0d19",
+   "company": "Plexus",
+   "ats": "workday",
+   "live": [
+    "Nampa, ID"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "nampa",
+     "ID"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Nampa",
+     "ID"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Nampa",
+     "ID"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "2aeb41250d",
+   "company": "HNTB",
+   "ats": "workday",
+   "live": [
+    "San Francisco, CA",
+    "Boston, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ],
+    [
+     "sanfrancisco",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Francisco",
+     "CA"
+    ],
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Francisco",
+     "CA"
+    ],
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "3ab1af64a7",
+   "company": "Marmon Holdings",
+   "ats": "workday",
+   "live": [
+    "Harrison, OH"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "harrison",
+     "OH"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Harrison",
+     "OH"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Harrison",
+     "OH"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "383df7ee6a",
+   "company": "Granite Construction",
+   "ats": "workday",
+   "live": [
+    "Santa Maria, California"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "santamaria",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Santa Maria",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Santa Maria",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b2c35c95b1",
+   "company": "Affirm",
+   "ats": "greenhouse",
+   "live": [
+    "San Francisco, California, United States",
+    "San Francisco"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "sanfrancisco",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "dda070630d",
+   "company": "Vertex Pharmaceuticals",
+   "ats": "workday",
+   "live": [
+    "Boston, MA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "boston",
+     "MA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Boston",
+     "MA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "413a27b482",
+   "company": "The Toro Company",
+   "ats": "workday",
+   "live": [
+    "Lake Mills, WI"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "lakemills",
+     "WI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Lake Mills",
+     "WI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Lake Mills",
+     "WI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "22dbf00028",
+   "company": "NewsBreak",
+   "ats": "greenhouse",
+   "live": [
+    "Mountain View, California, United States",
+    "Mountain View Office"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "mountainview",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Mountain View",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Mountain View",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f82ea68d26",
+   "company": "Thermo Fisher Scientific",
+   "ats": "workday",
+   "live": [
+    "Rochester, New York, USA"
+   ],
+   "workplace": "Fully Onsite",
+   "truth": [
+    [
+     "rochester",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Rochester",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Rochester",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "342cf91ee6",
+   "company": "Astera Labs",
+   "ats": "greenhouse",
+   "live": [
+    "San Jose, CA",
+    "San Jose"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "sanjose",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Jose",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Jose",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "799a5449ca",
+   "company": "RTX",
+   "ats": "workday",
+   "live": [
+    "US-FL-MELBOURNE-308 ~ 1100 W Hibiscus Blvd ~ BLDG 308",
+    "US-FL-MELBOURNE-308--1100-W-Hibiscus-Blvd--BLDG-308"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "melbournewhibiscusblvdbldg",
+     "FL"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Melbourne",
+     "FL"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "MELBOURNE-308 ~ 1100 W Hibiscus Blvd ~ BLDG 308",
+     "FL"
+    ],
+    [
+     "MELBOURNE 308  1100 W Hibiscus Blvd  BLDG 308",
+     "FL"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "d5a4218f14",
+   "company": "Danaher",
+   "ats": "workday",
+   "live": [
+    "Coralville, Iowa, United States"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "coralville",
+     "IA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Coralville",
+     "IA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Coralville",
+     "IA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "313b823851",
+   "company": "Sage",
+   "ats": "greenhouse",
+   "live": [
+    "New York, New York, United States",
+    "Headquarters"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "508fe0b655",
+   "company": "Air Products",
+   "ats": "workday",
+   "live": [
+    "Allentown, Pennsylvania"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "allentown",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Allentown",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Allentown",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "723dae1a55",
+   "company": "Apple Bank",
+   "ats": "workday",
+   "live": [
+    "New York, NY"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "930c0f330a",
+   "company": "Danaher",
+   "ats": "workday",
+   "live": [
+    "Raleigh, North Carolina, United States"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "raleigh",
+     "NC"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Raleigh",
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Raleigh",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "66626595ec",
+   "company": "Hudl",
+   "ats": "greenhouse",
+   "live": [
+    "Lincoln, NE, United States",
+    "USA - Nebraska - Lincoln Office"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "lincoln",
+     "NE"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Lincoln",
+     "NE"
+    ],
+    [
+     null,
+     "NE"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Lincoln",
+     "NE"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "a80f12c03b",
+   "company": "ICF International",
+   "ats": "workday",
+   "live": [
+    "Reston, VA",
+    "Oklahoma Remote Office (OK99)",
+    "Atlanta, GA (GA18)"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ],
+    [
+     "reston",
+     "VA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [
+    [
+     "Reston",
+     "VA"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ]
+   ],
+   "stored_remote": true,
+   "parsed_v15": [
+    [
+     "Reston",
+     "VA"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ]
+   ],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "af7a24dc79",
+   "company": "Stryker",
+   "ats": "workday",
+   "live": [
+    "Portage, Michigan"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "portage",
+     "MI"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Portage",
+     "MI"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Portage",
+     "MI"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "438702eb3a",
+   "company": "Stryker",
+   "ats": "workday",
+   "live": [
+    "San Jose, California",
+    "Fremont, California"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "fremont",
+     "CA"
+    ],
+    [
+     "sanjose",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Fremont",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "San Jose",
+     "CA"
+    ],
+    [
+     "Fremont",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b3781f721c",
+   "company": "Repsol",
+   "ats": "workday",
+   "live": [
+    "Alaska"
+   ],
+   "workplace": null,
+   "truth": [],
+   "truth_states": [
+    "AK"
+   ],
+   "truth_remote": false,
+   "stored": [
+    [
+     null,
+     "AK"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     null,
+     "AK"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "952f1cccb3",
+   "company": "Vermeer",
+   "ats": "workday",
+   "live": [
+    "Pella, Iowa, USA - Plant 3"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "pella",
+     "IA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Pella",
+     "IA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Pella",
+     "IA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6cf2736c76",
+   "company": "HNTB",
+   "ats": "workday",
+   "live": [
+    "Minneapolis, MN"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "minneapolis",
+     "MN"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Minneapolis",
+     "MN"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Minneapolis",
+     "MN"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "01c5e20c74",
+   "company": "WSFS Bank",
+   "ats": "workday",
+   "live": [
+    "Berwyn, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "berwyn",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Berwyn",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Berwyn",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "42b9ab7560",
+   "company": "Charta Health",
+   "ats": "ashby",
+   "live": [
+    "San Francisco",
+    "New York City"
+   ],
+   "workplace": "OnSite",
+   "truth": [
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York City",
+     "NY"
+    ],
+    [
+     "San Francisco",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": false,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "b102f096af",
+   "company": "Truist Bank",
+   "ats": "workday",
+   "live": [
+    "New York, NY",
+    "Chicago, IL",
+    "Atlanta, GA",
+    "Charlotte, NC"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ],
+    [
+     "charlotte",
+     "NC"
+    ],
+    [
+     "chicago",
+     "IL"
+    ],
+    [
+     "newyork",
+     "NY"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "New York",
+     "NY"
+    ],
+    [
+     "Chicago",
+     "IL"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Charlotte",
+     "NC"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "New York",
+     "NY"
+    ],
+    [
+     "Chicago",
+     "IL"
+    ],
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Charlotte",
+     "NC"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "c475963a4e",
+   "company": "WSFS Bank",
+   "ats": "workday",
+   "live": [
+    "Berwyn, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "berwyn",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Berwyn",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Berwyn",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "f2e38ff753",
+   "company": "J.M. Smucker",
+   "ats": "workday",
+   "live": [
+    "Oxnard, CA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "oxnard",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Oxnard",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Oxnard",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "5b0c973c10",
+   "company": "Zurn Elkay Water Solutions",
+   "ats": "workday",
+   "live": [
+    "Erie, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "erie",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Erie",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Erie",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "4883d5283f",
+   "company": "SouthState Bank",
+   "ats": "workday",
+   "live": [
+    "Remote Opportunity - VA, NC, SC, GA,  FL, AL, TX, & CO"
+   ],
+   "workplace": null,
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "63a21b0548",
+   "company": "Hermeus",
+   "ats": "lever",
+   "live": [
+    "Atlanta, GA",
+    "Los Angeles, CA"
+   ],
+   "workplace": "onsite",
+   "truth": [
+    [
+     "atlanta",
+     "GA"
+    ],
+    [
+     "losangeles",
+     "CA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Atlanta",
+     "GA"
+    ],
+    [
+     "Los Angeles",
+     "CA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "1532d22c64",
+   "company": "Corient",
+   "ats": "workday",
+   "live": [
+    "Wayne, PA"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "wayne",
+     "PA"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Wayne",
+     "PA"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Wayne",
+     "PA"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "65fb677bae",
+   "company": "Ingredion",
+   "ats": "workday",
+   "live": [
+    "Bridgewater, NJ"
+   ],
+   "workplace": null,
+   "truth": [
+    [
+     "bridgewater",
+     "NJ"
+    ]
+   ],
+   "truth_states": [],
+   "truth_remote": false,
+   "stored": [
+    [
+     "Bridgewater",
+     "NJ"
+    ]
+   ],
+   "stored_remote": false,
+   "parsed_v15": [
+    [
+     "Bridgewater",
+     "NJ"
+    ]
+   ],
+   "parsed_remote": false,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  },
+  {
+   "id": "6b69b68ab1",
+   "company": "1Password",
+   "ats": "ashby",
+   "live": [
+    "Remote (United States | Canada)"
+   ],
+   "workplace": "Remote",
+   "truth": [],
+   "truth_states": [],
+   "truth_remote": true,
+   "stored": [],
+   "stored_remote": true,
+   "parsed_v15": [],
+   "parsed_remote": true,
+   "stored_exact": true,
+   "stored_remote_ok": true,
+   "v15_exact": true,
+   "v15_remote_ok": true
+  }
+ ]
+}

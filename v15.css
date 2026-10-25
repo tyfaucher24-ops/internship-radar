@@ -1,0 +1,10 @@
+/* V15 addendum 2: calm "Live" badge (replaces every "Updated X ago"); hidden by JS when the last sync is over 60 minutes old */
+.live-b{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 9px;border-radius:999px;font:600 12px/1 var(--font-sans,system-ui);letter-spacing:.02em;color:#14532d;background:#dcfce7;white-space:nowrap}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#15803d;flex:none;animation:livePulse 2.6s ease-in-out infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(21,128,61,.40)}50%{box-shadow:0 0 0 5px rgba(21,128,61,0)}}
+@media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
+.dark .live-b{color:#bbf7d0;background:#14532d}.dark .live-dot{background:#4ade80}
+.qbadge:empty{display:none}
+/* V15: rows outside your picked locations are labelled, never hidden */
+.c-out{display:inline-block;font-size:12px;color:var(--muted,#57606a);margin-top:2px}
+.qbadge:has(.live-b){padding:0;background:none;border:0}

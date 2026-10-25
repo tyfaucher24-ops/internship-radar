@@ -137,6 +137,15 @@
    ]
   },
   {
+   "g": "sandt",
+   "label": "Sales & trading / markets",
+   "re": "sales (&|and) trading|\\bs&t\\b|global markets|markets (summer )?analyst",
+   "adj": [
+    "quant",
+    "ib"
+   ]
+  },
+  {
    "g": "quant",
    "label": "Quant / trading",
    "re": "quant|trading|trader|algorithmic|systematic|market making|\\bstrats?\\b",
@@ -144,15 +153,6 @@
     "swe",
     "data",
     "sandt"
-   ]
-  },
-  {
-   "g": "sandt",
-   "label": "Sales & trading / markets",
-   "re": "sales (&|and) trading|\\bs&t\\b|global markets|markets (summer )?analyst",
-   "adj": [
-    "quant",
-    "ib"
    ]
   },
   {
@@ -185,7 +185,7 @@
   {
    "g": "swe",
    "label": "Software engineering",
-   "re": "software|developer|\\bswe\\b|full.?stack|back.?end|front.?end|web dev|mobile|devops|site reliability|\\bsre\\b|platform engineer|cloud engineer|programmer|infrastructure engineer|security engineer|application engineer|forward.deployed",
+   "re": "software|developer|\\bswe\\b|full.?stack|back.?end|front.?end|web dev|mobile|devops|site reliability|\\bsre\\b|platform engineer|cloud engineer|programmer|infrastructure engineer|security engineer|application engineer|forward.deployed|systems? administrat|network administrat|help ?desk|information technology|\\bit (intern|support|specialist|analyst)",
    "adj": [
     "data",
     "quant"
@@ -254,7 +254,7 @@
   {
    "g": "health",
    "label": "Health / life sciences",
-   "re": "pharma|pharmacy|clinical|health|medical|biolog|biotech|laborator|\\blab\\b|research.*(bio|chem)|hospital",
+   "re": "pharma|pharmacy|clinical|health|medical|biolog|biotech|laborator|\\blab (assistant|tech|intern)|research.*(bio|chem)|hospital",
    "adj": [
     "nursing"
    ]
@@ -451,11 +451,17 @@
   "law": [
    "legal"
   ],
-  "undeclared": []
+  "undeclared": [],
+  "english": [
+   "marketing"
+  ]
  },
  "industryGroups": {
   "Finance & Banking": [
-   "finance"
+   "finance",
+   "ib",
+   "pe",
+   "sandt"
   ],
   "Quant & Trading": [
    "quant"
@@ -499,6 +505,9 @@
   ],
   "Legal": [
    "legal"
+  ],
+  "Media & Communications": [
+   "marketing"
   ]
  },
  "firmSelectivity": {
@@ -1148,7 +1157,7 @@
     "label": "audit and tax roles usually want accounting majors"
    },
    {
-    "re": "quant|quantitative|trading|strats",
+    "re": "quant|quantitative|(?<!sales (and|&) )trading|strats",
     "majors": "math|computer|physics|statistic|engineering|economics|financial engineering",
     "label": "quant roles usually want math, CS or physics majors"
    },
@@ -1156,6 +1165,12 @@
     "re": "\\b(legal|paralegal|law)\\b",
     "majors": "legal|law|political|english|history|philosophy|criminal",
     "label": "legal roles usually want pre-law style majors"
+   },
+   {
+    "re": "pharmacy intern|pharmacist intern|intern pharmacist",
+    "majors": "pharm",
+    "cap": 20,
+    "label": "pharmacy intern roles work under a state pharmacy-intern license, which needs PharmD enrollment"
    }
   ]
  },

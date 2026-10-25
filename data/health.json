@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T10:12:01Z",
+ "updated": "2026-10-25T14:27:11Z",
  "listings_by_source_type": {
   "ats": 9653,
   "manual": 66,
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35318,
+   "postings": 35323,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13631,
+   "postings": 13629,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 178,
-   "postings": 8733,
+   "postings": 8739,
    "errors": [
     "CALSTART (calstart): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/calstart?mode=json",
     "Saronic (saronic): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/saronic?mode=json"
@@ -69,21 +69,21 @@
   }
  },
  "pct_verified_24h": 18.2,
- "stale": 9067,
+ "stale": 9072,
  "duplicate_rate_pct": 8.5,
  "review_queue": 490,
  "deadline_coverage_pct": 16.9,
  "stats": {
-  "ats_no": 39820,
+  "ats_no": 39825,
   "ats_ambiguous": 490,
-  "ats_non-US": 15273,
+  "ats_non-US": 15277,
   "ats_ok": 2099,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
   "kept_list_unreadable": 1369
  },
  "by_category": {
-  "Other": 1845,
+  "Other": 1844,
   "Marketing & Sales": 614,
   "Accounting & Audit": 450,
   "Finance & Banking": 716,
@@ -92,7 +92,7 @@
   "Real Estate": 57,
   "HR & People": 177,
   "Engineering & Hardware": 1726,
-  "Software & IT": 2231,
+  "Software & IT": 2232,
   "Quant & Trading": 158,
   "Design & Creative": 150,
   "Media & Communications": 218,
@@ -120,7 +120,7 @@
   "UT": 144,
   "WI": 527,
   "WA": 398,
-  "NY": 1073,
+  "NY": 1072,
   "GA": 356,
   "IL": 670,
   "NM": 24,

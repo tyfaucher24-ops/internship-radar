@@ -1,27 +1,27 @@
 {
- "updated": "2026-10-25T17:54:02Z",
+ "updated": "2026-10-25T20:58:42Z",
  "open": 10978,
  "open_all": 10978,
  "closing_this_week": 546,
  "upcoming": 1608,
  "companies_tracked": 2497,
  "companies_with_listings": 1462,
- "duration_s": 267,
+ "duration_s": 247,
  "mode": "partial",
  "apply_links": {
-  "at": "2026-10-25T17:58:31+00:00",
+  "at": "2026-10-25T21:02:51+00:00",
   "open": 11144,
-  "direct": 9658,
+  "direct": 9657,
   "posting": 1350,
-  "none": 136,
-  "checked_this_run": 9616,
-  "ok": 9349,
-  "unknown": 262,
-  "failed": 5,
+  "none": 137,
+  "checked_this_run": 7951,
+  "ok": 7815,
+  "unknown": 135,
+  "failed": 1,
   "top_failing_hosts": [
    [
-    "zapply.jobs",
-    5
+    "apply.workable.com",
+    1
    ]
   ],
   "top_fallback_hosts": [
@@ -66,7 +66,7 @@
     24
    ]
   ],
-  "validated_within_24h": 9363
+  "validated_within_24h": 8937
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

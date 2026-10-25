@@ -1,10 +1,10 @@
 {
- "at": "2026-10-25T00:37:47Z",
- "open_visible": 10979,
+ "at": "2026-10-25T05:39:04Z",
+ "open_visible": 10978,
  "fixes": {
-  "city_dropped_unverifiable": 148,
-  "city_normalized": 10,
+  "city_dropped_unverifiable": 90,
   "hidden_bad_company": 26,
+  "city_normalized": 1,
   "duplicates_hidden": 1
  },
  "checks": {
@@ -173,14 +173,14 @@
    "issue": "company looks like a job title"
   }
  ],
- "added": 1,
- "removed": 119,
- "changed": 0,
- "previous_open": 11097,
+ "added": 185,
+ "removed": 227,
+ "changed": 79,
+ "previous_open": 11020,
  "events": {
-  "new": 0,
+  "new": 185,
   "deadline": 0,
-  "closed": 78
+  "closed": 186
  },
  "sources": {
   "boards": 1088,

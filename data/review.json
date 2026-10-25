@@ -135,14 +135,14 @@
 {
 "company": "Anduril",
 "title": "Legal Recruiter (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5180457007?gh_jid=5180457007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5181926007?gh_jid=5181926007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Legal Recruiter (Contract)",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5181926007?gh_jid=5181926007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5180457007?gh_jid=5180457007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -884,14 +884,14 @@
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864170002?gh_jid=8864170002",
+"url": "https://www.brex.com/careers/8864176002?gh_jid=8864176002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864176002?gh_jid=8864176002",
+"url": "https://www.brex.com/careers/8864170002?gh_jid=8864170002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3358,6 +3358,20 @@
 "url": "https://jobs.lever.co/veeva/99d16ac7-31f6-4aa7-b034-6b6cb927ce18",
 "reason": "ambiguous intern wording",
 "source": "lever"
+},
+{
+"company": "Vmax AI",
+"title": "Research Fellowship - Open Endedness",
+"url": "https://jobs.ashbyhq.com/vmax/c4e1e51b-65c5-41f0-9bed-c90bc452859b",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Vmax AI",
+"title": "Research Fellowship - Mechanistic Interpretability",
+"url": "https://jobs.ashbyhq.com/vmax/7344d5fd-6fa3-4bce-b7bd-e73aa4dd568b",
+"reason": "ambiguous intern wording",
+"source": "ashby"
 },
 {
 "company": "Voloridge",

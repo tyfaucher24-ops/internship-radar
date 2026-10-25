@@ -1,0 +1,508 @@
+{
+ "bars": [
+  {
+   "id": "school_swap.moves_gt_1_letter",
+   "metric": "pairs (0)",
+   "value": "0 / 6500",
+   "pass": true
+  },
+  {
+   "id": "school_swap.mean_ib_pe_consulting",
+   "metric": "≤ 4.0 pts",
+   "value": "ib 2.3, pe 1.5, consulting 2.7",
+   "pass": true
+  },
+  {
+   "id": "school_swap.mean_elsewhere",
+   "metric": "0.0 pts",
+   "value": 0,
+   "pass": true
+  },
+  {
+   "id": "school_swap.letter_changes_ib_consulting",
+   "metric": "≤ 25% (full letter)",
+   "value": "15.4% (any +/- step: 41.3%)",
+   "pass": true
+  },
+  {
+   "id": "blank_school_above_unlisted",
+   "metric": "0 pairs",
+   "value": "0 / 13000",
+   "pass": true
+  },
+  {
+   "id": "blank_gpa_le_gpa_3_0",
+   "metric": "100% of pairs",
+   "value": "100%",
+   "pass": true
+  },
+  {
+   "id": "estimated_tier_safety_tags",
+   "metric": "0",
+   "value": 0,
+   "pass": true
+  },
+  {
+   "id": "novice_A_share",
+   "metric": "≤ 5%",
+   "value": "1.5% of 545",
+   "pass": true
+  },
+  {
+   "id": "project_only_experience",
+   "metric": "≤ 65 (0 over)",
+   "value": "0 over / 545",
+   "pass": true
+  },
+  {
+   "id": "tag_consistency",
+   "metric": "100%",
+   "value": "100%",
+   "pass": true
+  },
+  {
+   "id": "grammar",
+   "metric": "0 matches",
+   "value": "{\"ifYou\":0,\"coreFor\":0,\"dupLoc\":0,\"unsourcedPct\":0}",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "id": "tier1_standout_school_effect",
+   "metric": "0 grade diffs",
+   "value": "0 / 473",
+   "pass": true
+  },
+  {
+   "id": "resume_no_school_keeps_gpa_major",
+   "metric": "100% kept",
+   "value": "GPA 100%, major 100%",
+   "pass": true
+  },
+  {
+   "id": "resume_parse_drift",
+   "metric": "≤ 3 pts mean",
+   "value": 0.5,
+   "pass": true
+  },
+  {
+   "id": "stability_identical_and_irrelevant",
+   "metric": "0 changes",
+   "value": "0 / 1720",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "id": "match.eligible",
+   "metric": "≥ 98%",
+   "value": "100%",
+   "pass": true
+  },
+  {
+   "id": "match.relevant",
+   "metric": "≥ 90%",
+   "value": "100%",
+   "pass": true
+  },
+  {
+   "id": "match.placeholders",
+   "metric": "0%",
+   "value": "0%",
+   "pass": true
+  },
+  {
+   "id": "match.open",
+   "metric": "≥ 95%",
+   "value": "100%",
+   "pass": true
+  },
+  {
+   "id": "match.unique_companies",
+   "metric": "≥ 8 (mean)",
+   "value": 8.6,
+   "pass": true,
+   "detail": {
+    "min": 0
+   }
+  },
+  {
+   "id": "match.non_us",
+   "metric": "0",
+   "value": 0,
+   "pass": true
+  },
+  {
+   "id": "match.pref_locations_or_remote",
+   "metric": "≥ 80% (prefs set)",
+   "value": "83.9% of 145 profiles",
+   "pass": true
+  },
+  {
+   "id": "match.target_in_chosen_locations",
+   "metric": "≥ 35% (≥30 eligible there)",
+   "value": "92.4% mean, 3 profiles under",
+   "pass": true,
+   "detail": {
+    "profiles": 71
+   }
+  },
+  {
+   "id": "match.no_prefs_location_neutral",
+   "metric": "0 boosts/penalties",
+   "value": "0 / 1440",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "id": "recommend.169_all_four",
+   "metric": "≥ 95% relevant+eligible+open+apply link",
+   "value": "99.1% (169 profiles)",
+   "pass": true,
+   "detail": {
+    "relevant": 100,
+    "eligible": 100,
+    "open": 100,
+    "applyLink": 99.1,
+    "directApplyOnly": 90.1
+   }
+  },
+  {
+   "id": "gold.in_band",
+   "metric": "≥ 90%",
+   "value": "90% of 40",
+   "pass": true
+  },
+  {
+   "id": "gold.off_by_2plus_letters",
+   "metric": "0",
+   "value": 0,
+   "pass": true
+  },
+  {
+   "id": "persona_grader_in_band",
+   "metric": "≥ 93.0%",
+   "value": "95.8%",
+   "pass": true
+  },
+  {
+   "id": "persona_g34_g39_fixed",
+   "metric": "both in band",
+   "value": "both fixed",
+   "pass": true
+  },
+  {
+   "id": "persona_A_share",
+   "metric": "≤ 15%",
+   "value": "6.3%",
+   "pass": true
+  }
+ ],
+ "schoolSwap": {
+  "other": {
+   "pairs": 5400,
+   "meanTargetMinusUnlisted": 0
+  },
+  "ib": {
+   "pairs": 480,
+   "meanTargetMinusUnlisted": 2.3
+  },
+  "pe": {
+   "pairs": 80,
+   "meanTargetMinusUnlisted": 1.5
+  },
+  "consulting": {
+   "pairs": 540,
+   "meanTargetMinusUnlisted": 2.7
+  }
+ },
+ "appSort": {
+  "relevant": 100,
+  "eligible": 100,
+  "open": 100,
+  "placeholders": 0,
+  "uniqueCompaniesMean": 7.7
+ },
+ "gold": [
+  {
+   "id": "gold01",
+   "expected": "A–B",
+   "got": "B- 74",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold02",
+   "expected": "A–B",
+   "got": "A- 87",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold03",
+   "expected": "B–C",
+   "got": "D+ 52",
+   "inBand": false,
+   "off": 1
+  },
+  {
+   "id": "gold04",
+   "expected": "C–D",
+   "got": "B- 70",
+   "inBand": false,
+   "off": 1
+  },
+  {
+   "id": "gold05",
+   "expected": "B–C",
+   "got": "B+ 84",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold06",
+   "expected": "B–C",
+   "got": "B+ 82",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold07",
+   "expected": "D–F",
+   "got": "D 47",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold08",
+   "expected": "C–D",
+   "got": "C+ 65",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold09",
+   "expected": "B–C",
+   "got": "B- 72",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold10",
+   "expected": "A–B",
+   "got": "A- 89",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold11",
+   "expected": "A–B",
+   "got": "B+ 81",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold12",
+   "expected": "A–B",
+   "got": "B 77",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold13",
+   "expected": "A–B",
+   "got": "B 79",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold14",
+   "expected": "B–C",
+   "got": "C- 58",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold15",
+   "expected": "C–D",
+   "got": "B 75",
+   "inBand": false,
+   "off": 1
+  },
+  {
+   "id": "gold16",
+   "expected": "D–F",
+   "got": "D+ 50",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold17",
+   "expected": "C–D",
+   "got": "C+ 69",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold18",
+   "expected": "A–B",
+   "got": "B 78",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold19",
+   "expected": "A–B",
+   "got": "B+ 83",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold20",
+   "expected": "B–C",
+   "got": "D- 41",
+   "inBand": false,
+   "off": 1
+  },
+  {
+   "id": "gold21",
+   "expected": "A–B",
+   "got": "A 93",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold22",
+   "expected": "A–B",
+   "got": "A 94",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold23",
+   "expected": "B–C",
+   "got": "B- 73",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold24",
+   "expected": "B–C",
+   "got": "B- 70",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold25",
+   "expected": "A–B",
+   "got": "A 90",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold26",
+   "expected": "A–B",
+   "got": "A- 87",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold27",
+   "expected": "C–D",
+   "got": "C 62",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold28",
+   "expected": "B–C",
+   "got": "C+ 69",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold29",
+   "expected": "C–D",
+   "got": "C+ 65",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold30",
+   "expected": "D–F",
+   "got": "F 38",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold31",
+   "expected": "A–B",
+   "got": "B+ 81",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold32",
+   "expected": "A–B",
+   "got": "A 93",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold33",
+   "expected": "A–B",
+   "got": "A 93",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold34",
+   "expected": "A–B",
+   "got": "A- 89",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold35",
+   "expected": "A–B",
+   "got": "A 94",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold36",
+   "expected": "A–B",
+   "got": "A 93",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold37",
+   "expected": "B–C",
+   "got": "B 75",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold38",
+   "expected": "B–C",
+   "got": "C+ 69",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold39",
+   "expected": "D–F",
+   "got": "F 0",
+   "inBand": true,
+   "off": 0
+  },
+  {
+   "id": "gold40",
+   "expected": "B–C",
+   "got": "B+ 81",
+   "inBand": true,
+   "off": 0
+  }
+ ],
+ "seconds": 223
+}

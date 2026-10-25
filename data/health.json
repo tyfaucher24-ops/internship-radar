@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-25T20:58:42Z",
+ "updated": "2026-10-25T23:26:15Z",
  "listings_by_source_type": {
-  "ats": 9653,
+  "ats": 9656,
   "manual": 66,
   "github-verified": 1369
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35315,
+   "postings": 35312,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 178,
-   "postings": 8734,
+   "postings": 8733,
    "errors": [
     "CALSTART (calstart): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/calstart?mode=json",
     "Saronic (saronic): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/saronic?mode=json"
@@ -74,13 +74,14 @@
  "review_queue": 490,
  "deadline_coverage_pct": 16.9,
  "stats": {
-  "ats_no": 39811,
+  "ats_no": 39806,
   "ats_ambiguous": 490,
-  "ats_non-US": 15276,
-  "ats_ok": 2099,
+  "ats_non-US": 15274,
+  "ats_ok": 2102,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
-  "kept_list_unreadable": 1369
+  "kept_list_unreadable": 1369,
+  "closed_this_sync": 1
  },
  "by_category": {
   "Other": 1844,
@@ -88,11 +89,11 @@
   "Accounting & Audit": 450,
   "Finance & Banking": 716,
   "Healthcare & Life Sciences": 394,
-  "Data & AI": 994,
+  "Data & AI": 995,
   "Real Estate": 57,
   "HR & People": 177,
   "Engineering & Hardware": 1726,
-  "Software & IT": 2232,
+  "Software & IT": 2234,
   "Quant & Trading": 158,
   "Design & Creative": 150,
   "Media & Communications": 218,
@@ -114,7 +115,7 @@
   "IN": 313,
   "NJ": 287,
   "PA": 668,
-  "CA": 2301,
+  "CA": 2304,
   "FL": 448,
   "VA": 408,
   "UT": 144,
@@ -160,10 +161,10 @@
   "VT": 52
  },
  "by_size": {
-  "not listed": 11088
+  "not listed": 11091
  },
  "remote": 360,
- "closed_this_sync": 0,
+ "closed_this_sync": 1,
  "gap_report": {
   "categories_under_25": [
    "Research"

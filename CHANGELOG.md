@@ -1,6 +1,21 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V15 (Fairer grading, honest tags, faster Feedback, per specs/V15.md) (2026-10-24)
+- School weight in IB/PE/consulting cut from 25% to 12%; unlisted schools score 55 (was 35); blank school no longer beats a listed one; school weight 0 in all other fields
+- Blank GPA scored as 3.0 (was ~3.3 equivalent); tier-1 standout rule now keyed on in-industry internships, not school
+- Projects capped at "related" (65) experience; athletics no longer counts as an experience entry by itself
+- No "safety" tag for firms with estimated competitiveness (97.8% of listings); card tags now match V14.3 tags
+- Feedback copy fixes: verdict grammar, single relocation hint, clean skills line, no major contradiction
+- Rankings drop ineligible class years, placeholders and >120-day listings; location and company-diversity weighting
+- Feedback page renders first, what-ifs run after on a top-N subset; firm-name normalisation memoised (8.0s → ≤2s target)
+- Tests: school-swap fairness bar, GPA-blank bar, tag consistency, grammar, match and perf bars
+- Grader accuracy ≥93.0% persona in-band (floor raised from 91.8%)
+- Measured result: persona in-band 92.1% (305/331); the 93.0% bar is missed and reported, not tuned around (g39 still F 27 vs B–C band; see the V15 report)
+- Addendum (location and grade accuracy): location parser fixes (Washington DC, Workday "US, CA, City" order, street/office suffixes, spelled-out states, "/" multi-city); 200-listing live audit on a held-out sample: 98.5% exact city/state, 100% remote flag; preferred locations drive Top/Realistic (≥80% of top 10 in picks or remote-OK) with 50-mile metro matching from a vendored US city table; no preferences means no location boost or penalty (remote-OK alone no longer penalises on-site listings); 40-pair hand-labelled gold set and stability tests (tests/grader/run_v15.js)
+- Addendum 2 (5-minute sync): ops/workflows/sync5.yml (copy to .github/workflows/sync5.yml) runs an incremental sync every 5 minutes with ETag/If-Modified-Since, a shared concurrency group with the 2-hour full sync, and a gate that skips empty or timestamp-only commits; the site re-fetches listings every 5 minutes while visible and updates in place; a green "Live" badge replaces every "Updated X ago" and hides when the last sync is over 60 minutes old (logged in admin)
+- New tests: tests/test_v15_pipeline.py, tests/test_v15_live.py, tests/grader/run_v15.js
+
 ## V14.6 (profile entries show full text, per specs/V14.6.md) (2026-10-24)
 - Profile page: no truncation anywhere. Experience titles, organizations, dates and bullets, plus school, major, skills and other chips, wrap in full at every width. There are no ellipses or line clamps, and long words break cleanly.
 - The profile columns no longer have fixed-height inner scrolling or a bottom fade that hid content. They grow with their content and the page scrolls.

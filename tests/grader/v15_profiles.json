@@ -1,0 +1,8216 @@
+{
+ "_note": "QA V15 synthetic test profiles. ALL FICTIONAL. Real school names appear only as the school field. _meta is for the test only.",
+ "q001_swe_strong_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 1",
+  "school": "Harvard University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git",
+   "sql",
+   "react"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "strong",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q002_swe_strong_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 2",
+  "school": "Southern New Hampshire University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git",
+   "sql",
+   "react"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "strong",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q003_swe_solid_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 3",
+  "school": "Central Piedmont Community College",
+  "major": "Computer Science",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "solid",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q004_swe_solid_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 4",
+  "school": "Appalachian State University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "solid",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q005_swe_firstgen_service_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 5",
+  "school": "Indiana University",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "firstgen_service",
+   "schoolTier": "semi",
+   "firstgen": true
+  }
+ },
+ "q006_swe_firstgen_service_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 6",
+  "school": "Harvard University",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "firstgen_service",
+   "schoolTier": "ivy",
+   "firstgen": true
+  }
+ },
+ "q007_swe_athlete_d1_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 7",
+  "school": "Southern New Hampshire University",
+  "major": "Computer Science",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "athlete_d1",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q008_swe_athlete_d2_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 8",
+  "school": "University of Michigan",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "athlete_d2",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q009_swe_athlete_d3_intern_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 9",
+  "school": "Appalachian State University",
+  "major": "Computer Science",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q010_swe_lowgpa_strongexp_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 10",
+  "school": "Morehouse College",
+  "major": "Computer Science",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git",
+   "sql",
+   "react"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a full-stack web app (React, Node)",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q011_swe_freshman_novice_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 11",
+  "school": "Cornell University",
+  "major": "Computer Science",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Built a full-stack web app (React, Node)",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "freshman_novice",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q012_swe_career_changer_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 12",
+  "school": "University of North Carolina at Charlotte",
+  "major": "Computer Science",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a full-stack web app (React, Node)",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "career_changer",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q013_swe_missing_gpa_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 13",
+  "school": "Northern Virginia Community College",
+  "major": "Computer Science",
+  "classYear": "Community college (2nd year)",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "missing_gpa",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q014_swe_missing_skills_exp_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 14",
+  "school": "",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "swe",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q015_swe_missing_skills_exp_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 15",
+  "school": "Howard University",
+  "major": "Computer Science",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "swe",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q016_swe_missing_major_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 16",
+  "school": "Queens University of Charlotte",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "missing_major",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q017_swe_missing_major_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 17",
+  "school": "University of Florida",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java",
+   "git"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Software Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and java tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "missing_major",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q018_swe_cc_student_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 18",
+  "school": "University of Virginia",
+  "major": "Computer Science",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a full-stack web app (React, Node)",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "cc_student",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q019_swe_cc_student_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 19",
+  "school": "",
+  "major": "Computer Science",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Software & IT"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "java"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a full-stack web app (React, Node)",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "swe",
+   "archetype": "cc_student",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q020_data_strong_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 20",
+  "school": "Howard University",
+  "major": "Statistics",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql",
+   "r",
+   "tableau",
+   "pandas"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "strong",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q021_data_solid_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 21",
+  "school": "Harvard University",
+  "major": "Statistics",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "solid",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q022_data_firstgen_service_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 22",
+  "school": "University of North Carolina at Charlotte",
+  "major": "Statistics",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "firstgen_service",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": true
+  }
+ },
+ "q023_data_athlete_d1_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 23",
+  "school": "Northern Virginia Community College",
+  "major": "Statistics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "athlete_d1",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q024_data_athlete_d2_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 24",
+  "school": "",
+  "major": "Statistics",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "athlete_d2",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q025_data_athlete_d3_intern_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 25",
+  "school": "Boston University",
+  "major": "Statistics",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q026_data_lowgpa_strongexp_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 26",
+  "school": "Elon University",
+  "major": "Statistics",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql",
+   "r",
+   "tableau",
+   "pandas"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a churn model in Python",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q027_data_freshman_novice_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 27",
+  "school": "Southern New Hampshire University",
+  "major": "Statistics",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Built a churn model in Python",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "freshman_novice",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q028_data_freshman_novice_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 28",
+  "school": "Central Piedmont Community College",
+  "major": "Statistics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Built a churn model in Python",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "freshman_novice",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q029_data_career_changer_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 29",
+  "school": "Appalachian State University",
+  "major": "Statistics",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a churn model in Python",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "career_changer",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q030_data_career_changer_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 30",
+  "school": "Boston University",
+  "major": "Statistics",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a churn model in Python",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "career_changer",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q031_data_missing_gpa_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 31",
+  "school": "Harvard University",
+  "major": "Statistics",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "missing_gpa",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q032_data_missing_gpa_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 32",
+  "school": "Southern New Hampshire University",
+  "major": "Statistics",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "missing_gpa",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q033_data_missing_skills_exp_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 33",
+  "school": "Central Piedmont Community College",
+  "major": "Statistics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "data",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q034_data_missing_major_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 34",
+  "school": "",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "python",
+   "sql",
+   "r"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Data Analyst Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on python and sql tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "missing_major",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q035_data_cc_student_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 35",
+  "school": "Penn State",
+  "major": "Statistics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Data & AI"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "python",
+   "sql"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Built a churn model in Python",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used python"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "data",
+   "archetype": "cc_student",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q036_ib_strong_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 36",
+  "school": "Rollins College",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation",
+   "dcf",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "strong",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q037_ib_solid_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 37",
+  "school": "Southern New Hampshire University",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "solid",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q038_ib_firstgen_service_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 38",
+  "school": "The University of Texas at Austin",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "firstgen_service",
+   "schoolTier": "flagship_target",
+   "firstgen": true
+  }
+ },
+ "q039_ib_athlete_d1_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 39",
+  "school": "Western Michigan University",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "athlete_d1",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q040_ib_athlete_d2_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 40",
+  "school": "North Carolina A&T State University",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "athlete_d2",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q041_ib_athlete_d2_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 41",
+  "school": "Rollins College",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "athlete_d2",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q042_ib_athlete_d3_intern_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 42",
+  "school": "Arizona State University",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q043_ib_athlete_d3_intern_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 43",
+  "school": "University of Michigan",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q044_ib_lowgpa_strongexp_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 44",
+  "school": "",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation",
+   "dcf",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Student investment fund analyst",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q045_ib_lowgpa_strongexp_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 45",
+  "school": "Morehouse College",
+  "major": "Finance",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation",
+   "dcf",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Student investment fund analyst",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q046_ib_freshman_novice_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 46",
+  "school": "Queens University of Charlotte",
+  "major": "Finance",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Student investment fund analyst",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "freshman_novice",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q047_ib_career_changer_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 47",
+  "school": "Southern New Hampshire University",
+  "major": "Finance",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Student investment fund analyst",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "career_changer",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q048_ib_missing_gpa_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 48",
+  "school": "The University of Texas at Austin",
+  "major": "Finance",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "missing_gpa",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q049_ib_missing_skills_exp_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 49",
+  "school": "Western Michigan University",
+  "major": "Finance",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "ib",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q050_ib_missing_major_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 50",
+  "school": "Howard University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling",
+   "valuation"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Investment Banking Summer Analyst",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and financial modeling tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "missing_major",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q051_ib_cc_student_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 51",
+  "school": "University of Pennsylvania",
+  "major": "Finance",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Finance & Banking"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "financial modeling"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Student investment fund analyst",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ib",
+   "archetype": "cc_student",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q052_consulting_strong_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 52",
+  "school": "Ohio State University",
+  "major": "Economics",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis",
+   "research"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "strong",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q053_consulting_solid_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 53",
+  "school": "Central Piedmont Community College",
+  "major": "Economics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "solid",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q054_consulting_solid_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 54",
+  "school": "Appalachian State University",
+  "major": "Economics",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "solid",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q055_consulting_firstgen_service_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 55",
+  "school": "Indiana University",
+  "major": "Economics",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "firstgen_service",
+   "schoolTier": "semi",
+   "firstgen": true
+  }
+ },
+ "q056_consulting_firstgen_service_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 56",
+  "school": "University of Pennsylvania",
+  "major": "Economics",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "firstgen_service",
+   "schoolTier": "ivy",
+   "firstgen": true
+  }
+ },
+ "q057_consulting_athlete_d1_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 57",
+  "school": "Western Governors University",
+  "major": "Economics",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "athlete_d1",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q058_consulting_athlete_d1_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 58",
+  "school": "Central Piedmont Community College",
+  "major": "Economics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "athlete_d1",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q059_consulting_athlete_d2_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 59",
+  "school": "Kennesaw State University",
+  "major": "Economics",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "athlete_d2",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q060_consulting_athlete_d3_intern_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 60",
+  "school": "North Carolina A&T State University",
+  "major": "Economics",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q061_consulting_lowgpa_strongexp_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 61",
+  "school": "University of Pennsylvania",
+  "major": "Economics",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis",
+   "research"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Case competition finalist",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q062_consulting_freshman_novice_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 62",
+  "school": "University of Florida",
+  "major": "Economics",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Case competition finalist",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "freshman_novice",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q063_consulting_career_changer_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 63",
+  "school": "Central Piedmont Community College",
+  "major": "Economics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Case competition finalist",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "career_changer",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q064_consulting_missing_gpa_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 64",
+  "school": "",
+  "major": "Economics",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "missing_gpa",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q065_consulting_missing_skills_exp_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 65",
+  "school": "Indiana University",
+  "major": "Economics",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q066_consulting_missing_major_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 66",
+  "school": "Elon University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "missing_major",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q067_consulting_missing_major_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 67",
+  "school": "University of Florida",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "powerpoint",
+   "data analysis"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Strategy Consulting Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and powerpoint tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "missing_major",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q068_consulting_cc_student_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 68",
+  "school": "University of Virginia",
+  "major": "Economics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Case competition finalist",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "cc_student",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q069_consulting_cc_student_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 69",
+  "school": "",
+  "major": "Economics",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Consulting & Strategy"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "powerpoint"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Case competition finalist",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "consulting",
+   "archetype": "cc_student",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q070_marketing_strong_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 70",
+  "school": "North Carolina A&T State University",
+  "major": "Marketing",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics",
+   "copywriting",
+   "hubspot"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "strong",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q071_marketing_strong_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 71",
+  "school": "Queens University of Charlotte",
+  "major": "Marketing",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics",
+   "copywriting",
+   "hubspot"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "strong",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q072_marketing_solid_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 72",
+  "school": "Ohio State University",
+  "major": "Marketing",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "solid",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q073_marketing_firstgen_service_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 73",
+  "school": "Central Piedmont Community College",
+  "major": "Marketing",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "social media",
+   "canva"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "firstgen_service",
+   "schoolTier": "cc_transfer",
+   "firstgen": true
+  }
+ },
+ "q074_marketing_athlete_d1_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 74",
+  "school": "",
+  "major": "Marketing",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "athlete_d1",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q075_marketing_athlete_d2_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 75",
+  "school": "Boston University",
+  "major": "Marketing",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "athlete_d2",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q076_marketing_athlete_d3_intern_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 76",
+  "school": "Elon University",
+  "major": "Marketing",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q077_marketing_lowgpa_strongexp_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 77",
+  "school": "Southern New Hampshire University",
+  "major": "Marketing",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics",
+   "copywriting",
+   "hubspot"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Ran Instagram for a campus org",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used social media"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q078_marketing_freshman_novice_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 78",
+  "school": "University of Michigan",
+  "major": "Marketing",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "social media"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Ran Instagram for a campus org",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used social media"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "freshman_novice",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q079_marketing_career_changer_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 79",
+  "school": "Appalachian State University",
+  "major": "Marketing",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Ran Instagram for a campus org",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used social media"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "career_changer",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q080_marketing_career_changer_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 80",
+  "school": "Indiana University",
+  "major": "Marketing",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Ran Instagram for a campus org",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used social media"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "career_changer",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q081_marketing_missing_gpa_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 81",
+  "school": "University of Pennsylvania",
+  "major": "Marketing",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "missing_gpa",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q082_marketing_missing_gpa_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 82",
+  "school": "Southern New Hampshire University",
+  "major": "Marketing",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "missing_gpa",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q083_marketing_missing_skills_exp_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 83",
+  "school": "Northern Virginia Community College",
+  "major": "Marketing",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q084_marketing_missing_skills_exp_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 84",
+  "school": "Western Michigan University",
+  "major": "Marketing",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q085_marketing_missing_major_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 85",
+  "school": "Indiana University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva",
+   "google analytics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Marketing Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on social media and canva tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "missing_major",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q086_marketing_cc_student_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 86",
+  "school": "Rollins College",
+  "major": "Marketing",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Marketing & Sales"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "social media",
+   "canva"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Ran Instagram for a campus org",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used social media"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "marketing",
+   "archetype": "cc_student",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q087_mech_strong_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 87",
+  "school": "Western Governors University",
+  "major": "Mechanical Engineering",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad",
+   "autocad",
+   "3d printing"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "strong",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q088_mech_solid_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 88",
+  "school": "The University of Texas at Austin",
+  "major": "Mechanical Engineering",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "solid",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q089_mech_firstgen_service_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 89",
+  "school": "Appalachian State University",
+  "major": "Mechanical Engineering",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "solidworks",
+   "matlab"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "firstgen_service",
+   "schoolTier": "mid",
+   "firstgen": true
+  }
+ },
+ "q090_mech_athlete_d1_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 90",
+  "school": "North Carolina A&T State University",
+  "major": "Mechanical Engineering",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "athlete_d1",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q091_mech_athlete_d2_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 91",
+  "school": "Harvard University",
+  "major": "Mechanical Engineering",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "athlete_d2",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q092_mech_athlete_d3_intern_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 92",
+  "school": "University of North Carolina at Charlotte",
+  "major": "Mechanical Engineering",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q093_mech_athlete_d3_intern_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 93",
+  "school": "The University of Texas at Austin",
+  "major": "Mechanical Engineering",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q094_mech_lowgpa_strongexp_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 94",
+  "school": "",
+  "major": "Mechanical Engineering",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad",
+   "autocad",
+   "3d printing"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Formula SAE chassis team",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used solidworks"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q095_mech_lowgpa_strongexp_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 95",
+  "school": "North Carolina A&T State University",
+  "major": "Mechanical Engineering",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad",
+   "autocad",
+   "3d printing"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Formula SAE chassis team",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used solidworks"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q096_mech_freshman_novice_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 96",
+  "school": "Queens University of Charlotte",
+  "major": "Mechanical Engineering",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "solidworks"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Formula SAE chassis team",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used solidworks"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "freshman_novice",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q097_mech_freshman_novice_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 97",
+  "school": "University of Florida",
+  "major": "Mechanical Engineering",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "solidworks"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Formula SAE chassis team",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used solidworks"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "freshman_novice",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q098_mech_career_changer_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 98",
+  "school": "The University of Texas at Austin",
+  "major": "Mechanical Engineering",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Formula SAE chassis team",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used solidworks"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "career_changer",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q099_mech_missing_gpa_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 99",
+  "school": "Appalachian State University",
+  "major": "Mechanical Engineering",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "missing_gpa",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q100_mech_missing_skills_exp_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 100",
+  "school": "Morehouse College",
+  "major": "Mechanical Engineering",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "mech",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q101_mech_missing_major_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 101",
+  "school": "Harvard University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab",
+   "cad"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Mechanical Engineering Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on solidworks and matlab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "missing_major",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q102_mech_cc_student_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 102",
+  "school": "University of Florida",
+  "major": "Mechanical Engineering",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Engineering & Hardware"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "solidworks",
+   "matlab"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Formula SAE chassis team",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used solidworks"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "mech",
+   "archetype": "cc_student",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q103_health_strong_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 103",
+  "school": "Central Piedmont Community College",
+  "major": "Biology",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab",
+   "clinical",
+   "cpr",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "strong",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q104_health_solid_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 104",
+  "school": "",
+  "major": "Biology",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "solid",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q105_health_firstgen_service_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 105",
+  "school": "Indiana University",
+  "major": "Biology",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "firstgen_service",
+   "schoolTier": "semi",
+   "firstgen": true
+  }
+ },
+ "q106_health_firstgen_service_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 106",
+  "school": "Harvard University",
+  "major": "Biology",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "firstgen_service",
+   "schoolTier": "ivy",
+   "firstgen": true
+  }
+ },
+ "q107_health_athlete_d1_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 107",
+  "school": "Southern New Hampshire University",
+  "major": "Biology",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "athlete_d1",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q108_health_athlete_d1_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 108",
+  "school": "Central Piedmont Community College",
+  "major": "Biology",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "athlete_d1",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q109_health_athlete_d2_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 109",
+  "school": "Western Michigan University",
+  "major": "Biology",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "athlete_d2",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q110_health_athlete_d2_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 110",
+  "school": "Boston University",
+  "major": "Biology",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "athlete_d2",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q111_health_athlete_d3_intern_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 111",
+  "school": "Cornell University",
+  "major": "Biology",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q112_health_lowgpa_strongexp_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 112",
+  "school": "Ohio State University",
+  "major": "Biology",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab",
+   "clinical",
+   "cpr",
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Undergraduate research assistant, biology lab",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used research"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q113_health_freshman_novice_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 113",
+  "school": "Northern Virginia Community College",
+  "major": "Biology",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "research"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Undergraduate research assistant, biology lab",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used research"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "freshman_novice",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q114_health_career_changer_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 114",
+  "school": "",
+  "major": "Biology",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Undergraduate research assistant, biology lab",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used research"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "career_changer",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q115_health_missing_gpa_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 115",
+  "school": "Indiana University",
+  "major": "Biology",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "missing_gpa",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q116_health_missing_skills_exp_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 116",
+  "school": "Elon University",
+  "major": "Biology",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "health",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q117_health_missing_major_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 117",
+  "school": "Western Governors University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "research",
+   "lab",
+   "clinical"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Clinical Research Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on research and lab tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "missing_major",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q118_health_cc_student_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 118",
+  "school": "The University of Texas at Austin",
+  "major": "Biology",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Undergraduate research assistant, biology lab",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used research"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "cc_student",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q119_health_cc_student_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 119",
+  "school": "",
+  "major": "Biology",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Healthcare & Life Sciences"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "research",
+   "lab"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Undergraduate research assistant, biology lab",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used research"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "health",
+   "archetype": "cc_student",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q120_accounting_strong_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 120",
+  "school": "Spelman College",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks",
+   "gaap",
+   "tax"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "strong",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q121_accounting_strong_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 121",
+  "school": "Elon University",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks",
+   "gaap",
+   "tax"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "strong",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q122_accounting_solid_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 122",
+  "school": "University of North Carolina at Charlotte",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "solid",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q123_accounting_solid_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 123",
+  "school": "University of Virginia",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "solid",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q124_accounting_firstgen_service_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 124",
+  "school": "",
+  "major": "Accounting",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "firstgen_service",
+   "schoolTier": "missing",
+   "firstgen": true
+  }
+ },
+ "q125_accounting_athlete_d1_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 125",
+  "school": "Indiana University",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "athlete_d1",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q126_accounting_athlete_d2_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 126",
+  "school": "Elon University",
+  "major": "Accounting",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "athlete_d2",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q127_accounting_athlete_d3_intern_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 127",
+  "school": "Southern New Hampshire University",
+  "major": "Accounting",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q128_accounting_lowgpa_strongexp_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 128",
+  "school": "The University of Texas at Austin",
+  "major": "Accounting",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks",
+   "gaap",
+   "tax"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "VITA volunteer tax preparer",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q129_accounting_freshman_novice_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 129",
+  "school": "Western Michigan University",
+  "major": "Accounting",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "VITA volunteer tax preparer",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "freshman_novice",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q130_accounting_career_changer_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 130",
+  "school": "North Carolina A&T State University",
+  "major": "Accounting",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "VITA volunteer tax preparer",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "career_changer",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q131_accounting_missing_gpa_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 131",
+  "school": "University of Pennsylvania",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "missing_gpa",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q132_accounting_missing_gpa_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 132",
+  "school": "Southern New Hampshire University",
+  "major": "Accounting",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "missing_gpa",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q133_accounting_missing_skills_exp_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 133",
+  "school": "Central Piedmont Community College",
+  "major": "Accounting",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q134_accounting_missing_skills_exp_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 134",
+  "school": "Appalachian State University",
+  "major": "Accounting",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q135_accounting_missing_major_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 135",
+  "school": "Boston University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "missing_major",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q136_accounting_missing_major_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 136",
+  "school": "Harvard University",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting",
+   "quickbooks"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Audit Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and accounting tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "missing_major",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q137_accounting_cc_student_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 137",
+  "school": "Southern New Hampshire University",
+  "major": "Accounting",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Accounting & Audit"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "accounting"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Cashier",
+    "org": "Target",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "VITA volunteer tax preparer",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "accounting",
+   "archetype": "cc_student",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q138_libarts_strong_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 138",
+  "school": "The University of Texas at Austin",
+  "major": "English",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing",
+   "social media"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "strong",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q139_libarts_solid_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 139",
+  "school": "Appalachian State University",
+  "major": "English",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "solid",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q140_libarts_firstgen_service_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 140",
+  "school": "North Carolina A&T State University",
+  "major": "English",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "firstgen_service",
+   "schoolTier": "hbcu",
+   "firstgen": true
+  }
+ },
+ "q141_libarts_athlete_d1_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 141",
+  "school": "Columbia University",
+  "major": "English",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "athlete_d1",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q142_libarts_athlete_d2_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 142",
+  "school": "Ohio State University",
+  "major": "English",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "athlete_d2",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q143_libarts_athlete_d3_intern_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 143",
+  "school": "Central Piedmont Community College",
+  "major": "English",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q144_libarts_lowgpa_strongexp_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 144",
+  "school": "",
+  "major": "English",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing",
+   "social media"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q145_libarts_lowgpa_strongexp_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 145",
+  "school": "Spelman College",
+  "major": "English",
+  "classYear": "Senior",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing",
+   "social media"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q146_libarts_freshman_novice_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 146",
+  "school": "Queens University of Charlotte",
+  "major": "English",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "writing"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "freshman_novice",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q147_libarts_freshman_novice_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 147",
+  "school": "Arizona State University",
+  "major": "English",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "writing"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "freshman_novice",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q148_libarts_career_changer_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 148",
+  "school": "University of Michigan",
+  "major": "English",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "career_changer",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q149_libarts_career_changer_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 149",
+  "school": "",
+  "major": "English",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "career_changer",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q150_libarts_missing_gpa_hbcu": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 150",
+  "school": "Spelman College",
+  "major": "English",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "missing_gpa",
+   "schoolTier": "hbcu",
+   "firstgen": false
+  }
+ },
+ "q151_libarts_missing_skills_exp_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 151",
+  "school": "Cornell University",
+  "major": "English",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q152_libarts_missing_major_flagship_unlisted": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 152",
+  "school": "University of North Carolina at Charlotte",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research",
+   "editing"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Communications Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on writing and research tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "missing_major",
+   "schoolTier": "flagship_unlisted",
+   "firstgen": false
+  }
+ },
+ "q153_libarts_cc_student_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 153",
+  "school": "Central Piedmont Community College",
+  "major": "English",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Media & Communications",
+   "Nonprofit & Education"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "writing",
+   "research"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Warehouse Associate",
+    "org": "Amazon",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Editor, campus newspaper",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used writing"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "libarts",
+   "archetype": "cc_student",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q154_ops_strong_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 154",
+  "school": "",
+  "major": "Supply Chain Management",
+  "classYear": "Junior",
+  "gpa": "3.8",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics",
+   "sap"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   },
+   {
+    "kind": "Leadership",
+    "title": "President",
+    "org": "Student Investment Club",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Led 40 members"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "strong",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q155_ops_solid_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 155",
+  "school": "Boston University",
+  "major": "Supply Chain Management",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Shift Lead",
+    "org": "Chick-fil-A",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "solid",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q156_ops_firstgen_service_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 156",
+  "school": "Rollins College",
+  "major": "Supply Chain Management",
+  "classYear": "Sophomore",
+  "gpa": "3.2",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "supply chain"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Tutor",
+    "org": "Campus Learning Center",
+    "start": "2024-09",
+    "end": "Present",
+    "bullets": [
+     "Tutored 10 students a week"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "firstgen_service",
+   "schoolTier": "small_private",
+   "firstgen": true
+  }
+ },
+ "q157_ops_athlete_d1_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 157",
+  "school": "Southern New Hampshire University",
+  "major": "Supply Chain Management",
+  "classYear": "Junior",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "Charlotte, NC"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Barista",
+    "org": "Starbucks",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "athlete_d1",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q158_ops_athlete_d1_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 158",
+  "school": "Central Piedmont Community College",
+  "major": "Supply Chain Management",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.3",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "supply chain"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division I Varsity Soccer Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "athlete_d1",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q159_ops_athlete_d2_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 159",
+  "school": "Appalachian State University",
+  "major": "Supply Chain Management",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "athlete_d2",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ },
+ "q160_ops_athlete_d2_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 160",
+  "school": "Boston University",
+  "major": "Supply Chain Management",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division II Varsity Basketball Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "athlete_d2",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q161_ops_athlete_d3_intern_ivy": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 161",
+  "school": "University of Pennsylvania",
+  "major": "Supply Chain Management",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": false,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "ivy",
+   "firstgen": false
+  }
+ },
+ "q162_ops_athlete_d3_intern_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 162",
+  "school": "Western Governors University",
+  "major": "Supply Chain Management",
+  "classYear": "Senior",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Club",
+    "title": "NCAA Division III Varsity Track and Field Athlete",
+    "org": "Athletics",
+    "start": "2023-08",
+    "end": "Present",
+    "bullets": [
+     "20+ hours a week in season"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "athlete_d3_intern",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q163_ops_lowgpa_strongexp_cc_transfer": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 163",
+  "school": "Central Piedmont Community College",
+  "major": "Supply Chain Management",
+  "classYear": "Community college (2nd year)",
+  "gpa": "2.8",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "Chicago, IL",
+   "state:il"
+  ],
+  "relocate": true,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics",
+   "sap"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   },
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Local Company",
+    "start": "2024-06",
+    "end": "2024-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Lean process project for a class",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "lowgpa_strongexp",
+   "schoolTier": "cc_transfer",
+   "firstgen": false
+  }
+ },
+ "q164_ops_freshman_novice_missing": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 164",
+  "school": "",
+  "major": "Supply Chain Management",
+  "classYear": "Freshman",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel"
+  ],
+  "experience": [
+   {
+    "kind": "Project",
+    "title": "Lean process project for a class",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "freshman_novice",
+   "schoolTier": "missing",
+   "firstgen": false
+  }
+ },
+ "q165_ops_career_changer_semi": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 165",
+  "school": "Penn State",
+  "major": "Supply Chain Management",
+  "classYear": "Graduate / Master’s",
+  "gpa": "3.6",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Store Manager",
+    "org": "Walgreens",
+    "start": "2018-03",
+    "end": "2024-07",
+    "bullets": [
+     "Managed 14 staff and a $3M P&L"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Lean process project for a class",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "career_changer",
+   "schoolTier": "semi",
+   "firstgen": false
+  }
+ },
+ "q166_ops_missing_gpa_small_private": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 166",
+  "school": "Queens University of Charlotte",
+  "major": "Supply Chain Management",
+  "classYear": "Junior",
+  "gpa": "",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "New York, NY"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "missing_gpa",
+   "schoolTier": "small_private",
+   "firstgen": false
+  }
+ },
+ "q167_ops_missing_skills_exp_unranked": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 167",
+  "school": "Southern New Hampshire University",
+  "major": "Supply Chain Management",
+  "classYear": "Sophomore",
+  "gpa": "3.4",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "state:tx"
+  ],
+  "relocate": true,
+  "remoteOK": true,
+  "skills": [],
+  "experience": [],
+  "_meta": {
+   "field": "ops",
+   "archetype": "missing_skills_exp",
+   "schoolTier": "unranked",
+   "firstgen": false
+  }
+ },
+ "q168_ops_missing_major_flagship_target": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 168",
+  "school": "University of Virginia",
+  "major": "",
+  "classYear": "Junior",
+  "gpa": "3.5",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain",
+   "logistics"
+  ],
+  "experience": [
+   {
+    "kind": "Internship",
+    "title": "Supply Chain Intern",
+    "org": "Regional Firm",
+    "start": "2025-06",
+    "end": "2025-08",
+    "bullets": [
+     "Worked on excel and supply chain tasks for the team"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "missing_major",
+   "schoolTier": "flagship_target",
+   "firstgen": false
+  }
+ },
+ "q169_ops_cc_student_mid": {
+  "savedAt": 1,
+  "v": 6,
+  "name": "Test Person 169",
+  "school": "Western Michigan University",
+  "major": "Supply Chain Management",
+  "classYear": "Community college (2nd year)",
+  "gpa": "3.7",
+  "sponsorship": "no",
+  "industries": [
+   "Supply Chain & Logistics",
+   "Business & Operations"
+  ],
+  "interests": [],
+  "locations": [
+   "San Francisco, CA",
+   "remote"
+  ],
+  "relocate": false,
+  "remoteOK": false,
+  "skills": [
+   "excel",
+   "supply chain"
+  ],
+  "experience": [
+   {
+    "kind": "Job",
+    "title": "Server",
+    "org": "Olive Garden",
+    "start": "2023-06",
+    "end": "Present",
+    "bullets": [
+     "20 hours a week during school"
+    ]
+   },
+   {
+    "kind": "Project",
+    "title": "Lean process project for a class",
+    "org": "",
+    "start": "2025-01",
+    "end": "2025-05",
+    "bullets": [
+     "Used excel"
+    ]
+   }
+  ],
+  "_meta": {
+   "field": "ops",
+   "archetype": "cc_student",
+   "schoolTier": "mid",
+   "firstgen": false
+  }
+ }
+}

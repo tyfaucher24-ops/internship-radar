@@ -122,72 +122,72 @@
   "_readme": "V12 grader. Candidate strength = weighted School/GPA/Experience/Skills (role-group weights) blended with Fit; then a fit gate; then a penalty when the listing's selectivity (cited firm tier, else the role group's typical level) exceeds the candidate's strength. Replaces strictness/lowCompetitionBoost when present.",
   "weights": {
    "ib": {
-    "school": 0.25,
-    "gpa": 0.2,
-    "exp": 0.3,
-    "skills": 0.1,
-    "fit": 0.15
+    "school": 0.12,
+    "gpa": 0.18,
+    "exp": 0.38,
+    "skills": 0.12,
+    "fit": 0.2
    },
    "pe": {
-    "school": 0.25,
-    "gpa": 0.2,
-    "exp": 0.3,
-    "skills": 0.1,
-    "fit": 0.15
+    "school": 0.12,
+    "gpa": 0.18,
+    "exp": 0.38,
+    "skills": 0.12,
+    "fit": 0.2
    },
    "consulting": {
-    "school": 0.25,
-    "gpa": 0.2,
-    "exp": 0.3,
-    "skills": 0.1,
-    "fit": 0.15
+    "school": 0.12,
+    "gpa": 0.18,
+    "exp": 0.38,
+    "skills": 0.12,
+    "fit": 0.2
    },
    "quant": {
-    "school": 0.05,
+    "school": 0,
     "gpa": 0.2,
-    "exp": 0.25,
+    "exp": 0.3,
     "skills": 0.3,
     "fit": 0.2
    },
    "swe": {
-    "school": 0.05,
+    "school": 0,
     "gpa": 0.1,
-    "exp": 0.3,
+    "exp": 0.35,
     "skills": 0.35,
     "fit": 0.2
    },
    "data": {
-    "school": 0.05,
+    "school": 0,
     "gpa": 0.1,
-    "exp": 0.3,
+    "exp": 0.35,
     "skills": 0.35,
     "fit": 0.2
    },
    "product": {
-    "school": 0.05,
+    "school": 0,
     "gpa": 0.1,
-    "exp": 0.3,
+    "exp": 0.35,
     "skills": 0.3,
     "fit": 0.25
    },
    "hardware": {
-    "school": 0.05,
+    "school": 0,
     "gpa": 0.1,
-    "exp": 0.3,
+    "exp": 0.35,
     "skills": 0.35,
     "fit": 0.2
    },
    "sandt": {
-    "school": 0.1,
+    "school": 0,
     "gpa": 0.2,
-    "exp": 0.3,
+    "exp": 0.4,
     "skills": 0.15,
     "fit": 0.25
    },
    "_default": {
-    "school": 0.05,
+    "school": 0,
     "gpa": 0.15,
-    "exp": 0.3,
+    "exp": 0.35,
     "skills": 0.2,
     "fit": 0.3
    }
@@ -204,7 +204,7 @@
    "Sophomore": 0.6,
    "Junior": 1.2,
    "Senior": 1.6,
-   "Graduate / Master’s": 1.6,
+   "Graduate / Master\u2019s": 1.6,
    "PhD": 1.8,
    "Community college (1st year)": 0.3,
    "Community college (2nd year)": 0.5,

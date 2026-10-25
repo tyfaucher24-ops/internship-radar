@@ -159,7 +159,7 @@ function parseEdu(g,L,C,ctx,today){const src=g.lines.slice();const ls=g.lines.ma
  if(grad){e.gradYear=String(grad.y);e.gradMonth=grad.m?String(grad.m):'';if(grad.start)e.start=grad.start;e.conf.grad=grad.how==='single'?'medium':'high'}
  /* derived class year: academic year containing today vs grad academic year */
  if(e.gradYear){const t=today||new Date();const ay=t.getFullYear()+((t.getMonth()+1)>=7?1:0);const gy=+e.gradYear+((+e.gradMonth||5)>=9?1:0);const d=gy-ay;
-  e.classYear=e.level==='grad'?'Graduate':e.level==='hs'?'':d<0?'Graduated':d===0?'Senior':d===1?'Junior':d===2?'Sophomore':d===3?'Freshman':d>3?'Incoming':'';}
+  e.classYear=e.level==='grad'?'Graduate':e.level==='hs'?'':d<0?'Graduated':d===0?'Senior':d===1?'Junior':d===2?'Sophomore':d===3?'Freshman':d>3?'Incoming':'';if(/community college|\bassociate'?s?\b|\bA\.?A\.?S?\b/i.test(all)&&e.level!=='grad'&&d>=0)e.classYear=d<=1?'Community college (2nd year)':'Community college (1st year)'/* V15: 2-year schools map to CC years */;}
  /* honors, coursework, tests, study abroad */
  for(const t of ls){const c=t.match(/^\s*(?:relevant\s+|related\s+|selected\s+)?(?:coursework|courses)\s*:\s*(.+)$/i);if(c)e.coursework.push(...c[1].split(/\s*[,;]\s*/).map(s=>s.replace(/\.$/,'').trim()).filter(Boolean));
   const h=t.match(/^\s*(?:honors|awards|honors\s*(?:&|and)\s*awards|scholarships?)\s*:\s*(.+)$/i);if(h)e.honors.push(...h[1].split(/\s*[,;]\s*/).filter(Boolean));

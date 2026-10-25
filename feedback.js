@@ -55,7 +55,7 @@ async function renderOverall(el,pr,P){
  const str=agg('pos','resume'),gap=agg('neg','posting');
  if(Q.lead&&str.length<3)str.push({t:'Leadership role',q:'Your resume: '+Q.lead,n:''});if(Q.ath&&str.length<3)str.push({t:'Athletics',q:'Your resume: '+Q.ath,n:''});
  const sv=new Set(T.all().map(t=>String(t.listingId)));const saved=S.filter(o=>sv.has(String(o.x.id))),sc={safety:0,target:0,reach:0};saved.forEach(o=>{const t=o.r.v143&&o.r.v143.tag;if(t)sc[t]++});
- const best=S.filter(o=>o.r.v143&&o.r.v143.eligible).sort((a,b)=>b.r.v143.fitXchance-a.r.v143.fitXchance||b.r.pct-a.r.pct).slice(0,5);
+ const best=MatchCore.rank143(S,5).top;/* V15 §3: same ranking as the Top list (eligible, open, your locations first, max 2 per company) */
  el.innerHTML=`<section class="fx-card fx-snap" aria-labelledby="h-snap"><h2 id="h-snap" class="sr-only">How strong am I?</h2><div class="fx-top">${ring(med,grade,'Your typical match')}<div><p class="fx-kicker">How strong am I?</p><p class="fx-say">${E(say)}</p><p class="fx-m">Your median match across ${N(n)} live internships${area}.</p></div></div></section>
  <section class="fx-card" aria-labelledby="h-bars"><h2 id="h-bars">What drives your grades</h2><p class="fx-m">Tap or hover a bar to see why.</p>${barsHTML(bars)}</section>
  <div class="fx-two">${cardsHTML('What helps you',str,'fx-str')}${cardsHTML('What holds you back',gap,'fx-gap')}</div>
@@ -63,7 +63,7 @@ async function renderOverall(el,pr,P){
  <section class="fx-card" aria-labelledby="h-odds"><h2 id="h-odds">Your odds by tier</h2><div class="fx-tiers">${['reach','target','safety'].map(k=>`<div class="fx-tier fx-t-${k}"><b>${N(cnt[k])}</b><span>${TAGW[k]}</span></div>`).join('')}</div>
   <p class="fx-m">Of ${N(n)} live matches${area}.${cnt.ne?` ${N(cnt.ne)} more you’re not eligible for.`:''}${saved.length?` Your ${N(saved.length)} saved: ${N(sc.reach)} reach, ${N(sc.target)} target, ${N(sc.safety)} safety.`:''}</p>
   <p class="fx-links"><a href="#" data-tagf="reach">See your reaches</a><a href="#" data-tagf="realistic">See your realistic picks</a></p>
-  ${best.length?`<button type="button" class="btn gh small fx-more" aria-expanded="false" aria-controls="fxBest">Show more</button><div id="fxBest" hidden><h3>Your best odds right now</h3><ol class="fx-best">${best.map(o=>{const x=BYID.get(String(o.x.id));return x?`<li><a href="#" data-fbopen="${E(x.id)}">${E(x.title)}</a> <span class="fx-m">${E(x.company)} · ${o.r.pct}% · ${E(o.r.grade)} · ${TAGW[o.r.v143.tag]}</span></li>`:''}).join('')}</ol></div>`:''}</section>`;
+  ${best.length?`<button type="button" class="btn gh small fx-more" aria-expanded="false" aria-controls="fxBest">Show more</button><div id="fxBest" hidden><h3>Your best odds right now</h3><ol class="fx-best">${best.map(o=>{const x=BYID.get(String(o.x.id));return x?`<li><a href="#" data-fbopen="${E(x.id)}">${E(x.title)}</a> <span class="fx-m">${E(x.company)} · ${o.r.pct}% · ${E(o.r.grade)} · ${TAGW[o.r.v143.tag]}</span>${o.outside?'<span class="c-out"> · Outside your picks</span>':''}</li>`:''}).join('')}</ol></div>`:''}</section>`;
  wire(el);animate(el);
  /* next steps: real re-scores of every live listing with one change each */
  const base=pr,cands=[],add=(label,gain,p2)=>cands.push({label,gain,pr:{...JSON.parse(JSON.stringify(base)),...p2}});

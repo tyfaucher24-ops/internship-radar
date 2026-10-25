@@ -11,7 +11,7 @@ function has(id){try{return typeof BYID!=='undefined'&&BYID.has(String(id))}catc
 function item(e){const det=e.k==='deadline'?`${esc(e.co)} → ${fmtD(e.to)}`:`${esc(e.co)}`;
  const ti=e.k==='deadline'?`<span class="tk-t">${esc(e.ti)} (was ${fmtD(e.from)})</span>`:`<span class="tk-t">${esc(e.ti)}${e.loc?' · '+esc(e.loc):''}</span>`;
  const ok=has(e.id);
- return `<button type="button" class="tk-i tk-${e.k}" data-tk="${esc(e.id)}"${ok?'':' disabled'} title="${esc(KL[e.k]+' · '+e.co+' · '+e.ti+' · seen in the sync at '+fmtT(e.t))}"><span class="tk-k">${KL[e.k]}</span><span class="tk-co">${det}</span>${ti}<span class="tk-tm">${fmtT(e.t)}</span></button>`}
+ return `<button type="button" class="tk-i tk-${e.k}" data-tk="${esc(e.id)}"${ok?'':' disabled'} title="${esc(KL[e.k]+' · '+e.co+' · '+e.ti+' · seen in the latest sync')}"><span class="tk-k">${KL[e.k]}</span><span class="tk-co">${det}</span>${ti}<span class="tk-tm">${fmtT(e.t)}</span></button>`}
 function pick(ev){/* latest sync first; interleave kinds so one kind doesn't fill the bar; cap the DOM size */
  const latest=ev.filter(e=>e.t===ev[0].t),by={new:[],deadline:[],closed:[]};latest.forEach(e=>by[e.k]&&by[e.k].push(e));
  const out=[];for(let i=0;out.length<36&&i<200;i++)for(const k of ['deadline','new','closed']){if(by[k][i])out.push(by[k][i])}return out.slice(0,36)}
@@ -19,9 +19,8 @@ function render(){const T=$('ticker');if(!T)return;const ev=(CH&&CH.events)||[];
  const L=pick(ev);const h=L.map(item).join('');$('tkTrack').innerHTML=h+(RM?'':h.replace(/<button /g,'<button aria-hidden="true" tabindex="-1" '));
  $('tkTrack').style.setProperty('--tk-dur',Math.max(40,L.length*5)+'s');asOf();T.hidden=false}
 let META_UPD='';
-function asOf(){const el=$('tkAsOf');if(!el)return;const t=META_UPD||(CH&&CH.updated);if(!t){el.textContent='';return}const h=(Date.now()-Date.parse(t))/36e5;
- const m=(Date.now()-Date.parse(t))/6e4;el.textContent='Updated '+(m<1.5?'just now':m<60?Math.round(m)+' min ago':h<24?Math.round(h)+' h ago':new Date(t).toLocaleDateString([],{month:'short',day:'numeric'}));el.classList.toggle('tk-stale',h>6);
- el.title=(h>6?'The last successful update was over 6 hours ago. Some postings may have changed since. ':'')+'Last update '+fmtT(t);const w=$('tkStale');if(w)w.hidden=!(h>6)}
+function asOf(){/* V15 addendum 2: calm Live badge instead of "Updated X ago"; hidden when the last sync is over 60 minutes old */const el=$('tkAsOf');if(!el)return;const t=META_UPD||(CH&&CH.updated);
+ const fresh=!!t&&(Date.now()-Date.parse(t))/6e4<=60;const h=fresh?'<span class="live-b" role="status" aria-label="Listings are live"><i class="live-dot" aria-hidden="true"></i>Live</span>':'';if(el.dataset.h!==h){el.dataset.h=h;el.innerHTML=h}el.removeAttribute('title');const w=$('tkStale');if(w)w.hidden=true;document.querySelectorAll('.iticker .lv').forEach(e=>e.hidden=!fresh)}
 setInterval(asOf,60000);
 async function load(){try{const m=await (await fetch('data/meta.json?ts='+Date.now(),{cache:'no-store'})).json();if(m&&m.updated){META_UPD=m.updated;asOf()}}catch(_){}
 try{const r=await fetch('data/changes.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.updated===lastUpd)return;lastUpd=j.updated;CH=j;render()}catch(_){}}
@@ -31,7 +30,7 @@ function market(){if(!CH)return;const ev=CH.events||[],at=ev.length?ev[0].t:CH.u
  const byco={};cur.forEach(e=>{const o=byco[e.co]||(byco[e.co]={n:0,c:0});e.k==='new'?o.n++:e.k==='closed'?o.c++:0});
  const top=(f)=>Object.entries(byco).filter(([,o])=>f(o)>0).sort((a,b)=>f(b[1])-f(a[1])).slice(0,6).map(([n,o])=>`<li><span>${esc(n)}</span><b>${f(o)}</b></li>`).join('')||'<li>None</li>';
  const feedNote=()=>CH.counts&&cur.length<(CH.counts.new+CH.counts.closed+CH.counts.deadline)?`<p class="mk-sub">Showing up to 150 of each kind.</p>`:'';const feed=k=>cur.filter(e=>!k||e.k===k).slice(0,150).map(e=>`<li class="tk-${e.k}"><span class="tk-k">${KL[e.k]}</span><span>${has(e.id)?`<a href="#" data-tk="${esc(e.id)}">${esc(e.co)}</a>`:esc(e.co)} · ${esc(e.ti)}${e.k==='deadline'?` · ${fmtD(e.from)} → ${fmtD(e.to)}`:''}</span></li>`).join('')||'<li>None in this sync.</li>';
- openModal(`<div class="mk"><h2 class="mk-h">Market</h2><p class="mk-sub">Real changes found by the sync at ${new Date(at).toLocaleString([],{weekday:'short',hour:'numeric',minute:'2-digit'})}, comparing it with the previous sync. ▲ = first seen in this sync, ▼ = no longer open at the source, ● = closing date changed.</p>
+ openModal(`<div class="mk"><h2 class="mk-h">Market</h2><p class="mk-sub">Real changes found by the latest sync, comparing it with the previous sync. ▲ = first seen in this sync, ▼ = no longer open at the source, ● = closing date changed.</p>
  <div class="mk-stats"><div class="mk-s up"><b>▲ ${c('new')}</b><span>added</span></div><div class="mk-s dn"><b>▼ ${c('closed')}</b><span>closed</span></div><div class="mk-s mv"><b>● ${c('deadline')}</b><span>deadline moved</span></div></div>
  <div id="mkSpark"></div>
  <h3 class="mk-sec">Top movers</h3><div class="mk-movers"><div><b>Most added</b><ol>${top(o=>o.n)}</ol></div><div><b>Most closed</b><ol>${top(o=>o.c)}</ol></div></div>

@@ -1,0 +1,2326 @@
+{
+ "_note": "V15 addendum gold set: 40 synthetic profiles (fictional) paired with real live listings. Bands were written by manual review BEFORE running the grader; band = [best letter, worst letter]. Do not edit bands to match the grader.",
+ "labelled": "2026-10-24",
+ "profiles": {
+  "sweStrong": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "University of Michigan",
+   "major": "Computer Science",
+   "classYear": "Junior",
+   "gpa": "3.8",
+   "sponsorship": "no",
+   "industries": [
+    "Software & IT"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "python",
+    "java",
+    "react",
+    "git",
+    "sql"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Software Engineering Intern",
+     "org": "Regional Firm",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Built REST services in Java and Python"
+     ]
+    },
+    {
+     "kind": "Internship",
+     "title": "Software Engineering Intern",
+     "org": "Local Company",
+     "start": "2024-06",
+     "end": "2024-08",
+     "bullets": [
+      "Shipped React features"
+     ]
+    }
+   ]
+  },
+  "sweMid": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Appalachian State University",
+   "major": "Computer Science",
+   "classYear": "Junior",
+   "gpa": "3.3",
+   "sponsorship": "no",
+   "industries": [
+    "Software & IT"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "python",
+    "java",
+    "sql"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Software Engineering Intern",
+     "org": "Local Company",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Wrote Python scripts and SQL reports"
+     ]
+    }
+   ]
+  },
+  "sweNovice": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Kennesaw State University",
+   "major": "Computer Science",
+   "classYear": "Freshman",
+   "gpa": "3.6",
+   "sponsorship": "no",
+   "industries": [
+    "Software & IT"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "python"
+   ],
+   "experience": [
+    {
+     "kind": "Project",
+     "title": "Built a full-stack web app (React, Node)",
+     "org": "",
+     "start": "2025-01",
+     "end": "2025-05",
+     "bullets": [
+      "Used python"
+     ]
+    }
+   ]
+  },
+  "dataSolid": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Indiana University",
+   "major": "Statistics",
+   "classYear": "Junior",
+   "gpa": "3.5",
+   "sponsorship": "no",
+   "industries": [
+    "Data & AI"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "python",
+    "sql",
+    "tableau",
+    "pandas"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Data Analyst Intern",
+     "org": "Regional Firm",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Built SQL and Tableau dashboards"
+     ]
+    }
+   ]
+  },
+  "ibStrong": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "University of Pennsylvania",
+   "major": "Finance",
+   "classYear": "Junior",
+   "gpa": "3.8",
+   "sponsorship": "no",
+   "industries": [
+    "Finance & Banking"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "excel",
+    "financial modeling",
+    "valuation",
+    "dcf",
+    "powerpoint"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Investment Banking Summer Analyst",
+     "org": "Boutique Advisory Firm",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Built DCF and comps models for two sell-side deals"
+     ]
+    },
+    {
+     "kind": "Leadership",
+     "title": "Analyst",
+     "org": "Student Investment Fund",
+     "start": "2024-09",
+     "end": "Present",
+     "bullets": [
+      "Pitched two equities"
+     ]
+    }
+   ]
+  },
+  "ibWeak": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "University of North Carolina at Charlotte",
+   "major": "Finance",
+   "classYear": "Sophomore",
+   "gpa": "3.0",
+   "sponsorship": "no",
+   "industries": [
+    "Finance & Banking"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "excel"
+   ],
+   "experience": [
+    {
+     "kind": "Job",
+     "title": "Cashier",
+     "org": "Target",
+     "start": "2023-06",
+     "end": "Present",
+     "bullets": [
+      "20 hours a week during school"
+     ]
+    }
+   ]
+  },
+  "cons": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "University of Virginia",
+   "major": "Economics",
+   "classYear": "Junior",
+   "gpa": "3.6",
+   "sponsorship": "no",
+   "industries": [
+    "Consulting & Strategy"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "excel",
+    "powerpoint",
+    "data analysis",
+    "research"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Strategy Consulting Intern",
+     "org": "Regional Consultancy",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Built market-sizing models for a client"
+     ]
+    }
+   ]
+  },
+  "mkt": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Elon University",
+   "major": "Marketing",
+   "classYear": "Junior",
+   "gpa": "3.4",
+   "sponsorship": "no",
+   "industries": [
+    "Marketing & Sales"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "social media",
+    "canva",
+    "google analytics",
+    "copywriting"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Marketing Intern",
+     "org": "Local Agency",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Ran paid social campaigns and wrote copy"
+     ]
+    }
+   ]
+  },
+  "mech": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Western Michigan University",
+   "major": "Mechanical Engineering",
+   "classYear": "Senior",
+   "gpa": "3.2",
+   "sponsorship": "no",
+   "industries": [
+    "Engineering & Hardware"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "solidworks",
+    "matlab",
+    "cad",
+    "autocad"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Mechanical Engineering Intern",
+     "org": "Regional Manufacturer",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Designed fixtures in SolidWorks"
+     ]
+    }
+   ]
+  },
+  "health": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Howard University",
+   "major": "Biology",
+   "classYear": "Junior",
+   "gpa": "3.5",
+   "sponsorship": "no",
+   "industries": [
+    "Healthcare & Life Sciences"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "research",
+    "lab",
+    "excel"
+   ],
+   "experience": [
+    {
+     "kind": "Research",
+     "title": "Undergraduate Research Assistant",
+     "org": "Biology Lab",
+     "start": "2024-09",
+     "end": "Present",
+     "bullets": [
+      "Ran PCR and cell-culture experiments"
+     ]
+    }
+   ]
+  },
+  "acct": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Appalachian State University",
+   "major": "Accounting",
+   "classYear": "Junior",
+   "gpa": "3.4",
+   "sponsorship": "no",
+   "industries": [
+    "Accounting & Audit"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "excel",
+    "accounting",
+    "quickbooks",
+    "gaap"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Audit Intern",
+     "org": "Regional CPA Firm",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Tested controls and prepared workpapers"
+     ]
+    }
+   ]
+  },
+  "ops": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Penn State",
+   "major": "Supply Chain Management",
+   "classYear": "Junior",
+   "gpa": "3.3",
+   "sponsorship": "no",
+   "industries": [
+    "Supply Chain & Logistics",
+    "Business & Operations"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "excel",
+    "supply chain",
+    "logistics",
+    "sap"
+   ],
+   "experience": [
+    {
+     "kind": "Internship",
+     "title": "Supply Chain Intern",
+     "org": "Regional Distributor",
+     "start": "2025-06",
+     "end": "2025-08",
+     "bullets": [
+      "Tracked inventory KPIs in SAP"
+     ]
+    }
+   ]
+  },
+  "libarts": {
+   "savedAt": 1,
+   "v": 6,
+   "name": "Gold Test Person",
+   "school": "Rollins College",
+   "major": "English",
+   "classYear": "Sophomore",
+   "gpa": "3.6",
+   "sponsorship": "no",
+   "industries": [
+    "Media & Communications",
+    "Nonprofit & Education"
+   ],
+   "interests": [],
+   "locations": [],
+   "relocate": true,
+   "remoteOK": true,
+   "skills": [
+    "writing",
+    "editing",
+    "social media"
+   ],
+   "experience": [
+    {
+     "kind": "Leadership",
+     "title": "Editor",
+     "org": "Campus Newspaper",
+     "start": "2024-09",
+     "end": "Present",
+     "bullets": [
+      "Edited 10 stories a week"
+     ]
+    }
+   ]
+  }
+ },
+ "pairs": [
+  {
+   "id": "gold01",
+   "profileKey": "sweStrong",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Michigan",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.8",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "react",
+     "git",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Regional Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built REST services in Java and Python"
+      ]
+     },
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2024-06",
+      "end": "2024-08",
+      "bullets": [
+       "Shipped React features"
+      ]
+     }
+    ]
+   },
+   "listing": "4aa3d640bb",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Two relevant SWE internships, 3.8, all posting core skills; Amazon is selective (tier 2) but this is the profile it hires."
+  },
+  {
+   "id": "gold02",
+   "profileKey": "sweStrong",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Michigan",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.8",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "react",
+     "git",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Regional Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built REST services in Java and Python"
+      ]
+     },
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2024-06",
+      "end": "2024-08",
+      "bullets": [
+       "Shipped React features"
+      ]
+     }
+    ]
+   },
+   "listing": "5849c9fb4d",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Strong in-field profile at an estimated mid-tier firm: should be a clear A or B."
+  },
+  {
+   "id": "gold03",
+   "profileKey": "sweStrong",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Michigan",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.8",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "react",
+     "git",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Regional Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built REST services in Java and Python"
+      ]
+     },
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2024-06",
+      "end": "2024-08",
+      "bullets": [
+       "Shipped React features"
+      ]
+     }
+    ]
+   },
+   "listing": "c794fc4b11",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Jane Street (tier 1) Linux engineering is adjacent to SWE, not core; very selective firm keeps it out of A even for a strong candidate."
+  },
+  {
+   "id": "gold04",
+   "profileKey": "sweMid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Wrote Python scripts and SQL reports"
+      ]
+     }
+    ]
+   },
+   "listing": "08d2e391d4",
+   "band": [
+    "C",
+    "D"
+   ],
+   "reason": "One local SWE internship, 3.3, unlisted school; Amazon SDE pool is deep, so this is a reach, not a fit."
+  },
+  {
+   "id": "gold05",
+   "profileKey": "sweMid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Wrote Python scripts and SQL reports"
+      ]
+     }
+    ]
+   },
+   "listing": "57ea207c07",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Meets the 3.0 GPA minimum, one relevant internship; estimated-tier defense employer is realistic but cyber skills are missing."
+  },
+  {
+   "id": "gold06",
+   "profileKey": "sweMid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Wrote Python scripts and SQL reports"
+      ]
+     }
+    ]
+   },
+   "listing": "d51f2d221b",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "IT internship at an estimated-tier airline: relevant field and experience, a realistic B/C."
+  },
+  {
+   "id": "gold07",
+   "profileKey": "sweNovice",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Kennesaw State University",
+    "major": "Computer Science",
+    "classYear": "Freshman",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python"
+    ],
+    "experience": [
+     {
+      "kind": "Project",
+      "title": "Built a full-stack web app (React, Node)",
+      "org": "",
+      "start": "2025-01",
+      "end": "2025-05",
+      "bullets": [
+       "Used python"
+      ]
+     }
+    ]
+   },
+   "listing": "08d2e391d4",
+   "band": [
+    "D",
+    "F"
+   ],
+   "reason": "Freshman with one class project at a tier-2 SDE posting: not competitive yet."
+  },
+  {
+   "id": "gold08",
+   "profileKey": "sweNovice",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Kennesaw State University",
+    "major": "Computer Science",
+    "classYear": "Freshman",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python"
+    ],
+    "experience": [
+     {
+      "kind": "Project",
+      "title": "Built a full-stack web app (React, Node)",
+      "org": "",
+      "start": "2025-01",
+      "end": "2025-05",
+      "bullets": [
+       "Used python"
+      ]
+     }
+    ]
+   },
+   "listing": "5849c9fb4d",
+   "band": [
+    "C",
+    "D"
+   ],
+   "reason": "Freshman with a project only; in-field and estimated-tier, so a C at best."
+  },
+  {
+   "id": "gold09",
+   "profileKey": "dataSolid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Indiana University",
+    "major": "Statistics",
+    "classYear": "Junior",
+    "gpa": "3.5",
+    "sponsorship": "no",
+    "industries": [
+     "Data & AI"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "sql",
+     "tableau",
+     "pandas"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Data Analyst Intern",
+      "org": "Regional Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built SQL and Tableau dashboards"
+      ]
+     }
+    ]
+   },
+   "listing": "d9f8f93e57",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "One data internship, 3.5, SQL/Python; Amazon data engineering wants more engineering depth."
+  },
+  {
+   "id": "gold10",
+   "profileKey": "dataSolid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Indiana University",
+    "major": "Statistics",
+    "classYear": "Junior",
+    "gpa": "3.5",
+    "sponsorship": "no",
+    "industries": [
+     "Data & AI"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "sql",
+     "tableau",
+     "pandas"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Data Analyst Intern",
+      "org": "Regional Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built SQL and Tableau dashboards"
+      ]
+     }
+    ]
+   },
+   "listing": "2e7ec3af3e",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "In-field analytics internship at an estimated-tier employer; relevant internship plus skills."
+  },
+  {
+   "id": "gold11",
+   "profileKey": "dataSolid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Indiana University",
+    "major": "Statistics",
+    "classYear": "Junior",
+    "gpa": "3.5",
+    "sponsorship": "no",
+    "industries": [
+     "Data & AI"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "sql",
+     "tableau",
+     "pandas"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Data Analyst Intern",
+      "org": "Regional Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built SQL and Tableau dashboards"
+      ]
+     }
+    ]
+   },
+   "listing": "471fa4beef",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Policy data analyst at a nonprofit: strong skill match and a relevant internship."
+  },
+  {
+   "id": "gold12",
+   "profileKey": "ibStrong",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Pennsylvania",
+    "major": "Finance",
+    "classYear": "Junior",
+    "gpa": "3.8",
+    "sponsorship": "no",
+    "industries": [
+     "Finance & Banking"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "financial modeling",
+     "valuation",
+     "dcf",
+     "powerpoint"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Investment Banking Summer Analyst",
+      "org": "Boutique Advisory Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built DCF and comps models for two sell-side deals"
+      ]
+     },
+     {
+      "kind": "Leadership",
+      "title": "Analyst",
+      "org": "Student Investment Fund",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Pitched two equities"
+      ]
+     }
+    ]
+   },
+   "listing": "9701a2155c",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "IB summer analyst + student fund + 3.8 at a tier-2 bank banking program (GPA 3.2 min met)."
+  },
+  {
+   "id": "gold13",
+   "profileKey": "ibStrong",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Pennsylvania",
+    "major": "Finance",
+    "classYear": "Junior",
+    "gpa": "3.8",
+    "sponsorship": "no",
+    "industries": [
+     "Finance & Banking"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "financial modeling",
+     "valuation",
+     "dcf",
+     "powerpoint"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Investment Banking Summer Analyst",
+      "org": "Boutique Advisory Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built DCF and comps models for two sell-side deals"
+      ]
+     },
+     {
+      "kind": "Leadership",
+      "title": "Analyst",
+      "org": "Student Investment Fund",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Pitched two equities"
+      ]
+     }
+    ]
+   },
+   "listing": "4d526ab62f",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Capital-markets risk at an estimated-tier bank; strong finance profile."
+  },
+  {
+   "id": "gold14",
+   "profileKey": "ibStrong",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Pennsylvania",
+    "major": "Finance",
+    "classYear": "Junior",
+    "gpa": "3.8",
+    "sponsorship": "no",
+    "industries": [
+     "Finance & Banking"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "financial modeling",
+     "valuation",
+     "dcf",
+     "powerpoint"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Investment Banking Summer Analyst",
+      "org": "Boutique Advisory Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built DCF and comps models for two sell-side deals"
+      ]
+     },
+     {
+      "kind": "Leadership",
+      "title": "Analyst",
+      "org": "Student Investment Fund",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Pitched two equities"
+      ]
+     }
+    ]
+   },
+   "listing": "4d8bd83e34",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Goldman tier-1 S&T: adjacent to the IB internship; very selective, so B/C rather than A."
+  },
+  {
+   "id": "gold15",
+   "profileKey": "ibWeak",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of North Carolina at Charlotte",
+    "major": "Finance",
+    "classYear": "Sophomore",
+    "gpa": "3.0",
+    "sponsorship": "no",
+    "industries": [
+     "Finance & Banking"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel"
+    ],
+    "experience": [
+     {
+      "kind": "Job",
+      "title": "Cashier",
+      "org": "Target",
+      "start": "2023-06",
+      "end": "Present",
+      "bullets": [
+       "20 hours a week during school"
+      ]
+     }
+    ]
+   },
+   "listing": "92705fa51d",
+   "band": [
+    "C",
+    "D"
+   ],
+   "reason": "Sophomore finance major, 3.0, no finance experience; small bank is realistic-ish but nothing relevant on the resume."
+  },
+  {
+   "id": "gold16",
+   "profileKey": "ibWeak",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of North Carolina at Charlotte",
+    "major": "Finance",
+    "classYear": "Sophomore",
+    "gpa": "3.0",
+    "sponsorship": "no",
+    "industries": [
+     "Finance & Banking"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel"
+    ],
+    "experience": [
+     {
+      "kind": "Job",
+      "title": "Cashier",
+      "org": "Target",
+      "start": "2023-06",
+      "end": "Present",
+      "bullets": [
+       "20 hours a week during school"
+      ]
+     }
+    ]
+   },
+   "listing": "1c5efcf4f3",
+   "band": [
+    "D",
+    "F"
+   ],
+   "reason": "Tier-2 asset-management internship with no finance experience and a 3.0: long shot."
+  },
+  {
+   "id": "gold17",
+   "profileKey": "ibWeak",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of North Carolina at Charlotte",
+    "major": "Finance",
+    "classYear": "Sophomore",
+    "gpa": "3.0",
+    "sponsorship": "no",
+    "industries": [
+     "Finance & Banking"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel"
+    ],
+    "experience": [
+     {
+      "kind": "Job",
+      "title": "Cashier",
+      "org": "Target",
+      "start": "2023-06",
+      "end": "Present",
+      "bullets": [
+       "20 hours a week during school"
+      ]
+     }
+    ]
+   },
+   "listing": "4134f29eb3",
+   "band": [
+    "C",
+    "D"
+   ],
+   "reason": "PIMCO wealth management with no finance experience; estimated tier, so not F, but weak."
+  },
+  {
+   "id": "gold18",
+   "profileKey": "cons",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Virginia",
+    "major": "Economics",
+    "classYear": "Junior",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Consulting & Strategy"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "powerpoint",
+     "data analysis",
+     "research"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Strategy Consulting Intern",
+      "org": "Regional Consultancy",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built market-sizing models for a client"
+      ]
+     }
+    ]
+   },
+   "listing": "b370b56a0b",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Strategy consulting internship, 3.6; Gallup advisory internship is a direct fit."
+  },
+  {
+   "id": "gold19",
+   "profileKey": "cons",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Virginia",
+    "major": "Economics",
+    "classYear": "Junior",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Consulting & Strategy"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "powerpoint",
+     "data analysis",
+     "research"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Strategy Consulting Intern",
+      "org": "Regional Consultancy",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built market-sizing models for a client"
+      ]
+     }
+    ]
+   },
+   "listing": "07295116cf",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Strategy internship in-field, junior eligible, 3.0 min met."
+  },
+  {
+   "id": "gold20",
+   "profileKey": "cons",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "University of Virginia",
+    "major": "Economics",
+    "classYear": "Junior",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Consulting & Strategy"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "powerpoint",
+     "data analysis",
+     "research"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Strategy Consulting Intern",
+      "org": "Regional Consultancy",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Built market-sizing models for a client"
+      ]
+     }
+    ]
+   },
+   "listing": "1b5f3c7492",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Business analyst at a tier-2 firm (Parametric/Morgan Stanley): adjacent to consulting, selective."
+  },
+  {
+   "id": "gold21",
+   "profileKey": "mkt",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Elon University",
+    "major": "Marketing",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Marketing & Sales"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "social media",
+     "canva",
+     "google analytics",
+     "copywriting"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Marketing Intern",
+      "org": "Local Agency",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Ran paid social campaigns and wrote copy"
+      ]
+     }
+    ]
+   },
+   "listing": "c4dc43c877",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Marketing internship with social media and analytics: a direct fit for a social-media intern role."
+  },
+  {
+   "id": "gold22",
+   "profileKey": "mkt",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Elon University",
+    "major": "Marketing",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Marketing & Sales"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "social media",
+     "canva",
+     "google analytics",
+     "copywriting"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Marketing Intern",
+      "org": "Local Agency",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Ran paid social campaigns and wrote copy"
+      ]
+     }
+    ]
+   },
+   "listing": "ea196cda47",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Social commerce intern at an estimated-tier firm: direct fit."
+  },
+  {
+   "id": "gold23",
+   "profileKey": "mkt",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Elon University",
+    "major": "Marketing",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Marketing & Sales"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "social media",
+     "canva",
+     "google analytics",
+     "copywriting"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Marketing Intern",
+      "org": "Local Agency",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Ran paid social campaigns and wrote copy"
+      ]
+     }
+    ]
+   },
+   "listing": "cf25a1b22f",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Amazon creative marketing (tier 2) wants creative portfolio work; one internship makes this a B/C."
+  },
+  {
+   "id": "gold24",
+   "profileKey": "mkt",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Elon University",
+    "major": "Marketing",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Marketing & Sales"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "social media",
+     "canva",
+     "google analytics",
+     "copywriting"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Marketing Intern",
+      "org": "Local Agency",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Ran paid social campaigns and wrote copy"
+      ]
+     }
+    ]
+   },
+   "listing": "753f53df60",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "RBC GAM marketing: tier-2 bank, in-field role, no finance background."
+  },
+  {
+   "id": "gold25",
+   "profileKey": "mech",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Western Michigan University",
+    "major": "Mechanical Engineering",
+    "classYear": "Senior",
+    "gpa": "3.2",
+    "sponsorship": "no",
+    "industries": [
+     "Engineering & Hardware"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "solidworks",
+     "matlab",
+     "cad",
+     "autocad"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Mechanical Engineering Intern",
+      "org": "Regional Manufacturer",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Designed fixtures in SolidWorks"
+      ]
+     }
+    ]
+   },
+   "listing": "6b92b1ee85",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Senior ME with an ME internship and CAD skills: manufacturing engineering intern is a direct fit despite 3.2."
+  },
+  {
+   "id": "gold26",
+   "profileKey": "mech",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Western Michigan University",
+    "major": "Mechanical Engineering",
+    "classYear": "Senior",
+    "gpa": "3.2",
+    "sponsorship": "no",
+    "industries": [
+     "Engineering & Hardware"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "solidworks",
+     "matlab",
+     "cad",
+     "autocad"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Mechanical Engineering Intern",
+      "org": "Regional Manufacturer",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Designed fixtures in SolidWorks"
+      ]
+     }
+    ]
+   },
+   "listing": "4882f64fca",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Process mechanical intern at an engineering firm: direct fit."
+  },
+  {
+   "id": "gold27",
+   "profileKey": "mech",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Western Michigan University",
+    "major": "Mechanical Engineering",
+    "classYear": "Senior",
+    "gpa": "3.2",
+    "sponsorship": "no",
+    "industries": [
+     "Engineering & Hardware"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "solidworks",
+     "matlab",
+     "cad",
+     "autocad"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Mechanical Engineering Intern",
+      "org": "Regional Manufacturer",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Designed fixtures in SolidWorks"
+      ]
+     }
+    ]
+   },
+   "listing": "33434b847c",
+   "band": [
+    "C",
+    "D"
+   ],
+   "reason": "Meta (tier 1) manufacturing test engineering for AI: very selective and test/AI skills missing."
+  },
+  {
+   "id": "gold28",
+   "profileKey": "mech",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Western Michigan University",
+    "major": "Mechanical Engineering",
+    "classYear": "Senior",
+    "gpa": "3.2",
+    "sponsorship": "no",
+    "industries": [
+     "Engineering & Hardware"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "solidworks",
+     "matlab",
+     "cad",
+     "autocad"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Mechanical Engineering Intern",
+      "org": "Regional Manufacturer",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Designed fixtures in SolidWorks"
+      ]
+     }
+    ]
+   },
+   "listing": "8b49a5356a",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Amazon industrial design engineering (tier 2): in-field but selective and design-portfolio heavy."
+  },
+  {
+   "id": "gold29",
+   "profileKey": "health",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Howard University",
+    "major": "Biology",
+    "classYear": "Junior",
+    "gpa": "3.5",
+    "sponsorship": "no",
+    "industries": [
+     "Healthcare & Life Sciences"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "research",
+     "lab",
+     "excel"
+    ],
+    "experience": [
+     {
+      "kind": "Research",
+      "title": "Undergraduate Research Assistant",
+      "org": "Biology Lab",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Ran PCR and cell-culture experiments"
+      ]
+     }
+    ]
+   },
+   "listing": "1051ef5cb4",
+   "band": [
+    "C",
+    "D"
+   ],
+   "reason": "PRN pharmacy intern roles are for pharmacy students; a biology undergrad with lab research is a weak fit."
+  },
+  {
+   "id": "gold30",
+   "profileKey": "health",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Howard University",
+    "major": "Biology",
+    "classYear": "Junior",
+    "gpa": "3.5",
+    "sponsorship": "no",
+    "industries": [
+     "Healthcare & Life Sciences"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "research",
+     "lab",
+     "excel"
+    ],
+    "experience": [
+     {
+      "kind": "Research",
+      "title": "Undergraduate Research Assistant",
+      "org": "Biology Lab",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Ran PCR and cell-culture experiments"
+      ]
+     }
+    ]
+   },
+   "listing": "e7b0db0a3b",
+   "band": [
+    "D",
+    "F"
+   ],
+   "reason": "Microsoft research (systems lab) for a biology undergrad: wrong field and selective."
+  },
+  {
+   "id": "gold31",
+   "profileKey": "acct",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Accounting",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Accounting & Audit"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "accounting",
+     "quickbooks",
+     "gaap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Audit Intern",
+      "org": "Regional CPA Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tested controls and prepared workpapers"
+      ]
+     }
+    ]
+   },
+   "listing": "6318b72a0a",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Audit intern at a regional CPA firm applying to Big 4 audit (tier 3): realistic A/B."
+  },
+  {
+   "id": "gold32",
+   "profileKey": "acct",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Accounting",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Accounting & Audit"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "accounting",
+     "quickbooks",
+     "gaap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Audit Intern",
+      "org": "Regional CPA Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tested controls and prepared workpapers"
+      ]
+     }
+    ]
+   },
+   "listing": "4c5bf89cf5",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Accounting intern at an estimated-tier manufacturer, junior eligible: direct fit."
+  },
+  {
+   "id": "gold33",
+   "profileKey": "acct",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Accounting",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Accounting & Audit"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "accounting",
+     "quickbooks",
+     "gaap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Audit Intern",
+      "org": "Regional CPA Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tested controls and prepared workpapers"
+      ]
+     }
+    ]
+   },
+   "listing": "090f752d0f",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Tax internship at a mid-size CPA firm; accounting junior with audit experience, 3.0 min met."
+  },
+  {
+   "id": "gold34",
+   "profileKey": "acct",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Accounting",
+    "classYear": "Junior",
+    "gpa": "3.4",
+    "sponsorship": "no",
+    "industries": [
+     "Accounting & Audit"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "accounting",
+     "quickbooks",
+     "gaap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Audit Intern",
+      "org": "Regional CPA Firm",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tested controls and prepared workpapers"
+      ]
+     }
+    ]
+   },
+   "listing": "8637cab51e",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Accounting co-op at an estimated-tier employer: direct fit."
+  },
+  {
+   "id": "gold35",
+   "profileKey": "ops",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Penn State",
+    "major": "Supply Chain Management",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Supply Chain & Logistics",
+     "Business & Operations"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "supply chain",
+     "logistics",
+     "sap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Supply Chain Intern",
+      "org": "Regional Distributor",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tracked inventory KPIs in SAP"
+      ]
+     }
+    ]
+   },
+   "listing": "b5c665d7d3",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Supply chain intern with SAP at Boeing supply chain internship (3.0 min met, estimated tier)."
+  },
+  {
+   "id": "gold36",
+   "profileKey": "ops",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Penn State",
+    "major": "Supply Chain Management",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Supply Chain & Logistics",
+     "Business & Operations"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "supply chain",
+     "logistics",
+     "sap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Supply Chain Intern",
+      "org": "Regional Distributor",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tracked inventory KPIs in SAP"
+      ]
+     }
+    ]
+   },
+   "listing": "8e31b33efa",
+   "band": [
+    "A",
+    "B"
+   ],
+   "reason": "Procurement intern, junior eligible: direct supply-chain fit."
+  },
+  {
+   "id": "gold37",
+   "profileKey": "ops",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Penn State",
+    "major": "Supply Chain Management",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Supply Chain & Logistics",
+     "Business & Operations"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "excel",
+     "supply chain",
+     "logistics",
+     "sap"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Supply Chain Intern",
+      "org": "Regional Distributor",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Tracked inventory KPIs in SAP"
+      ]
+     }
+    ]
+   },
+   "listing": "d7a1b66163",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Morgan Stanley operations (tier 2): adjacent ops fit, selective firm."
+  },
+  {
+   "id": "gold38",
+   "profileKey": "libarts",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Rollins College",
+    "major": "English",
+    "classYear": "Sophomore",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Media & Communications",
+     "Nonprofit & Education"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "writing",
+     "editing",
+     "social media"
+    ],
+    "experience": [
+     {
+      "kind": "Leadership",
+      "title": "Editor",
+      "org": "Campus Newspaper",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Edited 10 stories a week"
+      ]
+     }
+    ]
+   },
+   "listing": "f76aee586f",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Admissions marketing for a sophomore English editor: writing fits, no marketing internship."
+  },
+  {
+   "id": "gold39",
+   "profileKey": "libarts",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Rollins College",
+    "major": "English",
+    "classYear": "Sophomore",
+    "gpa": "3.6",
+    "sponsorship": "no",
+    "industries": [
+     "Media & Communications",
+     "Nonprofit & Education"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "writing",
+     "editing",
+     "social media"
+    ],
+    "experience": [
+     {
+      "kind": "Leadership",
+      "title": "Editor",
+      "org": "Campus Newspaper",
+      "start": "2024-09",
+      "end": "Present",
+      "bullets": [
+       "Edited 10 stories a week"
+      ]
+     }
+    ]
+   },
+   "listing": "08d2e391d4",
+   "band": [
+    "D",
+    "F"
+   ],
+   "reason": "English major with no CS applying to Amazon SDE: wrong field."
+  },
+  {
+   "id": "gold40",
+   "profileKey": "sweMid",
+   "profile": {
+    "savedAt": 1,
+    "v": 6,
+    "name": "Gold Test Person",
+    "school": "Appalachian State University",
+    "major": "Computer Science",
+    "classYear": "Junior",
+    "gpa": "3.3",
+    "sponsorship": "no",
+    "industries": [
+     "Software & IT"
+    ],
+    "interests": [],
+    "locations": [],
+    "relocate": true,
+    "remoteOK": true,
+    "skills": [
+     "python",
+     "java",
+     "sql"
+    ],
+    "experience": [
+     {
+      "kind": "Internship",
+      "title": "Software Engineering Intern",
+      "org": "Local Company",
+      "start": "2025-06",
+      "end": "2025-08",
+      "bullets": [
+       "Wrote Python scripts and SQL reports"
+      ]
+     }
+    ]
+   },
+   "listing": "8514830617",
+   "band": [
+    "B",
+    "C"
+   ],
+   "reason": "Systems administrator intern for a CS student with a SWE internship: adjacent IT fit at a large contractor."
+  }
+ ]
+}

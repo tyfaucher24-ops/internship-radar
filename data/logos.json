@@ -157,6 +157,12 @@
 "logo": null,
 "why": "no logo >=48px"
 },
+"AMEND Consulting": {
+"domain": "amendllc.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/amend-consulting.webp",
+"src": "gstatic"
+},
 "AMERICAN SYSTEMS": {
 "domain": "americansystems.com",
 "domain_src": "clearbit",
@@ -232,6 +238,12 @@
 "board_tried": true,
 "logo": null,
 "why": "no domain"
+},
+"AVARINT": {
+"domain": "avarint.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/avarint.webp",
+"src": "gstatic"
 },
 "AXQ Capital": {
 "domain": "axqcap.com",
@@ -360,6 +372,12 @@
 "logo": "assets/logos/actian.webp",
 "src": "gstatic"
 },
+"Activision Blizzard": {
+"domain": "activisionblizzard.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/activision-blizzard.webp",
+"src": "gstatic"
+},
 "Acuity": {
 "domain": "acuityinc.com",
 "domain_src": "apply-url",
@@ -410,6 +428,12 @@
 "logo": "assets/logos/advocate-health-care.webp",
 "src": "gstatic"
 },
+"Aegon Asset Management": {
+"domain": "aegonam.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
 "AeroVect": {
 "domain": "aerovect.com",
 "domain_src": "clearbit",
@@ -443,6 +467,12 @@
 "domain": "affirm.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/affirm.webp",
+"src": "gstatic"
+},
+"Aflac": {
+"domain": "aflac.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/aflac.webp",
 "src": "gstatic"
 },
 "AfterQuery": {
@@ -583,6 +613,12 @@
 "logo": null,
 "why": "no domain"
 },
+"Alcoa": {
+"domain": "alcoa.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/alcoa.webp",
+"src": "gstatic"
+},
 "Alcon": {
 "domain": "alcon.com",
 "domain_src": "clearbit",
@@ -686,6 +722,12 @@
 "logo": "assets/logos/alo-yoga.webp",
 "src": "gstatic"
 },
+"Alstom": {
+"domain": "alstom.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/alstom.webp",
+"src": "gstatic"
+},
 "Alston & Bird Law Firm": {
 "board_tried": true,
 "logo": null,
@@ -695,6 +737,12 @@
 "domain": "altagas.ca",
 "domain_src": "clearbit",
 "logo": "assets/logos/altagas.webp",
+"src": "gstatic"
+},
+"AltaLink": {
+"domain": "altalink.ca",
+"domain_src": "clearbit",
+"logo": "assets/logos/altalink.webp",
 "src": "gstatic"
 },
 "AltaML": {
@@ -872,6 +920,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/american-university.webp",
 "src": "gstatic"
+},
+"Americo Financial Life and Annuity": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Ameriprise Financial": {
 "domain": "ameriprise.com",
@@ -1098,6 +1152,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/aquabyte.webp",
 "src": "gstatic"
+},
+"Aquatic Capital": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Aquatic Capital Management": {
 "board_tried": true,
@@ -1423,6 +1483,12 @@
 "logo": null,
 "why": "no logo >=48px"
 },
+"AtriCure": {
+"domain": "atricure.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/atricure.webp",
+"src": "gstatic"
+},
 "Attentive": {
 "domain": "attentive.com",
 "domain_src": "clearbit",
@@ -1536,6 +1602,12 @@
 "domain": "awardco.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/awardco.webp",
+"src": "gstatic"
+},
+"Awetomaton": {
+"domain": "awetomaton.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/awetomaton.webp",
 "src": "gstatic"
 },
 "Axcelis Technologies": {
@@ -1736,6 +1808,12 @@
 "logo": null,
 "why": "no logo >=48px"
 },
+"Barkback": {
+"domain": "barkback.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Barnes & Thornburg": {
 "domain": "btlaw.com",
 "domain_src": "clearbit",
@@ -1871,6 +1949,10 @@
 "logo": null,
 "why": "no domain"
 },
+"Bertelsmann": {
+"logo": null,
+"why": "no domain"
+},
 "Best Egg": {
 "board_tried": true,
 "logo": null,
@@ -1975,6 +2057,12 @@
 "Blackhawk Network Holdings": {
 "logo": null,
 "why": "no domain"
+},
+"BlinqLABS": {
+"domain": "blinqlabs.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Block": {
 "domain": "block.xyz",
@@ -2104,6 +2192,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/bose.webp",
 "src": "gstatic"
+},
+"Boson Ai": {
+"logo": null,
+"why": "no domain"
 },
 "Boston Consulting Group": {
 "domain": "bcg.com",
@@ -2499,6 +2591,12 @@
 "logo": "assets/logos/cable-one.webp",
 "src": "gstatic"
 },
+"Cadence": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Cadence Design Systems": {
 "domain": "cadence.com",
 "domain_src": "clearbit",
@@ -2697,10 +2795,22 @@
 "logo": null,
 "why": "no domain"
 },
+"Cboe Global Markets": {
+"domain": "cboe.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/cboe-global-markets.webp",
+"src": "gstatic"
+},
 "CelLink Technologies": {
 "domain": "cellinktechnologies.com",
 "domain_src": "apply-url",
 "logo": "assets/logos/cellink-technologies.webp",
+"src": "gstatic"
+},
+"Celestica": {
+"domain": "celestica.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/celestica.webp",
 "src": "gstatic"
 },
 "Celonis": {
@@ -3323,6 +3433,12 @@
 "logo": "assets/logos/compassion-international.webp",
 "src": "gstatic"
 },
+"Compeer Financial": {
+"domain": "compeer.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/compeer-financial.webp",
+"src": "gstatic"
+},
 "Composio": {
 "domain": "composio.co",
 "domain_src": "clearbit",
@@ -3673,6 +3789,12 @@
 "logo": "assets/logos/crunchtime.webp",
 "src": "gstatic"
 },
+"Cryptic Vector": {
+"domain": "crypticvector.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/cryptic-vector.webp",
+"src": "gstatic"
+},
 "Cubic": {
 "why": "too light to see on white"
 },
@@ -3739,6 +3861,12 @@
 "logo": "assets/logos/cyvl.webp",
 "src": "gstatic"
 },
+"D. E. Shaw": {
+"domain": "deshaw.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
 "DE Shaw": {
 "domain": "deshaw.com",
 "domain_src": "apply-url",
@@ -3797,6 +3925,12 @@
 "DTCC": {
 "logo": null,
 "why": "no domain"
+},
+"DV Group": {
+"domain": "dvgroup.co.in",
+"domain_src": "clearbit",
+"logo": "assets/logos/dv-group.webp",
+"src": "gstatic"
 },
 "DV Trading": {
 "domain": "dvtrading.co",
@@ -3928,6 +4062,12 @@
 "logo": "assets/logos/dee-zee.webp",
 "src": "gstatic"
 },
+"Deepgram": {
+"domain": "deepgram.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/deepgram.webp",
+"src": "gstatic"
+},
 "Defense Unicorns": {
 "logo": "assets/logos/defense-unicorns.webp",
 "src": "careers-board",
@@ -3970,6 +4110,12 @@
 "logo": "assets/logos/delta-dental.webp",
 "src": "careers-board",
 "why": "no domain"
+},
+"Delta Dental Of Missouri": {
+"domain": "deltadentalmo.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/delta-dental-of-missouri.webp",
+"src": "duckduckgo"
 },
 "Delta Dental of Iowa": {
 "domain": "deltadentalia.com",
@@ -4297,6 +4443,12 @@
 "logo": null,
 "why": "no domain"
 },
+"EHC": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "EMC Insurance": {
 "logo": "assets/logos/emc-insurance.webp",
 "src": "careers-board",
@@ -4330,6 +4482,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/eqt.webp",
 "src": "gstatic"
+},
+"ETC": {
+"domain": "etcconnect.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "EV Realty": {
 "domain": "evrealtyus.com",
@@ -4468,6 +4626,12 @@
 "domain": "elanco.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/elanco.webp",
+"src": "gstatic"
+},
+"Election Systems & Software": {
+"domain": "essvote.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/election-systems-software.webp",
 "src": "gstatic"
 },
 "Electronic Arts": {
@@ -4738,6 +4902,12 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"Ergotron": {
+"domain": "ergotron.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/ergotron.webp",
+"src": "gstatic"
+},
 "Erickson Senior Living": {
 "domain": "ericksonseniorliving.com",
 "domain_src": "clearbit",
@@ -4795,6 +4965,12 @@
 "domain": "evercommerce.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/evercommerce.webp",
+"src": "gstatic"
+},
+"Evercore": {
+"domain": "evercore.com",
+"domain_src": "registry",
+"logo": "assets/logos/evercore.webp",
 "src": "gstatic"
 },
 "Everlaw": {
@@ -4872,6 +5048,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/experian.webp",
 "src": "gstatic"
+},
+"Express": {
+"domain": "express.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Extreme Networks": {
 "board_tried": true,
@@ -5113,6 +5295,12 @@
 "logo": "assets/logos/figure.webp",
 "src": "gstatic"
 },
+"Figure AI": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Financial Technology Partners": {
 "domain": "ftpartners.com",
 "domain_src": "clearbit",
@@ -5183,6 +5371,18 @@
 "logo": "assets/logos/first-quality.webp",
 "src": "gstatic"
 },
+"First Solar": {
+"domain": "firstsolar.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
+"First Solar (US)": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "FirstDay Foundation": {
 "domain": "firstday.foundation",
 "domain_src": "clearbit",
@@ -5203,6 +5403,12 @@
 "logo": "assets/logos/five-below.webp",
 "src": "careers-board",
 "why": "no logo >=48px"
+},
+"Five Rings": {
+"domain": "fiverings.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/five-rings.webp",
+"src": "gstatic"
 },
 "Five Rings Capital": {
 "logo": "assets/logos/five-rings-capital.webp",
@@ -5379,6 +5585,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/freese-and-nichols.webp",
 "src": "gstatic"
+},
+"Freestone Capital Management": {
+"logo": null,
+"why": "no domain"
 },
 "Fresenius Kabi": {
 "domain": "fresenius-kabi.com",
@@ -5777,6 +5987,12 @@
 "domain": "gilead.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/gilead-sciences.webp",
+"src": "gstatic"
+},
+"Ginkgo Bioworks": {
+"domain": "ginkgobioworks.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/ginkgo-bioworks.webp",
 "src": "gstatic"
 },
 "GitHub": {
@@ -6211,6 +6427,12 @@
 "logo": null,
 "why": "no domain"
 },
+"HPR": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "HPR (Hyannis Port Research)": {
 "logo": "assets/logos/hpr-hyannis-port-research.webp",
 "src": "careers-board",
@@ -6420,6 +6642,18 @@
 "logo": "assets/logos/hewlett-packard-enterprise.webp",
 "src": "gstatic"
 },
+"Hex Technologies": {
+"domain": "hextechinc.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
+"HeyGen": {
+"domain": "heygen.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/heygen.webp",
+"src": "gstatic"
+},
 "Higharc": {
 "board_tried": true,
 "why": "recheck"
@@ -6443,6 +6677,10 @@
 "logo": "assets/logos/hilb-group.webp",
 "src": "careers-board",
 "why": "no logo >=48px"
+},
+"Hilton": {
+"logo": null,
+"why": "no domain"
 },
 "Hippocratic AI": {
 "domain": "hippocraticai.com",
@@ -6468,10 +6706,22 @@
 "logo": "assets/logos/hitachi-energy.webp",
 "src": "gstatic"
 },
+"Hive Financial Systems": {
+"domain": "hivefs.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/hive-financial-systems.webp",
+"src": "gstatic"
+},
 "Hiverge": {
 "logo": "assets/logos/hiverge.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Hiya": {
+"domain": "hiya.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/hiya.webp",
+"src": "gstatic"
 },
 "Hologic": {
 "domain": "hologic.com",
@@ -6502,6 +6752,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/honeywell.webp",
 "src": "gstatic"
+},
+"Hook Music": {
+"domain": "hookmusic.tv",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Hootsuite": {
 "domain": "hootsuite.com",
@@ -6655,6 +6911,10 @@
 "logo": "assets/logos/ibm.webp",
 "src": "gstatic"
 },
+"ICD": {
+"logo": null,
+"why": "no domain"
+},
 "ICF": {
 "domain": "icf.com",
 "domain_src": "clearbit",
@@ -6677,6 +6937,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/idemia.webp",
 "src": "gstatic"
+},
+"IDEMIA North America": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "IDEX": {
 "domain": "idexcorp.com",
@@ -6963,6 +7229,12 @@
 "logo": "assets/logos/intelerad.webp",
 "src": "gstatic"
 },
+"Inter Miami CF": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "InterSystems": {
 "domain": "intersystems.com",
 "domain_src": "clearbit",
@@ -6979,6 +7251,12 @@
 "domain": "interactivebrokers.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/interactive-brokers.webp",
+"src": "gstatic"
+},
+"Interclypse": {
+"domain": "interclypse.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/interclypse.webp",
 "src": "gstatic"
 },
 "Intercontinental Exchange": {
@@ -7115,6 +7393,12 @@
 "logo": "assets/logos/itron.webp",
 "src": "gstatic"
 },
+"Ivalua": {
+"domain": "ivalua.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/ivalua.webp",
+"src": "gstatic"
+},
 "Ivo": {
 "board_tried": true,
 "logo": null,
@@ -7161,6 +7445,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/jm-family.webp",
 "src": "gstatic"
+},
+"JM Family Enterprises": {
+"logo": null,
+"why": "no domain"
 },
 "JMP Statistical Discovery": {
 "logo": null,
@@ -7326,6 +7614,12 @@
 "logo": "assets/logos/jump-trading-group.webp",
 "src": "gstatic"
 },
+"Juniper Networks": {
+"domain": "juniper.net",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Juniper Square": {
 "domain": "junipersquare.com",
 "domain_src": "clearbit",
@@ -7385,6 +7679,12 @@
 "logo": "assets/logos/kpmg.webp",
 "src": "gstatic"
 },
+"KQED": {
+"domain": "kqed.org",
+"domain_src": "clearbit",
+"logo": "assets/logos/kqed.webp",
+"src": "gstatic"
+},
 "Kabam": {
 "domain": "kabam.com",
 "domain_src": "clearbit",
@@ -7408,6 +7708,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/kargo.webp",
 "src": "gstatic"
+},
+"Kastle": {
+"domain": "kastlewa.com.au",
+"domain_src": "clearbit",
+"logo": "assets/logos/kastle.webp",
+"src": "apple-touch-icon"
 },
 "Kastle AI": {
 "logo": "assets/logos/kastle-ai.webp",
@@ -7930,6 +8236,12 @@
 "logo": "assets/logos/linkedin.webp",
 "src": "gstatic"
 },
+"Linkup": {
+"domain": "linkup.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/linkup.webp",
+"src": "gstatic"
+},
 "Littelfuse": {
 "domain": "littelfuse.com",
 "domain_src": "clearbit",
@@ -7988,6 +8300,12 @@
 "domain": "logitech.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/logitech.webp",
+"src": "gstatic"
+},
+"Los Alamos National Laboratory": {
+"domain": "lanl.gov",
+"domain_src": "clearbit",
+"logo": "assets/logos/los-alamos-national-laboratory.webp",
 "src": "gstatic"
 },
 "Louis Dreyfus Company": {
@@ -8105,6 +8423,12 @@
 "logo": null,
 "why": "no domain"
 },
+"MBDA": {
+"domain": "mbda-systems.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/mbda.webp",
+"src": "apple-touch-icon"
+},
 "MEMX": {
 "board_tried": true,
 "domain": "memx.com",
@@ -8169,6 +8493,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/mufg.webp",
 "src": "apple-touch-icon"
+},
+"Mach Industries": {
+"domain": "machindustries.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/mach-industries.webp",
+"src": "gstatic"
 },
 "Mach9": {
 "board_tried": true,
@@ -8494,6 +8824,12 @@
 "logo": "assets/logos/melotech.webp",
 "src": "gstatic"
 },
+"Member Solutions": {
+"domain": "membersolutions.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/member-solutions.webp",
+"src": "gstatic"
+},
 "Menasha": {
 "logo": "assets/logos/menasha.webp",
 "src": "careers-board",
@@ -8554,6 +8890,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/meriton.webp",
 "src": "gstatic"
+},
+"Mesh Optical Technologies": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Meshy": {
 "board_tried": true,
@@ -8739,6 +9081,12 @@
 "domain": "monarchmoneystaging.com",
 "domain_src": "clearbit",
 "why": "recheck"
+},
+"MongoDB": {
+"domain": "mongodb.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/mongodb.webp",
+"src": "gstatic"
 },
 "Monolithic Power Systems": {
 "domain": "monolithicpower.com",
@@ -8928,6 +9276,10 @@
 "logo": "assets/logos/nasuni.webp",
 "src": "gstatic"
 },
+"National Indemnity Company": {
+"logo": null,
+"why": "no domain"
+},
 "National Information Solutions Cooperative": {
 "domain": "nisc.coop",
 "domain_src": "clearbit",
@@ -9050,6 +9402,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/netflix.webp",
 "src": "gstatic"
+},
+"Netic": {
+"domain": "netic.io",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Netsmart": {
 "domain": "ntst.com",
@@ -9402,6 +9760,12 @@
 "logo": "assets/logos/nutanix.webp",
 "src": "gstatic"
 },
+"OATEY": {
+"domain": "oatey.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/oatey.webp",
+"src": "gstatic"
+},
 "OBE": {
 "logo": "assets/logos/obe.webp",
 "src": "careers-board",
@@ -9467,6 +9831,12 @@
 "domain": "oceancomms.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/oceancomm.webp",
+"src": "gstatic"
+},
+"Oceaneering": {
+"domain": "oceaneering.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/oceaneering.webp",
 "src": "gstatic"
 },
 "Oceanus Marine Technologies": {
@@ -9836,6 +10206,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/palantir.webp",
 "src": "gstatic"
+},
+"Palantir Technologies": {
+"domain": "palantir.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Palmetto Clean Technology": {
 "board_tried": true,
@@ -10484,6 +10860,12 @@
 "logo": "assets/logos/prophet.webp",
 "src": "gstatic"
 },
+"Propio": {
+"domain": "propio-ls.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/propio.webp",
+"src": "gstatic"
+},
 "Prosper Funding": {
 "domain": "prosperfundinggroup.com",
 "domain_src": "clearbit",
@@ -10596,6 +10978,12 @@
 "logo": "assets/logos/quadrillion.webp",
 "src": "gstatic"
 },
+"Quadrillion Labs": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Qualcomm": {
 "domain": "qualcomm.com",
 "domain_src": "clearbit",
@@ -10612,6 +11000,12 @@
 "logo": "assets/logos/quantco.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Quantbot Technologies": {
+"domain": "quantbot.com",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Quantinuum": {
 "domain": "quantinuum.com",
@@ -10630,6 +11024,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/quantum-workplace.webp",
 "src": "gstatic"
+},
+"Qube Research and Technologies": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Quest Global": {
 "domain": "quest-global.jp",
@@ -10982,6 +11382,12 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/republic-airways.webp",
 "src": "gstatic"
+},
+"Residex Software": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Resmed": {
 "domain": "resmed.com",
@@ -11410,6 +11816,13 @@
 "logo": "assets/logos/shi-international.webp",
 "src": "gstatic"
 },
+"SK Hynix Memory Solution": {
+"board_tried": true,
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "SK hynix": {
 "domain": "skhynix.com",
 "domain_src": "clearbit",
@@ -11428,6 +11841,12 @@
 "domain": "soti.net",
 "domain_src": "clearbit",
 "logo": "assets/logos/soti.webp",
+"src": "gstatic"
+},
+"SPHERIX GLOBAL INSIGHTS US": {
+"domain": "applytojob.com",
+"domain_src": "apply-url",
+"logo": "assets/logos/spherix-global-insights-us.webp",
 "src": "gstatic"
 },
 "SPS Commerce": {
@@ -11623,6 +12042,12 @@
 "src": "careers-board",
 "why": "no logo >=48px"
 },
+"Sardine": {
+"domain": "sardine.ai",
+"domain_src": "clearbit",
+"logo": "assets/logos/sardine.webp",
+"src": "gstatic"
+},
 "Sarepta": {
 "logo": "assets/logos/sarepta.webp",
 "src": "careers-board",
@@ -11694,9 +12119,21 @@
 "src": "careers-board",
 "why": "recheck"
 },
+"Scientech Research Capital": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Scientific Research": {
 "domain": "scires.com",
 "domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
+"Scout AI": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
 "logo": null,
 "why": "no logo >=48px"
 },
@@ -11712,6 +12149,12 @@
 "logo": "assets/logos/scout-motors.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Seagate Technology": {
+"domain": "seagate.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Seamless.AI": {
 "domain": "seamless.ai",
@@ -11736,6 +12179,11 @@
 "logo": null,
 "why": "no logo >=48px"
 },
+"Sedgwick Claims Management Services": {
+"logo": "assets/logos/sedgwick-claims-management-services.webp",
+"src": "careers-board",
+"why": "no domain"
+},
 "Semgrep": {
 "domain": "semgrep.dev",
 "domain_src": "clearbit",
@@ -11759,6 +12207,12 @@
 "logo": "assets/logos/sentara-health.webp",
 "src": "careers-board",
 "why": "no domain"
+},
+"Sentinel Technologies": {
+"domain": "sentinel.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/sentinel-technologies.webp",
+"src": "gstatic"
 },
 "SentinelOne": {
 "domain": "sentinelone.com",
@@ -11852,6 +12306,12 @@
 "logo": "assets/logos/shopback.webp",
 "src": "gstatic"
 },
+"Shopify": {
+"domain": "shopify.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/shopify.webp",
+"src": "gstatic"
+},
 "Shure": {
 "domain": "shure.com",
 "domain_src": "clearbit",
@@ -11937,11 +12397,23 @@
 "logo": null,
 "why": "no domain"
 },
+"Silabs": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
+},
 "SimVentions": {
 "domain": "simventions.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/simventions.webp",
 "src": "gstatic"
+},
+"Simbe Robotics": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Simmons Bank": {
 "domain": "simmonsbank.com",
@@ -12864,6 +13336,12 @@
 "src": "careers-board",
 "why": "no domain"
 },
+"TPG": {
+"domain": "tpg.com.au",
+"domain_src": "clearbit",
+"logo": "assets/logos/tpg.webp",
+"src": "gstatic"
+},
 "TRC Companies": {
 "domain": "trccompanies.com",
 "domain_src": "clearbit",
@@ -13015,6 +13493,12 @@
 "src": "careers-board",
 "why": "no domain"
 },
+"Teledyne Technologies Incorporated": {
+"domain": "teledyne.com",
+"domain_src": "clearbit",
+"logo": null,
+"why": "no logo >=48px"
+},
 "Teleo": {
 "logo": "assets/logos/teleo.webp",
 "src": "careers-board",
@@ -13113,6 +13597,12 @@
 "logo": "assets/logos/tessera-labs.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Tevora": {
+"domain": "tevora.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/tevora.webp",
+"src": "gstatic"
 },
 "Texas A&M International University": {
 "domain": "tamiu.edu",
@@ -13485,6 +13975,12 @@
 "logo": "assets/logos/toyota-research-institute.webp",
 "src": "careers-board",
 "why": "recheck"
+},
+"Trace Labs": {
+"domain": "tracelabs.org",
+"domain_src": "clearbit",
+"logo": "assets/logos/trace-labs.webp",
+"src": "gstatic"
 },
 "Trace3": {
 "logo": null,
@@ -14008,6 +14504,10 @@
 "src": "careers-board",
 "why": "no domain"
 },
+"Upscale AI": {
+"logo": null,
+"why": "no domain"
+},
 "Upstream USA": {
 "logo": "assets/logos/upstream-usa.webp",
 "src": "careers-board",
@@ -14262,6 +14762,12 @@
 "logo": "assets/logos/vestwell.webp",
 "src": "gstatic"
 },
+"Veterans United Home Loans": {
+"domain": "veteransunited.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/veterans-united-home-loans.webp",
+"src": "gstatic"
+},
 "VetsEZ": {
 "domain": "vetsez.com",
 "domain_src": "clearbit",
@@ -14304,6 +14810,10 @@
 "src": "careers-board",
 "why": "recheck"
 },
+"Vigil Labs": {
+"logo": null,
+"why": "no domain"
+},
 "Viking Global": {
 "domain": "vikingglobal.com",
 "domain_src": "clearbit",
@@ -14318,6 +14828,12 @@
 "domain": "viridien.com",
 "domain_src": "clearbit",
 "why": "too light to see on white"
+},
+"Virtu": {
+"domain": "vansh.nyc",
+"domain_src": "apply-url",
+"logo": null,
+"why": "no logo >=48px"
 },
 "Virtu Financial": {
 "domain": "virtu.com",
@@ -14403,6 +14919,11 @@
 "logo": null,
 "why": "no logo >=48px"
 },
+"WGU": {
+"logo": "assets/logos/wgu.webp",
+"src": "careers-board",
+"why": "no domain"
+},
 "WSFS Bank": {
 "domain": "wsfsbank.com",
 "domain_src": "clearbit",
@@ -14463,6 +14984,10 @@
 "domain_src": "clearbit",
 "logo": "assets/logos/walmart.webp",
 "src": "gstatic"
+},
+"Walrus": {
+"logo": null,
+"why": "no domain"
 },
 "Walter P Moore": {
 "domain": "walterpmoore.com",
@@ -15024,6 +15549,12 @@
 "domain": "automotivemastermind.com",
 "domain_src": "clearbit",
 "logo": "assets/logos/automotivemastermind.webp",
+"src": "gstatic"
+},
+"bioM\u00e9rieux": {
+"domain": "biomerieux.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/biom-rieux.webp",
 "src": "gstatic"
 },
 "d-Matrix": {

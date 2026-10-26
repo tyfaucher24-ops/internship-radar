@@ -1,93 +1,92 @@
 {
- "updated": "2026-10-26T20:43:38Z",
- "open": 10950,
- "open_all": 10950,
- "closing_this_week": 577,
- "upcoming": 1608,
+ "updated": "2026-10-26T22:50:23Z",
+ "open": 13012,
+ "open_all": 13012,
+ "closing_this_week": 641,
+ "upcoming": 1591,
  "companies_tracked": 2497,
- "companies_with_listings": 1459,
- "duration_s": 249,
- "mode": "partial",
+ "companies_with_listings": 1531,
+ "duration_s": 2415,
+ "mode": "full",
  "apply_links": {
-  "at": "2026-10-26T20:47:49+00:00",
-  "open": 11115,
-  "direct": 9627,
-  "posting": 1341,
-  "none": 147,
-  "checked_this_run": 7897,
-  "ok": 7760,
-  "unknown": 130,
-  "failed": 7,
+  "at": "2026-10-26T23:30:40+00:00",
+  "open": 13458,
+  "direct": 11222,
+  "posting": 1119,
+  "none": 1117,
+  "checked_this_run": 5733,
+  "ok": 5636,
+  "unknown": 79,
+  "failed": 18,
   "top_failing_hosts": [
    [
     "zapply.jobs",
+    8
+   ],
+   [
+    "careers.itw.com",
+    4
+   ],
+   [
+    "ursamajor.com",
+    3
+   ],
+   [
+    "www.tower-research.com",
     2
    ],
    [
-    "www.optiver.com",
-    1
-   ],
-   [
-    "spacedynamicslaboratory.applytojob.com",
-    1
-   ],
-   [
-    "careers.aqr.com",
-    1
-   ],
-   [
-    "careers.jhuapl.edu",
-    1
-   ],
-   [
-    "careers.amd.com",
+    "jobs.ea.com",
     1
    ]
   ],
   "top_fallback_hosts": [
    [
+    "go.vansh.nyc",
+    1081
+   ],
+   [
     "zapply.jobs",
-    161
+    144
    ],
    [
     "www.tesla.com",
-    123
+    93
    ],
    [
     "www.metacareers.com",
-    50
+    64
    ],
    [
     "jobs.bytedance.com",
-    46
+    48
    ],
    [
     "careers.withwaymo.com",
-    33
+    42
+   ],
+   [
+    "amazon.jobs",
+    35
    ],
    [
     "careers.amd.com",
-    29
-   ],
-   [
-    "careersus-shure.icims.com",
-    28
-   ],
-   [
-    "egup.fa.us2.oraclecloud.com",
-    27
+    24
    ],
    [
     "egug.fa.us2.oraclecloud.com",
-    25
+    24
    ],
    [
-    "apply.careers.microsoft.com",
+    "fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com",
     24
    ]
   ],
-  "validated_within_24h": 8902
+  "validated_within_24h": 5638
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
- "hygiene": {}
+ "hygiene": {
+  "title_loc_removed": 20,
+  "city_trimmed": 1
+ }
 }

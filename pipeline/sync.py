@@ -247,8 +247,23 @@ def main():
         put(rec)
     # 4) freshness: keep last-good data for boards that failed this run; close what disappeared from a board that worked
     failed={(k[0],k[1].lower()) for k,(r,p,e) in res.items() if e}
+    # V16: identity follows the posting URL. The key/id is built from parsed city+term, which changes when the
+    # parser or the QA location cleanup changes; without this, every full sync closed ~1,000 still-live postings
+    # and re-added them under new ids (the sync's 8% removal gate then failed ~35% of runs).
+    def _u(u):
+        u=re.sub(r'[?#].*$','',(u or '').strip().lower()).rstrip('/')
+        m=re.search(r'myworkdayjobs\.com/.*/job/[^/]+/([^/]+)$',u)  # same Workday job via externalUrl or fallback path
+        return 'wd:'+m.group(1) if m else u
+    prev_ids=set(prevL); by_url=collections.defaultdict(list)
+    for q in recs.values():
+        if q.get('status')=='open' and q.get('apply_url') and q.get('id') not in prev_ids: by_url[_u(q['apply_url'])].append(q)
     for pid,p in prevL.items():
         if p['key'] in recs or p.get('source_type')=='prediction': continue
+        if p.get('status')=='open' and p.get('apply_url'):
+            cand=by_url.get(_u(p['apply_url'])) or []
+            q=next((c for c in cand if (c['company'].lower(),c['title'].lower())==(p['company'].lower(),p['title'].lower())),None) or (cand[0] if len(cand)==1 else None)
+            if q is not None:
+                cand.remove(q);q['id']=pid;q['first_seen']=p.get('first_seen') or q.get('first_seen');stats['kept_same_url_rekeyed']+=1;continue
         b=tuple((p.get('board') or ':').split(':',1));b=(b[0],b[1].lower()) if len(b)==2 else b
         # partial runs (--only/--limit/--skip-leads) never close listings from sources they did not read
         ran={(k[0],k[1].lower()) for k in res}

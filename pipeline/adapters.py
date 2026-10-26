@@ -97,7 +97,7 @@ def workday(c):
     host,tenant,site=c['slug'].split('/')
     base=f'https://{host}/wday/cxs/{tenant}/{site}';out=[];seen=set()
     for q in ('intern','co-op','internship'):
-        off=0
+        off=0;total=None
         while off<200:
             j=fetch(base+'/jobs',method='POST',json_body={'appliedFacets':{},'limit':20,'offset':off,'searchText':q},check_robots=False).json()
             posts=j.get('jobPostings',[])
@@ -107,8 +107,9 @@ def workday(c):
                 seen.add(p)
                 if not re.search(r'intern|co-?op|apprentic|student',x.get('title',''),re.I): continue
                 det={}
-                try: det=fetch(base+p,check_robots=False).json().get('jobPostingInfo',{})
-                except Exception: pass
+                for _try in (0,1):  # V16: one retry; a failed detail read used to drop the city and change the URL
+                    try: det=fetch(base+p,check_robots=False).json().get('jobPostingInfo',{});break
+                    except Exception: pass
                 locs=[det.get('location') or x.get('locationsText') or '']+(det.get('additionalLocations') or [])
                 # V15 addendum: Workday paths carry the site's own location code (/job/USA-OH-Cleveland/...); use it when the label has no city
                 mloc=re.match(r'/job/([^/]+)/',p or '')
@@ -118,7 +119,10 @@ def workday(c):
                 out.append({'title':x['title'],'url':det.get('externalUrl') or f'https://{host}/{site}{p}','locations':locs+([ 'United States' ] if (det.get('country') or {}).get('descriptor','').startswith('United States') else []),'desc':det.get('jobDescription'),
                   'posted':_iso(det.get('startDate')),'deadline':_iso(det.get('endDate')) if det.get('endDate') else None,'workplace':det.get('remoteType'),'ats_id':det.get('jobReqId') or p})
             off+=20
-            if off>=j.get('total',0) or not posts: break
+            # V16: Workday reports `total` only on the first page (later pages say 0), so the old check stopped after
+            # 20 results per query -> which internships made the cut varied run to run and the rest were "closed".
+            if total is None: total=j.get('total') or 0
+            if off>=total or not posts: break
     return out
 def _jsonld_jobs(html):
     for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>',html,re.S|re.I):

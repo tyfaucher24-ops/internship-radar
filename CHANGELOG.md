@@ -1,6 +1,16 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16 Phase 1: security and cleanup (2026-10-26)
+- **Admin:** the Admin item is gone from the profile menu (and the `?admin` trick that revealed it). admin.html stays reachable by URL for now, noindex and disallowed in robots.txt; real sign-in comes with Phase 3 accounts.
+- **Links:** a new `safeUrl()` (store.js) lets only http(s), mailto, tel and relative links become an href; javascript:, data: and vbscript: become `#`. It is used for apply links, tracker links, Ways-in links, sources and admin links, and a click guard blocks any javascript: link that slips through. Found by the new XSS test: a listing whose apply link was `javascript:...` used to render as a clickable link.
+- **Headers:** referrer policy `strict-origin-when-cross-origin` on every page; admin.html and 404.html now have a CSP too. Every new-tab link already had rel=noopener (now tested).
+- **XSS:** listing text, descriptions, sources, resume text and profile fields were already escaped; tests/test_v16_security.py now proves it with payloads in every field.
+- **CSS:** the 12 layered files v4.css ... v15.css are one file, site.css, in the same order (cascade unchanged). Pages: theme.css (tokens), style.css (base), site.css. Screenshots of 7 views + admin + 404, light and dark, 1440 and 390: 36 of 36 pixel-identical before and after.
+- **Cleanup:** 27 old root test scripts moved to tests/legacy/; qa-v13.3, qa-v14, qa-v14.3 moved to ops/qa/; deleted legacy/ (old V3/V4 app), the V1 scripts geocode.py, ingest.py, normalize.py and cities.json (nothing imported them), and local untracked leftovers (railway_function.ts, build_data.py, shot.py, test.py, internships.json, root screenshots).
+- **Dependencies:** vendored pdf.js 3.11.174 is affected by CVE-2024-4367 (font code execution), which only applies with isEvalSupported on; ours runs in a Web Worker with isEvalSupported:false, so it is mitigated. mammoth 1.8.0: CVE-2025-11849 (file-path traversal) affects Node only, not the browser build. Upgrading both is listed for later (it changes resume parsing and needs the resume fixtures re-run).
+- **Secrets:** none in client code, the repo or its history (V16 audit). Nothing to rotate.
+
 ## V15.1 (V15 misses: answer key, gold pairs, top-10 relevance) (2026-10-24)
 - The persona answer key was re-derived under one written rule set (tests/grader/rekey_v151.py). K1: school credit only where the spec gives it weight. K2: no relevant internship means no A in any field. K3 was checked and changes nothing. 9 pairs changed; every one is listed with its reason in ops/audit/v15.1-key-changes.md. No key was edited by hand, and no gold label changed.
 - Grader: an adjacent major's fit is no longer charged twice (75 floor in the fit gate), and an adjacent interest costs 4 instead of 9.

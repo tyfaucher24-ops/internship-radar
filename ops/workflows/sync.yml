@@ -1,3 +1,9 @@
+# V16 Phase 1 — copy to .github/workflows/sync.yml together with ops/workflows/pages.yml.
+# Generated data is NO LONGER committed to main (it grew the repo ~40 MB/day). Instead:
+#   previous data  <- actions/cache (key data-<run>, newest restored), falling back to what is committed in main
+#   new data       -> actions/cache + GitHub Pages artifact (deployed by this job)
+# Failed runs: the run's data is thrown away, but its sync_history.json line (ok=false + why) is kept.
+# One-time setting: repo Settings -> Pages -> Source = "GitHub Actions".
 name: Sync listings
 on:
   schedule:
@@ -10,8 +16,10 @@ on:
         required: false
         default: ''
 permissions:
-  contents: write
+  contents: read
   issues: write
+  pages: write
+  id-token: write
 concurrency:
   group: data-sync
   cancel-in-progress: false
@@ -19,13 +27,24 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     timeout-minutes: 110
+    environment: { name: github-pages }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install requests pillow
-      - name: Snapshot previous listings (for the sync report)
-        run: cp data/listings.json /tmp/prev_listings.json || echo '{"listings":[]}' > /tmp/prev_listings.json
+      - name: Restore last good data (falls back to the copy committed in main)
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            data
+            assets/logos
+          key: data-${{ github.run_id }}
+          restore-keys: data-
+      - name: Snapshot previous data (for the sync report and to roll back a failed run)
+        run: |
+          cp data/listings.json /tmp/prev_listings.json || echo '{"listings":[]}' > /tmp/prev_listings.json
+          rm -rf /tmp/prev_data && cp -r data /tmp/prev_data
       - name: Collect user reports
         env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: python -m pipeline.reports || echo "reports step failed; keeping previous reports.json"
@@ -36,22 +55,36 @@ jobs:
         run: |
           if [ "${{ github.event.schedule }}" = "22,52 * * * *" ]; then ARGS="--only greenhouse,lever,ashby --skip-leads"; else ARGS="${{ github.event.inputs.args }}"; fi
           python -m pipeline.sync --workers 24 $ARGS
-      - name: Accuracy checks + sync report (fails the run if checks fail)
+      - name: Accuracy checks + sync report (fails the run if >8% of listings would disappear, or hard checks fail)
         run: python -m pipeline.qa --prev /tmp/prev_listings.json
       - name: Sync health gate (fails on ±30% open-count swing or >2% dead links)
         run: python ops/health_check.py
       - name: Company logos (new companies only; robots.txt respected; keeps the old logos on failure)
         timeout-minutes: 30
         run: python -m pipeline.logos || echo "logo step failed; keeping previous logos"
-      - name: Commit data (last good data is kept on failure)
-        if: success()
+      - name: Failed run -> keep last good data, but log this run in sync_history.json
+        if: failure() || cancelled()
         run: |
-          git config user.name "radar-sync"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/ assets/logos/
-          git diff --cached --quiet && echo "no changes" && exit 0
-          git commit -m "data: sync $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 10; done; exit 1
+          [ -f data/sync_history.json ] && cp data/sync_history.json /tmp/hist.json || true
+          rm -rf data && cp -r /tmp/prev_data data
+          [ -f /tmp/hist.json ] && cp /tmp/hist.json data/sync_history.json || true
+      - name: Save data for the next run
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            data
+            assets/logos
+          key: data-${{ github.run_id }}
+      - name: Build site artifact (code from main + fresh data)
+        if: always()
+        run: |
+          mkdir -p /tmp/site && rsync -a --exclude .git --exclude .github --exclude screenshots --exclude test-data --exclude 'pipeline/cache' ./ /tmp/site/
+      - uses: actions/upload-pages-artifact@v3
+        if: always()
+        with: { path: /tmp/site }
+      - uses: actions/deploy-pages@v4
+        if: always()
       - name: Open an issue when the sync fails
         if: failure()
         env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }

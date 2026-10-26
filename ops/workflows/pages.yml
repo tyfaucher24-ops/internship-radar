@@ -1,0 +1,30 @@
+# V16 Phase 1 — copy to .github/workflows/pages.yml. Deploys the site when code is pushed to main,
+# using the newest synced data from the sync workflow's cache (falls back to the data committed in main).
+name: Deploy site
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: data-sync          # same group as the sync, so a deploy never races a sync
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: { name: github-pages }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            data
+            assets/logos
+          key: data-none
+          restore-keys: data-
+      - run: mkdir -p /tmp/site && rsync -a --exclude .git --exclude .github --exclude screenshots --exclude test-data --exclude 'pipeline/cache' ./ /tmp/site/
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: /tmp/site }
+      - uses: actions/deploy-pages@v4

@@ -7,7 +7,8 @@ def j(p,d):
     try: return json.load(open(os.path.join(D,p)))
     except Exception: return d
 def main(write=True):
-    h=j('sync_history.json',[]);m=j('meta.json',{});hl=j('health.json',{})
+    h=[x for x in j('sync_history.json',[]) if x.get('ok') is not False];  # V16: compare successful runs only
+    m=j('meta.json',{});hl=j('health.json',{})
     cur=h[-1]['open_visible'] if h else None;prev=h[-2]['open_visible'] if len(h)>1 else None
     delta=round(100*(cur-prev)/prev,1) if cur is not None and prev else 0.0
     al=m.get('apply_links') or {};lc=m.get('linkcheck') or {}

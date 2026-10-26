@@ -86,10 +86,14 @@ def main():
         rep['sources']={'boards':len(logs),'ok':len(logs)-len(fs),'failed':len(fs),'failed_sample':[f"{l['company']} ({l['ats']}): {str(l.get('error'))[:80]}" for l in fs[:30]]}
     except Exception: pass
     json.dump(rep,open(os.path.join(D,'sync_report.json'),'w'),indent=1,default=dict)
-    hp=os.path.join(D,'sync_history.json');h=json.load(open(hp)) if os.path.exists(hp) else []
-    h.append({k:rep.get(k) for k in ('at','open_visible','added','removed','changed')});json.dump(h[-100:],open(hp,'w'),indent=0)
-    from pipeline import compact;compact.main()
     hard=checks['open_past_deadline']+checks['company_equals_title']+checks['company_looks_like_title']
+    # V16: failed runs are logged too (ok=false + why). The workflow keeps this file even when it throws the run's data away.
+    hp=os.path.join(D,'sync_history.json');h=json.load(open(hp)) if os.path.exists(hp) else []
+    e={k:rep.get(k) for k in ('at','open_visible','added','removed','changed')};e['ok']=not(rep.get('collapse') or hard)
+    if not e['ok']: e['why']=('collapse: removed %s of %s visible (limit 8%%)'%(rep.get('removed'),rep.get('previous_open'))) if rep.get('collapse') else f'hard checks failed: {hard}'
+    if os.environ.get('GITHUB_RUN_ID'): e['run']=os.environ['GITHUB_RUN_ID']
+    h.append(e);json.dump(h[-200:],open(hp,'w'),indent=0)
+    from pipeline import compact;compact.main()
     print(json.dumps({k:rep.get(k) for k in ('open_visible','added','removed','changed','fixes','checks')},default=dict))
     if rep.get('collapse') or hard: print('QA FAILED',file=sys.stderr);sys.exit(1)
 if __name__=='__main__': main()

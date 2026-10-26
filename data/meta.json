@@ -1,38 +1,46 @@
 {
- "updated": "2026-10-26T14:24:07Z",
- "open": 10953,
- "open_all": 10953,
+ "updated": "2026-10-26T20:43:38Z",
+ "open": 10950,
+ "open_all": 10950,
  "closing_this_week": 577,
- "upcoming": 1609,
+ "upcoming": 1608,
  "companies_tracked": 2497,
- "companies_with_listings": 1461,
- "duration_s": 306,
+ "companies_with_listings": 1459,
+ "duration_s": 249,
  "mode": "partial",
  "apply_links": {
-  "at": "2026-10-26T14:29:14+00:00",
-  "open": 11119,
-  "direct": 9631,
-  "posting": 1348,
-  "none": 140,
-  "checked_this_run": 7942,
-  "ok": 7804,
-  "unknown": 133,
-  "failed": 5,
+  "at": "2026-10-26T20:47:49+00:00",
+  "open": 11115,
+  "direct": 9627,
+  "posting": 1341,
+  "none": 147,
+  "checked_this_run": 7897,
+  "ok": 7760,
+  "unknown": 130,
+  "failed": 7,
   "top_failing_hosts": [
    [
-    "spacedynamicslaboratory.applytojob.com",
+    "zapply.jobs",
     2
    ],
    [
-    "gunvor.wd3.myworkdayjobs.com",
+    "www.optiver.com",
     1
    ],
    [
-    "analogdevices.wd1.myworkdayjobs.com",
+    "spacedynamicslaboratory.applytojob.com",
     1
    ],
    [
-    "zapply.jobs",
+    "careers.aqr.com",
+    1
+   ],
+   [
+    "careers.jhuapl.edu",
+    1
+   ],
+   [
+    "careers.amd.com",
     1
    ]
   ],

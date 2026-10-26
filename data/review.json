@@ -373,14 +373,14 @@
 {
 "company": "Armada",
 "title": "Distinguished Engineer / Technical Fellow",
-"url": "https://job-boards.greenhouse.io/armada/jobs/5063302008",
+"url": "https://job-boards.greenhouse.io/armada/jobs/5063301008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Armada",
 "title": "Distinguished Engineer / Technical Fellow",
-"url": "https://job-boards.greenhouse.io/armada/jobs/5063301008",
+"url": "https://job-boards.greenhouse.io/armada/jobs/5063302008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -408,21 +408,14 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8618463002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8834243002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829617002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8618463002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -442,6 +435,13 @@
 },
 {
 "company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8834243002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
 "title": "Technical Recruiter - AI/ML",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8843015002",
 "reason": "ambiguous intern wording",
@@ -450,7 +450,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8558579002",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8829616002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -464,13 +464,6 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8828047002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
@@ -478,7 +471,14 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8829616002",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8558579002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8828047002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -499,7 +499,7 @@
 {
 "company": "Axon",
 "title": "Corporate Operations Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037929003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037931003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -513,7 +513,7 @@
 {
 "company": "Axon",
 "title": "Corporate Operations Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037931003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037929003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -884,7 +884,7 @@
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864176002?gh_jid=8864176002",
+"url": "https://www.brex.com/careers/8864174002?gh_jid=8864174002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -898,7 +898,7 @@
 {
 "company": "Brex",
 "title": "Brex Rotational Program",
-"url": "https://www.brex.com/careers/8864174002?gh_jid=8864174002",
+"url": "https://www.brex.com/careers/8864176002?gh_jid=8864176002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -919,14 +919,14 @@
 {
 "company": "Celonis",
 "title": "Associate Deployment Engineer - Galaxy Graduate Program",
-"url": "https://job-boards.greenhouse.io/celonis/jobs/7627708003?gh_jid=7627708003",
+"url": "https://job-boards.greenhouse.io/celonis/jobs/7627681003?gh_jid=7627681003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Celonis",
 "title": "Associate Deployment Engineer - Galaxy Graduate Program",
-"url": "https://job-boards.greenhouse.io/celonis/jobs/7627681003?gh_jid=7627681003",
+"url": "https://job-boards.greenhouse.io/celonis/jobs/7627708003?gh_jid=7627708003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1394,6 +1394,13 @@
 },
 {
 "company": "General Matter",
+"title": "Integrated Safety Analysis Engineer (New Grad)",
+"url": "https://job-boards.greenhouse.io/generalmatter/jobs/5430858008",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "General Matter",
 "title": "Mechanical Engineer (New Grad)",
 "url": "https://job-boards.greenhouse.io/generalmatter/jobs/5375956008",
 "reason": "ambiguous intern wording",
@@ -1582,6 +1589,34 @@
 "source": "greenhouse"
 },
 {
+"company": "Hearst",
+"title": "2027 Hearst AI Newsroom Developer Fellowship Program",
+"url": "https://job-boards.greenhouse.io/hearst/jobs/4466321009",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Hearst",
+"title": "2027 National Hearst Journalism Fellowship Program",
+"url": "https://job-boards.greenhouse.io/hearst/jobs/4466325009",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Hearst",
+"title": "Jayne Miller Investigative Journalism Fellowship",
+"url": "https://job-boards.greenhouse.io/hearst/jobs/4466075009",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Hearst",
+"title": "John DiStaso Political Fellowship",
+"url": "https://job-boards.greenhouse.io/hearst/jobs/4466057009",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
 "company": "ID.me",
 "title": "Summer 2027 - Data Scientist (New Grad) ",
 "url": "https://job-boards.greenhouse.io/idmeuniversityrecruiting/jobs/7986505003",
@@ -1669,6 +1704,13 @@
 "company": "Jump Trading",
 "title": "Campus AI Research Engineer (Full-Time)",
 "url": "https://www.jumptrading.com/hr/job?gh_jid=8052313",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Jump Trading",
+"title": "Campus Quantitative Researcher | Trading Team PhD/Postdoc (Full-Time)",
+"url": "https://www.jumptrading.com/hr/job?gh_jid=8209424",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1787,14 +1829,14 @@
 {
 "company": "Meriton",
 "title": "Recruiter (Skilled Trades)",
-"url": "https://job-boards.greenhouse.io/meriton/jobs/5440119008",
+"url": "https://job-boards.greenhouse.io/meriton/jobs/5440127008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Meriton",
 "title": "Recruiter (Skilled Trades)",
-"url": "https://job-boards.greenhouse.io/meriton/jobs/5440127008",
+"url": "https://job-boards.greenhouse.io/meriton/jobs/5440119008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1892,7 +1934,7 @@
 {
 "company": "One Medical",
 "title": "Adult (14+) Nurse Practitioner or Physician Assistant - New Grad Program: Seattle",
-"url": "http://www.onemedical.com/careers/all-departments/8260738?gh_jid=8260738",
+"url": "http://www.onemedical.com/careers/all-departments/8312161?gh_jid=8312161",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1913,14 +1955,14 @@
 {
 "company": "One Medical",
 "title": "Family Nurse Practitioner or Physician Assistant - New Grad Program: Dana Park, May 2027",
-"url": "http://www.onemedical.com/careers/all-departments/8306256?gh_jid=8306256",
+"url": "http://www.onemedical.com/careers/all-departments/8325336?gh_jid=8325336",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "One Medical",
 "title": "Family Nurse Practitioner or Physician Assistant - New Grad Program: Queen Creek, May 2027",
-"url": "http://www.onemedical.com/careers/all-departments/8306254?gh_jid=8306254",
+"url": "http://www.onemedical.com/careers/all-departments/8325341?gh_jid=8325341",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2257,6 +2299,13 @@
 "company": "Perplexity AI",
 "title": "Perplexity Research Fellowship",
 "url": "https://jobs.ashbyhq.com/Perplexity/ab076e26-adf1-414f-a006-7b1bdc9247c8",
+"reason": "ambiguous intern wording",
+"source": "ashby"
+},
+{
+"company": "Persona AI",
+"title": "Associate Recruiter, University Hiring",
+"url": "https://jobs.ashbyhq.com/persona.ai/3ac0b4ef-674f-458c-b0e1-98d2df36c834",
 "reason": "ambiguous intern wording",
 "source": "ashby"
 },
@@ -2837,21 +2886,14 @@
 {
 "company": "SpaceX",
 "title": "Recruiter, Go-To-Market (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864549002?gh_jid=8864549002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "SpaceX",
-"title": "Recruiter, Go-To-Market (Starlink)",
 "url": "https://boards.greenhouse.io/spacex/jobs/8864582002?gh_jid=8864582002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
-"title": "Recruiter, High Volume Manufacturing (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864552002?gh_jid=8864552002",
+"title": "Recruiter, Go-To-Market (Starlink)",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864549002?gh_jid=8864549002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2859,6 +2901,13 @@
 "company": "SpaceX",
 "title": "Recruiter, High Volume Manufacturing (Starlink)",
 "url": "https://boards.greenhouse.io/spacex/jobs/8864583002?gh_jid=8864583002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "SpaceX",
+"title": "Recruiter, High Volume Manufacturing (Starlink)",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864552002?gh_jid=8864552002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2872,14 +2921,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter",
-"url": "https://boards.greenhouse.io/spacex/jobs/8521318002?gh_jid=8521318002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8639384002?gh_jid=8639384002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter",
-"url": "https://boards.greenhouse.io/spacex/jobs/8639384002?gh_jid=8639384002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8521318002?gh_jid=8521318002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2921,14 +2970,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter, SG&A",
-"url": "https://boards.greenhouse.io/spacex/jobs/8880126002?gh_jid=8880126002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8883358002?gh_jid=8883358002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter, SG&A",
-"url": "https://boards.greenhouse.io/spacex/jobs/8883358002?gh_jid=8883358002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8880126002?gh_jid=8880126002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2942,7 +2991,7 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8695154002?gh_jid=8695154002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2956,7 +3005,7 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8695154002?gh_jid=8695154002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3279,13 +3328,6 @@
 "company": "Varda Space",
 "title": "University Recruiter ",
 "url": "https://job-boards.greenhouse.io/vardaspace/jobs/8016066003",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Veeam Software",
-"title": "Executive Recruiter",
-"url": "https://job-boards.eu.greenhouse.io/veeamsoftware/jobs/5006510101",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },

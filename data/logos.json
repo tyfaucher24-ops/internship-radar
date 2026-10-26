@@ -4838,6 +4838,12 @@
 "logo": "assets/logos/exact-sciences.webp",
 "src": "gstatic"
 },
+"Excel Sports Management": {
+"domain": "excelsm.com",
+"domain_src": "clearbit",
+"logo": "assets/logos/excel-sports-management.webp",
+"src": "gstatic"
+},
 "Excellus BCBS": {
 "domain": "excellusbcbs.com",
 "domain_src": "clearbit",

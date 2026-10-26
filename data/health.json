@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-26T14:24:07Z",
+ "updated": "2026-10-26T20:43:38Z",
  "listings_by_source_type": {
-  "ats": 9629,
+  "ats": 9626,
   "manual": 65,
   "github-verified": 1369
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35267,
+   "postings": 35445,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13616,
+   "postings": 13625,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 176,
-   "postings": 8710,
+   "postings": 8674,
    "errors": [
     "Age of Learning (aofl): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/aofl?mode=json",
     "ButcherBox (butcherbox): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/butcherbox?mode=json",
@@ -71,71 +71,71 @@
   }
  },
  "pct_verified_24h": 18.2,
- "stale": 9051,
+ "stale": 9050,
  "duplicate_rate_pct": 8.5,
- "review_queue": 490,
+ "review_queue": 496,
  "deadline_coverage_pct": 16.8,
  "stats": {
-  "ats_no": 39790,
-  "ats_ambiguous": 490,
-  "ats_non-US": 15218,
-  "ats_ok": 2095,
+  "ats_no": 39911,
+  "ats_ambiguous": 496,
+  "ats_non-US": 15247,
+  "ats_ok": 2090,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
-  "kept_list_unreadable": 1369,
-  "closed_this_sync": 9
+  "closed_this_sync": 46,
+  "kept_list_unreadable": 1369
  },
  "by_category": {
-  "Software & IT": 2230,
-  "Finance & Banking": 713,
-  "Other": 1842,
-  "Engineering & Hardware": 1720,
-  "Marketing & Sales": 613,
-  "Media & Communications": 218,
-  "Consulting & Strategy": 154,
+  "Software & IT": 2228,
+  "Finance & Banking": 711,
+  "Other": 1849,
+  "Engineering & Hardware": 1715,
+  "Marketing & Sales": 617,
+  "Media & Communications": 221,
+  "Consulting & Strategy": 155,
   "Supply Chain & Logistics": 309,
-  "Healthcare & Life Sciences": 393,
+  "Healthcare & Life Sciences": 394,
   "Business & Operations": 490,
-  "Accounting & Audit": 446,
-  "Government & Policy": 97,
-  "Data & AI": 993,
-  "HR & People": 176,
+  "Accounting & Audit": 443,
+  "Government & Policy": 98,
+  "Data & AI": 988,
+  "HR & People": 175,
   "Nonprofit & Education": 84,
-  "Design & Creative": 149,
+  "Design & Creative": 151,
   "Legal": 108,
-  "Quant & Trading": 157,
+  "Quant & Trading": 153,
   "Product Management": 110,
   "Real Estate": 56,
   "Research": 5
  },
  "by_state": {
   "GA": 355,
-  "IL": 670,
+  "IL": 671,
   "NM": 24,
-  "TX": 1271,
-  "CT": 169,
+  "TX": 1277,
+  "CT": 162,
   "PR": 12,
-  "CA": 2297,
+  "CA": 2294,
   "MN": 426,
   "CO": 421,
   "VA": 408,
-  "MA": 753,
+  "MA": 757,
   "PA": 667,
-  "NY": 1065,
+  "NY": 1071,
   "FL": 449,
   "MD": 171,
-  "WA": 397,
+  "WA": 396,
   "OH": 511,
   "KS": 108,
-  "NC": 399,
+  "NC": 400,
   "MO": 194,
   "AL": 104,
   "OR": 110,
-  "UT": 143,
-  "OK": 110,
+  "UT": 141,
+  "OK": 111,
   "MT": 17,
   "SC": 181,
-  "AZ": 173,
+  "AZ": 171,
   "TN": 208,
   "AR": 78,
   "KY": 139,
@@ -156,21 +156,21 @@
   "ME": 23,
   "ND": 81,
   "NV": 86,
-  "NH": 35,
+  "NH": 37,
   "RI": 40,
   "HI": 22,
   "WY": 18,
   "VT": 52
  },
  "by_size": {
-  "not listed": 11063
+  "not listed": 11060
  },
- "remote": 360,
- "closed_this_sync": 9,
+ "remote": 351,
+ "closed_this_sync": 46,
  "gap_report": {
   "categories_under_25": [
    "Research"
   ],
-  "companies_in_registry_without_listings": 1036
+  "companies_in_registry_without_listings": 1038
  }
 }

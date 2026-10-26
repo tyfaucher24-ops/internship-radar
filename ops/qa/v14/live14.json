@@ -1,0 +1,75 @@
+{
+ "1440-dark": {
+  "intro_hidden_on_return": true,
+  "bg": "rgb(26, 31, 38)",
+  "clipped": 0,
+  "hscroll": false,
+  "admin_hidden": true,
+  "enter_opens": true,
+  "dact_last": true,
+  "no_notlisted_fact": true,
+  "axe": [],
+  "errors": []
+ },
+ "1440-light": {
+  "intro_hidden_on_return": true,
+  "bg": "rgb(246, 247, 251)",
+  "clipped": 0,
+  "hscroll": false,
+  "admin_hidden": true,
+  "enter_opens": true,
+  "dact_last": true,
+  "no_notlisted_fact": true,
+  "axe": [],
+  "errors": []
+ },
+ "1280-dark": {
+  "intro_hidden_on_return": true,
+  "bg": "rgb(26, 31, 38)",
+  "clipped": 0,
+  "hscroll": false,
+  "admin_hidden": true,
+  "enter_opens": true,
+  "dact_last": true,
+  "no_notlisted_fact": true,
+  "axe": [],
+  "errors": []
+ },
+ "1280-light": {
+  "intro_hidden_on_return": true,
+  "bg": "rgb(246, 247, 251)",
+  "clipped": 0,
+  "hscroll": false,
+  "admin_hidden": true,
+  "enter_opens": true,
+  "dact_last": true,
+  "no_notlisted_fact": true,
+  "axe": [],
+  "errors": []
+ },
+ "390-dark": {
+  "intro_hidden_on_return": true,
+  "bg": "rgb(26, 31, 38)",
+  "clipped": 0,
+  "hscroll": false,
+  "admin_hidden": true,
+  "enter_opens": true,
+  "dact_last": true,
+  "no_notlisted_fact": true,
+  "axe": [],
+  "errors": []
+ },
+ "390-light": {
+  "intro_hidden_on_return": true,
+  "bg": "rgb(246, 247, 251)",
+  "clipped": 0,
+  "hscroll": false,
+  "admin_hidden": true,
+  "enter_opens": true,
+  "dact_last": true,
+  "no_notlisted_fact": true,
+  "axe": [],
+  "errors": []
+ },
+ "static_globe_dots": true
+}

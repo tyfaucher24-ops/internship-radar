@@ -1,3 +1,6 @@
+/* V16: only http(s)/mailto/tel/relative links may become an href; anything else (javascript:, data:, vbscript:) becomes '#'. */
+window.safeUrl=u=>{const s=String(u??'').trim();if(!s)return '';const k=s.replace(/[\u0000-\u0020]/g,'').toLowerCase();const m=k.match(/^([a-z][a-z0-9+.\-]*):/);return m&&!/^(https?|mailto|tel)$/.test(m[1])?'#':s};
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href]');if(a&&/^(javascript|vbscript):/i.test(a.getAttribute('href').replace(/[\u0000-\u0020]/g,'')))e.preventDefault()},true);
 /* Single storage module. Everything the user owns lives here (localStorage today).
    To move to real accounts later, swap the backend object below for an API-backed one; callers keep using Store.get/set. */
 window.Store=(()=>{

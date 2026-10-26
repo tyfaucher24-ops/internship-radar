@@ -5,7 +5,7 @@ document.querySelectorAll('#intro .dot').forEach(d=>{d.style.setProperty('--bd',
 })();
 /* V13.3 #5b: Apply links. Cards carry only the kind (index ak); the job-specific link lives in the detail shard, fetched on hover/focus/touch so the click opens it directly. */
 (function(){
- const fill=async a=>{if(a.dataset.ok)return a.getAttribute('href');const x=typeof BYID!=='undefined'&&BYID.get(a.dataset.apply);if(!x)return'';await ensureDetail(x);if(x.apply_link){a.href=x.apply_link;a.dataset.ok=1}return x.apply_link||''};
+ const fill=async a=>{if(a.dataset.ok)return a.getAttribute('href');const x=typeof BYID!=='undefined'&&BYID.get(a.dataset.apply);if(!x)return'';await ensureDetail(x);if(x.apply_link){a.href=safeUrl(x.apply_link);a.dataset.ok=1}return x.apply_link||''};
  const pre=e=>{const a=e.target.closest&&e.target.closest('a[data-apply]');if(a)fill(a)};
  ['pointerover','focusin','touchstart'].forEach(t=>document.addEventListener(t,pre,{passive:true,capture:true}));
  function ask(x){if(!x||typeof T==='undefined')return;const t=T.byListing(x.id);if(t&&t.status!=='Saved')return;let el=document.getElementById('apAsk');if(!el){el=document.createElement('div');el.id='apAsk';el.className='ap-ask';el.setAttribute('role','dialog');el.setAttribute('aria-label','Mark as applied');document.body.appendChild(el)}

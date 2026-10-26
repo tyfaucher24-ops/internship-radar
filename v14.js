@@ -1,7 +1,7 @@
 /* V14 audit fixes that sit on top of the existing pages */
 (function(){
 /* #18: the admin page link only shows with ?admin in the address */
-const ad=document.getElementById('pmAdmin');if(ad&&new URLSearchParams(location.search).has('admin'))ad.hidden=false;
+/* V16: admin link removed from the public menu (admin.html is noindex and robots-disallowed; real auth in Phase 3). */
 /* #17/#37: say plainly when an apply link only goes to a company's general careers page */
 const GEN=u=>{try{const x=new URL(u,location.href),p=x.pathname.replace(/\/+$/,'');return /(^|\.)zapply\.jobs$/.test(x.hostname)&&/^\/jobs$/i.test(p)||/^\/?(careers?|jobs|join-us|work-with-us)?$/i.test(p)&&!x.search}catch(_){return false}};
 document.addEventListener('radar:drawer',()=>{const b=document.getElementById('dbody'),a=document.getElementById('dAct');if(!b||!a)return;

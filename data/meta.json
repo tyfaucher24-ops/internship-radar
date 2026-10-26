@@ -1,22 +1,22 @@
 {
- "updated": "2026-10-26T01:25:19Z",
- "open": 10960,
- "open_all": 10960,
+ "updated": "2026-10-26T07:05:17Z",
+ "open": 10959,
+ "open_all": 10959,
  "closing_this_week": 577,
  "upcoming": 1608,
  "companies_tracked": 2497,
- "companies_with_listings": 1461,
- "duration_s": 237,
+ "companies_with_listings": 1460,
+ "duration_s": 242,
  "mode": "partial",
  "apply_links": {
-  "at": "2026-10-26T01:29:17+00:00",
-  "open": 11126,
-  "direct": 9640,
+  "at": "2026-10-26T07:09:20+00:00",
+  "open": 11125,
+  "direct": 9639,
   "posting": 1349,
   "none": 137,
-  "checked_this_run": 8675,
-  "ok": 8529,
-  "unknown": 146,
+  "checked_this_run": 7950,
+  "ok": 7817,
+  "unknown": 133,
   "top_failing_hosts": [],
   "top_fallback_hosts": [
    [
@@ -60,7 +60,7 @@
     24
    ]
   ],
-  "validated_within_24h": 8961
+  "validated_within_24h": 8902
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-26T01:25:19Z",
+ "updated": "2026-10-26T07:05:17Z",
  "listings_by_source_type": {
-  "ats": 9636,
+  "ats": 9635,
   "manual": 65,
   "github-verified": 1369
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35312,
+   "postings": 35305,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13624,
+   "postings": 13613,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 176,
-   "postings": 8736,
+   "postings": 8739,
    "errors": [
     "Age of Learning (aofl): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/aofl?mode=json",
     "ButcherBox (butcherbox): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/butcherbox?mode=json",
@@ -76,17 +76,17 @@
  "review_queue": 490,
  "deadline_coverage_pct": 16.8,
  "stats": {
-  "ats_no": 39803,
+  "ats_no": 39795,
   "ats_ambiguous": 490,
-  "ats_non-US": 15276,
-  "ats_ok": 2103,
+  "ats_non-US": 15270,
+  "ats_ok": 2102,
   "manual_non-US": 1,
   "kept_out_of_scope": 9046,
   "kept_list_unreadable": 1369,
   "closed_this_sync": 1
  },
  "by_category": {
-  "Software & IT": 2232,
+  "Software & IT": 2231,
   "Finance & Banking": 715,
   "Other": 1840,
   "Engineering & Hardware": 1720,
@@ -115,7 +115,7 @@
   "TX": 1271,
   "CT": 169,
   "PR": 12,
-  "CA": 2298,
+  "CA": 2297,
   "MN": 426,
   "CO": 421,
   "VA": 407,
@@ -163,7 +163,7 @@
   "VT": 52
  },
  "by_size": {
-  "not listed": 11070
+  "not listed": 11069
  },
  "remote": 360,
  "closed_this_sync": 1,
@@ -171,6 +171,6 @@
   "categories_under_25": [
    "Research"
   ],
-  "companies_in_registry_without_listings": 1036
+  "companies_in_registry_without_listings": 1037
  }
 }

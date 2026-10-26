@@ -1,23 +1,41 @@
 {
- "updated": "2026-10-26T07:05:17Z",
- "open": 10959,
- "open_all": 10959,
+ "updated": "2026-10-26T14:24:07Z",
+ "open": 10953,
+ "open_all": 10953,
  "closing_this_week": 577,
- "upcoming": 1608,
+ "upcoming": 1609,
  "companies_tracked": 2497,
- "companies_with_listings": 1460,
- "duration_s": 242,
+ "companies_with_listings": 1461,
+ "duration_s": 306,
  "mode": "partial",
  "apply_links": {
-  "at": "2026-10-26T07:09:20+00:00",
-  "open": 11125,
-  "direct": 9639,
-  "posting": 1349,
-  "none": 137,
-  "checked_this_run": 7950,
-  "ok": 7817,
+  "at": "2026-10-26T14:29:14+00:00",
+  "open": 11119,
+  "direct": 9631,
+  "posting": 1348,
+  "none": 140,
+  "checked_this_run": 7942,
+  "ok": 7804,
   "unknown": 133,
-  "top_failing_hosts": [],
+  "failed": 5,
+  "top_failing_hosts": [
+   [
+    "spacedynamicslaboratory.applytojob.com",
+    2
+   ],
+   [
+    "gunvor.wd3.myworkdayjobs.com",
+    1
+   ],
+   [
+    "analogdevices.wd1.myworkdayjobs.com",
+    1
+   ],
+   [
+    "zapply.jobs",
+    1
+   ]
+  ],
   "top_fallback_hosts": [
    [
     "zapply.jobs",

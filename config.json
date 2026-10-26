@@ -1175,7 +1175,7 @@
   ]
  },
  "companyTiers": {
-  "_readme": "V13.3 §7-curve: selectivity tier 1-5 per company with a reason (qa-v13.3/GRADER-RESEARCH.md). 1 = cited acceptance rate about 2% or lower. Companies not listed are estimated from listing signals and labelled as estimates.",
+  "_readme": "V13.3 §7-curve: selectivity tier 1-5 per company with a reason (ops/qa/v13.3/GRADER-RESEARCH.md). 1 = cited acceptance rate about 2% or lower. Companies not listed are estimated from listing signals and labelled as estimates.",
   "firms": [
    {
     "firm": "Goldman Sachs",

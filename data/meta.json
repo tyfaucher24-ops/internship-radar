@@ -1,42 +1,30 @@
 {
- "updated": "2026-10-26T22:50:23Z",
- "open": 13012,
- "open_all": 13012,
- "closing_this_week": 641,
- "upcoming": 1591,
+ "updated": "2026-10-27T00:47:13Z",
+ "open": 13010,
+ "open_all": 13010,
+ "closing_this_week": 666,
+ "upcoming": 1618,
  "companies_tracked": 2497,
- "companies_with_listings": 1531,
- "duration_s": 2415,
- "mode": "full",
+ "companies_with_listings": 1533,
+ "duration_s": 244,
+ "mode": "partial",
  "apply_links": {
-  "at": "2026-10-26T23:30:40+00:00",
-  "open": 13458,
-  "direct": 11222,
-  "posting": 1119,
-  "none": 1117,
-  "checked_this_run": 5733,
-  "ok": 5636,
-  "unknown": 79,
-  "failed": 18,
+  "at": "2026-10-27T00:51:19+00:00",
+  "open": 13293,
+  "direct": 11058,
+  "posting": 1112,
+  "none": 1123,
+  "checked_this_run": 7083,
+  "ok": 6985,
+  "unknown": 91,
+  "failed": 7,
   "top_failing_hosts": [
    [
     "zapply.jobs",
-    8
-   ],
-   [
-    "careers.itw.com",
-    4
-   ],
-   [
-    "ursamajor.com",
-    3
+    6
    ],
    [
     "www.tower-research.com",
-    2
-   ],
-   [
-    "jobs.ea.com",
     1
    ]
   ],
@@ -82,11 +70,8 @@
     24
    ]
   ],
-  "validated_within_24h": 5638
+  "validated_within_24h": 8269
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
- "hygiene": {
-  "title_loc_removed": 20,
-  "city_trimmed": 1
- }
+ "hygiene": {}
 }

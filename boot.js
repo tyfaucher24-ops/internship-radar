@@ -11,3 +11,5 @@ try{if(localStorage.getItem('ir_beg_x')==='1'){document.documentElement.classLis
 (function(){try{var H=document.documentElement,q=location.search;if(H.classList.contains('seen')||/[?&]gl=1/.test(q))return;
 if(Math.min(screen.width,screen.height)<600||/[?&]gl=0/.test(q)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){H.classList.add('gl-static');
 var l=document.createElement('link');l.rel='preload';l.as='image';l.href='assets/globe-static.webp'+self.BV;l.setAttribute('fetchpriority','high');document.head.appendChild(l)}}catch(e){}})();
+/* V16.1: decide the account slot before paint (signed in = avatar, guest = "Sign in to save", ?cloud=0 = nothing) so the nav never jumps */
+try{var H1=document.documentElement;if(/[?&]cloud=0\b/.test(location.search))H1.classList.add('acct-off');else{var cs=JSON.parse(localStorage.getItem('idr__cloud_session')||'null');if(cs&&cs.access_token)H1.classList.add('acct-in')}}catch(e){}

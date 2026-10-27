@@ -2,7 +2,7 @@
 (()=>{if(!window.Cloud||!Cloud.enabled)return;const menu=document.getElementById('pmMenu');if(!menu)return;
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const btn=document.createElement('button');btn.type='button';btn.id='acctBtn';menu.insertBefore(btn,menu.firstChild);
-  const label=()=>{btn.textContent=Cloud.signedIn()?'Account · synced':'Sign in to sync'};label();
+  const label=()=>{btn.textContent=Cloud.signedIn()?'Account · synced':'Sign in to save'};label();
   const say=m=>window.toast?toast(m):console.info(m);
   function open(){const m=document.getElementById('modal'),b=document.getElementById('mbody');if(!m||!b)return;
     const u=Cloud.user(),p=Store.get('prefs',{})||{};
@@ -11,7 +11,7 @@
       <p class="crow"><button type="button" id="acctSync">Sync now</button><button type="button" id="acctExport" class="ghost">Export my data</button><button type="button" id="acctOut" class="ghost">Sign out</button></p>
       <p id="acctMsg" class="muted" role="status"></p>
       <details><summary>Delete account</summary><p class="muted">Deletes your account and everything stored in the cloud. Data on this device stays until you use Clear everything on My Profile. Type DELETE to confirm.</p><p class="crow"><input id="acctDelTxt" aria-label="Type DELETE to confirm" autocomplete="off"><button type="button" id="acctDel" class="danger">Delete my account</button></p></details>`
-     :`<h2 id="acctH">Sign in to sync</h2><p class="muted">Optional. Without an account everything keeps working and stays on this device. With one, your tracker, profile and saved items follow you to other devices. We never store your resume file.</p>
+     :`<h2 id="acctH">Save your progress</h2><p class="muted">We'll email you a sign-in link. No password. Your saved internships, tracker and profile carry over.</p>
       <label for="acctEmail">Email</label><p class="crow"><input id="acctEmail" type="email" autocomplete="email" placeholder="you@school.edu"><button type="button" id="acctLink">Email me a sign-in link</button></p>
       ${(window.CLOUD_CONFIG||{}).google?'<p><button type="button" id="acctGoogle" class="ghost">Continue with Google</button></p>':''}
       <p id="acctMsg" class="muted" role="status"></p>`;
@@ -28,5 +28,6 @@
   document.addEventListener('cloud:change',label);
   document.addEventListener('cloud:remote',e=>{if(e.detail&&e.detail.first)location.reload();else offerReload()});
   document.addEventListener('cloud:error',e=>say('Account: '+e.detail));
+  window.AccountUI={open};
   if(/[#&]signin\b/.test(location.hash))setTimeout(open,0);
 })();

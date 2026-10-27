@@ -1,6 +1,16 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16 Phase 2: reliable sync, health, performance, security upgrades (2026-10-26)
+- **Upgrades:** pdf.js 3.11.174 -> 4.10.38 (fixes CVE-2024-4367) and mammoth 1.8.0 -> 1.13.0, still vendored. Resume parsing gives identical results on all 128 qa-v14.3 fixtures.
+- **CSP:** no inline scripts or on* handlers left; script-src is 'self' + cdn.jsdelivr.net (index) and 'self' (admin, 404). The theme no-flash code moved to boot.js. style-src still allows 'unsafe-inline' (inline style attributes).
+- **SRI:** jsDelivr libs pinned to exact versions with integrity + crossorigin (d3-array 3.2.4, d3-geo 3.1.1, topojson-client 3.1.0, us-atlas 3.0.1); three.js 0.160.0 vendored.
+- **Sync:** atomic writes (temp file, fsync, re-parse, rename); a schema gate refuses to publish on missing required fields or an open-listing drop over 15%; the 8% removal guard stays.
+- **Sync churn fix:** Workday searches stop at 200 hits per query. On big boards (Walmart has 2,000 'intern' hits), new postings pushed live ones past the cap and they were closed, so about 1,000 listings churned per full sync. Postings missing from a capped board are now checked against Workday's own job page and closed only if it says they are gone.
+- **Health:** data/status.json (numbers and timestamps only); the sync workflow opens a GitHub issue after 2 consecutive failures; the Live badge hides when data is over 60 minutes old.
+- **Link check workflow:** ops/workflows/linkcheck.yml restores data from cache, rolls back on failure and deploys Pages; it no longer commits data/.
+- **Performance:** static globe image preloaded on phones and reduced motion; chunked post-load work; cheaper sorting (same order). Lighthouse mobile went from 75 to 88-89.
+
 ## V16 Phase 1: security and cleanup (2026-10-26)
 - **Admin:** the Admin item is gone from the profile menu (and the `?admin` trick that revealed it). admin.html stays reachable by URL for now, noindex and disallowed in robots.txt; real sign-in comes with Phase 3 accounts.
 - **Links:** a new `safeUrl()` (store.js) lets only http(s), mailto, tel and relative links become an href; javascript:, data: and vbscript: become `#`. It is used for apply links, tracker links, Ways-in links, sources and admin links, and a click guard blocks any javascript: link that slips through. Found by the new XSS test: a listing whose apply link was `javascript:...` used to render as a clickable link.

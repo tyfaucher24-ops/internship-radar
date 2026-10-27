@@ -255,6 +255,18 @@ def main():
         u=re.sub(r'[?#].*$','',(u or '').strip().lower()).rstrip('/')
         m=re.search(r'myworkdayjobs\.com/.*/job/[^/]+/([^/]+)$',u)  # same Workday job via externalUrl or fallback path
         return 'wd:'+m.group(1) if m else u
+    # V16 Phase 2: Workday searches are capped at 200 hits per query; on big tenants (Walmart 2,000 'intern' hits)
+    # new postings push older ones past the cap, which used to close ~1,000 live listings per full sync. For a
+    # truncated board, ask Workday's own detail endpoint before closing; keep the listing if it is still live.
+    trunc={(k[0],k[1].lower()) for k,(r,pp,e) in res.items() if getattr(pp,'truncated',False)}
+    _wd_alive={}
+    if trunc:
+        from .adapters import workday_alive
+        chk=[p for p in prevL.values() if p.get('status')=='open' and p['key'] not in recs and p.get('source_type')=='ats'
+             and ('workday',(p.get('board') or ':').split(':',1)[1].lower()) in trunc]
+        with cf.ThreadPoolExecutor(max(4,a.workers)) as ex:
+            for p,ok in zip(chk,ex.map(lambda p:workday_alive(p['board'].split(':',1)[1],p.get('apply_url')),chk)): _wd_alive[p['id']]=ok
+        print(f'  workday recheck {len(chk)}: alive {sum(1 for v in _wd_alive.values() if v)} gone {sum(1 for v in _wd_alive.values() if v is False)}',file=sys.stderr,flush=True)
     prev_ids=set(prevL); by_url=collections.defaultdict(list)
     for q in recs.values():
         if q.get('status')=='open' and q.get('apply_url') and q.get('id') not in prev_ids: by_url[_u(q['apply_url'])].append(q)
@@ -274,6 +286,11 @@ def main():
         out_of_scope=(p.get('source_type') in ('ats','jsonld') and b not in ran) or (p.get('source_type')=='github-verified' and a.skip_leads)
         if (a.only or a.limit or a.skip_leads or a.incremental) and out_of_scope:
             recs[p['key']]=p;stats['kept_out_of_scope']+=1;continue
+        if p.get('status')=='open' and b in trunc and _wd_alive.get(pid) is not False:
+            q=dict(p)
+            if _wd_alive.get(pid): q['last_verified']=NOWS;q.pop('stale',None)
+            else: q['stale']=True
+            recs[p['key']]=q;stats['kept_beyond_search_cap']+=1;continue
         if p.get('source_type') in ('ats','jsonld') and b in failed and p.get('status')=='open':
             p['stale']=True;recs[p['key']]=p;stats['kept_last_good']+=1
         elif p.get('status')=='open':

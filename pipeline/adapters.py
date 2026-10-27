@@ -93,9 +93,22 @@ def bamboohr(c):
           'workplace':'Remote' if x.get('isRemote') else None,'dept':(x.get('departmentLabel')),'ats_id':str(x['id'])})
     return out
 @adapter('workday',api='https://{host}/wday/cxs/{tenant}/{site}/jobs (public career site search)',official=True)
+class TList(list):
+    truncated=False
+def workday_alive(board_slug,url):
+    """V16: True/False if Workday's own detail endpoint says the posting is live/gone; None if it cannot tell."""
+    m=re.search(r'myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?[^/]+(/job/[^?#]+)',url or '')
+    if not m: return None
+    host,tenant,site=board_slug.split('/')
+    try:
+        r=fetch(f'https://{host}/wday/cxs/{tenant}/{site}'+m.group(1),check_robots=False,allow_404=True)
+        if r.status_code==404: return False
+        info=r.json().get('jobPostingInfo') or {}
+        return bool(info) and info.get('canApply',True) is not False
+    except Exception: return None
 def workday(c):
     host,tenant,site=c['slug'].split('/')
-    base=f'https://{host}/wday/cxs/{tenant}/{site}';out=[];seen=set()
+    base=f'https://{host}/wday/cxs/{tenant}/{site}';out=TList();seen=set()
     for q in ('intern','co-op','internship'):
         off=0;total=None
         while off<200:
@@ -123,6 +136,8 @@ def workday(c):
             # 20 results per query -> which internships made the cut varied run to run and the rest were "closed".
             if total is None: total=j.get('total') or 0
             if off>=total or not posts: break
+        # V16 Phase 2: search hits past the 200 cap are not read, so a missing posting is not proof it closed
+        if total and total>off: out.truncated=True
     return out
 def _jsonld_jobs(html):
     for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>',html,re.S|re.I):

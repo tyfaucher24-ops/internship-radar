@@ -22,8 +22,12 @@
     return items.sort((a,b)=>(a[1].data.pos??0)-(b[1].data.pos??0)).map(([,r])=>r.data.v)}
   /* Compare the current local value of `key` with what was last synced (meta[key] = {item:{h,t}}).
      Returns rows to push and updates meta in place. */
+  // row change = item content changed; a row only moving position (pos) is not an edit, so it can't clobber a newer edit elsewhere
+  const mk=(d,t)=>{const o={h:hv(d),t};const j=stable(d);if(j&&j.length<=20000)o.b=d;return o};
+  const isObj=x=>x&&typeof x==='object'&&!Array.isArray(x);
+  const hv=d=>hash(d&&typeof d==='object'&&'v' in d?d.v:d);
   function diffLocal(key,value,meta,nowIso){const m=meta[key]||(meta[key]={});const rows=explode(value);const out=[];
-    for(const [id,data] of Object.entries(rows)){const h=hash(data);if(!m[id]||m[id].h!==h||m[id].d){m[id]={h,t:nowIso};out.push({coll:key,item_id:id,data,deleted:false,updated_at:nowIso})}}
+    for(const [id,data] of Object.entries(rows)){const h=hv(data);if(!m[id]||m[id].h!==h||m[id].d){m[id]={h,t:nowIso};out.push({coll:key,item_id:id,data,deleted:false,updated_at:nowIso})}}
     for(const id of Object.keys(m))if(!rows[id]&&!m[id].d){m[id]={h:'',t:nowIso,d:1};out.push({coll:key,item_id:id,data:null,deleted:true,updated_at:nowIso})}
     return out}
   /* First sign-in or any pull. local: {key:value}, meta: last-synced info (empty on first sign-in), cloud: rows from the server.
@@ -35,17 +39,25 @@
       const ids=new Set([...Object.keys(lrows),...Object.keys(crow),...Object.keys(m)]);
       for(const id of ids){const L=lrows[id],C=crow[id];
         // local row time: last sync time if unchanged since, else when this key last changed on this device (Store mtime)
-        const lt=L?(m[id]&&!m[id].d&&m[id].h===hash(L)?m[id].t:(mtimes[key]||'1970-01-01T00:00:00.000Z')):(m[id]&&m[id].d?m[id].t:null);
+        const lt=L?(m[id]&&!m[id].d&&m[id].h===hv(L)?m[id].t:(mtimes[key]||'1970-01-01T00:00:00.000Z')):(m[id]&&m[id].d?m[id].t:null);
         const ct=C?C.updated_at:null;
-        if(L&&!C){result[id]={data:L};push.push({coll:key,item_id:id,data:L,deleted:false,updated_at:lt});m[id]={h:hash(L),t:lt};continue}
+        if(L&&!C){result[id]={data:L};push.push({coll:key,item_id:id,data:L,deleted:false,updated_at:lt});m[id]=mk(L,lt);continue}
         if(!L&&C){if(m[id]&&m[id].d&&m[id].t>ct){push.push({coll:key,item_id:id,data:null,deleted:true,updated_at:m[id].t});continue}
           if(m[id]&&!m[id].d&&!C.deleted&&Date.parse(m[id].t)>=Date.parse(ct)){ // deleted locally since last sync
             const t=nowIso;push.push({coll:key,item_id:id,data:null,deleted:true,updated_at:t});m[id]={h:'',t,d:1};continue}
-          if(!C.deleted){result[id]={data:C.data};changed=true}m[id]=C.deleted?{h:'',t:ct,d:1}:{h:hash(C.data),t:ct};continue}
-        if(L&&C){const same=!C.deleted&&hash(C.data)===hash(L);
-          if(same){result[id]={data:L};m[id]={h:hash(L),t:ct>lt?ct:lt};continue}
-          if(Date.parse(lt)>=Date.parse(ct)){result[id]={data:L};push.push({coll:key,item_id:id,data:L,deleted:false,updated_at:lt});m[id]={h:hash(L),t:lt}}
-          else{changed=true;if(!C.deleted)result[id]={data:C.data};m[id]=C.deleted?{h:'',t:ct,d:1}:{h:hash(C.data),t:ct}}}}
+          if(!C.deleted){result[id]={data:C.data};changed=true}m[id]=C.deleted?{h:'',t:ct,d:1}:mk(C.data,ct);continue}
+        if(L&&C){const same=!C.deleted&&hv(C.data)===hv(L);
+          if(same){result[id]={data:L};m[id]=mk(L,ct>lt?ct:lt);continue}
+          // both sides changed since the last sync: merge field by field against the synced base, so an edit to
+          // one field (or app-added defaults) on this device can't wipe a different field edited elsewhere
+          const B=m[id]&&!m[id].d&&m[id].b;
+          if(B&&!C.deleted&&hv(L)!==m[id].h&&hv(C.data)!==m[id].h&&isObj(B.v)&&isObj(L.v)&&isObj(C.data.v)){
+            const lNew=Date.parse(lt)>=Date.parse(ct),out={...C.data.v};
+            for(const k of Object.keys(L.v)){const lch=stable(L.v[k])!==stable(B.v[k]),cch=stable(C.data.v[k])!==stable(B.v[k]);if(lch&&(!cch||lNew))out[k]=L.v[k]}
+            const d={v:out,pos:L.pos},t=Date.parse(nowIso)>Date.parse(ct)?nowIso:new Date(Date.parse(ct)+1).toISOString();
+            result[id]={data:d};changed=changed||hv(d)!==hv(L);if(hv(d)!==hv(C.data))push.push({coll:key,item_id:id,data:d,deleted:false,updated_at:t});m[id]=mk(d,t);continue}
+          if(Date.parse(lt)>=Date.parse(ct)){result[id]={data:L};push.push({coll:key,item_id:id,data:L,deleted:false,updated_at:lt});m[id]=mk(L,lt)}
+          else{changed=true;if(!C.deleted)result[id]={data:C.data};m[id]=C.deleted?{h:'',t:ct,d:1}:mk(C.data,ct)}}}
       if(changed){const v=implode(result);apply[key]=v}}
     return {push,apply,meta}}
   const api={SYNC_KEYS,OPT_IN_KEYS,keysFor,hash,explode,implode,diffLocal,merge};

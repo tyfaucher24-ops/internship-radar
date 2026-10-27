@@ -38,6 +38,11 @@ t(!r.apply.tracker&&r.push.some(x=>x.item_id==='z'&&!x.deleted),'local re-add ne
 meta={};S.diffLocal('tracker',[{id:'a'},{id:'b'}],meta,T(1));
 r=S.merge({tracker:[{id:'a'}]},meta,[{coll:'tracker',item_id:'a',data:{v:{id:'a'},pos:0},updated_at:T(1)},{coll:'tracker',item_id:'b',data:{v:{id:'b'},pos:1},updated_at:T(1)}],T(4),['tracker']);
 t(r.push.some(x=>x.item_id==='b'&&x.deleted)&&!r.apply.tracker,'offline local delete is pushed, not undone by pull');
+// 3-way field merge: this device added default fields + edited notes; other device changed status
+meta={};r=S.merge({tracker:[{id:'q',status:'Saved'}]},meta,[],T(1),['tracker'],{tracker:T(1)});
+r=S.merge({tracker:[{id:'q',status:'Saved',notes:'hi',extra:''}]},meta,[{coll:'tracker',item_id:'q',data:{v:{id:'q',status:'Applied'},pos:0},updated_at:T(3)}],T(5),['tracker'],{tracker:T(4)});
+const q=r.apply.tracker&&r.apply.tracker[0];t(q&&q.status==='Applied'&&q.notes==='hi'&&q.extra==='','both-changed row: cloud field edit + local field edit both kept');
+t(r.push.some(x=>x.item_id==='q'&&x.data.v.status==='Applied'&&x.data.v.notes==='hi'&&x.updated_at>T(3)),'merged row pushed with newer time');
 t(S.keysFor({}).indexOf('resumeText')<0&&S.keysFor({cloudResume:true}).indexOf('resumeText')>=0,'raw resume text syncs only with opt-in');
 t(!S.SYNC_KEYS.includes('adminListings')&&!S.SYNC_KEYS.includes('adminConfig'),'admin keys never sync as user data');
 console.log(`${ok}/${n}`);process.exit(ok===n?0:1);

@@ -184,14 +184,14 @@
 {
 "company": "Anduril",
 "title": "Technical Recruiter, Software - Air Dominance and Strike",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5248804007?gh_jid=5248804007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5235343007?gh_jid=5235343007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Anduril",
 "title": "Technical Recruiter, Software - Air Dominance and Strike",
-"url": "https://boards.greenhouse.io/andurilindustries/jobs/5235343007?gh_jid=5235343007",
+"url": "https://boards.greenhouse.io/andurilindustries/jobs/5248804007?gh_jid=5248804007",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -373,14 +373,14 @@
 {
 "company": "Armada",
 "title": "Distinguished Engineer / Technical Fellow",
-"url": "https://job-boards.greenhouse.io/armada/jobs/5063301008",
+"url": "https://job-boards.greenhouse.io/armada/jobs/5063302008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Armada",
 "title": "Distinguished Engineer / Technical Fellow",
-"url": "https://job-boards.greenhouse.io/armada/jobs/5063302008",
+"url": "https://job-boards.greenhouse.io/armada/jobs/5063301008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -408,7 +408,21 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829623002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829617002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -422,21 +436,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829623002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829315002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/cssmerge/jobs/8829621002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -444,20 +444,6 @@
 "company": "Atoms",
 "title": "Technical Recruiter - AI/ML",
 "url": "https://job-boards.greenhouse.io/cssmerge/jobs/8843015002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Atoms",
-"title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8827954002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -478,7 +464,7 @@
 {
 "company": "Atoms",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/atoms/jobs/8829616002",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8829622002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -486,6 +472,20 @@
 "company": "Atoms",
 "title": "Technical Recruiter",
 "url": "https://job-boards.greenhouse.io/atoms/jobs/8829620002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8829616002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "Atoms",
+"title": "Technical Recruiter",
+"url": "https://job-boards.greenhouse.io/atoms/jobs/8827954002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -499,14 +499,14 @@
 {
 "company": "Axon",
 "title": "Corporate Operations Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037930003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037931003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Axon",
 "title": "Corporate Operations Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037931003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037930003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -520,7 +520,7 @@
 {
 "company": "Axon",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8037935003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8040136003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -534,7 +534,7 @@
 {
 "company": "Axon",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/axon/jobs/8040136003",
+"url": "https://job-boards.greenhouse.io/axon/jobs/8037935003",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -917,20 +917,6 @@
 "source": "greenhouse"
 },
 {
-"company": "Celonis",
-"title": "Associate Deployment Engineer - Galaxy Graduate Program",
-"url": "https://job-boards.greenhouse.io/celonis/jobs/7627681003?gh_jid=7627681003",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "Celonis",
-"title": "Associate Deployment Engineer - Galaxy Graduate Program",
-"url": "https://job-boards.greenhouse.io/celonis/jobs/7627708003?gh_jid=7627708003",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
 "company": "CHAOS Industries",
 "title": "Technical Recruiter (Contract)",
 "url": "https://job-boards.greenhouse.io/chaosindustries/jobs/5257548007",
@@ -1206,14 +1192,14 @@
 {
 "company": "Flexport",
 "title": "Rotational Development Program",
-"url": "https://job-boards.greenhouse.io/flexport/jobs/8172300",
+"url": "https://job-boards.greenhouse.io/flexport/jobs/8224715",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Flexport",
 "title": "Rotational Development Program",
-"url": "https://job-boards.greenhouse.io/flexport/jobs/8224715",
+"url": "https://job-boards.greenhouse.io/flexport/jobs/8172300",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -1829,14 +1815,14 @@
 {
 "company": "Meriton",
 "title": "Recruiter (Skilled Trades)",
-"url": "https://job-boards.greenhouse.io/meriton/jobs/5440119008",
+"url": "https://job-boards.greenhouse.io/meriton/jobs/5440127008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Meriton",
 "title": "Recruiter (Skilled Trades)",
-"url": "https://job-boards.greenhouse.io/meriton/jobs/5440127008",
+"url": "https://job-boards.greenhouse.io/meriton/jobs/5440119008",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2380,13 +2366,6 @@
 "source": "ashby"
 },
 {
-"company": "Pure Storage",
-"title": "Go-To-Market Recruiter (NYC or Chicago)",
-"url": "https://job-boards.greenhouse.io/purestorage/jobs/8244424",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
 "company": "Pylon",
 "title": "Software Engineer, New Grad",
 "url": "https://jobs.ashbyhq.com/pylon-labs/38814ce7-217b-40f2-9ba5-8a7733a5691d",
@@ -2696,15 +2675,15 @@
 },
 {
 "company": "Shield AI",
-"title": "Electrical Engineer I - New Grad (BOS)",
-"url": "https://jobs.lever.co/shieldai/c9321f8a-b367-4dcb-9308-bd64ae6bac1d",
+"title": "Electrical Engineer I - New Grad",
+"url": "https://jobs.lever.co/shieldai/1b229cdc-9a0b-4704-b39b-b3b4c6e3fa89",
 "reason": "ambiguous intern wording",
 "source": "lever"
 },
 {
 "company": "Shield AI",
-"title": "Electrical Engineer I - New Grad (SD)",
-"url": "https://jobs.lever.co/shieldai/1b229cdc-9a0b-4704-b39b-b3b4c6e3fa89",
+"title": "Electrical Engineer I - New Grad (BOS)",
+"url": "https://jobs.lever.co/shieldai/c9321f8a-b367-4dcb-9308-bd64ae6bac1d",
 "reason": "ambiguous intern wording",
 "source": "lever"
 },
@@ -2907,14 +2886,14 @@
 {
 "company": "SpaceX",
 "title": "Recruiter, High Volume Manufacturing (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864583002?gh_jid=8864583002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864552002?gh_jid=8864552002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Recruiter, High Volume Manufacturing (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8864552002?gh_jid=8864552002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8864583002?gh_jid=8864583002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2928,14 +2907,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter",
-"url": "https://boards.greenhouse.io/spacex/jobs/8639384002?gh_jid=8639384002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8521318002?gh_jid=8521318002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter",
-"url": "https://boards.greenhouse.io/spacex/jobs/8521318002?gh_jid=8521318002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8639384002?gh_jid=8639384002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2963,21 +2942,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter, Security",
-"url": "https://boards.greenhouse.io/spacex/jobs/8902883002?gh_jid=8902883002",
-"reason": "ambiguous intern wording",
-"source": "greenhouse"
-},
-{
-"company": "SpaceX",
-"title": "Technical Recruiter, Security",
 "url": "https://boards.greenhouse.io/spacex/jobs/8902884002?gh_jid=8902884002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
-"title": "Technical Recruiter, SG&A",
-"url": "https://boards.greenhouse.io/spacex/jobs/8883358002?gh_jid=8883358002",
+"title": "Technical Recruiter, Security",
+"url": "https://boards.greenhouse.io/spacex/jobs/8902883002?gh_jid=8902883002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -2985,6 +2957,13 @@
 "company": "SpaceX",
 "title": "Technical Recruiter, SG&A",
 "url": "https://boards.greenhouse.io/spacex/jobs/8880126002?gh_jid=8880126002",
+"reason": "ambiguous intern wording",
+"source": "greenhouse"
+},
+{
+"company": "SpaceX",
+"title": "Technical Recruiter, SG&A",
+"url": "https://boards.greenhouse.io/spacex/jobs/8883358002?gh_jid=8883358002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3005,14 +2984,14 @@
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694852002?gh_jid=8694852002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "SpaceX",
 "title": "Technical Recruiter (Starlink)",
-"url": "https://boards.greenhouse.io/spacex/jobs/8694852002?gh_jid=8694852002",
+"url": "https://boards.greenhouse.io/spacex/jobs/8694882002?gh_jid=8694882002",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
@@ -3103,14 +3082,14 @@
 {
 "company": "Stoke Space",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/6227809004",
+"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/5232871004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },
 {
 "company": "Stoke Space",
 "title": "Technical Recruiter",
-"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/5232871004",
+"url": "https://job-boards.greenhouse.io/stokespacetechnologies/jobs/6227809004",
 "reason": "ambiguous intern wording",
 "source": "greenhouse"
 },

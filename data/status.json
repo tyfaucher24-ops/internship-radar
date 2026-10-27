@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "data_updated": "2026-10-27T10:42:06Z",
- "last_run_at": "2026-10-27T10:58:25Z",
+ "data_updated": "2026-10-27T16:04:06Z",
+ "last_run_at": "2026-10-27T16:19:49Z",
  "last_run_ok": true,
- "last_success_at": "2026-10-27T10:58:25Z",
+ "last_success_at": "2026-10-27T16:19:49Z",
  "consecutive_failures": 0,
- "open_listings": 13040,
- "verified_24h": 13040,
+ "open_listings": 13043,
+ "verified_24h": 13043,
  "mode": "partial",
  "live_badge_max_age_min": 60
 }

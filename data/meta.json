@@ -1,33 +1,45 @@
 {
- "updated": "2026-10-27T10:42:06Z",
- "open": 13011,
- "open_all": 13011,
+ "updated": "2026-10-27T16:04:06Z",
+ "open": 13014,
+ "open_all": 13014,
  "closing_this_week": 666,
- "upcoming": 1619,
+ "upcoming": 1620,
  "companies_tracked": 2497,
  "companies_with_listings": 1532,
- "duration_s": 280,
+ "duration_s": 245,
  "mode": "partial",
  "gate": {
   "previous_open": 13011,
-  "new_open": 13220,
+  "new_open": 13223,
   "drop_pct": -1.6,
   "missing_fields": 0
  },
  "apply_links": {
-  "at": "2026-10-27T10:46:50+00:00",
-  "open": 13294,
-  "direct": 11059,
-  "posting": 1103,
-  "none": 1132,
-  "checked_this_run": 7102,
-  "ok": 7007,
-  "unknown": 92,
-  "failed": 3,
+  "at": "2026-10-27T16:08:14+00:00",
+  "open": 13296,
+  "direct": 11061,
+  "posting": 1080,
+  "none": 1155,
+  "checked_this_run": 7780,
+  "ok": 7657,
+  "unknown": 100,
+  "failed": 23,
   "top_failing_hosts": [
    [
     "zapply.jobs",
-    3
+    20
+   ],
+   [
+    "careers.kentro.us",
+    1
+   ],
+   [
+    "quantumsignalai.applytojob.com",
+    1
+   ],
+   [
+    "spacedynamicslaboratory.applytojob.com",
+    1
    ]
   ],
   "top_fallback_hosts": [
@@ -72,7 +84,7 @@
     24
    ]
   ],
-  "validated_within_24h": 9602
+  "validated_within_24h": 9847
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

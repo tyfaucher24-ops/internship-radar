@@ -27,7 +27,7 @@ with sync_playwright() as pw:
   for W,H in [(1440,900),(1280,800),(390,844)]:
     for dark in [False,True]:
       tg=f"{'dark' if dark else 'light'}-{W}"
-      cx=br.new_context(viewport={'width':W,'height':H},accept_downloads=True);p=cx.new_page()
+      cx=br.new_context(bypass_csp=True,viewport={'width':W,'height':H},accept_downloads=True);p=cx.new_page()
       p.add_init_script("try{localStorage.setItem('ir_intro_seen','1')}catch(e){}")
       boot(p);theme(p,dark);p.evaluate("go('autopilot')");p.wait_for_timeout(500)
       # 1 empty state

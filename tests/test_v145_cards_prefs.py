@@ -30,7 +30,7 @@ def cards_ok(p,tag):
      return 'ok'}""")
     ck('cards uniform, not clipped '+tag,r=='ok',r)
 with sync_playwright() as pw:
-  br=pw.chromium.launch();p=br.new_page(viewport={'width':1440,'height':900});errs=[]
+  br=pw.chromium.launch();p=br.new_page(bypass_csp=True,viewport={'width':1440,'height':900});errs=[]
   p.on('pageerror',lambda e:errs.append(str(e)))
   p.add_init_script("try{localStorage.setItem('ir_intro_seen','1')}catch(e){}")
   p.goto(URL);wf(p,"()=>typeof BYID!=='undefined'&&BYID.size>0");p.evaluate("()=>window.__introEnd&&__introEnd(false)");p.wait_for_timeout(800)

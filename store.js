@@ -1,5 +1,14 @@
 /* V16: only http(s)/mailto/tel/relative links may become an href; anything else (javascript:, data:, vbscript:) becomes '#'. */
 window.safeUrl=u=>{const s=String(u??'').trim();if(!s)return '';const k=s.replace(/[\u0000-\u0020]/g,'').toLowerCase();const m=k.match(/^([a-z][a-z0-9+.\-]*):/);return m&&!/^(https?|mailto|tel)$/.test(m[1])?'#':s};
+/* V16 CSP: no inline event handlers. Markup uses data-act="name" (+data-*) and these delegated listeners instead. */
+window.ACT=window.ACT||{};
+ACT.quickSearch=()=>window.quickSearch&&quickSearch();ACT.reload=()=>location.reload();ACT.clearAll=()=>window.clearAll&&clearAll();
+ACT.dismissNotify=el=>{Store.set('notify',[]);el.parentNode.remove()};
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-act]');if(b&&ACT[b.dataset.act])ACT[b.dataset.act](b,e)});
+document.addEventListener('keydown',e=>{const b=e.target.closest&&e.target.closest('[data-keyclick]');if(b&&(e.key==='Enter'||e.key===' ')){e.preventDefault();const t=document.getElementById(b.dataset.keyclick);t&&t.click()}});
+document.addEventListener('submit',e=>{if(e.target&&e.target.id==='pf')e.preventDefault()});
+/* broken company logo -> coloured initials tile (was an inline onerror) */
+document.addEventListener('error',e=>{const i=e.target;if(!(i&&i.tagName==='IMG'&&i.dataset&&i.dataset.ini!=null))return;const p=i.parentNode;p.classList.remove('has-img');p.style.setProperty('--h',i.dataset.hue);i.replaceWith(document.createTextNode(i.dataset.ini))},true);
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href]');if(a&&/^(javascript|vbscript):/i.test(a.getAttribute('href').replace(/[\u0000-\u0020]/g,'')))e.preventDefault()},true);
 /* Single storage module. Everything the user owns lives here (localStorage today).
    To move to real accounts later, swap the backend object below for an API-backed one; callers keep using Store.get/set. */

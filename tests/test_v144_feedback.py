@@ -21,7 +21,7 @@ def wf(p,js,t=60):
 # V14.4: no tutorial, no review screen, Honest Feedback page (V14.5: grade links and per-posting view removed)
 def fbReady(p): wf(p,"()=>document.getElementById('fbBody').dataset.ready==='1'",120)
 with sync_playwright() as pw:
-  br=pw.chromium.launch();p=br.new_page(viewport={'width':1440,'height':900});errs=[]
+  br=pw.chromium.launch();p=br.new_page(bypass_csp=True,viewport={'width':1440,'height':900});errs=[]
   p.on('pageerror',lambda e:errs.append(str(e)))
   p.add_init_script("try{localStorage.setItem('ir_intro_seen','1');if(!sessionStorage.s){sessionStorage.s=1;localStorage.setItem('ir_tour_done','done');localStorage.setItem('ir_tour_step','3')}}catch(e){}")
   p.goto(URL+'#t-feedback');wf(p,"()=>typeof BYID!=='undefined'&&BYID.size>0")

@@ -46,7 +46,7 @@ def shift(p):
   return p.evaluate("""async()=>{const q=()=>[...document.querySelectorAll('#t-profile .pf-col,#t-profile .pf-exp,#t-profile .cb-chip')].map(e=>{const r=e.getBoundingClientRect();return Math.round(r.top+scrollY)+','+Math.round(r.left)+','+Math.round(r.height)}).join('|');
    const a=q();await new Promise(r=>setTimeout(r,1200));return a===q()}""")
 with sync_playwright() as pw:
-  br=pw.chromium.launch();p=br.new_page(viewport={'width':1440,'height':900});errs=[]
+  br=pw.chromium.launch();p=br.new_page(bypass_csp=True,viewport={'width':1440,'height':900});errs=[]
   p.on('pageerror',lambda e:errs.append(str(e)))
   p.add_init_script("try{localStorage.setItem('ir_intro_seen','1')}catch(e){}")
   p.goto(URL);wf(p,"()=>typeof BYID!=='undefined'&&BYID.size>0&&typeof pfRender==='function'");p.evaluate("()=>window.__introEnd&&__introEnd(false)");p.wait_for_timeout(800)

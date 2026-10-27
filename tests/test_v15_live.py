@@ -23,7 +23,7 @@ def axe(p,tag):
     ck('axe '+tag,not v,v)
 iso=lambda m:(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(minutes=m)).strftime('%Y-%m-%dT%H:%M:%SZ')
 def open_(br,meta_age=None,w=1440):
-    p=br.new_page(viewport={'width':w,'height':900 if w>390 else 844})
+    p=br.new_page(bypass_csp=True,viewport={'width':w,'height':900 if w>390 else 844})
     if meta_age is not None:
         def h(route):
             r=route.fetch();m=r.json();m['updated']=iso(meta_age);route.fulfill(response=r,body=json.dumps(m),headers={**r.headers,'content-type':'application/json'})

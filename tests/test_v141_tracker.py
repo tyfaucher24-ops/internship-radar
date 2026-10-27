@@ -8,7 +8,7 @@ with sync_playwright() as p:
  b=p.chromium.launch()
  for theme in ['light','dark']:
   for w in [1440,1280,390]:
-   ctx=b.new_context(viewport={'width':w,'height':900},color_scheme=theme);pg=ctx.new_page()
+   ctx=b.new_context(bypass_csp=True,viewport={'width':w,'height':900},color_scheme=theme);pg=ctx.new_page()
    errs=[];pg.on('pageerror',lambda e:errs.append(str(e)))
    pg.goto(U+'#tracker');pg.wait_for_timeout(1500);pg.evaluate(SEED)
    TH=f"document.documentElement.classList.toggle('dark',{'true' if theme=='dark' else 'false'})";pg.evaluate(TH)

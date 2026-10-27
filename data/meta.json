@@ -1,44 +1,48 @@
 {
- "updated": "2026-10-27T16:04:06Z",
- "open": 13014,
- "open_all": 13014,
+ "updated": "2026-10-27T20:47:26Z",
+ "open": 13024,
+ "open_all": 13024,
  "closing_this_week": 666,
- "upcoming": 1620,
+ "upcoming": 1621,
  "companies_tracked": 2497,
- "companies_with_listings": 1532,
+ "companies_with_listings": 1529,
  "duration_s": 245,
  "mode": "partial",
  "gate": {
-  "previous_open": 13011,
-  "new_open": 13223,
-  "drop_pct": -1.6,
+  "previous_open": 13014,
+  "new_open": 13233,
+  "drop_pct": -1.7,
   "missing_fields": 0
  },
  "apply_links": {
-  "at": "2026-10-27T16:08:14+00:00",
-  "open": 13296,
-  "direct": 11061,
-  "posting": 1080,
-  "none": 1155,
-  "checked_this_run": 7780,
-  "ok": 7657,
-  "unknown": 100,
-  "failed": 23,
+  "at": "2026-10-27T20:51:34+00:00",
+  "open": 13306,
+  "direct": 11071,
+  "posting": 1063,
+  "none": 1172,
+  "checked_this_run": 7292,
+  "ok": 7182,
+  "unknown": 93,
+  "failed": 17,
   "top_failing_hosts": [
    [
     "zapply.jobs",
-    20
+    8
    ],
    [
-    "careers.kentro.us",
+    "www.metacareers.com",
+    5
+   ],
+   [
+    "careers.amd.com",
+    2
+   ],
+   [
+    "www.akunacapital.com",
     1
    ],
    [
-    "quantumsignalai.applytojob.com",
-    1
-   ],
-   [
-    "spacedynamicslaboratory.applytojob.com",
+    "careers.datadoghq.com",
     1
    ]
   ],
@@ -84,7 +88,7 @@
     24
    ]
   ],
-  "validated_within_24h": 9847
+  "validated_within_24h": 9954
  },
  "open_rule": "status open, not hidden, not past term, deadline today or later",
  "hygiene": {}

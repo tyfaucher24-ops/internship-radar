@@ -1,0 +1,64 @@
+# V16 Phase 2 — copy to .github/workflows/linkcheck.yml (replaces the old one that ran `git add data/`).
+# Same data model as ops/workflows/sync.yml + pages.yml: generated data is NOT committed to main.
+#   data in  <- actions/cache (newest data-* key, written by the sync), falling back to the copy in main
+#   data out -> actions/cache + GitHub Pages artifact (deployed here)
+# Re-opens every open listing not confirmed by an ATS API (leads, hand-checked rows, submissions); 404 / "no longer
+# available" pages are closed. robots.txt is respected and requests are rate-limited per host (pipeline/net.py).
+# Refuses to publish if the open count would drop >15% (pipeline/publish.py); a failed run keeps the last good data.
+name: Daily link check
+on:
+  schedule:
+    - cron: '41 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: data-sync          # never runs at the same time as a sync (they share the cached data)
+  cancel-in-progress: false
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    environment: { name: github-pages }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - name: Restore last good data (falls back to the copy committed in main)
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            data
+            assets/logos
+          key: data-lc-${{ github.run_id }}
+          restore-keys: data-
+      - name: Snapshot previous data (rolled back if this run fails)
+        run: rm -rf /tmp/prev_data && cp -r data /tmp/prev_data
+      - name: Link check (rate-limited, robots.txt respected)
+        timeout-minutes: 100
+        run: python -m pipeline.linkcheck
+      - name: Public status file
+        run: python ops/status.py
+      - name: Failed run -> keep last good data
+        if: failure() || cancelled()
+        run: rm -rf data && cp -r /tmp/prev_data data
+      - name: Save data for the next sync
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            data
+            assets/logos
+          key: data-lc-${{ github.run_id }}
+      - name: Build site artifact (code from main + fresh data)
+        if: success()
+        run: |
+          mkdir -p /tmp/site && rsync -a --exclude .git --exclude .github --exclude screenshots --exclude test-data --exclude 'pipeline/cache' ./ /tmp/site/
+      - uses: actions/upload-pages-artifact@v3
+        if: success()
+        with: { path: /tmp/site }
+      - uses: actions/deploy-pages@v4
+        if: success()

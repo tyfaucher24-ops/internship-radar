@@ -36,8 +36,10 @@
     if(k==='tracker'){const grew=size(v)>size(prevT);prevT=v;if(grew)setTimeout(()=>fire(K.save),400)}
     else if((k==='profile'&&v&&Object.keys(v).length)||(k==='resumeText'&&v))setTimeout(()=>fire(K.prof),400)});
   // after the magic link brings them back: confirm (survives the one-time reload that applies merged data)
-  let was=C.signedIn();const welcome=()=>{const t=window.toast;if(t)t("You're signed in. Your progress is saved.")};
-  document.addEventListener('cloud:change',()=>{const now=C.signedIn();if(now&&!was){let p=null;try{p=Date.now()-(+LS.get('idr__s2s_pending')||0)<864e5;localStorage.removeItem('idr__s2s_pending');sessionStorage.setItem('idr__s2s_welcome','1')}catch{}if(p)ev('save_prompt_signed_in');setTimeout(()=>{try{if(sessionStorage.getItem('idr__s2s_welcome')){sessionStorage.removeItem('idr__s2s_welcome');welcome()}}catch{}},1500)}was=now});
-  try{if(C.signedIn()&&sessionStorage.getItem('idr__s2s_welcome')){sessionStorage.removeItem('idr__s2s_welcome');setTimeout(welcome,600)}}catch{}
+  // cloud.js marks a completed magic-link return (survives the one-time reload that applies merged data)
+  const welcome=()=>{let j=null;try{j=sessionStorage.getItem('idr__cloud_justin');sessionStorage.removeItem('idr__cloud_justin')}catch{}if(!j||!C.signedIn())return;
+    if(Date.now()-(+LS.get('idr__s2s_pending')||0)<864e5)ev('save_prompt_signed_in');try{localStorage.removeItem('idr__s2s_pending')}catch{}
+    if(window.toast)toast("You're signed in. Your progress is saved.")};
+  document.addEventListener('cloud:change',()=>setTimeout(welcome,1500));setTimeout(welcome,600);
   window.SavePrompt={show,snooze,_keys:K};
 })();

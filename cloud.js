@@ -63,7 +63,7 @@ window.Cloud=(()=>{
   async function onReturn(ret){
     if(ret&&ret.error){emit('error',ret.error);return true}
     if(ret&&ret.access_token){save({...ret,user:null});try{const u=await http('/auth/v1/user');save({...sess,user:{id:u.id,email:u.email,created_at:u.created_at}});
-        const first=!meta().last;const r=await api.sync();emit('change');if(first&&r.applied)emit('remote',{...r,first:true})}catch(e){save(null);emit('error',e.message)}return true}
+        const first=!meta().last;const r=await api.sync();try{sessionStorage.setItem('idr__cloud_justin','1')}catch{}emit('change');if(first&&r.applied)emit('remote',{...r,first:true})}catch(e){save(null);emit('error',e.message)}return true}
     return false}
   // same-tab return (link opened in an already-open tab) arrives as a hash change, not a page load
   const chk=()=>{const r=readReturn();if(r)onReturn(r)};window.addEventListener('popstate',chk);window.addEventListener('hashchange',chk);

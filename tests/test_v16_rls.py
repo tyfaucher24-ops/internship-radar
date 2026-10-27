@@ -54,6 +54,9 @@ try:
     t(sql("select updated_at<now()+interval '6 minutes' from user_items",'authenticated',A)[1]=='t','future timestamps clamped')
     big="'{\"x\":\""+'a'*120000+"\"}'"
     t(sql(f"insert into user_items(coll,item_id,data) values ('big','b',{big})",'authenticated',A)[0]!=0,'row over 100 KB refused')
+    sql("update user_items set data='{\"co\":\"new\"}', updated_at=now() where item_id='t1'",'authenticated',A)
+    sql("update user_items set data='{\"co\":\"stale\"}', updated_at=now()-interval '1 day' where item_id='t1'",'authenticated',A)
+    t(sql("select data->>'co' from user_items where item_id='t1'",'authenticated',A)[1]=='new','server LWW: older write ignored')
     t(sql("select delete_my_account()",'anon')[0]!=0,'anon cannot call delete_my_account')
     t(sql("select delete_my_account()",'authenticated',B)[0]==0,'B deletes own account')
     t(sql(f"select count(*) from auth.users where id='{B}'")[1]=='0' and sql(f"select count(*) from user_items where user_id='{B}'")[1]=='0','B user + rows gone (cascade)')

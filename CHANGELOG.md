@@ -1,6 +1,14 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16.1 Sign in to save, 2026-10-27
+- Guests see a "Sign in to save" button in the top nav (shown as "Save progress" on tablets, and on the logo row on phones). It opens the sign-in dialog. Signed-in users see an account avatar instead.
+- A one-time, non-blocking toast after a guest's first save and after they finish their profile: "Saved on this device. Sign in to keep it everywhere." "Not now" or Escape snoozes it for 7 days.
+- Sign-in dialog copy: "Save your progress". After sign-in: "You're signed in. Your progress is saved."
+- Everything is hidden when accounts are off (empty config, ?cloud=0) or Supabase is unreachable; guest mode unchanged.
+- Usage counts save_prompt_shown / clicked / signed_in (migration 0004 adds them to the whitelist).
+- tests/test_v16_1_save_prompt.py.
+
 ## V16 Phase 6 (launch polish), 2026-10-27
 - Offline/back-online toast, slow-connection note, working Retry, no layout shift.
 - Twitter/OG meta, ops/set_domain.py, ops/loadtest.py, tests/test_v16_launch.py, ops/V16_LAUNCH_CHECKLIST.md.

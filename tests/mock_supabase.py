@@ -4,7 +4,7 @@ rows are scoped to the token's user, user_id must equal the caller, LWW keeps th
 import json,threading,uuid,time,urllib.parse
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 class DB:
-    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False
+    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False;s.down=False
     def user_for_email(s,e):
         for u in s.users.values():
             if u['email']==e:return u
@@ -31,6 +31,7 @@ def make(db):
                 if not to:return s.out(404,{})
                 usr=db.user_for_email(e);a,r=db.issue(usr['id'])
                 return s.out(200,{'url':to+'#access_token='+a+'&refresh_token='+r+'&expires_in=3600&token_type=bearer&type=magiclink'})
+            if u.path=='/auth/v1/settings':return s.out(503,{'message':'down'}) if db.down else s.out(200,{'external':{'email':True}})
             if u.path=='/auth/v1/user':
                 i=s.uid();return s.out(200,db.users[i]) if i in db.users else s.out(401,{'message':'invalid'})
             if u.path=='/rest/v1/user_items':

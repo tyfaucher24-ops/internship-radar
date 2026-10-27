@@ -44,7 +44,7 @@ with sync_playwright() as pw:
     c.close()
     # 2) device 1: guest data, then sign in -> pushed
     c1=ctx(b);p1=c1.new_page();errs=[];p1.on('pageerror',lambda e:errs.append(str(e)));p1.goto(URL);ready(p1)
-    ck('flag on: "Sign in to sync" in profile menu',p1.evaluate("()=>document.getElementById('acctBtn').textContent")=='Sign in to sync')
+    ck('flag on: "Sign in to save" in profile menu',p1.evaluate("()=>document.getElementById('acctBtn').textContent")=='Sign in to save')
     p1.evaluate("()=>{Store.set('tracker',[{id:'d1a',company:'Alpha',status:'Saved'},{id:'d1b',company:'Beta',status:'Saved'}]);Store.set('profile',{...(Store.get('profile')||{}),major:'Finance'});Store.set('resumeText','SECRET RESUME TEXT')}")
     p1.evaluate("()=>{document.getElementById('pmMenu').hidden=false;document.getElementById('acctBtn').click()}")
     p1.fill('#acctEmail','nope');p1.click('#acctLink');ck('invalid email rejected client-side',wf(p1,"()=>/valid email/.test(acctMsg.textContent)",5))

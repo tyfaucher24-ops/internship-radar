@@ -14,6 +14,15 @@ def issues(label):
         if len(j)<100: break
         page+=1
     return out
+def site_reports():
+    """V16.5: in-site reports from Supabase (public, aggregated report_counts(); publishable key only, never service_role)."""
+    try:
+        c=open(os.path.join(os.path.dirname(__file__),'..','cloud-config.js')).read()
+        url=re.search(r"url:'([^']+)'",c).group(1);key=re.search(r"anonKey:'([^']+)'",c).group(1)
+        r=requests.post(url+'/rest/v1/rpc/report_counts',headers={'apikey':key,'content-type':'application/json'},json={},timeout=30)
+        if r.status_code!=200: print('site reports',r.status_code);return []
+        return r.json()
+    except Exception as e: print('site reports skipped',e);return []
 def main():
     rep={}
     for i in issues('listing-report'):
@@ -23,6 +32,11 @@ def main():
         if t.group(1)=='closed' and i['state']=='open': e['closed_by'].append(i['user']['login'])
         elif t.group(1) in ('wrong','broken'): e[t.group(1)]+=1
         e['issues'].append(i['html_url'])
+    for x in site_reports():
+        e=rep.setdefault(str(x.get('listing_id')),{'closed_by':[],'wrong':0,'broken':0,'issues':[]});n=int(x.get('reporters') or 0)
+        if x.get('kind')=='closed': e['closed_by']+=[f'site-{i}' for i in range(n)]
+        elif x.get('kind') in ('wrong','broken'): e[x['kind']]+=n
+        e['site']=True
     for e in rep.values(): e['closed_by']=sorted(set(e['closed_by']))
     miss=[{'company':re.sub(r'^\[missing-company\]\s*','',i['title']),'body':i.get('body') or '','url':i['html_url'],'state':i['state'],'at':i['created_at']} for i in issues('missing-company')]
     json.dump(rep,open(os.path.join(D,'reports.json'),'w'),indent=0);json.dump(miss,open(os.path.join(D,'missing.json'),'w'),indent=0)

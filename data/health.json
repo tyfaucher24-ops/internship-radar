@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T05:16:57Z",
+ "updated": "2026-10-27T10:42:06Z",
  "listings_by_source_type": {
   "ats": 10891,
   "manual": 64,
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35507,
+   "postings": 35515,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13643,
+   "postings": 13646,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 176,
-   "postings": 8685,
+   "postings": 8682,
    "errors": [
     "Age of Learning (aofl): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/aofl?mode=json",
     "ButcherBox (butcherbox): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/butcherbox?mode=json",
@@ -73,17 +73,16 @@
  "pct_verified_24h": 90.3,
  "stale": 1281,
  "duplicate_rate_pct": 11.4,
- "review_queue": 496,
+ "review_queue": 497,
  "deadline_coverage_pct": 16.9,
  "stats": {
-  "ats_no": 39981,
-  "ats_ambiguous": 496,
-  "ats_non-US": 15264,
+  "ats_no": 39986,
+  "ats_ambiguous": 497,
+  "ats_non-US": 15266,
   "ats_ok": 2094,
   "manual_non-US": 1,
   "kept_out_of_scope": 11041,
-  "kept_list_unreadable": 2265,
-  "closed_this_sync": 2
+  "kept_list_unreadable": 2265
  },
  "by_category": {
   "Software & IT": 2758,
@@ -166,7 +165,7 @@
   "not listed": 13220
  },
  "remote": 383,
- "closed_this_sync": 2,
+ "closed_this_sync": 0,
  "gap_report": {
   "categories_under_25": [
    "Research"

@@ -1,9 +1,9 @@
 {
  "schema": 1,
- "data_updated": "2026-10-27T05:16:57Z",
- "last_run_at": "2026-10-27T05:32:41Z",
+ "data_updated": "2026-10-27T10:42:06Z",
+ "last_run_at": "2026-10-27T10:58:25Z",
  "last_run_ok": true,
- "last_success_at": "2026-10-27T05:32:41Z",
+ "last_success_at": "2026-10-27T10:58:25Z",
  "consecutive_failures": 0,
  "open_listings": 13040,
  "verified_24h": 13040,

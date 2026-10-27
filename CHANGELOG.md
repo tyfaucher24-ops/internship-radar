@@ -1,6 +1,11 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16.3.1: accounts live (2026-10-27)
+- Accounts are on: the Supabase project URL and the publishable (anon) key are in cloud-config.js, and Google sign-in is off (the button is hidden). The site uses raw fetch with no supabase-js, so the new sb_publishable_ key works as the apikey header. Signed-out calls send only the apikey.
+- Live test: a real magic link signed in, guest data migrated, a live edit auto-synced, user B saw none of user A's rows and couldn't write as A, deleting an account signs out and keeps local data, and there were no page errors.
+- Fixed the layout of the resume checkbox in the account dialog.
+
 ## V16 Phase 3: optional accounts (Supabase, free tier) (2026-10-26)
 - **Off until configured:** cloud-config.js is empty, so the live site is unchanged and guest mode (localStorage) still works fully. `?cloud=0` turns accounts off for a single visit.
 - **Sign-in:** email magic link (60 s client cooldown on top of Supabase's rate limits) and optional Google. Uses the anon key only, with raw fetch and no new dependencies.

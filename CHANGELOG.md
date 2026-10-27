@@ -1,6 +1,12 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16 Phase 4: legal, privacy and trust (2026-10-27)
+- New Privacy Policy and Terms of Use pages in plain English, marked as drafts for Ty to review (not legal advice). They cover guest mode vs accounts, resumes read on-device, the opt-in resume sync, Supabase storage with own-rows-only rules, cookie-free anonymous counts, export and delete, listings from public employer postings that link to the original, grades as estimates, and takedowns.
+- The footer now has About, Privacy, Terms, Contact and Report a broken listing. Contact explains takedowns and privacy and deletion requests.
+- About and the footer note no longer say "no accounts" or "no login".
+- There is no cookie banner because the site sets no cookies (sign-in uses local storage; analytics will be cookie-free).
+
 ## V16.3.1: accounts live (2026-10-27)
 - Accounts are on: the Supabase project URL and the publishable (anon) key are in cloud-config.js, and Google sign-in is off (the button is hidden). The site uses raw fetch with no supabase-js, so the new sb_publishable_ key works as the apikey header. Signed-out calls send only the apikey.
 - Live test: a real magic link signed in, guest data migrated, a live edit auto-synced, user B saw none of user A's rows and couldn't write as A, deleting an account signs out and keeps local data, and there were no page errors.

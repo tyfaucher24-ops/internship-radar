@@ -6,3 +6,8 @@
 /* V5.2: the globe intro shows on every visit to the site root; deep links (#find, #tracker, #profile, ?q=…) skip it */(function(){var h=location.hash.replace(/^#/,""),q=new URLSearchParams(location.search);["intro","gl","aa"].forEach(function(k){q.delete(k)});if((h&&!/^(intro|details)$/.test(h))||[...q.keys()].length)document.documentElement.classList.add("seen")})()
 /* V14.6 support banner dismissed: hide before paint (CSS html.beg-x #beg) and set [hidden] once parsed */
 try{if(localStorage.getItem('ir_beg_x')==='1'){document.documentElement.classList.add('beg-x');document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('beg');if(b)b.hidden=true})}}catch(e){}
+/* V16 P2 perf (LCP): phones / reduced motion get the static globe picture. Decide that here, before paint, and start the
+   picture download right away (it was only requested after intro.js ran, which made it the late LCP element on 4G). */
+(function(){try{var H=document.documentElement,q=location.search;if(H.classList.contains('seen')||/[?&]gl=1/.test(q))return;
+if(Math.min(screen.width,screen.height)<600||/[?&]gl=0/.test(q)||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){H.classList.add('gl-static');
+var l=document.createElement('link');l.rel='preload';l.as='image';l.href='assets/globe-static.webp'+self.BV;l.setAttribute('fetchpriority','high');document.head.appendChild(l)}}catch(e){}})();

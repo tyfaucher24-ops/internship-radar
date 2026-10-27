@@ -2,11 +2,17 @@
 let META={},L=[],ashown=50;
 const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
 function openModal(h){$('mbody').innerHTML=h;$('modal').hidden=false}function closeModal(){$('modal').hidden=true}$('mx').onclick=closeModal;
-$('gForm').onsubmit=async e=>{e.preventDefault();if(await sha('idr-salt:'+$('pw').value)===window.ADMIN_HASH){sessionStorage.setItem('idr_admin','1');unlock()}else $('gMsg').textContent='Wrong password.'};
+$('gForm').onsubmit=async e=>{e.preventDefault();if(window.Cloud&&Cloud.enabled)return;if(await sha('idr-salt:'+$('pw').value)===window.ADMIN_HASH){sessionStorage.setItem('idr_admin','1');unlock()}else $('gMsg').textContent='Wrong password.'};
 $('logout').onclick=()=>{sessionStorage.removeItem('idr_admin');location.reload()};
 async function unlock(){$('gate').hidden=true;$('adm').hidden=false;$('logout').hidden=false;
  const j=await (await fetch('data/manual.json')).json();META={};const w=Store.get('adminListings',null);L=w||j;$('dirty').textContent=w?'You have unsaved local edits. Export manual.json, commit it to data/ and the next sync publishes it.':'';render();queueUI();loadCfg();healthUI()}
-if(sessionStorage.getItem('idr_admin'))unlock();
+/* V16 Phase 3: when accounts are on, the page opens only for a signed-in user with the Supabase admin role
+   (public.admins, granted in the Supabase SQL editor). The old password and the session flag are ignored. */
+if(window.Cloud&&Cloud.enabled){$('gForm').hidden=true;sessionStorage.removeItem('idr_admin');
+  $('gMsg').textContent='Checking your account…';
+  Cloud.ready.then(Cloud.isAdmin).then(ok=>{if(ok){$('logout').onclick=async()=>{await Cloud.signOut();location.href='./'};unlock()}
+    else $('gMsg').innerHTML=Cloud.signedIn()?'This account is not an admin.':'Sign in with an admin account first: <a href="./#signin">sign in</a>, then come back here.'})}
+else if(sessionStorage.getItem('idr_admin'))unlock();
 const save=()=>{Store.set('adminListings',L);$('dirty').textContent='Local edits saved in this browser. Export manual.json, commit it to data/ and the next sync publishes it.';render()};
 const nextId=()=>L.reduce((m,x)=>typeof x.id==='number'?Math.max(m,x.id):m,-1)+1;
 function render(){const q=$('aq').value.toLowerCase().split(/\s+/).filter(Boolean);const r=L.filter(x=>{const t=(x.company+' '+x.title+' '+(x.location_text||'')+' '+x.source).toLowerCase();return q.every(w=>t.includes(w))});

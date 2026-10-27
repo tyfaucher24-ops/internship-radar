@@ -1,6 +1,16 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16 Phase 3: optional accounts (Supabase, free tier) (2026-10-26)
+- **Off until configured:** cloud-config.js is empty, so the live site is unchanged and guest mode (localStorage) still works fully. `?cloud=0` turns accounts off for a single visit.
+- **Sign-in:** email magic link (60 s client cooldown on top of Supabase's rate limits) and optional Google. Uses the anon key only, with raw fetch and no new dependencies.
+- **Sync:** profile, saved items and filters, tracker, contacts, templates, practice, preferences, Autopilot and Warm Paths sync one row per item. Raw resume text and parse sync only with the opt-in toggle in the account dialog.
+- **Merges:** the first sign-in merges guest data with no loss. Conflicts resolve last-write-wins per row (enforced by a server trigger). When both devices changed the same item, the change is merged field by field. Deletes travel as tombstones.
+- **Security:** RLS is forced on every table (own rows only; anon gets nothing). There are row and size caps per user. A real-Postgres test proves user A can't read or write user B's rows.
+- **Account dialog:** export my data (local + cloud), delete account (type DELETE), sign out (keeps data on this device).
+- **Admin:** when accounts are on, admin.html requires a signed-in user listed in `admins` (`is_admin()`), and the password form is disabled.
+- **Setup:** supabase/README.md has the setup steps.
+
 ## V16 Phase 2: reliable sync, health, performance, security upgrades (2026-10-26)
 - **Upgrades:** pdf.js 3.11.174 -> 4.10.38 (fixes CVE-2024-4367) and mammoth 1.8.0 -> 1.13.0, still vendored. Resume parsing gives identical results on all 128 qa-v14.3 fixtures.
 - **CSP:** no inline scripts or on* handlers left; script-src is 'self' + cdn.jsdelivr.net (index) and 'self' (admin, 404). The theme no-flash code moved to boot.js. style-src still allows 'unsafe-inline' (inline style attributes).

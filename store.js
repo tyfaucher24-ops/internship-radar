@@ -14,7 +14,7 @@ document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest
    To move to real accounts later, swap the backend object below for an API-backed one; callers keep using Store.get/set. */
 window.Store=(()=>{
   const P='idr_',VERSION=2;
-  const KEYS=['profile','resumeText','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker','prefs','filters','notify','reports','missingQueue','trackerCols','trackerSort','trackerW','profileDraft','resumeParse'];
+  const KEYS=['profile','resumeText','savedFilters','myListings','reviewQueue','resume','contacts','tpls','practice','tracker','prefs','filters','notify','reports','missingQueue','trackerCols','trackerSort','trackerW','profileDraft','resumeParse','warmpaths','autopilot','apSeen','apCal','apCalOff','sortPicked'];
   /* V12: never crash and never lose data silently. Private mode / disabled storage falls back to memory;
      a full disk keeps the old value and tells the user; unreadable JSON is backed up before anything overwrites it. */
   const MEM=new Map();let LS=null;try{LS=window.localStorage;const t=P+'__t';LS.setItem(t,'1');LS.removeItem(t)}catch{LS=null}
@@ -26,8 +26,10 @@ window.Store=(()=>{
   const subs=[];
   const get=(k,d)=>{let raw=null;try{raw=backend.read(k)}catch{return d}if(raw==null)return d;try{const v=JSON.parse(raw);return v??d}catch{
     try{if(LS&&!LS.getItem(P+k+'__corrupt'))LS.setItem(P+k+'__corrupt',raw)}catch{}console.info('Intern Index: saved "'+k+'" was unreadable; a copy was kept as '+P+k+'__corrupt');return d}};
-  const set=(k,v)=>{const ok=backend.write(k,JSON.stringify(v));if(ok)subs.forEach(f=>f(k,v));return ok};
-  const remove=k=>{backend.del(k);subs.forEach(f=>f(k,undefined))};
+  /* V16 P3: remember when each key last changed on this device (used for last-write-wins when syncing) */
+  const touch=k=>{if(k==='_mtime')return;try{const m=JSON.parse(backend.read('_mtime')||'{}');m[k]=new Date().toISOString();backend.write('_mtime',JSON.stringify(m))}catch{}};
+  const set=(k,v,o)=>{const ok=backend.write(k,JSON.stringify(v));if(ok){if(!(o&&o.remote))touch(k);subs.forEach(f=>f(k,v,o))}return ok};
+  const remove=(k,o)=>{backend.del(k);if(!(o&&o.remote))touch(k);subs.forEach(f=>f(k,undefined,o))};
   const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
   // one-time migration from V1 keys
   if(get('saved')&&!get('savedFilters')){set('savedFilters',get('saved',[]).map(s=>({id:uid(),name:s.n,filters:{q:s.v.q||'',industry:s.v.fld||'',state:s.v.loc||'',window:s.v.win||''}})));remove('saved')}
@@ -40,7 +42,8 @@ window.Store=(()=>{
     return Object.keys(obj.data).filter(k=>KEYS.includes(k))}
   function clear(){KEYS.forEach(remove)}
   function download(name,obj){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(obj,null,1)],{type:'application/json'}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
-  return {get,set,remove,uid,exportAll,importAll,clear,download,onChange:f=>subs.push(f),KEYS};
+  const mtimes=()=>{try{return JSON.parse(backend.read('_mtime')||'{}')}catch{return {}}};
+  return {get,set,remove,uid,exportAll,importAll,clear,download,onChange:f=>subs.push(f),KEYS,mtimes};
 })();
 /* Submissions: saved to the user's own list + a review queue. When a free endpoint exists, set SUBMIT_ENDPOINT and it is POSTed too. */
 window.Submissions={SUBMIT_ENDPOINT:null,

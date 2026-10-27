@@ -1,6 +1,10 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16 Phase 6 (launch polish), 2026-10-27
+- Offline/back-online toast, slow-connection note, working Retry, no layout shift.
+- Twitter/OG meta, ops/set_domain.py, ops/loadtest.py, tests/test_v16_launch.py, ops/V16_LAUNCH_CHECKLIST.md.
+
 ## V16 Phase 5: analytics, feedback and admin dashboard (2026-10-27)
 - **Cookie-free usage counts** (`telemetry.js`, no new dependency): page views, signups, saves, Apply clicks, resume uploads and feedback views. Each one only adds 1 to a daily total in Supabase, and nothing else is sent (no ids, URLs or profile data). Do Not Track and Global Privacy Control are honored.
 - **Error log:** uncaught errors are scrubbed in the browser (emails, query strings, tokens and long numbers removed). Each page sends at most 5, the server keeps at most 10 per hour per caller, and logs are kept for 30 days.

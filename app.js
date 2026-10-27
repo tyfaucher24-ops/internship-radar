@@ -38,10 +38,10 @@ function cardHTML(x){const c=closeLbl(x);return`<div class="card${x.st==='closed
 function grpBtn(x){const e=GRP.get(x.id);if(!e||e.n<2||e.ids[0]!==x.id)return'';const o=GEXP.has(e.k);return`<button type="button" class="grp" data-grp="${esc(e.k)}" aria-expanded="${o}" title="${o?'Hide':'Show'} ${e.n-1} similar role${e.n>2?'s':''} at ${esc(x.company)}">${o?"Hide":`+${e.n-1} similar`}</button>`}
 const card=(x,extra='')=>cardHTML(x).replace('<div class="c-foot">',extra?`<div class="c-extra">${extra}</div><div class="c-foot">`:'<div class="c-foot">');
 /* ---------- navigation (hash pages, natural scroll) ---------- */
-const PAGES=['db','tracker','profile','feedback','about','contact','privacy'];
+const PAGES=['db','tracker','profile','feedback','about','contact','privacy','terms'];
 function go(t,push=true){if(t==='find'||t==='home'||!PAGES.includes(t))t='db';document.querySelectorAll('.nav [data-t]').forEach(o=>{o.classList.toggle('on',o.dataset.t===t);o.toggleAttribute('aria-current',o.dataset.t===t);if(o.dataset.t===t)o.setAttribute('aria-current','page')});
  document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!=='t-'+t);const u=new URL(location);u.hash=t==='db'?'':t;history[push?'pushState':'replaceState'](null,'',u);scrollTo(0,0);
- document.title=({db:'Find internships',tracker:'My Tracker',profile:'My Profile',feedback:'Honest feedback',about:'About',contact:'Contact',privacy:'Privacy'})[t]+' · Intern Index';
+ document.title=({db:'Find internships',tracker:'My Tracker',profile:'My Profile',feedback:'Honest feedback',about:'About',contact:'Contact',privacy:'Privacy Policy',terms:'Terms of Use'})[t]+' · Intern Index';
  if(t==='db')requestAnimationFrame(()=>vrender(true));if(t==='tracker'&&window.trackerRefresh)trackerRefresh();if($('fbNudge'))$('fbNudge').hidden=!MatchCore.hasProfile(profile);if(t==='profile'&&$('fbLink'))$('fbLink').hidden=!MatchCore.hasProfile(profile);if(t==='feedback')(window.renderFeedback?Promise.resolve():loadScript('feedback.js'+self.BV)).then(()=>renderFeedback());document.body.classList.toggle('on-profile',t==='profile');document.dispatchEvent(new CustomEvent('radar:page',{detail:t}));reveal()}
 addEventListener('popstate',()=>go(location.hash.slice(1)||'db',false));
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();go(a.dataset.go)}});

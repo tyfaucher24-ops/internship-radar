@@ -73,7 +73,7 @@ with sync_playwright() as pw:
     p.wait_for_timeout(4000);p.wait_for_load_state();ready(p)
     ck(f'{ENG} Retry reloads and listings load',p.evaluate("()=>BYID.size>1000&&!window.__beforeRetry"));c.close()
     # 404
-    c=b.new_context(viewport={'width':390,'height':844},color_scheme='light');p=c.new_page();r=p.goto(URL+'no/such/page')
+    c=b.new_context(viewport={'width':390,'height':844},color_scheme='light',**({'bypass_csp':True} if ENG!='webkit' else {}));p=c.new_page();r=p.goto(URL+'no/such/page')
     if 'github.io' not in URL:print('SKIP 404 checks (local server has no 404.html routing)')
     else:
          ck(f'{ENG} 404 status + page',r.status==404 and "isn't here" in p.content())

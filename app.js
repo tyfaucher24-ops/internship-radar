@@ -356,6 +356,7 @@ setInterval(()=>liveRefresh(false),60000);document.addEventListener('visibilityc
 async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('prefs',{}).map)mapToggle(true);
  $('vl').style.height='auto';$('vl').innerHTML='<div class="grow static">'+Array.from({length:gridCols()*2},()=>'<div class="card skelcard"><div class="skel"></div><div class="skel"></div><div class="skel short"></div></div>').join('')+'</div>';
  const metaP=fetch('data/meta.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.json()).catch(()=>({}));metaP.then(m=>{META=m;hdrCount();document.dispatchEvent(new CustomEvent('radar:meta',{detail:m}))});
+ const slowT=setTimeout(()=>{if(!D.length&&$('vl')&&!$('slowNote')){$('vl').insertAdjacentHTML('afterbegin','<p class="muted small" id="slowNote" role="status">Slow connection. Still loading the listings. Your tracker and profile work in the meantime.</p>')}},8000);
  try{D=[];const prep=rows=>{for(const x of rows)D.push(prepare({...x,id:String(x.id),first_seen:x.fs}))};
   const loadMain=async()=>{await metaP.catch(()=>{});const l=await fetch('data/index.json'+DV()).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()});const LL=l.listings;for(let i=0;i<LL.length;i+=800){prep(LL.slice(i,i+800));await new Promise(r=>setTimeout(r,0))}};
   if(window.Worker){await new Promise((res,rej)=>{let w;try{w=new Worker('data-worker.js'+self.BV)}catch(_){return loadMain().then(res,rej)}const q=[];let busy=false,done=false;
@@ -367,7 +368,8 @@ async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('p
   const reps=Store.get('reports',{});const one=x=>{if(reps[x.id]?.type==='closed')x.hidden=true;for(const L of x.locations||[])if(L.city)L.city=cleanCity(L.city)||null;for(const L of x.locations||[])if(L.lat!=null&&L.city){const k=L.city+', '+L.state;if(!CITYIDX.has(k))CITYIDX.set(k,{lat:L.lat,lng:L.lng})}};
   for(let i=0;i<D.length;){const t=performance.now();while(i<D.length&&performance.now()-t<12)one(D[i++]);if(i<D.length)await new Promise(r=>setTimeout(r,0))}
   const dl=document.createElement('datalist');dl.id='cityList';document.body.appendChild(dl);const fillDl=()=>{dl.innerHTML=[...CITYIDX.keys()].sort().map(k=>`<option value="${esc(k)}">`).join('')};(window.requestIdleCallback||setTimeout)(fillDl,{timeout:3000});
- }catch(e){$('vl').innerHTML='';$('vl').style.height='auto';$('notice').innerHTML=`<div class="err" role="alert"><b>Couldn't load listings.</b> ${esc(e.message)}. <button class="btn-ghost btn-sz sm" data-act="reload">Retry</button></div>`;return}
+ }catch(e){clearTimeout(slowT);$('vl').innerHTML='';$('vl').style.height='auto';$('notice').innerHTML=`<div class="err" role="alert"><b>Couldn't load listings.</b> ${navigator.onLine===false?"You're offline. Your tracker and profile still work. Listings load when you're back online.":esc(e.message)+'.'} <button class="btn-ghost btn-sz sm" data-act="reload">Retry</button></div>`;return}
+ clearTimeout(slowT);$('slowNote')&&$('slowNote').remove();
  await metaP;markLive();hdrCount();setInterval(hdrCount,60000);try{begInit()}catch(e){}
  const n=Store.get('notify',[]);const nowOpen=n.map(id=>BYID.get(id)).filter(x=>x&&x.st!=='upcoming');if(nowOpen.length)$('notice').innerHTML=`<div class="ok" role="status">🔔 Now open: ${nowOpen.map(x=>esc(x.company)).join(', ')}. <button class="btn-ghost btn-sz sm" data-act="dismissNotify">Dismiss</button></div>`;
  await new Promise(r=>setTimeout(r,0));update();document.body.classList.remove('booting');document.dispatchEvent(new Event('radar:data'));
@@ -537,3 +539,11 @@ document.addEventListener('radar:data',()=>{firstTip();presetsInit()});
 function keepPlace(b){const card=b.closest('[data-id]');if(!card)return;const id=card.dataset.id,sc=document.scrollingElement,top=card.getBoundingClientRect().top,html=document.documentElement,prev=html.style.scrollBehavior;html.style.scrollBehavior='auto';let n=0;const fix=()=>{const c=document.querySelector(`[data-id="${CSS.escape(id)}"]`);if(c&&c.offsetParent){const d=c.getBoundingClientRect().top-top;if(Math.abs(d)>.5)sc.scrollTop+=d}if(++n<45)requestAnimationFrame(fix);else html.style.scrollBehavior=prev};requestAnimationFrame(fix)}
 
 document.addEventListener('click',e=>{const b=e.target.closest('.fdtog');if(!b)return;const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);b.textContent=(o?'▾ Hide':'▸ Show')+' full description';const w=document.getElementById(b.getAttribute('aria-controls'));if(w)w.classList.toggle('open',o)});
+
+document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#notice [data-act="reload"],#netToast [data-act="reload"]'))location.reload()});
+/* V16.6: offline / back-online toast (fixed position, so nothing on the page moves) */
+(()=>{const t=document.createElement('div');t.id='netToast';t.className='net-toast';t.setAttribute('role','status');t.hidden=true;document.body.appendChild(t);let h;
+ const show=(m,ms)=>{clearTimeout(h);t.innerHTML=m;t.hidden=false;if(ms)h=setTimeout(()=>t.hidden=true,ms)};
+ addEventListener('offline',()=>show("You're offline. Saved items and your tracker still work on this device."));
+ addEventListener('online',()=>{const failed=!BYID||!BYID.size;show(failed?'Back online. <button class="btn-ghost btn-sz sm" data-act="reload">Load listings</button>':'Back online.',failed?0:3000)});
+ if(navigator.onLine===false)show("You're offline. Saved items and your tracker still work on this device.")})();

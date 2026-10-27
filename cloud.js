@@ -23,7 +23,7 @@ window.Cloud=(()=>{
       try{const j=await http('/auth/v1/token?grant_type=refresh_token',{method:'POST',auth:false,body:{refresh_token:sess.refresh_token}});save(toSess(j))}
       catch(e){if(e.status>=400&&e.status<500){save(null);emit('change')}return null}}
     return sess&&sess.access_token}
-  const toSess=j=>({access_token:j.access_token,refresh_token:j.refresh_token,expires_at:j.expires_at||Math.floor(Date.now()/1000)+(+j.expires_in||3600),user:{id:j.user&&j.user.id,email:j.user&&j.user.email}});
+  const toSess=j=>({access_token:j.access_token,refresh_token:j.refresh_token,expires_at:j.expires_at||Math.floor(Date.now()/1000)+(+j.expires_in||3600),user:{id:j.user&&j.user.id,email:j.user&&j.user.email,created_at:j.user&&j.user.created_at}});
   const redirect=()=>location.origin+location.pathname;
   // returning from the magic link / Google: tokens arrive in the URL hash
   function readReturn(){const h=location.hash;if(!/access_token=|error_description=/.test(h))return null;
@@ -39,6 +39,7 @@ window.Cloud=(()=>{
     lastLink=Date.now();await http('/auth/v1/otp?redirect_to='+encodeURIComponent(redirect()),{method:'POST',auth:false,body:{email,create_user:true}})};
   api.google=()=>{location.href=C.url+'/auth/v1/authorize?provider=google&redirect_to='+encodeURIComponent(redirect())};
   api.signOut=async()=>{try{await http('/auth/v1/logout',{method:'POST'})}catch{}save(null);try{localStorage.removeItem(MK)}catch{}emit('change')};
+  api.rpc=(fn,body)=>http('/rest/v1/rpc/'+encodeURIComponent(fn),{method:'POST',body:body||{}});
   api.isAdmin=async()=>{if(!api.signedIn())return false;try{return (await http('/rest/v1/rpc/is_admin',{method:'POST',body:{}}))===true}catch{return false}};
   api.deleteAccount=async()=>{await http('/rest/v1/rpc/delete_my_account',{method:'POST',body:{}});save(null);try{localStorage.removeItem(MK)}catch{}emit('change')};
   api.exportCloud=async()=>{const rows=await pull();return {app:'internship-deadline-radar',kind:'cloud-account-export',exported:now(),user:sess.user,rows}};
@@ -61,7 +62,7 @@ window.Cloud=(()=>{
   let lastPull=0;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&api.signedIn()&&Date.now()-lastPull>60000){lastPull=Date.now();api.sync().then(r=>r.applied&&emit('remote',r)).catch(()=>{})}});
   async function onReturn(ret){
     if(ret&&ret.error){emit('error',ret.error);return true}
-    if(ret&&ret.access_token){save({...ret,user:null});try{const u=await http('/auth/v1/user');save({...sess,user:{id:u.id,email:u.email}});
+    if(ret&&ret.access_token){save({...ret,user:null});try{const u=await http('/auth/v1/user');save({...sess,user:{id:u.id,email:u.email,created_at:u.created_at}});
         const first=!meta().last;const r=await api.sync();emit('change');if(first&&r.applied)emit('remote',{...r,first:true})}catch(e){save(null);emit('error',e.message)}return true}
     return false}
   // same-tab return (link opened in an already-open tab) arrives as a hash change, not a page load

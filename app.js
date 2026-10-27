@@ -279,9 +279,19 @@ function closeDrawer(){$('drawer').classList.remove('open');document.body.classL
 $('dx').onclick=closeDrawer;$('drawer').onclick=e=>{if(e.target.id==='drawer')closeDrawer()};
 const REPO='tyfaucher24-ops/internship-radar';
 function report(x,type){const r=Store.get('reports',{});r[x.id]={type,at:new Date().toISOString(),company:x.company,title:x.title};Store.set('reports',r);
+ const sent=window.Telemetry&&Telemetry.available()?Telemetry.report(type,x.id,null,'drawer'):Promise.resolve(false);
  if(type==='closed'){x.hidden=true;update()}
  const title=encodeURIComponent(`[listing-report:${type}] ${x.company} — ${x.title}`.slice(0,200));const body=encodeURIComponent(`Listing id: ${x.id}\nType: ${type}\nURL: ${x.apply_url||''}\n\nWhat's wrong (optional):\n`);
- $('repMsg').innerHTML=`Thanks. ${type==='closed'?'Hidden in your browser. ':''}Want it fixed for everyone? <a target="_blank" rel="noopener" href="https://github.com/${REPO}/issues/new?labels=listing-report&title=${title}&body=${body}">Send a public report ↗</a> (3+ “closed” reports hide a listing until it's re-verified).`}
+ $('repMsg').innerHTML=`Thanks. ${type==='closed'?'Hidden in your browser. ':''}Want it fixed for everyone? <a target="_blank" rel="noopener" href="https://github.com/${REPO}/issues/new?labels=listing-report&title=${title}&body=${body}">Send a public report ↗</a> (3+ “closed” reports hide a listing until it's re-verified).`
+ sent.then(ok=>{if(ok&&$('repMsg'))$('repMsg').insertAdjacentHTML('afterbegin','<b>Report sent to the Intern Index team.</b> We re-check reported listings on the next sync. ')})}
+/* V16.5: Report a problem (anything, not tied to a listing) */
+function reportProblem(e){e&&e.preventDefault();const ok=window.Telemetry&&Telemetry.available();
+ openModal(`<h2>Report a problem</h2><p class="muted">Tell us what went wrong. Please don't include personal details. We don't need your name or email.</p><form id="rpForm"><label>What happened? *<textarea name="note" rows="5" maxlength="1000" required></textarea></label><p><button class="btn">Send report</button></p><p id="rpMsg" class="muted small" role="status"></p></form>`);
+ $('rpForm').onsubmit=async ev=>{ev.preventDefault();const note=new FormData(ev.target).get('note');const page=(document.querySelector('.page:not([hidden])')||{}).id||'';
+  const done=ok&&await Telemetry.report('problem',null,note,page.slice(0,40));
+  $('rpMsg').innerHTML=done?'<b>Thanks, your report was sent.</b>':`Couldn't send it from here. <a target="_blank" rel="noopener" href="https://github.com/${REPO}/issues/new?title=${encodeURIComponent('Problem report')}&body=${encodeURIComponent(String(note).slice(0,1500))}">Open it on GitHub instead ↗</a>`;
+  if(done)setTimeout(closeModal,1500)}}
+document.querySelectorAll('[data-reportproblem]').forEach(b=>b.addEventListener('click',reportProblem));
 /* ---------- add / seen elsewhere ---------- */
 $('addBtn').onclick=e=>{e.preventDefault();openModal(`<h2>Add an internship</h2><p class="muted">Saved to your list right away and queued for review. Please link the company's own posting.</p><form id="addForm">${listingFormHTML()}<p><button class="btn">Save internship</button></p></form>`);
  $('addForm').onsubmit=async ev=>{ev.preventDefault();const x=readListingForm(ev.target,'User submission');if(!x.company||!x.title||!x.apply_url)return alert('Company, title and link are required.');x.status='open';await Submissions.submit(x);closeModal();mergeMine();update()}};

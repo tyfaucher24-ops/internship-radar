@@ -7,6 +7,7 @@
 <form id="gForm" class="crow"><input id="pw" type="password" placeholder="Password" autocomplete="current-password" required><button>Unlock</button></form><p id="gMsg" class="muted"></p></section>
 <section id="adm" hidden>
  <div class="stats" id="aStats"></div>
+ <div class="panel" id="dashP"><h2>Launch dashboard</h2><div id="dash"><p class="muted">Loading…</p></div></div>
  <div class="panel"><h2>Data health</h2><div id="health"><p class="muted">Loading…</p></div></div>
  <div class="panel"><h2>Missing-company queue</h2><p class="muted">From “I saw one elsewhere”. We add the company's <b>own</b> careers page to the registry; listings are never copied from LinkedIn, Indeed or Handshake.</p><div id="missing"></div></div>
  <div class="panel"><h2>Registry bulk add</h2><p class="muted">One company per line: <code>Name, careers URL, industry (optional), size (optional)</code>. Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Recruitee, BambooHR and Workday links are detected; other sites use the page's JSON-LD job data.</p><textarea id="regIn" rows="4" style="width:100%" placeholder="Acme Health, https://boards.greenhouse.io/acmehealth, Healthcare & Life Sciences, Mid (201–5,000)"></textarea><p><button class="ghost" id="regGo" type="button">Build companies.csv rows</button></p><div id="regOut"></div></div>

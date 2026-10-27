@@ -5,7 +5,7 @@ function openModal(h){$('mbody').innerHTML=h;$('modal').hidden=false}function cl
 $('gForm').onsubmit=async e=>{e.preventDefault();if(window.Cloud&&Cloud.enabled)return;if(await sha('idr-salt:'+$('pw').value)===window.ADMIN_HASH){sessionStorage.setItem('idr_admin','1');unlock()}else $('gMsg').textContent='Wrong password.'};
 $('logout').onclick=()=>{sessionStorage.removeItem('idr_admin');location.reload()};
 async function unlock(){$('gate').hidden=true;$('adm').hidden=false;$('logout').hidden=false;
- const j=await (await fetch('data/manual.json')).json();META={};const w=Store.get('adminListings',null);L=w||j;$('dirty').textContent=w?'You have unsaved local edits. Export manual.json, commit it to data/ and the next sync publishes it.':'';render();queueUI();loadCfg();healthUI()}
+ const j=await (await fetch('data/manual.json')).json();META={};const w=Store.get('adminListings',null);L=w||j;$('dirty').textContent=w?'You have unsaved local edits. Export manual.json, commit it to data/ and the next sync publishes it.':'';render();queueUI();loadCfg();healthUI();dashUI()}
 /* V16 Phase 3: when accounts are on, the page opens only for a signed-in user with the Supabase admin role
    (public.admins, granted in the Supabase SQL editor). The old password and the session flag are ignored. */
 if(window.Cloud&&Cloud.enabled){$('gForm').hidden=true;sessionStorage.removeItem('idr_admin');
@@ -83,3 +83,16 @@ $('regGo').onclick=()=>{const rows=$('regIn').value.split('\n').map(l=>l.trim())
 /* V16 CSP: delegated actions (store.js dispatches data-act clicks) instead of inline onclick */
 Object.assign(window.ACT,{aEdit:b=>edit(b.dataset.id),aDel:b=>del(b.dataset.id),aMore:()=>{ashown+=100;render()},aQ:b=>qAct(b.dataset.id,b.dataset.v),
  aRowDel:b=>{C[b.dataset.key].splice(+b.dataset.i,1);cfgSave()},aRowAdd:b=>{(C[b.dataset.key]=C[b.dataset.key]||[]).push({});cfgSave()}});
+
+/* ---------- V16.5: launch dashboard (sync health from status.json; signups, usage, reports, errors from Supabase admin_stats) ---------- */
+async function dashUI(){const el=$('dash');if(!el)return;const e=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ let st=null;try{st=await (await fetch('data/status.json?t='+Date.now())).json()}catch{}
+ const age=st&&st.last_success_at?Math.round((Date.now()-Date.parse(st.last_success_at))/60000):null;
+ let h=`<h3>Sync</h3><p>${st?`Last good sync <b>${age} min ago</b> · ${st.last_run_ok?'last run OK':'<b>last run failed</b>'} · ${st.consecutive_failures||0} failures in a row · ${(st.open_listings||0).toLocaleString()} open listings · mode ${e(st.mode)}`:'No status.json yet.'}</p>`;
+ if(!(window.Cloud&&Cloud.enabled&&Cloud.signedIn())){el.innerHTML=h+'<p class="muted">Sign in with your admin account to see signups, usage and reports.</p>';return}
+ let d;try{d=await Cloud.rpc('admin_stats')}catch(x){el.innerHTML=h+`<p class="muted">${x.status===404?'Usage and reports need migration 0003 (supabase/migrations/20261027000003_feedback_analytics.sql). Run it once in the Supabase SQL editor.':'Could not load stats: '+e(x.message)}</p>`;return}
+ const u=d.usage_7d||{};const k=(n,l)=>`<div class="stat"><b>${(+n||0).toLocaleString()}</b><span>${l}</span></div>`;
+ h+=`<h3>Last 7 days</h3><div class="stats">${k(d.users,'accounts')}${k(d.signups_7d,'new accounts')}${k(u.pageview,'page views')}${k(u.save,'saves')}${k(u.apply_click,'Apply clicks')}${k(u.resume_upload,'resume uploads')}${k(u.feedback_view,'feedback views')}${k(d.reports_open,'open reports')}${k(d.errors_24h,'errors (24h)')}</div>`;
+ const rr=d.reports_recent||[];h+=`<h3>Recent reports</h3>${rr.length?`<table class="tbl"><thead><tr><th>When</th><th>Kind</th><th>Listing</th><th>Note</th><th>Status</th></tr></thead><tbody>${rr.map(r=>`<tr><td>${e(new Date(r.created_at).toLocaleString())}</td><td>${e(r.kind)}</td><td>${e(r.listing_id||'—')}</td><td>${e(r.note||'')}</td><td>${e(r.status)}</td></tr>`).join('')}</tbody></table>`:'<p class="muted">No reports yet.</p>'}`;
+ const er=d.errors_recent||[];h+=`<h3>Top errors (7 days)</h3>${er.length?`<ul>${er.map(x=>`<li><code>${e(x.msg)}</code> × ${+x.n}</li>`).join('')}</ul>`:'<p class="muted">No errors logged.</p>'}`;
+ el.innerHTML=h}

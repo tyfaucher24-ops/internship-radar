@@ -48,7 +48,8 @@ jobs:
       - name: Collect user reports
         env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: python -m pipeline.reports || echo "reports step failed; keeping previous reports.json"
-      - name: Sync from company career sites
+      - name: Sync from company career sites (refuses to publish on a >15% open-count drop or missing required fields)
+        timeout-minutes: 75
         env:
           USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
           USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
@@ -59,6 +60,8 @@ jobs:
         run: python -m pipeline.qa --prev /tmp/prev_listings.json
       - name: Sync health gate (fails on ±30% open-count swing or >2% dead links)
         run: python ops/health_check.py
+      - name: Public status file (numbers + timestamps only)
+        run: python ops/status.py
       - name: Company logos (new companies only; robots.txt respected; keeps the old logos on failure)
         timeout-minutes: 30
         run: python -m pipeline.logos || echo "logo step failed; keeping previous logos"
@@ -68,6 +71,16 @@ jobs:
           [ -f data/sync_history.json ] && cp data/sync_history.json /tmp/hist.json || true
           rm -rf data && cp -r /tmp/prev_data data
           [ -f /tmp/hist.json ] && cp /tmp/hist.json data/sync_history.json || true
+          # make sure THIS run is in the history even when it died before the QA step (e.g. publish gate refused)
+          python - <<'PY'
+          import json,os,datetime
+          p='data/sync_history.json';h=json.load(open(p)) if os.path.exists(p) else []
+          rid=os.environ['GITHUB_RUN_ID']
+          if not any(str(e.get('run'))==rid for e in h):
+              h.append({'at':datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),'ok':False,'why':'run failed before the QA step (see Actions log)','run':rid})
+          json.dump(h[-200:],open(p,'w'),indent=0)
+          PY
+          echo "FAILS=$(python ops/status.py)" >> "$GITHUB_ENV"
       - name: Save data for the next run
         if: always()
         uses: actions/cache/save@v4
@@ -85,11 +98,11 @@ jobs:
         with: { path: /tmp/site }
       - uses: actions/deploy-pages@v4
         if: always()
-      - name: Open an issue when the sync fails
-        if: failure()
+      - name: Open an issue after 2 consecutive failed syncs (one open issue, later failures comment on it)
+        if: failure() && env.FAILS >= 2
         env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: |
-          T="Sync failed $(date -u +%Y-%m-%dT%H:%MZ)"
+          T="Sync failed ${{ env.FAILS }} times in a row ($(date -u +%Y-%m-%dT%H:%MZ))"
           B="Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           N=$(gh issue list --label sync-failure --state open --json number --jq '.[0].number')
           if [ -n "$N" ]; then gh issue comment "$N" --body "$T — $B"; else gh label create sync-failure --color B60205 -f >/dev/null 2>&1; gh issue create --title "$T" --body "$B" --label sync-failure; fi

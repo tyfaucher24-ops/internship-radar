@@ -2,9 +2,10 @@
 (GitHub-list leads, hand-checked records, submissions). Dead links are closed; live ones get last_verified."""
 import os,json,datetime,concurrent.futures as cf
 from .sync import verify_link
+from .publish import write_json,gate  # V16 P2: robots.txt + per-host rate limits come from verify_link -> net.fetch
 D=os.path.join(os.path.dirname(__file__),'..','data')
 def main():
-    p=os.path.join(D,'listings.json');L=json.load(open(p));now=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
+    p=os.path.join(D,'listings.json');L=json.load(open(p));prev=json.loads(json.dumps(L['listings']));now=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
     todo=[r for r in L['listings'] if r.get('status')=='open' and r.get('source_type') not in ('ats','usajobs') and r.get('apply_url')]
     res={'checked':len(todo),'live':0,'dead':0,'unknown':0}
     with cf.ThreadPoolExecutor(16) as ex:
@@ -12,12 +13,14 @@ def main():
             if ok is True: r['last_verified']=now;r['link_ok_at']=now;res['live']+=1
             elif ok is False: r['status']='closed';r['closed_at']=now;r['close_reason']='link check: posting gone';res['dead']+=1
             else: res['unknown']+=1
-    json.dump(L,open(p,'w'),ensure_ascii=False,separators=(',',':'))
+    res['gate']=gate(prev,L['listings'])  # refuses (exception, nothing written) on a >15% drop
+    write_json(p,L,separators=(',',':'))
     m=json.load(open(os.path.join(D,'meta.json')));cut=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(hours=24)).isoformat()
     op=[r for r in L['listings'] if r.get('status')=='open' and not r.get('hidden') and not r.get('past_term')]
     v=[r for r in op if (r.get('last_verified') or '')>cut];today=datetime.date.today()
     m.update(open=len(v),open_all=len(op),closing_this_week=sum(1 for r in v if r.get('deadline') and 0<=(datetime.date.fromisoformat(r['deadline'])-today).days<=7),linkcheck={'at':now,**res})
-    json.dump(m,open(os.path.join(D,'meta.json'),'w'),indent=1);print(res)
+    write_json(os.path.join(D,'meta.json'),m,indent=1);print(res)
+    from . import compact;compact.main()  # rebuild the small index + lazy detail files the site reads
 if __name__=='__main__':
     main()
     from . import compact; compact.main()

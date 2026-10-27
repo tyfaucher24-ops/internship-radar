@@ -1,6 +1,7 @@
 """Fill missing locations ONLY from explicit location statements in the posting itself (title or description),
 e.g. "Primary City/State: Mesa, Arizona", "Location: Austin, TX", "(Charlotte, NC)". A value is kept only if it
 parses to a real US city/state that geocodes. Nothing is inferred from the company. Unresolved → loc_label 'Remote/Unspecified'."""
+from pipeline.publish import write_json  # V16 P2: atomic temp+validate+swap writes
 import os,re,json,glob,sys
 sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from pipeline.norm import parse_locations
@@ -22,6 +23,6 @@ def main():
                 if l.get('lat') is not None and l not in got: got.append(l)
         if got: r['locations']=got[:5];r['loc_source']='posting text';r.pop('loc_label',None);filled+=1
         else: r['loc_label']='Remote' if r.get('remote') else 'Remote/Unspecified';lab+=1
-    json.dump(J,open(P,'w'),ensure_ascii=False,separators=(',',':'))
+    write_json(P,J,separators=(',',':'))
     print('locfill: filled',filled,'labelled',lab)
 if __name__=='__main__': main()

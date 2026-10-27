@@ -5,6 +5,7 @@ Every listing gets apply_kind:
   'none'    - only a company site / careers root / search page is known: no button (never link a generic page)
 and apply_link (the URL the button opens). Links are re-validated on each sync in a time-budgeted rotation:
 the final URL after redirects must still contain the job id and the ATS/job path, else the listing falls back."""
+from pipeline.publish import write_json  # V16 P2: atomic temp+validate+swap writes
 import os,re,json,time,datetime,collections,concurrent.futures as cf
 from urllib.parse import urlsplit,parse_qs
 D=os.path.join(os.path.dirname(__file__),'..','data')
@@ -117,8 +118,8 @@ def main(budget_s=None,workers=16):
     rep={'at':now,'open':len(op),'direct':kinds['direct'],'posting':kinds['posting'],'none':kinds['none'],'checked_this_run':done,**st,'top_failing_hosts':fail.most_common(10),
          'top_fallback_hosts':collections.Counter(urlsplit(r.get('apply_url') or '').netloc or '(no link)' for r in op if r.get('apply_kind')!='direct').most_common(10),
          'validated_within_24h':sum(1 for r in op if (r.get('apply_ok_at') or '')>(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(hours=24)).isoformat())}
-    json.dump(LJ,open(p,'w'),ensure_ascii=False,separators=(',',':'))
-    mp=os.path.join(D,'meta.json');m=json.load(open(mp));m['apply_links']=rep;json.dump(m,open(mp,'w'),indent=1)
+    write_json(p,LJ,separators=(',',':'))
+    mp=os.path.join(D,'meta.json');m=json.load(open(mp));m['apply_links']=rep;write_json(mp,m,indent=1)
     print(json.dumps(rep))
     return rep
 if __name__=='__main__':

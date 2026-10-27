@@ -4,6 +4,7 @@ flagged; city strings normalized only when they geocode to a real US place (else
 open listings with a past deadline are closed; ATS 'end dates' more than 200 days out are not shown as deadlines;
 duplicate company+title+location rows are hidden. Writes data/sync_report.json and appends data/sync_history.json.
 Exit code 1 (keeps last good data in the workflow) if the open count collapses or hard checks still fail."""
+from pipeline.publish import write_json  # V16 P2: atomic temp+validate+swap writes
 import os,re,json,csv,sys,argparse,datetime,collections
 sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from pipeline import geo
@@ -59,7 +60,7 @@ def main():
         if len(v)>1:
             v.sort(key=lambda r:(r.get('source_type')!='ats',-(len(r.get('apply_url') or ''))))
             for r in v[1:]: r['hidden']=True;r['dup_of']=v[0]['id'];fix['duplicates_hidden']+=1
-    json.dump(J,open(P,'w'),ensure_ascii=False,separators=(',',':'))
+    write_json(P,J,separators=(',',':'))
     vis=[r for r in L if r.get('status')=='open' and not r.get('hidden') and not r.get('past_term')]
     checks={'open_past_deadline':sum(1 for r in vis if r.get('deadline') and r['deadline']<str(today)),
       'company_equals_title':sum(1 for r in vis if r['company'].strip().lower()==r['title'].strip().lower()),
@@ -85,14 +86,17 @@ def main():
         logs=json.load(open(os.path.join(D,'sync_log.json')));fs=[l for l in logs if not l.get('ok')]
         rep['sources']={'boards':len(logs),'ok':len(logs)-len(fs),'failed':len(fs),'failed_sample':[f"{l['company']} ({l['ats']}): {str(l.get('error'))[:80]}" for l in fs[:30]]}
     except Exception: pass
-    json.dump(rep,open(os.path.join(D,'sync_report.json'),'w'),indent=1,default=dict)
+    write_json(os.path.join(D,'sync_report.json'),json.loads(json.dumps(rep,default=dict)),indent=1)
     hard=checks['open_past_deadline']+checks['company_equals_title']+checks['company_looks_like_title']
     # V16: failed runs are logged too (ok=false + why). The workflow keeps this file even when it throws the run's data away.
     hp=os.path.join(D,'sync_history.json');h=json.load(open(hp)) if os.path.exists(hp) else []
     e={k:rep.get(k) for k in ('at','open_visible','added','removed','changed')};e['ok']=not(rep.get('collapse') or hard)
     if not e['ok']: e['why']=('collapse: removed %s of %s visible (limit 8%%)'%(rep.get('removed'),rep.get('previous_open'))) if rep.get('collapse') else f'hard checks failed: {hard}'
     if os.environ.get('GITHUB_RUN_ID'): e['run']=os.environ['GITHUB_RUN_ID']
-    h.append(e);json.dump(h[-200:],open(hp,'w'),indent=0)
+    h.append(e);write_json(hp,h[-200:],indent=0)
+    try:
+        import subprocess;subprocess.run([sys.executable,os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','ops','status.py')],check=False)
+    except Exception: pass
     from pipeline import compact;compact.main()
     print(json.dumps({k:rep.get(k) for k in ('open_visible','added','removed','changed','fixes','checks')},default=dict))
     if rep.get('collapse') or hard: print('QA FAILED',file=sys.stderr);sys.exit(1)

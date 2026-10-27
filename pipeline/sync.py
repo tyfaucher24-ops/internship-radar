@@ -5,6 +5,7 @@ import os,sys,json,csv,time,datetime,re,collections,traceback,hashlib,argparse,c
 from . import norm as N
 from .adapters import ADAPTERS
 from .net import fetch,Blocked,allowed
+from .publish import write_json,gate
 from .discover import load as load_registry,GITHUB_LISTS,ats_from_url
 ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__),'..'));D=os.path.join(ROOT,'data')
 NOW=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0);NOWS=NOW.isoformat().replace('+00:00','Z')
@@ -167,7 +168,7 @@ def incremental_slice(reg,n,only=None):
     if not uniq:return []
     cp=os.path.join(D,'sync_cursor.json');c=jload(cp,{}).get('pos',0)%len(uniq)
     sl=(uniq+uniq)[c:c+min(n,len(uniq))]
-    json.dump({'pos':(c+len(sl))%len(uniq),'total':len(uniq),'at':NOWS},open(cp,'w'))
+    write_json(cp,{'pos':(c+len(sl))%len(uniq),'total':len(uniq),'at':NOWS})
     print(f'incremental: boards {c}..{c+len(sl)} of {len(uniq)}',file=sys.stderr)
     return sl
 def main():
@@ -311,7 +312,6 @@ def main():
             if sh not in oldsh: oldsh[sh]=jload(os.path.join(D,'desc',f'{sh}.json'),{})
             dtext=oldsh[sh].get(r['id'])
         if dtext: shards[sh][r['id']]=dtext;r['has_desc']=True
-    for sh in range(64): json.dump(shards.get(sh,{}),open(os.path.join(D,'desc',f'{sh}.json'),'w'),ensure_ascii=False,separators=(',',':'))
     for r in out:
         for k in [k for k,v in r.items() if v in (None,[],'',False) and k not in ('remote',)]: del r[k]
         r.pop('key',None) if False else None
@@ -335,10 +335,13 @@ def main():
       'by_category':collections.Counter(r.get('category','Other') for r in op),'by_state':collections.Counter(l['state'] for r in op for l in r.get('locations',[]) if l.get('state')),
       'by_size':collections.Counter(r.get('size') or 'not listed' for r in op),'remote':sum(1 for r in op if r.get('remote')),'closed_this_sync':stats['closed_this_sync'],
       'gap_report':{'categories_under_25':[c for c,_ in N.CATS if sum(1 for r in op if r.get('category')==c)<25],'companies_in_registry_without_listings':meta['companies_tracked']-meta['companies_with_listings']}}
-    json.dump({'generated':NOWS,'schema':'v4','count':len(out),'listings':out},open(os.path.join(D,'listings.json'),'w'),ensure_ascii=False,separators=(',',':'))
-    json.dump(meta,open(os.path.join(D,'meta.json'),'w'),indent=1);json.dump(health,open(os.path.join(D,'health.json'),'w'),indent=1,default=dict)
-    json.dump(review[:2000],open(os.path.join(D,'review.json'),'w'),indent=0);json.dump(state,open(os.path.join(D,'state.json'),'w'),separators=(',',':'))
-    json.dump(logs,open(os.path.join(D,'sync_log.json'),'w'),separators=(',',':'))
+    # V16 P2: validation gate BEFORE anything is written (raises GateRefused -> exit 1 -> workflow keeps last good data)
+    meta['gate']=gate(prev.get('listings',[]),out)
+    for sh in range(64): write_json(os.path.join(D,'desc',f'{sh}.json'),shards.get(sh,{}),separators=(',',':'))
+    write_json(os.path.join(D,'listings.json'),{'generated':NOWS,'schema':'v4','count':len(out),'listings':out},separators=(',',':'))
+    write_json(os.path.join(D,'meta.json'),meta,indent=1);write_json(os.path.join(D,'health.json'),json.loads(json.dumps(health,default=dict)),indent=1)
+    write_json(os.path.join(D,'review.json'),review[:2000],indent=0);write_json(os.path.join(D,'state.json'),state,separators=(',',':'))
+    write_json(os.path.join(D,'sync_log.json'),logs,separators=(',',':'))
     print(json.dumps(meta),file=sys.stderr);print(json.dumps({'by_source':srcs,'deadline_pct':health['deadline_coverage_pct'],'stats':stats},default=dict),file=sys.stderr)
 def _compact():
     from . import locfill, compact, applylink; locfill.main()

@@ -1,14 +1,15 @@
 /* V14.3 resume accuracy suite. Parses every fixture (PDF via pdf.js, DOCX via mammoth, TXT) with the SAME
    resume-extract.js + resume-core.js the website uses, and scores against expected.json.
-   Usage: NODE_PATH=<dir with pdfjs-dist@3.11.174 and mammoth@1.8.0> node tests/resume-fixtures/run.js [--json out.json] [--only f01]
+   Usage: NODE_PATH=<dir with pdfjs-dist (3.x or 4.x) and mammoth> node tests/resume-fixtures/run.js [--json out.json] [--only f01]
    Exit 1 if any pass bar is missed. */
 const fs=require('fs'),path=require('path');
 const ROOT=path.join(__dirname,'..','..');
 const RX=require(path.join(ROOT,'resume-extract.js')),RC=require(path.join(ROOT,'resume-core.js'));
 const COL=JSON.parse(fs.readFileSync(path.join(ROOT,'vendor','colleges.json'),'utf8'));
-const pdfjs=require('pdfjs-dist/legacy/build/pdf.js'),mammoth=require('mammoth');
+const mammoth=require('mammoth');let pdfjs=null;/* V16: pdfjs-dist 4.x is ESM-only (legacy/build/pdf.mjs); 3.x is CommonJS */
+async function PJ(){if(!pdfjs){try{pdfjs=require('pdfjs-dist/legacy/build/pdf.js')}catch(e){const m=require.resolve('pdfjs-dist/legacy/build/pdf.mjs');pdfjs=await import(require('url').pathToFileURL(m).href)}}return pdfjs}
 const args=process.argv.slice(2),only=args.includes('--only')?args[args.indexOf('--only')+1]:null,jout=args.includes('--json')?args[args.indexOf('--json')+1]:null,verbose=args.includes('-v');
-async function pdfItems(buf){const doc=await pdfjs.getDocument({data:new Uint8Array(buf),disableFontFace:true,useSystemFonts:false,verbosity:0}).promise;const pages=[];
+async function pdfItems(buf){const doc=await (await PJ()).getDocument({data:new Uint8Array(buf),disableFontFace:true,useSystemFonts:false,verbosity:0}).promise;const pages=[];
  for(let p=1;p<=doc.numPages;p++){const pg=await doc.getPage(p);const vp=pg.getViewport({scale:1});const tc=await pg.getTextContent();
   pages.push({w:vp.width,h:vp.height,items:tc.items.filter(i=>i.str!==undefined).map(i=>({s:i.str,x:i.transform[4],y:i.transform[5],w:i.width,size:Math.hypot(i.transform[2],i.transform[3])||i.height}))})}
  return pages}

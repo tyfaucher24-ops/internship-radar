@@ -6,7 +6,7 @@
       deterministic, missing GPA lowers confidence not the grade.
    3) Monotonicity across the 20 resumes x 34 postings: +0.3 GPA, +1 posting skill, +1 related internship never lower the score.
    4) Harsh and varied: at least 4 letter grades used, A grades <= 15%.
-   Fixtures without a TXT are read from DOCX with mammoth (NODE_PATH must include mammoth 1.8.0).
+   Fixtures without a TXT are read from DOCX with mammoth (NODE_PATH must include mammoth).
    Usage: NODE_PATH=... node tests/grader/run_resume.js [--json out.json] */
 const fs=require('fs'),path=require('path'),cp=require('child_process');const R=path.join(__dirname,'../..');
 global.self=global;require(path.join(R,'match-core.js'));const MC=global.MatchCore;

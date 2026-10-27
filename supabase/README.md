@@ -30,3 +30,6 @@ Accounts are **off** until `cloud-config.js` has a project URL and anon key. Whi
 
 ## Cost
 Everything above is $0 on the Free plan (500 MB DB, 50k monthly active users, built-in email with low hourly limits). There's no card on file, so nothing can charge.
+
+## Migration 0003 (V16 Phase 5): usage counts, reports, error log, admin dashboard
+Run `migrations/20261027000003_feedback_analytics.sql` once in the SQL editor (it is safe to re-run). Until you do, the site works normally: counting and error logging switch themselves off, "Report a problem" offers a GitHub issue instead, and the admin dashboard shows only sync health. There is nothing to set up after that. The pipeline reads the public, aggregated `report_counts()` with the publishable key.

@@ -4,11 +4,11 @@ rows are scoped to the token's user, user_id must equal the caller, LWW keeps th
 import json,threading,uuid,time,urllib.parse
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 class DB:
-    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[]
+    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False
     def user_for_email(s,e):
         for u in s.users.values():
             if u['email']==e:return u
-        u={'id':str(uuid.uuid4()),'email':e};s.users[u['id']]=u;return u
+        u={'id':str(uuid.uuid4()),'email':e,'created_at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())};s.users[u['id']]=u;return u
     def issue(s,uid):
         a='at-'+uuid.uuid4().hex;r='rt-'+uuid.uuid4().hex;s.tokens[a]=uid;s.refresh[r]=uid;return a,r
 def make(db):
@@ -51,6 +51,13 @@ def make(db):
             if u.path=='/auth/v1/logout':
                 db.tokens.pop((s.headers.get('authorization') or '').replace('Bearer ',''),None);return s.out(204)
             i=s.uid()
+            if u.path in ('/rest/v1/rpc/track','/rest/v1/rpc/submit_report','/rest/v1/rpc/log_error','/rest/v1/rpc/admin_stats') and db.no0003:return s.out(404,{'message':'function not found'})
+            if u.path=='/rest/v1/rpc/track':db.events+=[e for e in (b or {}).get('events',[])[:20]];return s.out(204)
+            if u.path=='/rest/v1/rpc/submit_report':db.reports.append(b);return s.out(200,True)
+            if u.path=='/rest/v1/rpc/log_error':db.errors.append(b);return s.out(204)
+            if u.path=='/rest/v1/rpc/admin_stats':
+                if i not in db.admins:return s.out(403,{'message':'not an admin'})
+                return s.out(200,{'users':len(db.users),'signups_7d':len(db.users),'signups_by_day':[],'usage_7d':{e:db.events.count(e) for e in set(db.events)},'reports_open':len(db.reports),'reports_recent':[{'id':n,'created_at':'2026-10-27T12:00:00Z','kind':r['p_kind'],'listing_id':r['p_listing_id'],'note':r['p_note'],'page':r['p_page'],'status':'open'} for n,r in enumerate(db.reports)],'errors_24h':len(db.errors),'errors_recent':[{'msg':e['p_msg'],'n':1,'last':'2026-10-27T12:00:00Z'} for e in db.errors]})
             if u.path=='/rest/v1/rpc/is_admin':return s.out(200,i in db.admins) if i else s.out(401,{})
             if u.path=='/rest/v1/rpc/delete_my_account':
                 if not i:return s.out(401,{})

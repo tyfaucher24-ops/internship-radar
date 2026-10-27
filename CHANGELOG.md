@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16 Phase 5: analytics, feedback and admin dashboard (2026-10-27)
+- **Cookie-free usage counts** (`telemetry.js`, no new dependency): page views, signups, saves, Apply clicks, resume uploads and feedback views. Each one only adds 1 to a daily total in Supabase, and nothing else is sent (no ids, URLs or profile data). Do Not Track and Global Privacy Control are honored.
+- **Error log:** uncaught errors are scrubbed in the browser (emails, query strings, tokens and long numbers removed). Each page sends at most 5, the server keeps at most 10 per hour per caller, and logs are kept for 30 days.
+- **Report a problem** (footer and Contact) plus the existing per-listing Report an issue are now stored privately in Supabase, with GitHub as the fallback. Reports carry only a one-way caller hash, which is used to cap spam and count distinct reporters. `pipeline/reports.py` merges the public `report_counts()` into reports.json, so 3+ distinct "closed" reports hide a listing until it is re-verified (same rule as GitHub reports).
+- **Admin launch dashboard** (admin.html, admin role only): sync health, accounts, new signups, 7-day usage, recent reports and top errors, via `admin_stats()`.
+- **Migration 0003** (Ty runs it in the SQL editor). Every table is write-only for the public through capped RPCs and readable by admins only. Test: `tests/test_v16_feedback_rls.py`, 31/31 on real Postgres.
+- Tests: `tests/test_v16_telemetry.py` 20/20 (mock). `test_v16_cloud.py` was fixed for the now-filled cloud-config and passes 32/32.
+- Privacy Policy updated to match (DNT, error log, report hash).
+
 ## V16 Phase 4: legal, privacy and trust (2026-10-27)
 - New Privacy Policy and Terms of Use pages in plain English, marked as drafts for Ty to review (not legal advice). They cover guest mode vs accounts, resumes read on-device, the opt-in resume sync, Supabase storage with own-rows-only rules, cookie-free anonymous counts, export and delete, listings from public employer postings that link to the original, grades as estimates, and takedowns.
 - The footer now has About, Privacy, Terms, Contact and Report a broken listing. Contact explains takedowns and privacy and deletion requests.

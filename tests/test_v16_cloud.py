@@ -22,7 +22,7 @@ MOCK='http://127.0.0.1:54321'
 CFG=f"window.CLOUD_CONFIG={{url:'{MOCK}',anonKey:'test-anon',google:true}};"
 def ctx(b,on=True):
     c=b.new_context(viewport={'width':1280,'height':900},bypass_csp=True)
-    if on:c.route('**/cloud-config.js*',lambda r:r.fulfill(status=200,content_type='application/javascript',body=CFG))
+    c.route('**/cloud-config.js*',lambda r:r.fulfill(status=200,content_type='application/javascript',body=CFG if on else 'window.CLOUD_CONFIG={url:"",anonKey:""};'))
     return c
 def ready(p):wf(p,"()=>typeof BYID!=='undefined'&&BYID.size>0",120);p.evaluate("()=>window.__introEnd&&__introEnd(false)")
 def sign_in(p,email):
@@ -35,7 +35,7 @@ def rows(email,coll):
     return {k[2]:v for k,v in db.rows.items() if u and k[0]==u['id'] and k[1]==coll and not v['deleted']}
 with sync_playwright() as pw:
     b=pw.chromium.launch()
-    # 1) flag off: real (empty) cloud-config.js -> guest mode only
+    # 1) flag off: empty cloud-config.js -> guest mode only
     c=ctx(b,False);p=c.new_page();reqs=[];p.on('request',lambda r:reqs.append(r.url));p.goto(URL);ready(p)
     ck('flag off: Cloud.enabled false',p.evaluate("()=>window.Cloud&&Cloud.enabled===false"))
     ck('flag off: no account button',p.evaluate("()=>!document.getElementById('acctBtn')"))

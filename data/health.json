@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-27T00:47:13Z",
+ "updated": "2026-10-27T05:16:57Z",
  "listings_by_source_type": {
-  "ats": 10890,
+  "ats": 10891,
   "manual": 64,
   "github-verified": 2265
  },
@@ -9,7 +9,7 @@
   "greenhouse": {
    "boards": 540,
    "ok": 517,
-   "postings": 35506,
+   "postings": 35507,
    "errors": [
     "Applied Intuition (appliedintuition): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/appliedintuition/jobs?content=true",
     "Arine (arine): HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/arine/jobs?content=true",
@@ -39,7 +39,7 @@
   "ashby": {
    "boards": 368,
    "ok": 353,
-   "postings": 13648,
+   "postings": 13643,
    "errors": [
     "Atomic Semi (atomicsemi): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/atomicsemi?includeCompensation=true",
     "Chainlink Labs (chainlink-labs): HTTPError: 404 Client Error: Not Found for url: https://api.ashbyhq.com/posting-api/job-board/chainlink-labs?includeCompensation=true",
@@ -61,7 +61,7 @@
   "lever": {
    "boards": 180,
    "ok": 176,
-   "postings": 8684,
+   "postings": 8685,
    "errors": [
     "Age of Learning (aofl): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/aofl?mode=json",
     "ButcherBox (butcherbox): HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/butcherbox?mode=json",
@@ -76,10 +76,10 @@
  "review_queue": 496,
  "deadline_coverage_pct": 16.9,
  "stats": {
-  "ats_no": 39989,
+  "ats_no": 39981,
   "ats_ambiguous": 496,
-  "ats_non-US": 15260,
-  "ats_ok": 2093,
+  "ats_non-US": 15264,
+  "ats_ok": 2094,
   "manual_non-US": 1,
   "kept_out_of_scope": 11041,
   "kept_list_unreadable": 2265,
@@ -88,17 +88,17 @@
  "by_category": {
   "Software & IT": 2758,
   "Accounting & Audit": 519,
-  "Engineering & Hardware": 1969,
+  "Engineering & Hardware": 1970,
   "Business & Operations": 549,
   "Supply Chain & Logistics": 371,
   "Healthcare & Life Sciences": 580,
-  "Other": 2160,
+  "Other": 2159,
   "Nonprofit & Education": 97,
   "Media & Communications": 234,
   "Finance & Banking": 792,
   "Marketing & Sales": 787,
   "Data & AI": 1268,
-  "Design & Creative": 171,
+  "Design & Creative": 172,
   "Legal": 109,
   "HR & People": 180,
   "Government & Policy": 107,
@@ -109,7 +109,7 @@
   "Research": 8
  },
  "by_state": {
-  "CA": 2925,
+  "CA": 2927,
   "PA": 764,
   "GA": 431,
   "MN": 503,
@@ -163,7 +163,7 @@
   "VT": 79
  },
  "by_size": {
-  "not listed": 13219
+  "not listed": 13220
  },
  "remote": 383,
  "closed_this_sync": 2,
@@ -171,6 +171,6 @@
   "categories_under_25": [
    "Research"
   ],
-  "companies_in_registry_without_listings": 964
+  "companies_in_registry_without_listings": 965
  }
 }

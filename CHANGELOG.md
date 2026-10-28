@@ -1,6 +1,12 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16.2 Continue with Google + plain-words sign-in errors, 2026-10-27
+- "Continue with Google" button at the top of the sign-in dialog (also reached from the "Sign in to save" button and toast), above the email link with an "or" divider. Follows Google's branding: official 4-colour G, white (light) / #131314 (dark) button, 40px tall, 14px medium text.
+- Uses Supabase OAuth (/auth/v1/authorize?provider=google, redirect back to the site). The return is handled like the email link, including the "You're signed in" toast.
+- Off by default: `google:false` in cloud-config.js. Set it to `true` once the Google provider is enabled in Supabase; when off, nothing Google-related shows.
+- Sign-in errors in plain words (too many emails, invalid email, offline, expired link, Google cancelled or unavailable, sign-ups paused, server trouble). Raw server messages are never shown.
+
 ## V16.1 Sign in to save, 2026-10-27
 - Guests see a "Sign in to save" button in the top nav (shown as "Save progress" on tablets, and on the logo row on phones). It opens the sign-in dialog. Signed-in users see an account avatar instead.
 - A one-time, non-blocking toast after a guest's first save and after they finish their profile: "Saved on this device. Sign in to keep it everywhere." "Not now" or Escape snoozes it for 7 days.

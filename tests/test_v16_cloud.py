@@ -47,7 +47,7 @@ with sync_playwright() as pw:
     ck('flag on: "Sign in to save" in profile menu',p1.evaluate("()=>document.getElementById('acctBtn').textContent")=='Sign in to save')
     p1.evaluate("()=>{Store.set('tracker',[{id:'d1a',company:'Alpha',status:'Saved'},{id:'d1b',company:'Beta',status:'Saved'}]);Store.set('profile',{...(Store.get('profile')||{}),major:'Finance'});Store.set('resumeText','SECRET RESUME TEXT')}")
     p1.evaluate("()=>{document.getElementById('pmMenu').hidden=false;document.getElementById('acctBtn').click()}")
-    p1.fill('#acctEmail','nope');p1.click('#acctLink');ck('invalid email rejected client-side',wf(p1,"()=>/valid email/.test(acctMsg.textContent)",5))
+    p1.fill('#acctEmail','nope');p1.click('#acctLink');ck('invalid email rejected client-side',wf(p1,"()=>/email address doesn.t look right/.test(acctMsg.textContent)",5))
     p1.evaluate("()=>closeModal&&closeModal()")
     sign_in(p1,'a@test.dev')
     ck('signed in (magic link) + URL hash cleaned',p1.evaluate("()=>Cloud.signedIn()&&Cloud.user().email==='a@test.dev'&&!/access_token/.test(location.href)"))

@@ -4,7 +4,7 @@ rows are scoped to the token's user, user_id must equal the caller, LWW keeps th
 import json,threading,uuid,time,urllib.parse
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 class DB:
-    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False;s.down=False
+    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False;s.down=False;s.google=True;s.otp_err=None
     def user_for_email(s,e):
         for u in s.users.values():
             if u['email']==e:return u
@@ -25,6 +25,15 @@ def make(db):
             a=(s.headers.get('authorization') or '').replace('Bearer ','');return db.tokens.get(a)
         def do_GET(s):
             u=urllib.parse.urlparse(s.path);q=urllib.parse.parse_qs(u.query);db.log.append(('GET',u.path))
+            if u.path=='/auth/v1/authorize':  # browser navigation (no apikey header), like real Supabase OAuth
+                to=q.get('redirect_to',[''])[0];db.log.append(('AUTHZ',q.get('provider',[''])[0],to))
+                if not db.google:loc=to+'?error=validation_failed&error_code=validation_failed&error_description=Unsupported+provider%3A+provider+is+not+enabled'
+                elif db.google=='deny':loc=to+'?error=access_denied&error_code=access_denied&error_description=The+user+denied+access'
+                else:
+                    usr=db.user_for_email('gee@test.dev');a,r=db.issue(usr['id']);loc=to+'#access_token='+a+'&refresh_token='+r+'&expires_in=3600&token_type=bearer&provider_token=x'
+                # stands in for Google's consent screen, then sends the browser back to redirect_to
+                h=('<!doctype html><title>Google</title><script>location.replace('+json.dumps(loc)+')</script>').encode()
+                s.send_response(200);s.send_header('content-type','text/html');s.send_header('content-length',str(len(h)));s.end_headers();s.wfile.write(h);return
             if s.headers.get('apikey')!='test-anon' and not u.path.startswith('/__test'):return s.out(401,{'message':'no apikey'})
             if u.path=='/__test/link':  # what the magic-link email would contain after /auth/v1/verify
                 e=q['email'][0];to=db.links.get(e)
@@ -44,6 +53,7 @@ def make(db):
         def do_POST(s):
             u=urllib.parse.urlparse(s.path);q=urllib.parse.parse_qs(u.query);b=s.body();db.log.append(('POST',u.path))
             if s.headers.get('apikey')!='test-anon':return s.out(401,{'message':'no apikey'})
+            if u.path=='/auth/v1/otp' and db.otp_err:return s.out(db.otp_err[0],db.otp_err[1])
             if u.path=='/auth/v1/otp':db.links[b['email']]=q.get('redirect_to',[''])[0];return s.out(200,{})
             if u.path=='/auth/v1/token':
                 i=db.refresh.pop(b.get('refresh_token'),None)

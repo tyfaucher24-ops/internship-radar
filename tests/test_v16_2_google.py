@@ -45,7 +45,7 @@ def realcsp(c):
         resp=r.fetch();body=resp.text().replace("connect-src 'self'","connect-src 'self' "+MOCK,1);r.fulfill(response=resp,body=body)
     c.route(lambda u:u.split('?')[0].split('#')[0].rstrip('/')+'/'==URL or u.split('?')[0].endswith('index.html'),h);return c
 TOPS="()=>{const e=document.getElementById('acctEmail'),h=document.getElementById('acctH');return e&&h?[e.getBoundingClientRect().top,h.getBoundingClientRect().top]:null}"
-ck('cloud-config.js ships google:false (one-line flag)',"google:false}" in open(os.path.join(os.path.dirname(__file__),'..','cloud-config.js')).read())
+import re;ck('cloud-config.js has a one-line google flag',len(re.findall(r"google:(true|false)\}",open(os.path.join(os.path.dirname(__file__),'..','cloud-config.js')).read()))==1)
 with sync_playwright() as pw:
     b=getattr(pw,ENG).launch(**({'args':['--disable-features=LocalNetworkAccessChecks,PrivateNetworkAccessChecks']} if ENG=='chromium' else {}))
     # 1) flag off: hidden entirely, V16.1 copy, no jump

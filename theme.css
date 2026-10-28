@@ -138,7 +138,7 @@
 --font:"Geist","Geist Fallback",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--dur:.15s;}
 /* V11 stock-market accents */
 :root{--font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;--c-up:#047857;--c-down:#b42318;--c-move:#8a5a00;--c-board:#0f1220;--c-board-ink:#e8eaf2;--c-board-up:#34d399;--c-board-down:#f87171;--c-board-move:#fbbf24;--c-board-line:rgba(255,255,255,.14)}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(assets/jbmono-500.woff2?v=45c359ecdf) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(assets/jbmono-500.woff2?v=8fa8b73db0) format("woff2")}
 /* V11.1 dark mode (tokens only) + colour-blind grades */
 html.dark{--c-surface:#161a2b;--c-bg:#0f1220;--c-bg-2:#1d2236;--c-line:#272d45;--c-line-2:#323a57;--c-ink:#e8eaf2;--c-ink-2:#c9cde0;--c-mut:#a3a9c2;--c-mut-2:#8a90aa;--c-faint:#6b7190;--c-pri-soft:#262150;--c-pri-soft-2:#3a3175;--c-pri-ink:#b9adff;--c-blue-soft:#14223f;--c-red-soft:#3a1916;--c-amber-soft:#33280d;--c-green-soft:#0f2e22;--c-up:#34d399;--c-down:#f87171;--c-move:#fbbf24;--c-bar:rgba(22,26,43,.96);--c-hdr:rgba(15,18,32,.88);--c-x525873:#a3a9c2;--c-x8a90a8:#8a90aa;--c-xf3e3a1:#5a4a1a;color-scheme:dark}
 html.cb{--c-up:#1d4ed8;--c-board-up:#60a5fa;--c-cb-hi:#dbeafe;--c-cb-hi-ink:#1e3a8a;--c-cb-hi-line:#93c5fd}

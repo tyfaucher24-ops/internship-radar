@@ -1,6 +1,9 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16.2 flag on, 2026-10-27
+- Google provider enabled in Supabase; `google:true` in cloud-config.js, so "Continue with Google" now shows in the sign-in dialog.
+
 ## V16.2 Continue with Google + plain-words sign-in errors, 2026-10-27
 - "Continue with Google" button at the top of the sign-in dialog (also reached from the "Sign in to save" button and toast), above the email link with an "or" divider. Follows Google's branding: official 4-colour G, white (light) / #131314 (dark) button, 40px tall, 14px medium text.
 - Uses Supabase OAuth (/auth/v1/authorize?provider=google, redirect back to the site). The return is handled like the email link, including the "You're signed in" toast.

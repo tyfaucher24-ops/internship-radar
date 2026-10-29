@@ -1,6 +1,13 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V16.3 Listings sync fixed (dead apply links), 2026-10-29
+- Root cause: in V16 P2 (cc6e338) the `@adapter('workday')` decorator slid onto a helper class, so the Workday "fetch" returned the registry row's field names as strings. Every full 2-hour sync crashed in `build_record` (`'str' object has no attribute 'get'`) about 5 min in; only the 30-min Greenhouse/Lever/Ashby pass succeeded. Result: ~8,800 open Workday listings (2/3 of the site) went unrefreshed since 2026-10-26, so postings closed at the company stayed up.
+- Fix: decorator back on `workday()`; the sync now drops malformed postings / treats a board with no usable postings as a failed board (keeps its last good listings) instead of crashing the whole run; per-posting build errors are counted, not fatal.
+- Daily link check now also re-opens ATS listings the sync has not confirmed for 48h or whose apply link failed, and closes the dead ones.
+- New ops/workflows/sync5.yml (V16 data model, no commits to main): 300-board incremental slice every 5 min (GitHub minimum, best-effort), shared `data-sync` concurrency group, optional free `repository_dispatch` trigger. Ty copies it to .github/workflows/.
+- ops/deadlink_sample.py: fixed-seed 300-listing dead-link sample of the live site (results in ops/qa/v16.3/).
+
 ## V16.2 flag on, 2026-10-27
 - Google provider enabled in Supabase; `google:true` in cloud-config.js, so "Continue with Google" now shows in the sign-in dialog.
 

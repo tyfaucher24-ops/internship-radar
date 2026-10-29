@@ -4,7 +4,7 @@ rows are scoped to the token's user, user_id must equal the caller, LWW keeps th
 import json,threading,uuid,time,urllib.parse
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 class DB:
-    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False;s.down=False;s.google=True;s.otp_err=None
+    def __init__(s):s.users={};s.tokens={};s.refresh={};s.rows={};s.admins=set();s.links={};s.log=[];s.events=[];s.reports=[];s.errors=[];s.no0003=False;s.down=False;s.google=True;s.otp_err=None;s.prefs={};s.ev17=[];s.unsubs=[];s.stats17=None
     def user_for_email(s,e):
         for u in s.users.values():
             if u['email']==e:return u
@@ -69,6 +69,23 @@ def make(db):
             if u.path=='/rest/v1/rpc/admin_stats':
                 if i not in db.admins:return s.out(403,{'message':'not an admin'})
                 return s.out(200,{'users':len(db.users),'signups_7d':len(db.users),'signups_by_day':[],'usage_7d':{e:db.events.count(e) for e in set(db.events)},'reports_open':len(db.reports),'reports_recent':[{'id':n,'created_at':'2026-10-27T12:00:00Z','kind':r['p_kind'],'listing_id':r['p_listing_id'],'note':r['p_note'],'page':r['p_page'],'status':'open'} for n,r in enumerate(db.reports)],'errors_24h':len(db.errors),'errors_recent':[{'msg':e['p_msg'],'n':1,'last':'2026-10-27T12:00:00Z'} for e in db.errors]})
+            # V17 (migration 0005) stand-ins; real enforcement is proven on Postgres by tests/test_v17_sql.py
+            if u.path=='/rest/v1/rpc/track_events':db.ev17+=[dict(e,uid=i) for e in (b or {}).get('p_events',[])[:25]];return s.out(204)
+            if u.path=='/rest/v1/rpc/save_email_prefs':
+                if not i:return s.out(401,{'message':'signed out'})
+                p=db.prefs.setdefault(i,{'opted_in':False,'digest':True,'reminders':True,'matches':True,'digest_dow':0,'digest_hour':18,'tz':'America/New_York','unsub_token':'a'*48})
+                p.update({k:v for k,v in ((b or {}).get('p') or {}).items() if k in p and k!='unsub_token'});return s.out(200,{k:v for k,v in p.items() if k!='unsub_token'})
+            if u.path=='/rest/v1/rpc/email_unsubscribe':
+                for p in db.prefs.values():
+                    if p['unsub_token']==b.get('p_token'):
+                        t=b.get('p_type');db.unsubs.append(t)
+                        if t=='all':p['opted_in']=False
+                        else:p[t]=False
+                        return s.out(200,True)
+                return s.out(200,False)
+            if u.path=='/rest/v1/rpc/admin_stats_v17':
+                if i not in db.admins:return s.out(403,{'message':'not an admin'})
+                return s.out(200,db.stats17 or {'users':len(db.users),'signups_7d':0,'signups_30d':0,'dau':0,'wau':0,'mau':0,'saves_7d':0,'apply_clicks_7d':0,'email_subscribers':0,'daily':[],'funnel':{},'cohorts':[],'top_companies':[],'top_roles':[],'top_schools':[],'email':{'sent':0,'clicks':0,'unsub_by_type':{}}})
             if u.path=='/rest/v1/rpc/is_admin':return s.out(200,i in db.admins) if i else s.out(401,{})
             if u.path=='/rest/v1/rpc/delete_my_account':
                 if not i:return s.out(401,{})

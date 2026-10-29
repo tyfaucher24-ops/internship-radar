@@ -75,7 +75,11 @@ def main():
         nv={r['id']:r for r in vis}
         ch=[i for i in nv if i in pv and any(pv[i].get(k)!=nv[i].get(k) for k in ('deadline','title','locations','company'))]
         rep.update({'added':len(set(nv)-set(pv)),'removed':len(set(pv)-set(nv)),'changed':len(ch),'previous_open':len(pv)})
-        if len(pv)>1000 and (len(nv)<0.6*len(pv) or len(set(pv)-set(nv))>0.08*len(pv)): rep['collapse']=True  # V12: a mass close (>8% in one run) means a source failed, not that 8% of jobs closed
+        # V16.3: listings nobody had confirmed for 48h+ (e.g. a source that was broken for days) closing on catch-up is cleanup, not a source failure.
+        # Only removals of recently confirmed listings count toward the 8% limit; total removals are still capped at 25%.
+        cut=(now-datetime.timedelta(hours=48)).strftime('%Y-%m-%dT%H:%M:%SZ');gone=set(pv)-set(nv)
+        stale=sum(1 for i in gone if str(pv[i].get('last_verified') or '')<cut and pv[i].get('source_type')=='ats');rep['removed_stale']=stale
+        if len(pv)>1000 and (len(nv)<0.6*len(pv) or len(gone)-stale>0.08*len(pv) or len(gone)>0.25*len(pv)): rep['collapse']=True  # V12: a mass close (>8% in one run) means a source failed, not that 8% of jobs closed
         else:
             try:
                 from pipeline import changes

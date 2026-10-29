@@ -1,6 +1,17 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V17 Deadline alert emails + founder stats, 2026-10-29
+- Email alerts (opt-in, off by default): Profile -> "Email alerts" box for signed-in users (guests see "Sign in to get deadline alerts"). Toggles for deadline reminders, weekly digest and new-match emails, digest day/hour, time zone.
+- Reminders: one bundled email per user per local day, for Saved roles closing in 7 days and in 2 days; never for Applied/closed roles, never a guessed date for rolling roles (shown as "Rolling, apply early"). Each listing+window is sent once.
+- Weekly digest: saved roles closing in the next 14 days, up to 5 new eligible top matches (the site's own MatchCore; ineligible roles never included), tracker counts. Skipped when there is nothing to say.
+- Every email: tracked "See details" link (?ref=email), the company apply link, one-click unsubscribe (per type and all) that works signed out, manage-settings link. Mailing-address footer is a TODO until Ty provides one.
+- Sender: ops/email/send_alerts.py (Python stdlib, Gmail SMTP behind one sendEmail() function), hourly workflow template ops/workflows/email-alerts.yml, 450/day cap with overflow deferred, DRY_RUN=1 renders previews only. No emails have been sent.
+- Security: no service_role key anywhere. The job uses the public key plus a secret EMAIL_JOB_KEY checked inside SECURITY DEFINER functions (migration 0005 / supabase/v17_paste.sql). This replaces spec A3's service_role approach.
+- Founder stats at #admin/stats (admins only; everyone else sees "Not found"): visitors, sign-ups, activation, applies, saves, emails, daily chart, funnel, weekly cohorts, top companies/listings, email performance, date range, CSV export, "Not enough data yet" when empty.
+- Usage events: visit, sign-up/sign-in, apply click, save/unsave, tracker status, resume upload, profile built, email click. Anonymous visitors use a random id that resets daily; none when Do Not Track / GPC is on.
+- v17 styles folded into site.css (still 3 stylesheets). WCAG AA checked with axe in light and dark at 1440/1280/768/390.
+
 ## V16.3 Listings sync fixed (dead apply links), 2026-10-29
 - Root cause: in V16 P2 (cc6e338) the `@adapter('workday')` decorator slid onto a helper class, so the Workday "fetch" returned the registry row's field names as strings. Every full 2-hour sync crashed in `build_record` (`'str' object has no attribute 'get'`) about 5 min in; only the 30-min Greenhouse/Lever/Ashby pass succeeded. Result: ~8,800 open Workday listings (2/3 of the site) went unrefreshed since 2026-10-26, so postings closed at the company stayed up.
 - Fix: decorator back on `workday()`; the sync now drops malformed postings / treats a board with no usable postings as a failed board (keeps its last good listings) instead of crashing the whole run; per-posting build errors are counted, not fatal.

@@ -16,3 +16,4 @@ test.py
 legacy/data_v2.json
 .github/
 ops/perf/*.trace.json
+ops/email-previews/

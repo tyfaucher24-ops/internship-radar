@@ -6,7 +6,14 @@ from .publish import write_json,gate  # V16 P2: robots.txt + per-host rate limit
 D=os.path.join(os.path.dirname(__file__),'..','data')
 def main():
     p=os.path.join(D,'listings.json');L=json.load(open(p));prev=json.loads(json.dumps(L['listings']));now=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
-    todo=[r for r in L['listings'] if r.get('status')=='open' and r.get('source_type') not in ('ats','usajobs') and r.get('apply_url')]
+    # V16.3: also re-open ATS listings the sync could not vouch for lately (board read failed for 48h, or the sync's
+    # apply-link check marked the link bad) - before, a broken sync left those open with dead links indefinitely.
+    stale=(datetime.datetime.now(datetime.timezone.utc)-datetime.timedelta(hours=48)).isoformat()
+    def due(r):
+        if r.get('status')!='open' or not r.get('apply_url'): return False
+        if r.get('source_type') not in ('ats','usajobs'): return True
+        return bool(r.get('apply_bad')) or (r.get('last_verified') or '')<stale
+    todo=[r for r in L['listings'] if due(r)]
     res={'checked':len(todo),'live':0,'dead':0,'unknown':0}
     with cf.ThreadPoolExecutor(16) as ex:
         for r,ok in zip(todo,ex.map(lambda r:verify_link(r['apply_url']),todo)):

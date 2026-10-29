@@ -92,7 +92,6 @@ def bamboohr(c):
         out.append({'title':x['jobOpeningName'],'url':f"https://{c['slug']}.bamboohr.com/careers/{x['id']}",'locations':[loc]+(['Remote US'] if x.get('isRemote') else []),'desc':det.get('description'),'posted':_iso(det.get('datePosted')),
           'workplace':'Remote' if x.get('isRemote') else None,'dept':(x.get('departmentLabel')),'ats_id':str(x['id'])})
     return out
-@adapter('workday',api='https://{host}/wday/cxs/{tenant}/{site}/jobs (public career site search)',official=True)
 class TList(list):
     truncated=False
 def workday_alive(board_slug,url):
@@ -106,6 +105,9 @@ def workday_alive(board_slug,url):
         info=r.json().get('jobPostingInfo') or {}
         return bool(info) and info.get('canApply',True) is not False
     except Exception: return None
+# V16.3: this decorator had slid onto `class TList` (cc6e338), so ADAPTERS['workday'] built a list of the registry
+# row's keys instead of fetching - every full sync crashed and Workday listings went unrefreshed.
+@adapter('workday',api='https://{host}/wday/cxs/{tenant}/{site}/jobs (public career site search)',official=True)
 def workday(c):
     host,tenant,site=c['slug'].split('/')
     base=f'https://{host}/wday/cxs/{tenant}/{site}';out=TList();seen=set()

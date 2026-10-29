@@ -62,7 +62,16 @@ def run_registry(reg,workers,only=None,limit=None):
     if limit: uniq=uniq[:limit]
     def one(r):
         t0=time.time()
-        try: posts=ADAPTERS[r['ats']]['fetch'](r);return r,posts,None,time.time()-t0
+        try:
+            posts=ADAPTERS[r['ats']]['fetch'](r)
+            # V16.3: a board that answers with an unexpected shape (an error string, a dict, a list of strings) used to
+            # crash the whole sync in build_record ('str' object has no attribute 'get'). Keep only dict postings; if a
+            # board returns nothing usable, treat it as a failed board so its previous listings are kept, not dropped.
+            if isinstance(posts,dict): posts=posts.get('jobs') or posts.get('postings') or []
+            posts=list(posts or []);good=[p for p in posts if isinstance(p,dict)]
+            if posts and not good: return r,None,f'BadShape: {len(posts)} non-posting items',time.time()-t0
+            if len(good)<len(posts): print(f"  {r['ats']}:{r['slug']} dropped {len(posts)-len(good)} malformed postings",file=sys.stderr)
+            return r,good,None,time.time()-t0
         except Blocked as e: return r,None,'robots: '+str(e),time.time()-t0
         except Exception as e: return r,None,f'{type(e).__name__}: {str(e)[:200]}',time.time()-t0
     with cf.ThreadPoolExecutor(workers) as ex:
@@ -194,7 +203,8 @@ def main():
         if err: continue
         ok_boards.add((ats,slug.lower()))
         for p in posts:
-            rec,why=build_record(p,r,f"{r['name']} careers ({ats.title()})",'ats' if ats!='jsonld' else 'jsonld')
+            try: rec,why=build_record(p,r,f"{r['name']} careers ({ats.title()})",'ats' if ats!='jsonld' else 'jsonld')
+            except Exception as e: stats['ats_build_error']+=1;print(f'  build_record {ats}:{slug}: {type(e).__name__}: {e}',file=sys.stderr);continue
             stats['ats_'+why]+=1
             if why=='ambiguous': review.append({'company':r['name'],'title':p.get('title'),'url':p.get('url'),'reason':'ambiguous intern wording','source':ats})
             if rec: rec['board']=f'{ats}:{slug}';rec['status']='open';rec['last_verified']=NOWS;put(rec)

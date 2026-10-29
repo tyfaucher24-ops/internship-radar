@@ -5,7 +5,7 @@ Updated: 2026-10-29 3:05 PM EDT
 - Done: 472f108, 60113d4, e181a56 (sync fix, linkcheck, sync5.yml, deadlink sample). Before sample: ops/qa/v16.3/deadlinks-before.json (0.37% dead, 1/270 decided).
 - Run 40920333313: sync OK (Workday fetched) but QA collapse guard failed (1660 removed of ~13k = catch-up of 3 days of stale Workday). Last good data kept.
 - Fix 7d2513b: guard ignores removals of ATS listings unconfirmed 48h+ (25% hard cap kept). Tested locally (stale -> pass, fresh -> collapse).
-- Run 40930921959 (dispatched 2:27 PM EDT): IN PROGRESS. Next: verify success, Workday last_verified = today, `python3 ops/deadlink_sample.py after`, commit ops/qa/v16.3/deadlinks-after.json, confirm live.
+- Run 40930921959 (dispatched 2:27 PM EDT): SUCCESS (3:33 PM EDT). Done: verify success, Workday last_verified = today, `python3 ops/deadlink_sample.py after`, commit ops/qa/v16.3/deadlinks-after.json, confirm live.
 
 ## V17 (all items built, live build 90c55328b5)
 1. SQL 0005 + tests (bc2c646) - 35/35 on embedded PG17
@@ -15,4 +15,4 @@ Updated: 2026-10-29 3:05 PM EDT
 5. supabase/v17_paste.sql (3730291)
 6. v17.css folded into site.css (7f86c84); regressions all pass
 7. CHANGELOG V17 (dab2e17); live verified (#admin/stats Not found for guests, email box present, no JS errors)
-Remaining: only the V16.3 "after" sample. No emails sent.
+Remaining: nothing; Ty to-dos only. After sample: 2/300 dead (0.71%). No emails sent.

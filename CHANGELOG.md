@@ -18,6 +18,8 @@
 - Daily link check now also re-opens ATS listings the sync has not confirmed for 48h or whose apply link failed, and closes the dead ones.
 - New ops/workflows/sync5.yml (V16 data model, no commits to main): 300-board incremental slice every 5 min (GitHub minimum, best-effort), shared `data-sync` concurrency group, optional free `repository_dispatch` trigger. Ty copies it to .github/workflows/.
 - ops/deadlink_sample.py: fixed-seed 300-listing dead-link sample of the live site (results in ops/qa/v16.3/).
+- QA guard: removals of ATS listings nobody confirmed for 48h+ no longer count toward the 8% "collapse" limit (25% hard cap kept), so the first full sync after the outage could close ~1,680 stale postings. Full sync 2026-10-29 succeeded; all 8,995 open Workday listings verified that day.
+- Dead-link sample (same method): before 1 dead / 300 (0.37%), after 2 dead / 300 (0.71%), 20-30 unknown each. Both are within noise for a 300 sample.
 
 ## V16.2 flag on, 2026-10-27
 - Google provider enabled in Supabase; `google:true` in cloud-config.js, so "Continue with Google" now shows in the sign-in dialog.

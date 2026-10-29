@@ -1,0 +1,24 @@
+{
+ "label": "after",
+ "at": "2026-10-29T19:35:04+00:00",
+ "open_on_site": 13429,
+ "sampled": 300,
+ "live": 278,
+ "dead": 2,
+ "unknown": 20,
+ "dead_rate": 0.0071,
+ "dead_items": [
+  {
+   "id": "bea5d03d06",
+   "company": "AtkinsR\u00e9alis",
+   "url": "https://slihrms.wd3.myworkdayjobs.com/Careers/job/USCACosta-Mesa/Estimating-Intern---Summer-2027_R-160501-1/apply",
+   "source_type": "ats"
+  },
+  {
+   "id": "a9ee4e6dab",
+   "company": "Johns Hopkins Applied Physics Laboratory",
+   "url": "https://careers.jhuapl.edu/jobs/60390?icims=1",
+   "source_type": "github-verified"
+  }
+ ]
+}

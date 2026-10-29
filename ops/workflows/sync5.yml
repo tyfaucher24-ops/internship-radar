@@ -1,40 +1,69 @@
-# V15 addendum 2: 5-minute incremental listings sync.
-# Ty: copy this file to .github/workflows/sync5.yml (the build token cannot write .github/workflows).
-# The existing .github/workflows/sync.yml (2-hour full sync) stays as is; both share the "data-sync" concurrency group,
-# so a 5-minute run never overlaps the full sync or another 5-minute run.
+# V16.3 — fast incremental listings sync. Ty: copy to .github/workflows/sync5.yml (the build token cannot write workflows).
+# Replaces the V15 version of this file (that one committed data/ to main, which V16 stopped doing).
+# Same data model as sync.yml: data in <- newest actions/cache "data-*"; data out -> cache + Pages deploy.
+# Each run reads the next 300 boards in a fixed rotation (all ~2,500 boards in ~8-9 runs), closes postings the
+# board no longer lists, and redeploys. robots.txt + per-host rate limits as everywhere (pipeline/net.py).
+# Cadence limit: '*/5' is GitHub's minimum and schedules are best-effort (often 10-60+ min late under load);
+# runs share the data-sync concurrency group, so a 5-min run waits while the ~18-min full sync runs.
 name: Sync listings (5-minute incremental)
 on:
   schedule:
-    - cron: '*/5 * * * *'   # GitHub's minimum; runs may be delayed under load, which is fine
+    - cron: '*/5 * * * *'
   workflow_dispatch:
+  repository_dispatch:          # optional free external pinger (e.g. cron-job.org) can POST event_type "sync5"
+    types: [sync5]
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 concurrency:
   group: data-sync
-  cancel-in-progress: false   # wait for the running sync instead of overlapping it
+  cancel-in-progress: false
 jobs:
   sync5:
     runs-on: ubuntu-latest
-    timeout-minutes: 5        # a run must finish inside the 5-minute window
+    timeout-minutes: 9
+    environment: { name: github-pages }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install requests
-      - name: Restore conditional-request cache (ETag / Last-Modified)
-        uses: actions/cache@v4
+      - name: Restore last good data
+        uses: actions/cache/restore@v4
         with:
-          path: pipeline/cache/http
-          key: http-cond-${{ github.run_id }}
-          restore-keys: http-cond-
-      - name: Incremental sync (next slice of the board rotation; robots.txt, per-host rate limits, 429/5xx backoff)
-        env: { RADAR_COND_DIR: pipeline/cache/http }
-        run: timeout 240 python -m pipeline.sync --workers 24 --incremental 300
-      - name: Commit only real changes (no empty commits)
+          path: |
+            data
+            assets/logos
+          key: data-i-${{ github.run_id }}
+          restore-keys: data-
+      - name: Snapshot previous data
         run: |
-          git config user.name "radar-sync"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/
-          python ops/sync_gate.py || exit 0
-          git commit -m "data: 5-min sync $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 5; done; exit 1
+          cp data/listings.json /tmp/prev_listings.json || echo '{"listings":[]}' > /tmp/prev_listings.json
+          rm -rf /tmp/prev_data && cp -r data /tmp/prev_data
+      - name: Incremental sync (next 300 boards of the rotation)
+        timeout-minutes: 5
+        run: python -m pipeline.sync --workers 24 --incremental 300
+      - name: Accuracy checks (fails if >8% would disappear)
+        run: python -m pipeline.qa --prev /tmp/prev_listings.json
+      - name: Public status file
+        run: python ops/status.py
+      - name: Failed run -> keep last good data
+        if: failure() || cancelled()
+        run: rm -rf data && cp -r /tmp/prev_data data
+      - name: Save data for the next run
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            data
+            assets/logos
+          key: data-i-${{ github.run_id }}
+      - name: Build site artifact
+        if: success()
+        run: mkdir -p /tmp/site && rsync -a --exclude .git --exclude .github --exclude screenshots --exclude test-data --exclude 'pipeline/cache' ./ /tmp/site/
+      - uses: actions/upload-pages-artifact@v3
+        if: success()
+        with: { path: /tmp/site }
+      - uses: actions/deploy-pages@v4
+        if: success()

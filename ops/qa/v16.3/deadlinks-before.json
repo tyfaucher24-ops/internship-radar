@@ -1,0 +1,18 @@
+{
+ "label": "before",
+ "at": "2026-10-29T17:03:51+00:00",
+ "open_on_site": 12948,
+ "sampled": 300,
+ "live": 269,
+ "dead": 1,
+ "unknown": 30,
+ "dead_rate": 0.0037,
+ "dead_items": [
+  {
+   "id": "2bf11e525e",
+   "company": "Netsmart",
+   "url": "https://ntst.wd1.myworkdayjobs.com/Careers/job/Overland-Park-KS/Solution-Delivery-Consultant-Intern--Summer-2027-Internship-_R015664/apply",
+   "source_type": "ats"
+  }
+ ]
+}

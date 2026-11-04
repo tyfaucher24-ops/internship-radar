@@ -6,7 +6,7 @@
   const say=m=>window.toast?toast(m):console.info(m);
   function open(){const m=document.getElementById('modal'),b=document.getElementById('mbody');if(!m||!b)return;
     const u=Cloud.user(),p=Store.get('prefs',{})||{};
-    const html=Cloud.signedIn()?`<h2 id="acctH">Your account</h2><p class="muted">Signed in as <b>${esc(u&&u.email)}</b>. Your profile, saved internships, tracker, outreach, Autopilot and preferences sync across devices. Everything still works offline on this device.</p>
+    const html=Cloud.signedIn()?`<h2 id="acctH">Your account</h2><p class="muted">Signed in as <b>${esc(u&&u.email)}</b>. Your profile, saved internships, tracker, outreach, planner and preferences sync across devices. Everything still works offline on this device.</p>
       <label class="acct-chk"><input type="checkbox" id="acctResume" ${p.cloudResume?'checked':''}> Also sync my resume text (off by default)</label>
       <p class="crow"><button type="button" id="acctSync">Sync now</button><button type="button" id="acctExport" class="ghost">Export my data</button><button type="button" id="acctOut" class="ghost">Sign out</button></p>
       <p id="acctMsg" class="muted" role="status"></p>

@@ -59,7 +59,7 @@ function render(){if(!mount())return;const all=tasks().filter(t=>!off.has(t.ty))
  document.querySelectorAll('.apc-chip').forEach(b=>b.setAttribute('aria-pressed',!off.has(b.dataset.ty)));
  const st=m.get(key(sel))||[],isT=+sel===+today,open=st.filter(t=>!t.done).length;
  $c('apcSelT').innerHTML=`${isT?'Today · ':''}${esc(fdL(sel))} <span class="apc-k">· ${st.length?`${st.length} task${st.length===1?'':'s'}${open<st.length?`, ${st.length-open} done`:''}`:'no tasks'}</span>`;
- $c('apcSelL').innerHTML=st.length?st.map(card).join(''):`<div class="apc-empty"><p>${isT?'Nothing due today.':'Nothing on this day.'} Save internships or add them to Autopilot and their deadlines and reminders show up here.</p><button type="button" class="btn sm" data-go="db">Find internships</button></div>`;
+ $c('apcSelL').innerHTML=st.length?st.map(card).join(''):`<div class="apc-empty"><p>${isT?'Nothing due today.':'Nothing on this day.'} Save internships or add them to your planner and their deadlines and reminders show up here.</p><button type="button" class="btn sm" data-go="db">Find internships</button></div>`;
  $c('apcSelL').scrollTop=0;/* job-specific apply links load with the listing detail */
  $c('apcSelL').querySelectorAll('.apc-apply[href="#"]').forEach(a=>{const x=L(a.dataset.apclid);x&&typeof ensureDetail==='function'&&ensureDetail(x).then(()=>{if(x.apply_link)a.href=safeUrl(x.apply_link)}).catch(()=>{})});
  const up=all.filter(t=>t.at>=today&&t.at<addD(today,7)&&!t.done);

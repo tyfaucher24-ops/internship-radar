@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V19 + V19.1 Resume upload states, roomier Profile and intro, Planner rename, 2026-11-04
+(One combined entry: V19.1 was folded into the same build.)
+- Resume drop zone now has four states on Profile and in the intro: empty, reading, done (a tick with real counts of roles, schools and skills, plus the filename and size), and error ("That file didn't open. Try a PDF or DOCX under 10 MB." with "Try another file"). The progress ring follows the real parse stages: file loaded 8%, file opened 15%, each PDF page 15–60%, DOCX text 60%, sections found 64%, schools list 70%, each section 70–95%, filling your profile 96%, done 100%. One screen-reader announcement per state. Respects reduced motion. Works from the keyboard. Replace and Remove are real 44px buttons. Dragging a new file over a read resume shows "Drop to replace". The done state survives a reload. The raw parser error is never shown.
+- Intro and Profile share one source for this: the resume reader in resume-ui.js and the same drop-zone component. In the intro the done line reads "Resume read — we'll fill in the next steps".
+- Roomier Profile: wider canvas (up to 1800px), 52px inputs at 16px, larger column padding and headings, a 230px drop zone, and a bigger Save button.
+- Bigger intro card (900px) with larger fields, chips, buttons and experience cards. Mobile stays compact. On short screens the footer sticks to the bottom of the card, so the main button is always visible.
+- Autopilot is now called Planner everywhere you can see it: nav, page heading, page title, bell, buttons, messages, empty states, the intro, calendar export and privacy text. #planner works as a link; #autopilot still works.
+- Tests: tests/test_v19_resume_zone.py, tests/test_v19_intro.py, tests/test_v19_profile.py. Screenshots are in ops/screens/v19/.
+
 ## V18 Accuracy, trust, design tokens, SEO, 2026-11-04
 - Accuracy pass (pipeline/v18_accuracy.py, runs inside every sync): link-shortener leads are swapped for the direct employer link found in other public lists (the shortener itself is never fetched; robots.txt respected); up to 900 leads re-verified per run; second-pass category rules (Other share falls from ~15% to ~6% in an offline run); seasons only from explicit title words; listings for terms that have ended are closed; duplicates collapsed.
 - Trust: a listing not re-checked in 72 hours shows "Check date unknown" and is left out of Open by default. New "Include unchecked" box next to Sort shows them again (remembered on this device).

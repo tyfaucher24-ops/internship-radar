@@ -39,7 +39,7 @@ function grpBtn(x){const e=GRP.get(x.id);if(!e||e.n<2||e.ids[0]!==x.id)return'';
 const card=(x,extra='')=>cardHTML(x).replace('<div class="c-foot">',extra?`<div class="c-extra">${extra}</div><div class="c-foot">`:'<div class="c-foot">');
 /* ---------- navigation (hash pages, natural scroll) ---------- */
 const PAGES=['db','tracker','profile','feedback','about','contact','privacy','terms','stats'];
-function go(t,push=true){if(t==='admin/stats')t='stats';if(t==='find'||t==='home'||!PAGES.includes(t))t='db';document.querySelectorAll('.nav [data-t]').forEach(o=>{o.classList.toggle('on',o.dataset.t===t);o.toggleAttribute('aria-current',o.dataset.t===t);if(o.dataset.t===t)o.setAttribute('aria-current','page')});
+function go(t,push=true){if(t==='admin/stats')t='stats';if(t==='planner')t='autopilot';/* V19: #planner alias */if(t==='find'||t==='home'||!PAGES.includes(t))t='db';document.querySelectorAll('.nav [data-t]').forEach(o=>{o.classList.toggle('on',o.dataset.t===t);o.toggleAttribute('aria-current',o.dataset.t===t);if(o.dataset.t===t)o.setAttribute('aria-current','page')});
  document.querySelectorAll('main>section').forEach(s=>s.hidden=s.id!=='t-'+t);const u=new URL(location);u.hash=t==='db'?'':t==='stats'?'admin/stats':t;history[push?'pushState':'replaceState'](null,'',u);scrollTo(0,0);
  document.title=({db:'Find internships',tracker:'My Tracker',profile:'My Profile',feedback:'Honest feedback',about:'About',contact:'Contact',privacy:'Privacy Policy',terms:'Terms of Use',stats:'Founder stats'})[t]+' · Intern Index';
  if(t==='db')requestAnimationFrame(()=>vrender(true));if(t==='tracker'&&window.trackerRefresh)trackerRefresh();if($('fbNudge'))$('fbNudge').hidden=!MatchCore.hasProfile(profile);if(t==='profile'&&$('fbLink'))$('fbLink').hidden=!MatchCore.hasProfile(profile);if(t==='feedback')(window.renderFeedback?Promise.resolve():loadScript('feedback.js'+self.BV)).then(()=>renderFeedback());document.body.classList.toggle('on-profile',t==='profile');document.dispatchEvent(new CustomEvent('radar:page',{detail:t}));reveal()}
@@ -375,7 +375,7 @@ async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('p
  const n=Store.get('notify',[]);const nowOpen=n.map(id=>BYID.get(id)).filter(x=>x&&x.st!=='upcoming');if(nowOpen.length)$('notice').innerHTML=`<div class="ok" role="status">🔔 Now open: ${nowOpen.map(x=>esc(x.company)).join(', ')}. <button class="btn-ghost btn-sz sm" data-act="dismissNotify">Dismiss</button></div>`;
  /* V18 speed: yield between the post-load steps so no single main-thread task runs ~300 ms on a phone */
  const yld=()=>new Promise(r=>setTimeout(r,0));await yld();update();document.body.classList.remove('booting');await yld();document.dispatchEvent(new Event('radar:data'));await yld();
- profileInit();await yld();trackerInit();await yld();const h=location.hash.slice(1);if(h&&($('t-'+h)||h==='admin/stats'))go(h,false);else reveal();window._interactiveAt=performance.now();
+ profileInit();await yld();trackerInit();await yld();let h=location.hash.slice(1);if(h==='planner')h='autopilot';if(h&&($('t-'+h)||h==='admin/stats'))go(h,false);else reveal();window._interactiveAt=performance.now();
  (window.requestIdleCallback||setTimeout)(()=>refreshMatches())}
 /* ---------- V6 profile: matching-only, single column, autosaved draft; Save & Search grades every card ---------- */
 const MWready=fetch('match-weights.json'+self.BV).then(r=>r.json()).catch(()=>({fit:.45,odds:.4,prefs:.15}));let MW=null;MWready.then(w=>MW=w);

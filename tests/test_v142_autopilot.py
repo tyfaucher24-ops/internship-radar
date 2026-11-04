@@ -32,7 +32,7 @@ with sync_playwright() as pw:
       boot(p);theme(p,dark);p.evaluate("go('autopilot')");p.wait_for_timeout(500)
       # 1 empty state
       st=p.evaluate("({t:document.getElementById('t-autopilot')?.innerText||document.body.innerText,cal:!!document.querySelector('#apCal:not([hidden]) .apc-up'),btn:!!document.querySelector('.ap-empty-saved [data-go=db]'),n:APCal.tasks().length})")
-      ck('empty text '+tg,'Save internships to build your Autopilot plan' in st['t'],st['t'][:200]);ck('empty btn '+tg,st['btn']);ck('empty no cal/tasks '+tg,not st['cal'] and st['n']==0,st)
+      ck('empty text '+tg,'Save internships to build your plan' in st['t'],st['t'][:200]);ck('empty btn '+tg,st['btn']);ck('empty no cal/tasks '+tg,not st['cal'] and st['n']==0,st)
       if OUT: p.screenshot(path=f"{OUT}/v14.2-autopilot-empty-{tg}.png")
       axe(p,'empty '+tg)
       a,ac,b,bc=p.evaluate(PICK)

@@ -1,13 +1,13 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Cache-Control" content="no-cache, max-age=300"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net https://*.supabase.co; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://github.com"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<script src="boot.js?v=fc67954bf6"></script>
+<script src="boot.js?v=22281dcbd2"></script>
 
 
 <title>Intern Index · Every internship. Tracked. Matched. Free.</title>
 <meta name="description" content="Intern Index tracks every open US internship (plus the ones about to open), keeps your applications in one spreadsheet, and matches you to roles you can actually get. Free, with an optional account.">
 <meta property="og:title" content="Intern Index"><meta property="og:description" content="Every internship. Tracked. Matched. Free."><meta property="og:type" content="website"><meta property="og:url" content="https://tyfaucher24-ops.github.io/internship-radar/"><meta property="og:image" content="https://tyfaucher24-ops.github.io/internship-radar/assets/og-share.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Intern Index"><meta name="twitter:description" content="Every open US internship, tracked and matched to you. Free."><meta name="twitter:image" content="https://tyfaucher24-ops.github.io/internship-radar/assets/og-share.png"><meta name="twitter:image:alt" content="Intern Index: every open US internship, links checked. Search, match and track. Free for students."><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Intern Index: every open US internship, links checked. Search, match and track. Free for students."><meta property="og:site_name" content="Intern Index">
-<meta name="theme-color" content="#5b46c9"><link rel="icon" href="assets/icon.svg?v=fc67954bf6" type="image/svg+xml"><link rel="icon" href="favicon.ico?v=fc67954bf6" sizes="32x32"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=fc67954bf6"><link rel="canonical" href="https://tyfaucher24-ops.github.io/internship-radar/">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preload" href="assets/geist-latin.woff2?v=fc67954bf6" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="tokens.css?v=fc67954bf6"><link rel="stylesheet" href="style.css?v=fc67954bf6"><link rel="stylesheet" href="site.css?v=fc67954bf6"></head>
+<meta name="theme-color" content="#5b46c9"><link rel="icon" href="assets/icon.svg?v=22281dcbd2" type="image/svg+xml"><link rel="icon" href="favicon.ico?v=22281dcbd2" sizes="32x32"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=22281dcbd2"><link rel="canonical" href="https://tyfaucher24-ops.github.io/internship-radar/">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preload" href="assets/geist-latin.woff2?v=22281dcbd2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="tokens.css?v=22281dcbd2"><link rel="stylesheet" href="style.css?v=22281dcbd2"><link rel="stylesheet" href="site.css?v=22281dcbd2"></head>
 <body class="booting">
 <!-- start page (first visit only; returning visitors never see it) -->
 <div id="intro" class="v13" role="dialog" aria-modal="true" aria-labelledby="introH">
@@ -38,7 +38,7 @@
 <main id="main">
 <section id="t-db" class="page">
  <div class="pagehead find-head"><div class="container"><h1>Find your internship</h1><p class="lede qbar"><span class="hdrCount" id="hdrCount" aria-live="polite"><span class="qbadge q-live">&nbsp;</span><span class="q"><b class="mono">&nbsp;</b><small>open internships</small></span><span class="q"><b class="mono">&nbsp;</b><small>closing this week</small></span></span></p></div></div>
- <div class="container"><section id="ticker" class="ticker" aria-label="Internship Exchange: real changes from the latest sync" hidden>
+ <div class="container"><section id="ticker" class="ticker" aria-label="Internship Exchange: real changes from the latest sync">
   <button type="button" class="tk-lbl" id="tkMarket" title="Open Market"><b><span class="pulse up" aria-hidden="true"></span><span class="tk-full">Internship Exchange</span><span class="tk-short">Market</span></b><span id="tkAsOf"></span><span id="tkStale" class="stale-dot" role="img" aria-label="Live updates paused" title="Live updates paused" hidden></span></button>
   <div class="tk-win"><div class="tk-track" id="tkTrack"></div></div>
  </section></div>
@@ -47,9 +47,10 @@
    <div class="sbox"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search company, role or keyword" aria-label="Search internships" autocomplete="off"></div>
    <div class="pills" id="pills"></div>
   </div>
+  <div id="firstTip" class="firsttip" role="note"><span class="ft-i" aria-hidden="true">💡</span><p><b>New here?</b> Start by searching or filtering, save what you like, then add your profile for match %. <button type="button" class="link" id="ftTerms">What do the terms mean?</button></p><button type="button" class="ft-x" id="ftX" aria-label="Got it, dismiss tip">Got it</button></div>
   <div class="chipsrow"><div id="chips" class="chips"></div></div>
-  <section id="beg" class="beg" aria-label="New to internships"><span class="beg-t"><b>New to internships?</b> Many big firms only hire juniors. Start with roles that take your class year.</span><button type="button" id="begGo" class="btn sm">Show roles open to freshmen or sophomores</button><button type="button" id="begX" class="beg-x" aria-label="Hide this tip" title="Hide this tip">×</button></section>
-  <div class="rhead"><a id="fbNudge" class="fb-nudge" href="#feedback" data-go="feedback" hidden>Honest feedback on your profile →</a><div class="rtools"><button type="button" id="mapBtn" class="pill" aria-pressed="false" aria-controls="mapPanel">Show map</button><label class="sortl">Sort <select id="sort"><option value="new">Newest</option><option value="deadline">Closing soonest</option><option value="match">Match % (highest first)</option><option value="real">Realistic for you</option><option value="az">A–Z</option></select></label><label class="sortl">Show <select id="tagf"><option value="">All</option><option value="realistic">Realistic for you</option><option value="reach">Reach picks</option></select></label><label class="sortl" style="white-space:nowrap" title="Listings we have not been able to re-check in the last 3 days"><input type="checkbox" id="showUnchk"> Include unchecked</label></div></div>
+  <section id="beg" class="beg" aria-label="New to internships"><span class="beg-t"><b>New to internships?</b> Many big firms only hire juniors. Start with roles that take your class year.</span><button type="button" id="begGo" class="btn sm">Show <span id="begN" class="beg-n"></span> roles open to freshmen or sophomores</button><button type="button" id="begX" class="beg-x" aria-label="Hide this tip" title="Hide this tip">×</button></section>
+  <div class="rhead"><a id="fbNudge" class="fb-nudge" href="#feedback" data-go="feedback" hidden>Honest feedback on your profile →</a><div class="rtools"><span class="presets"><button type="button" class="pill" id="shareBtn" title="Copy a link to these exact filters">Copy link</button><div class="pillwrap"><button type="button" class="pill" id="presetBtn" aria-haspopup="dialog" aria-expanded="false">Saved filters</button></div></span><button type="button" id="mapBtn" class="pill" aria-pressed="false" aria-controls="mapPanel">Show map</button><label class="sortl">Sort <select id="sort"><option value="new">Newest</option><option value="deadline">Closing soonest</option><option value="match">Match % (highest first)</option><option value="real">Realistic for you</option><option value="az">A–Z</option></select></label><label class="sortl">Show <select id="tagf"><option value="">All</option><option value="realistic">Realistic for you</option><option value="reach">Reach picks</option></select></label><label class="sortl" style="white-space:nowrap" title="Listings we have not been able to re-check in the last 3 days"><input type="checkbox" id="showUnchk"> Include unchecked</label></div></div>
   <div id="mapPanel" class="mapbox" hidden><div id="map"></div><p class="muted small" id="mapNote"></p></div>
   <div id="notice"></div>
   <div id="vl" class="grid" role="list" aria-label="Internships"></div>
@@ -141,14 +142,14 @@
  <h2>No warranty</h2><p>The site is provided "as is", without warranties, and we're not liable for decisions made using it, to the extent the law allows. These terms may change; the date above shows the latest version.</p></div></section>
 </main>
 <footer class="site-footer"><div class="container fgrid">
- <div><p class="brand"><img src="assets/icon.svg?v=fc67954bf6" alt="" width="24" height="24"> Intern Index</p><p class="muted">Every internship. Tracked. Matched. Free.</p></div>
+ <div><p class="brand"><img src="assets/icon.svg?v=22281dcbd2" alt="" width="24" height="24"> Intern Index</p><p class="muted">Every internship. Tracked. Matched. Free.</p></div>
  <nav aria-label="Footer"><a href="#about" data-go="about">About</a><a href="#privacy" data-go="privacy">Privacy</a><a href="#terms" data-go="terms">Terms</a><a href="#contact" data-go="contact">Contact</a><a href="#" data-reportproblem>Report a problem</a><a href="https://github.com/tyfaucher24-ops/internship-radar/issues/new?title=Broken%20listing&amp;labels=broken-listing" target="_blank" rel="noopener" id="footReport">Report a broken listing</a></nav>
  <nav aria-label="More"><a href="#" id="addBtn">Add an internship</a><a href="#" id="seenBtn">I saw one elsewhere</a><a href="#" id="replay">Replay intro</a></nav>
 </div><div class="container fnote muted small">Free. No ads. Optional account. Apply links go straight to the employer's posting whenever we can find it.</div></footer>
 <div id="drawer" class="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="dTitle"><div class="dpanel"><button class="x" id="dx" aria-label="Close">×</button><div id="dbody"></div></div></div>
 <div id="modal" class="modal" hidden role="dialog" aria-modal="true"><div class="mbox"><button class="x" id="mx" aria-label="Close">×</button><div id="mbody"></div></div></div>
 <div id="tip" role="tooltip" hidden></div>
-<script src="store.js?v=fc67954bf6" defer></script><script src="listing.js?v=fc67954bf6" defer></script><script src="loader.js?v=fc67954bf6" defer></script>
+<script src="store.js?v=22281dcbd2" defer></script><script src="listing.js?v=22281dcbd2" defer></script><script src="loader.js?v=22281dcbd2" defer></script>
 
 
 </body></html>

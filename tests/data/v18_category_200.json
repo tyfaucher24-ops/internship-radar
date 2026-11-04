@@ -1,0 +1,1005 @@
+{
+"note": "200 open listings that were \"Other\" before V18, sampled at random (seed 7) from live data 2026-11-04; expected labels hand-checked one by one.",
+"rows": [
+{
+"id": "7551d29c52",
+"title": "CW Compliance Intern",
+"expected": "Legal"
+},
+{
+"id": "fb7acf9bbe",
+"title": "Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "9ac8b27955",
+"title": "Autonomous Driving Applications Research Intern",
+"expected": "Research"
+},
+{
+"id": "df2e87bad2",
+"title": "Spring 2027 FOX Sports - Big Ten Network - Internship Program",
+"expected": "Media & Communications"
+},
+{
+"id": "52e4b2dbdc",
+"title": "University, Summer 2027 - Corporate Development Intern",
+"expected": "Finance & Banking"
+},
+{
+"id": "eb401f7431",
+"title": "Path Student Assistant Specialist - FWS",
+"expected": "Government & Policy"
+},
+{
+"id": "405d455fb7",
+"title": "Design Verification Graduate Intern 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "c899a3a5eb",
+"title": "Co-Op, Protein Design",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "883e559e75",
+"title": "VSL Work-Study Student Assistant",
+"expected": "Government & Policy"
+},
+{
+"id": "02ae07c6fe",
+"title": "Design and Development, Co-Op Spring 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "3b53223d7b",
+"title": "Store Executive Intern (Store Leadership Intern) \u2013 Fresno, CA (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "c62461efdb",
+"title": "2027 Undergraduate Summer Internship - Innovation",
+"expected": "Business & Operations"
+},
+{
+"id": "306fa71d8f",
+"title": "Program Assistant, Hubert H. Humphrey Fellowship Program WCL (Student)",
+"expected": "Nonprofit & Education"
+},
+{
+"id": "2989f00ab7",
+"title": "Store Executive Intern (Store Leadership Intern) - Buffalo/Rochester/Syracuse, NY (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "b091b97f9f",
+"title": "Scientific Intern",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "e930164916",
+"title": "2027 Summer Intern - Revenue Management",
+"expected": "Business & Operations"
+},
+{
+"id": "4e3cabec40",
+"title": "Summer Research Co-Op",
+"expected": "Research"
+},
+{
+"id": "533c8c8a86",
+"title": "Maintenance/Reliability Internship",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "2ed6473140",
+"title": "Summer 2027 FOX Entertainment Internship Program - New York",
+"expected": "Media & Communications"
+},
+{
+"id": "adf71aee32",
+"title": "WDI Master Planning Intern, Glendale, Spring 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "97dcdc40a2",
+"title": "2027 Summer Construction Management Internship - Tampa, Florida",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "53c0a1b14a",
+"title": "Summer Intern - Claims",
+"expected": "Finance & Banking"
+},
+{
+"id": "580ab50e9a",
+"title": "Student Worker - Rural EMS (Rural EMS Coordination Program)",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "d891066afb",
+"title": "SkillBridge Intern - NASA Front Door Support",
+"expected": "Government & Policy"
+},
+{
+"id": "462ab7b55d",
+"title": "Microsystems Integration Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "5994cd474c",
+"title": "Planogram / Visual Space Planning \u2013 Undergraduate Internship \u2013 Summer 2027",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "8bb27e3126",
+"title": "Student Associate \u2013 Digital Collections Services",
+"expected": "Nonprofit & Education"
+},
+{
+"id": "e3eb7c2cf8",
+"title": "Student Associate Work-Study",
+"expected": "Government & Policy"
+},
+{
+"id": "4cf8d90949",
+"title": "Dealer & Field Training Intern - Summer 2027",
+"expected": "HR & People"
+},
+{
+"id": "4df7ee6564",
+"title": "NIKE, Inc. Apparel & Accessories Product Line Management Undergraduate Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "366da8e60b",
+"title": "Internship in Global Client Group - Insights (Undergraduate & Master's)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "e90564bf77",
+"title": "Spring 2027 FOX Entertainment Internship Program - TMZ",
+"expected": "Media & Communications"
+},
+{
+"id": "c80f89b7fb",
+"title": "Summer Research Intern",
+"expected": "Research"
+},
+{
+"id": "eca7c117c8",
+"title": "Summer Intern - Youngstown State University",
+"expected": "Nonprofit & Education"
+},
+{
+"id": "8d74d7177f",
+"title": "Safety Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "938129966e",
+"title": "Antennas, Computational Electromagnetics, and Propagation Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "540b581b0c",
+"title": "Digital Delivery/BIM Intern - Summer 2027",
+"expected": "Software & IT"
+},
+{
+"id": "79aa7b904a",
+"title": "InsideSchools FWS Student Assistant",
+"expected": "Government & Policy"
+},
+{
+"id": "5e0c14b4f9",
+"title": "Summer 2027 GNC / Autonomy Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "f4a1783685",
+"title": "WS - Public Safety Student Assistant- FWS",
+"expected": "Government & Policy"
+},
+{
+"id": "1858020cd9",
+"title": "Housing Assistant Intern",
+"expected": "Real Estate"
+},
+{
+"id": "780a30e4e9",
+"title": "International Trade Compliance Internship - Summer 2027",
+"expected": "Legal"
+},
+{
+"id": "fbf73b3e14",
+"title": "Global Commodity Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "a1a0216e21",
+"title": "R&D Summer Internship 2027 (Multiple)",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "eb4c2b69cf",
+"title": "Student Associate, College of Natural Sciences",
+"expected": "Business & Operations"
+},
+{
+"id": "38b1f9d172",
+"title": "Student Researcher Intern, Seed Model - Speech",
+"expected": "Research"
+},
+{
+"id": "aa75b0ed25",
+"title": "PhD Research Intern, Architecture \u2013 2027",
+"expected": "Research"
+},
+{
+"id": "4a9ef94437",
+"title": "Respiratory Care Intern",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "7e2ac4a1c2",
+"title": "Digital Tools - Student Assistant FWS",
+"expected": "Government & Policy"
+},
+{
+"id": "0c6ca709f9",
+"title": "Converse Strategic Planning Graduate Internship",
+"expected": "Consulting & Strategy"
+},
+{
+"id": "bda99eedcd",
+"title": "Student Worker - ASUN IDEA Commissioner",
+"expected": "Business & Operations"
+},
+{
+"id": "2b0e706467",
+"title": "Store Executive Intern (Store Leadership Intern) - Denver, CO (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "841252933b",
+"title": "Intern - Fusion Fuel Systems - Spring or Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "0a843d48bf",
+"title": "Store Executive Intern (Store Leadership Intern) - Virginia (Starting Summer 2027) \u200b",
+"expected": "Marketing & Sales"
+},
+{
+"id": "c3962ab96c",
+"title": "Student Assistant Specialist (BFA Photo Events/End of Year)",
+"expected": "Media & Communications"
+},
+{
+"id": "79a7ca3221",
+"title": "Fundamental Researcher Intern, Canvas",
+"expected": "Research"
+},
+{
+"id": "0951e18daf",
+"title": "Production Planning Intern (Part-Time)",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "7c2e6b29b9",
+"title": "Project Coordinator Intern (Summer 2027)",
+"expected": "Business & Operations"
+},
+{
+"id": "0c2c03c38a",
+"title": "Private Client Group Intern",
+"expected": "Marketing & Sales"
+},
+{
+"id": "cb032a7def",
+"title": "Intern - Design Architecture, HBM",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "8a29feec12",
+"title": "2027 Summer Intern, Disaster Management (Baton Rouge, LA; Tallahassee, FL; Remote)",
+"expected": "Business & Operations"
+},
+{
+"id": "fd1a3e90b8",
+"title": "Summer 2027 Knowledge Management Specialist Associate (Intern)",
+"expected": "Business & Operations"
+},
+{
+"id": "afa3f65563",
+"title": "Summer 2027 Corporate Development Intern - Graduate",
+"expected": "Finance & Banking"
+},
+{
+"id": "0cccb2aa4c",
+"title": "Summer 2027 Internships - GIS",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "46f4f0f60f",
+"title": "Store Executive Intern (Store Leadership Intern) - Hudson Valley & Lower New York (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "a9d732916c",
+"title": "WS - Spring Term - INTERNSHIP \u2013 Altman Eye Center \u2013 Optometric Tech \u2013 IWS",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "26ac707daa",
+"title": "2027 Summer Intern, Energy Researcher (Reston, VA; Arlington, VA; New York, NY)",
+"expected": "Research"
+},
+{
+"id": "cbdbf6fe3e",
+"title": "R&D Food Science Co-op - Fall Term",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "c3fa44d9c3",
+"title": "Store Executive Intern (Store Leadership Intern) - New York City, NY (Starting Summer 2027) \u200b",
+"expected": "Marketing & Sales"
+},
+{
+"id": "ccaff0216f",
+"title": "Retail Management Intern Traverse City-Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "26c9597d81",
+"title": "Design Verification Co-op, Neural Engine",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "29fcb1c03a",
+"title": "Sports Intern - Fall 2027",
+"expected": "Media & Communications"
+},
+{
+"id": "c412196413",
+"title": "Continuous Improvement Intern (Summer 2027)",
+"expected": "Business & Operations"
+},
+{
+"id": "8a084b7f6b",
+"title": "Crisis Management Meteorology Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "595f0b6d9c",
+"title": "Store Executive Intern (Store Leadership Intern) - Naples + Ft. Myers, FL (Starting Summer 2027) \u200b",
+"expected": "Marketing & Sales"
+},
+{
+"id": "abe081fac7",
+"title": "CHARLOTTE - Planning & Landscape Architecture, Internship",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "5c016b7cd8",
+"title": "Retail Management Intern Milwaukee- Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "1080bab2cd",
+"title": "Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "1a1d746da4",
+"title": "Store Executive Intern (Store Leadership Intern) \u2013 Greater Long Beach, CA (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "366a53a8c0",
+"title": "Arboretum Plant Collections Management Internship",
+"expected": "Business & Operations"
+},
+{
+"id": "90e77e032d",
+"title": "Utility Forester Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "b8f8b0e8a0",
+"title": "Transportation Planning Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "743db70270",
+"title": "Research and Development Year Round Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "307e393a1a",
+"title": "WS - Spring Term INTERNSHIP - Pike Co Tourism Welcome Center \u2013 Tourism Assistant - FWS",
+"expected": "Government & Policy"
+},
+{
+"id": "2e48f0e8fa",
+"title": "Sensory and Products Research Intern, Summer 2027",
+"expected": "Research"
+},
+{
+"id": "aa8c2c971b",
+"title": "Store Experience Intern- Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "554ce3dff9",
+"title": "Founders Associate (Intern)",
+"expected": "Business & Operations"
+},
+{
+"id": "4462ef59bf",
+"title": "Corporate Research Intern",
+"expected": "Research"
+},
+{
+"id": "b80379b538",
+"title": "Store Executive Intern (Store Leadership Intern) - Houston, TX (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "20ba5ff9e2",
+"title": "UT Farm Stand Zero Waste Student Assistant",
+"expected": "Business & Operations"
+},
+{
+"id": "bb87aabeda",
+"title": "Architecture Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "f8ea438533",
+"title": "2027 Summer Internship - Home Lending",
+"expected": "Finance & Banking"
+},
+{
+"id": "efccc8fcb6",
+"title": "Summer 2027 FOX Corporation Internship Program - Studio ID",
+"expected": "Media & Communications"
+},
+{
+"id": "b055283e8c",
+"title": "Supply & Inventory Planning Intern",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "b6896c6823",
+"title": "Apprentice Welder",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "02df6df4a1",
+"title": "S2W Program Spring 2027 - Paint Prep Apprentice",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "a48551dd87",
+"title": "2026-2027 Campus Internship - ADISE Digital Innovation \u2013 Cross-functional (Ph.D)",
+"expected": "Software & IT"
+},
+{
+"id": "721cfc6fcb",
+"title": "Resettlement Case Management Intern ( Spring2027)",
+"expected": "Business & Operations"
+},
+{
+"id": "563a9e5b9b",
+"title": "Student Associate",
+"expected": "Business & Operations"
+},
+{
+"id": "04ecf8cdf5",
+"title": "LIFT MYR Admissions Intern - Summer 2027",
+"expected": "Nonprofit & Education"
+},
+{
+"id": "2aeb41250d",
+"title": "Co-Op Aviation Planning (Spring/Summer 2027)",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "8e5bbd80ae",
+"title": "2027 Summer Internship \u2013 Homeowner Advocate - Regulatory Resolution",
+"expected": "Legal"
+},
+{
+"id": "f5ae228cab",
+"title": "Retail Management Intern Mt Pleasant- Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "a416a95768",
+"title": "Summer 2027 Internship Program \u2013 Client Associate Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "eb7d063b33",
+"title": "(21yrs+ to apply) Apprentice Meat Cutter - Kirkwood",
+"expected": "Business & Operations"
+},
+{
+"id": "c539cb9062",
+"title": "Custodial Services - Student Assistant",
+"expected": "Business & Operations"
+},
+{
+"id": "00ef427aae",
+"title": "HOUSTON - Construction Management, Internship",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "107979c39b",
+"title": "Benefit Coordinator Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "b37480c651",
+"title": "2027 MBA Intern - Corporate Development",
+"expected": "Finance & Banking"
+},
+{
+"id": "6e3931edb8",
+"title": "Store Executive Intern (Store Leadership Intern) - Long Island, NY (Starting Summer 2027) \u200b",
+"expected": "Marketing & Sales"
+},
+{
+"id": "52e55f581d",
+"title": "2027 Intern Facilities Management",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "bc01e8d702",
+"title": "Research and Development Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "86827e0752",
+"title": "News Intern",
+"expected": "Media & Communications"
+},
+{
+"id": "04eed27ab4",
+"title": "Computer Science Intern",
+"expected": "Software & IT"
+},
+{
+"id": "236e39a387",
+"title": "EMT Apprentice - January Class",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "26d85ac938",
+"title": "RPP Supply Planning Intern - Summer 2027",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "8cf9a7cb31",
+"title": "Lifestyle Show Unpaid Intern",
+"expected": "Media & Communications"
+},
+{
+"id": "314e8fef62",
+"title": "Store Executive Intern (Store Leadership Intern) - Philadelphia, PA (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "367e6d511f",
+"title": "FORT WORTH - Transportation, Internship",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "c0b2e547a2",
+"title": "2027 Staff Accountant Intern",
+"expected": "Accounting & Audit"
+},
+{
+"id": "19cdaf2613",
+"title": "EHS Intern - BOSS Snowplow",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "5998c2390e",
+"title": "Transportation Planning Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "5362155ac6",
+"title": "Summer 2027 Intern: Global Onboarding Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "631b0b2c36",
+"title": "R&D PhD Summer Intern \u2013 Multiscale Modeling of Materials",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "bf1673f0d8",
+"title": "Materials Management Intern - The Toro Company",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "346b0aad1b",
+"title": "Construction Services Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "061e0e1ab7",
+"title": "Occupational Safety Intern (Summer 2027)",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "6011f00878",
+"title": "Tech Support Student Assistant",
+"expected": "Software & IT"
+},
+{
+"id": "d302bada4d",
+"title": "Capital Management Intern \u2013 Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "16d750ccf4",
+"title": "Production Planner Intern",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "4d7921f010",
+"title": "PIP Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "7e95a06117",
+"title": "Store Executive Intern (Store Leadership Intern) - South Alabama & Florida Panhandle (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "3b45761f4c",
+"title": "Future Leaders Program - MBA Internship",
+"expected": "Business & Operations"
+},
+{
+"id": "6c213b062a",
+"title": "EHS Co-Op",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "94db341d4d",
+"title": "Operational Excellence Co-Op",
+"expected": "Business & Operations"
+},
+{
+"id": "62296e5d0c",
+"title": "Order Execution Intern",
+"expected": "Finance & Banking"
+},
+{
+"id": "b97e2a5f3a",
+"title": "Retail Management Internship (Stores) | Scottsdale, AZ - Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "572bc41c04",
+"title": "AV Support Student Worker 26-27 (Student Wage)",
+"expected": "Software & IT"
+},
+{
+"id": "f66f0d8d05",
+"title": "Operational Excellence Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "582fb635b7",
+"title": "Safety Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "70e7d97468",
+"title": "Intern - Aviation Planning (Summer 2027)",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "8290ccaa9c",
+"title": "Accounts Payable (AP) Customer Experience Transformation Intern",
+"expected": "Accounting & Audit"
+},
+{
+"id": "c06a48140a",
+"title": "Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "b7434e5c56",
+"title": "E4 General Student Assistant OCSE",
+"expected": "Business & Operations"
+},
+{
+"id": "ff0b456bc5",
+"title": "NVIDIA 2027 Internships: Digital Circuit Design",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "09f438b3ca",
+"title": "Research Intern",
+"expected": "Research"
+},
+{
+"id": "a4e14b01e9",
+"title": "Student Worker - Center for the Application of Substance Abuse Technologies",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "ab3f935af1",
+"title": "Accounts Receivable Intern - Spring Term 2027",
+"expected": "Accounting & Audit"
+},
+{
+"id": "7464967d7e",
+"title": "MBA Intern \u2013 Commercial Leadership Program (Summer 2027)",
+"expected": "Business & Operations"
+},
+{
+"id": "94d7b8b565",
+"title": "Store Executive Intern (Store Leadership Intern) - Cleveland, OH (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "18ebed8aa1",
+"title": "Tooling Apprentice",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "7252dd8e4c",
+"title": "Construction Management Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "1daf5c85a2",
+"title": "DoW SkillBridge Internship",
+"expected": "Government & Policy"
+},
+{
+"id": "6cadbdfbca",
+"title": "News Internship",
+"expected": "Media & Communications"
+},
+{
+"id": "847cfcb1bd",
+"title": "Battery Experimental Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "c5a1fe5583",
+"title": "2027 Summer Staff Accountant Intern",
+"expected": "Accounting & Audit"
+},
+{
+"id": "d9e5138c97",
+"title": "News Department Unpaid Intern",
+"expected": "Media & Communications"
+},
+{
+"id": "03053e5072",
+"title": "(USA) Corporate Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "43221f5fa4",
+"title": "Corporate Governance Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "219389ae2e",
+"title": "2027 Staff Accountant Intern",
+"expected": "Accounting & Audit"
+},
+{
+"id": "d9780e5808",
+"title": "Intramural Official - Student Assistant",
+"expected": "Business & Operations"
+},
+{
+"id": "bf980cbc3a",
+"title": "Meat Apprentice",
+"expected": "Business & Operations"
+},
+{
+"id": "0cc0eee09d",
+"title": "Payroll Intern",
+"expected": "Accounting & Audit"
+},
+{
+"id": "90517218b2",
+"title": "Innovation Intern",
+"expected": "Business & Operations"
+},
+{
+"id": "a569547078",
+"title": "Apprentice Machinist",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "c49e30ac0f",
+"title": "Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "7c836564b8",
+"title": "Energy Internship: Fall 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "bf4ae50749",
+"title": "Fuel & Electric Vehicle Internship",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "d87fd0104c",
+"title": "Digital Verification Intern - Spring 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "13598ae40f",
+"title": "Energy Internship: Spring 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "8204605a33",
+"title": "Craft Maintenance Internship",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "b0e8557c99",
+"title": "Student Worker - Maintenance Support, Parking and Transportation Services",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "4ea8fdca2e",
+"title": "Mannes Prep, Student Assistant",
+"expected": "Business & Operations"
+},
+{
+"id": "3268af8f8d",
+"title": "Energy Solutions Project Execution Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "a4f846a21f",
+"title": "Next-Generation HBM Architecture Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "136f1c5b52",
+"title": "Workforce and Rewards Summer Intern- New York- College Program 2027",
+"expected": "HR & People"
+},
+{
+"id": "5364e7e81d",
+"title": "Inventory Control Management Co-Op - Spring 2027",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "fe3b9f9791",
+"title": "Facilities Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "b5f142d566",
+"title": "Research Intern, Spatial Intelligence - Summer 2027",
+"expected": "Research"
+},
+{
+"id": "67144bf256",
+"title": "Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "1620bfbfcf",
+"title": "Inventory Planning & Replenishment Intern - Summer 2027",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "a2c96b0a4d",
+"title": "Retail Management Intern Flint- Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "4c6c9150b3",
+"title": "Summer Intern - Maintenance",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "eb9f99f00d",
+"title": "Summer 2027 Compliance Internship",
+"expected": "Legal"
+},
+{
+"id": "13d8ca04cf",
+"title": "Fleet Asset Intern",
+"expected": "Supply Chain & Logistics"
+},
+{
+"id": "6f22eb1d48",
+"title": "EHS Year Round Intern - Injection Molding",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "dde02a9939",
+"title": "Parrish Services - Plumbing Apprentice",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "720c316c5c",
+"title": "Maintenance Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "bdc63e3d10",
+"title": "Project Coordinator Intern (Summer 2027)",
+"expected": "Business & Operations"
+},
+{
+"id": "747584b4cf",
+"title": "KIP Spring 2027 - Research Intern - James G. Martin Center for Academic Renewal",
+"expected": "Research"
+},
+{
+"id": "9bb7c4980c",
+"title": "MBA Intern- Executive Projects",
+"expected": "Business & Operations"
+},
+{
+"id": "9706759a8b",
+"title": "Early Career Intern - Global Product Innovation & Enablement",
+"expected": "Business & Operations"
+},
+{
+"id": "cf1e37d04b",
+"title": "Store Executive Intern (Store Leadership Intern) - North & Central Alabama (Starting Summer 2027)",
+"expected": "Marketing & Sales"
+},
+{
+"id": "460e3f472f",
+"title": "Retail Management Intern Indianapolis- Summer 2027",
+"expected": "Marketing & Sales"
+},
+{
+"id": "83a4ce1fc3",
+"title": "Safety Intern - Summer 2027",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "eacf78e801",
+"title": "Respiratory Therapy Intern/Per Diem",
+"expected": "Healthcare & Life Sciences"
+},
+{
+"id": "7de56915c0",
+"title": "Claims Representative Internship - Summer 2027",
+"expected": "Finance & Banking"
+},
+{
+"id": "12c37d67a7",
+"title": "Energy Intern",
+"expected": "Engineering & Hardware"
+},
+{
+"id": "b960a16e6f",
+"title": "Summer 2027 Internship Program \u2013 Customer and Market Research Intern",
+"expected": "Marketing & Sales"
+},
+{
+"id": "d408fab39f",
+"title": "Intern - Commercial Loan Servicing (Summer 2027)",
+"expected": "Finance & Banking"
+}
+]
+}

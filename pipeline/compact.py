@@ -3,7 +3,7 @@ data/detail/{0..63}.json (drawer-only fields; descriptions stay in data/desc/), 
 from pipeline.publish import write_json  # V16 P2: atomic temp+validate+swap writes
 import os,json,glob
 D=os.path.join(os.path.dirname(__file__),'..','data')
-INDEX_KEYS=['id','company','title','category','role_type','remote','workplace','deadline','rolling','class_years','terms','season','year','past_term','posted','status','sponsorship','citizenship','paid','size','gpa_min','openings','metro_pop','hidden','has_desc','stale','loc_label','degree','close_reason','ak']
+INDEX_KEYS=['check_unknown','id','company','title','category','role_type','remote','workplace','deadline','rolling','class_years','terms','season','year','past_term','posted','status','sponsorship','citizenship','paid','size','gpa_min','openings','metro_pop','hidden','has_desc','stale','loc_label','degree','close_reason','ak']
 # V12: posting-only requirement signals for the grader (skills, majors, prior experience), read from the description text. Never guessed:
 # a skill/major is listed only when its exact wording appears in the posting.
 MAJ={'finance':r'finance','accounting':r'accounting','economics':r'economics','business':r'business( administration)?','computer science':r'computer science','engineering':r'engineering','data science':r'data science','statistics':r'statistics','mathematics':r'math(ematics)?','information systems':r'information (systems|technology)','marketing':r'marketing','communications':r'communications?|journalism','nursing':r'nursing','biology':r'biology|life sciences?','chemistry':r'chemistry','physics':r'physics','psychology':r'psychology','supply chain':r'supply chain','hospitality':r'hospitality','graphic design':r'graphic design|design'}
@@ -30,6 +30,11 @@ def main():
     for f in glob.glob(os.path.join(D,'desc','*.json')): DS.update(json.load(open(f)))
     # V13.1: one hygiene pass + ONE open count, whichever job (sync / qa / linkcheck) ran last
     from . import hygiene
+    # V18 trust rule 1.1: open but not checked within 72h -> 'Check date unknown', hidden from Open by default
+    import datetime as _dt;_cut=(_dt.datetime.now(_dt.timezone.utc)-_dt.timedelta(hours=72)).isoformat()
+    for r in L:
+        if r.get('status')=='open' and (not r.get('last_verified') or r['last_verified']<_cut): r['check_unknown']=True
+        else: r.pop('check_unknown',None)
     hs=hygiene.apply(L,DS);write_json(LP,LJ,separators=(',',':'))
     mp=os.path.join(D,'meta.json');m=json.load(open(mp)) if os.path.exists(mp) else {}
     m.update(hygiene.meta_counts(L));m['hygiene']=dict(hs);write_json(mp,m,indent=1)

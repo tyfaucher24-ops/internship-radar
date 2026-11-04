@@ -330,6 +330,14 @@ def main():
         r['hidden']=n>=3 or None;r['reports']=n or None
         state[r['id']]={'first_seen':r['first_seen'],'last_verified':r.get('last_verified'),'status':r.get('status'),'company':r['company'],'term':(r.get('terms') or [None])[0],'source':r['source'],'url':r.get('apply_url'),'closed_at':r.get('closed_at')}
         out.append(r)
+    # V18 Part 1: accuracy pass (lead links, descriptions, seasons, categories, dedupe, 72h trust flag)
+    from . import v18_accuracy as V18;_shc={}
+    def _shard_has(i):
+        sh=int(i[:2],16)%64
+        if sh not in _shc: _shc[sh]=jload(os.path.join(D,'desc',f'{sh}.json'),{})
+        return i in _shc[sh]
+    try: stats['v18']=V18.run(out,cache,fetch,allowed,DEAD,_shard_has,NOWS,NOW,log=lambda d:print('v18',json.dumps(d),file=sys.stderr))
+    except Exception: print('v18 pass failed (kept data as-is):',traceback.format_exc()[-800:],file=sys.stderr)
     # descriptions -> shards
     os.makedirs(os.path.join(D,'desc'),exist_ok=True);shards=collections.defaultdict(dict)
     oldsh={}
@@ -358,7 +366,7 @@ def main():
         if not l['ok'] and len(g['errors'])<25: g['errors'].append(f"{l['company']} ({l['slug']}): {l['error']}")
     keys=collections.Counter(N.nkey(r['company'])+'|'+N.nkey(r['title']) for r in op)
     health={'updated':NOWS,'listings_by_source_type':srcs,'adapters':logsd,'pct_verified_24h':round(100*len(ver24)/max(1,len(op)),1),'stale':sum(1 for r in op if r.get('stale') or not r.get('last_verified') or r['last_verified']<(NOW-datetime.timedelta(hours=24)).isoformat()),
-      'duplicate_rate_pct':round(100*sum(v-1 for v in keys.values() if v>1)/max(1,len(op)),1),'review_queue':len(review),'deadline_coverage_pct':round(100*dl/max(1,len(op)),1),'stats':stats,
+      'duplicate_rate_pct':round(100*sum(v-1 for v in keys.values() if v>1)/max(1,len(op)),1),'review_queue':len(review),'deadline_coverage_pct':round(100*dl/max(1,len(op)),1),'check_unknown':sum(1 for r in op if r.get('check_unknown')),'no_desc':sum(1 for r in op if not r.get('has_desc')),'category_other_pct':round(100*sum(1 for r in op if r.get('category','Other')=='Other')/max(1,len(op)),1),'no_season':sum(1 for r in op if not r.get('season')),'stats':stats,
       'by_category':collections.Counter(r.get('category','Other') for r in op),'by_state':collections.Counter(l['state'] for r in op for l in r.get('locations',[]) if l.get('state')),
       'by_size':collections.Counter(r.get('size') or 'not listed' for r in op),'remote':sum(1 for r in op if r.get('remote')),'closed_this_sync':stats['closed_this_sync'],
       'gap_report':{'categories_under_25':[c for c,_ in N.CATS if sum(1 for r in op if r.get('category')==c)<25],'companies_in_registry_without_listings':meta['companies_tracked']-meta['companies_with_listings']}}

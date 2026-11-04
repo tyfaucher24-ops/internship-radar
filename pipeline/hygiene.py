@@ -106,7 +106,7 @@ def text_location(desc):
 PUBLIC=re.compile(r'\b(City of|County of|Town of|Village of|Community College|College|University of|State University|University|School District|Public Schools)\b',re.I)
 # ---- the ONE open predicate (client markLive uses the same rule) ----
 def is_open(r,today):
-    return r.get('status')=='open' and not r.get('hidden') and not r.get('past_term') and not (r.get('deadline') and r['deadline']<str(today))
+    return r.get('status')=='open' and not r.get('hidden') and not r.get('check_unknown') and not r.get('past_term') and not (r.get('deadline') and r['deadline']<str(today))
 def apply(L,DS,today=None):
     today=today or datetime.date.today();st=collections.Counter()
     # company display names: one spelling per normalized key (JPMorganChase / JPMorgan Chase / JP Morgan Chase)

@@ -17,3 +17,11 @@
 - Live Lighthouse (build 90c55328b5, pre-V18 deploy): mobile perf 84 / a11y 100 (LCP 3.5 s, TBT 290 ms); desktop perf 99 / a11y 100. Mobile perf target (≥90, LCP <1.8 s) NOT met. LCP element = intro globe placeholder; render delay from ~35 deferred scripts (app.js ≈1.3 s main thread). A preload try made no local improvement and was reverted. Fix = bundle/lazy-load non-start scripts (not done).
 - Live axe (wcag2a/aa + 21a/aa): 0 violations in 16 views (light/dark × 1440/1280/768/390 × start/database).
 - Not started: Parts 2 (tokens.css, DESIGN.md), 3, 5 (JSON-LD, company/category pages, OG image), 6, 9 flow tests, 10.
+
+## 2026-11-04 ~11:20 AM EST
+- Playwright chromium installed on the box; axe-core + Lighthouse in /tmp/lh (test tooling only).
+- Sync 41862152913 and all Deploy runs since ~10:49 AM EST are stuck "queued" on GitHub Actions (no jobs assigned; githubstatus says operational). Not started yet, so no after-data and no deploy of today's commits yet.
+- Live Lighthouse re-run on build 90c55328b5: mobile 98 and 95 (LCP 1.5s / 1.4s), so the earlier 84 was a cold-cache outlier. Script bundling was not done (risk > gain at these numbers).
+- Part 2 tokens.css + docs/DESIGN.md; Part 3 Include-unchecked toggle; Part 5 SEO pages/JSON-LD/sitemap index/OG image (domain-safe via canonical); Part 6 copy; CHANGELOG.
+- Fixed a quote bug I introduced in cloud.js (caught by test_v141 page-error check).
+- Full test suite re-running against local server.

@@ -8,7 +8,15 @@ import os,sys,json,re,ssl,smtplib,subprocess,urllib.request,datetime as dt,html 
 from email.message import EmailMessage
 from zoneinfo import ZoneInfo
 ROOT=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SITE=os.environ.get('SITE_URL','https://tyfaucher24-ops.github.io/internship-radar/').rstrip('/')+'/'
+def _site():
+    """Email links follow whatever domain the site is on: SITE_URL, else the canonical URL in index.html."""
+    if os.environ.get('SITE_URL'): return os.environ['SITE_URL'].rstrip('/')+'/'
+    try:
+        m=re.search(r'<link rel="canonical" href="([^"]+)"',open(os.path.join(ROOT,'index.html')).read())
+        if m: return m.group(1) if m.group(1).endswith('/') else m.group(1)+'/'
+    except OSError: pass
+    return 'https://tyfaucher24-ops.github.io/internship-radar/'
+SITE=_site()
 DRY=os.environ.get('DRY_RUN')=='1';PREV=os.path.join(ROOT,'ops','email-previews')
 DAILY_LIMIT=int(os.environ.get('DAILY_LIMIT','450'))   # Gmail allows ~500/day; keep headroom
 REMIND_HOUR=9                                           # local time reminders go out (once a day max)

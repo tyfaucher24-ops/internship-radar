@@ -2,7 +2,8 @@
 User A can't read/write user B's data; anon sees nothing; nobody can make themselves admin; delete-account cascades.
 Needs PostgreSQL binaries (apt install postgresql). Usage: python3 tests/test_v16_rls.py"""
 import subprocess,tempfile,os,sys,glob,shutil,time
-BIN=sorted(glob.glob('/usr/lib/postgresql/*/bin'))[-1] if glob.glob('/usr/lib/postgresql/*/bin') else ''
+_c=[b for b in sorted(glob.glob('/usr/lib/postgresql/*/bin')) if os.path.exists(b+'/initdb')]
+BIN=os.environ.get('PG_BIN') or (_c[-1] if _c else '')  # PG_BIN=<dir with initdb+pg_ctl>, as in test_v17_sql
 if not BIN: print('SKIP: no PostgreSQL binaries');sys.exit(0)
 d=tempfile.mkdtemp();data=d+'/db';sock=d
 run_as=[] if os.geteuid()!=0 else ['sudo','-u','postgres']

@@ -9,3 +9,4 @@
 - 3:xx PM: #find desktop CLS 0.076 -> 0.001 (static pills, apTab/apBell, qbadge, select widths !important). Local LH mobile/desktop CLS 0/0.001. CHANGELOG V19.2+V19.3.
 - 2:29 PM: live e0da5e1cb3 verified. Live LH mobile root 71(TBT outlier)/99/98 CLS 0.003, desktop 100/100 CLS 0.003, #find mobile 90/91 CLS 0, desktop 100/100 CLS 0.007. JSON ops/qa/v19.2/. v19-wip deleted (fully merged).
 - 2:40 PM: live axe (e0da5e1cb3), 11 views x 4 widths per theme: light 44 views 0 violations, dark 44 views 0 violations. ops/qa/v19.2/axe-{light,dark}.json.
+- 5:xx PM: V19.4 heartbeat built (email-alerts.js, privacy sentence, test 12/12). Migration 0006 reviewed, not changed.

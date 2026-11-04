@@ -1,6 +1,13 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V19.4 Live heartbeat (no UI), 2026-11-04
+- The site now tells the server "someone is here, on this tab" so a separate private stats site can show a true "on the site right now" count. Nothing about it is visible on Intern Index: no counter, badge or layout change.
+- email-alerts.js: heartbeat(p_page) beats on load, on a tab change, when the tab becomes visible, and every 60 s while visible; at most one beat per 45 s per tab. It sends only the tab name (db, tracker, profile, autopilot, feedback, about, contact, privacy, terms) or null. Signed out with Do Not Track or Global Privacy Control on: no beat. A 404 (migration 0006 not installed) stops it after the first try, without switching off the usage events.
+- Privacy page: one sentence explaining the heartbeat.
+- Database: supabase/migrations/20261104000006_live_presence.sql (public.live, heartbeat(), admin_live()). Paste it in the Supabase SQL editor; until then the site makes one failed heartbeat call per visit and stops.
+- Tests: tests/test_v19_4_heartbeat.py.
+
 ## V19.2 + V19.3 No layout shift on load, roomier search boxes, 2026-11-04
 (One combined entry: V19.3 was folded into the same build.)
 - V19.2: the list page no longer jumps while it loads. The first-visit tip, Share/Save-view buttons, filter pills, Planner tab and bell, the ticker slot and the beginner count now sit in the page from the first paint. The sort and tag selects have fixed widths. The start page drops the scrollbar gutter from its first paint. The tip and the beginner guidance are still shown; nothing was hidden.

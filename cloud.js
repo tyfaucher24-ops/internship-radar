@@ -79,7 +79,7 @@ window.Cloud=(()=>{
     try{const r=await api.sync();if(r.applied)emit('remote',r)}catch(e){}},1200)});
   let lastPull=0;document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&api.signedIn()&&Date.now()-lastPull>60000){lastPull=Date.now();api.sync().then(r=>r.applied&&emit('remote',r)).catch(()=>{})}});
   async function onReturn(ret){
-    if(ret&&ret.error){const fire=()=>setTimeout(()=>emit('error',ret.error),0);document.readyState==='complete'?fire():addEventListener('load',fire,{once:true});return true}
+    if(ret&&ret.error){const fire=()=>setTimeout(()=>emit('error',ret.error),0);(self.__irLoader&&!self.__irLoaded)?addEventListener('ir:scripts',()=>setTimeout(fire,0),{once:true}):document.readyState==='complete'?fire():addEventListener('load',fire,{once:true});return true}
     if(ret&&ret.access_token){save({...ret,user:null});try{const u=await http('/auth/v1/user');save({...sess,user:{id:u.id,email:u.email,created_at:u.created_at}});
         const first=!meta().last;const r=await api.sync();try{sessionStorage.setItem('idr__cloud_justin','1')}catch{}emit('change');if(first&&r.applied)emit('remote',{...r,first:true})}catch(e){save(null);emit('error',e)}return true}
     return false}

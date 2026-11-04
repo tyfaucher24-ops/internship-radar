@@ -1,5 +1,5 @@
 # V18 report (Launch Perfect)
-Status: in progress. See ops/V18_PROGRESS.md for the running log.
+Status: V18 live (build 49e4a31a7f, data sync 2026-11-04 16:57Z published); after numbers measured below. See ops/V18_PROGRESS.md for the running log.
 
 ## 1. Data accuracy: baseline (Radar, measured on live data 2026-11-04)
 | Measure | Baseline |
@@ -22,6 +22,24 @@ Raw: ops/qa/v18-before-all.json, ops/qa/v18-before-visible.json. After numbers u
 ## 1b. Data after (2026-11-04, ~11:50 AM EST): no real after numbers yet
 - Sync 41862152913 sat in "queued" behind a GitHub Actions/Pages incident and ended **cancelled**; it never ran. A new sync (41867996183) is dispatched with the V18 code and is queued. The live data is still from the last good sync (41847190787, 9:24 AM EST).
 - So there are **no measured after numbers**. The only after view is an offline run of the V18 pass on that live data (not published): 82 leads hidden as copies of ATS rows, 606 shortener leads swapped for direct links, 351 seasons added, 1,269 categories fixed (Other 15.3% → 6.2%), 43 closed for past terms, 1,737 marked "Check date unknown" (left out of Open by default, so the Open count will drop by about that much). Fields that need network checks (last_verified, descriptions, deadlines) can only move in a real run.
+
+## 1c. Data after: REAL numbers (measured 2026-11-04 ~1:05 PM EST on the published data, updated 16:57Z, same script and definitions)
+Sync 41872603460 succeeded; the live site serves build 49e4a31a7f (V18 loader.js build, commit a73945f). Raw: ops/qa/v18-after-all.json, ops/qa/v18-after-visible.json.
+| Measure | Before | After |
+|---|---|---|
+| Open listings (incl. hidden rows, as in the baseline) | 13,746 | 13,685 |
+| Open shown in the app by default (not hidden, not check-date-unknown, not past term) | 13,463 shown before | 12,243 (matches meta.json "open") |
+| Category "Other" | 2,108 (15.3%) | 842 (6.2%) |
+| No season | 7,594 (55.2%) | 7,209 (52.7%) |
+| `has_desc` false | 3,024 | 2,503 (18.3%) |
+| No `last_verified` | 1,626 | 1,107 |
+| Duplicate rows (my key) | 236 | 234 |
+| `apply_kind` none | 1,598 | 996 |
+| With a deadline | 2,028 | 2,060 |
+| No locations | 443 | 441 (with remote counted) |
+| "Check date unknown" | n/a (field is new) | 1,114 of the shown open rows (1,167 in health.json at sync time); these are left out of Open by default |
+
+What did not improve much: no-season is still more than half of open listings (52.7%), and 2,503 rows still have no description. Duplicates barely moved by my key (236 to 234), even though the pass hid ATS-copy leads. No-description inside the default Open view is 1,196 (9.8%). The deadline count only rose by 32. The last deploy of the later speed commits (790f7ce and after) is not live yet; the live site is still on 49e4a31a7f.
 
 ## 2. Speed (live Lighthouse CLI, mobile = default simulated Moto G / slow 4G; every run is a fresh Chrome profile, empty cache)
 Before (build dfd25eaea4, pre-V18): cold mobile 76 and 84, LCP 3.4 to 3.5 s. Desktop 99 to 100.

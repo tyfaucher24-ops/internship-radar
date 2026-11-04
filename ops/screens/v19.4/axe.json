@@ -1,0 +1,378 @@
+{
+ "light-1440-start": [],
+ "light-1440-intro1": [],
+ "light-1440-intro2": [],
+ "light-1440-intro3": [],
+ "light-1440-intro4": [],
+ "light-1440-intro5": [],
+ "light-1440-find": [],
+ "light-1440-profile": [],
+ "light-1440-planner": [],
+ "light-1440-company": [],
+ "light-1440-category": [],
+ "light-1280-start": [],
+ "light-1280-intro1": [],
+ "light-1280-intro2": [],
+ "light-1280-intro3": [],
+ "light-1280-intro4": [],
+ "light-1280-intro5": [],
+ "light-1280-find": [],
+ "light-1280-profile": [],
+ "light-1280-planner": [],
+ "light-1280-company": [],
+ "light-1280-category": [],
+ "light-768-start": [],
+ "light-768-intro1": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-intro2": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-intro3": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-intro4": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-intro5": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-find": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-profile": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-planner": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-768-company": [],
+ "light-768-category": [],
+ "light-390-start": [],
+ "light-390-intro1": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-intro2": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-intro3": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-intro4": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-intro5": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-find": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-profile": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-planner": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "light-390-company": [],
+ "light-390-category": [],
+ "dark-1440-start": [],
+ "dark-1440-intro1": [],
+ "dark-1440-intro2": [],
+ "dark-1440-intro3": [],
+ "dark-1440-intro4": [],
+ "dark-1440-intro5": [],
+ "dark-1440-find": [],
+ "dark-1440-profile": [],
+ "dark-1440-planner": [],
+ "dark-1440-company": [],
+ "dark-1440-category": [],
+ "dark-1280-start": [],
+ "dark-1280-intro1": [],
+ "dark-1280-intro2": [],
+ "dark-1280-intro3": [],
+ "dark-1280-intro4": [],
+ "dark-1280-intro5": [],
+ "dark-1280-find": [],
+ "dark-1280-profile": [],
+ "dark-1280-planner": [],
+ "dark-1280-company": [],
+ "dark-1280-category": [],
+ "dark-768-start": [],
+ "dark-768-intro1": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-intro2": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-intro3": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-intro4": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-intro5": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-find": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-profile": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-planner": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-768-company": [],
+ "dark-768-category": [],
+ "dark-390-start": [],
+ "dark-390-intro1": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-intro2": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-intro3": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-intro4": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-intro5": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-find": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-profile": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-planner": [
+  [
+   "label-content-name-mismatch",
+   "serious",
+   1,
+   [
+    "#s2sBtn"
+   ]
+  ]
+ ],
+ "dark-390-company": [],
+ "dark-390-category": []
+}

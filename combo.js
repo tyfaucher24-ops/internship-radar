@@ -6,7 +6,7 @@
    Fuzzy: every typed word must start a word in the option ("comp sci" -> Computer Science), or match its initials ("cs"),
    or appear inside it (3+ letters). Lists over 60 rows are virtualized (only visible rows are in the DOM). */
 (function(G){
-const ROW=40,VIS=9;
+const ROW=48,VIS=7;/* V19.3: must match .cb-o height in site.css */
 const nrm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9+#& ]/g,' ').replace(/\s+/g,' ').trim();
 const escH=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let uid=0;
@@ -35,7 +35,7 @@ function makeList(box,st){const id='cb'+(++uid);
  const isSel=v=>st.multi?st.value.includes(v):st.value===v;
  function rowHTML(o,i){if(o.hdr)return`<div class="cb-h" role="presentation" style="top:${i*ROW}px">${escH(o.hdr)}</div>`;
   if(o.other)return`<div class="cb-o cb-other${i===act?' act':''}" role="option" data-i="${i}" id="${id}-o${i}" aria-selected="false" style="top:${i*ROW}px">${o.q?`Other: use “${escH(o.q)}”`:'Other: type your own above'}</div>`;
-  const s=isSel(o.v);return`<div class="cb-o${s?' sel':''}${i===act?' act':''}${st.counts&&!o.count&&!s?' dim':''}" role="option" id="${id}-o${i}" data-i="${i}" aria-selected="${s}" style="top:${i*ROW}px">${st.multi?`<span class="cb-ck" aria-hidden="true">${s?'✓':''}</span>`:''}<span class="cb-t">${escH(o.label)}</span>${o.hint?`<span class="cb-hint">${escH(o.hint)}</span>`:''}${st.counts?`<span class="cb-n">${(o.count||0).toLocaleString()}</span>`:''}${!st.multi&&s?'<span class="cb-ck1" aria-hidden="true">✓</span>':''}</div>`}
+  const s=isSel(o.v);return`<div class="cb-o${s?' sel':''}${i===act?' act':''}${st.counts&&!o.count&&!s?' dim':''}" role="option" id="${id}-o${i}" data-i="${i}" aria-selected="${s}" style="top:${i*ROW}px">${st.multi?`<span class="cb-ck" aria-hidden="true">${s?'✓':''}</span>`:''}<span class="cb-t" title="${escH(o.label)}">${escH(o.label)}</span>${o.hint?`<span class="cb-hint">${escH(o.hint)}</span>`:''}${st.counts?`<span class="cb-n">${(o.count||0).toLocaleString()}</span>`:''}${!st.multi&&s?'<span class="cb-ck1" aria-hidden="true">✓</span>':''}</div>`}
  let lastWin='';function paint(force){const n=view.length;pad.style.height=n*ROW+'px';const top=list.scrollTop,s=Math.max(0,Math.floor(top/ROW)-4),e=Math.min(n,s+VIS+12);const key=s+':'+e+':'+act;if(!force&&key===lastWin)return;lastWin=key;
   let h='';for(let i=s;i<e;i++)h+=rowHTML(view[i],i);rows.innerHTML=h;if(act>=0)inp.setAttribute('aria-activedescendant',id+'-o'+act);else inp.removeAttribute('aria-activedescendant')}
  list.addEventListener('scroll',()=>paint());
@@ -57,7 +57,7 @@ function field(host,o){const st={multi:!!o.multi,value:o.multi?[...(o.value||[])
   else val.innerHTML=st.value?`<span class="cb-one">${escH(lab(st.value))}</span>`:`<span class="cb-ph">${escH(o.placeholder||'Choose…')}</span>`}
  /* V11.2: inside a scrolling column the panel is fixed to the viewport, so the card never clips it; it flips up and shifts left to stay on screen */
  function place(){pop.style.maxHeight='';pop.style.left='';pop.style.top='';pop.style.bottom='';pop.style.width='';pop.style.position='';host.classList.remove('up');
-  if(host.closest('.pf-scroll,.mbox')){const f=fld.getBoundingClientRect(),w=Math.min(Math.max(f.width,280),innerWidth-16);pop.style.position='fixed';pop.style.width=w+'px';pop.style.left=Math.max(8,Math.min(f.left,innerWidth-8-w))+'px';const h=pop.getBoundingClientRect().height;
+  if(host.closest('.pf-scroll,.mbox')){const f=fld.getBoundingClientRect(),w=Math.min(Math.max(f.width,340),innerWidth-16);pop.style.position='fixed';pop.style.width=w+'px';pop.style.left=Math.max(8,Math.min(f.left,innerWidth-8-w))+'px';const h=pop.getBoundingClientRect().height;
    const below=innerHeight-8-(f.bottom+6),above=f.top-6-8;pop.style.maxHeight='';if(h>below&&above>below){const hh=Math.min(h,above);pop.style.maxHeight=hh+'px';pop.style.top=(f.top-6-hh)+'px'}else{pop.style.maxHeight=Math.min(h,below)+'px';pop.style.top=(f.bottom+6)+'px'}pop.style.overflowY='auto';return}
   const r=pop.getBoundingClientRect();if(r.right>innerWidth-8)pop.style.left=Math.min(0,innerWidth-8-r.right)+'px';const rb=pop.getBoundingClientRect();host.classList.toggle('up',rb.bottom>innerHeight-8&&fld.getBoundingClientRect().top>rb.height+20)}
  addEventListener('scroll',e=>{if(!pop.hidden&&pop.style.position==='fixed'&&!pop.contains(e.target))place()},true);addEventListener('resize',()=>{if(!pop.hidden)place()});

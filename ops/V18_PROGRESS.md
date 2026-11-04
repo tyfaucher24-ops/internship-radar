@@ -26,7 +26,7 @@
 - Fixed a quote bug I introduced in cloud.js (caught by test_v141 page-error check).
 - Full test suite re-running against local server.
 
-## 2026-11-04 ~1:15 PM EST (A/B follow-up)
+## 2026-11-04 ~12:05 PM EST (A/B follow-up)
 - Root cause of the cancelled syncs: sync.yml and pages.yml share concurrency group data-sync, so each push's pending Deploy replaced the pending Sync. Now: push first, dispatch the sync only once that deploy is running.
 - A1: new loader.js. The start page loads boot.js (sync) + store/listing/loader (defer); the 31 feature scripts load in their old order after the hero has loaded and painted. app.js 'load' listener made load-safe; cloud.js error toast waits for 'ir:scripts'. Post-load steps in boot() yield; days() memoised.
 - A2: test_v15_pipeline checks the V16.3 sync5 template + every ops/workflows template (31/31). test_v16_launch 404 was og-share.png requested from the live domain before V18 deployed; it now checks the same path on the server under test (126/126). test_v16_live_auth skips without EA/EB (it sends real emails); Google check follows config.

@@ -61,5 +61,8 @@ def main():
             if 'lat' in l:
                 k=(round(l['lat']*2)/2,round(l['lng']*2)/2);h=hubs.setdefault(k,{'n':0,'c':{}});h['n']+=1;cn=f"{l.get('city')}, {l.get('state')}";h['c'][cn]=h['c'].get(cn,0)+1
     write_json(os.path.join(D,'hubs.json'),[[a,b,h['n'],max(h['c'],key=h['c'].get)] for (a,b),h in sorted(hubs.items(),key=lambda t:-t[1]['n'])],separators=(',',':'))
+    try:
+        from . import seo_pages;print('seo pages',seo_pages.build(D,L,DS))
+    except Exception as e: print('seo pages skipped:',e)
     print('index',os.path.getsize(os.path.join(D,'index.json')))
 if __name__=='__main__': main()

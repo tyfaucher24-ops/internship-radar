@@ -1,2 +1,9 @@
 {"form": "mobile", "url": "https://tyfaucher24-ops.github.io/internship-radar/", "fetched": "2026-11-04T15:54:24.960Z", "scores": {"performance": 84, "accessibility": 100}, "LCP": "3.5\u00a0s", "TBT": "290\u00a0ms", "CLS": "0.003"}
 {"form": "desktop", "url": "https://tyfaucher24-ops.github.io/internship-radar/", "fetched": "2026-11-04T15:54:37.231Z", "scores": {"performance": 99, "accessibility": 100}, "LCP": "0.7\u00a0s", "TBT": "10\u00a0ms", "CLS": "0.07"}
+{"run": "live1", "form": "mobile", "fetchTime": "2026-11-04T15:59:36.062Z", "perf": 98, "a11y": 100, "lcp_ms": 1530, "tbt_ms": 175, "cls": 0.003, "build": "dfd25eaea4 (live)"}
+{"run": "live2", "form": "mobile", "fetchTime": "2026-11-04T15:59:47.874Z", "perf": 95, "a11y": 100, "lcp_ms": 1380, "tbt_ms": 263, "cls": 0.003, "build": "dfd25eaea4 (live)"}
+{"run": "m1", "form": "mobile", "fetchTime": "2026-11-04T16:31:05.559Z", "perf": 76, "a11y": 100, "lcp_ms": 3446, "tbt_ms": 482, "cls": 0, "build": "dfd25eaea4 (live)"}
+{"run": "m2", "form": "mobile", "fetchTime": "2026-11-04T16:31:19.233Z", "perf": 93, "a11y": 100, "lcp_ms": 1352, "tbt_ms": 308, "cls": 0.003, "build": "dfd25eaea4 (live)"}
+{"run": "m3", "form": "mobile", "fetchTime": "2026-11-04T16:31:31.494Z", "perf": 94, "a11y": 100, "lcp_ms": 1530, "tbt_ms": 292, "cls": 0.003, "build": "dfd25eaea4 (live)"}
+{"run": "d1", "form": "desktop", "fetchTime": "2026-11-04T16:31:43.663Z", "perf": 100, "a11y": 100, "lcp_ms": 754, "tbt_ms": 28, "cls": 0.01, "build": "dfd25eaea4 (live)"}
+{"run": "d2", "form": "desktop", "fetchTime": "2026-11-04T16:31:56.159Z", "perf": 99, "a11y": 100, "lcp_ms": 741, "tbt_ms": 12, "cls": 0.063, "build": "dfd25eaea4 (live)"}

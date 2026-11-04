@@ -17,5 +17,15 @@ with sync_playwright() as p:
                 r=pg.evaluate("axe.run(document,{runOnly:['wcag2a','wcag2aa','wcag21a','wcag21aa']}).then(r=>r.violations.map(v=>[v.id,v.impact,v.nodes.length,v.nodes[0].target.join(' ')]))")
                 res[f'{th}-{w}-{view}']=r;print(th,w,view,r,flush=True)
             c.close()
+    import glob,os
+    co=os.path.basename(sorted(glob.glob('data/seo/company/*.html'),key=os.path.getsize)[-1])
+    for th in ('light','dark'):
+        for w in (1440,1280,768,390):
+            c=b.new_context(viewport={'width':w,'height':900},bypass_csp=True,color_scheme=th);pg=c.new_page()
+            for v in ('index.html','category/software-it.html','company/'+co):
+                pg.goto(U.rstrip('/')+'/data/seo/'+v);pg.add_script_tag(content=AXE)
+                r=pg.evaluate("axe.run(document,{runOnly:['wcag2a','wcag2aa','wcag21a','wcag21aa']}).then(r=>r.violations.map(v=>[v.id,v.impact,v.nodes.length,v.nodes[0].target.join(' ')]))")
+                res[f'{th}-{w}-seo-{v.split("/")[0]}']=r;print(th,w,v,r,flush=True)
+            c.close()
     b.close()
-json.dump(res,open('/tmp/v18/axe-result.json','w'),indent=1)
+json.dump(res,open(sys.argv[2] if len(sys.argv)>2 else '/tmp/v18/axe-result.json','w'),indent=1)

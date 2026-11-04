@@ -56,10 +56,10 @@ window.Cloud=(()=>{
     if(Date.now()-lastLink<60000){const e=new Error('cooldown');e.code='cooldown';throw e}
     lastLink=Date.now();await http('/auth/v1/otp?redirect_to='+encodeURIComponent(redirect()),{method:'POST',auth:false,body:{email,create_user:true}})};
   api.google=()=>{if(!api.googleOn)return;location.href=C.url+'/auth/v1/authorize?provider=google&redirect_to='+encodeURIComponent(redirect())};
-  api.signOut=async()=>{try{await http('/auth/v1/logout',{method:'POST'})}catch{}save(null);try{Object.keys(localStorage).filter(k=>/^(idr_|ir_|liveStaleLog)/.test(k)).forEach(k=>localStorage.removeItem(k))}catch{}emit('change')};
+  api.signOut=async()=>{try{await http('/auth/v1/logout',{method:'POST'})}catch{}save(null);try{localStorage.removeItem(MK)}catch{}emit('change')};
   api.rpc=(fn,body)=>http('/rest/v1/rpc/'+encodeURIComponent(fn),{method:'POST',body:body||{}});
   api.isAdmin=async()=>{if(!api.signedIn())return false;try{return (await http('/rest/v1/rpc/is_admin',{method:'POST',body:{}}))===true}catch{return false}};
-  api.deleteAccount=async()=>{await http('/rest/v1/rpc/delete_my_account',{method:'POST',body:{}});save(null);try{localStorage.removeItem(MK)}catch{}emit('change')};
+  api.deleteAccount=async()=>{await http('/rest/v1/rpc/delete_my_account',{method:'POST',body:{}});save(null);try{localStorage.removeItem(MK);Object.keys(localStorage).filter(k=>/^(idr_|ir_|liveStaleLog)/.test(k)).forEach(k=>localStorage.removeItem(k))}catch{}emit('change')};
   api.exportCloud=async()=>{const rows=await pull();return {app:'internship-deadline-radar',kind:'cloud-account-export',exported:now(),user:sess.user,rows}};
   // ---- sync ----
   const meta=()=>{try{const m=JSON.parse(localStorage.getItem(MK)||'null');return m&&m.uid===sess.user.id?m:{uid:sess.user.id,rows:{}}}catch{return {uid:sess.user.id,rows:{}}}};

@@ -285,7 +285,7 @@ Baldwin Group,,workday,baldwin.wd1.myworkdayjobs.com/baldwin/Baldwin,,,,,github:
 Banco Bilbao Vizcaya Argentaria,,workday,bbva.wd3.myworkdayjobs.com/bbva/BBVA,,,,,github:SimplifyJobs/Summer2027-Internships,
 Bandwidth,,greenhouse,bandwidth,,,,,github:SimplifyJobs/Summer2027-Internships,
 Bank of America,,workday,ghr.wd1.myworkdayjobs.com/ghr/us-emplsv,,,,,github:SimplifyJobs/Summer2027-Internships,
-Bank of Montreal,,workday,bmo.wd3.myworkdayjobs.com/bmo/External,,,,,github:SimplifyJobs/Summer2027-Internships,
+BMO,bmo.com,workday,bmo.wd3.myworkdayjobs.com/bmo/External,,Finance,IL,,manual:V9,"V9: official Workday board; V20 2026-11-04: re-verified, board 200"
 Bank of Montreal,,workday,bmo.wd3.myworkdayjobs.com/bmo/Campus,,,,,github:SimplifyJobs/Summer2027-Internships,
 Bank of Montreal,,workday,bmo.wd3.myworkdayjobs.com/bmo/Privileged,,,,,github:SimplifyJobs/Summer2027-Internships,
 Banner Health,,workday,bannerhealth.wd108.myworkdayjobs.com/bannerhealth/Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -2145,7 +2145,7 @@ tastytrade,,greenhouse,tastytrade,,,,,github:SimplifyJobs/Summer2027-Internships
 Tatari,,greenhouse,tatari,,,,,github:SimplifyJobs/Summer2027-Internships,
 Taylor,,workday,taylor.wd1.myworkdayjobs.com/taylor/external,,,,,github:SimplifyJobs/Summer2027-Internships,
 TC Energy,,workday,tcenergy.wd3.myworkdayjobs.com/tcenergy/CAREER_SITE_TC,,,,,github:SimplifyJobs/Summer2027-Internships,
-TD Bank,,workday,td.wd3.myworkdayjobs.com/td/TD_Bank_Careers,,,,,github:SimplifyJobs/Summer2027-Internships,
+TD Securities,td.com,workday,td.wd3.myworkdayjobs.com/td/TD_Bank_Careers,,Finance,NY,,manual:V9,"V9: official Workday board (TD Bank); V20 2026-11-04: re-verified, board 200"
 TD Synnex,,workday,synnex.wd5.myworkdayjobs.com/synnex/tdsynnexcareers,,,,,github:SimplifyJobs/Summer2027-Internships,
 Kenvue,,workday,kenvue.wd5.myworkdayjobs.com/kenvue/kenvue,,,,,github:speedyapply/2027-SWE-College-Jobs,V9: name fixed (was a job title)
 Technergetics,,greenhouse,technergetics,,,,,github:SimplifyJobs/Summer2027-Internships,
@@ -2493,10 +2493,24 @@ Zus Health,,lever,zushealth,,,,,github:SimplifyJobs/Summer2027-Internships,
 Two Sigma,twosigma.com,avature,https://careers.twosigma.com/careers/InternshipsAndEarlyCareers,,Finance,NY,https://careers.twosigma.com/careers/InternshipsAndEarlyCareers,manual:V9,V9: official careers site (robots.txt allows /careers)
 Morgan Stanley,morganstanley.com,talnet,morganstanley.tal.net,,Finance,NY,https://morganstanley.tal.net/candidate/jobboard/vacancy/1/adv/,manual:V9,V9: official campus board; crawl-delay 10 honored; bare city names mapped only for known US offices
 Evercore,evercore.com,talnet,evercore.tal.net,,Finance,NY,https://evercore.tal.net/candidate/jobboard/vacancy/1/adv/,manual:V9,V9: official campus board; crawl-delay 10 honored
-Deutsche Bank,db.com,workday,db.wd3.myworkdayjobs.com/db/DBWebsite,,Finance,NY,,manual:V9,V9: official Workday board
+Deutsche Bank,db.com,workday,db.wd3.myworkdayjobs.com/db/DBWebsite,,Finance,NY,,manual:V9,"V9: official Workday board; V20 2026-11-04: re-verified, board 200"
 PayPal,paypal.com,workday,paypal.wd1.myworkdayjobs.com/paypal/jobs,,Technology,CA,,manual:V9,V9: official Workday board
-The Home Depot,homedepot.com,workday,homedepot.wd5.myworkdayjobs.com/homedepot/CareerDepot,,Retail,GA,,manual:V9,V9: official Workday board
-AT&T,att.com,workday,att.wd1.myworkdayjobs.com/att/ATTGeneral,,Telecommunications,TX,,manual:V9,V9: official Workday board
-RBC,rbc.com,workday,rbc.wd3.myworkdayjobs.com/rbc/RBCGLOBAL1,,Finance,,,manual:V9,V9: official Workday board
-BMO,bmo.com,workday,bmo.wd3.myworkdayjobs.com/bmo/External,,Finance,IL,,manual:V9,V9: official Workday board
-TD Securities,td.com,workday,td.wd3.myworkdayjobs.com/td/TD_Bank_Careers,,Finance,NY,,manual:V9,V9: official Workday board (TD Bank)
+The Home Depot,homedepot.com,workday,homedepot.wd5.myworkdayjobs.com/homedepot/CareerDepot,,Retail,GA,,manual:V9,"V9: official Workday board; V20 2026-11-04: re-verified, board 200"
+AT&T,att.com,workday,att.wd1.myworkdayjobs.com/att/ATTcollege,,Telecommunications,TX,,manual:V20,"V20 2026-11-04: slug changed from ATTGeneral (1,148 jobs, 0 interns) to ATTcollege (8 interns, Dallas TX)"
+RBC,rbc.com,workday,rbc.wd3.myworkdayjobs.com/rbc/RBCGLOBAL1,,Finance,,,manual:V9,"V9: official Workday board; V20 2026-11-04: re-verified, board 200"
+BMO,bmo.com,workday,bmo.wd3.myworkdayjobs.com/bmo/External,,Finance,IL,,manual:V9,"V9: official Workday board; V20 2026-11-04: re-verified, board 200"
+TD Securities,td.com,workday,td.wd3.myworkdayjobs.com/td/TD_Bank_Careers,,Finance,NY,,manual:V9,"V9: official Workday board (TD Bank); V20 2026-11-04: re-verified, board 200"
+Bain Capital,baincapital.com,workday,baincapital.wd1.myworkdayjobs.com/baincapital/External_Public,,Finance,MA,,manual:V20,"V20 2026-11-04: board 200, 17 jobs, 0 interns posted today"
+Bridgewater Associates,bridgewater.com,greenhouse,bridgewater89,,Finance,CT,,manual:V20,V20 2026-11-04: 22 jobs incl. 2027 Investment Associate Intern (New York City)
+Eli Lilly,lilly.com,workday,lilly.wd115.myworkdayjobs.com/lilly/LLY,,Pharma,IN,,manual:V20,"V20 2026-11-04: board 200, 379 jobs, interns outside the US today"
+Guggenheim Investments,guggenheiminvestments.com,workday,guggenheiminvestment.wd5.myworkdayjobs.com/guggenheiminvestment/External,,Finance,IL,,manual:V20,"V20 2026-11-04: board 200, 19 jobs, 0 interns posted today"
+Guggenheim Partners,guggenheimpartners.com,workday,guggenheim.wd1.myworkdayjobs.com/guggenheim/Guggenheim_Partners,,Finance,NY,,manual:V20,"V20 2026-11-04: board 200, 5 jobs, 0 interns posted today"
+Kaiser Permanente,kaiserpermanente.org,jsonld,sitemap:https://www.kaiserpermanentejobs.org/sitemap.xml,,Healthcare,CA,,manual:V20,"V20 2026-11-04: Radancy sitemap, intern detail pages (pharmacy interns, CA/WA) carry JobPosting"
+Moelis & Company,moelis.com,workday,moelis.wd1.myworkdayjobs.com/moelis/Experienced-Hires,,Finance,NY,,manual:V20,"V20 2026-11-04: board 200, 17 jobs, 0 interns (campus board is behind a challenge)"
+Perella Weinberg Partners,pwpartners.com,workday,wd1.myworkdaysite.com/pwp/pwp_experienced_opportunities,,Finance,NY,,manual:V20,"V20 2026-11-04: board 200, 3 jobs, 0 interns posted today"
+PJT Partners,pjtpartners.com,workday,pjtpartners.wd1.myworkdayjobs.com/pjtpartners/Careers,,Finance,NY,,manual:V20,"V20 2026-11-04: board 200, 41 jobs, 0 interns posted today"
+The Carlyle Group,carlyle.com,workday,carlyle.wd1.myworkdayjobs.com/carlyle/Carlyle,,Finance,DC,,manual:V20,"V20 2026-11-04: board 200, 55 jobs, 0 interns posted today"
+TPG,tpg.com,greenhouse,tpgcareers,,Finance,TX,,manual:V20,V20 2026-11-04: 19 jobs incl. Y Analytics research assistant internships (remote)
+Unilever,unilever.com,workday,unilever.wd3.myworkdayjobs.com/unilever/Unilever_Experienced_Professionals,,Consumer Goods,NJ,,manual:V20,"V20 2026-11-04: board 200, 122 jobs, interns outside the US today"
+UnitedHealth Group,unitedhealthgroup.com,jsonld,sitemap:https://careers.unitedhealthgroup.com/sitemap.xml,,Healthcare,MN,,manual:V20,"V20 2026-11-04: Radancy sitemap, job pages carry JobPosting JSON-LD; 27 intern/co-op URLs"
+Wells Fargo,wellsfargo.com,workday,wd1.myworkdaysite.com/wf/WellsFargoJobs,,Finance,CA,,manual:V20,V20 2026-11-04: board total 722; probe saw 2028 Investment Banking Summer Internship (Houston TX)

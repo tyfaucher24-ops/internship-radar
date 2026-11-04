@@ -155,12 +155,31 @@ def _jsonld_jobs(html):
                 for v in o.values():
                     if isinstance(v,(list,dict)): stack.extend(v if isinstance(v,list) else [v])
             elif isinstance(o,list): stack.extend(o)
+_SM_LOC=re.compile(r'<loc>\s*([^<]+?)\s*</loc>')
+_SM_INTERN=re.compile(r'(?i)(?<![a-z])(intern|interns|internship|internships|co-?op|summer)(?![a-z])')
+def sitemap_job_urls(url,budget=150,max_children=10):
+    """V20: job-looking URLs from a sitemap. Follows a <sitemapindex> one level. Intern/co-op/summer URLs fill the
+    budget first (UnitedHealth's sitemap has 24k URLs, so the first 150 never reached its interns); other job URLs
+    fill the rest, so a site that names URLs differently still returns what it did before. Never /search-jobs/
+    (disallowed by Radancy sites' robots.txt; fetch() also checks robots)."""
+    sm=fetch(url).text;locs=_SM_LOC.findall(sm)
+    if re.search(r'<sitemapindex',sm[:2000],re.I):
+        kids=locs[:max_children];locs=[]
+        for k in kids:
+            try: locs+=_SM_LOC.findall(fetch(k).text)
+            except Exception: continue
+    jobs=[];seen=set()
+    for u in locs:
+        if u in seen or re.search(r'(?i)/search-jobs(/|$|\?)',u) or not re.search(r'job|career|position|opening|intern',u,re.I): continue
+        seen.add(u);jobs.append(u)
+    first=[u for u in jobs if _SM_INTERN.search(u.split('?')[0])]
+    first.sort(key=lambda u:'/job/' not in u)  # detail pages before listing/category pages
+    return (first+[u for u in jobs if u not in set(first)])[:budget]
 @adapter('jsonld',api='schema.org JobPosting on career pages (robots.txt respected; urls from registry or sitemap)',official=True)
 def jsonld(c):
     """registry slug = a careers URL, or 'sitemap:<url>' (only job-looking URLs followed, max 150)"""
     urls=[c['slug']]
-    if c['slug'].startswith('sitemap:'):
-        sm=fetch(c['slug'][8:]).text;urls=[u for u in re.findall(r'<loc>\s*([^<]+?)\s*</loc>',sm) if re.search(r'job|career|position|opening|intern',u,re.I)][:150]
+    if c['slug'].startswith('sitemap:'): urls=sitemap_job_urls(c['slug'][8:])
     out=[]
     for u in urls:
         try: h=fetch(u).text

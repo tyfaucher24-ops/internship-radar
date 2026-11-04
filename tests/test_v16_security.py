@@ -74,7 +74,7 @@ with sync_playwright() as pw:
     bl=p.evaluate("()=>[...document.querySelectorAll('a[target=_blank]')].filter(a=>!/noopener|noreferrer/.test(a.rel)).map(a=>a.outerHTML.slice(0,120))")
     ck('every target=_blank link has rel=noopener',not bl,bl[:3])
     css=p.evaluate("()=>[...document.styleSheets].map(s=>s.href||'').filter(Boolean).map(h=>h.split('/').pop().split('?')[0])")
-    ck('stylesheets are theme.css, style.css, site.css only',[x for x in css if x.endswith('.css')]==['theme.css','style.css','site.css'],css)
+    ck('stylesheets are tokens.css, style.css, site.css only',[x for x in css if x.endswith('.css')]==['tokens.css','style.css','site.css'],css)
     for f in ('admin.html','404.html'):
         q=c2.new_page();q.goto(URL+f)
         ck(f+' noindex + CSP + referrer',q.evaluate("()=>!!document.querySelector('meta[name=robots][content*=noindex]')&&!!document.querySelector('meta[http-equiv=Content-Security-Policy]')&&!!document.querySelector('meta[name=referrer]')"))

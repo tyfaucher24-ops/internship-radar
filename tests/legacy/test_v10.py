@@ -6,7 +6,7 @@ R=[];ok=lambda n,c,d='':R.append((n,bool(c),d))
 css=''.join(open(f).read() for f in ['style.css','v4.css','v5.css'])
 hexes=re.findall(r'(?<![\w-])#[0-9a-fA-F]{3,6}\b(?![\w-])',re.sub(r'/\*.*?\*/','',css,flags=re.S))
 # V12.1 spec: raw hex is allowed (the dark palette is specified in hex); require that palette instead
-th=open('theme.css').read().lower()
+th=open('tokens.css').read().lower()
 ok('V12.1 dark palette tokens present (#1a1f26 #232a33 #2c3440 #f3f5f7 #aab3bf)',all(h in th for h in ('#1a1f26','#232a33','#2c3440','#f3f5f7','#aab3bf')))
 fs=set(re.findall(r'font-size:\s*([^;}!]+)',css));px=[f for f in fs if re.match(r'\d',f.strip())]
 # V12.1 spec: px sizes outside the old 4-step scale are allowed (28-32px quote numbers, 15-16px tracker text); none may be under 11px

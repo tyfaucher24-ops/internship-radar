@@ -1,7 +1,7 @@
 /* Shared listing helpers (site + admin). Schema documented in normalize.py. */
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const TODAY=new Date();TODAY.setHours(0,0,0,0);const days=d=>Math.round((new Date(d+'T00:00:00')-TODAY)/864e5);
+const TODAY=new Date();TODAY.setHours(0,0,0,0);const _DC=new Map();/* V18 speed: memoised (TODAY is fixed per page load; was ~15% of each filter pass) */const days=d=>{let v=_DC.get(d);if(v===undefined){v=Math.round((new Date(d+'T00:00:00')-TODAY)/864e5);if(_DC.size<5e4)_DC.set(d,v)}return v};
 const NL='<span class="nl">not listed</span>';
 const INDUSTRIES=['Accounting & Audit','Business & Operations','Consulting & Strategy','Data & AI','Design & Creative','Engineering & Hardware','Finance & Banking','Government & Policy','Healthcare & Life Sciences','HR & People','Legal','Marketing & Sales','Media & Communications','Nonprofit & Education','Product Management','Quant & Trading','Real Estate','Research','Software & IT','Supply Chain & Logistics','Other'];
 const ROLE_TYPES=['Internship','Co-op','Early-insight program','Research internship','Fellowship','Apprenticeship','Externship','Part-time internship','Student position'];

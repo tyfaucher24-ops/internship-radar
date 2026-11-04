@@ -373,8 +373,9 @@ async function boot(){loadF();$('q').value=F.q||'';renderPills();if(Store.get('p
  clearTimeout(slowT);$('slowNote')&&$('slowNote').remove();
  await metaP;markLive();hdrCount();setInterval(hdrCount,60000);try{begInit()}catch(e){}
  const n=Store.get('notify',[]);const nowOpen=n.map(id=>BYID.get(id)).filter(x=>x&&x.st!=='upcoming');if(nowOpen.length)$('notice').innerHTML=`<div class="ok" role="status">🔔 Now open: ${nowOpen.map(x=>esc(x.company)).join(', ')}. <button class="btn-ghost btn-sz sm" data-act="dismissNotify">Dismiss</button></div>`;
- await new Promise(r=>setTimeout(r,0));update();document.body.classList.remove('booting');document.dispatchEvent(new Event('radar:data'));
- profileInit();trackerInit();const h=location.hash.slice(1);if(h&&($('t-'+h)||h==='admin/stats'))go(h,false);else reveal();window._interactiveAt=performance.now();
+ /* V18 speed: yield between the post-load steps so no single main-thread task runs ~300 ms on a phone */
+ const yld=()=>new Promise(r=>setTimeout(r,0));await yld();update();document.body.classList.remove('booting');await yld();document.dispatchEvent(new Event('radar:data'));await yld();
+ profileInit();await yld();trackerInit();await yld();const h=location.hash.slice(1);if(h&&($('t-'+h)||h==='admin/stats'))go(h,false);else reveal();window._interactiveAt=performance.now();
  (window.requestIdleCallback||setTimeout)(()=>refreshMatches())}
 /* ---------- V6 profile: matching-only, single column, autosaved draft; Save & Search grades every card ---------- */
 const MWready=fetch('match-weights.json'+self.BV).then(r=>r.json()).catch(()=>({fit:.45,odds:.4,prefs:.15}));let MW=null;MWready.then(w=>MW=w);

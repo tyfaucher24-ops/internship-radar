@@ -11,7 +11,7 @@ body.classList.add('intro-on');try{localStorage.setItem('idr_intro_seen','1')}ca
 /* V14 #15: focus stays inside the intro until it ends */const INERT=[...body.children].filter(e=>e!==intro&&!e.contains(intro)&&e.tagName!=='SCRIPT');INERT.forEach(e=>e.inert=true);const unInert=()=>INERT.forEach(e=>e.inert=false);
 const $i=id=>document.getElementById(id);
 let ended=false,stopLoop=()=>{},dispose=()=>{},startTransition=null;
-function arrive(){unInert();body.classList.remove('intro-on');body.classList.add('arriving');setTimeout(()=>{body.classList.remove('arriving');body.classList.add('arrived')},900)}
+function arrive(){unInert();html.classList.add('intro-x');body.classList.remove('intro-on');body.classList.add('arriving');setTimeout(()=>{body.classList.remove('arriving');body.classList.add('arrived')},900)}
 function end(fast){if(ended)return;ended=true;
  intro.classList.add(fast||RM?'fade-fast':'fade');arrive();setTimeout(()=>{stopLoop();dispose();intro.remove();const q=$i('q');q&&q.focus({preventScroll:true})},fast||RM?320:650)}
 window.__introEnd=end;

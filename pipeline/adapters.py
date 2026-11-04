@@ -184,6 +184,7 @@ def jsonld(c):
     for u in urls:
         try: h=fetch(u).text
         except Blocked: continue
+        if len(urls)==1: challenge_guard(h,sum(1 for _ in _jsonld_jobs(h)),u)
         for o in _jsonld_jobs(h):
             locs=[]
             for jl in (o.get('jobLocation') if isinstance(o.get('jobLocation'),list) else [o.get('jobLocation') or {}]):
@@ -216,6 +217,15 @@ def _txt(h):
     import html as _h
     h=re.sub(r'(?is)<(script|style)[^>]*>.*?</\1>','',h)
     return _h.unescape(re.sub(r'[ \t]+',' ',re.sub(r'<[^>]+>','\n',h)))
+# V20 Part 4: an empty page is not an empty board. A bot-check page (ALTCHA "Quick Check Needed", Cloudflare,
+# a captcha widget) has no vacancy rows; reading it as "zero jobs" closed every listing on that board. Adapters raise
+# Challenge instead, so sync treats the board as failed: its listings stay as they were (last_verified ages, so they
+# show as check_unknown) and nothing is closed.
+class Challenge(Exception): pass
+_CHALLENGE=re.compile(r'(?i)altcha|quick check needed|cf-chl-|challenge-platform|just a moment\.\.\.|g-recaptcha|h-captcha|hcaptcha\.com|captcha-delivery|px-captcha')
+def challenge_guard(html,n_rows,where=''):
+    """Raise Challenge when a page produced no rows and looks like a bot check. Rows found = a real board, never raised."""
+    if not n_rows and _CHALLENGE.search(html or ''): raise Challenge(f'bot-check page, no rows read{(" at "+where) if where else ""}')
 _INTERNISH=re.compile(r'(?i)\b(intern|internship|summer analyst|summer associate|co-?op|summer program)')
 @adapter('avature',official=False)
 def avature(c):
@@ -227,6 +237,7 @@ def avature(c):
         for u,t in re.findall(r'href="(https://[^"]+/JobDetail/[^"]+)"[^>]*>\s*([^<]+?)\s*<',h):
             t=t.strip()
             if t and t!='View role' and u not in seen: seen[u]=t;new+=1
+        if off==0: challenge_guard(h,new,base)
         if not new or f'jobOffset={off+10}' not in h: break
         off+=10
     out=[]
@@ -254,6 +265,7 @@ def talnet(c):
         for row in re.findall(r'(?s)<tr class="opp_\d+[^"]*".*?</tr>',h):
             m=re.search(r'<a[^>]+href="([^"]+)"[^>]*>\s*(.*?)\s*</a>',row,re.S)
             if m: got.append((m.group(1),m.group(2),[re.sub(r'<[^>]+>|\s+',' ',td).strip() for td in re.findall(r'(?s)<td[^>]*>(.*?)</td>',row)[1:]]))
+        if start==0: challenge_guard(h,len(got),host)
         rows+=got
         if len(got)<50 or f'start={start+50}' not in h: break
         start+=50

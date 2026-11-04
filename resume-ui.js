@@ -8,7 +8,11 @@ const KIND=Object.fromEntries(TYPES);
 let ST=null,lastFocus=null;
 /* ---- worker result cache so onboarding's readFile → ingest(text) reuses the layout-aware parse ---- */
 const _readFile=window.readFile;
-window.readFile=async function(f){const r=await RI.analyze(f);window.__rvLast={text:r.text,res:r};return r.text};
+/* V19.1: the one progress source. Every real stage the worker finishes is broadcast as 'ir:resume'; the Profile and intro drop zones both listen. */
+const emit=d=>document.dispatchEvent(new CustomEvent('ir:resume',{detail:d}));
+window.readFile=async function(f){emit({st:'reading',p:2,step:'Starting',next:'File',file:f&&f.name?{name:f.name,size:f.size}:null});
+ try{const r=await RI.analyze(f,pr=>emit(Object.assign({st:'reading'},pr)));window.__rvLast={text:r.text,res:r,file:f&&f.name?{name:f.name,size:f.size}:null};return r.text}
+ catch(e){emit({st:'error'});throw e}};
 function authOf(v){if(!v)return'';if(/citizen|permanent/i.test(v))return'citizen';if(/sponsorship needed|no sponsorship/i.test(v))return'authorized';if(/need visa|F-1/i.test(v))return'sponsor';return'authorized'}
 const AUTHL={citizen:'Citizen / green card',authorized:'Other work permit (no sponsorship needed)',sponsor:'Need sponsorship'};
 function classOf(c){return c==='Graduated'?'Recent grad':/^(Freshman|Sophomore|Junior|Senior)$/.test(c)?c:''}
@@ -66,22 +70,26 @@ function apply(v){if(!v)return;pfRead();const diff=[];const conf=new Set(PF.conf
  PF.locations=PF.locations||[];v.locations.forEach(s=>{if(!PF.locations.includes(s))PF.locations.push(s)});PF.industries=PF.industries||[];v.industries.forEach(s=>{if(!PF.industries.includes(s))PF.industries.push(s)});PF.remoteOK=v.remoteOK||PF.remoteOK;PF.relocate=v.relocate||!!PF.relocate;PF.interests=PF.interests||[];v.interests.forEach(s=>{if(!PF.interests.includes(s))PF.interests.push(s)});if(v.season)PF.season=v.season;if(v.seasonYear)PF.seasonYear=v.seasonYear;
  PF.confirmed=[...conf];PF.resumeConfirmedAt=new Date().toISOString();
  Store.set('resumeParse',{at:PF.resumeConfirmedAt,values:v});try{pfRender();fixSchool()}catch(_){}Store.set('profileDraft',PF);try{pfProgress()}catch(_){}
- const st=$r('rstat');if(st){st.innerHTML=`<div class="pf-review" role="status"><b>Profile updated from your resume.</b> Added ${addX} experience${addX===1?'':'s'}. ${diff.length?`We kept your values where they differ from the resume:<ul class="rv-diff">${diff.map(k=>`<li><b>${E(scal[k])}</b>: you have “${E(PF[k])}”, the resume says “${E(v[k])}”. <button type="button" class="btn small" data-rvuse="${k}">Use resume value</button></li>`).join('')}</ul>`:''}</div>`;
+ const st=$r('rstat');if(st){st.innerHTML=diff.length?`<div class="pf-review">${`We kept your values where they differ from the resume:<ul class="rv-diff">${diff.map(k=>`<li><b>${E(scal[k])}</b>: you have “${E(PF[k])}”, the resume says “${E(v[k])}”. <button type="button" class="btn small" data-rvuse="${k}">Use resume value</button></li>`).join('')}</ul>`}</div>`:'';
   st.querySelectorAll('[data-rvuse]').forEach(b=>b.onclick=()=>{const k=b.dataset.rvuse;PF[k]=v[k];if(k==='school'&&typeof SCHOOLS!=='undefined'&&SCHOOLS&&!SCHOOLS.includes(v.school))PF.schoolSrc='ipeds';pfRender();Store.set('profileDraft',PF);b.closest('li').innerHTML=`<b>${E(scal[k])}</b> now uses the resume value.`})}
 }
 /* V14.5: no pop-up. The parse fills the profile directly. Preferences (locations, industries, roles, season, remote, relocation) are never taken or guessed from a resume. */
 function fill(res){ST=res;const m=document.createElement('div');m.innerHTML=build(res);const v=collect(m);
  Object.assign(v,{locations:[],industries:[],interests:[],season:'',seasonYear:'',remoteOK:false,relocate:false});apply(v);return v}
-async function fromSource(src,label){const st=$r('rstat');if(st)st.textContent='Reading '+label+' on your device…';
- try{const res=(typeof src==='string'&&window.__rvLast&&window.__rvLast.text===src)?window.__rvLast.res:await RI.analyze(src);window.__rvLast=null;if(st)st.textContent='';
-  Store.set('resumeText',String(res.text||'').slice(0,30000));return fill(res)}
- catch(err){if(st)st.textContent='Could not read that: '+err.message+' You can paste the text instead, or build your profile manually.';throw err}}
+async function fromSource(src,label){const st=$r('rstat');if(st)st.textContent='';
+ try{const cached=typeof src==='string'&&window.__rvLast&&window.__rvLast.text===src;const file=cached?window.__rvLast.file:(src&&src.name?{name:src.name,size:src.size}:null);
+  const res=cached?window.__rvLast.res:await window.readFile(src).then(()=>window.__rvLast.res);window.__rvLast=null;
+  Store.set('resumeText',String(res.text||'').slice(0,30000));const v=fill(res);const R=res.result||{};
+  const counts={roles:(R.experience||[]).length,schools:(R.education||[]).filter(e=>e.school||e.schoolRaw).length,skills:((R.skills||{}).hard||[]).length};
+  const rp=Store.get('resumeParse',{})||{};rp.file=file||{name:label==='your text'?'Pasted text':String(label||''),size:0};rp.counts=counts;Store.set('resumeParse',rp);
+  emit({st:'done',p:100,counts,file:rp.file});return v}
+ catch(err){emit({st:'error'});throw err}}
 window.RVU={fromSource,fill,apply,
  paste(){lastFocus=document.activeElement;const m=document.createElement('div');m.className='modal rv-ov';m.id='rvPaste';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','rvPH');
   m.innerHTML=`<div class="mbox"><h2 id="rvPH">Paste your resume text</h2><p class="rv-priv">🔒 Read on your device, never uploaded.</p><label for="rvPT">Resume text</label><textarea id="rvPT" rows="12"></textarea><div class="rv-foot"><button type="button" class="btn gh" id="rvPC">Cancel</button><button type="button" class="btn pri" id="rvPG">Read it</button></div></div>`;
   document.body.appendChild(m);$r('rvPT').focus();const done=()=>{m.remove();lastFocus&&lastFocus.focus()};$r('rvPC').onclick=done;m.addEventListener('keydown',e=>{if(e.key==='Escape')done()});
   $r('rvPG').onclick=()=>{const t=$r('rvPT').value;if(t.trim().length<40){$r('rvPT').setAttribute('aria-invalid','true');return}m.remove();fromSource(t,'your text').catch(()=>{})}},
- del(){['resumeText','resume','resumeParse'].forEach(k=>Store.remove(k));window.__rvLast=null;if(typeof PF!=='undefined'){delete PF.resumeConfirmedAt;Store.set('profileDraft',PF)}const st=$r('rstat');if(st)st.textContent='Your resume data was deleted from this device. Fields you confirmed stay on your profile until you edit or reset them.'}};
+ del(){['resumeText','resume','resumeParse'].forEach(k=>Store.remove(k));window.__rvLast=null;if(typeof PF!=='undefined'){delete PF.resumeConfirmedAt;Store.set('profileDraft',PF)}const st=$r('rstat');if(st)st.textContent='';emit({st:'empty',removed:true})}};
 /* hooks: profile upload, LinkedIn PDF/text and onboarding all fill the profile directly */
 readIn=async file=>{try{await fromSource(file,file.name);if(typeof saveAndSearch==='function'&&!$r('t-profile').hidden)await saveAndSearch()}catch(_){}};
 ingest=async text=>{try{await fromSource(String(text||''),'your text')}catch(_){}};
@@ -99,3 +107,42 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
  fbPanel=function(d){const base=_fb(d);const v=d&&d.v143;if(!v)return base;
   const head=v.eligible?`<p class="v143-tag"><span class="v143-chip v143-${v.tag}">${TAG[v.tag]||''}</span> Fit × chance: ${v.fitXchance} of 100</p>`:`<p class="v143-ne"><strong>Not eligible:</strong> ${E(v.reason)}</p>`;
   return base+`<section class="v143" aria-label="How you match this posting"><h4>How you match this posting</h4>${head}<div class="v143-cols">${v.pos.length?`<div><h5>Working for you</h5><ul>${v.pos.map(fx).join('')}</ul></div>`:''}${v.neg.length?`<div><h5>Working against you</h5><ul>${v.neg.map(fx).join('')}</ul></div>`:''}</div>${v.next.length?`<h5>Next steps</h5><ul>${v.next.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`:''}<p class="v143-conf">${E(v.confidence.note)}</p></section>`}})();
+/* V19 / V19.1: one resume drop zone with four states (empty, reading, done, error) for #pfDrop (Profile) and #obDrop (intro step 1).
+   Progress comes only from the 'ir:resume' events the readFile wrapper emits at real parse stages. The done state is rebuilt from the saved parse on load. */
+(function(){
+const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const C=2*Math.PI*28,Z=[];
+const kb=n=>!n?'':n<1e6?Math.max(1,Math.round(n/1024))+' KB':(n/1048576).toFixed(1)+' MB';
+const plural=(n,a)=>n+' '+a+(n===1?'':'s');
+const RING=(p,ok)=>`<svg class="rz-ring" viewBox="0 0 64 64" aria-hidden="true"><circle class="rz-trk" cx="32" cy="32" r="28"/><circle class="rz-bar" cx="32" cy="32" r="28" stroke-dasharray="${C.toFixed(2)}" stroke-dashoffset="${(C*(1-p/100)).toFixed(2)}"/>${ok?'<circle class="rz-dot" cx="32" cy="32" r="21"/><path class="rz-tick" d="M22.5 32.5l6.5 6.5 12.5-13" pathLength="1"/>':`<text class="rz-pct" x="32" y="32" dy=".36em" text-anchor="middle">${Math.round(p)}%</text>`}</svg>`;
+const ARROW='<svg class="rz-arrow" aria-hidden="true" viewBox="0 0 24 24" width="32" height="32"><path d="M12 16V4m0 0l-5 5m5-5l5 5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const WARN='<svg class="rz-warn" aria-hidden="true" viewBox="0 0 24 24" width="40" height="40"><path d="M12 3l10 18H2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v5m0 3v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+function saved(){const r=Store.get('resumeParse',null);if(!r||!r.at)return null;const v=r.values||{};
+ const counts=r.counts||{roles:(v.experience||[]).length,schools:v.school?1:0,skills:(v.skills||[]).length};return{counts,file:r.file||null}}
+function mount(label,kind){if(!label||label.__rz)return;const input=label.querySelector('input[type=file]');if(!input)return;
+ let wrap=label.parentElement;if(!wrap.classList.contains('rz')){wrap=document.createElement('div');wrap.className='rz rz-'+kind;label.before(wrap);wrap.appendChild(label)}
+ [...label.childNodes].forEach(n=>{if(n!==input)n.remove()});const body=document.createElement('span');body.className='rz-b';label.appendChild(body);
+ const acts=document.createElement('div');acts.className='rz-acts';wrap.appendChild(acts);
+ const live=document.createElement('p');live.className='sr-only';live.setAttribute('role','status');live.setAttribute('aria-live','polite');wrap.appendChild(live);
+ const z={label,input,wrap,body,acts,live,kind,st:'',p:0};label.__rz=z;Z.push(z);
+ const s=saved();if(s)set(z,'done',{counts:s.counts,file:s.file},true);else set(z,'empty',{},true)}
+function say(z,t){z.live.textContent='';setTimeout(()=>{z.live.textContent=t},60)}
+function set(z,st,d,quiet){d=d||{};const prev=z.st;if(st===prev&&st!=='reading'&&!d.force)return;
+ if(st==='reading'&&prev==='reading'){z.p=Math.max(z.p,d.p||0);const bar=z.body.querySelector('.rz-bar'),pt=z.body.querySelector('.rz-pct'),sl=z.body.querySelector('.rz-step');
+  if(bar)bar.setAttribute('stroke-dashoffset',(C*(1-z.p/100)).toFixed(2));if(pt)pt.textContent=Math.round(z.p)+'%';if(sl&&d.step)sl.textContent=d.step+(d.next?' · '+d.next+' next':'');return}
+ z.st=st;z.wrap.dataset.st=st;z.label.dataset.st=st;z.wrap.classList.toggle('rz-instant',!!quiet);z.acts.innerHTML='';
+ if(st==='empty'){z.p=0;z.body.innerHTML=z.kind==='ob'?`${ARROW}<b>Drop your resume here</b><span>PDF or DOCX · read in your browser, never uploaded</span><span class="btn gh" aria-hidden="true">Choose file</span>`:`${ARROW}<b>Drop your resume here</b><span>or click to choose a PDF or DOCX file</span>`;if(!quiet&&d.removed)say(z,'Resume removed')}
+ else if(st==='reading'){z.p=Math.max(2,d.p||0);z.body.innerHTML=`${RING(z.p)}<b>Reading your resume</b><span class="rz-step">${E(d.step||'Starting')}${d.next?' · '+E(d.next)+' next':''}</span>`;if(!quiet)say(z,'Reading your resume')}
+ else if(st==='done'){const c=d.counts||{},chips=[['roles','role'],['schools','school'],['skills','skill']].filter(([k])=>c[k]>0).map(([k,w])=>`<span class="rz-chip">${plural(c[k],w)}</span>`);
+  const any=chips.length>0,f=d.file;
+  z.body.innerHTML=`${RING(100,1)}<b>${any?(z.kind==='ob'?'Resume read — we’ll fill in the next steps':'Resume read'):'Resume saved, nothing filled in automatically'}</b>${any?`<span class="rz-chips">${chips.join('')}</span>`:''}${f&&f.name?`<span class="rz-file">${E(f.name)}${f.size?' · '+kb(f.size):''}</span>`:''}<span class="sr-only">Choose a file to replace it.</span>`;
+  z.acts.innerHTML='<button type="button" class="rz-link" aria-expanded="false">Replace or remove</button>';const b=z.acts.firstChild;
+  b.onclick=()=>{z.acts.innerHTML='<button type="button" class="rz-btn" data-a="rep">Replace file</button><button type="button" class="rz-btn rz-del" data-a="del">Remove resume</button>';
+   z.acts.querySelector('[data-a=rep]').onclick=()=>z.input.click();z.acts.querySelector('[data-a=del]').onclick=()=>{RVU.del();z.input.focus()};z.acts.querySelector('button').focus()};
+  if(!quiet){const k=[['roles','role'],['schools','school'],['skills','skill']].find(([k])=>c[k]>0);say(z,k?'Resume read, '+plural(c[k[0]],k[1])+' found':'Resume saved, nothing filled in automatically')}}
+ else if(st==='error'){z.body.innerHTML=`${WARN}<b>That file didn’t open. Try a PDF or DOCX under 10 MB.</b>`;z.acts.innerHTML='<button type="button" class="rz-btn">Try another file</button>';z.acts.firstChild.onclick=()=>z.input.click();if(!quiet)say(z,'Resume could not be read')}}
+document.addEventListener('ir:resume',e=>{const d=e.detail||{};Z.forEach(z=>{if(!z.label.isConnected)return;set(z,d.st,d)})});
+function scan(){mount(document.getElementById('pfDrop'),'pf');mount(document.getElementById('obDrop'),'ob')}
+window.RZ={scan};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',scan);else scan();
+})();

@@ -6,6 +6,6 @@ async function readFile(f){const r=await RI.analyze(f);return r.text}
 window.RI=(function(){let W=null,seq=0;const P=new Map();
  function w(){if(!W){W=new Worker('resume-worker.js'+(self.BV||''));W.onmessage=e=>{const d=e.data,p=P.get(d.id);if(!p)return;if(d.prog){p.pr&&p.pr(d.prog);return}P.delete(d.id);d.ok?p.ok(d):p.no(new Error(d.error))};W.onerror=e=>{P.forEach(p=>p.no(new Error('The resume reader failed to start.')));P.clear();W=null}}return W}
  async function analyze(src,onProg){const id=++seq;const msg={id,today:new Date().toISOString().slice(0,10),prog:!!onProg};
-  if(typeof src==='string'){msg.text=src}else{const n=src.name.toLowerCase();if(!/\.(pdf|docx|txt)$/.test(n))throw new Error('Use a PDF, DOCX or TXT file, or paste the text.');if(src.size>10e6)throw new Error('That file is over 10 MB.');msg.name=src.name;msg.buf=await src.arrayBuffer();onProg&&onProg({p:8,step:'File loaded',next:'Opening it'})}
+  if(typeof src==='string'){msg.text=src}else{const n=src.name.toLowerCase();if(!/\.(pdf|docx|txt)$/.test(n))throw new Error('Use a PDF, DOCX or TXT file, or paste the text.');if(src.size>10e6)throw new Error('That file is over 10 MB.');msg.name=src.name;msg.buf=await src.arrayBuffer();onProg&&onProg({p:8,step:'File loaded',next:'Opening'})}
   return new Promise((ok,no)=>{P.set(id,{ok,no,pr:onProg});w().postMessage(msg,msg.buf?[msg.buf]:[])})}
  return {analyze}})();

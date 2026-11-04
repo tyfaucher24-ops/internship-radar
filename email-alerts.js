@@ -17,6 +17,22 @@
     q.push(o);clearTimeout(tm);if(q.length>=25)flush();else tm=setTimeout(flush,3000)};
   addEventListener('pagehide',flush);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')flush()});
   window.Events17={ev,flush,quiet,_q:()=>q};
+  /* V19.4: live heartbeat (migration 0006). One upsert per person; tab name only, never ids, queries, emails or schools.
+     Same DNT/GPC rule as ev(): signed out + quiet = no beat. Own stop flag so a project without 0006 keeps its events. */
+  const HB_TABS=['db','tracker','profile','autopilot','feedback','about','contact','privacy','terms'];let hbLast=0,hbDead=false,hbT=null;
+  const curTab=()=>{const v=document.querySelector('main>section[id^="t-"]:not([hidden])');return v?v.id.slice(2):null};
+  const heartbeat=p_page=>{if(!on||hbDead)return;const s=Cloud.signedIn&&Cloud.signedIn();if(quiet&&!s)return;
+    const n=Date.now();if(n-hbLast<45e3)return;hbLast=n;
+    const pg=String(p_page==null?'':p_page).toLowerCase().replace(/[^a-z]/g,'');const body={p_page:HB_TABS.includes(pg)?pg:null};
+    (s?Cloud.rpc('heartbeat',body):anonRpc('heartbeat',body)).catch(e=>{if(/404/.test(e&&e.message)||(e&&e.status===404)){hbDead=true;clearInterval(hbT)}})};
+  if(on){
+    heartbeat(curTab());
+    document.addEventListener('radar:page',e=>heartbeat(e.detail));
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')heartbeat(curTab())});
+    hbT=setInterval(()=>{if(document.visibilityState==='visible')heartbeat(curTab())},60e3);
+  }
+  window.Events17.heartbeat=heartbeat;
+
   /* ---- deep links: ?ref=email#l=<listing id> ---- */
   const ref=new URLSearchParams(location.search).get('ref');const lm=/^#l=([\w.:-]{1,120})$/.exec(location.hash);
   if(ref==='email')ev('email_click',(new URLSearchParams(location.search).get('t')||'').replace(/[^a-z]/g,'')||null);

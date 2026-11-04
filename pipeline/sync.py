@@ -9,7 +9,7 @@ from .publish import write_json,gate
 from .discover import load as load_registry,GITHUB_LISTS,ats_from_url,MD_TABLES,md_table_rows
 ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__),'..'));D=os.path.join(ROOT,'data')
 NOW=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0);NOWS=NOW.isoformat().replace('+00:00','Z')
-RANK={'ats':1,'usajobs':1,'jsonld':2,'manual':3,'github-verified':4,'submission':5}
+RANK={'ats':1,'usajobs':1,'jsonld':2,'manual':3,'github-verified':4,'api':4,'submission':5}
 def jload(p,d):
     try: return json.load(open(p))
     except Exception: return d
@@ -211,7 +211,7 @@ def main():
             if why=='ambiguous': review.append({'company':r['name'],'title':p.get('title'),'url':p.get('url'),'reason':'ambiguous intern wording','source':ats})
             if rec: rec['board']=f'{ats}:{slug}';rec['status']='open';rec['last_verified']=NOWS;put(rec)
     # 2) GitHub-list leads -> verify against the company's own posting
-    leads=[] if a.skip_leads else github_leads(cache)
+    leads=[] if a.skip_leads else github_leads(cache);failed_feeds=set()
     todo=[]
     for l in leads:
         b=ats_from_url(l['url'])
@@ -234,6 +234,22 @@ def main():
             rec['status']='open'
             if ok: rec['last_verified']=at;rec['link_ok_at']=at
             else: rec['last_verified']=(prevL.get(rec['id']) or {}).get('last_verified')
+            put(rec)
+    # 2b) V20: multi-employer job APIs (Himalayas, The Muse). Being in the API's current results is the liveness check.
+    from .feeds import FEEDS
+    for fk,(fname,ffn) in ([] if a.skip_leads else FEEDS.items()):
+        t1=time.time()
+        try: posts=ffn();err=None
+        except Exception as e: posts=[];err=f'{type(e).__name__}: {str(e)[:200]}'
+        logs.append({'ats':'feed','slug':fk,'company':fname,'ok':err is None,'error':err,'postings':len(posts),'secs':round(time.time()-t1,1)})
+        if err: failed_feeds.add(('feed',fk));continue
+        ok_boards.add(('feed',fk))
+        for p in posts:
+            rec,why=build_record(p,{'name':p['company']},f"{N.norm_company(p['company'])} posting (found via {fname})",'api')
+            stats[f'feed_{fk}_'+why]+=1
+            if not rec or rec['past_term']: continue
+            rec['board']=f'feed:{fk}';rec['status']='open';rec['last_verified']=NOWS
+            if p.get('no_jsonld'): rec['no_jsonld']=True
             put(rec)
     # 3) hand-checked trackers (link-checked) + approved submissions
     for m in jload(os.path.join(D,'manual.json'),[])+jload(os.path.join(D,'submissions.json'),[]):
@@ -259,7 +275,7 @@ def main():
         if m.get('notes'): rec['notes']=m['notes']
         put(rec)
     # 4) freshness: keep last-good data for boards that failed this run; close what disappeared from a board that worked
-    failed={(k[0],k[1].lower()) for k,(r,p,e) in res.items() if e}
+    failed={(k[0],k[1].lower()) for k,(r,p,e) in res.items() if e}|failed_feeds
     # V16: identity follows the posting URL. The key/id is built from parsed city+term, which changes when the
     # parser or the QA location cleanup changes; without this, every full sync closed ~1,000 still-live postings
     # and re-added them under new ids (the sync's 8% removal gate then failed ~35% of runs).
@@ -295,7 +311,9 @@ def main():
         lead_list=(re.search(r'found via ([^)]+)\)',p.get('source') or '') or [None,None])[1]
         lead_unread=p.get('source_type')=='github-verified' and lead_list is not None and lead_list not in LOADED
         if lead_unread and p.get('status')=='open': recs[p['key']]=p;stats['kept_list_unreadable']+=1;continue
-        out_of_scope=(p.get('source_type') in ('ats','jsonld') and b not in ran) or (p.get('source_type')=='github-verified' and a.skip_leads)
+        if p.get('source_type')=='api' and b in failed and p.get('status')=='open':
+            p['stale']=True;recs[p['key']]=p;stats['kept_last_good']+=1;continue
+        out_of_scope=(p.get('source_type') in ('ats','jsonld') and b not in ran) or (p.get('source_type')=='api' and a.skip_leads) or (p.get('source_type')=='github-verified' and a.skip_leads)
         if (a.only or a.limit or a.skip_leads or a.incremental) and out_of_scope:
             recs[p['key']]=p;stats['kept_out_of_scope']+=1;continue
         if p.get('status')=='open' and b in trunc and _wd_alive.get(pid) is not False:

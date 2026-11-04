@@ -11,7 +11,7 @@ BASE=_base()
 def slug(s): return re.sub(r'[^a-z0-9]+','-',(s or '').lower()).strip('-')[:60] or 'x'
 def is_open(r): return r.get('status')=='open' and not r.get('hidden') and not r.get('check_unknown') and not r.get('past_term') and not r.get('dup_of')
 def jobposting(r,desc):
-    if not desc: return None
+    if not desc or r.get('no_jsonld'): return None  # V20: Himalayas terms forbid passing their jobs to Google Jobs
     j={'@context':'https://schema.org','@type':'JobPosting','title':r['title'],'description':html.escape(desc[:1200]),
        'datePosted':(r.get('posted') or r.get('first_seen') or '')[:10],'employmentType':'INTERN',
        'hiringOrganization':{'@type':'Organization','name':r['company']}}
@@ -25,6 +25,7 @@ def jobposting(r,desc):
     if not j['datePosted']: return None
     return j
 CSS='body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0;background:#f6f7fb;color:#14172b}main{max-width:820px;margin:0 auto;padding:24px 16px}a{color:#4b3cc9}h1{font-size:28px;margin:8px 0}li{background:#fff;border:1px solid #e3e6ef;border-radius:10px;padding:12px 14px;margin:8px 0;list-style:none}ul{padding:0}.m{color:#4b5168;font-size:13px}@media(prefers-color-scheme:dark){body{background:#1a1f26;color:#f3f5f7}li{background:#232a33;border-color:#2c3440}.m{color:#aab3bf}a{color:#cfc7ff}}'
+CREDIT='<p class="m">Internships also found via <a href="https://himalayas.app" rel="noopener">Himalayas</a>.</p>'
 def page(title,h1,intro,rows,DS,canon,ld_on=True):
     items=[];ld=[]
     for r in rows:
@@ -37,7 +38,7 @@ def page(title,h1,intro,rows,DS,canon,ld_on=True):
         if j: ld.append(j)
     lds=''.join('<script type="application/ld+json">'+json.dumps(j,ensure_ascii=False).replace('</','<\\/')+'</script>' for j in ld)
     t=html.escape(title)
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{t}</title><meta name="description" content="{html.escape(intro)}"><link rel="canonical" href="{BASE}{canon}"><meta property="og:title" content="{t}"><meta property="og:description" content="{html.escape(intro)}"><meta property="og:image" content="{BASE}assets/og-share.png"><meta name="twitter:card" content="summary_large_image"><style>{CSS}</style>{lds}</head><body><main><p><a href="../../../">← Intern Index</a></p><h1>{html.escape(h1)}</h1><p class="m">{html.escape(intro)}</p><ul>{"".join(items)}</ul><p class="m">Every link was checked by Intern Index. Search, filter and track all of these on <a href="../../../#db">Intern Index</a>.</p></main></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{t}</title><meta name="description" content="{html.escape(intro)}"><link rel="canonical" href="{BASE}{canon}"><meta property="og:title" content="{t}"><meta property="og:description" content="{html.escape(intro)}"><meta property="og:image" content="{BASE}assets/og-share.png"><meta name="twitter:card" content="summary_large_image"><style>{CSS}</style>{lds}</head><body><main><p><a href="../../../">← Intern Index</a></p><h1>{html.escape(h1)}</h1><p class="m">{html.escape(intro)}</p><ul>{"".join(items)}</ul>{CREDIT if any(r.get('no_jsonld') for r in rows) else ''}<p class="m">Every link was checked by Intern Index. Search, filter and track all of these on <a href="../../../#db">Intern Index</a>.</p></main></body></html>'''
 def build(D,L,DS):
     out=os.path.join(D,'seo');os.makedirs(os.path.join(out,'company'),exist_ok=True);os.makedirs(os.path.join(out,'category'),exist_ok=True)
     for f in glob.glob(os.path.join(out,'*','*.html')): os.remove(f)

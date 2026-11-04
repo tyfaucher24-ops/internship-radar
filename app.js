@@ -161,7 +161,7 @@ function chipsHTML(){const c=[];
  if(F.minm&&MSCORE.size)c.push(['minm','',`Match ${F.minm}%+`]);if(F.hideTracked==='1')c.push(['hideTracked','','Hiding saved & applied']);
  return c.map(([k,v,t])=>`<button class="chip" data-k="${k}" data-v="${esc(v)}" aria-label="Remove filter ${esc(t)}">${esc(t)} <span aria-hidden="true">×</span></button>`).join('')+(c.length?'<button class="link clear" data-k="__all">Clear all</button>':'')}
 function begInit(){const el=$('beg');if(!el)return;const n=stagedCount({cy:'Freshman~Sophomore'});
- el.hidden=(()=>{try{return localStorage.getItem("ir_beg_x")==="1"}catch(e){return false}})()||!n||!!F.cy;$("begGo").textContent=`Show ${n.toLocaleString()} roles open to freshmen or sophomores`;
+ el.hidden=(()=>{try{return localStorage.getItem("ir_beg_x")==="1"}catch(e){return false}})()||!n||!!F.cy;$("begN").textContent=n.toLocaleString();/* V19.2: only the number changes, in a reserved slot, so the box never resizes */
  $('begGo').onclick=()=>{F.cy='Freshman~Sophomore';el.hidden=true;update()};$('begX').onclick=()=>{try{localStorage.setItem('ir_beg_x','1')}catch(e){}el.hidden=true}}
 function update(keepPop){compute();saveF();if(!keepPop)renderPills();else renderPillLabels();
  $('chips').innerHTML=chipsHTML();$('chips').querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k,v=b.dataset.v;if(k==='__all')return clearAll();if(k==='near'){F.near='';F.radius=''}else if(v&&FD[k]){fset(k,fv(k).filter(x=>x!==v));if(k==='status'&&!F.status)F.status=''}else F[k]='';if(k==='q')$('q').value='';update()});
@@ -509,9 +509,8 @@ document.addEventListener('focusin',e=>{const b=e.target.closest('[data-tip]');i
 document.addEventListener('click',e=>{const b=e.target.closest('[data-tip]');if(b){e.preventDefault();e.stopPropagation();tipFor===b&&!$('tip').hidden?hideTip():showTip(b)}else hideTip()},true);
 addEventListener('scroll',hideTip,{passive:true});
 function glossaryHTML(){return`<dl class="glossary">${Object.entries(LISTS.TIPS).filter(([k])=>k!=='classyear').map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`}
-function firstTip(){const pr=Store.get('prefs',{});if(pr.tipDone||$('firstTip'))return;const d=document.createElement('div');d.id='firstTip';d.className='firsttip';d.setAttribute('role','note');
- d.innerHTML=`<span class="ft-i" aria-hidden="true">💡</span><p><b>New here?</b> Start by searching or filtering, save what you like, then add your profile for match %. <button type="button" class="link" id="ftTerms">What do the terms mean?</button></p><button type="button" class="ft-x" id="ftX" aria-label="Got it, dismiss tip">Got it</button>`;
- $('chips').closest('.chipsrow').before(d);$('ftX').onclick=()=>{Store.set('prefs',{...Store.get('prefs',{}),tipDone:1});d.remove()};$('ftTerms').onclick=()=>openModal(`<h2>Internship terms, in plain English</h2>${glossaryHTML()}`)}
+function firstTip(){/* V19.2: the tip is in index.html from the first paint (boot.js hides it if dismissed), so nothing moves */const d=$('firstTip');if(!d||d.dataset.on)return;d.dataset.on=1;if(Store.get('prefs',{}).tipDone){d.remove();return}
+ $('ftX').onclick=()=>{Store.set('prefs',{...Store.get('prefs',{}),tipDone:1});document.documentElement.classList.add('ft-done');d.remove()};$('ftTerms').onclick=()=>openModal(`<h2>Internship terms, in plain English</h2>${glossaryHTML()}`)}
 /* How it works -> About (V13: the intro Details screen was replaced by onboarding) */
 (function(){const nav=document.querySelector('.site-footer nav[aria-label="Footer"]');if(nav&&!$('howBtn')){const a=document.createElement('a');a.href='#about';a.dataset.go='about';a.id='howBtn';a.textContent='How it works';nav.prepend(a)}})();
 /* ---------- V8 advanced: shortcuts, share + saved filters ---------- */
@@ -522,8 +521,7 @@ document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return
  if(e.key==='/'){e.preventDefault();if($('t-db').hidden)go('db');$('q').focus();$('q').select()}
  else if(e.key==='?'){e.preventDefault();shortcutsModal()}
  else if(e.key==='s'||e.key==='S'){const b=!$('drawer').hidden?$('drawer').querySelector('[data-act=save]'):document.activeElement?.closest?.('.card')?.querySelector('[data-act=save]');if(b){e.preventDefault();b.click()}}});
-function presetsInit(){const host=document.querySelector('.rtools');if(!host||$('shareBtn'))return;const w=document.createElement('span');w.className='presets';
- w.innerHTML=`<button type="button" class="pill" id="shareBtn" title="Copy a link to these exact filters">Copy link</button><div class="pillwrap"><button type="button" class="pill" id="presetBtn" aria-haspopup="dialog" aria-expanded="false">Saved filters</button></div>`;host.prepend(w);
+function presetsInit(){/* V19.2: buttons are in index.html from the first paint */if(!$('shareBtn')||$('shareBtn').onclick)return;
  $('shareBtn').onclick=async()=>{saveF();try{await navigator.clipboard.writeText(location.href);toastMsg('Link copied. Anyone with it sees these filters.')}catch(_){prompt('Copy this link:',location.href)}};
  $('presetBtn').onclick=e=>{e.stopPropagation();const b=$('presetBtn');if(b.nextElementSibling){b.nextElementSibling.remove();b.setAttribute('aria-expanded','false');return}const P=Store.get('savedFilters',[]);const p=document.createElement('div');p.className='pop open presetpop';p.setAttribute('role','dialog');p.setAttribute('aria-label','Saved filters');
   p.innerHTML=`<p class="pp-h">Saved filters</p>${P.length?`<ul class="pp-l">${P.map((x,i)=>`<li><button type="button" class="link" data-ap="${i}">${esc(x.name)}</button><button type="button" class="pp-x" data-dp="${i}" aria-label="Delete ${esc(x.name)}">×</button></li>`).join('')}</ul>`:'<p class="muted small">None yet. Set some filters, then save them here.</p>'}

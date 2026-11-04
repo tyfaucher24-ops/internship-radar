@@ -28,6 +28,12 @@ def ats_from_url(u):
     if m and parts:
         site=parts[1] if re.match(r'^[a-z]{2}-[A-Z]{2}$',parts[0]) and len(parts)>1 else parts[0]
         if site.lower() not in ('job','wday'): return ('workday',f'{h}/{m.group(1)}/{site}')
+    # V20: wdN.myworkdaysite.com/[xx-XX/][recruiting/]<tenant>/<site>/job/... (same shape as pipeline/hygiene.py)
+    m=re.match(r'(wd\d+)\.myworkdaysite\.com$',h)
+    if m:
+        mm=re.match(r'/(?:[a-z]{2}-[A-Z]{2}/)?(?:recruiting/)?([^/]+)/([^/]+)(?:/|$)',p.path)
+        if mm and mm.group(1).lower() not in ('job','wday','recruiting') and mm.group(2).lower() not in ('job','wday'):
+            return ('workday',f'{h}/{mm.group(1)}/{mm.group(2)}')
     return None
 def load():
     if not os.path.exists(REG): return []

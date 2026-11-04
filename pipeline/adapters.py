@@ -96,7 +96,9 @@ class TList(list):
     truncated=False
 def workday_alive(board_slug,url):
     """V16: True/False if Workday's own detail endpoint says the posting is live/gone; None if it cannot tell."""
-    m=re.search(r'myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?[^/]+(/job/[^?#]+)',url or '')
+    # V20: both Workday hosts. Same shape as pipeline/hygiene.py: <t>.wdN.myworkdayjobs.com/[xx-XX/]<site>/job/...
+    # and wdN.myworkdaysite.com/[xx-XX/][recruiting/]<tenant>/<site>/job/... (Wells Fargo, Perella Weinberg)
+    m=re.search(r'(?:myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?[^/]+|myworkdaysite\.com/(?:[a-z]{2}-[A-Z]{2}/)?(?:recruiting/)?[^/]+/[^/]+)(/job/[^?#]+)',url or '')
     if not m: return None
     host,tenant,site=board_slug.split('/')
     try:
@@ -131,7 +133,7 @@ def workday(c):
                 if mloc and re.match(r'^(US|USA)-[A-Z]{2}-',mloc.group(1)) and not re.search(r',',locs[0] or ''):locs.append(mloc.group(1))
                 if det.get('country',{}).get('descriptor') and det['country']['descriptor'] not in ('United States of America','United States'): 
                     if not any('United States' in (l or '') or re.search(r',\s*[A-Z]{2}\b',l or '') for l in locs): continue
-                out.append({'title':x['title'],'url':det.get('externalUrl') or f'https://{host}/{site}{p}','locations':locs+([ 'United States' ] if (det.get('country') or {}).get('descriptor','').startswith('United States') else []),'desc':det.get('jobDescription'),
+                out.append({'title':x['title'],'url':det.get('externalUrl') or (f'https://{host}/recruiting/{tenant}/{site}{p}' if 'myworkdaysite.com' in host else f'https://{host}/{site}{p}'),'locations':locs+([ 'United States' ] if (det.get('country') or {}).get('descriptor','').startswith('United States') else []),'desc':det.get('jobDescription'),
                   'posted':_iso(det.get('startDate')),'deadline':_iso(det.get('endDate')) if det.get('endDate') else None,'workplace':det.get('remoteType'),'ats_id':det.get('jobReqId') or p})
             off+=20
             # V16: Workday reports `total` only on the first page (later pages say 0), so the old check stopped after

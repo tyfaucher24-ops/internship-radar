@@ -22,7 +22,10 @@ with sync_playwright() as pw:
     ck('description no longer says no login','no login' not in h.lower())
     rb=urllib.request.urlopen(URL+'robots.txt').read().decode();ck('robots.txt has sitemap + hides admin','Sitemap:' in rb and 'Disallow: /admin.html' in rb)
     sm=urllib.request.urlopen(URL+'sitemap.xml').read().decode();ck('sitemap.xml lists the site',URL in sm or 'tyfaucher24-ops.github.io' in sm)
-    ck('og.jpg reachable',urllib.request.urlopen(re.search(r'og:image" content="([^"]+)"',h).group(1)).status==200)
+    # og:image is absolute (canonical domain, as social sites need). Check the same path on the server under test,
+# so a local run doesn't 404 on a file that exists here but isn't deployed yet.
+    og=re.search(r'og:image" content="([^"]+)"',h).group(1);canon=re.search(r'rel="canonical" href="([^"]+)"',h).group(1)
+    ck('og:image reachable',urllib.request.urlopen(URL+og[len(canon):] if og.startswith(canon) else og).status==200,og)
     srcs=re.findall(r'(?:src|href)="([^"]+)"',h);ab=[s for s in srcs if s.startswith('/') and not s.startswith('//')]
     ck('CNAME-ready: no root-absolute paths in index.html',ab==[],ab)
     a=urllib.request.urlopen(URL+'admin.html').read().decode();ck('admin.html is noindex','noindex' in a)

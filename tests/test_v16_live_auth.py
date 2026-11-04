@@ -4,6 +4,8 @@ Sends real sign-in emails (Supabase free tier allows only a few per hour). Paste
 import json,os,time,sys,urllib.request
 from playwright.sync_api import sync_playwright
 U='https://tyfaucher24-ops.github.io/internship-radar/';SB='https://jsmhrhniqxohsalbejuw.supabase.co';K='sb_publishable_59cFpjnYQoxlJVtlXxnAYw_V8GTebnr'
+if not (os.environ.get('EA') and os.environ.get('EB')):
+    print('SKIP test_v16_live_auth: manual test that sends real sign-in emails; set EA and EB to two test inboxes you own to run it');sys.exit(0)
 OUT='/workspace/internship-radar/ops/screens/v16.3/';R=[]
 def ck(n,c,x=''):R.append((n,bool(c)));print(('PASS ' if c else 'FAIL ')+n,x if not c else '',flush=True)
 def waitfile(f):
@@ -30,7 +32,7 @@ with sync_playwright() as pw:
     ck('accounts enabled live',p.evaluate("()=>Cloud.enabled"))
     p.evaluate("()=>{localStorage.setItem('idr_theme','light');Store.set('savedFilters',[{id:'sfLive1',name:'Live test filter',q:'software'}]);Store.set('tracker',[{id:'trLive1',company:'LiveCo',status:'Saved'}])}")
     p.reload();p.wait_for_function("()=>window.Cloud",timeout=30000);p.wait_for_timeout(1500)
-    opendlg(p);ck('no Google button (Google off)',p.evaluate("()=>!document.getElementById('acctGoogle')"))
+    opendlg(p);ck('Google button matches config',p.evaluate("()=>!!document.getElementById('acctGoogle')===!!(window.CLOUD_CONFIG||{}).google"))
     shots(p,'account-signed-out')
     p.fill('#acctEmail',os.environ['EA']);p.click('#acctLink');p.wait_for_timeout(3000)
     m=p.evaluate("()=>acctMsg.textContent");print('MSG A',m,flush=True);ck('magic link sent (A)',('sent' in m.lower() or 'check' in m.lower()),m)

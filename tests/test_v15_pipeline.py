@@ -49,7 +49,14 @@ shutil.rmtree(g)
 # workflow file: 5-min cron, shared concurrency group, 5-minute timeout, gate before commit; 2h full sync untouched
 y=open(os.path.join(ROOT,'ops/workflows/sync5.yml')).read()
 ck('workflow: */5 cron',"*/5 * * * *" in y);ck('workflow: concurrency guard','group: data-sync' in y and 'cancel-in-progress: false' in y)
-ck('workflow: timeout 5 min','timeout-minutes: 5' in y);ck('workflow: gate before commit',y.index('sync_gate.py')<y.index('git commit'))
+ck('workflow: timeout 5 min','timeout-minutes: 5' in y)
+# V16.3 replaced the V15 template: data no longer goes into git (no sync_gate.py / git commit); it goes cache -> Pages.
+# So the old "gate before commit" check becomes: no commit to main, and data is saved only after the accuracy check.
+ck('workflow: no data commit to main (V16.3 model)','git commit' not in y and 'git push' not in y)
+ck('workflow: accuracy check before data is saved',y.index('pipeline.qa')<y.index('actions/cache/save'))
+for f in sorted(os.listdir(os.path.join(ROOT,'ops/workflows'))):
+    t=open(os.path.join(ROOT,'ops/workflows',f)).read()
+    ck('template '+f+': has on: + jobs:',('\non:' in t or t.startswith('on:')) and '\njobs:' in t)
 full=open(os.path.join(ROOT,'.github/workflows/sync.yml')).read() if os.path.exists(os.path.join(ROOT,'.github/workflows/sync.yml')) else ''
 ck('2-hour full sync kept',not full or 'concurrency' in full or '0 */2' in full or '*/2' in full,full[:200])
 # incremental run inside 5 minutes (optional, needs network): V15_NET=1

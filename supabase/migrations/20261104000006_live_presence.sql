@@ -48,6 +48,7 @@ begin
                    select page, count(*) as n from public.live
                    where at > now() - interval '90 seconds' and page is not null
                    group by page) x),
+    'updated_at',(select max(at) from public.live),   -- the dashboard's name for 'last heartbeat seen'
     'last_seen',(select max(at) from public.live)
   );
 end $$;

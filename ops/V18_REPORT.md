@@ -19,27 +19,24 @@ My re-measure of the same live file (10:47 AM EST, `ops/v18_measure.py`, countin
 my key (company, title, first city, state, normalized) finds 236 extra rows in 234 groups; Radar's key differed. Excluding hidden rows: 13,463 open shown.
 Raw: ops/qa/v18-before-all.json, ops/qa/v18-before-visible.json. After numbers use the same script.
 
-## 1b. Data after (2026-11-04, ~11:50 AM EST): no real after numbers yet
-- Sync 41862152913 sat in "queued" behind a GitHub Actions/Pages incident and ended **cancelled**; it never ran. A new sync (41867996183) is dispatched with the V18 code and is queued. The live data is still from the last good sync (41847190787, 9:24 AM EST).
-- So there are **no measured after numbers**. The only after view is an offline run of the V18 pass on that live data (not published): 82 leads hidden as copies of ATS rows, 606 shortener leads swapped for direct links, 351 seasons added, 1,269 categories fixed (Other 15.3% → 6.2%), 43 closed for past terms, 1,737 marked "Check date unknown" (left out of Open by default, so the Open count will drop by about that much). Fields that need network checks (last_verified, descriptions, deadlines) can only move in a real run.
-
-## 1c. Data after: REAL numbers (measured 2026-11-04 ~1:05 PM EST on the published data, updated 16:57Z, same script and definitions)
-Sync 41872603460 succeeded; the live site serves build 49e4a31a7f (V18 loader.js build, commit a73945f). Raw: ops/qa/v18-after-all.json, ops/qa/v18-after-visible.json.
-| Measure | Before | After |
-|---|---|---|
-| Open listings (incl. hidden rows, as in the baseline) | 13,746 | 13,685 |
-| Open shown in the app by default (not hidden, not check-date-unknown, not past term) | 13,463 shown before | 12,243 (matches meta.json "open") |
-| Category "Other" | 2,108 (15.3%) | 842 (6.2%) |
-| No season | 7,594 (55.2%) | 7,209 (52.7%) |
-| `has_desc` false | 3,024 | 2,503 (18.3%) |
-| No `last_verified` | 1,626 | 1,107 |
-| Duplicate rows (my key) | 236 | 234 |
-| `apply_kind` none | 1,598 | 996 |
-| With a deadline | 2,028 | 2,060 |
-| No locations | 443 | 441 (with remote counted) |
-| "Check date unknown" | n/a (field is new) | 1,114 of the shown open rows (1,167 in health.json at sync time); these are left out of Open by default |
-
-What did not improve much: no-season is still more than half of open listings (52.7%), and 2,503 rows still have no description. Duplicates barely moved by my key (236 to 234), even though the pass hid ATS-copy leads. No-description inside the default Open view is 1,196 (9.8%). The deadline count only rose by 32. The last deploy of the later speed commits (790f7ce and after) is not live yet; the live site is still on 49e4a31a7f.
+## 1b. Data after: REAL (sync 41872603460 with V18 code, success, data updated 11:57 AM EST; live build eb77fe6b68 verified 1:06 PM EST)
+Same script, same file type (live data/listings.json), counting rows not hidden. Raw: ops/qa/v18-after-visible.json and v18-after-all.json.
+| Measure | Before (10:47 AM) | After (11:57 AM) | Change |
+|---|---|---|---|
+| Open listings (not hidden) | 13,463 | 13,372 | −91 |
+| …shown by default (excludes "Check date unknown") | 13,463 | 12,243 | −1,220 (flagged rows sit behind the Include unchecked toggle) |
+| No `last_verified` | 1,478 | 1,021 | −457 |
+| Verified within 24 h | 11,882 | 12,255 | +373 |
+| `has_desc` false | 2,806 | 2,311 | −495 |
+| Duplicate rows (my key) | 5 | 4 | −1 |
+| `apply_kind` none | 1,443 | 943 | −500 |
+| No `apply_ok_at` | 8,889 | 9,607 | **+718 (worse)**: new direct links swapped in for shorteners don't have a link check yet. They get one on the next daily link check. |
+| With a deadline | 2,020 | 2,055 | +35 |
+| No season | 7,392 | 6,970 | −422 |
+| Category "Other" | 2,089 | 832 | −1,257 (15.5% → 6.2%) |
+| No locations (incl. remote) | 440 | 437 | −3 |
+- The sync ran 49 min (duration_s 2945), up from about 18 min. That is still inside the 75-min step limit, but it's worth watching.
+- SEO pages are live: data/seo/index.html returns 200.
 
 ## 2. Speed (live Lighthouse CLI, mobile = default simulated Moto G / slow 4G; every run is a fresh Chrome profile, empty cache)
 Before (build dfd25eaea4, pre-V18): cold mobile 76 and 84, LCP 3.4 to 3.5 s. Desktop 99 to 100.

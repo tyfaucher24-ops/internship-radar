@@ -6,7 +6,7 @@ from . import norm as N
 from .adapters import ADAPTERS
 from .net import fetch,Blocked,allowed
 from .publish import write_json,gate
-from .discover import load as load_registry,GITHUB_LISTS,ats_from_url
+from .discover import load as load_registry,GITHUB_LISTS,ats_from_url,MD_TABLES,md_table_rows
 ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__),'..'));D=os.path.join(ROOT,'data')
 NOW=datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0);NOWS=NOW.isoformat().replace('+00:00','Z')
 RANK={'ats':1,'usajobs':1,'jsonld':2,'manual':3,'github-verified':4,'submission':5}
@@ -99,6 +99,8 @@ def github_leads(cache_dir):
                 leads.append({'company':x.get('company_name'),'title':x.get('title'),'url':x.get('url'),'locations':x.get('locations') or [],'posted':datetime.datetime.fromtimestamp(x['date_posted'],datetime.timezone.utc).date().isoformat() if x.get('date_posted') else None,
                   'terms':', '.join(x.get('terms') or [])+' '+(x.get('season') or ''),'sponsorship':{'Does Not Offer Sponsorship':'Not offered','Offers Sponsorship':'Offered','U.S. Citizenship is Required':'Not offered'}.get(x.get('sponsorship')),
                   'cit':x.get('sponsorship')=='U.S. Citizenship is Required','cat':N.SIMPLIFY_CAT.get(x.get('category')),'list':name})
+        elif name in MD_TABLES:  # V20: speedyapply rows as listings, plus zshah101, awesome-ml, jobbie-bot
+            for x in md_table_rows(open(p).read(),MD_TABLES[name]): leads.append({**x,'terms':'','list':name,'cat':None})
         elif 'zapply' in name:
             sec=None
             for line in open(p):
@@ -181,7 +183,7 @@ def incremental_slice(reg,n,only=None):
     print(f'incremental: boards {c}..{c+len(sl)} of {len(uniq)}',file=sys.stderr)
     return sl
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--workers',type=int,default=24);ap.add_argument('--only');ap.add_argument('--limit',type=int);ap.add_argument('--skip-leads',action='store_true');ap.add_argument('--lead-limit',type=int,default=4000);ap.add_argument('--incremental',type=int,default=0,help='V15 add.2: read only the next N registry boards (rotating cursor in data/sync_cursor.json)')
+    ap=argparse.ArgumentParser();ap.add_argument('--workers',type=int,default=24);ap.add_argument('--only');ap.add_argument('--limit',type=int);ap.add_argument('--skip-leads',action='store_true');ap.add_argument('--lead-limit',type=int,default=6000);ap.add_argument('--incremental',type=int,default=0,help='V15 add.2: read only the next N registry boards (rotating cursor in data/sync_cursor.json)')
     a=ap.parse_args();t0=time.time()
     reg=load_registry();prev=jload(os.path.join(D,'listings.json'),{'listings':[]});prevL={x['id']:x for x in prev.get('listings',[])}
     state=jload(os.path.join(D,'state.json'),{});cache=os.path.join(ROOT,'pipeline','cache');os.makedirs(cache,exist_ok=True)

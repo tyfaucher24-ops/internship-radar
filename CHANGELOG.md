@@ -1,6 +1,13 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V19.2 + V19.3 No layout shift on load, roomier search boxes, 2026-11-04
+(One combined entry: V19.3 was folded into the same build.)
+- V19.2: the list page no longer jumps while it loads. The first-visit tip, Share/Save-view buttons, filter pills, Planner tab and bell, the ticker slot and the beginner count now sit in the page from the first paint. The sort and tag selects have fixed widths. The start page drops the scrollbar gutter from its first paint. The tip and the beginner guidance are still shown; nothing was hidden.
+- V19.2: fixed a race where tracker rows that came straight from storage or a cloud pull were read before they were shaped ("reading deadline" page error). Rows are now shaped on every read.
+- V19.3: intro suggestion lists sit in normal flow, so nothing is clipped. Dropdown rows are 48px with two-line labels (ROW=48, VIS=7), panels are at least 340px wide, and list heights are scaled to match. Ctrl K has a 52px input, 48px two-line result rows and a 360px list. Keyboard, ARIA, ranking, fuzzy matching and the Other: row are unchanged.
+- Tests: tests/test_v19_3_search.py. Screenshots are in ops/screens/v19/searchbox-after-*.
+
 ## V19 + V19.1 Resume upload states, roomier Profile and intro, Planner rename, 2026-11-04
 (One combined entry: V19.1 was folded into the same build.)
 - Resume drop zone now has four states on Profile and in the intro: empty, reading, done (a tick with real counts of roles, schools and skills, plus the filename and size), and error ("That file didn't open. Try a PDF or DOCX under 10 MB." with "Try another file"). The progress ring follows the real parse stages: file loaded 8%, file opened 15%, each PDF page 15–60%, DOCX text 60%, sections found 64%, schools list 70%, each section 70–95%, filling your profile 96%, done 100%. One screen-reader announcement per state. Respects reduced motion. Works from the keyboard. Replace and Remove are real 44px buttons. Dragging a new file over a read resume shows "Drop to replace". The done state survives a reload. The raw parser error is never shown.

@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V18 Accuracy, trust, design tokens, SEO, 2026-11-04
+- Accuracy pass (pipeline/v18_accuracy.py, runs inside every sync): link-shortener leads are swapped for the direct employer link found in other public lists (the shortener itself is never fetched; robots.txt respected); up to 900 leads re-verified per run; second-pass category rules (Other share falls from ~15% to ~6% in an offline run); seasons only from explicit title words; listings for terms that have ended are closed; duplicates collapsed.
+- Trust: a listing not re-checked in 72 hours shows "Check date unknown" and is left out of Open by default. New "Include unchecked" box next to Sort shows them again (remembered on this device).
+- Delete account now also clears this site's local storage on the device.
+- Design: tokens.css (was theme.css) is the single token file; docs/DESIGN.md has the rules. Light by default; dark changes colours only, so nothing moves.
+- SEO: company and category pages (data/seo/, rebuilt every sync) with JobPosting structured data from real fields only (no description, no structured data); sitemap index; new calm share image assets/og-share.png. All URLs come from the canonical tag, so ops/set_domain.py still switches domains in one step.
+- Copy: honest apply-link footer line, clearer sign-in error.
+- Tests: tests/test_v18_accuracy.py, tests/test_v18_flows.py; axe and Lighthouse runs in ops/qa/.
+
 ## V17 Deadline alert emails + founder stats, 2026-10-29
 - Email alerts (opt-in, off by default): Profile -> "Email alerts" box for signed-in users (guests see "Sign in to get deadline alerts"). Toggles for deadline reminders, weekly digest and new-match emails, digest day/hour, time zone.
 - Reminders: one bundled email per user per local day, for Saved roles closing in 7 days and in 2 days; never for Applied/closed roles, never a guessed date for rolling roles (shown as "Rolling, apply early"). Each listing+window is sent once.

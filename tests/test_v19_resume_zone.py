@@ -20,7 +20,7 @@ REC="""()=>{window.__ev=[];window.__ann=[];document.addEventListener('ir:resume'
  document.querySelectorAll('.rz [role=status]').forEach(l=>new MutationObserver(()=>{if(l.textContent)__ann.push(l.closest('.rz').className+'|'+l.textContent)}).observe(l,{childList:true,characterData:true,subtree:true}))}"""
 def shot(p,el,name):
     if SH: p.locator(el).screenshot(path=os.path.join(SH,name))
-def theme(p,d): p.evaluate(f"document.documentElement.classList.toggle('dark',{str(d).lower()})")
+def theme(p,d): p.evaluate(f"document.documentElement.classList.toggle('dark',{str(d).lower()})");p.wait_for_timeout(1600)
 def axe(p,tag,ctx):
     if not p.evaluate("()=>!!window.axe"): p.add_script_tag(content=AXE)
     v=p.evaluate("async(c)=>{const r=await axe.run(c,{runOnly:['wcag2a','wcag2aa','wcag21aa','wcag22aa']});return r.violations.map(v=>v.id+':'+v.nodes.length+':'+v.nodes[0].target)}",ctx)

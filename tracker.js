@@ -3,12 +3,15 @@
 const TSTAT=['Saved','Applied','Online Assessment','Interviewing','Offer','Accepted','Rejected','Ghosted','Withdrawn','Closed'];
 const APPLIED_SET=['Applied','Online Assessment','Interviewing','Offer','Accepted','Rejected','Ghosted'];
 const today=()=>new Date().toISOString().slice(0,10);const addDays=(d,n)=>{const x=new Date(d+'T00:00:00');x.setDate(x.getDate()+n);return x.toISOString().slice(0,10)};
-const T={all:()=>Store.get('tracker',[]),save:a=>{Store.set('tracker',a);trackerRefresh()},byListing:id=>T.all().find(t=>String(t.listingId)===String(id))};
-(function migrate(){let a=Store.get('tracker',null);if(!a)return;if(!Array.isArray(a))a=Object.entries(a).map(([k,v])=>({listingId:k,status:typeof v==='string'?v:v.status}));
- const MAP={Interview:'Interviewing'};let ch=false;a=a.map(t=>{const s=MAP[t.status]||(TSTAT.includes(t.status)?t.status:'Saved');if(t.dateSaved&&s===t.status&&t.history)return t;ch=true;
-  return {...t,id:t.id||Store.uid(),listingId:'listingId' in t?t.listingId:t.id,listing:t.listing||{company:t.company||'',title:t.title||t.role||''},status:s,history:(t.history||[s]).map(h=>MAP[h]||h),
+/* V19.2: rows can arrive raw (cloud pull from another device, an import, a test) before migrate() has shaped them.
+   Give every row a listing object on read, so nothing reads .deadline of undefined (the flaky test_v16_cloud page error). */
+const tShape=t=>{if(!t||typeof t!=='object')return t;const MAP={Interview:'Interviewing'};const s=MAP[t.status]||(TSTAT.includes(t.status)?t.status:'Saved');if(t.dateSaved&&s===t.status&&t.history&&t.listing)return t;
+  return {...t,id:t.id||(t.listingId!=null?'t-'+t.listingId:Store.uid()),listingId:'listingId' in t?t.listingId:t.id,listing:t.listing||{company:t.company||'',title:t.title||t.role||''},status:s,history:(t.history||[s]).map(h=>MAP[h]||h),
    dateSaved:t.dateSaved||(t.created||new Date().toISOString()).slice(0,10),dateApplied:t.dateApplied||'',followUp:t.followUp||t.nextDate||'',nextStep:t.nextStep||'',notes:t.notes||'',contact:t.contact||'',
-   priority:t.priority||0,resumeVersion:t.resumeVersion||'',coverLetter:t.coverLetter||'',closeReason:t.closeReason||'',statusAt:t.statusAt||t.updated||t.created||new Date().toISOString(),created:t.created||new Date().toISOString()}});
+   priority:t.priority||0,resumeVersion:t.resumeVersion||'',coverLetter:t.coverLetter||'',closeReason:t.closeReason||'',statusAt:t.statusAt||t.updated||t.created||new Date().toISOString(),created:t.created||new Date().toISOString()}};
+const T={all:()=>{const a=Store.get('tracker',[]);return Array.isArray(a)?a.filter(Boolean).map(tShape):[]},save:a=>{Store.set('tracker',a);trackerRefresh()},byListing:id=>T.all().find(t=>String(t.listingId)===String(id))};
+(function migrate(){let a=Store.get('tracker',null);if(!a)return;if(!Array.isArray(a))a=Object.entries(a).map(([k,v])=>({listingId:k,status:typeof v==='string'?v:v.status}));
+let ch=false;a=a.map(t=>{const n=tShape(t);if(n!==t)ch=true;return n});
  if(ch)Store.set('tracker',a)})();
 const snap=x=>({company:x.company,title:x.title,deadline:x.deadline||null,rolling:!!x.rolling,apply_url:x.apply_url||null,location:(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', ')).join('; ')+(x.remote?((x.locations||[]).length?'; ':'')+'Remote':'')||null});
 function toast(msg,undo){let el=$('toast');if(!el){el=document.createElement('div');el.id='toast';el.setAttribute('role','status');document.body.appendChild(el)}el.textContent=msg;if(undo){const b=document.createElement('button');b.type='button';b.className='t-undo';b.textContent='Undo';b.onclick=()=>{undo();el.className='';toast('Restored')};el.append(' ',b)}el.className='show';clearTimeout(el._t);el._t=setTimeout(()=>el.className='',3000)}

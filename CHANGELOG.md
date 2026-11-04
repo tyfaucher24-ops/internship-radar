@@ -2,6 +2,7 @@
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
 ## V19.4 Live heartbeat (no UI), 2026-11-04
+- Accessibility: the "Sign in to save" button's accessible name now includes the visible text at ≤860px ("Save progress"). Found by the live V19.4 axe pass; nothing visible changed.
 - The site now tells the server "someone is here, on this tab" so a separate private stats site can show a true "on the site right now" count. Nothing about it is visible on Intern Index: no counter, badge or layout change.
 - email-alerts.js: heartbeat(p_page) beats on load, on a tab change, when the tab becomes visible, and every 60 s while visible; at most one beat per 45 s per tab. It sends only the tab name (db, tracker, profile, autopilot, feedback, about, contact, privacy, terms) or null. Signed out with Do Not Track or Global Privacy Control on: no beat. A 404 (migration 0006 not installed) stops it after the first try, without switching off the usage events.
 - Privacy page: one sentence explaining the heartbeat.

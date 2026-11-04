@@ -15,7 +15,7 @@ def run(b,dnt=False,status=204,cloud=True):
         if r.request.url.endswith('/rpc/heartbeat'):beats.append(json.loads(r.request.post_data or '{}'));return r.fulfill(status=status,body='' if status==204 else '{"message":"nf"}',headers={'content-type':'application/json'})
         return r.continue_()
     pg.route('**/rest/v1/rpc/**',rt)
-    pg.goto(URL+('?cloud=0' if not cloud else '')+'#find');pg.wait_for_timeout(1500)
+    pg.goto(URL+('?cloud=0' if not cloud else '')+'#find');pg.wait_for_timeout(1500);pg.clock.run_for(1500);pg.wait_for_timeout(400)
     return c,pg,beats,errs
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
@@ -38,4 +38,10 @@ with sync_playwright() as p:
     c,pg,beats,errs=run(b,status=404);pg.clock.run_for(5*60000)
     ck('404 stops after first beat',len(beats)==1,beats);ck('404 no page errors',not errs,errs);c.close()
     b.close()
+with sync_playwright() as p:
+    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    c=b.new_context();c.add_init_script("localStorage.setItem('idr_intro_seen','1')");pg=c.new_page();bt=[]
+    pg.route('**/rest/v1/rpc/**',lambda r:(bt.append(json.loads(r.request.post_data or '{}')),r.fulfill(status=204,body=''))[1] if r.request.url.endswith('/rpc/heartbeat') else r.continue_())
+    pg.goto(URL+'#privacy');pg.wait_for_timeout(3000)
+    ck('load on #privacy reports privacy',bt==[{'p_page':'privacy'}],bt);b.close()
 print(f'V19.4 HEARTBEAT {ok} / {tot}')

@@ -26,7 +26,7 @@
     const pg=String(p_page==null?'':p_page).toLowerCase().replace(/[^a-z]/g,'');const body={p_page:HB_TABS.includes(pg)?pg:null};
     (s?Cloud.rpc('heartbeat',body):anonRpc('heartbeat',body)).catch(e=>{if(/404/.test(e&&e.message)||(e&&e.status===404)){hbDead=true;clearInterval(hbT)}})};
   if(on){
-    heartbeat(curTab());
+    setTimeout(()=>heartbeat(curTab()),1200);/* after the router has shown the linked tab, so #privacy reports privacy */
     document.addEventListener('radar:page',e=>heartbeat(e.detail));
     document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')heartbeat(curTab())});
     hbT=setInterval(()=>{if(document.visibilityState==='visible')heartbeat(curTab())},60e3);

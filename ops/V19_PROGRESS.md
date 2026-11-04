@@ -8,3 +8,4 @@
 - 1:55 PM: Lighthouse. Live mobile 78/78/93/85/93 (median 85), desktop 97/97. Same-machine A/B with V18 code and today's data: V18 mobile 83/84/84/84/92 (median 84), V19 93/84/86/95/97 (median 93); desktop 97 for both. The lower scores come from a CLS of 0.12-0.23 that V18 code shows today as well (a first-visit tip plus a beginner section that swaps in above the list after boot). V19 did not cause it. JSON in ops/qa/v19/.
 - 3:xx PM: #find desktop CLS 0.076 -> 0.001 (static pills, apTab/apBell, qbadge, select widths !important). Local LH mobile/desktop CLS 0/0.001. CHANGELOG V19.2+V19.3.
 - 2:29 PM: live e0da5e1cb3 verified. Live LH mobile root 71(TBT outlier)/99/98 CLS 0.003, desktop 100/100 CLS 0.003, #find mobile 90/91 CLS 0, desktop 100/100 CLS 0.007. JSON ops/qa/v19.2/. v19-wip deleted (fully merged).
+- 2:40 PM: live axe (e0da5e1cb3), 11 views x 4 widths per theme: light 44 views 0 violations, dark 44 views 0 violations. ops/qa/v19.2/axe-{light,dark}.json.

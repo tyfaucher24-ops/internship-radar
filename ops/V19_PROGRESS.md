@@ -3,4 +3,6 @@
 - 1:25 PM: pulled V19.1 spec (c726d2f), folding into same build. Worker/RI now emit real stage progress.
 - 1:50 PM: resume zone (4 states) built in resume-ui.js + site.css, profile test 77/77 local. Intro uses same zone; V19.1 + Part 2 CSS appended.
 - WIP pushed to branch v19-wip (main push = deploy; main gets the full build once).
-- 2:35 PM: Planner rename done (user-visible only; #planner alias). Full suite green except a flaky test_v16_cloud page error (1 in 3 runs, 'reading deadline'). CHANGELOG combined entry.
+- 1:40 PM: Planner rename done (user-visible only; #planner alias). Full suite green except a flaky test_v16_cloud page error (1 in 3 runs, 'reading deadline'). CHANGELOG combined entry.
+- 1:41 PM: deployed, live version.json = fc67954bf6 (verified).
+- 1:55 PM: Lighthouse. Live mobile 78/78/93/85/93 (median 85), desktop 97/97. Same-machine A/B with V18 code and today's data: V18 mobile 83/84/84/84/92 (median 84), V19 93/84/86/95/97 (median 93); desktop 97 for both. The lower scores come from a CLS of 0.12-0.23 that V18 code shows today as well (a first-visit tip plus a beginner section that swaps in above the list after boot). V19 did not cause it. JSON in ops/qa/v19/.

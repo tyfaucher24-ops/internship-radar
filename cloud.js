@@ -47,7 +47,7 @@ window.Cloud=(()=>{
     if(c==='session_expired'||c==='signed_out')return 'Your session ended. Please sign in again.';
     if(/signup.*(disabled|not allowed)/.test(c+' '+m))return 'New sign-ups are paused right now. Try again later.';
     if(st>=500||/server_error|temporarily_unavailable/.test(c))return 'Sign-in is having trouble right now. Try again in a few minutes.';
-    return ctx==='sync'?"Couldn't sync right now. Your data is still saved on this device.":'Sign-in didn't go through. Check your connection and try again. Your saved items are still on this device.'};
+    return ctx==='sync'?"Couldn't sync right now. Your data is still saved on this device.":'Sign-in did not go through. Check your connection and try again. Your saved items are still on this device.'};
   let lastLink=0;
   api.user=()=>sess&&sess.user;
   api.signedIn=()=>!!(sess&&sess.access_token);

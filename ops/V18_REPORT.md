@@ -1,5 +1,5 @@
 # V18 report (Launch Perfect)
-Status: V18 live (build 49e4a31a7f, data sync 2026-11-04 16:57Z published); after numbers measured below. See ops/V18_PROGRESS.md for the running log.
+Status: V18 live, build eb77fe6b68 (verified via live version.json; data sync 41872603460 published). See ops/V18_PROGRESS.md for the running log.
 
 ## 1. Data accuracy: baseline (Radar, measured on live data 2026-11-04)
 | Measure | Baseline |
@@ -41,17 +41,33 @@ Same script, same file type (live data/listings.json), counting rows not hidden.
 ## 2. Speed (live Lighthouse CLI, mobile = default simulated Moto G / slow 4G; every run is a fresh Chrome profile, empty cache)
 Before (build dfd25eaea4, pre-V18): cold mobile 76 and 84, LCP 3.4 to 3.5 s. Desktop 99 to 100.
 
-After (build 49e4a31a7f, loader.js, verified live 11:50 AM EST), 5 cold mobile runs:
-| Run | 1 | 2 | 3 | 4 | 5 | Median | Worst |
-|---|---|---|---|---|---|---|---|
-| Perf | 88 | 93 | 87 | 92 | 87 | **88** | 87 |
-| LCP | 1.8 s | 1.5 s | 1.8 s | 1.5 s | 1.8 s | **1.8 s** | 1.8 s (1,814 ms) |
-| TBT | 430 | 300 | 460 | 330 | 490 ms | 430 ms | 490 ms |
+After (build eb77fe6b68, live; raw JSON in ops/qa/v18-final/), 3 cold mobile runs:
+| Run | 1 | 2 | 3 | Median | Worst |
+|---|---|---|---|---|---|
+| Perf | 95 | 91 | 95 | **95** | 91 |
+| LCP | 1.52 s | 1.73 s | 1.53 s | **1.53 s** | 1.73 s |
+| TBT | 251 | 366 | 254 ms | 254 ms | 366 ms |
+| A11y | 100 | 100 | 100 | 100 | 100 |
 
-Desktop ×3: 99 / 99 / 99, LCP 0.7 to 0.8 s, CLS about 0.065.
-- What changed: index.html now loads boot.js (sync, theme) plus store, listing and loader (defer). The other 31 scripts load in their old order once the hero image has loaded and painted. LCP render delay was 2.06 s and is now gone, so LCP went from 3.4 s to 1.5 to 1.8 s.
-- **Target not fully met:** median 88 (target ≥90), LCP 1.8 s (target under 1.8). The rest of the score is TBT. The biggest single task is the first list render (update(): filter, count and sort about 10.7k listings, about 300 ms on a 4×-throttled CPU), followed by evaluating the feature scripts. Commit 790f7ce splits the post-load steps and memoises days(). It is pushed but **not live yet**; its deploy was replaced in the shared data-sync queue. It goes out with the next deploy and has not been measured live. Getting to ≥90 for certain means making the first render incremental (or skipping it while the start page covers the list). That is a bigger change I did not make.
+Desktop ×2: perf 99 / 99, LCP 0.74 / 0.75 s, TBT 4 / 0 ms, a11y 100.
+Supplementary: 5 more cold mobile runs on the same build (ops/qa/v18-lighthouse-live.jsonl, fin_*): perf 98/92/92/95/88 (median 92, worst 88), LCP median 1.53 s, worst 1.75 s. A slow-4G run can still land at 88.
+- What changed: index.html loads boot.js (sync, theme) plus store, listing and loader (defer). The other 31 scripts load in their old order after the hero has painted, which removed the 2.06 s LCP render delay. 790f7ce splits boot() with yields and memoises days().
+- **Target met:** median 95 (≥90) and LCP 1.53 s (<1.8 s).
 - JS on the start page: 213.6 KB gzipped total, all 36 files including data-worker (target under 250 KB: met).
+
+## Part 9 final status (live = build eb77fe6b68)
+| Check | Result |
+|---|---|
+| test_v15_pipeline | 31/31 pass |
+| test_v16_launch (LIVE) | 129/129 pass |
+| test_v16_live_auth | skips cleanly (no test accounts set) |
+| test_v16_rls (local Postgres 17) | 34/34 pass |
+| test_v16_feedback_rls | 33/33 pass |
+| V17 SQL test | 35/35 pass |
+| axe (LIVE) | 0 violations across 40 views |
+| test_v18_flows (LIVE) | 7/7 pass |
+| test_v17_ui (LIVE) | 55/55 pass |
+| Google sign-in tests (local) | 116/116 pass |
 
 ## 3. Domain safety (checked)
 - index.html has exactly one canonical tag. The new company/category pages (data/seo/, made on every sync) and their sitemap take the base URL from that tag. They have no hard-coded domain, so they need no FILES entry. The new sitemap-home.xml is in ops/set_domain.py FILES.

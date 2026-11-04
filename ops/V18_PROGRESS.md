@@ -32,3 +32,4 @@
 - A2: test_v15_pipeline checks the V16.3 sync5 template + every ops/workflows template (31/31). test_v16_launch 404 was og-share.png requested from the live domain before V18 deployed; it now checks the same path on the server under test (126/126). test_v16_live_auth skips without EA/EB (it sends real emails); Google check follows config.
 - A3: postgresql-17 binaries extracted from apt.postgresql.org debs into /tmp/pgroot (Debian mirror failing through the box proxy), psycopg in /tmp/pgv. RLS 34/34, feedback RLS 33/33, V17 SQL 35/35. RLS tests now honor PG_BIN.
 - B: build 49e4a31a7f verified live; sync 41872603460 (V18 code) running.
+- 1:30 PM EST: live flows 7/7 and ui 55/55, axe 0/40 and RLS/SQL all pass. Report section 2 now uses the final numbers (build eb77fe6b68).

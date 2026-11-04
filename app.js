@@ -173,6 +173,7 @@ function update(keepPop){compute();saveF();if(!keepPop)renderPills();else render
 function renderPillLabels(){document.querySelectorAll('[data-pill]').forEach(b=>{const p=PILLS0.find(p=>p[0]===b.dataset.pill);const l=pillLabel(p[0],p[1]);b.firstChild.textContent=l;b.classList.toggle('active',l!==p[1])})}
 let qTimer;$('q').addEventListener('input',e=>{clearTimeout(qTimer);qTimer=setTimeout(()=>{F.q=e.target.value.trim();update()},120)});
 $('sort').onchange=e=>{F.sort=e.target.value;Store.set('sortPicked',true);update()};
+ if($('showUnchk')){window.SHOW_UNCHECKED=!!Store.get('showUnchk',false);$('showUnchk').checked=window.SHOW_UNCHECKED;$('showUnchk').onchange=e=>{window.SHOW_UNCHECKED=e.target.checked;Store.set('showUnchk',e.target.checked);update()}}
  if($('tagf')){$('tagf').value=F.tagf||'';$('tagf').onchange=e=>{F.tagf=e.target.value;if(F.tagf&&!MSCORE.size){F.tagf='';e.target.value='';toastMsg('Add your profile first to see realistic picks.');return}update()}}
 /* ---------- windowed card grid (rows of N cards; only visible rows are in the DOM) ---------- */
 let lastRange='',animateNext=false;

@@ -6,7 +6,7 @@ Usage:  python3 ops/set_domain.py internindex.com     (writes CNAME, rewrites UR
 Then in GitHub: Settings > Pages > Custom domain, and add the DNS records GitHub shows. Also update the Supabase Site URL and redirect."""
 import sys,os,re
 R=os.path.join(os.path.dirname(__file__),'..');GH='https://tyfaucher24-ops.github.io/internship-radar/'
-FILES=['index.html','robots.txt','sitemap.xml','404.html']
+FILES=['index.html','robots.txt','sitemap.xml','sitemap-home.xml','404.html']  # V18: sitemap-home.xml added. data/seo/* pages are generated each sync from the canonical tag, so they follow automatically
 def cur():
     m=re.search(r'<link rel="canonical" href="([^"]+)"',open(os.path.join(R,'index.html')).read());return m.group(1)
 def main(a):

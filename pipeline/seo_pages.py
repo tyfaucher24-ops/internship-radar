@@ -4,7 +4,10 @@ verified apply link and the posting's own description text. A listing with no de
 gets no JSON-LD (Google requires one); it is still listed on the page as plain text.
 Written to data/seo/ so every sync run refreshes them (data/ ships with each deploy)."""
 import json,os,re,html,glob,datetime
-BASE='https://tyfaucher24-ops.github.io/internship-radar/'
+def _base():
+    # domain-safe: the single canonical tag in index.html is the source of truth (ops/set_domain.py rewrites it)
+    m=re.search(r'<link rel="canonical" href="([^"]+)"',open(os.path.join(os.path.dirname(__file__),'..','index.html')).read());return m.group(1)
+BASE=_base()
 def slug(s): return re.sub(r'[^a-z0-9]+','-',(s or '').lower()).strip('-')[:60] or 'x'
 def is_open(r): return r.get('status')=='open' and not r.get('hidden') and not r.get('check_unknown') and not r.get('past_term') and not r.get('dup_of')
 def jobposting(r,desc):

@@ -295,7 +295,9 @@ function parse(L,opts){opts=opts||{};
    if(LANGRE.test(nm)&&nm.split(/\s+/).length<=3&&!D.SKILLIDX.has(nm.toLowerCase())){const lv=lvm?(D.LANGLVL.find(x=>x[1].test(lvm[1]))||[''])[0]:'';if(!langs.has(nm.toLowerCase()))langs.set(nm.toLowerCase(),{name:tc(nm),level:lv,src:[i]});return}
    if(SOFTSET.has(nm.toLowerCase())){soft.set(nm.toLowerCase(),{name:nm,src:[i]});return}
    const c=canonSkill(it);if(!c||c.length>40||c.split(/\s+/).length>5||!/[A-Za-z]/.test(c))return;if(!hard.has(c.toLowerCase()))hard.set(c.toLowerCase(),{name:c,src:[i]})})};
- for(const s of S){const key=s.key;
+ /* V19: report each section as it is parsed (real stage boundaries for the upload ring) */
+ const SL=k=>({header:'Contact details',contact:'Contact details',education:'Education',experience:'Experience',skills:'Skills',languages:'Languages',certifications:'Certifications',honors:'Honors',coursework:'Coursework',summary:'Summary',projects:'Projects',leadership:'Leadership',activities:'Activities',volunteer:'Volunteering',research:'Research',interests:'Interests',publications:'Publications',additional:'Additional'}[k]||(String(k||'Other').charAt(0).toUpperCase()+String(k||'other').slice(1)));
+ let _si=0;for(const s of S){const key=s.key;if(opts.onStage)opts.onStage(SL(key),_si,S.length,S[_si+1]?SL(S[_si+1].key):'');_si++;
   if(key==='education'){eduEntries(s.lines,L).forEach(g=>{const e=parseEdu(g,L,C,ctx,today);R.education.push(e);g.lines.forEach(i=>used.add(i))});
    s.lines.forEach(i=>{if(used.has(i))return;const m=L[i].t.match(LABEL);if(m)addSkills(m[2],i,m[1])})}
   else if(key==='skills'||key==='languages'||key==='interests'||key==='additional'||key==='coursework'||key==='certifications'||key==='honors'||key==='summary'||key==='header'||key==='contact'){

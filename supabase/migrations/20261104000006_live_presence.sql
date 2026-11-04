@@ -17,15 +17,17 @@ revoke all on public.live from public, anon, authenticated;
 -- One call per page view or tab focus. Upserts, so a person who moves around stays one row.
 create or replace function public.heartbeat(p_page text default null) returns void
 language plpgsql security definer set search_path = public as $$
-declare who text := public._caller_hash(); pg text := lower(coalesce(p_page, ''));
+-- NOTE: the local variables are v_who / v_pg, not who / pg: `who` is also a column of public.live,
+-- so naming a variable `who` makes the ON CONFLICT clause fail with 42702 (ambiguous column reference).
+declare v_who text := public._caller_hash(); v_pg text := lower(coalesce(p_page, ''));
 begin
-  if who is null then return; end if;
-  if pg !~ '^[a-z]{1,20}$' then pg := null; end if;
+  if v_who is null then return; end if;
+  if v_pg !~ '^[a-z]{1,20}$' then v_pg := null; end if;
   -- backstop: if the table ever gets flooded, stop writing rather than grow without limit
   if (select count(*) from public.live) > 20000 then return; end if;
-  insert into public.live(who, at, page, signed)
-  values (who, now(), pg, auth.uid() is not null)
-  on conflict (who) do update set at = now(), page = coalesce(excluded.page, public.live.page), signed = excluded.signed;
+  insert into public.live as l (who, at, page, signed)
+  values (v_who, now(), v_pg, auth.uid() is not null)
+  on conflict (who) do update set at = now(), page = coalesce(excluded.page, l.page), signed = excluded.signed;
   -- housekeeping, cheap because it only runs on a heartbeat
   if random() < 0.02 then delete from public.live where at < now() - interval '1 day'; end if;
 end $$;

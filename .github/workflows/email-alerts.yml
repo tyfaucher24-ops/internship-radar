@@ -1,0 +1,33 @@
+# V17 deadline reminders + weekly digest. Copy to .github/workflows/email-alerts.yml.
+# Needs repo secrets: EMAIL_JOB_KEY, GMAIL_USER, GMAIL_APP_PASSWORD. Without EMAIL_JOB_KEY it exits doing nothing.
+name: Email alerts
+on:
+  schedule:
+    - cron: '7 * * * *'   # hourly; each user is mailed at their own local hour
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Render previews only (no emails)'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: email-alerts
+  cancel-in-progress: false
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Send due emails
+        env:
+          EMAIL_JOB_KEY: ${{ secrets.EMAIL_JOB_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+        run: python3 ops/email/send_alerts.py

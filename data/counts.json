@@ -1,0 +1,28 @@
+{
+ "schema": 1,
+ "updated": "2026-11-05T15:50:32Z",
+ "day": "2026-11-05",
+ "open": 13830,
+ "new_today": 155,
+ "closed_today": 301,
+ "by_source": {
+  "workday": 8544,
+  "lead-list": 3015,
+  "greenhouse": 1256,
+  "ashby": 410,
+  "lever": 327,
+  "feed": 83,
+  "workable": 62,
+  "user-added": 61,
+  "bamboohr": 61,
+  "talnet": 7,
+  "avature": 4
+ },
+ "by_kind": {
+  "employer-board": 10671,
+  "lead-list": 3015,
+  "feed": 83,
+  "user-added": 61
+ },
+ "open_rule": "status open, not hidden, not past term, deadline today or later (America/New_York)"
+}

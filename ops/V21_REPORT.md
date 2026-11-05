@@ -166,22 +166,28 @@ Audit share with a deadline label of any kind (ISO or rolling): (2117+265)/14179
 
 ## Sync / deploy
 
-- Actions run **42070409811** (workflow_dispatch sync, started 2026-11-05 12:01 ET): checked out main **before** V21 commits; was still on the long "Sync from company career sites" step past the hour mark. A later sync on V21 main is required for counts.json + new boards + about cache on the published data.
+- Actions run **42070409811** (workflow_dispatch sync, started 2026-11-05 12:01 ET): checked out main **before** V21 commits; was still on the long "Sync from company career sites" step past the hour mark. Cancelled that run (it could not ship V21 code). Pages deploy `42081502574` published BUILD `c676649a56`. New sync `42082258567` started for counts.json + boards + about.
 - Pages deploys sharing `concurrency: data-sync` were cancelled while that sync held the group.
 - Live BUILD before V21 ship: `65eb7c20c3`. Local stamp after V21 front-end: `c676649a56` (re-stamp if more front-end files change before push).
 
 After numbers section: fill once post-deploy sync lands.
 
-### After (fill when live BUILD matches + sync published counts)
+### After (live BUILD `c676649a56` verified 2026-11-05 ~13:12 ET)
 | metric | before (audit) | after |
 |---|---:|---:|
-| meta.open | 12,663 | _pending sync_ |
-| Find open (markLive) | 13,830 | _pending_ |
-| coverage | 90 / 26 / 25 (V20) | 90 / 27 / 24 (registry) |
-| registry rows | 2,516 | 2,520 |
-| % open with deadline label (ISO or rolling) | 16.8% | _pending_ |
-| % open with has_desc | 81.5% | _pending_ |
-| companies with about seed | 0 | 59 |
+| meta.open | 12,663 | 12,663 (same published data until V21 sync finishes) |
+| Find open (markLive) | 13,830 | **13,830** (header: `13,830 open internships · Live`) |
+| coverage | 90 / 26 / 25 (V20) | **90 / 27 / 24** (registry; −1 not-in-registry) |
+| registry rows | 2,516 | **2,520** |
+| % open with deadline label (ISO or rolling) | 16.8% | 16.8% (label copy changed; dates unchanged) |
+| % open with has_desc | 81.5% | 81.5% (same data; fallback UI for the rest) |
+| companies with about blurb (seed/cache) | 0 | **59** |
+| Live BUILD | 65eb7c20c3 | **c676649a56** |
+
+`data/counts.json` is **404** until sync `42082258567` (started after deploy) writes it. Find count does not depend on that file.
+
+### axe (live after, Playwright + axe-core wcag2a/aa)
+Find light 1440: **0**. Detail with desc: **0**. Detail no-desc fallback: **0**. About page: **0**.
 
 ---
 

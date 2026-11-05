@@ -442,9 +442,9 @@
  },
  {
   "firm": "PwC",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {

@@ -67,7 +67,7 @@
 | Boston Consulting Group | - | 2 | covered |  |
 | Bain & Company | - | 0 | not in registry |  |
 | Deloitte | - | 0 | not in registry |  |
-| PwC | - | 0 | not in registry |  |
+| PwC | workday | 0 | in registry, 0 open now |  |
 | EY | - | 0 | not in registry |  |
 | KPMG | - | 0 | not in registry |  |
 | Accenture | workday | 1 | covered |  |
@@ -146,4 +146,4 @@
 | UnitedHealth Group | jsonld | 0 | in registry, 0 open now |  |
 | CVS Health | workday | 18 | covered |  |
 
-Summary: {'covered': 90, 'in registry, 0 open now': 26, 'not in registry': 25}
+Summary: {'covered': 90, 'in registry, 0 open now': 27, 'not in registry': 24}

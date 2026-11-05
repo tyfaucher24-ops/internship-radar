@@ -1,0 +1,415 @@
+{
+ "pfizer": {
+  "text": "Pfizer Inc. is an American multinational pharmaceutical and biotechnology corporation headquartered at The Spiral in Manhattan, New York City. Founded in 1849 in New York by German entrepreneurs Charles Pfizer and Charles F. Erhart, Pfizer is one of the oldest pharmaceutical companies in North America.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Pfizer",
+  "name": "Pfizer",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "walmart": {
+  "text": "Walmart Inc. is an American multinational omnichannel retail corporation that operates a chain of hypermarkets (also called supercenters), discount department stores, grocery stores, pharmacies, and gas stations in the United States and 19 other countries. It is headquartered in Bentonville, Arkansas. The company was founded in 1962 by brothers Sam Walton and James \"Bud\" Walton in nearby Rogers, Arkansas.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Walmart",
+  "name": "Walmart",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "cherrybekaert": {
+  "text": "Cherry Bekaert is a professional services firm in the United States, providing advisory, assurance, and tax solutions across the United States through two distinct entities. Headquartered in Raleigh, North Carolina, the firm employs over 2,500 people and has over 40 offices.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Cherry_Bekaert",
+  "name": "Cherry Bekaert",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "target": {
+  "text": "Target Corporation is an American retail corporation and discount department store chain headquartered in Minneapolis, Minnesota, United States. Target operates small-format and large-format retail stores and hypermarkets. It is the eighth-largest retailer in the U.S. and a component of the S&P 500 Index.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Target_(company)",
+  "name": "Target",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "tranetechnologies": {
+  "text": "Trane Technologies plc is an American company domiciled in Ireland focused on heating, ventilation, and air conditioning (HVAC) and refrigeration systems. The company traces its corporate history back more than 150 years and was created after a series of mergers and spin-offs. In 2008, HVAC manufacturer Trane was acquired by Ingersoll Rand, a US industrial tools manufacturer.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Trane_Technologies",
+  "name": "Trane Technologies",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "hntb": {
+  "text": "HNTB Corporation is an American architectural and infrastructure design firm. Founded in 1914 in Kansas City, Missouri, HNTB began with the partnership made by Ernest Emmanuel Howard with the firm Waddell & Harrington, founded in 1907.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/HNTB",
+  "name": "HNTB",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "stripe": {
+  "text": "Stripe, LLC is an Irish-American multinational financial services and software as a service (SaaS) company dual-headquartered in South San Francisco, California, United States, and Dublin, Ireland. The company primarily offers payment-processing software and application programming interfaces for e-commerce websites and mobile applications.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Stripe_(company)",
+  "name": "Stripe",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "airbnb": {
+  "text": "Airbnb, Inc. is an American company operating an online marketplace for short-and-long-term homestays, experiences and services in various countries and regions. It acts as a broker and charges a commission from each booking. Airbnb was founded in 2008 by Brian Chesky, Nathan Blecharczyk, and Joe Gebbia.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Airbnb",
+  "name": "Airbnb",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "nvidia": {
+  "text": "Nvidia Corporation is an American multinational technology company headquartered in Santa Clara, California. The company develops graphics processing units (GPUs), systems on chips (SoCs), and application programming interfaces (APIs) for data science, high-performance computing, artificial intelligence (AI) hardware, and mobile and automotive applications.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/NVIDIA",
+  "name": "NVIDIA",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "microsoft": {
+  "text": "Microsoft Corporation is an American multinational technology conglomerate headquartered in Redmond, Washington. The company became influential in the rise of personal computers through software like Windows and has since expanded into areas such as Internet services, cloud computing, artificial intelligence and video gaming among others.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Microsoft",
+  "name": "Microsoft",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "amazon": {
+  "text": "Amazon.com, Inc. (doing business as Amazon) is an American multinational conglomerate engaged in e-commerce, retail, cloud computing, online advertising, digital streaming, entertainment, and artificial intelligence.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Amazon_(company)",
+  "name": "Amazon",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "apple": {
+  "text": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California, in Silicon Valley, and known for consumer electronics, software and online services. Founded in 1976 as Apple Computer Company by Steve Jobs, Steve Wozniak and Ronald Wayne, the company was incorporated by Jobs and Wozniak as Apple Computer, Inc. the following year.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Apple_(company)",
+  "name": "Apple",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "meta": {
+  "text": "Meta Platforms, Inc. (doing business as Meta), headquartered in Menlo Park, California, is an American multinational technology company and is one of the Big Tech companies. Meta owns and operates several prominent social media platforms and communication services, including Facebook, Instagram, WhatsApp, Messenger, and Threads.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Meta_(company)",
+  "name": "Meta",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "tesla": {
+  "text": "Tesla, Inc. is an American multinational automotive and clean energy company. Headquartered in Austin, Texas, it designs, manufactures, and sells battery electric vehicles (BEVs), stationary battery energy storage devices from home to grid-scale, solar panels and solar shingles, and related products and services.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Tesla_(company)",
+  "name": "Tesla",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "nike": {
+  "text": "Nike, Inc. is an American athletic footwear and apparel corporation headquartered near Beaverton, Oregon. It is the world's largest supplier of athletic shoes and apparel and a major manufacturer of sports equipment, with revenue in excess of US$46 billion in its fiscal year 2022.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nike_(company)",
+  "name": "Nike",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "disney": {
+  "text": "The Walt Disney Company (TWDC), commonly known as Disney, is an American multinational mass media and entertainment conglomerate headquartered at the Walt Disney Studios complex in Burbank, California.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Disney",
+  "name": "Disney",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "jpmorganchase": {
+  "text": "JPMorgan Chase & Co. (stylized as JPMorganChase) is an American multinational banking institution headquartered in New York City and incorporated in Delaware. It is the largest bank in the United States, and the world's largest bank by market capitalization as of 2026. As the largest of the Big Four banks in America, the firm is considered systemically important by the Financial Stability Board.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/JPMorgan_Chase",
+  "name": "JPMorgan Chase",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "morganstanley": {
+  "text": "Morgan Stanley is an American multinational investment bank and financial services company. It is headquartered at 1585 Broadway in Midtown Manhattan, New York City, with offices in 42 countries, including offices in many financial centers worldwide. Morgan Stanley is one of the largest investment banks by revenue.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Morgan_Stanley",
+  "name": "Morgan Stanley",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "blackrock": {
+  "text": "BlackRock, Inc. is an American multinational investment company. Founded in 1988, initially as an enterprise risk management and fixed income institutional asset manager, BlackRock is the largest asset manager worldwide, with $15.3 trillion in assets under management as of 2026. Headquartered in New York City, BlackRock has 70 offices in 30 countries and clients in 100 countries.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/BlackRock",
+  "name": "BlackRock",
+  "at": "2026-11-05T17:00:00+00:00"
+ },
+ "bytedance": {
+  "text": "ByteDance is a Chinese internet technology company based in Haidian, Beijing. Its associated variable interest entity, ByteDance Ltd, is incorporated in the Cayman Islands.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/ByteDance",
+  "name": "ByteDance",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "waymo": {
+  "text": "Waymo LLC is an American autonomous driving technology company headquartered in Mountain View, California. It is a subsidiary of Alphabet Inc., Google's parent company. As of June 2026• • , Waymo operates public commercial robotaxi services in 10 US metropolitan areas, has 3,871 robotaxis in service, provides 500,000 paid rides per week, and has logged 200 million fully autonomous miles.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Waymo",
+  "name": "Waymo",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "rivian": {
+  "text": "Rivian Automotive, Inc., is an American electric vehicle manufacturer and automotive technology company founded in 2009. It produces an electric sport utility vehicle (SUV) and a pickup truck, both on a \"skateboard\" platform that can support future vehicles and be adopted by other companies. They also produce an electric delivery van, the Rivian EDV. The EDV is sold to Amazon for its deliveries.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Rivian",
+  "name": "Rivian",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "amd": {
+  "text": "Advanced Micro Devices, Inc. (AMD) is an American multinational semiconductor company headquartered in Santa Clara, California. It develops central processing units (CPUs), graphics processing units (GPUs), field-programmable gate arrays (FPGAs), system-on-chips (SoCs), and high-performance computer components.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/AMD",
+  "name": "AMD",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "navyfederal": {
+  "text": "Navy Federal Credit Union (or Navy Federal) is an American global credit union headquartered in Vienna, Virginia, chartered and regulated under the authority of the National Credit Union Administration (NCUA). Navy Federal is the largest natural member (or retail) credit union in the United States, both in asset size and in membership.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Navy_Federal",
+  "name": "Navy Federal",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "intercontinentalexchange": {
+  "text": "Intercontinental Exchange, Inc. (ICE) is an American multinational financial services company that operates global financial exchanges, including stock exchanges and futures exchanges, as well as clearing houses, and provides technology and services for mortgage loan origination, closing, and servicing.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Intercontinental_Exchange",
+  "name": "Intercontinental Exchange",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "keysighttechnologies": {
+  "text": "Keysight Technologies, Inc. is a global company headquartered in Santa Rosa, California, that makes electronic testing equipment and software used to design, develop, and evaluate technologies. Its customers work in fields including mobile communications, aerospace and defense, automotive manufacturing, semiconductors, digital healthcare, and energy.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Keysight_Technologies",
+  "name": "Keysight Technologies",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "paccar": {
+  "text": "Paccar Inc. (stylized as PACCAR) is an American company that manufactures heavy-duty trucks. It operates subsidiaries including Kenworth, Peterbilt, and DAF Trucks. Headquartered in Bellevue, Washington, PACCAR also provides financial services and industrial parts.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Paccar",
+  "name": "Paccar",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "vertiv": {
+  "text": "Vertiv Holdings Co. is an American provider of infrastructure and services for data centers, communication networks, and commercial and industrial environments. Headquartered in Westerville, Ohio, Vertiv has around 34,000 employees worldwide, operating in more than 40 countries and with 30 manufacturing and assembly facilities.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Vertiv",
+  "name": "Vertiv",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "generaldynamicsmissionsystems": {
+  "text": "General Dynamics Mission Systems is a business unit of American defense and aerospace company General Dynamics. General Dynamics Mission Systems integrates secure communication and information systems and technology. General Dynamics Mission Systems has core manufacturing in secure communications networks; radios and satellite technology for the defense, cyber, public safety, and intelligence communities.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/General_Dynamics_Mission_Systems",
+  "name": "General Dynamics Mission Systems",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "l3harristechnologies": {
+  "text": "L3Harris Technologies, Inc. is an American technology company, defense contractor, and information technology services provider that produces products for command and control systems, wireless equipment, tactical radios, avionics and electronic systems, night vision equipment, intelligence, surveillance and reconnaissance (C3ISR) systems and products, ocean systems, instrumentation, navigation products, training…",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/L3Harris_Technologies",
+  "name": "L3Harris Technologies",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "texasinstruments": {
+  "text": "Texas Instruments Incorporated (TI) is an American multinational semiconductor company headquartered in Dallas, Texas. It is one of the top 10 semiconductor companies worldwide based on sales volume. The company's focus is on developing analog chips and embedded processors, which account for more than 80% of its revenue.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Texas_Instruments",
+  "name": "Texas Instruments",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "coinbase": {
+  "text": "Coinbase Global, Inc. is an American cryptocurrency exchange. It was founded in 2012 by Brian Armstrong and Fred Ehrsam. Coinbase has over 100 million users, and is the largest U.S. based cryptocurrency exchange as well as the world's biggest bitcoin custodian, as of 2024.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Coinbase",
+  "name": "Coinbase",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "microntechnology": {
+  "text": "Micron Technology, Inc. is an American multinational semiconductor company that manufactures computer memory and computer data storage products, including dynamic random-access memory (DRAM), flash memory, High Bandwidth Memory (HBM), and solid-state drives (SSDs). Founded in 1978 in Boise, Idaho, Micron is the only major American computer memory manufacturer.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Micron_Technology",
+  "name": "Micron Technology",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "palantirtechnologies": {
+  "text": "Palantir Technologies Inc. is an American publicly traded company that develops data integration and analytics software. Palantir is headquartered in Miami, Florida, and was founded in 2003 by Peter Thiel, Stephen Cohen, Joe Lonsdale, Alex Karp, and Nathan Gettings.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Palantir_Technologies",
+  "name": "Palantir Technologies",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "bostonscientific": {
+  "text": "Boston Scientific Corporation (BSC) is an American biotechnology and biomedical engineering firm and multinational manufacturer of medical devices used in interventional medical specialties, including interventional radiology, interventional cardiology, peripheral interventions, neuromodulation, neurovascular intervention, electrophysiology, cardiac surgery, vascular surgery, endoscopy, oncology, urology and…",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Boston_Scientific",
+  "name": "Boston Scientific",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "cvshealth": {
+  "text": "CVS Health Corporation is an American multinational healthcare company that owns CVS Pharmacy, a retail pharmacy chain; CVS Caremark, a pharmacy benefits manager; and Aetna, a health insurance provider, among many other brands. The company is the world's second largest healthcare company, behind UnitedHealth Group. In 2023, the company was ranked 64th in the Forbes Global 2000.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/CVS_Health",
+  "name": "CVS Health",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "jmfamilyenterprises": {
+  "text": "JM Family Enterprises, Inc. (JMFE) is a diversified automotive company, founded by Jim Moran in 1968.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/JM_Family_Enterprises",
+  "name": "JM Family Enterprises",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "nintendo": {
+  "text": "Nintendo Co., Ltd. is a Japanese multinational video game company headquartered in Kyoto. It develops, publishes, and manufactures both video games and video game consoles.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nintendo",
+  "name": "Nintendo",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "ernstandyoung": {
+  "text": "EY, previously known as Ernst & Young, is a multinational professional services network that provides assurance, tax, information technology services (including managed services in areas like Cybersecurity, Cloud, Digital Transformation and AI), consulting, and transactions advice. Along with Deloitte, KPMG and PwC, it is one of the Big Four professional services firms.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Ernst_%26_Young",
+  "name": "Ernst & Young",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "nokia": {
+  "text": "Nokia Corporation is a Finnish multinational telecommunications, information technology, and consumer electronics corporation, originally established as a pulp mill in 1865. Nokia's main headquarters are in Espoo, Finland, in the Helsinki metropolitan area, but the company's actual roots are in the Tampere region of Pirkanmaa.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nokia",
+  "name": "Nokia",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "northropgrumman": {
+  "text": "Northrop Grumman Corporation is an American aerospace and defense company that designs and manufactures systems for aeronautics, defense, missions, and space. Headquartered in West Falls Church, Virginia, the company is the fifth-largest contractor of the U.S. federal government; it receives over 2% of all federal government spending on contractors.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Northrop_Grumman",
+  "name": "Northrop Grumman",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "rtx": {
+  "text": "RTX Corporation, formerly Raytheon Technologies Corporation, is an American multinational aerospace and defense conglomerate headquartered in Arlington, Virginia. It is one of the largest aerospace and defense manufacturers in the world by revenue and market capitalization, as well as one of the largest providers of intelligence services. In 2023, the company's rank in the Forbes Global 2000 was 79.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/RTX_(company)",
+  "name": "RTX",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "nissan": {
+  "text": "Nissan Motor Co., Ltd. is a Japanese multinational automobile manufacturer headquartered in Yokohama, Kanagawa, Japan. The company sells its vehicles under the Nissan and Infiniti brands, and formerly the Datsun brand, with in-house performance tuning products (including cars) under the Nismo and Autech brands.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Nissan",
+  "name": "Nissan",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "aerospace": {
+  "text": "The Aerospace Corporation is an American nonprofit corporation that operates a federally funded research and development center (FFRDC) providing independent technical oversight and objective analysis for U.S. national security space programs. The corporation provides technical guidance and advice on all aspects of space missions to military, civil, and commercial customers.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Aerospace_Corporation",
+  "name": "Aerospace",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "americanexpress": {
+  "text": "American Express Company (Amex) is an American bank holding company and multinational financial services corporation that specializes in payment cards.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/American_Express",
+  "name": "American Express",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "asteralabs": {
+  "text": "Astera Labs, Inc., headquartered in San Jose, California, is a fabless manufacturing company that develops connectivity technologies and related software that are used in data centers serving the artificial intelligence and cloud-computing markets.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Astera_Labs",
+  "name": "Astera Labs",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "constellationenergy": {
+  "text": "Constellation Energy Corporation is an American energy company headquartered in Baltimore, Maryland. The company provides electric power, natural gas, and energy management services. It has approximately two million customers across the continental United States.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Constellation_Energy",
+  "name": "Constellation Energy",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "garmin": {
+  "text": "Garmin Ltd. is an American multinational technology company based in Olathe, Kansas. The company designs, develops, manufactures, markets, and distributes GPS-enabled products and other navigation, communication, sensor-based, and information products to the automotive, aviation, marine, outdoors, and sport markets.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Garmin",
+  "name": "Garmin",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "generalmotors": {
+  "text": "General Motors Company (GM) is an American multinational automotive manufacturing company headquartered in Detroit, Michigan, United States.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/General_Motors",
+  "name": "General Motors",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "google": {
+  "text": "Google LLC is an American multinational technology corporation focused on information technology, online advertising, search engine technology, email, cloud computing, software, quantum computing, e-commerce, consumer electronics, and artificial intelligence (AI). It has been referred to as \"the most powerful company in the world\" by the BBC, and is one of the world's most valuable brands.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Google",
+  "name": "Google",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "johndeere": {
+  "text": "Deere & Company (doing business as John Deere), is an American corporation that manufactures agricultural machinery, heavy equipment, forestry machinery, diesel engines, drivetrains (axles, transmissions, gearboxes) used in heavy equipment and lawn care equipment. It also provides financial services and other related activities.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/John_Deere",
+  "name": "John Deere",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "bosch": {
+  "text": "Robert Bosch GmbH, commonly known as Bosch (styled BOSCH), is a German multinational engineering and technology company headquartered in Gerlingen, Baden-Württemberg, Germany. It is 94 percent owned by the Robert Bosch Stiftung, a charitable institution.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Bosch_(company)",
+  "name": "Bosch",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "costco": {
+  "text": "Costco Wholesale Corporation is an American multinational corporation that operates a chain of membership-only big-box warehouse club retail stores. As of 2025, Costco is the third-largest retailer in the world, and as of August 2024, the world's largest retailer of beef, poultry, organic produce, and wine, with just under a third of American consumers regularly shopping at Costco warehouses.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Costco",
+  "name": "Costco",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "hewlettpackardenterprise": {
+  "text": "The Hewlett Packard Enterprise Company (HPE) is an American multinational information technology company based in Spring, Texas. It is a business-focused organization which works in servers, storage, networking, AI, containerization software and consulting and support. In 2026, Hewlett Packard Enterprise ranked No.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Hewlett_Packard_Enterprise",
+  "name": "Hewlett Packard Enterprise",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "intel": {
+  "text": "Intel Corporation is an American multinational technology company headquartered in Santa Clara, California. It designs, manufactures, and sells computer components such as central processing units (CPUs) and related products for business and consumer markets.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Intel",
+  "name": "Intel",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "peraton": {
+  "text": "Peraton Inc. is a privately held American national security and technology company formed in 2017. It is headquartered in Reston, Virginia. Its service areas include space, intelligence, cyber, defense, homeland security, citizen security, and health.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Peraton",
+  "name": "Peraton",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "onsemi": {
+  "text": "ON Semiconductor Corporation (stylized and doing business as onsemi) is an American semiconductor supplier company, based in Scottsdale, Arizona.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Onsemi",
+  "name": "onsemi",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "delltechnologies": {
+  "text": "Dell Technologies Inc. is an American multinational technology company that has been headquartered in Round Rock, Texas, since 1994. It was formed as a result of the September 2016 merger of Dell Inc. and EMC Corporation.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Dell_Technologies",
+  "name": "Dell Technologies",
+  "at": "2026-11-05T17:30:00+00:00"
+ },
+ "epicgames": {
+  "text": "Epic Games, Inc. is an American video game and software developer and publisher based in Cary, North Carolina. The company was founded by Tim Sweeney as Potomac Computer Systems in 1991, originally located in his parents' house in Potomac, Maryland.",
+  "source": "wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Epic_Games",
+  "name": "Epic Games",
+  "at": "2026-11-05T17:30:00+00:00"
+ }
+}

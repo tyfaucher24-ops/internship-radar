@@ -1,6 +1,15 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V21 Live open count, wider coverage, no-deadline label, descriptions + company about, 2026-11-05
+- Find header: `{N} open internships · Live`. N is counted from the loaded listings (same open rule as before); a muted Live stays when the sync is older than 60 minutes. Screen-reader text says Live means the number came from the latest listings sync. Intro uses the same count (`meta.open_live`).
+- Each sync writes `data/counts.json` (open, new_today, closed_today, by_source, by_kind) for the private stats site. No service_role key; public JSON only.
+- Cards and detail: undated listings say **No deadline yet**; rolling says **Rolling / no deadline posted**. Filter facet renamed (old `?dlw=Not listed` still works). Deadline sort still puts undated rows after dated ones.
+- Detail panel: role description when the board posted one; otherwise a muted note plus a short **About &lt;Company&gt;** blurb (employer board intro → careers meta → Wikipedia, with attribution). Never an empty description area. Blurbs in `data/about/{0..15}.json` (seed: `pipeline/seeds/company_about.json`).
+- Coverage: V21 prober (`pipeline/probe.py`) with sector/Fortune/S&amp;P/YC seeds under `pipeline/seeds/`, careers-page ATS link reading, Rippling + Personio adapters (public JSON/XML only). Registry rows committed on main are merged over the Actions cache (fixes V20 rows that never reached the live sync). Weekly coverage note under `data/coverage/`.
+- Heartbeat (V19.4) confirmed present; privacy sentence unchanged. Stats site lists open / new today / closed today / by source from `counts.json`.
+- Tests: `tests/test_v21.py`. Report: `ops/V21_REPORT.md`.
+
 ## V20 More sources and fixed Workday hosts, 2026-11-04
 - Registry: new official employer boards from the V20 source research (Part 1), plus ATTcollege. Firms whose boards could not be read without scraping (BrassRing, iCIMS, Oracle HCM, Eightfold, 403 sites) stay out of the registry and are listed as unresolved in ops/V20-SOURCES.md.
 - Workday: the "still live" check and the list-URL parser now understand wd1.myworkdaysite.com as well as myworkdayjobs.com (Wells Fargo, Perella Weinberg), reusing the hygiene.py URL shape.

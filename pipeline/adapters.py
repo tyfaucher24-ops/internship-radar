@@ -288,3 +288,31 @@ def talnet(c):
         i=tx.find('Job description')
         out.append({'title':t,'url':u,'locations':us,'desc':tx[i:i+12000] if i>=0 else '','posted':posted,'deadline':deadline,'ats_id':re.search(r'/opp/(\d+)',u).group(1) if '/opp/' in u else u})
     return out
+
+# --- V20 Part 3d: New York State Jobs (statejobs.ny.gov; robots.txt is 404 = no rules). One public HTML table of
+# every open state vacancy, with Posted and Deadline columns. Only intern / student titles are kept; the stated
+# deadline is kept as the listing's deadline. Company = the hiring agency.
+_NY_ROW=re.compile(r'<td>(\d+)</td>\s*<td><a[^>]*href="(vacancyDetailsView\.cfm\?id=\d+)"[^>]*>(.*?)</a></td>\s*<td>.*?</td>\s*<td>(.*?)</td>\s*<td>(.*?)</td>\s*<td>(.*?)</td>\s*<td>(.*?)</td>',re.S)
+_NY_TITLE=re.compile(r'(?i)(?<![a-z])(intern|interns|internship|internships|student)(?![a-z])')
+def _nyd(s):
+    try: return datetime.datetime.strptime(s.strip(),'%m/%d/%y').date().isoformat()
+    except Exception: return None
+def _nyagency(a):
+    a=re.sub(r'\s+',' ',a).strip()
+    m=re.match(r'^(.*?),\s*(Department|Office|Division) of$',a,re.I)   # "Health, Department of" -> "Department of Health"
+    return 'NYS '+(f'{m.group(2)} of {m.group(1)}' if m else a)
+@adapter('nystate',api='https://statejobs.ny.gov/public/vacancyTable.cfm',official=True)
+def nystate(c):
+    import html as H
+    h=fetch('https://statejobs.ny.gov/public/vacancyTable.cfm',headers={'Accept':'text/html'},timeout=60).text
+    rows=_NY_ROW.findall(h)
+    if len(rows)<50: raise RuntimeError(f'nystate: only {len(rows)} table rows (page layout changed?)')
+    out=[]
+    for iid,href,title,posted,deadline,agency,county in rows:
+        t=re.sub(r'\s+',' ',H.unescape(re.sub(r'<[^>]+>','',title))).strip()
+        if not _NY_TITLE.search(t): continue
+        co=H.unescape(county).strip()
+        out.append({'title':t,'url':'https://statejobs.ny.gov/public/'+H.unescape(href),'locations':[f'{co} County, NY' if co else 'New York, NY'],
+          'posted':_nyd(H.unescape(posted)),'deadline':_nyd(H.unescape(deadline)),'deadline_source':'NY State Jobs vacancy deadline',
+          'ats_id':iid,'company_override':_nyagency(H.unescape(agency)),'desc':''})
+    return out

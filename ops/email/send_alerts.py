@@ -58,7 +58,7 @@ def saved(u,BY):
         if not isinstance(t,dict) or (t.get('status') or 'Saved')!='Saved' or t.get('hidden'):continue
         lid=str(t.get('listingId') or '');x=BY.get(lid);l=t.get('listing') or {}
         row={'id':lid,'company':(x or l).get('company') or l.get('company') or '','title':(x or l).get('title') or l.get('title') or '',
-             'deadline':(x or l).get('deadline'),'rolling':(x or l).get('rolling') or (x and not x.get('deadline')),'apply':(x or {}).get('apply_link') or (x or {}).get('apply_url') or l.get('apply_url') or '',
+             'deadline':(x or l).get('deadline'),'rolling':(x or l).get('rolling') or (x and not x.get('deadline')),'rolling_src':bool((x or l).get('rolling')),'apply':(x or {}).get('apply_link') or (x or {}).get('apply_url') or l.get('apply_url') or '',
              'closed':bool(x and x.get('status')=='closed')}
         if row['company'] or row['title']:out.append(row)
     return out
@@ -104,7 +104,7 @@ def when(r):
     if r.get('deadline'):
         left=r.get('left');d=ddate(r).strftime('%b %-d')
         return f"Closes {d}"+('' if left is None else ' (today)' if left==0 else ' (tomorrow)' if left==1 else f' (in {left} days)')
-    return 'Rolling, apply early'
+    return 'Rolling / no deadline posted, apply early' if r.get('rolling_src',r.get('rolling')) else 'No deadline yet'
 def render(u,kind,body):
     tok=u['unsub_token'];un=lambda t:f"{SITE}#unsub={tok}&t={t}"
     items=[]
@@ -118,7 +118,7 @@ def render(u,kind,body):
         if c['closing']:parts.append(f"{len(c['closing'])} saved internship{'s' if len(c['closing'])!=1 else ''} close in the next 2 weeks")
         if c['matches']:parts.append(f"{len(c['matches'])} new match{'es' if len(c['matches'])!=1 else ''} for you")
         subj=' · '.join(parts)[:1].upper()+' · '.join(parts)[1:];intro='Your weekly Intern Index digest.'
-        sec('Closing in the next 14 days',c['closing'],'digest');sec('Saved, rolling deadlines',c['rolling'],'digest');sec('New top matches',[dict(m,apply=m.get('apply_link') or m.get('apply_url')) for m in c['matches']],'digest')
+        sec('Closing in the next 14 days',c['closing'],'digest');sec('Saved, no deadline yet or rolling',c['rolling'],'digest');sec('New top matches',[dict(m,apply=m.get('apply_link') or m.get('apply_url')) for m in c['matches']],'digest')
         k=c['counts'];items.append(('Your tracker',[(f"{k['saved']} saved · {k['applied']} applied · {k['interviewing']} interviewing",'','',SITE+'#tracker','')]))
         which='digest';whyt='the weekly digest'
     # text

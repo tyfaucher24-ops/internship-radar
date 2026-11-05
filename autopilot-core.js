@@ -25,9 +25,9 @@ function plan(x,added,now){now=now?new Date(now):new Date();added=added?new Date
  push('p1',b,'Week 1: tailor your resume to this posting');
  push('p2',addD(b,2),'Find a warm path: message one person on the team');
  push('p3',addD(b,kind==='rolling'?3:5),kind==='rolling'?'Apply: rolling roles fill early':'Apply: no deadline is listed, so apply soon');
- push(kind==='rolling'?'r7':'u7',addD(b,7),kind==='rolling'?'Still open? Rolling roles can close any day':'No deadline listed: check the posting is still open');
+ push(kind==='rolling'?'r7':'u7',addD(b,7),kind==='rolling'?'Still open? Rolling roles can close any day':'No deadline yet: check the posting is still open');
  push('p4',addD(b,kind==='rolling'?10:12),'Follow up: check your status or send a short note');
- return{kind,due:null,steps,summary:kind==='rolling'?'Rolling deadline: apply early':'No deadline listed'}}
+ return{kind,due:null,steps,summary:kind==='rolling'?'Rolling / no deadline posted: apply early':'No deadline yet'}}
 /* Reminders that are due now and not yet dismissed. */
 function dueSteps(p,done,now){now=now?new Date(now):new Date();done=done||[];return(p.steps||[]).filter(s=>new Date(s.at)<=now&&!done.includes(s.key))}
 function nextStep(p,done,now){now=now?new Date(now):new Date();done=done||[];return(p.steps||[]).find(s=>new Date(s.at)>now&&!done.includes(s.key))||null}

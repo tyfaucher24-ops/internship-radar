@@ -33,7 +33,7 @@ if(false){intro.addEventListener('pointermove',e=>{const r=mag.getBoundingClient
 const clouds=[...intro.querySelectorAll('.cloud')],stars=intro.querySelector('.stars');
 function domFrame(){}/* V5.1 #9: no parallax/glow/magnet — just the planet */
 /* count-up for the live counter once meta arrives */
-document.addEventListener('radar:meta',e=>{const el=$i('iN');if(!el)return;const N=(e.detail||{}).open||0;if(!N){el.textContent='';return}
+document.addEventListener('radar:meta',e=>{const el=$i('iN');if(!el)return;const N=(e.detail||{}).open_live||(e.detail||{}).open||0;/* V21: same rule as the Find count (data/counts.json, written each sync) */if(!N){el.textContent='';return}
  if(window.rollNum&&!RM){el.textContent='';rollNum(el,0);requestAnimationFrame(()=>requestAnimationFrame(()=>rollNum(el,N)));return}el.textContent=N.toLocaleString()});
 /* ---------- reduced motion: static hero only ---------- */
 if(RM){intro.classList.add('static');return}

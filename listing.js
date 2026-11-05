@@ -10,7 +10,7 @@ const STATES='AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA 
 const LBL={open:'Open',closing_soon:'Closing soon',closed:'Closed',not_open:'Upcoming',upcoming:'Upcoming'};
 function statusOf(x){if(x.status==='upcoming')return'upcoming';if(x.status==='closed'||x.status==='not_open')return x.status;if(x.deadline){const n=days(x.deadline);if(n<0)return'closed';if(n<=14)return'closing_soon'}return'open'}
 const fmtDate=d=>new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-const dlText=x=>x.deadline?fmtDate(x.deadline):(x.rolling?'Rolling':'Deadline '+NL);
+const dlText=x=>x.deadline?fmtDate(x.deadline):(x.rolling?'Rolling / no deadline posted':'No deadline yet');
 const locText=x=>{const L=(x.locations||[]).map(l=>[l.city,l.state].filter(Boolean).join(', ')||l.region).filter(Boolean);let s=L.length?L.slice(0,3).join(' · ')+(L.length>3?` +${L.length-3}`:''):(x.location_text||'');if(x.remote&&!/remote/i.test(s))s=(s?s+' · ':'')+'Remote';return s?esc(s):'Location '+NL};
 const termText=x=>x.terms&&x.terms.length?esc(x.terms.join(', ')):(x.season?esc(x.season+' '+(x.year||'')):'Term '+NL);
 const yearsText=x=>x.class_years&&x.class_years.length?esc(x.class_years.join(', ')):'Class years '+NL;

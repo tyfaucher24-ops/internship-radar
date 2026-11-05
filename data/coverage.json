@@ -2,29 +2,29 @@
  {
   "firm": "Citadel",
   "registry": "",
-  "open": 1,
+  "open": 2,
   "status": "covered",
   "note": "Careers site sits behind a Cloudflare bot challenge; not read"
  },
  {
   "firm": "Citadel Securities",
   "registry": "",
-  "open": 1,
+  "open": 2,
   "status": "covered",
   "note": "Careers site sits behind a Cloudflare bot challenge; not read"
  },
  {
   "firm": "Morgan Stanley",
   "registry": "talnet",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 4,
+  "status": "covered",
   "note": ""
  },
  {
   "firm": "Evercore",
   "registry": "talnet",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 1,
+  "status": "covered",
   "note": "Board read; at audit time it listed only coffee chats/open houses (events, not jobs)"
  },
  {
@@ -37,28 +37,28 @@
  {
   "firm": "Two Sigma",
   "registry": "avature",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 7,
+  "status": "covered",
   "note": ""
  },
  {
   "firm": "Google",
   "registry": "",
-  "open": 9,
+  "open": 10,
   "status": "covered",
   "note": "robots.txt disallows /about/careers/applications/jobs/results"
  },
  {
   "firm": "Goldman Sachs",
   "registry": "",
-  "open": 8,
-  "status": "covered",
+  "open": 0,
+  "status": "not in registry",
   "note": ""
  },
  {
   "firm": "JPMorgan Chase",
   "registry": "",
-  "open": 6,
+  "open": 14,
   "status": "covered",
   "note": ""
  },
@@ -72,15 +72,15 @@
  {
   "firm": "Citi",
   "registry": "workday",
-  "open": 9,
+  "open": 11,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Wells Fargo",
-  "registry": "",
-  "open": 0,
-  "status": "not in registry",
+  "registry": "workday",
+  "open": 2,
+  "status": "covered",
   "note": ""
  },
  {
@@ -99,9 +99,9 @@
  },
  {
   "firm": "Deutsche Bank",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -113,23 +113,23 @@
  },
  {
   "firm": "RBC",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "BMO",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "TD Securities",
-  "registry": "",
-  "open": 0,
-  "status": "not in registry",
+  "registry": "workday",
+  "open": 6,
+  "status": "covered",
   "note": ""
  },
  {
@@ -142,8 +142,8 @@
  {
   "firm": "Lazard",
   "registry": "",
-  "open": 0,
-  "status": "not in registry",
+  "open": 3,
+  "status": "covered",
   "note": ""
  },
  {
@@ -155,30 +155,30 @@
  },
  {
   "firm": "PJT Partners",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "Moelis",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "Perella Weinberg",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "Guggenheim",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -191,8 +191,8 @@
  {
   "firm": "William Blair",
   "registry": "greenhouse",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 1,
+  "status": "covered",
   "note": ""
  },
  {
@@ -212,8 +212,8 @@
  {
   "firm": "Stifel",
   "registry": "",
-  "open": 0,
-  "status": "not in registry",
+  "open": 3,
+  "status": "covered",
   "note": ""
  },
  {
@@ -239,16 +239,16 @@
  },
  {
   "firm": "TPG",
-  "registry": "",
-  "open": 0,
-  "status": "not in registry",
+  "registry": "greenhouse",
+  "open": 1,
+  "status": "covered",
   "note": ""
  },
  {
   "firm": "Bain Capital",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -261,57 +261,57 @@
  {
   "firm": "BlackRock",
   "registry": "workday",
-  "open": 12,
+  "open": 11,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Vanguard",
   "registry": "workday",
-  "open": 21,
+  "open": 23,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Fidelity",
   "registry": "workday",
-  "open": 43,
+  "open": 30,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "State Street",
   "registry": "workday",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 3,
+  "status": "covered",
   "note": ""
  },
  {
   "firm": "PIMCO",
   "registry": "workday",
-  "open": 27,
+  "open": 28,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Wellington",
   "registry": "workday",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 2,
+  "status": "covered",
   "note": ""
  },
  {
   "firm": "T. Rowe Price",
   "registry": "workday",
-  "open": 1,
-  "status": "covered",
+  "open": 0,
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "Bridgewater",
-  "registry": "",
+  "registry": "greenhouse",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -324,14 +324,14 @@
  {
   "firm": "Point72",
   "registry": "greenhouse",
-  "open": 17,
+  "open": 16,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "D. E. Shaw",
   "registry": "",
-  "open": 1,
+  "open": 3,
   "status": "covered",
   "note": ""
  },
@@ -345,28 +345,28 @@
  {
   "firm": "Hudson River Trading",
   "registry": "",
-  "open": 2,
+  "open": 5,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Jump Trading",
   "registry": "greenhouse",
-  "open": 11,
+  "open": 12,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Optiver",
   "registry": "greenhouse",
-  "open": 11,
+  "open": 3,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "IMC",
   "registry": "greenhouse",
-  "open": 11,
+  "open": 10,
   "status": "covered",
   "note": ""
  },
@@ -380,35 +380,35 @@
  {
   "firm": "Susquehanna International Group (SIG)",
   "registry": "",
-  "open": 18,
+  "open": 6,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Akuna Capital",
   "registry": "",
-  "open": 10,
+  "open": 11,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Virtu",
   "registry": "greenhouse",
-  "open": 4,
+  "open": 6,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Tower Research",
   "registry": "",
-  "open": 3,
+  "open": 4,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Five Rings",
   "registry": "greenhouse",
-  "open": 4,
+  "open": 5,
   "status": "covered",
   "note": ""
  },
@@ -436,8 +436,8 @@
  {
   "firm": "Deloitte",
   "registry": "",
-  "open": 3,
-  "status": "covered",
+  "open": 0,
+  "status": "not in registry",
   "note": ""
  },
  {
@@ -450,8 +450,8 @@
  {
   "firm": "EY",
   "registry": "",
-  "open": 1,
-  "status": "covered",
+  "open": 0,
+  "status": "not in registry",
   "note": ""
  },
  {
@@ -464,8 +464,8 @@
  {
   "firm": "Accenture",
   "registry": "workday",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 1,
+  "status": "covered",
   "note": ""
  },
  {
@@ -478,49 +478,49 @@
  {
   "firm": "Booz Allen Hamilton",
   "registry": "",
-  "open": 63,
+  "open": 89,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Microsoft",
   "registry": "",
-  "open": 27,
+  "open": 33,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Amazon",
   "registry": "",
-  "open": 13,
+  "open": 50,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Apple",
   "registry": "workday",
-  "open": 9,
+  "open": 17,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Meta",
   "registry": "",
-  "open": 33,
+  "open": 66,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "NVIDIA",
   "registry": "workday",
-  "open": 27,
+  "open": 61,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Netflix",
   "registry": "workday",
-  "open": 2,
+  "open": 5,
   "status": "covered",
   "note": ""
  },
@@ -534,7 +534,7 @@
  {
   "firm": "Adobe",
   "registry": "workday",
-  "open": 15,
+  "open": 22,
   "status": "covered",
   "note": ""
  },
@@ -555,71 +555,71 @@
  {
   "firm": "Intel",
   "registry": "smartrecruiters,workday",
-  "open": 37,
+  "open": 56,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "AMD",
   "registry": "",
-  "open": 29,
+  "open": 34,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Qualcomm",
   "registry": "",
-  "open": 0,
-  "status": "not in registry",
+  "open": 7,
+  "status": "covered",
   "note": ""
  },
  {
   "firm": "Cisco",
   "registry": "workday",
-  "open": 41,
+  "open": 39,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Tesla",
   "registry": "",
-  "open": 125,
+  "open": 117,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "SpaceX",
   "registry": "greenhouse",
-  "open": 16,
+  "open": 17,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Stripe",
   "registry": "greenhouse",
-  "open": 6,
+  "open": 5,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Palantir",
   "registry": "lever",
-  "open": 31,
+  "open": 52,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Databricks",
   "registry": "",
-  "open": 3,
+  "open": 4,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "OpenAI",
   "registry": "ashby",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 1,
+  "status": "covered",
   "note": ""
  },
  {
@@ -632,7 +632,7 @@
  {
   "firm": "Uber",
   "registry": "greenhouse",
-  "open": 4,
+  "open": 5,
   "status": "covered",
   "note": ""
  },
@@ -653,36 +653,36 @@
  {
   "firm": "ServiceNow",
   "registry": "smartrecruiters",
-  "open": 5,
+  "open": 3,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Workday",
   "registry": "workday",
-  "open": 6,
+  "open": 7,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Intuit",
   "registry": "smartrecruiters",
-  "open": 8,
+  "open": 9,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "PayPal",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "Capital One",
   "registry": "workday",
-  "open": 1,
-  "status": "covered",
+  "open": 0,
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -702,7 +702,7 @@
  {
   "firm": "Mastercard",
   "registry": "workday",
-  "open": 3,
+  "open": 2,
   "status": "covered",
   "note": ""
  },
@@ -716,49 +716,49 @@
  {
   "firm": "Northrop Grumman",
   "registry": "workday",
-  "open": 26,
+  "open": 14,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "RTX",
   "registry": "workday",
-  "open": 96,
+  "open": 104,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Boeing",
   "registry": "",
-  "open": 1,
+  "open": 2,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "General Dynamics",
   "registry": "smartrecruiters,workday",
-  "open": 22,
+  "open": 27,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "GE Aerospace",
   "registry": "workday",
-  "open": 44,
+  "open": 28,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Honeywell",
   "registry": "",
-  "open": 8,
+  "open": 9,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Caterpillar",
   "registry": "workday",
-  "open": 20,
+  "open": 23,
   "status": "covered",
   "note": ""
  },
@@ -779,7 +779,7 @@
  {
   "firm": "Johnson & Johnson",
   "registry": "workday",
-  "open": 78,
+  "open": 82,
   "status": "covered",
   "note": ""
  },
@@ -793,28 +793,28 @@
  {
   "firm": "Merck",
   "registry": "workday",
-  "open": 56,
+  "open": 44,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "AbbVie",
   "registry": "smartrecruiters",
-  "open": 3,
+  "open": 8,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Eli Lilly",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "Procter & Gamble",
   "registry": "workday",
-  "open": 31,
+  "open": 41,
   "status": "covered",
   "note": ""
  },
@@ -834,9 +834,9 @@
  },
  {
   "firm": "Unilever",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -849,14 +849,14 @@
  {
   "firm": "Nike",
   "registry": "workday",
-  "open": 16,
+  "open": 17,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Disney",
   "registry": "",
-  "open": 4,
+  "open": 9,
   "status": "covered",
   "note": ""
  },
@@ -870,15 +870,15 @@
  {
   "firm": "Verizon",
   "registry": "workday",
-  "open": 13,
+  "open": 7,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "AT&T",
-  "registry": "",
+  "registry": "workday",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -891,14 +891,14 @@
  {
   "firm": "Walmart",
   "registry": "workday",
-  "open": 30,
+  "open": 182,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Target",
   "registry": "workday",
-  "open": 42,
+  "open": 124,
   "status": "covered",
   "note": ""
  },
@@ -919,14 +919,14 @@
  {
   "firm": "General Motors",
   "registry": "workday",
-  "open": 48,
+  "open": 69,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Toyota",
   "registry": "lever",
-  "open": 2,
+  "open": 8,
   "status": "covered",
   "note": ""
  },
@@ -954,15 +954,15 @@
  {
   "firm": "Cleveland Clinic",
   "registry": "workday",
-  "open": 6,
+  "open": 8,
   "status": "covered",
   "note": ""
  },
  {
   "firm": "Kaiser Permanente",
-  "registry": "",
+  "registry": "jsonld",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
@@ -974,16 +974,16 @@
  },
  {
   "firm": "UnitedHealth Group",
-  "registry": "",
+  "registry": "jsonld",
   "open": 0,
-  "status": "not in registry",
+  "status": "in registry, 0 open now",
   "note": ""
  },
  {
   "firm": "CVS Health",
   "registry": "workday",
-  "open": 0,
-  "status": "in registry, 0 open now",
+  "open": 18,
+  "status": "covered",
   "note": ""
  }
 ]

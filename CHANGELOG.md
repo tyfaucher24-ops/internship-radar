@@ -1,6 +1,17 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V20 More sources and fixed Workday hosts, 2026-11-04
+- Registry: new official employer boards from the V20 source research (Part 1), plus ATTcollege. Firms whose boards could not be read without scraping (BrassRing, iCIMS, Oracle HCM, Eightfold, 403 sites) stay out of the registry and are listed as unresolved in ops/V20-SOURCES.md.
+- Workday: the "still live" check and the list-URL parser now understand wd1.myworkdaysite.com as well as myworkdayjobs.com (Wells Fargo, Perella Weinberg), reusing the hygiene.py URL shape.
+- New lead lists: speedyapply 2027 SWE, zshah101, awesome-ml-internships-2027 and jobbie-bot tables are parsed as leads. Every row is still checked against the employer's own posting before it shows. Lead limit raised to 6000.
+- New API sources: Himalayas (credit link kept, employer apply link used) and The Muse.
+- Sitemap lists internship pages first.
+- New York State Jobs (statejobs.ny.gov): one public vacancy table; only intern and student titles are kept, with their deadline.
+- tal.net boards that return an ALTCHA "Quick Check Needed" page are no longer read as "no jobs". The board and its current rows are kept and age out normally. Evercore still shows 0 open: the guard keeps the board, it does not invent jobs.
+- Not done by design: dreamworkhq/Tech-Internships-2027 was not ingested (its links point to an aggregator, not employers). USAJobs stays off.
+- Tests: tests/test_v20_challenge.py, test_v20_feeds.py, test_v20_lists.py, test_v20_nystate.py, test_v20_wdsite.py. Report: ops/V20_REPORT.md.
+
 ## V19.4 Live heartbeat (no UI), 2026-11-04
 - Accessibility: the "Sign in to save" button's accessible name now includes the visible text at ≤860px ("Save progress"). Found by the live V19.4 axe pass; nothing visible changed.
 - The site now tells the server "someone is here, on this tab" so a separate private stats site can show a true "on the site right now" count. Nothing about it is visible on Intern Index: no counter, badge or layout change.

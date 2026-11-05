@@ -1,0 +1,746 @@
+# V21 probe seed. Source: sector sweep "tech": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Accenture|Information Technology|
+Adobe Inc.|Information Technology|
+Advanced Micro Devices|Information Technology|
+Akamai Technologies|Information Technology|
+Amphenol|Information Technology|
+Analog Devices|Information Technology|
+Apple Inc.|Information Technology|
+Applied Materials|Information Technology|
+Arista Networks|Information Technology|
+Autodesk|Information Technology|
+Broadcom|Information Technology|
+Cadence Design Systems|Information Technology|
+CDW Corporation|Information Technology|
+Ciena|Information Technology|
+Cisco|Information Technology|
+Cognizant|Information Technology|
+Coherent Corp.|Information Technology|
+Corning Inc.|Information Technology|
+CrowdStrike|Information Technology|
+Datadog|Information Technology|
+Dell Technologies|Information Technology|
+Everpure|Information Technology|
+F5, Inc.|Information Technology|
+Fair Isaac|Information Technology|
+First Solar|Information Technology|
+Flex Ltd.|Information Technology|
+Fortinet|Information Technology|
+Gartner|Information Technology|
+Gen Digital|Information Technology|
+GoDaddy|Information Technology|
+Hewlett Packard Enterprise|Information Technology|
+HP Inc.|Information Technology|
+IBM|Information Technology|
+Intel|Information Technology|
+Intuit|Information Technology|
+Jabil|Information Technology|
+Keysight Technologies|Information Technology|
+KLA Corporation|Information Technology|
+Lam Research|Information Technology|
+Lumentum|Information Technology|
+Marvell Technology|Information Technology|
+Microchip Technology|Information Technology|
+Micron Technology|Information Technology|
+Microsoft|Information Technology|
+Monolithic Power Systems|Information Technology|
+Motorola Solutions|Information Technology|
+NetApp|Information Technology|
+Nvidia|Information Technology|
+NXP Semiconductors|Information Technology|
+Okta, Inc.|Information Technology|
+ON Semiconductor|Information Technology|
+Oracle Corporation|Information Technology|
+Palantir Technologies|Information Technology|
+Palo Alto Networks|Information Technology|
+PTC Inc.|Information Technology|
+Qnity Electronics|Information Technology|
+Qualcomm|Information Technology|
+Roper Technologies|Information Technology|
+Salesforce|Information Technology|
+Sandisk|Information Technology|
+Seagate Technology|Information Technology|
+ServiceNow|Information Technology|
+Skyworks Solutions|Information Technology|
+Supermicro|Information Technology|
+Synopsys|Information Technology|
+TE Connectivity|Information Technology|
+Teledyne Technologies|Information Technology|
+Teradyne|Information Technology|
+Texas Instruments|Information Technology|
+Trimble Inc.|Information Technology|
+Twilio|Information Technology|
+Tyler Technologies|Information Technology|
+Verisign|Information Technology|
+Western Digital|Information Technology|
+Workday, Inc.|Information Technology|
+Zebra Technologies|Information Technology|
+Rescale|B2B|rescale.com
+Gusto|B2B|gusto.com
+Apollo|B2B|apollographql.com
+HackerRank|B2B|hackerrank.com
+OneSignal|B2B|onesignal.com
+Streak|B2B|streak.com
+Sift|B2B|sift.com
+Volantio|B2B|volantio.com
+Zentail|B2B|zentail.com
+Zapier|B2B|zapier.com
+Padlet|B2B|padlet.com
+Etleap|B2B|etleap.com
+InfluxData|B2B|influxdata.com
+RADAR|B2B|goradar.com
+Lob|B2B|lob.com
+Webflow|B2B|webflow.com
+Flexport|B2B|flexport.com
+Algolia|B2B|algolia.com
+Checkr|B2B|checkr.com
+ShipBob|B2B|shipbob.com
+Magic|B2B|getmagic.com
+Giveffect|B2B|giveffect.com
+Mashgin|B2B|mashgin.com
+Ironclad|B2B|ironcladapp.com
+Gemnote|B2B|gemnote.com
+SnapMagic|B2B|snapmagic.com
+Go1|B2B|go1.com
+Bitmovin|B2B|bitmovin.com
+Instawork|B2B|instawork.com
+Human Interest|B2B|humaninterest.com
+Lattice|B2B|lattice.com
+Deepgram|B2B|deepgram.com
+Mason|B2B|bymason.com
+PocketSuite|B2B|pocketsuite.io
+Castle|B2B|castle.io
+Netomi|B2B|netomi.com
+Podium|B2B|podium.com
+Apollo.io|B2B|apollo.io
+Thunkable|B2B|thunkable.com
+Sendbird|B2B|sendbird.com
+Vetcove|B2B|vetcove.com
+Instrumentl|B2B|instrumentl.com
+HiOperator|B2B|hioperator.com
+Scale AI|B2B|scale.com
+People.ai|B2B|people.ai
+Voiceops|B2B|voiceops.com
+Rippling|B2B|rippling.com
+Ambient.ai|B2B|ambient.ai
+Snappr|B2B|snappr.com
+Veryfi, Inc.|B2B|veryfi.com
+NanoNets|B2B|nanonets.com
+Faire|B2B|faire.com
+Ridecell|B2B|ridecell.com
+Retool|B2B|retool.com
+Standard AI|B2B|standard.ai
+Flock Safety|B2B|flocksafety.com
+AssemblyAI|B2B|assemblyai.com
+Assembly|B2B|assembly.com
+Fondo|B2B|fondo.com
+Vanta|B2B|vanta.com
+Sourcify|B2B|sourcify.com
+CaptivateIQ|B2B|captivateiq.com
+Swayable|B2B|swayable.com
+Replit|B2B|replit.com
+Within|B2B|within.ai
+Modern Treasury|B2B|moderntreasury.com
+RevenueCat|B2B|revenuecat.com
+Activeloop|B2B|activeloop.ai
+Inscribe|B2B|inscribe.ai
+BlueCargo|B2B|bluecargo.io
+Canary Technologies|B2B|canarytechnologies.com
+Nestor|B2B|nestorup.com
+Mutiny|B2B|mutinyhq.com
+Leena AI|B2B|leena.ai
+Flockjay|B2B|flockjay.com
+Sorting Robotics|B2B|sortingrobotics.com
+Dyneti Technologies|B2B|dyneti.com
+Middesk|B2B|middesk.com
+GoLinks|B2B|golinks.io
+Sapling.ai|B2B|sapling.ai
+Nabis|B2B|nabis.com
+Okteto|B2B|okteto.com
+Ashby|B2B|ashbyhq.com
+Landed|B2B|gotlanded.com
+Deel|B2B|deel.com
+Dover|B2B|dover.com
+FIRST|B2B|firstdelivery.com
+Odeko|B2B|odeko.com
+TRM Labs|B2B|trmlabs.com
+Rutter|B2B|rutter.com
+Wasmer|B2B|wasmer.io
+Spice Data|B2B|spicedata.com
+InEvent|B2B|inevent.com
+Freshpaint|B2B|freshpaint.io
+Deepnote|B2B|deepnote.com
+Taskade|B2B|taskade.com
+Wonderly|B2B|wonderly.com
+Accord|B2B|inaccord.com
+Paragon|B2B|useparagon.com
+Porter|B2B|porter.run
+Pulley|B2B|pulley.com
+Ditto|B2B|dittowords.com
+Eze|B2B|ezeit.ai
+Benepass|B2B|benepass.com
+Turing Labs Inc.|B2B|turingsaas.com
+BuildBuddy|B2B|buildbuddy.io
+Vori|B2B|vori.com
+Quill|B2B|quill.co
+PostHog|B2B|posthog.com
+Skypher|B2B|skypher.co
+Recurrency|B2B|recurrency.com
+BeGo|B2B|bego.ai
+Stable|B2B|useStable.com
+Recall.ai|B2B|recall.ai
+Zip|B2B|ziphq.com
+Luminai|B2B|luminai.com
+Roboflow|B2B|roboflow.com
+SuperTokens|B2B|supertokens.com
+Datafold|B2B|datafold.com
+Blue Onion|B2B|blueonion.ai
+Seam|B2B|seam.co
+Pave|B2B|pave.com
+Hypotenuse AI|B2B|hypotenuse.ai
+Swif.ai|B2B|swif.ai
+doola|B2B|doola.com
+Atomic|B2B|atomicvest.com
+Hellometer|B2B|hellometer.io
+BIK|B2B|bik.ai
+Notabene|B2B|notabene.id
+Dataland|B2B|dataland.io
+Laylo|B2B|laylo.com
+Arketa|B2B|arketa.com
+Draftwise|B2B|draftwise.com
+Glimpse|B2B|tryglimpse.com
+Zuddl|B2B|zuddl.com
+Finch|B2B|tryfinch.com
+Fieldguide|B2B|fieldguide.com
+Abacum|B2B|abacum.ai
+Runway|B2B|runway.team
+authzed|B2B|authzed.com
+SigNoz|B2B|signoz.io
+arnata|B2B|arnata.com
+Smartcuts|B2B|trysmartcuts.com
+Prequel|B2B|prequel.co
+Cyble|B2B|cyble.com
+Firstbase.io|B2B|firstbase.io
+Per Diem|B2B|tryperdiem.com
+Vapi|B2B|vapi.ai
+Topkey|B2B|topkey.io
+Pangea.app|B2B|pangea.app
+Popl|B2B|popl.co
+LiveFlow|B2B|liveflow.com
+Great Question|B2B|greatquestion.co
+Text Blaze|B2B|blaze.today
+Topline Pro|B2B|toplinepro.com
+Quicknode|B2B|quicknode.com
+Resquared|B2B|re2.ai
+Rulebricks|B2B|rulebricks.com
+Venu AI|B2B|venu3d.com
+Compose.ai|B2B|compose.ai
+Soraban|B2B|soraban.com
+Stayflexi|B2B|business.stayflexi.com
+Haystack|B2B|usehaystack.io
+FlutterFlow|B2B|flutterflow.io
+Svix|B2B|svix.com
+Gigs|B2B|gigs.com
+SwiftSku|B2B|swiftsku.com
+Terra API|B2B|tryterra.co
+Epsilon3|B2B|epsilon3.io
+Varos|B2B|varos.com
+Rootly|B2B|rootly.com
+Replo|B2B|replo.app
+Confido|B2B|confidotech.com
+Double|B2B|doublehq.com
+Lago|B2B|getlago.com
+Tavus|B2B|tavus.io
+Kodex|B2B|kodexglobal.com
+Hyperbrowser|B2B|hyperbrowser.ai
+testRigor|B2B|testrigor.com
+OneSchema|B2B|oneschema.co
+Stardex|B2B|stardex.com
+Aleph|B2B|getaleph.com
+Zensors|B2B|zensors.com
+Coast|B2B|trycoast.com
+Mach9|B2B|mach9.ai
+Telmai|B2B|telm.ai
+Storylane|B2B|storylane.io
+Aviator|B2B|aviator.co
+Nash|B2B|usenash.com
+Sully|B2B|sully.ai
+Attack Capital|B2B|attack.capital
+GrowthBook|B2B|growthbook.io
+SilkChart|B2B|silkchart.com
+Redbird|B2B|redbird.io
+Agave|B2B|useagave.com
+Strac|B2B|strac.io
+Sieve|B2B|sievedata.com
+Cozmo AI|B2B|hellocozmo.ai
+TeamOut|B2B|teamout.com
+Dynamo AI|B2B|dynamo.ai
+Versable|B2B|versableai.com
+Beam|B2B|beam.cloud
+Dart|B2B|dartai.com
+HOKALI|B2B|hokali.com
+Flagright|B2B|flagright.com
+Sphere|B2B|getsphere.com
+IOMETE|B2B|iomete.com
+Mintlify|B2B|mintlify.com
+Complete|B2B|complete.so
+Velt|B2B|velt.dev
+Cogram|B2B|cogram.com
+Cotera|B2B|cotera.co
+Agency|B2B|GetAgency.com
+Strong Compute|B2B|strongcompute.com
+Cinder|B2B|cinder.ai
+Broccoli AI|B2B|broccoli.com
+Attain|B2B|joinattain.com
+PropelAuth|B2B|propelauth.com
+Rally|B2B|rallyuxr.com
+Blink|B2B|blink.new
+MSPilot|B2B|mspilot.io
+Cofactr|B2B|cofactr.com
+Eventual|B2B|daft.ai
+Reality Defender|B2B|realitydefender.com
+Layerup|B2B|uselayerup.com
+Julius|B2B|julius.ai
+Ciro|B2B|ciro.io
+Stackup|B2B|stackup.fi
+Bunting Labs|B2B|buntinglabs.com
+TrueBiz|B2B|truebiz.io
+BlueHill Payments|B2B|useBlueHill.com
+Paragon AI|B2B|paragon.ai
+Juicebox|B2B|juicebox.ai
+Aragorn AI|B2B|aragorn.ai
+Flair Labs|B2B|flairlabs.ai
+Thera|B2B|getthera.com
+Coris|B2B|coris.ai
+Aurelian|B2B|aurelian.com
+Quindar|B2B|quindar.space
+Ekho|B2B|ekho.com
+Firecrawl|B2B|firecrawl.dev
+Chima|B2B|withchima.com
+Sameday|B2B|gosameday.com
+Zudo|B2B|zudo.work
+Avoca|B2B|avoca.ai
+Infisical|B2B|infisical.com
+Middleware|B2B|middleware.io
+Reflex|B2B|reflex.dev
+Syncly|B2B|syncly.app
+Credal.ai|B2B|credal.ai
+Magic Patterns|B2B|magicpatterns.com
+Rollstack|B2B|rollstack.com
+Concourse|B2B|concourse.ai
+FlexDesk|B2B|flexdesk.com
+Hammr|B2B|hammr.com
+Nango|B2B|nango.dev
+Numeral|B2B|numeral.com
+Salient|B2B|trysalient.com
+Tennr|B2B|tennr.com
+Omnistrate|B2B|omnistrate.com
+Narrative|B2B|trynarrative.com
+Coperniq|B2B|coperniq.io
+Vooma|B2B|vooma.ai
+Pirros|B2B|pirros.com
+Gooseworks|B2B|gooseworks.ai
+Fours|B2B|fours.com
+Haven|B2B|usehaven.ai
+Relace|B2B|relace.ai
+Inkeep|B2B|inkeep.com
+Truewind|B2B|trytruewind.com
+1stCollab|B2B|1stcollab.com
+Variance|B2B|variance.com
+Boundary|B2B|boundaryml.com
+inBuild|B2B|inbuild.ai
+Pylon|B2B|usepylon.com
+Rivet|B2B|rivet.dev
+Dill|B2B|usedill.com
+Conduit|B2B|helloconduit.com
+Berry|B2B|berryai.com
+Pier|B2B|pier-finance.com
+Vector|B2B|vector.co
+Metal|B2B|metal.ai
+Kyber|B2B|askkyber.com
+Vendora|B2B|vendora.io
+LiteLLM|B2B|litellm.ai
+Finta|B2B|finta.com
+Automat|B2B|runautomat.com
+HockeyStack|B2B|hockeystack.com
+Artie|B2B|artie.com
+Kino AI|B2B|kino.ai
+Hyperbound|B2B|hyperbound.ai
+AIVideo.com|B2B|aivideo.com
+Sweetspot|B2B|sweetspot.so
+Bland AI|B2B|bland.com
+Cedana|B2B|cedana.ai
+Every|B2B|every.io
+Prosper|B2B|getprosper.ai
+Airgoods|B2B|airgoods.com
+Revamp|B2B|getrevamp.ai
+SID|B2B|sid.ai
+Campfire|B2B|campfire.ai
+Corgea|B2B|corgea.com
+Outset|B2B|outset.ai
+FleetWorks|B2B|fleetworks.ai
+Margin|B2B|usemargin.com
+Skyvern|B2B|skyvern.com
+Maintouch|B2B|maintouch.com
+Surface Labs|B2B|withsurface.com
+Maven Bio|B2B|mavenbio.com
+Metalware|B2B|metalware.com
+Guac|B2B|guac.com
+Letter AI|B2B|letter.ai
+Kobalt Labs|B2B|kobaltlabs.com
+Bolto|B2B|bolto.com
+Converge|B2B|runconverge.com
+Inlet|B2B|inletai.com
+Sola|B2B|sola-solutions.com
+SafetyKit|B2B|safetykit.com
+VectorShift|B2B|vectorshift.ai
+Proof of Human|B2B|poh.org
+Silimate|B2B|silimate.com
+Sweep|B2B|sweep.dev
+Sendblue|B2B|sendblue.com
+Santé|B2B|santehq.com
+HappyRobot|B2B|happyrobot.ai
+Strada|B2B|getstrada.com
+ParadeDB|B2B|paradedb.com
+Trayd|B2B|buildtrayd.com
+dili|B2B|dili.com
+Cargo|B2B|getcargo.io
+Giga|B2B|giga.ai
+Nowadays|B2B|nowadays.ai
+Morph|B2B|morphllm.com
+DryMerge|B2B|drymerge.com
+Greptile|B2B|greptile.com
+Ubicloud|B2B|ubicloud.com
+Duckie|B2B|duckie.ai
+Tracecat|B2B|tracecat.com
+Poka Labs|B2B|pokalabs.com
+Reducto|B2B|reducto.ai
+Momentic|B2B|momentic.ai
+Newton|B2B|joinnewton.com
+Alex|B2B|alex.com
+Garage|B2B|shopgarage.com
+Wavelength|B2B|wavelength.cx
+PointOne|B2B|pointone.com
+Paradigm|B2B|paradigmai.com
+FurtherAI|B2B|furtherai.com
+ROE|B2B|getroe.ai
+Artisan|B2B|artisan.co
+Trellis AI|B2B|runtrellis.com
+atopile|B2B|atopile.io
+CloudCruise|B2B|cloudcruise.com
+Meticulate|B2B|meticulate.ai
+Zaymo|B2B|zaymo.com
+PromptArmor|B2B|promptarmor.com
+Respan|B2B|respan.ai
+Monumint|B2B|monumint.com
+Scout|B2B|cpgscout.ai
+Tamarind Bio|B2B|tamarind.bio
+Firebender|B2B|firebender.com
+Dime|B2B|dimehealth.ai
+Ellipsis|B2B|ellipsis.dev
+CodeAnt AI|B2B|codeant.ai
+Carma|B2B|joincarma.com
+Shiboleth|B2B|shiboleth.ai
+OffDeal|B2B|offdeal.io
+ProSights|B2B|prosights.co
+Raindrop|B2B|raindrop.ai
+JustAI|B2B|getjust.ai
+Circleback|B2B|circleback.ai
+BetterBasket|B2B|betterbasket.com
+Artos|B2B|artosai.com
+Brainbase Labs|B2B|brainbaselabs.com
+Openmart|B2B|openmart.com
+Zep AI|B2B|getzep.com
+Stacksync|B2B|stacksync.com
+Terrakotta|B2B|terrakotta.ai
+Retell AI|B2B|retellai.com
+Ocular AI|B2B|useocular.com
+CommodityAI|B2B|commodityai.io
+Spur|B2B|spurtest.com
+Reform|B2B|reformhq.com
+Forge|B2B|forgehq.com
+Latted|B2B|latted.com
+Yarn|B2B|yarn.so
+GetCrux|B2B|getcrux.ai
+RetailReady|B2B|retailreadyai.com
+Coval|B2B|coval.dev
+Indemni|B2B|indemni.com
+Augment Inc.|B2B|augmentinc.co
+Apten|B2B|apten.ai
+Domu Technology Inc.|B2B|domu.ai
+Variant|B2B|variant.com
+Mem0|B2B|mem0.ai
+Saphira AI|B2B|saphira.ai
+ProhostAI|B2B|prohost.ai
+Hamming AI|B2B|hamming.ai
+Entangl|B2B|entangl.com
+Codes Health|B2B|codeshealth.com
+Unsloth AI|B2B|unsloth.ai
+VideoGen|B2B|videogen.io
+FirstWork|B2B|firstwork.com
+Decisional AI|B2B|decisional.com
+RetroFix|B2B|retrofix.ai
+Unbound|B2B|getunbound.ai
+Cloudglue|B2B|cloudglue.dev
+Offstream|B2B|useoffstream.com
+Elevate|B2B|useelevate.dev
+Tandem|B2B|tandemspace.com
+Gauge|B2B|withgauge.com
+Dench.com|B2B|dench.com
+Pulse|B2B|runpulse.com
+Lighthouz AI|B2B|lighthouz.ai
+TaxGPT|B2B|taxgpt.com
+Kastle|B2B|kastle.ai
+cmux|B2B|cmux.com
+Clearly AI|B2B|clearly-ai.com
+Hestus, Inc.|B2B|hestus.co
+Dimely|B2B|dimely.com
+Drillbit|B2B|drillbit.com
+Pax|B2B|paxai.com
+David AI|B2B|withdavid.ai
+Mage Legal|B2B|magelegal.com
+Thunder Compute|B2B|thundercompute.com
+Intryc|B2B|intryc.com
+Cerulion|B2B|cerulion.com
+Simple AI|B2B|usesimple.ai
+YouShift|B2B|you-shift.com
+Cartage|B2B|cartage.ai
+Sonatoria|B2B|sonatoria.com
+Helium|B2B|tryhelium.com
+Rescript|B2B|rescript.ai
+Dataleap|B2B|dataleap.ai
+Draft The Record|B2B|drafttherecord.com
+Serve AI|B2B|serveaiglobal.com
+Oway|B2B|oway.io
+Diode Computers, Inc.|B2B|diode.computer
+No Logo|B2B|nologo.com
+Capitol AI|B2B|capitol.ai
+Arva AI|B2B|arva.ai
+Merlin AI|B2B|merlinai.co
+Outerport|B2B|outerport.com
+Onlook|B2B|onlook.com
+Moonset Health|B2B|moonsethealth.com
+Openbenchmarks|B2B|openbenchmarks.com
+Revyl|B2B|revyl.com
+Cekura|B2B|cekura.ai
+CTGT|B2B|ctgt.ai
+Luthor|B2B|luthor.ai
+Freebuff|B2B|freebuff.com
+Unusual|B2B|unusual.ai
+Crustdata|B2B|crustdata.com
+Abundant|B2B|abundant.ai
+Capy|B2B|capy.ai
+Kilvin|B2B|kilvin.ai
+Ryvn|B2B|ryvn.ai
+Laminar|B2B|laminar.com
+HumanLayer|B2B|humanlayer.com
+Leaping AI|B2B|leapingai.com
+Flowtel|B2B|flowtel.ai
+SubImage|B2B|subimage.io
+Partcl|B2B|partcl.com
+Promptless|B2B|promptless.ai
+a0.dev|B2B|a0.dev
+Weave|B2B|weaveos.com
+SalesPatriot|B2B|salespatriot.com
+Adam|B2B|adam.new
+Osmosis|B2B|osmosis.ai
+HUD|B2B|hud.ai
+Gale|B2B|galevisa.com
+AthenaHQ|B2B|athenahq.ai
+Candor|B2B|candor.security
+Trata|B2B|trytrata.com
+Solidroad|B2B|solidroad.com
+Confident AI|B2B|confident-ai.com
+Nitrode|B2B|nitrode.com
+Calltree|B2B|calltree.ai
+Mesh|B2B|usemesh.com
+Peppr AI|B2B|usepeppr.ai
+Fuse AI|B2B|fuseai.com
+AfterQuery|B2B|afterquery.com
+Wildcard|B2B|wild-card.ai
+Woz|B2B|wozcode.com
+Rebolt|B2B|rebolt.ai
+Dalus|B2B|dalus.io
+Ergo|B2B|joinergo.com
+Browser Use|B2B|browser-use.com
+TrainLoop|B2B|trainloop.ai
+Thirdlayer|B2B|thirdlayer.inc
+Artifact|B2B|artifact.engineer
+Ambral|B2B|ambral.com
+Aravolta|B2B|aravolta.com
+Autostep|B2B|autostep.ai
+Cua|B2B|cua.ai
+Auctor|B2B|getauctor.com
+Sim|B2B|sim.ai
+PgDog|B2B|pgdog.dev
+Attune|B2B|attunehq.com
+Bluejay|B2B|getbluejay.ai
+Jeevy Fabrication|B2B|jeevyfabrication.com
+Sixtyfour|B2B|sixtyfour.ai
+Photonium|B2B|photoniumoptics.com
+Kaizen|B2B|kaizenautomation.com
+Nixo|B2B|withnixo.com
+QualGent|B2B|qualgent.ai
+Alkali|B2B|alkali.engineering
+Besimple AI|B2B|besimple.ai
+Vesence|B2B|vesence.com
+Eloquent AI|B2B|eloquentai.co
+Hemut|B2B|hemut.com
+Synthetic Society|B2B|syntheticsociety.ai
+Naïve|B2B|usenaive.ai
+Lapel|B2B|lapel.com
+MindFort|B2B|mindfort.ai
+Cotool|B2B|cotool.ai
+Lumari|B2B|lumari.ai
+Theorem|B2B|theorem.dev
+Airweave|B2B|airweave.ai
+Bond|B2B|bondapp.io
+Godela|B2B|godela.ai
+Adaptional|B2B|adaptional.com
+GETASAP|B2B|getasap.us
+Dedalus Labs|B2B|dedaluslabs.ai
+The Prompting Company|B2B|promptingcompany.com
+MangoDesk|B2B|mangodesk.com
+Halluminate|B2B|halluminate.ai
+TraceRoot.AI|B2B|traceroot.ai
+AgentMail|B2B|agentmail.to
+truthsystems|B2B|truthsystems.ai
+Lanesurf|B2B|lanesurf.com
+Orange Slice|B2B|orangeslice.ai
+Panels|B2B|usepanels.com
+Humwork|B2B|humwork.ai
+Imprezia|B2B|imprezia.ai
+DeepGrove|B2B|deepgrove.ai
+Proliferate|B2B|proliferate.com
+Pangolin|B2B|pangolin.net
+BootLoop|B2B|bootloop.ai
+Kalinda|B2B|kalinda.ai
+Channel3|B2B|trychannel3.com
+GhostEye|B2B|ghosteye.ai
+Manufact|B2B|manufact.com
+Relling|B2B|relling.co
+Autumn|B2B|autumn.ai
+ProcIndex|B2B|procindex.com
+Miso Labs|B2B|misolabs.ai
+Socratix AI|B2B|getsocratix.ai
+Floot|B2B|floot.com
+idler|B2B|idler.ai
+Nautilus|B2B|nautilus.co
+Sira|B2B|sira.team
+Reacher|B2B|reacherapp.com
+Juxta|B2B|juxta.com
+Fleetline|B2B|fleetline.ai
+Magnetic|B2B|magnetictax.com
+Interfere|B2B|interfere.com
+Vulcan Technologies|B2B|vulcan.ai
+Avent|B2B|aventindustrial.com
+burnt|B2B|getburnt.ai
+Luminal|B2B|luminal.com
+Uplift AI|B2B|upliftai.org
+F2|B2B|f2.ai
+AirCaps AI|B2B|aircaps.ai
+Uplane|B2B|uplane.com
+Hyperspell|B2B|hyperspell.com
+Aspect|B2B|aspect.inc
+Deeptrace|B2B|deeptrace.com
+Soren|B2B|soren-ai.com
+Hypercubic|B2B|hypercubic.ai
+Nessie|B2B|nessielabs.com
+Semble|B2B|sembleai.com
+Alder|B2B|meetalder.com
+SF Tensor|B2B|sf-tensor.com
+Unsiloed AI|B2B|unsiloed.ai
+Logical|B2B|logical.io
+Oxus|B2B|oxus-ai.com
+Imagine AI|B2B|useimagine.ai
+Scott AI|B2B|tryscott.ai
+Sourcebot|B2B|sourcebot.dev
+Kalpa Labs|B2B|kalpalabs.ai
+Lemma|B2B|uselemma.ai
+Jarmin|B2B|jarmin.ai
+MadeThis|B2B|madethis.com
+DiligenceSquared|B2B|diligencesquared.com
+Antigen|B2B|antigen.sh
+Vector Legal|B2B|vectorlegal.com
+Clicks Health|B2B|goclicks.ai
+Zarna|B2B|zarnaai.com
+Moss|B2B|moss.dev
+item|B2B|item.app
+Ploy|B2B|ploy.ai
+Corvera|B2B|corvera.ai
+Payna|B2B|payna.com
+RunAnywhere|B2B|runanywhere.ai
+Lance|B2B|lance.live
+10x Science|B2B|10xscience.com
+LegalOS|B2B|legalos.ai
+Piris Labs|B2B|pirislabs.io
+Cumulus Labs|B2B|cumuluslabs.io
+Zatanna|B2B|zatanna.ai
+Aemon|B2B|aemon.ai
+RamAIn|B2B|ramain.ai
+Salus|B2B|usesalus.ai
+Orthogonal|B2B|orthogonal.com
+Laurence|B2B|laurence.com
+Parameter|B2B|parameter.ai
+Visibl Semiconductors|B2B|visiblsemi.com
+Revion|B2B|revion.inc
+Wingman Law|B2B|wingmanlaw.com
+Robby|B2B|tryrobby.com
+Polymath|B2B|polymathlabs.ai
+Paradev (formerly Superset)|B2B|paradev.com
+Chasi|B2B|chasi.ai
+Booko|B2B|booko.com
+Vela|B2B|tryvela.ai
+MochaCare|B2B|mochacare.com
+VOYGR|B2B|voygr.tech
+Aurorin CAD|B2B|aurorincad.com
+Rainbrand|B2B|rainbrand.com
+Wayco|B2B|wayco.ai
+Cardinal|B2B|trycardinal.com
+primitive|B2B|primitive.dev
+Multiplier|B2B|multiplier.ai
+Replicas|B2B|replicas.dev
+LightSprint|B2B|lightsprint.ai
+Atrisa|B2B|atrisa.ai
+Hub|B2B|hub.xyz
+Limrun|B2B|lim.run
+Interfaze|B2B|interfaze.ai
+Standout|B2B|standout.work
+Minicor|B2B|minicor.com
+Reason Machines|B2B|reasonmachines.com
+Tasklet|B2B|tasklet.ai
+Ardent|B2B|tryardent.com
+Amboras|B2B|amboras.com
+OpenWork|B2B|openworklabs.com
+CharacterQuilt|B2B|characterquilt.com
+Runtime|B2B|runtm.com
+AgentPhone|B2B|agentphone.ai
+Asendia AI|B2B|asendia.ai
+Manicule|B2B|manicule.com
+Astraea|B2B|tryastraea.com
+flowscope|B2B|flowscope.com
+Pango|B2B|pango.ai
+Parasma|B2B|parasma.com
+Rex|B2B|rex.inc
+Speko|B2B|speko.ai
+LemonLime|B2B|lemonlime.com
+DeepReach Inc.|B2B|deepreach.ai
+COACH|B2B|getcoach.com
+Marble|B2B|joinmarble.ai
+Glen|B2B|tryglen.com
+screenpipe|B2B|screenpipe.com
+Pluto|B2B|talentpluto.com
+Ooak Data|B2B|ooakdata.com
+Rational|B2B|rational.to
+Tenor|B2B|heytenor.com
+LATO|B2B|latolabs.io
+TryNearby|B2B|trynearby.com
+Luca IQ|B2B|lucaiq.com
+Lamb Labs|B2B|lamb-labs.com
+Locke|B2B|locke.inc
+HillStar|B2B|hillstar.ai
+Edviro|B2B|edviroenergy.com
+Voyager|B2B|voyager.so
+Workers IO|B2B|workers.io
+Spine|B2B|joinspine.ai

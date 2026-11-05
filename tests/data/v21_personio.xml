@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workzag-jobs>
+<position><id>101</id><office>New York, NY</office><department>Data</department><name>Data Analyst Intern (Summer 2027)</name><createdAt>2026-10-30T10:00:00+00:00</createdAt>
+<jobDescriptions><jobDescription><name>Your role</name><value><![CDATA[<p>Work on dashboards.</p><script>alert(1)</script>]]></value></jobDescription></jobDescriptions></position>
+<position><id>102</id><office>Berlin</office><name>Senior Engineer</name></position>
+</workzag-jobs>

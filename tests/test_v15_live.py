@@ -46,7 +46,7 @@ with sync_playwright() as pw:
         for d in (False,True):theme(p,d);p.evaluate("()=>scrollTo(0,0)");p.wait_for_timeout(300);p.screenshot(path=f"{OUT}/v15-find-live-1440-{'dark' if d else 'light'}.png")
     p.close()
     p=open_(br,75)
-    ck('Live badge hidden when last sync 75 min old',not p.evaluate("()=>[...document.querySelectorAll('.live-b')].some(e=>e.offsetParent)"))
+    ck('Live badge hidden when last sync 75 min old',not p.evaluate("()=>[...document.querySelectorAll('.live-b:not(.live-old),.live-dot')].some(e=>e.offsetParent)"))  # V21: fresh green badge/dot hidden; a muted 'Live' next to the count stays (it means 'counted from the latest sync')
     body=p.evaluate("()=>document.body.innerText");ck('stale: no timestamp shown instead',not NOAGO.search(body))
     log=p.evaluate("()=>JSON.parse(localStorage.getItem('liveStaleLog')||'[]')");ck('stale sync written to admin log',len(log)>=1,log)
     if OUT:p.screenshot(path=f'{OUT}/v15-find-stale-1440-light.png')

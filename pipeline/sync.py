@@ -403,6 +403,9 @@ def _compact():
     if '--incremental' in sys.argv: compact.main();return  # V15 add.2: the 2h full sync re-checks apply links; the 5-min pass stays under 5 minutes
     try: applylink.main()  # V13.3 #5b: classify + re-validate job-specific Apply links (time-budgeted rotation)
     except Exception: traceback.print_exc()
+    try:  # V21 Part 5: About <Company> cache (budgeted; misses and blurbs refresh after 30 days)
+        from . import about;about.run(budget=int(os.environ.get('RADAR_ABOUT_BUDGET','150')),minutes=6)
+    except Exception: traceback.print_exc()
     compact.main()
 if __name__=='__main__':
     try: main();_compact()

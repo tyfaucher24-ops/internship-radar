@@ -1,0 +1,47 @@
+# V21 probe seed. Source: sector sweep "biotech": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Johnson & Johnson|biotech|
+Roche|biotech|
+Pfizer|biotech|
+Novartis|biotech|
+Merck & Co.|biotech|
+Moderna|biotech|
+Abbott Laboratories|biotech|
+AbbVie|biotech|
+Novo Nordisk|biotech|
+Eli Lilly & Co|biotech|
+Bristol-Myers Squibb|biotech|
+Amgen|biotech|
+AstraZeneca|biotech|
+Sanofi|biotech|
+GlaxoSmithKline|biotech|
+Stryker Corporation|biotech|
+Zoetis|biotech|
+Gilead Sciences|biotech|
+Daiichi Sankyo|biotech|
+Vertex Pharmaceuticals|biotech|
+Bayer|biotech|
+Takeda Pharmaceutical|biotech|
+Illumina|biotech|
+Regeneron Pharmaceuticals|biotech|
+Biogen|biotech|
+Alexion Pharmaceuticals|biotech|
+Seagen|biotech|
+Astellas|biotech|
+Genmab|biotech|
+Eisai Pharmaceutical|biotech|
+Alnylam Pharmaceuticals|biotech|
+Incyte|biotech|
+BioMarin|biotech|
+BeiGene|biotech|
+BioNTech|biotech|
+Horizon Therapeutics|biotech|
+Jiangsu Hengrui Medicine|biotech|
+Elanco|biotech|
+Celltrion|biotech|
+Viatris|biotech|
+Sun Pharma|biotech|
+Divi's Laboratories|biotech|
+Dr. Reddy's Laboratories|biotech|
+Teva Pharmaceuticals|biotech|
+Cipla|biotech|

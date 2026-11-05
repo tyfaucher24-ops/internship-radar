@@ -1,0 +1,54 @@
+# V21 probe seed. Source: sector sweep "energy": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+AES Corporation|Utilities|
+Alliant Energy|Utilities|
+Ameren|Utilities|
+American Electric Power|Utilities|
+American Water Works|Utilities|
+APA Corporation|Energy|
+Atmos Energy|Utilities|
+Baker Hughes|Energy|
+CenterPoint Energy|Utilities|
+Chevron Corporation|Energy|
+CMS Energy|Utilities|
+ConocoPhillips|Energy|
+Consolidated Edison|Utilities|
+Constellation Energy|Utilities|
+Devon Energy|Energy|
+Diamondback Energy|Energy|
+Dominion Energy|Utilities|
+DTE Energy|Utilities|
+Duke Energy|Utilities|
+Edison International|Utilities|
+Entergy|Utilities|
+EOG Resources|Energy|
+EQT Corporation|Energy|
+Evergy|Utilities|
+Eversource Energy|Utilities|
+Exelon|Utilities|
+Expand Energy|Energy|
+ExxonMobil|Energy|
+FirstEnergy|Utilities|
+Halliburton|Energy|
+Kinder Morgan|Energy|
+Marathon Petroleum|Energy|
+NextEra Energy|Utilities|
+NiSource|Utilities|
+NRG Energy|Utilities|
+Occidental Petroleum|Energy|
+Oneok|Energy|
+PG&E Corporation|Utilities|
+Phillips 66|Energy|
+Pinnacle West Capital|Utilities|
+PPL Corporation|Utilities|
+Public Service Enterprise Group|Utilities|
+Schlumberger|Energy|
+Sempra|Utilities|
+Southern Company|Utilities|
+Targa Resources|Energy|
+Texas Pacific Land Corporation|Energy|
+Valero Energy|Energy|
+Vistra Corp|Utilities|
+WEC Energy Group|Utilities|
+Williams Companies|Energy|
+Xcel Energy|Utilities|

@@ -1,0 +1,23 @@
+# V21 probe seed. Source: sector sweep "consulting": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Price, Waterhouse and Co.|consulting|
+Haskins and Sells|consulting|
+Ernst and Ernst|consulting|
+Peat, Marwick, Mitchell and Co.|consulting|
+Arthur Young and Co.|consulting|
+Lybrand, Ross Bros. and Montgomery|consulting|
+Touche, Niven and Co.|consulting|
+Arthur Andersen and Co.|consulting|
+Deloitte, Plender, Griffiths and Co.|consulting|
+Barrow, Wade, Guthrie and Co.|consulting|
+Audit Co. of New York|consulting|
+Loomis, Suffern and Fernald|consulting|
+F. W. Lafrentz and Co.|consulting|
+Miller, Donaldson and Co.|consulting|
+Leslie, Banks and Co.|consulting|
+All others|consulting|
+Companies not reporting names of auditors|consulting|
+Touche, Ross, Bailey and Smart|consulting|
+Deloitte|consulting|
+PwC|consulting|
+KPMG|consulting|

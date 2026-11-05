@@ -1,0 +1,19 @@
+# V21 probe seed. Source: sector sweep "education": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Cambly|Education|cambly.com
+GiveCampus|Education|go.givecampus.com
+ClassDojo|Education|classdojo.com
+Bloom Institute of Technology|Education|bloomtech.com
+Nimble|Education|hirenimble.com
+Acely|Education|acely.com
+Ello|Education|ello.com
+KaiPod Learning|Education|kaipodlearning.com
+Stepful|Education|stepful.com
+Emerge Career|Education|emergecareer.com
+Flint|Education|flintk12.com
+Deep24|Education|deep24.com
+Educato|Education|educato.com
+Scout|Education|scoutforschools.com
+Miyagi Labs|Education|miyagilabs.ai
+Bloomy|Education|bloomylearning.com
+University|education|

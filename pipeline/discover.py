@@ -70,6 +70,10 @@ def ats_from_url(u):
     if h=='jobs.ashbyhq.com' and parts: return ('ashby',parts[0])
     if h in ('jobs.smartrecruiters.com','careers.smartrecruiters.com') and parts: return ('smartrecruiters',parts[0])
     if h=='apply.workable.com' and parts and parts[0]!='api': return ('workable',parts[0])
+    # V21: Rippling ATS boards and Personio public job pages
+    if h=='ats.rippling.com' and parts and parts[0] not in ('api','static'): return ('rippling',parts[0])
+    m=re.match(r'([a-z0-9-]+)\.jobs\.personio\.(?:de|com)$',h)
+    if m: return ('personio',m.group(1))
     m=re.match(r'([a-z0-9-]+)\.recruitee\.com$',h)
     if m: return ('recruitee',m.group(1))
     m=re.match(r'([a-z0-9-]+)\.bamboohr\.com$',h)
@@ -85,9 +89,26 @@ def ats_from_url(u):
         if mm and mm.group(1).lower() not in ('job','wday','recruiting') and mm.group(2).lower() not in ('job','wday'):
             return ('workday',f'{h}/{mm.group(1)}/{mm.group(2)}')
     return None
+def committed_rows():
+    """V21: the registry as committed in git (HEAD:data/companies.csv). The sync restores data/ from the Actions cache
+    after checkout, which overwrote registry rows added in main (V20's rows never reached the live sync). Read-only."""
+    import subprocess
+    try:
+        r=subprocess.run(['git','-C',ROOT,'show','HEAD:data/companies.csv'],capture_output=True,text=True,timeout=20)
+        if r.returncode!=0 or not r.stdout.startswith('name,'): return []
+        import io;return list(csv.DictReader(io.StringIO(r.stdout)))
+    except Exception: return []
+def merge_rows(cached,committed):
+    """union by (ats, slug): committed rows win field by field (hand fixes in main apply), cached-only rows (found by a sync) stay"""
+    by={(r['ats'],r['slug'].lower()):dict(r) for r in cached}
+    for r in committed:
+        k=(r['ats'],r['slug'].lower())
+        by[k]={**by.get(k,{}),**{f:v for f,v in r.items() if v not in (None,'')}}
+    return list(by.values())
 def load():
-    if not os.path.exists(REG): return []
-    return list(csv.DictReader(open(REG)))
+    rows=list(csv.DictReader(open(REG))) if os.path.exists(REG) else []
+    if REG==os.path.join(ROOT,'data','companies.csv'): rows=merge_rows(rows,committed_rows())
+    return rows
 def save(rows):
     rows.sort(key=lambda r:(r['name'].lower(),r['ats']))
     with open(REG,'w',newline='') as f:

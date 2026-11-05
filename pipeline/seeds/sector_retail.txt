@@ -1,0 +1,167 @@
+# V21 probe seed. Source: sector sweep "retail": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Airbnb|Consumer Discretionary|
+Altria|Consumer Staples|
+Amazon|Consumer Discretionary|
+Aptiv|Consumer Discretionary|
+Archer Daniels Midland|Consumer Staples|
+AutoZone|Consumer Discretionary|
+Best Buy|Consumer Discretionary|
+Booking Holdings|Consumer Discretionary|
+Brown–Forman|Consumer Staples|
+Bunge Global|Consumer Staples|
+Carnival Corporation|Consumer Discretionary|
+Carvana|Consumer Discretionary|
+Casey's|Consumer Staples|
+Chipotle Mexican Grill|Consumer Discretionary|
+Church & Dwight|Consumer Staples|
+Clorox|Consumer Staples|
+Coca-Cola Company (The)|Consumer Staples|
+Colgate-Palmolive|Consumer Staples|
+Constellation Brands|Consumer Staples|
+Costco|Consumer Staples|
+Darden Restaurants|Consumer Discretionary|
+Deckers Brands|Consumer Discretionary|
+Dollar General|Consumer Staples|
+Dollar Tree|Consumer Staples|
+Domino's|Consumer Discretionary|
+DoorDash|Consumer Discretionary|
+D. R. Horton|Consumer Discretionary|
+eBay Inc.|Consumer Discretionary|
+Estée Lauder Companies (The)|Consumer Staples|
+Expedia Group|Consumer Discretionary|
+Ford Motor Company|Consumer Discretionary|
+Garmin|Consumer Discretionary|
+General Mills|Consumer Staples|
+General Motors|Consumer Discretionary|
+Genuine Parts Company|Consumer Discretionary|
+Hasbro|Consumer Discretionary|
+Hershey Company (The)|Consumer Staples|
+Hilton Worldwide|Consumer Discretionary|
+Home Depot (The)|Consumer Discretionary|
+Hormel Foods|Consumer Staples|
+Keurig Dr Pepper|Consumer Staples|
+Kimberly-Clark|Consumer Staples|
+Kraft Heinz|Consumer Staples|
+Kroger|Consumer Staples|
+Las Vegas Sands|Consumer Discretionary|
+Lennar|Consumer Discretionary|
+Lowe's|Consumer Discretionary|
+Lululemon Athletica|Consumer Discretionary|
+Marriott International|Consumer Discretionary|
+McCormick & Company|Consumer Staples|
+McDonald's|Consumer Discretionary|
+MGM Resorts|Consumer Discretionary|
+Mondelez International|Consumer Staples|
+Monster Beverage|Consumer Staples|
+Nike, Inc.|Consumer Discretionary|
+Norwegian Cruise Line Holdings|Consumer Discretionary|
+NVR, Inc.|Consumer Discretionary|
+O'Reilly Automotive|Consumer Discretionary|
+PepsiCo|Consumer Staples|
+Philip Morris International|Consumer Staples|
+Procter & Gamble|Consumer Staples|
+PulteGroup|Consumer Discretionary|
+Ralph Lauren Corporation|Consumer Discretionary|
+Ross Stores|Consumer Discretionary|
+Royal Caribbean Group|Consumer Discretionary|
+J.M. Smucker Company (The)|Consumer Staples|
+Starbucks|Consumer Discretionary|
+Sysco|Consumer Staples|
+Tapestry, Inc.|Consumer Discretionary|
+Target Corporation|Consumer Staples|
+Tesla, Inc.|Consumer Discretionary|
+TJX Companies|Consumer Discretionary|
+Tractor Supply|Consumer Discretionary|
+Tyson Foods|Consumer Staples|
+Ulta Beauty|Consumer Discretionary|
+Vylor|Consumer Staples|
+Walmart|Consumer Staples|
+Williams-Sonoma, Inc.|Consumer Discretionary|
+Wynn Resorts|Consumer Discretionary|
+Yum! Brands|Consumer Discretionary|
+Mino Games|Consumer|minomonsters.com
+GOAT Group|Consumer|goatgroup.com
+Goldbelly|Consumer|goldbelly.com
+AptDeco|Consumer|aptdeco.com
+Lugg|Consumer|lugg.com
+Shape (ShapeScale)|Consumer|shapescale.com
+Eight Sleep|Consumer|eightsleep.com
+Tovala|Consumer|tovala.com
+Function of Beauty|Consumer|functionofbeauty.com
+Joy|Consumer|withjoy.com
+GoGoGrandparent|Consumer|gogograndparent.com
+Speak|Consumer|speak.com
+Clipboard|Consumer|clipboardworks.com
+Proven Group|Consumer|provenskincare.com
+Spellbrush|Consumer|spellbrush.com
+Players' Lounge|Consumer|playerslounge.co
+Weekend (fmr. Volley)|Consumer|weekend.com
+DreamCraft Entertainment, Inc.|Consumer|dreamcraft.com
+The Juggernaut|Consumer|thejuggernaut.com
+Community Phone Company|Consumer|communityphone.org
+Axel Travel|Consumer|helloaxel.com
+Beacons|Consumer|beacons.ai
+Pillar|Consumer|pillar.io
+Short Story|Consumer|shortstorybox.com
+LineLeap|Consumer|lineleap.com
+Whatnot|Consumer|whatnot.com
+LFcarry|Consumer|lfcarry.com
+Hotplate|Consumer|hotplate.com
+Matter|Consumer|getmatter.app
+Gather|Consumer|gather.town
+BoldVoice|Consumer|boldvoice.com
+SigmaOS|Consumer|sigmaos.com
+aSim|Consumer|asim.sh
+Gym Class|Consumer|gymclass.com
+UNISON|Consumer|in-unison.com
+Housewarming|Consumer|housewarming.me
+Poly|Consumer|poly.app
+Star|Consumer|buildwithstar.com
+Novig|Consumer|novig.com
+Hype|Consumer|hype.meme
+Vinci Games|Consumer|ruffnauts.com
+Rubbrband|Consumer|rubbrband.com
+Storyboarder|Consumer|storyboarder.com
+222|Consumer|222.place
+Scout|Consumer|thedailyscout.com
+Type|Consumer|type.ai
+Y/n|Consumer|yn.app
+Pure|Consumer|collectpure.com
+Roame|Consumer|roame.travel
+ego|Consumer|egoai.com
+Tuesday Labs|Consumer|tuesdaylabs.com
+GloGlo|Consumer|gloglo.com
+Treblo|Consumer|treblo.com
+Rove|Consumer|rove.com
+Wordware|Consumer|wordware.ai
+Stardrift|Consumer|stardrift.ai
+Willow|Consumer|willowvoice.com
+CreativeMode|Consumer|creativemode.net
+Emergent|Consumer|emergent.sh
+Overlap|Consumer|overlap.ai
+Streamable|Consumer|streamable.run
+Candle|Consumer|trycandle.app
+Innate|Consumer|innate.bot
+Mosaic|Consumer|mosaic.so
+Lucid|Consumer|lucid.ai
+Misprint|Consumer|misprint.com
+VoiceOS|Consumer|voiceos.com
+Text.ai|Consumer|text.ai
+Fifth Door|Consumer|fifthdoor.com
+OneStop|Consumer|askonestop.com
+Nozomio|Consumer|nozomio.com
+Blue|Consumer|heyblue.com
+Digipals|Consumer|digipals.app
+Koyal|Consumer|koyal.ai
+Flick|Consumer|flick.art
+AnswerThis|Consumer|answerthis.io
+Aside|Consumer|aside.com
+CatchBack Cards|Consumer|catchbackcards.com
+Pax Historia|Consumer|paxhistoria.co
+Pocket|Consumer|heypocket.com
+Fort|Consumer|fort.cx
+Tsenta|Consumer|tsenta.com
+Mochi|Consumer|mochi.tv
+Vyra|Consumer|usevyra.com
+The Subvocal Company|Consumer|subvocal.company

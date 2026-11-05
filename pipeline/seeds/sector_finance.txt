@@ -1,0 +1,192 @@
+# V21 probe seed. Source: sector sweep "finance": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Aflac|Financials|
+Allstate|Financials|
+American Express|Financials|
+American International Group|Financials|
+Ameriprise Financial|Financials|
+Aon plc|Financials|
+Apollo Global Management|Financials|
+Arch Capital Group|Financials|
+Ares Management|Financials|
+Arthur J. Gallagher & Co.|Financials|
+Assurant|Financials|
+Bank of America|Financials|
+Berkshire Hathaway|Financials|
+BlackRock|Financials|
+Blackstone Inc.|Financials|
+Block, Inc.|Financials|
+BNY Mellon|Financials|
+Brown & Brown|Financials|
+Capital One|Financials|
+Cboe Global Markets|Financials|
+Charles Schwab Corporation|Financials|
+Chubb Limited|Financials|
+Cincinnati Financial|Financials|
+Citigroup|Financials|
+Citizens Financial Group|Financials|
+CME Group|Financials|
+Coinbase|Financials|
+Corpay|Financials|
+Erie Indemnity|Financials|
+Everest Group|Financials|
+FactSet|Financials|
+Fidelity National Information Services|Financials|
+Fifth Third Bancorp|Financials|
+Fiserv|Financials|
+Franklin Resources|Financials|
+Global Payments|Financials|
+Globe Life|Financials|
+Goldman Sachs|Financials|
+Hartford (The)|Financials|
+Huntington Bancshares|Financials|
+Interactive Brokers|Financials|
+Intercontinental Exchange|Financials|
+Invesco|Financials|
+Jack Henry & Associates|Financials|
+JPMorgan Chase|Financials|
+KeyCorp|Financials|
+KKR & Co.|Financials|
+Loews Corporation|Financials|
+M&T Bank|Financials|
+Marsh McLennan|Financials|
+Mastercard|Financials|
+MetLife|Financials|
+Moody's Corporation|Financials|
+Morgan Stanley|Financials|
+MSCI|Financials|
+Nasdaq, Inc.|Financials|
+Northern Trust|Financials|
+PayPal|Financials|
+PNC Financial Services|Financials|
+Principal Financial Group|Financials|
+Progressive Corporation|Financials|
+Prudential Financial|Financials|
+Raymond James Financial|Financials|
+Regions Financial Corporation|Financials|
+Robinhood Markets|Financials|
+S&P Global|Financials|
+State Street Corporation|Financials|
+Synchrony Financial|Financials|
+T. Rowe Price|Financials|
+Travelers Companies (The)|Financials|
+Truist Financial|Financials|
+U.S. Bancorp|Financials|
+Visa Inc.|Financials|
+W. R. Berkley Corporation|Financials|
+Wells Fargo|Financials|
+Willis Towers Watson|Financials|
+Stripe|Fintech|stripe.com
+Wefunder|Fintech|wefunder.com
+Nova Credit|Fintech|novacredit.com
+OneChronos|Fintech|onechronos.com
+Legalist|Fintech|legalist.com
+Ledger Investing|Fintech|ledgerinvesting.com
+SafeButler|Fintech|safebutler.com
+Prelim|Fintech|prelim.com
+CoinTracker|Fintech|cointracker.com
+SafetyWing|Fintech|safetywing.com
+OWNY|Fintech|owny.com
+Titan|Fintech|titan.com
+Alpha Vantage|Fintech|alphavantage.co
+Prodigal|Fintech|prodigaltech.com
+Oxygen|Fintech|getoxygen.com
+Kalshi|Fintech|kalshi.com
+Swadesh|Fintech|swadesh.co
+Upsolve|Fintech|upsolve.org
+Alpaca|Fintech|alpaca.markets
+Atlas|Fintech|atlascard.com
+Vouch|Fintech|vouch.us
+Method Financial|Fintech|methodfi.com
+Karat Financial|Fintech|trykarat.com
+Haven|Fintech|havenservicing.com
+AtoB|Fintech|atob.com
+Safepay|Fintech|getsafepay.pk
+Afriex|Fintech|afriexapp.com
+Heron|Fintech|herondata.io
+Hapi|Fintech|hapi.trade
+Pesto|Fintech|getpesto.com
+Fractional|Fintech|fractional.app
+Alinea|Fintech|alinea-invest.com
+Solo|Fintech|solosuit.com
+Tint|Fintech|tint.ai
+Slash|Fintech|slash.com
+Shepherd|Fintech|shepherdinsurance.com
+Slope|Fintech|slopepay.com
+Forage|Fintech|joinforage.com
+Aqua|Fintech|investwithaqua.com
+Truss|Fintech|trusspayments.com
+LootRush|Fintech|lootrush.com
+Dots 💸|Fintech|usedots.com
+Gauss|Fintech|gauss.money
+goodfin|Fintech|goodfin.com
+Spade|Fintech|spade.com
+Arpari|Fintech|arpari.com
+Stream|Fintech|stream.claims
+Two Dots|Fintech|twodots.com
+Chariot|Fintech|givechariot.com
+Pasito|Fintech|pasito.ai
+Blee|Fintech|blee.com
+Capix|Fintech|capix.ai
+Tank Payments|Fintech|tankpayments.com
+AviaryAI|Fintech|helloaviary.ai
+AiPrise|Fintech|aiprise.com
+Pump.co|Fintech|pump.co
+Axle|Fintech|axle.insure
+Coverage Cat|Fintech|coveragecat.com
+Finn|Fintech|getfinn.us
+loopfour|Fintech|loopfour.com
+Hadrius|Fintech|hadrius.com
+Casca|Fintech|cascading.ai
+Cardinal Gray|Fintech|cardinalgray.com
+Bretton AI|Fintech|bretton.com
+SyntheticFi|Fintech|syntheticfi.com
+Coba|Fintech|coba.ai
+Event Horizon Labs|Fintech|ehl.markets
+Greenboard|Fintech|greenboard.com
+Powder|Fintech|powderfi.com
+Healia|Fintech|healiahealth.com
+ClaimSorted|Fintech|claimsorted.com
+Corgi|Fintech|corgi.com
+FINNY AI|Fintech|finny.com
+Brighterway|Fintech|brighterway.ai
+Finosu|Fintech|finosu.com
+Kontigo|Fintech|kontigo.lat
+Elayne|Fintech|elayne.com
+attimet|Fintech|attimet.com
+Keye|Fintech|keye.co
+CollectWise|Fintech|collectwise.com
+Axiom|Fintech|axiom.trade
+PAX Markets|Fintech|pax.markets
+Liquid Compute|Fintech|liquidcompute.com
+Harper|Fintech|harperinsure.com
+Infinite|Fintech|infinite.net
+Chestnut|Fintech|chestnutmortgage.com
+Avallon AI|Fintech|avallon.ai
+Ralo|Fintech|ralo.com
+Autonomous Technologies Group|Fintech|becomeautonomous.com
+Tesora|Fintech|tesora.ai
+Conviction|Fintech|convictiontrade.ai
+Solva|Fintech|solvatechnology.com
+Fernstone|Fintech|fernstone.com
+Veritus|Fintech|veritus.com
+Sava Trust Company|Fintech|savatrustcompany.com
+Proximitty|Fintech|proximitty.ai
+Fenrock AI|Fintech|fenrock.ai
+Maywood|Fintech|maywoodai.com
+Copperlane|Fintech|copperlane.ai
+Hedge|Fintech|hedgespecialty.com
+Totalis|Fintech|totalis.trade
+Kinro|Fintech|kinro.com
+Zolvo|Fintech|zolvo.com
+KelAI|Fintech|kelaitech.com
+Soria|Fintech|soriaanalytics.com
+Uno Wallet|Fintech|myunowallet.com
+Klaimee|Fintech|klaimee.ai
+Huscarl|Fintech|huscarl.io
+Stoa|Fintech|stoaexchange.com
+Denta|Fintech|denta.com
+Pennant|Fintech|getpennant.ai
+Ignition Benefits|Fintech|ignitionbenefits.com
+Covera|Fintech|covera-agents.com
+Volaren|Fintech|volaren.ai

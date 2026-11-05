@@ -1,0 +1,234 @@
+# V21 probe seed. Source: sector sweep "manufacturing": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+A. O. Smith|Industrials|
+Air Products|Materials|
+Albemarle Corporation|Materials|
+Allegion|Industrials|
+Amcor|Materials|
+Ametek|Industrials|
+Automatic Data Processing|Industrials|
+Avery Dennison|Materials|
+Axon Enterprise|Industrials|
+Ball Corporation|Materials|
+Bloom Energy|Industrials|
+Boeing|Industrials|
+Broadridge Financial Solutions|Industrials|
+C.H. Robinson|Industrials|
+Carrier Global|Industrials|
+Caterpillar Inc.|Industrials|
+CF Industries|Materials|
+Cintas|Industrials|
+Comfort Systems USA|Industrials|
+Copart|Industrials|
+CRH plc|Materials|
+CSX Corporation|Industrials|
+Cummins|Industrials|
+Deere & Company|Industrials|
+Delta Air Lines|Industrials|
+Dover Corporation|Industrials|
+Dow Inc.|Materials|
+DuPont|Industrials|
+Eaton Corporation|Industrials|
+Ecolab|Materials|
+Emcor|Industrials|
+Emerson Electric|Industrials|
+Equifax|Industrials|
+Expeditors International|Industrials|
+Fastenal|Industrials|
+FedEx|Industrials|
+FedEx Freight|Industrials|
+Ferguson Enterprises|Industrials|
+Fortive|Industrials|
+Freeport-McMoRan|Materials|
+GE Aerospace|Industrials|
+GE Vernova|Industrials|
+Generac|Industrials|
+General Dynamics|Industrials|
+Honeywell Aerospace|Industrials|
+Honeywell Technologies|Industrials|
+Howmet Aerospace|Industrials|
+Hubbell Incorporated|Industrials|
+Huntington Ingalls Industries|Industrials|
+IDEX Corporation|Industrials|
+Illinois Tool Works|Industrials|
+Ingersoll Rand|Industrials|
+International Flavors & Fragrances|Materials|
+International Paper|Materials|
+J.B. Hunt|Industrials|
+Jacobs Solutions|Industrials|
+Johnson Controls|Industrials|
+L3Harris|Industrials|
+Leidos|Industrials|
+Lennox International|Industrials|
+Linde plc|Materials|
+Lockheed Martin|Industrials|
+LyondellBasell|Materials|
+Martin Marietta Materials|Materials|
+Masco|Industrials|
+Mosaic Company (The)|Materials|
+Newmont|Materials|
+Nordson Corporation|Industrials|
+Norfolk Southern|Industrials|
+Northrop Grumman|Industrials|
+Nucor|Materials|
+Old Dominion|Industrials|
+Otis Worldwide|Industrials|
+Paccar|Industrials|
+Packaging Corporation of America|Materials|
+Parker Hannifin|Industrials|
+Paychex|Industrials|
+Pentair|Industrials|
+PPG Industries|Materials|
+Quanta Services|Industrials|
+Republic Services|Industrials|
+Rockwell Automation|Industrials|
+Rollins, Inc.|Industrials|
+RTX Corporation|Industrials|
+Sherwin-Williams|Materials|
+Smurfit Westrock|Materials|
+Snap-on|Industrials|
+Southwest Airlines|Industrials|
+Stanley Black & Decker|Industrials|
+Steel Dynamics|Materials|
+Textron|Industrials|
+Trane Technologies|Industrials|
+TransDigm Group|Industrials|
+Uber|Industrials|
+Union Pacific Corporation|Industrials|
+United Airlines Holdings|Industrials|
+United Parcel Service|Industrials|
+United Rentals|Industrials|
+Veralto|Industrials|
+Verisk Analytics|Industrials|
+Vertiv|Industrials|
+Vulcan Materials Company|Materials|
+W. W. Grainger|Industrials|
+Wabtec|Industrials|
+Waste Management|Industrials|
+Xylem Inc.|Industrials|
+Reach|Industrials|reachpower.com
+Gecko Robotics|Industrials|geckorobotics.com
+Relativity Space|Industrials|relativityspace.com
+Astranis|Industrials|astranis.com
+Multiply Labs|Industrials|multiplylabs.com
+Bountiful|Industrials|bountiful.ag
+Wright Electric|Industrials|weflywright.com
+Skyways|Industrials|skyways.com
+May Mobility|Industrials|maymobility.com
+Orangewood Labs|Industrials|orangewood.co
+JITX|Industrials|jitx.com
+Overview|Industrials|overview.ai
+Yummy Future|Industrials|yummy-future.com
+Vorticity|Industrials|vorticity.xyz
+Farcast|Industrials|farcast.com
+Living Carbon|Industrials|livingcarbon.com
+Nextera Robotics | DIDGE.ai|Industrials|nexterarobotics.com
+Atomic Industries|Industrials|atomic.industries
+Albedo|Industrials|albedo.com
+Gridware|Industrials|gridware.io
+Tractian|Industrials|tractian.com
+Stoke Space|Industrials|stokespace.com
+BotBuilt|Industrials|botbuilt.com
+Odys Aviation|Industrials|odysaviation.com
+Enerjazz|Industrials|enerjazz.tech
+TransAstra Corporation|Industrials|transastra.com
+Buoyant Aero|Industrials|buoyant.aero
+Turion Space|Industrials|turionspace.com
+Charge Robotics|Industrials|chargerobotics.com
+AstroForge|Industrials|astroforge.io
+Posh|Industrials|poshenergy.com
+Olympian Motors|Industrials|olympianmotors.com
+AirMyne|Industrials|airmyne.com
+Paces|Industrials|paces.com
+Array Labs|Industrials|arraylabs.io
+Voltic|Industrials|volticshipping.com
+Airhart Aeronautics|Industrials|airhartaero.com
+Polymath Robotics|Industrials|polymathrobotics.com
+Ohm|Industrials|ohm.ai
+Nectar|Industrials|nectarclimate.com
+Navier AI|Industrials|navier.ai
+Relari|Industrials|relari.ai
+Pivot Robotics|Industrials|pivotrobotics.com
+Astro Mechanica|Industrials|astromecha.co
+Yondu|Industrials|yondu.ai
+Deepnight|Industrials|deepnight.com
+Ultra|Industrials|ultra.tech
+Theseus|Industrials|theseus.us
+Azalea Robotics Corporation|Industrials|azalearobotics.com
+Silurian|Industrials|silurian.ai
+Weave Robotics|Industrials|weaverobotics.com
+Conductor Quantum|Industrials|conductorquantum.com
+Westgate|Industrials|westgatesupply.com
+Mineflow|Industrials|mineflow.ai
+Zettascale Computing|Industrials|zscc.ai
+Guardian RF|Industrials|guardianrf.com
+Starcloud|Industrials|starcloud.com
+Vendra|Industrials|vendra.io
+Bucket Robotics|Industrials|bucket.bot
+Consus|Industrials|consus.io
+Apolink|Industrials|apolink.space
+Revise Robotics|Industrials|reviserobotics.com
+Steinmetz|Industrials|steinmetzmotors.com
+Splash Inc.|Industrials|splash9.com
+Maritime Fusion|Industrials|maritimefusion.com
+Orbital Operations|Industrials|orbitalops.tech
+Reditus Space|Industrials|reditus.space
+Proception Inc|Industrials|proception.ai
+GroundControl|Industrials|rungroundcontrol.com
+Almond|Industrials|almond.bot
+Mbodi AI|Industrials|mbodi.ai
+Sygaldry Technologies|Industrials|sygaldry.com
+MorphoAI|Industrials|morpho.ai
+Cascade Space|Industrials|cascadespace.com
+Foundation Industries|Industrials|foundation-industries.com
+Prox|Industrials|
+Parametric|Industrials|parametric.company
+Verne Robotics|Industrials|vernerobotics.com
+Galactic Resource Utilization Space, Inc. (GRU Space)|Industrials|gru.space
+DeepAware AI (Robotics Center of Silicon Valley)|Industrials|roboticscenter.ai
+Flai|Industrials|useflai.com
+Perseus Defense|Industrials|perseusdefense.com
+OS3|Industrials|os3robotics.com
+NOSO LABS|Industrials|noso.so
+Nox Metals|Industrials|noxmetals.co
+Wardstone|Industrials|wardstone.us
+Allus AI|Industrials|allus.ai
+Darwin|Industrials|darwinrobotics.ai
+Icarus|Industrials|icarus.one
+General Astronautics|Industrials|generalastro.com
+Lightberry|Industrials|lightberry.com
+Voltair|Industrials|voltairlabs.com
+Waddle Labs|Industrials|waddlelabs.ai
+One Robot|Industrials|onerobot.io
+Asimov|Industrials|tryasimov.ai
+OctaPulse|Industrials|tryoctapulse.com
+Beyond Reach Labs|Industrials|beyondreachlabs.com
+Ventura|Industrials|ventura.ai
+Terranox AI|Industrials|terranox.ai
+9 Mothers|Industrials|9mothers.com
+Human Archive|Industrials|humanarchive.ai
+Dispatch|Industrials|dispatch.space
+PerfectBit, Inc.|Industrials|perfectbit.ai
+Discovered Materials|Industrials|discoveredmaterials.com
+Nine Fives|Industrials|ninefives.com
+Aseon Labs|Industrials|aseonlabs.com
+Eden Robotics|Industrials|edenrobotics.ai
+Arlo Industries|Industrials|arlo1.com
+Intelligence Factory|Industrials|intelligence-factory.com
+Edgerun|Industrials|edgerun.com
+Torus|Industrials|usetorus.com
+HERA|Industrials|manufacturingintelligence.org
+Synapse Semiconductor|Industrials|synapsesemi.org
+IMPACT Drones|Industrials|impact-drones.com
+GUILD|Industrials|guildai.co
+Nori|Industrials|norirobotics.com
+Aktoria Robotics|Industrials|aktoria.com
+Operon|Industrials|operonsolutions.com
+ProvenMetal|Industrials|provenmetal.com
+83 Sciences|Industrials|83sciences.ai
+Vernius Systems, Inc.|Industrials|vernius.systems
+Runtime.si|Industrials|runtime.si
+Bayworks|Industrials|bayworks.app
+Inflection Space Systems|Industrials|inflection-space.com
+Orca Aerospace|Industrials|orcaaerospace.com
+Super Powers Mobility (SPM)|Industrials|spm.us

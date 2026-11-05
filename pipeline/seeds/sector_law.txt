@@ -1,0 +1,123 @@
+# V21 probe seed. Source: sector sweep "law": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Kirkland & Ellis|law|
+Latham & Watkins|law|
+DLA Piper|law|
+A&O Shearman|law|
+Skadden, Arps, Slate, Meagher & Flom|law|
+Gibson Dunn|law|
+Simpson Thacher & Bartlett|law|
+Sidley Austin|law|
+Ropes & Gray|law|
+Baker McKenzie|law|
+White & Case|law|
+Morgan, Lewis & Bockius|law|
+Clifford Chance|law|
+Freshfields|law|
+Linklaters|law|
+Hogan Lovells|law|
+Jones Day|law|
+Dentons|law|
+Goodwin Procter|law|
+Paul, Weiss, Rifkind, Wharton & Garrison|law|
+Greenberg Traurig|law|
+Davis Polk & Wardwell|law|
+Quinn Emanuel Urquhart & Sullivan|law|
+Norton Rose Fulbright|law|
+King & Spalding|law|
+CMS|law|
+Paul Hastings|law|
+McDermott, Will & Schulte|law|
+Cooley|law|
+Sullivan & Cromwell|law|
+Holland & Knight|law|
+Weil, Gotshal & Manges|law|
+Mayer Brown|law|
+Milbank|law|
+Willkie Farr & Gallagher|law|
+Covington & Burling|law|
+Herbert Smith Freehills Kramer|law|
+Cleary Gottlieb Steen & Hamilton|law|
+Eversheds Sutherland|law|
+Debevoise & Plimpton|law|
+Wilmer Cutler Pickering Hale and Dorr|law|
+Orrick, Herrington & Sutcliffe|law|
+Dechert|law|
+Reed Smith|law|
+Akin Gump Strauss Hauer & Feld|law|
+Wilson, Sonsini, Goodrich & Rosati|law|
+Morrison & Foerster|law|
+Yingke|law|
+Proskauer Rose|law|
+Squire Patton Boggs|law|
+Alston & Bird|law|
+K&L Gates|law|
+Ashurst|law|
+Foley & Lardner|law|
+Winston & Strawn|law|
+Perkins Coie|law|
+King & Wood Mallesons|law|
+Sheppard, Mullin, Richter & Hampton|law|
+Cravath, Swaine & Moore|law|
+Wachtell, Lipton, Rosen & Katz|law|
+Arnold & Porter|law|
+Troutman Pepper Locke|law|
+Fried, Frank, Harris, Shriver & Jacobson|law|
+McGuireWoods|law|
+Kim & Chang|law|
+Clyde & Co|law|
+O’Melveny & Myers|law|
+Faegre Drinker|law|
+BakerHostetler|law|
+Vinson & Elkins|law|
+Polsinelli|law|
+Nelson Mullins Riley & Scarborough|law|
+Seyfarth Shaw|law|
+Fragomen, Del Rey, Bernsen & Loewy|law|
+Hunton Andrews Kurth|law|
+Pinsent Masons|law|
+Slaughter and May|law|
+Katten Muchin Rosenman|law|
+Bryan Cave Leighton Paisner|law|
+Venable|law|
+Baker Botts|law|
+Pillsbury Winthrop Shaw Pittman|law|
+Fenwick & West|law|
+Simmons & Simmons|law|
+Fox Rothschild|law|
+Gordon Rees Scully Mansukhani|law|
+Lewis Brisbois Bisgaard & Smith|law|
+Gowling WLG|law|
+Barnes & Thornburg|law|
+Blank Rome|law|
+Bird & Bird|law|
+Littler Mendelson|law|
+Ogletree, Deakins, Nash, Smoak & Stewart|law|
+Blake, Cassels & Graydon|law|
+Cozen O'Connor|law|
+Husch Blackwell|law|
+Addleshaw Goddard|law|
+Taft Stettinius & Hollister|law|
+Mintz, Levin, Cohn, Ferris, Glovsky, and Popeo|law|
+Jackson Lewis|law|
+Davis Polk|law|
+Gibson, Dunn & Crutcher|law|
+Cadwalader, Wickersham & Taft|law|
+Cahill, Gordon & Reindel|law|
+Slaughter & May|law|
+Gleiss Lutz Hootz Hirsch|law|
+McDermott, Will & Emery|law|
+Shearman & Sterling|law|
+Allen & Overy|law|
+Herbert Smith Freehills|law|
+Arnold & Porter Kaye Scholer|law|
+Troutman Pepper|law|
+Duane Morris|law|
+AllBright Law Offices|law|
+Zhong Lun|law|
+Deheng Law Offices|law|
+Grandall Law Firm|law|
+Cooley LLP|law|
+Wilson Elser Moskowitz Edelman & Dicker|law|
+Morgan & Morgan|law|
+Faegre Drinker Biddle & Reath|law|

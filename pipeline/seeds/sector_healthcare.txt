@@ -1,0 +1,205 @@
+# V21 probe seed. Source: sector sweep "healthcare": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Abbott Laboratories|Health Care|
+AbbVie|Health Care|
+Agilent Technologies|Health Care|
+Align Technology|Health Care|
+Amgen|Health Care|
+Baxter International|Health Care|
+Becton Dickinson|Health Care|
+Bio-Techne|Health Care|
+Biogen|Health Care|
+Boston Scientific|Health Care|
+Bristol Myers Squibb|Health Care|
+Cardinal Health|Health Care|
+Cencora|Health Care|
+Centene Corporation|Health Care|
+Charles River Laboratories|Health Care|
+Cigna|Health Care|
+Cooper Companies (The)|Health Care|
+CVS Health|Health Care|
+Danaher Corporation|Health Care|
+DaVita|Health Care|
+Dexcom|Health Care|
+Edwards Lifesciences|Health Care|
+Elevance Health|Health Care|
+GE HealthCare|Health Care|
+Gilead Sciences|Health Care|
+HCA Healthcare|Health Care|
+Henry Schein|Health Care|
+Humana|Health Care|
+Idexx Laboratories|Health Care|
+Illumina, Inc.|Health Care|
+Incyte|Health Care|
+Insulet Corporation|Health Care|
+Intuitive Surgical|Health Care|
+IQVIA|Health Care|
+Johnson & Johnson|Health Care|
+Labcorp|Health Care|
+Lilly (Eli)|Health Care|
+McKesson|Health Care|
+Medtronic|Health Care|
+Merck & Co.|Health Care|
+Mettler Toledo|Health Care|
+Moderna|Health Care|
+Pfizer|Health Care|
+Quest Diagnostics|Health Care|
+Regeneron Pharmaceuticals|Health Care|
+ResMed|Health Care|
+Revvity|Health Care|
+Solventum|Health Care|
+Steris|Health Care|
+Stryker Corporation|Health Care|
+Thermo Fisher Scientific|Health Care|
+UnitedHealth Group|Health Care|
+Universal Health Services|Health Care|
+Veeva Systems|Health Care|
+Vertex Pharmaceuticals|Health Care|
+Viatris|Health Care|
+Waters Corporation|Health Care|
+West Pharmaceutical Services|Health Care|
+Zimmer Biomet|Health Care|
+Zoetis|Health Care|
+Quartzy|Healthcare|quartzy.com
+SimplyInsured|Healthcare|simplyinsured.com
+Noora Health|Healthcare|noorahealth.org
+PicnicAI|Healthcare|picnic.ai
+Qventus|Healthcare|qventus.com
+Tempo|Healthcare|tempo.fit
+Verge Genomics|Healthcare|vergegenomics.com
+iSono Health|Healthcare|isonohealth.com
+Athelas|Healthcare|athelas.com
+Mednet|Healthcare|themednet.org
+Collectly|Healthcare|collectly.co
+Rev Genomics|Healthcare|revgenomics.com
+Modern Health|Healthcare|modernhealth.com
+Pelago|Healthcare|pelagohealth.com
+ArchForm|Healthcare|archform.com
+Verse Medical|Healthcare|versemedical.com
+Data Driven Bioscience|Healthcare|datadrivenbioscience.com
+Apprentice Health|Healthcare|apprenticehealth.com
+Meru Health|Healthcare|meruhealth.com
+Pine Park Health|Healthcare|pineparkhealth.com
+Eden|Healthcare|edenmed.com
+Centaur|Healthcare|centaur.ai
+Probably Genetic|Healthcare|probablygenetic.com
+Bunkerhill Health|Healthcare|bunkerhillhealth.com
+PNOĒ|Healthcare|
+Volta Labs, Inc.|Healthcare|voltalabs.com
+Apero Health|Healthcare|aperohealth.com
+Pair Team|Healthcare|pairteam.com
+DirectShifts|Healthcare|directshifts.com
+Ophelia|Healthcare|ophelia.com
+General Proximity|Healthcare|generalproximity.bio
+Candid Health|Healthcare|joincandidhealth.com
+AIOS|Healthcare|aiosmedical.notion.site
+PostEra|Healthcare|postera.ai
+adyn|Healthcare|adyn.com
+Vitable Health|Healthcare|vitablehealth.com
+Kingdom|Healthcare|kingdomsuperculture.com
+Vena Vitals|Healthcare|venavitals.com
+SiPhox Health|Healthcare|siphoxhealth.com
+Nourish|Healthcare|nourish.com
+Axle Health|Healthcare|axlehealth.com
+Camber|Healthcare|camber.health
+Quadrant Health|Healthcare|quadrant.health
+Measured|Healthcare|trymeasured.com
+Datrics|Healthcare|datrics.ai
+Biodock|Healthcare|biodock.ai
+Lamar Health|Healthcare|lamarhealth.com
+Triomics|Healthcare|triomics.com
+Reframe|Healthcare|joinreframeapp.com
+Agapé|Healthcare|getdailyagape.com
+Legion Health|Healthcare|legionhealth.com
+Serif Health|Healthcare|serifhealth.com
+Parallel Bio|Healthcare|parallel.bio
+Epinoma|Healthcare|epinoma.com
+Zen|Healthcare|lnkd.in
+SafeBeat|Healthcare|safebeat.com
+Pirouette Pharma|Healthcare|pirouettepharma.com
+Rinse|Healthcare|rinse.dental
+Shimmer|Healthcare|shimmer.care
+Akute Health|Healthcare|akutehealth.com
+Output Labs|Healthcare|outputlabs.ai
+Spot Health|Healthcare|spotdx.com
+Mederva|Healthcare|medervahealth.com
+Craniometrix|Healthcare|craniometrix.com
+Nest Genomics|Healthcare|nestgenomics.com
+Invert|Healthcare|invertbio.com
+Ankr Health|Healthcare|ankr.us
+LunaJoy Health|Healthcare|HelloLunaJoy.com
+Reviving Mind|Healthcare|revivingmind.com
+Medplum|Healthcare|medplum.com
+Malama Health|Healthcare|heymalama.co
+Metriport|Healthcare|metriport.com
+Solum Health|Healthcare|getsolum.com
+Knowtex|Healthcare|knowtex.ai
+Delfino AI|Healthcare|delfino.ai
+Latent|Healthcare|latenthealth.com
+Kivo Health|Healthcare|kivohealth.com
+Orchid|Healthcare|orchid.health
+Vitalize|Healthcare|vitalize.care
+Diffuse Bio|Healthcare|diffuse.bio
+Untether Labs|Healthcare|untetherlabs.com
+Clearest Health|Healthcare|clearesthealth.com
+Readily|Healthcare|readily.ai
+Health Harbor|Healthcare|healthharbor.co
+Numen|Healthcare|numen.com
+Fortuna Health|Healthcare|fortunahealth.com
+Andromeda Surgical|Healthcare|andromedasurgical.com
+Quill Bills|Healthcare|quillbills.com
+Cair Health|Healthcare|cairhealth.com
+Simbie AI|Healthcare|simbie.ai
+Sonia|Healthcare|soniahealth.com
+Arini|Healthcare|arini.ai
+Clarion|Healthcare|clarionhealth.com
+Andy AI|Healthcare|with-andy.com
+Piramidal|Healthcare|piramidal.ai
+TrueClaim|Healthcare|trytrueclaim.com
+Haplotype Labs|Healthcare|haplotypelabs.com
+mdhub|Healthcare|mdhub.ai
+Dodo|Healthcare|dodo.ai
+Anthrogen|Healthcare|anthrogen.com
+Vera Health|Healthcare|vera-health.ai
+SimCare|Healthcare|simcare.ai
+Syntra|Healthcare|syntra.com
+Avora|Healthcare|getavora.ai
+Durate|Healthcare|durate.com
+Raycaster|Healthcare|eval.raycaster.ai
+Ember|Healthcare|embercopilot.ai
+Careforce|Healthcare|careforce.ai
+Asha Health|Healthcare|asha.health
+Toothy AI|Healthcare|toothy.ai
+HealthKey|Healthcare|gethealthkey.com
+10x|Healthcare|10xdental.com
+Harbera|Healthcare|harbera.com
+Synthio Labs|Healthcare|synthiolabs.com
+Claim Health|Healthcare|claimhealth.com
+Novoflow|Healthcare|novoflow.io
+Adentris|Healthcare|adentris.com
+CareSwift|Healthcare|careswift.com
+Wedge|Healthcare|wedge.health
+b12 Labs|Healthcare|b12-labs.com
+Novaflow|Healthcare|novaflow.ai
+Locata|Healthcare|locatahealth.com
+Sunflower|Healthcare|sunflowerclinic.com
+Nucleo|Healthcare|nucleoresearch.com
+Exonic|Healthcare|exonic.ai
+Rovi Health|Healthcare|rovi.health
+Layers|Healthcare|layers.bio
+Clara|Healthcare|askclara.com
+Origin|Healthcare|origin.bio
+Janeen|Healthcare|janeen.care
+Prescience, Inc.|Healthcare|getprescience.com
+Docura Health|Healthcare|docurahealth.com
+CellType|Healthcare|celltype.com
+Opalite Health|Healthcare|opalitehealth.com
+Taiga|Healthcare|taigabilling.com
+Adialante|Healthcare|adialante.com
+Infera|Healthcare|infera.bio
+BioStack Platforms|Healthcare|getbiostack.com
+Plena Health|Healthcare|plena.health
+Hubble|Healthcare|hubble.ai
+Allia Health|Healthcare|allia.health
+Rhem Labs|Healthcare|rhem.ai
+Helios Intelligence|Healthcare|heliosinc.ai

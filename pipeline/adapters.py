@@ -316,3 +316,39 @@ def nystate(c):
           'posted':_nyd(H.unescape(posted)),'deadline':_nyd(H.unescape(deadline)),'deadline_source':'NY State Jobs vacancy deadline',
           'ats_id':iid,'company_override':_nyagency(H.unescape(agency)),'desc':''})
     return out
+# ---------- V21 Part 3: more public ATS JSON/XML boards (each confirmed public + robots-allowed in the V21 audit) ----------
+_INTERNISH=re.compile(r'intern|co-?op|student|apprentic|fellow|summer analyst|summer associate|extern',re.I)
+@adapter('rippling',api='https://api.rippling.com/platform/api/ats/v1/board/{slug}/jobs',official=True)
+def rippling(c):
+    """Rippling ATS public job board API (no key). List has title/url/location; the detail call (intern-titled rows only) adds the description."""
+    base=f"https://api.rippling.com/platform/api/ats/v1/board/{c['slug']}/jobs"
+    out=[]
+    for x in fetch(base).json() or []:
+        t=(x.get('name') or '').strip()
+        if not t or not _INTERNISH.search(t): continue
+        loc=(x.get('workLocation') or {}).get('label') or ''
+        det={}
+        try: det=fetch(f"{base}/{x['uuid']}").json() or {}
+        except Exception: pass
+        d=det.get('description') or {}
+        desc=d.get('role') if isinstance(d,dict) else d
+        out.append({'title':t,'url':x.get('url'),'locations':[loc],'desc':desc,'posted':_iso(det.get('createdOn')),
+          'workplace':'Remote' if re.search(r'remote',loc,re.I) else None,'dept':(x.get('department') or {}).get('label'),'ats_id':x.get('uuid')})
+    return out
+def personio_parse(xml_text,slug):
+    import xml.etree.ElementTree as ET
+    out=[]
+    root=ET.fromstring(xml_text)
+    for p in root.findall('position'):
+        g=lambda k:(p.findtext(k) or '').strip()
+        t=g('name')
+        if not t or not _INTERNISH.search(t): continue
+        desc='\n\n'.join(f"<h3>{(jd.findtext('name') or '').strip()}</h3>{jd.findtext('value') or ''}" for jd in p.findall('jobDescriptions/jobDescription'))
+        offices=[g('office')]+[(o.text or '').strip() for o in p.findall('additionalOffices/office')]
+        out.append({'title':t,'url':f"https://{slug}.jobs.personio.de/job/{g('id')}",'locations':[o for o in offices if o],'desc':desc,'posted':_iso(g('createdAt')),
+          'dept':g('department') or None,'ats_id':g('id')})
+    return out
+@adapter('personio',api='https://{slug}.jobs.personio.de/xml',official=True)
+def personio(c):
+    """Personio public XML job feed (robots: Allow /). Non-US offices are dropped by the usual USA filter downstream."""
+    return personio_parse(fetch(f"https://{c['slug']}.jobs.personio.de/xml").text,c['slug'])

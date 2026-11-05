@@ -1,0 +1,1193 @@
+# V21 probe seed. Source: Y Combinator directory via yc-oss public API (yc-oss.github.io/api/companies/all.json): active, hiring, US region
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Rescale|B2B|rescale.com
+Gusto|B2B|gusto.com
+Apollo|B2B|apollographql.com
+HackerRank|B2B|hackerrank.com
+OneSignal|B2B|onesignal.com
+Streak|B2B|streak.com
+Quartzy|Healthcare|quartzy.com
+Sift|B2B|sift.com
+Mino Games|Consumer|minomonsters.com
+GOAT Group|Consumer|goatgroup.com
+Stripe|Fintech|stripe.com
+RentHop|Real Estate and Construction|renthop.com
+Volantio|B2B|volantio.com
+Zentail|B2B|zentail.com
+Zapier|B2B|zapier.com
+Padlet|B2B|padlet.com
+Etleap|B2B|etleap.com
+InfluxData|B2B|influxdata.com
+RADAR|B2B|goradar.com
+SimplyInsured|Healthcare|simplyinsured.com
+Wefunder|Fintech|wefunder.com
+Goldbelly|Consumer|goldbelly.com
+Lob|B2B|lob.com
+Webflow|B2B|webflow.com
+AptDeco|Consumer|aptdeco.com
+Cambly|Education|cambly.com
+Noora Health|Healthcare|noorahealth.org
+Flexport|B2B|flexport.com
+Algolia|B2B|algolia.com
+Checkr|B2B|checkr.com
+PicnicAI|Healthcare|picnic.ai
+ShipBob|B2B|shipbob.com
+Qventus|Healthcare|qventus.com
+Magic|B2B|getmagic.com
+Tempo|Healthcare|tempo.fit
+Giveffect|B2B|giveffect.com
+Mashgin|B2B|mashgin.com
+Lugg|Consumer|lugg.com
+Ironclad|B2B|ironcladapp.com
+New Story|Real Estate and Construction|newstoryhomes.org
+Gemnote|B2B|gemnote.com
+SnapMagic|B2B|snapmagic.com
+Reach|Industrials|reachpower.com
+Verge Genomics|Healthcare|vergegenomics.com
+GiveCampus|Education|go.givecampus.com
+Shape (ShapeScale)|Consumer|shapescale.com
+Go1|B2B|go1.com
+Bitmovin|B2B|bitmovin.com
+Instawork|B2B|instawork.com
+Eight Sleep|Consumer|eightsleep.com
+Human Interest|B2B|humaninterest.com
+Lattice|B2B|lattice.com
+Deepgram|B2B|deepgram.com
+iSono Health|Healthcare|isonohealth.com
+Tovala|Consumer|tovala.com
+Mason|B2B|bymason.com
+PocketSuite|B2B|pocketsuite.io
+Castle|B2B|castle.io
+Netomi|B2B|netomi.com
+Function of Beauty|Consumer|functionofbeauty.com
+Podium|B2B|podium.com
+Apollo.io|B2B|apollo.io
+Thunkable|B2B|thunkable.com
+Gecko Robotics|Industrials|geckorobotics.com
+Sendbird|B2B|sendbird.com
+Relativity Space|Industrials|relativityspace.com
+Astranis|Industrials|astranis.com
+Zenysis|Government|zenysis.com
+Vetcove|B2B|vetcove.com
+Joy|Consumer|withjoy.com
+Instrumentl|B2B|instrumentl.com
+Nova Credit|Fintech|novacredit.com
+OneChronos|Fintech|onechronos.com
+Women Who Code|Unspecified|womenwhocode.com
+Multiply Labs|Industrials|multiplylabs.com
+Legalist|Fintech|legalist.com
+HiOperator|B2B|hioperator.com
+GoGoGrandparent|Consumer|gogograndparent.com
+Athelas|Healthcare|athelas.com
+Scale AI|B2B|scale.com
+People.ai|B2B|people.ai
+ClassDojo|Education|classdojo.com
+Voiceops|B2B|voiceops.com
+Speak|Consumer|speak.com
+Bountiful|Industrials|bountiful.ag
+Rippling|B2B|rippling.com
+Ledger Investing|Fintech|ledgerinvesting.com
+Clipboard|Consumer|clipboardworks.com
+Ambient.ai|B2B|ambient.ai
+Snappr|B2B|snappr.com
+Mednet|Healthcare|themednet.org
+Veryfi, Inc.|B2B|veryfi.com
+Wright Electric|Industrials|weflywright.com
+Collectly|Healthcare|collectly.co
+NanoNets|B2B|nanonets.com
+Faire|B2B|faire.com
+Ridecell|B2B|ridecell.com
+Retool|B2B|retool.com
+Skyways|Industrials|skyways.com
+VergeSense|Real Estate and Construction|vergesense.com
+Bloom Institute of Technology|Education|bloomtech.com
+UpCodes|Real Estate and Construction|up.codes
+Standard AI|B2B|standard.ai
+Nimble|Education|hirenimble.com
+SafeButler|Fintech|safebutler.com
+Flock Safety|B2B|flocksafety.com
+Prelim|Fintech|prelim.com
+Rev Genomics|Healthcare|revgenomics.com
+May Mobility|Industrials|maymobility.com
+AssemblyAI|B2B|assemblyai.com
+Just Appraised|Government|justappraised.com
+Proven Group|Consumer|provenskincare.com
+Spellbrush|Consumer|spellbrush.com
+Assembly|B2B|assembly.com
+Fondo|B2B|fondo.com
+CoinTracker|Fintech|cointracker.com
+Promise|Government|promise-pay.com
+Modern Health|Healthcare|modernhealth.com
+Vanta|B2B|vanta.com
+Sourcify|B2B|sourcify.com
+Acely|Education|acely.com
+Players' Lounge|Consumer|playerslounge.co
+Weekend (fmr. Volley)|Consumer|weekend.com
+Pelago|Healthcare|pelagohealth.com
+SafetyWing|Fintech|safetywing.com
+Orangewood Labs|Industrials|orangewood.co
+ArchForm|Healthcare|archform.com
+CaptivateIQ|B2B|captivateiq.com
+Swayable|B2B|swayable.com
+Replit|B2B|replit.com
+OWNY|Fintech|owny.com
+Within|B2B|within.ai
+Modern Treasury|B2B|moderntreasury.com
+Verse Medical|Healthcare|versemedical.com
+RevenueCat|B2B|revenuecat.com
+Activeloop|B2B|activeloop.ai
+Titan|Fintech|titan.com
+Data Driven Bioscience|Healthcare|datadrivenbioscience.com
+Inscribe|B2B|inscribe.ai
+JITX|Industrials|jitx.com
+Apprentice Health|Healthcare|apprenticehealth.com
+Meru Health|Healthcare|meruhealth.com
+DreamCraft Entertainment, Inc.|Consumer|dreamcraft.com
+Pine Park Health|Healthcare|pineparkhealth.com
+BlueCargo|B2B|bluecargo.io
+Alpha Vantage|Fintech|alphavantage.co
+Canary Technologies|B2B|canarytechnologies.com
+Prodigal|Fintech|prodigaltech.com
+Nestor|B2B|nestorup.com
+Eden|Healthcare|edenmed.com
+Mutiny|B2B|mutinyhq.com
+Leena AI|B2B|leena.ai
+Oxygen|Fintech|getoxygen.com
+Overview|Industrials|overview.ai
+Flockjay|B2B|flockjay.com
+The Juggernaut|Consumer|thejuggernaut.com
+Kalshi|Fintech|kalshi.com
+Centaur|Healthcare|centaur.ai
+Sorting Robotics|B2B|sortingrobotics.com
+Dyneti Technologies|B2B|dyneti.com
+Middesk|B2B|middesk.com
+GoLinks|B2B|golinks.io
+Community Phone Company|Consumer|communityphone.org
+Sapling.ai|B2B|sapling.ai
+Nabis|B2B|nabis.com
+Swadesh|Fintech|swadesh.co
+Okteto|B2B|okteto.com
+Ashby|B2B|ashbyhq.com
+Probably Genetic|Healthcare|probablygenetic.com
+Bunkerhill Health|Healthcare|bunkerhillhealth.com
+Handle|Real Estate and Construction|handle.com
+Landed|B2B|gotlanded.com
+Deel|B2B|deel.com
+Axel Travel|Consumer|helloaxel.com
+PNOĒ|Healthcare|
+Volta Labs, Inc.|Healthcare|voltalabs.com
+Upsolve|Fintech|upsolve.org
+Alpaca|Fintech|alpaca.markets
+Dover|B2B|dover.com
+Beacons|Consumer|beacons.ai
+FIRST|B2B|firstdelivery.com
+Atlas|Fintech|atlascard.com
+Vouch|Fintech|vouch.us
+Apero Health|Healthcare|aperohealth.com
+Method Financial|Fintech|methodfi.com
+Pillar|Consumer|pillar.io
+Odeko|B2B|odeko.com
+Short Story|Consumer|shortstorybox.com
+Pair Team|Healthcare|pairteam.com
+TRM Labs|B2B|trmlabs.com
+Yummy Future|Industrials|yummy-future.com
+Rutter|B2B|rutter.com
+DirectShifts|Healthcare|directshifts.com
+Wasmer|B2B|wasmer.io
+LineLeap|Consumer|lineleap.com
+Spice Data|B2B|spicedata.com
+Recidiviz|Government|recidiviz.org
+InEvent|B2B|inevent.com
+Freshpaint|B2B|freshpaint.io
+Curri|Real Estate and Construction|curri.com
+Deepnote|B2B|deepnote.com
+Taskade|B2B|taskade.com
+Vorticity|Industrials|vorticity.xyz
+Wonderly|B2B|wonderly.com
+Karat Financial|Fintech|trykarat.com
+Accord|B2B|inaccord.com
+Paragon|B2B|useparagon.com
+Porter|B2B|porter.run
+Pulley|B2B|pulley.com
+Ophelia|Healthcare|ophelia.com
+Ditto|B2B|dittowords.com
+Handoff|Real Estate and Construction|handoff.ai
+Haven|Fintech|havenservicing.com
+Farcast|Industrials|farcast.com
+Eze|B2B|ezeit.ai
+Benepass|B2B|benepass.com
+Whatnot|Consumer|whatnot.com
+General Proximity|Healthcare|generalproximity.bio
+Turing Labs Inc.|B2B|turingsaas.com
+Ello|Education|ello.com
+BuildBuddy|B2B|buildbuddy.io
+Vori|B2B|vori.com
+Quill|B2B|quill.co
+Candid Health|Healthcare|joincandidhealth.com
+PostHog|B2B|posthog.com
+AIOS|Healthcare|aiosmedical.notion.site
+Skypher|B2B|skypher.co
+Recurrency|B2B|recurrency.com
+PostEra|Healthcare|postera.ai
+adyn|Healthcare|adyn.com
+BeGo|B2B|bego.ai
+Stable|B2B|useStable.com
+Recall.ai|B2B|recall.ai
+Living Carbon|Industrials|livingcarbon.com
+LFcarry|Consumer|lfcarry.com
+Zip|B2B|ziphq.com
+Luminai|B2B|luminai.com
+Roboflow|B2B|roboflow.com
+SuperTokens|B2B|supertokens.com
+Datafold|B2B|datafold.com
+Blue Onion|B2B|blueonion.ai
+AtoB|Fintech|atob.com
+Seam|B2B|seam.co
+Safepay|Fintech|getsafepay.pk
+Pave|B2B|pave.com
+Hypotenuse AI|B2B|hypotenuse.ai
+Swif.ai|B2B|swif.ai
+Blissway|Government|blissway.com
+doola|B2B|doola.com
+Atomic|B2B|atomicvest.com
+Hellometer|B2B|hellometer.io
+Nextera Robotics | DIDGE.ai|Industrials|nexterarobotics.com
+Vitable Health|Healthcare|vitablehealth.com
+BIK|B2B|bik.ai
+Notabene|B2B|notabene.id
+Kingdom|Healthcare|kingdomsuperculture.com
+Hotplate|Consumer|hotplate.com
+Dataland|B2B|dataland.io
+Laylo|B2B|laylo.com
+Arketa|B2B|arketa.com
+Ready|Government|ready.net
+Draftwise|B2B|draftwise.com
+Afriex|Fintech|afriexapp.com
+Vena Vitals|Healthcare|venavitals.com
+Glimpse|B2B|tryglimpse.com
+Inspectify|Real Estate and Construction|inspectify.com
+Zuddl|B2B|zuddl.com
+Finch|B2B|tryfinch.com
+Fieldguide|B2B|fieldguide.com
+Heron|Fintech|herondata.io
+SiPhox Health|Healthcare|siphoxhealth.com
+Matter|Consumer|getmatter.app
+Gather|Consumer|gather.town
+Abacum|B2B|abacum.ai
+Runway|B2B|runway.team
+Atomic Industries|Industrials|atomic.industries
+authzed|B2B|authzed.com
+Albedo|Industrials|albedo.com
+Hapi|Fintech|hapi.trade
+SigNoz|B2B|signoz.io
+arnata|B2B|arnata.com
+Nourish|Healthcare|nourish.com
+SpruceID|Government|spruceid.com
+Smartcuts|B2B|trysmartcuts.com
+Pesto|Fintech|getpesto.com
+Fractional|Fintech|fractional.app
+Prequel|B2B|prequel.co
+Axle Health|Healthcare|axlehealth.com
+Cyble|B2B|cyble.com
+Gridware|Industrials|gridware.io
+Firstbase.io|B2B|firstbase.io
+Per Diem|B2B|tryperdiem.com
+Camber|Healthcare|camber.health
+Alinea|Fintech|alinea-invest.com
+Vapi|B2B|vapi.ai
+Quadrant Health|Healthcare|quadrant.health
+Topkey|B2B|topkey.io
+Pangea.app|B2B|pangea.app
+Popl|B2B|popl.co
+Measured|Healthcare|trymeasured.com
+LiveFlow|B2B|liveflow.com
+Great Question|B2B|greatquestion.co
+Datrics|Healthcare|datrics.ai
+Text Blaze|B2B|blaze.today
+Topline Pro|B2B|toplinepro.com
+Quicknode|B2B|quicknode.com
+Resquared|B2B|re2.ai
+Tractian|Industrials|tractian.com
+Solo|Fintech|solosuit.com
+Stoke Space|Industrials|stokespace.com
+Tint|Fintech|tint.ai
+Slash|Fintech|slash.com
+BotBuilt|Industrials|botbuilt.com
+Rulebricks|B2B|rulebricks.com
+Biodock|Healthcare|biodock.ai
+Venu AI|B2B|venu3d.com
+Compose.ai|B2B|compose.ai
+Lamar Health|Healthcare|lamarhealth.com
+Soraban|B2B|soraban.com
+Stayflexi|B2B|business.stayflexi.com
+Haystack|B2B|usehaystack.io
+FlutterFlow|B2B|flutterflow.io
+Svix|B2B|svix.com
+Gigs|B2B|gigs.com
+Triomics|Healthcare|triomics.com
+SwiftSku|B2B|swiftsku.com
+Shepherd|Fintech|shepherdinsurance.com
+Terra API|B2B|tryterra.co
+Slope|Fintech|slopepay.com
+Epsilon3|B2B|epsilon3.io
+Reframe|Healthcare|joinreframeapp.com
+Agapé|Healthcare|getdailyagape.com
+Legion Health|Healthcare|legionhealth.com
+Odys Aviation|Industrials|odysaviation.com
+Serif Health|Healthcare|serifhealth.com
+Varos|B2B|varos.com
+Rootly|B2B|rootly.com
+Replo|B2B|replo.app
+Confido|B2B|confidotech.com
+BoldVoice|Consumer|boldvoice.com
+Parallel Bio|Healthcare|parallel.bio
+Double|B2B|doublehq.com
+Epinoma|Healthcare|epinoma.com
+Lago|B2B|getlago.com
+Forage|Fintech|joinforage.com
+Zen|Healthcare|lnkd.in
+Tavus|B2B|tavus.io
+SafeBeat|Healthcare|safebeat.com
+Kodex|B2B|kodexglobal.com
+Pirouette Pharma|Healthcare|pirouettepharma.com
+Aqua|Fintech|investwithaqua.com
+Rinse|Healthcare|rinse.dental
+Hyperbrowser|B2B|hyperbrowser.ai
+Enerjazz|Industrials|enerjazz.tech
+testRigor|B2B|testrigor.com
+SigmaOS|Consumer|sigmaos.com
+DigiBuild|Real Estate and Construction|digibuild.com
+Truss|Fintech|trusspayments.com
+LootRush|Fintech|lootrush.com
+OneSchema|B2B|oneschema.co
+Shimmer|Healthcare|shimmer.care
+Stardex|B2B|stardex.com
+KaiPod Learning|Education|kaipodlearning.com
+Aleph|B2B|getaleph.com
+Zensors|B2B|zensors.com
+aSim|Consumer|asim.sh
+Akute Health|Healthcare|akutehealth.com
+TransAstra Corporation|Industrials|transastra.com
+Coast|B2B|trycoast.com
+Mach9|B2B|mach9.ai
+Dots 💸|Fintech|usedots.com
+Telmai|B2B|telm.ai
+Buoyant Aero|Industrials|buoyant.aero
+Storylane|B2B|storylane.io
+Output Labs|Healthcare|outputlabs.ai
+Aviator|B2B|aviator.co
+Stepful|Education|stepful.com
+Turion Space|Industrials|turionspace.com
+Charge Robotics|Industrials|chargerobotics.com
+Nash|B2B|usenash.com
+Sully|B2B|sully.ai
+Emerge Career|Education|emergecareer.com
+Attack Capital|B2B|attack.capital
+Spot Health|Healthcare|spotdx.com
+Mederva|Healthcare|medervahealth.com
+GrowthBook|B2B|growthbook.io
+SilkChart|B2B|silkchart.com
+AstroForge|Industrials|astroforge.io
+Redbird|B2B|redbird.io
+Agave|B2B|useagave.com
+Strac|B2B|strac.io
+Sieve|B2B|sievedata.com
+Craniometrix|Healthcare|craniometrix.com
+Cozmo AI|B2B|hellocozmo.ai
+Nest Genomics|Healthcare|nestgenomics.com
+Gym Class|Consumer|gymclass.com
+TeamOut|B2B|teamout.com
+Dynamo AI|B2B|dynamo.ai
+Invert|Healthcare|invertbio.com
+Ankr Health|Healthcare|ankr.us
+Versable|B2B|versableai.com
+Beam|B2B|beam.cloud
+Dart|B2B|dartai.com
+HOKALI|B2B|hokali.com
+Flagright|B2B|flagright.com
+Gauss|Fintech|gauss.money
+Sphere|B2B|getsphere.com
+IOMETE|B2B|iomete.com
+Mintlify|B2B|mintlify.com
+PermitFlow|Real Estate and Construction|permitflow.com
+Complete|B2B|complete.so
+Velt|B2B|velt.dev
+Cogram|B2B|cogram.com
+Posh|Industrials|poshenergy.com
+Cotera|B2B|cotera.co
+LunaJoy Health|Healthcare|HelloLunaJoy.com
+Agency|B2B|GetAgency.com
+Strong Compute|B2B|strongcompute.com
+goodfin|Fintech|goodfin.com
+Cinder|B2B|cinder.ai
+Broccoli AI|B2B|broccoli.com
+UNISON|Consumer|in-unison.com
+Attain|B2B|joinattain.com
+PropelAuth|B2B|propelauth.com
+Spade|Fintech|spade.com
+Arpari|Fintech|arpari.com
+Housewarming|Consumer|housewarming.me
+Rally|B2B|rallyuxr.com
+Blink|B2B|blink.new
+Reviving Mind|Healthcare|revivingmind.com
+Olympian Motors|Industrials|olympianmotors.com
+AirMyne|Industrials|airmyne.com
+GovDash|Government|govdash.com
+MSPilot|B2B|mspilot.io
+Cofactr|B2B|cofactr.com
+Eventual|B2B|daft.ai
+Remi|Real Estate and Construction|remihq.com
+Reality Defender|B2B|realitydefender.com
+Medplum|Healthcare|medplum.com
+Poly|Consumer|poly.app
+Layerup|B2B|uselayerup.com
+Stream|Fintech|stream.claims
+Paces|Industrials|paces.com
+Star|Consumer|buildwithstar.com
+Julius|B2B|julius.ai
+Ciro|B2B|ciro.io
+Two Dots|Fintech|twodots.com
+Stackup|B2B|stackup.fi
+Chariot|Fintech|givechariot.com
+Bunting Labs|B2B|buntinglabs.com
+Pasito|Fintech|pasito.ai
+TrueBiz|B2B|truebiz.io
+Array Labs|Industrials|arraylabs.io
+BlueHill Payments|B2B|useBlueHill.com
+Paragon AI|B2B|paragon.ai
+Novig|Consumer|novig.com
+Voltic|Industrials|volticshipping.com
+Blee|Fintech|blee.com
+Capix|Fintech|capix.ai
+Juicebox|B2B|juicebox.ai
+Tank Payments|Fintech|tankpayments.com
+Malama Health|Healthcare|heymalama.co
+Hype|Consumer|hype.meme
+Aragorn AI|B2B|aragorn.ai
+Flair Labs|B2B|flairlabs.ai
+Thera|B2B|getthera.com
+Airhart Aeronautics|Industrials|airhartaero.com
+Coris|B2B|coris.ai
+AviaryAI|Fintech|helloaviary.ai
+Aurelian|B2B|aurelian.com
+Metriport|Healthcare|metriport.com
+Quindar|B2B|quindar.space
+Ekho|B2B|ekho.com
+Vinci Games|Consumer|ruffnauts.com
+AiPrise|Fintech|aiprise.com
+HOMLI|Real Estate and Construction|thehomli.com
+Solum Health|Healthcare|getsolum.com
+Firecrawl|B2B|firecrawl.dev
+Pump.co|Fintech|pump.co
+Knowtex|Healthcare|knowtex.ai
+Delfino AI|Healthcare|delfino.ai
+Cambio|Real Estate and Construction|cambio.ai
+Axle|Fintech|axle.insure
+Chima|B2B|withchima.com
+Coverage Cat|Fintech|coveragecat.com
+Polymath Robotics|Industrials|polymathrobotics.com
+Sameday|B2B|gosameday.com
+Zudo|B2B|zudo.work
+Rubbrband|Consumer|rubbrband.com
+Avoca|B2B|avoca.ai
+Infisical|B2B|infisical.com
+Middleware|B2B|middleware.io
+Finn|Fintech|getfinn.us
+Reflex|B2B|reflex.dev
+Syncly|B2B|syncly.app
+Credal.ai|B2B|credal.ai
+Magic Patterns|B2B|magicpatterns.com
+Rollstack|B2B|rollstack.com
+Concourse|B2B|concourse.ai
+Latent|Healthcare|latenthealth.com
+FlexDesk|B2B|flexdesk.com
+Hammr|B2B|hammr.com
+Nango|B2B|nango.dev
+Numeral|B2B|numeral.com
+Ohm|Industrials|ohm.ai
+Salient|B2B|trysalient.com
+Tennr|B2B|tennr.com
+Omnistrate|B2B|omnistrate.com
+Narrative|B2B|trynarrative.com
+loopfour|Fintech|loopfour.com
+GovEagle|Government|goveagle.com
+Coperniq|B2B|coperniq.io
+Vooma|B2B|vooma.ai
+Pirros|B2B|pirros.com
+Gooseworks|B2B|gooseworks.ai
+Fours|B2B|fours.com
+Kivo Health|Healthcare|kivohealth.com
+Relace|B2B|relace.ai
+Inkeep|B2B|inkeep.com
+Truewind|B2B|trytruewind.com
+Orchid|Healthcare|orchid.health
+1stCollab|B2B|1stcollab.com
+Storyboarder|Consumer|storyboarder.com
+222|Consumer|222.place
+Variance|B2B|variance.com
+Boundary|B2B|boundaryml.com
+Hadrius|Fintech|hadrius.com
+Vitalize|Healthcare|vitalize.care
+inBuild|B2B|inbuild.ai
+Diffuse Bio|Healthcare|diffuse.bio
+Pylon|B2B|usepylon.com
+Clad|Real Estate and Construction|withclad.com
+Rivet|B2B|rivet.dev
+Dill|B2B|usedill.com
+Conduit|B2B|helloconduit.com
+Berry|B2B|berryai.com
+Untether Labs|Healthcare|untetherlabs.com
+Pier|B2B|pier-finance.com
+Vector|B2B|vector.co
+Metal|B2B|metal.ai
+Kyber|B2B|askkyber.com
+Scout|Consumer|thedailyscout.com
+Type|Consumer|type.ai
+Vendora|B2B|vendora.io
+LiteLLM|B2B|litellm.ai
+Finta|B2B|finta.com
+Automat|B2B|runautomat.com
+Y/n|Consumer|yn.app
+HockeyStack|B2B|hockeystack.com
+Artie|B2B|artie.com
+Kino AI|B2B|kino.ai
+Nectar|Industrials|nectarclimate.com
+Clearest Health|Healthcare|clearesthealth.com
+Hyperbound|B2B|hyperbound.ai
+AIVideo.com|B2B|aivideo.com
+Sweetspot|B2B|sweetspot.so
+Bland AI|B2B|bland.com
+Readily|Healthcare|readily.ai
+Casca|Fintech|cascading.ai
+Cedana|B2B|cedana.ai
+Every|B2B|every.io
+Prosper|B2B|getprosper.ai
+Electric Air|Real Estate and Construction|electricair.io
+Craftwork|Real Estate and Construction|craftwork.com
+Airgoods|B2B|airgoods.com
+Revamp|B2B|getrevamp.ai
+SID|B2B|sid.ai
+Campfire|B2B|campfire.ai
+Corgea|B2B|corgea.com
+Outset|B2B|outset.ai
+Health Harbor|Healthcare|healthharbor.co
+FleetWorks|B2B|fleetworks.ai
+Margin|B2B|usemargin.com
+Cardinal Gray|Fintech|cardinalgray.com
+Skyvern|B2B|skyvern.com
+Numen|Healthcare|numen.com
+Maintouch|B2B|maintouch.com
+Surface Labs|B2B|withsurface.com
+Maven Bio|B2B|mavenbio.com
+Metalware|B2B|metalware.com
+Bretton AI|Fintech|bretton.com
+Fortuna Health|Healthcare|fortunahealth.com
+Guac|B2B|guac.com
+Letter AI|B2B|letter.ai
+Kobalt Labs|B2B|kobaltlabs.com
+Bolto|B2B|bolto.com
+Flint|Education|flintk12.com
+Converge|B2B|runconverge.com
+Inlet|B2B|inletai.com
+Sola|B2B|sola-solutions.com
+SafetyKit|B2B|safetykit.com
+VectorShift|B2B|vectorshift.ai
+Proof of Human|B2B|poh.org
+Andromeda Surgical|Healthcare|andromedasurgical.com
+Silimate|B2B|silimate.com
+Sweep|B2B|sweep.dev
+Sendblue|B2B|sendblue.com
+SyntheticFi|Fintech|syntheticfi.com
+Santé|B2B|santehq.com
+Pure|Consumer|collectpure.com
+HappyRobot|B2B|happyrobot.ai
+Strada|B2B|getstrada.com
+Quill Bills|Healthcare|quillbills.com
+ParadeDB|B2B|paradedb.com
+Cair Health|Healthcare|cairhealth.com
+Trayd|B2B|buildtrayd.com
+dili|B2B|dili.com
+Roame|Consumer|roame.travel
+Cargo|B2B|getcargo.io
+Giga|B2B|giga.ai
+Simbie AI|Healthcare|simbie.ai
+Nowadays|B2B|nowadays.ai
+Morph|B2B|morphllm.com
+Coba|Fintech|coba.ai
+Event Horizon Labs|Fintech|ehl.markets
+Navier AI|Industrials|navier.ai
+DryMerge|B2B|drymerge.com
+Relari|Industrials|relari.ai
+ego|Consumer|egoai.com
+Greptile|B2B|greptile.com
+Ubicloud|B2B|ubicloud.com
+Duckie|B2B|duckie.ai
+Sonia|Healthcare|soniahealth.com
+Tracecat|B2B|tracecat.com
+Poka Labs|B2B|pokalabs.com
+Reducto|B2B|reducto.ai
+Momentic|B2B|momentic.ai
+Tuesday Labs|Consumer|tuesdaylabs.com
+Newton|B2B|joinnewton.com
+Alex|B2B|alex.com
+Garage|B2B|shopgarage.com
+Pivot Robotics|Industrials|pivotrobotics.com
+Wavelength|B2B|wavelength.cx
+PointOne|B2B|pointone.com
+Paradigm|B2B|paradigmai.com
+Arini|Healthcare|arini.ai
+FurtherAI|B2B|furtherai.com
+ROE|B2B|getroe.ai
+Artisan|B2B|artisan.co
+Greenboard|Fintech|greenboard.com
+Trellis AI|B2B|runtrellis.com
+atopile|B2B|atopile.io
+CloudCruise|B2B|cloudcruise.com
+Meticulate|B2B|meticulate.ai
+Zaymo|B2B|zaymo.com
+PromptArmor|B2B|promptarmor.com
+Respan|B2B|respan.ai
+Monumint|B2B|monumint.com
+Clarion|Healthcare|clarionhealth.com
+Tamarind Bio|B2B|tamarind.bio
+GloGlo|Consumer|gloglo.com
+Firebender|B2B|firebender.com
+Dime|B2B|dimehealth.ai
+Ellipsis|B2B|ellipsis.dev
+CodeAnt AI|B2B|codeant.ai
+Astro Mechanica|Industrials|astromecha.co
+Carma|B2B|joincarma.com
+Shiboleth|B2B|shiboleth.ai
+Hazel|Government|hazelai.com
+Andy AI|Healthcare|with-andy.com
+OffDeal|B2B|offdeal.io
+ProSights|B2B|prosights.co
+Raindrop|B2B|raindrop.ai
+Yondu|Industrials|yondu.ai
+JustAI|B2B|getjust.ai
+Circleback|B2B|circleback.ai
+BetterBasket|B2B|betterbasket.com
+Artos|B2B|artosai.com
+Brainbase Labs|B2B|brainbaselabs.com
+Deep24|Education|deep24.com
+Openmart|B2B|openmart.com
+Zep AI|B2B|getzep.com
+Treblo|Consumer|treblo.com
+Stacksync|B2B|stacksync.com
+Terrakotta|B2B|terrakotta.ai
+Rove|Consumer|rove.com
+Retell AI|B2B|retellai.com
+Ocular AI|B2B|useocular.com
+Deepnight|Industrials|deepnight.com
+CommodityAI|B2B|commodityai.io
+Powder|Fintech|powderfi.com
+Spur|B2B|spurtest.com
+Piramidal|Healthcare|piramidal.ai
+Reform|B2B|reformhq.com
+TrueClaim|Healthcare|trytrueclaim.com
+Healia|Fintech|healiahealth.com
+Haplotype Labs|Healthcare|haplotypelabs.com
+Forge|B2B|forgehq.com
+Latted|B2B|latted.com
+Yarn|B2B|yarn.so
+GetCrux|B2B|getcrux.ai
+RetailReady|B2B|retailreadyai.com
+Coval|B2B|coval.dev
+Indemni|B2B|indemni.com
+Ultra|Industrials|ultra.tech
+Augment Inc.|B2B|augmentinc.co
+Apten|B2B|apten.ai
+Domu Technology Inc.|B2B|domu.ai
+Variant|B2B|variant.com
+Mem0|B2B|mem0.ai
+Saphira AI|B2B|saphira.ai
+Theseus|Industrials|theseus.us
+Educato|Education|educato.com
+ProhostAI|B2B|prohost.ai
+Hamming AI|B2B|hamming.ai
+mdhub|Healthcare|mdhub.ai
+ClaimSorted|Fintech|claimsorted.com
+Entangl|B2B|entangl.com
+Codes Health|B2B|codeshealth.com
+Unsloth AI|B2B|unsloth.ai
+VideoGen|B2B|videogen.io
+Corgi|Fintech|corgi.com
+Wordware|Consumer|wordware.ai
+FirstWork|B2B|firstwork.com
+Stardrift|Consumer|stardrift.ai
+Decisional AI|B2B|decisional.com
+Azalea Robotics Corporation|Industrials|azalearobotics.com
+RetroFix|B2B|retrofix.ai
+Unbound|B2B|getunbound.ai
+Silurian|Industrials|silurian.ai
+Cloudglue|B2B|cloudglue.dev
+Willow|Consumer|willowvoice.com
+Offstream|B2B|useoffstream.com
+Elevate|B2B|useelevate.dev
+Dodo|Healthcare|dodo.ai
+Tandem|B2B|tandemspace.com
+Weave Robotics|Industrials|weaverobotics.com
+Gauge|B2B|withgauge.com
+Dench.com|B2B|dench.com
+Pulse|B2B|runpulse.com
+Lighthouz AI|B2B|lighthouz.ai
+TaxGPT|B2B|taxgpt.com
+Anthrogen|Healthcare|anthrogen.com
+Kastle|B2B|kastle.ai
+CreativeMode|Consumer|creativemode.net
+cmux|B2B|cmux.com
+Clearly AI|B2B|clearly-ai.com
+FINNY AI|Fintech|finny.com
+Hestus, Inc.|B2B|hestus.co
+Dimely|B2B|dimely.com
+Drillbit|B2B|drillbit.com
+Conductor Quantum|Industrials|conductorquantum.com
+Pax|B2B|paxai.com
+David AI|B2B|withdavid.ai
+Mage Legal|B2B|magelegal.com
+Emergent|Consumer|emergent.sh
+Thunder Compute|B2B|thundercompute.com
+Intryc|B2B|intryc.com
+Westgate|Industrials|westgatesupply.com
+Mineflow|Industrials|mineflow.ai
+Brighterway|Fintech|brighterway.ai
+Zettascale Computing|Industrials|zscc.ai
+Cerulion|B2B|cerulion.com
+Guardian RF|Industrials|guardianrf.com
+Simple AI|B2B|usesimple.ai
+YouShift|B2B|you-shift.com
+Cartage|B2B|cartage.ai
+Sonatoria|B2B|sonatoria.com
+Finosu|Fintech|finosu.com
+Helium|B2B|tryhelium.com
+Rescript|B2B|rescript.ai
+Dataleap|B2B|dataleap.ai
+Starcloud|Industrials|starcloud.com
+Vendra|Industrials|vendra.io
+Kontigo|Fintech|kontigo.lat
+Assembly HOA|Real Estate and Construction|assemblyhoa.com
+Draft The Record|B2B|drafttherecord.com
+Serve AI|B2B|serveaiglobal.com
+Elayne|Fintech|elayne.com
+Oway|B2B|oway.io
+Bucket Robotics|Industrials|bucket.bot
+Usul|Government|usul.com
+Diode Computers, Inc.|B2B|diode.computer
+No Logo|B2B|nologo.com
+Vera Health|Healthcare|vera-health.ai
+Capitol AI|B2B|capitol.ai
+Overlap|Consumer|overlap.ai
+Arva AI|B2B|arva.ai
+Merlin AI|B2B|merlinai.co
+SimCare|Healthcare|simcare.ai
+Syntra|Healthcare|syntra.com
+Outerport|B2B|outerport.com
+Onlook|B2B|onlook.com
+Avora|Healthcare|getavora.ai
+Streamable|Consumer|streamable.run
+Durate|Healthcare|durate.com
+Moonset Health|B2B|moonsethealth.com
+Candle|Consumer|trycandle.app
+Openbenchmarks|B2B|openbenchmarks.com
+Raycaster|Healthcare|eval.raycaster.ai
+Revyl|B2B|revyl.com
+Cekura|B2B|cekura.ai
+attimet|Fintech|attimet.com
+CTGT|B2B|ctgt.ai
+Keye|Fintech|keye.co
+Luthor|B2B|luthor.ai
+Freebuff|B2B|freebuff.com
+Unusual|B2B|unusual.ai
+Crustdata|B2B|crustdata.com
+Abundant|B2B|abundant.ai
+PermitPortal|Real Estate and Construction|permitportalapp.com
+Fresco|Real Estate and Construction|fresco-ai.com
+CollectWise|Fintech|collectwise.com
+Consus|Industrials|consus.io
+Capy|B2B|capy.ai
+Innate|Consumer|innate.bot
+Kilvin|B2B|kilvin.ai
+ArchiLabs|Real Estate and Construction|archilabs.ai
+Ryvn|B2B|ryvn.ai
+Laminar|B2B|laminar.com
+Ember|Healthcare|embercopilot.ai
+Careforce|Healthcare|careforce.ai
+HumanLayer|B2B|humanlayer.com
+Apolink|Industrials|apolink.space
+Asha Health|Healthcare|asha.health
+Revise Robotics|Industrials|reviserobotics.com
+Bild AI|Real Estate and Construction|bild.ai
+Leaping AI|B2B|leapingai.com
+Flowtel|B2B|flowtel.ai
+SubImage|B2B|subimage.io
+Steinmetz|Industrials|steinmetzmotors.com
+Partcl|B2B|partcl.com
+Axiom|Fintech|axiom.trade
+Splash Inc.|Industrials|splash9.com
+Promptless|B2B|promptless.ai
+Closure|Government|closure-intel.com
+Toothy AI|Healthcare|toothy.ai
+a0.dev|B2B|a0.dev
+Maritime Fusion|Industrials|maritimefusion.com
+Weave|B2B|weaveos.com
+SalesPatriot|B2B|salespatriot.com
+Adam|B2B|adam.new
+Mosaic|Consumer|mosaic.so
+Osmosis|B2B|osmosis.ai
+HealthKey|Healthcare|gethealthkey.com
+10x|Healthcare|10xdental.com
+HUD|B2B|hud.ai
+PAX Markets|Fintech|pax.markets
+Gale|B2B|galevisa.com
+Lucid|Consumer|lucid.ai
+Harbera|Healthcare|harbera.com
+AthenaHQ|B2B|athenahq.ai
+Liquid Compute|Fintech|liquidcompute.com
+Candor|B2B|candor.security
+Trata|B2B|trytrata.com
+Solidroad|B2B|solidroad.com
+Confident AI|B2B|confident-ai.com
+Nitrode|B2B|nitrode.com
+Calltree|B2B|calltree.ai
+Harper|Fintech|harperinsure.com
+Mesh|B2B|usemesh.com
+Orbital Operations|Industrials|orbitalops.tech
+Infinite|Fintech|infinite.net
+Peppr AI|B2B|usepeppr.ai
+Miyagi Labs|Education|miyagilabs.ai
+Fuse AI|B2B|fuseai.com
+Misprint|Consumer|misprint.com
+AfterQuery|B2B|afterquery.com
+Archon|Government|archon.inc
+Reditus Space|Industrials|reditus.space
+Wildcard|B2B|wild-card.ai
+Proception Inc|Industrials|proception.ai
+Woz|B2B|wozcode.com
+Rebolt|B2B|rebolt.ai
+Dalus|B2B|dalus.io
+Ergo|B2B|joinergo.com
+Browser Use|B2B|browser-use.com
+TrainLoop|B2B|trainloop.ai
+Thirdlayer|B2B|thirdlayer.inc
+Artifact|B2B|artifact.engineer
+Ambral|B2B|ambral.com
+Wayline|Real Estate and Construction|wayline.com
+Chestnut|Fintech|chestnutmortgage.com
+Aravolta|B2B|aravolta.com
+Autostep|B2B|autostep.ai
+Avallon AI|Fintech|avallon.ai
+GroundControl|Industrials|rungroundcontrol.com
+Cua|B2B|cua.ai
+Synthio Labs|Healthcare|synthiolabs.com
+Auctor|B2B|getauctor.com
+Ralo|Fintech|ralo.com
+Claim Health|Healthcare|claimhealth.com
+Almond|Industrials|almond.bot
+Sim|B2B|sim.ai
+Mbodi AI|Industrials|mbodi.ai
+PgDog|B2B|pgdog.dev
+Attune|B2B|attunehq.com
+Bluejay|B2B|getbluejay.ai
+Jeevy Fabrication|B2B|jeevyfabrication.com
+VoiceOS|Consumer|voiceos.com
+Sixtyfour|B2B|sixtyfour.ai
+Photonium|B2B|photoniumoptics.com
+Kaizen|B2B|kaizenautomation.com
+Novoflow|Healthcare|novoflow.io
+Nixo|B2B|withnixo.com
+QualGent|B2B|qualgent.ai
+Alkali|B2B|alkali.engineering
+Besimple AI|B2B|besimple.ai
+Vesence|B2B|vesence.com
+Sygaldry Technologies|Industrials|sygaldry.com
+MorphoAI|Industrials|morpho.ai
+Eloquent AI|B2B|eloquentai.co
+Hemut|B2B|hemut.com
+Synthetic Society|B2B|syntheticsociety.ai
+Naïve|B2B|usenaive.ai
+Lapel|B2B|lapel.com
+MindFort|B2B|mindfort.ai
+Adentris|Healthcare|adentris.com
+Cotool|B2B|cotool.ai
+Lumari|B2B|lumari.ai
+Code Four|Government|codefour.us
+Text.ai|Consumer|text.ai
+Theorem|B2B|theorem.dev
+Airweave|B2B|airweave.ai
+Bond|B2B|bondapp.io
+Cascade Space|Industrials|cascadespace.com
+Godela|B2B|godela.ai
+Foundation Industries|Industrials|foundation-industries.com
+Fifth Door|Consumer|fifthdoor.com
+Autonomous Technologies Group|Fintech|becomeautonomous.com
+Prox|Industrials|
+Adaptional|B2B|adaptional.com
+GETASAP|B2B|getasap.us
+Parametric|Industrials|parametric.company
+Dedalus Labs|B2B|dedaluslabs.ai
+The Prompting Company|B2B|promptingcompany.com
+MangoDesk|B2B|mangodesk.com
+Halluminate|B2B|halluminate.ai
+TraceRoot.AI|B2B|traceroot.ai
+AgentMail|B2B|agentmail.to
+truthsystems|B2B|truthsystems.ai
+Lanesurf|B2B|lanesurf.com
+Verne Robotics|Industrials|vernerobotics.com
+Galactic Resource Utilization Space, Inc. (GRU Space)|Industrials|gru.space
+EffiGov|Government|effigov.com
+Orange Slice|B2B|orangeslice.ai
+Panels|B2B|usepanels.com
+Humwork|B2B|humwork.ai
+Imprezia|B2B|imprezia.ai
+DeepGrove|B2B|deepgrove.ai
+Proliferate|B2B|proliferate.com
+DeepAware AI (Robotics Center of Silicon Valley)|Industrials|roboticscenter.ai
+Tesora|Fintech|tesora.ai
+Pangolin|B2B|pangolin.net
+CareSwift|Healthcare|careswift.com
+Wedge|Healthcare|wedge.health
+BootLoop|B2B|bootloop.ai
+Kalinda|B2B|kalinda.ai
+Conviction|Fintech|convictiontrade.ai
+IronLedger.ai|Real Estate and Construction|ironledger.ai
+OneStop|Consumer|askonestop.com
+b12 Labs|Healthcare|b12-labs.com
+Flai|Industrials|useflai.com
+Channel3|B2B|trychannel3.com
+GhostEye|B2B|ghosteye.ai
+Nozomio|Consumer|nozomio.com
+Solva|Fintech|solvatechnology.com
+Perseus Defense|Industrials|perseusdefense.com
+Novaflow|Healthcare|novaflow.ai
+Manufact|B2B|manufact.com
+Relling|B2B|relling.co
+Autumn|B2B|autumn.ai
+ProcIndex|B2B|procindex.com
+Miso Labs|B2B|misolabs.ai
+Socratix AI|B2B|getsocratix.ai
+OS3|Industrials|os3robotics.com
+Floot|B2B|floot.com
+idler|B2B|idler.ai
+Nautilus|B2B|nautilus.co
+Sira|B2B|sira.team
+Fernstone|Fintech|fernstone.com
+Locata|Healthcare|locatahealth.com
+Reacher|B2B|reacherapp.com
+Juxta|B2B|juxta.com
+Fleetline|B2B|fleetline.ai
+Magnetic|B2B|magnetictax.com
+Interfere|B2B|interfere.com
+Vulcan Technologies|B2B|vulcan.ai
+NOSO LABS|Industrials|noso.so
+Veritus|Fintech|veritus.com
+Avent|B2B|aventindustrial.com
+burnt|B2B|getburnt.ai
+Luminal|B2B|luminal.com
+Uplift AI|B2B|upliftai.org
+Blue|Consumer|heyblue.com
+Digipals|Consumer|digipals.app
+Nox Metals|Industrials|noxmetals.co
+F2|B2B|f2.ai
+AirCaps AI|B2B|aircaps.ai
+Uplane|B2B|uplane.com
+Structured AI|Real Estate and Construction|getstructured.ai
+Hyperspell|B2B|hyperspell.com
+Aspect|B2B|aspect.inc
+Deeptrace|B2B|deeptrace.com
+Soren|B2B|soren-ai.com
+Koyal|Consumer|koyal.ai
+Hypercubic|B2B|hypercubic.ai
+Nessie|B2B|nessielabs.com
+Wardstone|Industrials|wardstone.us
+Flick|Consumer|flick.art
+Semble|B2B|sembleai.com
+Alder|B2B|meetalder.com
+AnswerThis|Consumer|answerthis.io
+SF Tensor|B2B|sf-tensor.com
+Unsiloed AI|B2B|unsiloed.ai
+Allus AI|Industrials|allus.ai
+Logical|B2B|logical.io
+Sunflower|Healthcare|sunflowerclinic.com
+Oxus|B2B|oxus-ai.com
+Darwin|Industrials|darwinrobotics.ai
+Nucleo|Healthcare|nucleoresearch.com
+Imagine AI|B2B|useimagine.ai
+Scott AI|B2B|tryscott.ai
+Aside|Consumer|aside.com
+Sourcebot|B2B|sourcebot.dev
+Kalpa Labs|B2B|kalpalabs.ai
+Sava Trust Company|Fintech|savatrustcompany.com
+Icarus|Industrials|icarus.one
+Lemma|B2B|uselemma.ai
+Exonic|Healthcare|exonic.ai
+Jarmin|B2B|jarmin.ai
+General Astronautics|Industrials|generalastro.com
+MadeThis|B2B|madethis.com
+Rovi Health|Healthcare|rovi.health
+Layers|Healthcare|layers.bio
+Lightberry|Industrials|lightberry.com
+DiligenceSquared|B2B|diligencesquared.com
+Antigen|B2B|antigen.sh
+Vector Legal|B2B|vectorlegal.com
+Clicks Health|B2B|goclicks.ai
+Voltair|Industrials|voltairlabs.com
+Zarna|B2B|zarnaai.com
+Moss|B2B|moss.dev
+item|B2B|item.app
+CatchBack Cards|Consumer|catchbackcards.com
+Ploy|B2B|ploy.ai
+Waddle Labs|Industrials|waddlelabs.ai
+Corvera|B2B|corvera.ai
+Clara|Healthcare|askclara.com
+Origin|Healthcare|origin.bio
+Payna|B2B|payna.com
+One Robot|Industrials|onerobot.io
+Janeen|Healthcare|janeen.care
+Prescience, Inc.|Healthcare|getprescience.com
+RunAnywhere|B2B|runanywhere.ai
+Lance|B2B|lance.live
+Docura Health|Healthcare|docurahealth.com
+Asimov|Industrials|tryasimov.ai
+10x Science|B2B|10xscience.com
+LegalOS|B2B|legalos.ai
+CellType|Healthcare|celltype.com
+Piris Labs|B2B|pirislabs.io
+Cumulus Labs|B2B|cumuluslabs.io
+Zatanna|B2B|zatanna.ai
+Aemon|B2B|aemon.ai
+OctaPulse|Industrials|tryoctapulse.com
+Beyond Reach Labs|Industrials|beyondreachlabs.com
+RamAIn|B2B|ramain.ai
+Salus|B2B|usesalus.ai
+Orthogonal|B2B|orthogonal.com
+Ventura|Industrials|ventura.ai
+Terranox AI|Industrials|terranox.ai
+Opalite Health|Healthcare|opalitehealth.com
+Proximitty|Fintech|proximitty.ai
+Laurence|B2B|laurence.com
+Parameter|B2B|parameter.ai
+Pax Historia|Consumer|paxhistoria.co
+Visibl Semiconductors|B2B|visiblsemi.com
+Fenrock AI|Fintech|fenrock.ai
+Maywood|Fintech|maywoodai.com
+Revion|B2B|revion.inc
+9 Mothers|Industrials|9mothers.com
+Wingman Law|B2B|wingmanlaw.com
+Robby|B2B|tryrobby.com
+Human Archive|Industrials|humanarchive.ai
+Pocket|Consumer|heypocket.com
+Polymath|B2B|polymathlabs.ai
+Paradev (formerly Superset)|B2B|paradev.com
+Chasi|B2B|chasi.ai
+Fort|Consumer|fort.cx
+Booko|B2B|booko.com
+Tsenta|Consumer|tsenta.com
+Copperlane|Fintech|copperlane.ai
+Vela|B2B|tryvela.ai
+MochaCare|B2B|mochacare.com
+VOYGR|B2B|voygr.tech
+Aurorin CAD|B2B|aurorincad.com
+Rainbrand|B2B|rainbrand.com
+Dispatch|Industrials|dispatch.space
+Wayco|B2B|wayco.ai
+Cardinal|B2B|trycardinal.com
+Hedge|Fintech|hedgespecialty.com
+primitive|B2B|primitive.dev
+PerfectBit, Inc.|Industrials|perfectbit.ai
+Multiplier|B2B|multiplier.ai
+Totalis|Fintech|totalis.trade
+Replicas|B2B|replicas.dev
+Rudus|Real Estate and Construction|rudus.ai
+LightSprint|B2B|lightsprint.ai
+Discovered Materials|Industrials|discoveredmaterials.com
+Nine Fives|Industrials|ninefives.com
+Atrisa|B2B|atrisa.ai
+Hub|B2B|hub.xyz
+Limrun|B2B|lim.run
+Kinro|Fintech|kinro.com
+Zolvo|Fintech|zolvo.com
+Interfaze|B2B|interfaze.ai
+KelAI|Fintech|kelaitech.com
+Standout|B2B|standout.work
+Taiga|Healthcare|taigabilling.com
+Adialante|Healthcare|adialante.com
+Infera|Healthcare|infera.bio
+Minicor|B2B|minicor.com
+Reason Machines|B2B|reasonmachines.com
+Soria|Fintech|soriaanalytics.com
+Aseon Labs|Industrials|aseonlabs.com
+Tasklet|B2B|tasklet.ai
+Ardent|B2B|tryardent.com
+BioStack Platforms|Healthcare|getbiostack.com
+AquaShield|Real Estate and Construction|aquashieldai.com
+Eden Robotics|Industrials|edenrobotics.ai
+Plena Health|Healthcare|plena.health
+Amboras|B2B|amboras.com
+OpenWork|B2B|openworklabs.com
+CharacterQuilt|B2B|characterquilt.com
+Runtime|B2B|runtm.com
+AgentPhone|B2B|agentphone.ai
+Uno Wallet|Fintech|myunowallet.com
+Asendia AI|B2B|asendia.ai
+Manicule|B2B|manicule.com
+Astraea|B2B|tryastraea.com
+Arlo Industries|Industrials|arlo1.com
+flowscope|B2B|flowscope.com
+Klaimee|Fintech|klaimee.ai
+Intelligence Factory|Industrials|intelligence-factory.com
+Huscarl|Fintech|huscarl.io
+Edgerun|Industrials|edgerun.com
+Torus|Industrials|usetorus.com
+Pango|B2B|pango.ai
+HERA|Industrials|manufacturingintelligence.org
+Parasma|B2B|parasma.com
+Rex|B2B|rex.inc
+Synapse Semiconductor|Industrials|synapsesemi.org
+Speko|B2B|speko.ai
+LemonLime|B2B|lemonlime.com
+IMPACT Drones|Industrials|impact-drones.com
+GUILD|Industrials|guildai.co
+Mochi|Consumer|mochi.tv
+DeepReach Inc.|B2B|deepreach.ai
+COACH|B2B|getcoach.com
+Marble|B2B|joinmarble.ai
+Stoa|Fintech|stoaexchange.com
+Glen|B2B|tryglen.com
+screenpipe|B2B|screenpipe.com
+Pluto|B2B|talentpluto.com
+Bloomy|Education|bloomylearning.com
+Nori|Industrials|norirobotics.com
+Ooak Data|B2B|ooakdata.com
+Aktoria Robotics|Industrials|aktoria.com
+Rational|B2B|rational.to
+Tenor|B2B|heytenor.com
+LATO|B2B|latolabs.io
+Denta|Fintech|denta.com
+TryNearby|B2B|trynearby.com
+Luca IQ|B2B|lucaiq.com
+Operon|Industrials|operonsolutions.com
+ProvenMetal|Industrials|provenmetal.com
+Pennant|Fintech|getpennant.ai
+Lamb Labs|B2B|lamb-labs.com
+83 Sciences|Industrials|83sciences.ai
+Hubble|Healthcare|hubble.ai
+Locke|B2B|locke.inc
+HillStar|B2B|hillstar.ai
+Vernius Systems, Inc.|Industrials|vernius.systems
+Allia Health|Healthcare|allia.health
+Edviro|B2B|edviroenergy.com
+Voyager|B2B|voyager.so
+Runtime.si|Industrials|runtime.si
+Bayworks|Industrials|bayworks.app
+Inflection Space Systems|Industrials|inflection-space.com
+Rhem Labs|Healthcare|rhem.ai
+Helios Intelligence|Healthcare|heliosinc.ai
+Workers IO|B2B|workers.io
+Orca Aerospace|Industrials|orcaaerospace.com
+Ignition Benefits|Fintech|ignitionbenefits.com
+Covera|Fintech|covera-agents.com
+Vyra|Consumer|usevyra.com
+Volaren|Fintech|volaren.ai
+Spine|B2B|joinspine.ai
+The Subvocal Company|Consumer|subvocal.company
+Super Powers Mobility (SPM)|Industrials|spm.us

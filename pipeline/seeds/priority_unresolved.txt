@@ -1,0 +1,27 @@
+# V21 probe seed. Source: ops/COVERAGE.md "not in registry" firms after V20 (re-measured in the V21 audit) with each firm's public corporate domain.
+# name|industry|domain. Only the employer's own careers pages are read (robots.txt respected); no ALTCHA/captcha/login paths.
+Goldman Sachs|Finance|goldmansachs.com
+UBS|Finance|ubs.com
+BNP Paribas|Finance|bnpparibas.com
+Jefferies|Finance|jefferies.com
+Centerview Partners|Finance|centerviewpartners.com
+KKR|Finance|kkr.com
+Carlyle|Finance|carlyle.com
+Warburg Pincus|Finance|warburgpincus.com
+McKinsey|Consulting|mckinsey.com
+Bain & Company|Consulting|bain.com
+Deloitte|Consulting|deloitte.com
+PwC|Consulting|pwc.com
+EY|Consulting|ey.com
+KPMG|Consulting|kpmg.com
+Oracle|Technology|oracle.com
+IBM|Technology|ibm.com
+Lockheed Martin|Aerospace|lockheedmartin.com
+Deere|Manufacturing|deere.com
+PepsiCo|Consumer|pepsicojobs.com
+Coca-Cola|Consumer|coca-colacompany.com
+L'Oreal|Consumer|loreal.com
+Home Depot|Retail|homedepot.com
+Ford|Automotive|ford.com
+ExxonMobil|Energy|exxonmobil.com
+HCA Healthcare|Healthcare|hcahealthcare.com

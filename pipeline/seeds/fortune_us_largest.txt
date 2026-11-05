@@ -1,0 +1,110 @@
+# V21 probe seed. Source: Wikipedia "List of largest companies in the United States by revenue" (Fortune 500 based)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Walmart||
+Amazon||
+UnitedHealth Group||
+Apple||
+CVS Health||
+Berkshire Hathaway||
+Alphabet||
+Exxon Mobil||
+McKesson Corporation||
+Cencora||
+JPMorgan Chase||
+Costco Wholesale||
+Cigna||
+Microsoft||
+Cardinal Health||
+Chevron||
+Bank of America||
+General Motors||
+Ford Motor||
+Elevance Health||
+Citigroup||
+Meta Platforms||
+Centene||
+The Home Depot||
+Fannie Mae||
+Walgreens Boots Alliance||
+Kroger||
+Phillips 66||
+Marathon Petroleum||
+Verizon Communications||
+Nvidia||
+Goldman Sachs Group||
+Wells Fargo||
+Valero Energy||
+Comcast||
+State Farm Insurance||
+AT&T||
+Freddie Mac||
+Humana||
+Morgan Stanley||
+Target||
+StoneX Group||
+Tesla||
+Dell Technologies||
+PepsiCo||
+Walt Disney||
+United Parcel Service||
+Johnson & Johnson||
+FedEx||
+Archer Daniels Midland||
+Procter & Gamble||
+Lowe's||
+Energy Transfer Partners||
+RTX||
+Albertsons||
+Sysco||
+Progressive||
+American Express||
+Lockheed Martin||
+MetLife||
+HCA Healthcare||
+Prudential Financial||
+Boeing||
+Caterpillar||
+Merck||
+Allstate||
+Pfizer||
+IBM||
+New York Life Insurance Company||
+Delta Air Lines||
+Publix Super Markets||
+Nationwide Mutual Insurance Company||
+TD Synnex||
+United Airlines Holdings||
+ConocoPhillips||
+TJX||
+AbbVie||
+Enterprise Products Partners||
+Charter Communications||
+Performance Food Group||
+American Airlines Group||
+Capital One Financial||
+Cisco Systems||
+Tyson Foods||
+Intel||
+Oracle||
+Broadcom||
+Deere||
+Nike||
+Liberty Mutual Insurance Group||
+Plains GP Holdings||
+USAA||
+Bristol-Myers Squibb||
+Ingram Micro Holding||
+General Dynamics||
+Coca-Cola||
+TIAA||
+Travelers||
+Eli Lilly||
+Cargill||
+Koch||
+Mars||
+H-E-B Grocery Company||
+Reyes Holdings||
+Enterprise Mobility||
+Fidelity Investments||
+Southern Glazer's Wine & Spirits||
+Cox Enterprises||

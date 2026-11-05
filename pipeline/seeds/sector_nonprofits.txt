@@ -1,0 +1,41 @@
+# V21 probe seed. Source: sector sweep "nonprofits": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Watsi|Nonprofit|watsi.org
+CareMessage|Nonprofit|caremessage.org
+Noora Health|Nonprofit|noorahealth.org
+CodeNow|Nonprofit|codenow.org
+One Degree|Nonprofit|1degree.org
+Zidisha|Nonprofit|zidisha.org
+OpenCurriculum|Nonprofit|opencurriculum.org
+Immunity Project|Nonprofit|
+Bayes Impact|Nonprofit|bayesimpact.org
+Democracy Earth|Nonprofit|democracy.earth
+The Human Utility|Nonprofit|detroitwaterproject.org
+SIRUM|Nonprofit|sirum.org
+Leaders In Tech|Nonprofit|leadersintech.org
+New Story|Nonprofit|newstoryhomes.org
+SunFarmer|Nonprofit|sunfarmer.org
+80,000 Hours|Nonprofit|80000hours.org
+mRelief|Nonprofit|mrelief.com
+Sanitation and Health Rights in India (SHRI)|Nonprofit|sanrights.org
+DevColor|Nonprofit|devcolor.org
+Vote.org|Nonprofit|vote.org
+Women Who Code|Nonprofit|womenwhocode.com
+New Incentives|Nonprofit|newincentives.org
+DemocracyOS|Nonprofit|democracyos.org
+The Centre for Effective Altruism|Nonprofit|effectivealtruism.org
+Dost Education|Nonprofit|dosteducation.com
+ACLU|Nonprofit|aclu.org
+Tarjimly (acquired)|Nonprofit|tarjimly.org
+Mind Emulation Foundation|Nonprofit|mindemulation.org
+The Good Food Institute|Nonprofit|gfi.org
+AnnieCannons|Nonprofit|anniecannons.com
+Enveritas|Nonprofit|enveritas.org
+Our World in Data|Nonprofit|ourworldindata.org
+Upsolve|Nonprofit|upsolve.org
+VotingWorks|Nonprofit|voting.works
+Recidiviz|Nonprofit|recidiviz.org
+OpenBiome|Nonprofit|openbiome.org
+UPchieve|Nonprofit|upchieve.org
+Koko|Nonprofit|kokocares.org
+Darsel|Nonprofit|darsel.tech

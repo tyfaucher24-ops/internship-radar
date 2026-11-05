@@ -8,7 +8,8 @@ FOREIGN=re.compile(r'\b(UK|United Kingdom|England|Scotland|Canada|India|Germany|
 USHINT=re.compile(r'\b(US|USA|U\.S\.A?\.?|United States|America)\b',re.I)
 def clean_html(s):
     if not s: return ''
-    s=html.unescape(s);s=re.sub(r'<(br|/p|/li|/h\d|/div)[^>]*>','\n',s,flags=re.I);s=re.sub(r'<li[^>]*>','• ',s,flags=re.I);s=re.sub(r'<[^>]+>','',s);s=html.unescape(s)
+    # V21 Part 5: drop script/style/noscript blocks with their contents (tags may arrive entity-escaped), and event-handler text never survives as markup
+    s=html.unescape(s);s=re.sub(r'<(script|style|noscript|iframe|object)\b[^>]*>.*?</\1\s*>','',s,flags=re.I|re.S);s=re.sub(r'<(script|style|noscript|iframe|object)\b[^>]*>','',s,flags=re.I);s=re.sub(r'<(br|/p|/li|/h\d|/div)[^>]*>','\n',s,flags=re.I);s=re.sub(r'<li[^>]*>','• ',s,flags=re.I);s=re.sub(r'<[^>]+>','',s);s=html.unescape(s)
     s=re.sub(r'[ \t\xa0]+',' ',s);s=re.sub(r'\n\s*\n+','\n\n',s);return s.strip()
 # ---------- intern detection ----------
 INTERN=re.compile(r"\bintern(s|ship|ships)?\b|\bco-?op\b|\bsummer (analyst|associate|scholar|program)\b|\bapprentice(ship)?\b|\bstudent fellow|\bfellowship\b.*\b(student|undergrad)|\bextern(ship)?\b|\bstudent trainee\b|\bpathways\b.*\b(student|intern)|\bundergrad(uate)? research (assistant|fellow|program)|\bresearch assistant\b.*\bundergrad|\bpart[- ]time student\b|\bstudent (worker|assistant|associate|employee|analyst|engineer|developer)\b|\bearly insights?\b|\bdiscovery (program|day)\b|\bsophomore (program|summit|leadership)\b|\bfreshman (program|summit)\b",re.I)

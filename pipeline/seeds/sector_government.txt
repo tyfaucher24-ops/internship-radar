@@ -1,0 +1,17 @@
+# V21 probe seed. Source: sector sweep "government": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Zenysis|Government|zenysis.com
+Just Appraised|Government|justappraised.com
+Promise|Government|promise-pay.com
+Recidiviz|Government|recidiviz.org
+Blissway|Government|blissway.com
+Ready|Government|ready.net
+SpruceID|Government|spruceid.com
+GovDash|Government|govdash.com
+GovEagle|Government|goveagle.com
+Hazel|Government|hazelai.com
+Usul|Government|usul.com
+Closure|Government|closure-intel.com
+Archon|Government|archon.inc
+Code Four|Government|codefour.us
+EffiGov|Government|effigov.com

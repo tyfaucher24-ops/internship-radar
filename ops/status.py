@@ -58,4 +58,7 @@ def write_counts():
 if __name__=='__main__':
     try: write_counts()
     except Exception as e: print('counts.json not written:',e,file=sys.stderr)
+    try:  # V21 Part 3f: weekly coverage report (once per week, published under data/coverage/)
+        sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)));import coverage_weekly;coverage_weekly.main()
+    except Exception as e: print('weekly coverage not written:',e,file=sys.stderr)
     s=build();write_json(os.path.join(D,'status.json'),s,indent=1);print(s['consecutive_failures'])

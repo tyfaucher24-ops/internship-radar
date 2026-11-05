@@ -1,0 +1,326 @@
+# V21 probe seed. Source: sector sweep "media": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+Alphabet Inc.|Communication Services|
+AppLovin|Communication Services|
+AT&T|Communication Services|
+Charter Communications|Communication Services|
+Comcast|Communication Services|
+EchoStar|Communication Services|
+Fox Corporation|Communication Services|
+Live Nation Entertainment|Communication Services|
+Meta Platforms|Communication Services|
+Netflix|Communication Services|
+News Corp|Communication Services|
+Omnicom Group|Communication Services|
+Reddit|Communication Services|
+Skydance|Communication Services|
+T-Mobile US|Communication Services|
+Take-Two Interactive|Communication Services|
+TKO Group Holdings|Communication Services|
+Verizon|Communication Services|
+Walt Disney Company (The)|Communication Services|
+Launch Date|media|
+OTA|media|
+East/West|media|
+VOD|media|
+SAP|media|
+Households|media|
+&TV|media|
+Beauty Channel|media|
+American Heroes Channel|media|
+AMC|media|
+Cinémoi|media|
+BET Gospel|media|
+ABC News Live|media|
+ACC Network|media|
+MGM+|media|
+America's Auction Channel|media|
+Playboy TV|media|
+DirecTV Cinema|media|
+Aplauso|media|
+Ingles Para Todos|media|
+Discovery en Español|media|
+Novelisima|media|
+Atrescine|media|
+MTV Tres|media|
+Always Funny en Español|media|
+BeIN Sports en Español|media|
+HBO Latino|media|
+Almavision|media|
+¡Sorpresa!|media|
+Barker Channel|media|
+Playboy TV en Español|media|
+News 12|media|
+Madison, Wisconsin|media|
+Phoenix, Arizona|media|
+Eastern Pennsylvania|media|
+Tampa, Florida|media|
+Orlando, Florida|media|
+New York City|media|
+Kansas City, Missouri|media|
+Louisville|media|
+Pittsfield|media|
+Cleveland|media|
+Milwaukee|media|
+Austin, Texas|media|
+Buffalo, New York|media|
+Upstate New York|media|
+Syracuse, New York|media|
+Dallas–Fort Worth metroplex|media|
+Raleigh|media|
+Rochester, New York|media|
+Pittsburgh, Pennsylvania|media|
+Norfolk|media|
+Oklahoma City|media|
+New England|media|
+Washington, D.C.|media|
+Boise, Idaho|media|
+New Orleans, Louisiana|media|
+ABTV|media|
+Alabama|media|
+Chicago, Illinois|media|
+ABC|media|
+KGO-TV|media|
+KFSN-TV|media|
+KTRK-TV|media|
+KMGH-TV|media|
+KSTP-TV|media|
+WABC-TV|media|
+WCVB-TV|media|
+WFAA|media|
+WHAM-TV|media|
+WHTM-TV|media|
+WJLA-TV|media|
+WKBW-TV|media|
+WLS-TV|media|
+WTVD|media|
+WMUR-TV|media|
+WNEP-TV|media|
+WPVI-TV|media|
+WSYX|media|
+WTAE-TV|media|
+WXYZ-TV|media|
+CBS|media|
+KCNC-TV|media|
+KCTV|media|
+KDKA-TV|media|
+KHOU|media|
+KOVR|media|
+KPIX-TV|media|
+KTVT|media|
+KYW-TV|media|
+WBBM-TV|media|
+WBTV|media|
+WBZ-TV|media|
+WCBS-TV|media|
+WCCO-TV|media|
+WHP-TV|media|
+WRGB|media|
+WROC-TV|media|
+WUSA|media|
+WJZ-TV|media|
+WFOR-TV|media|
+WUPA|media|
+WWJ-TV|media|
+WYOU|media|
+The CW|media|
+KTLA|media|
+KWGN-TV|media|
+KAUT-TV|media|
+WGN-TV|media|
+WDCW|media|
+WBFS-TV|media|
+WKBD-TV|media|
+WLVI|media|
+WNUV|media|
+WPIX|media|
+WPHL|media|
+WSWB|media|
+WCWN|media|
+WUCW|media|
+Fox|media|
+KDFW-TV|media|
+KDVR|media|
+KMSP-TV|media|
+KRIV|media|
+KSAZ-TV|media|
+KTBC|media|
+KTTV|media|
+KTVU|media|
+WAGA-TV|media|
+WBFF|media|
+WFLD|media|
+WFXT|media|
+WITI|media|
+WJBK|media|
+WNYW|media|
+WOFL|media|
+WOGX|media|
+WOLF-TV|media|
+WPMT|media|
+WTTG|media|
+WTVT|media|
+WTXF-TV|media|
+WUHF|media|
+Independent|media|
+KPYX|media|
+KMAX|media|
+KMTP-TV|media|
+KTSF|media|
+KSTW|media|
+KTXA|media|
+KUEN|media|
+WMYD|media|
+WBPH-TV|media|
+WDVM-TV|media|
+WEFS|media|
+WFMZ-TV|media|
+WSBK-TV|media|
+WCIU-TV|media|
+WMEU-CD|media|
+WHDH|media|
+WLNY-TV|media|
+WPSG|media|
+WLYH|media|
+WNYE-TV|media|
+WPCH-TV|media|
+WPKD-TV|media|
+WTOG|media|
+WTVE|media|
+MeTV|media|
+WJLP|media|
+MyNetworkTV|media|
+KDFI|media|
+KICU-TV|media|
+KTXH|media|
+KUTP|media|
+KZJO|media|
+WDCA|media|
+WFTC|media|
+WADL|media|
+WPWR-TV|media|
+WRBW|media|
+WSNN-LD|media|
+WWOR-TV|media|
+NBC|media|
+KFOR-TV|media|
+KNBC|media|
+KNSD|media|
+KNTV|media|
+KING-TV|media|
+KSDK|media|
+KSHB-TV|media|
+KTVB|media|
+KUSA|media|
+KXAS-TV|media|
+WBRE-TV|media|
+WBTS-CD|media|
+WCAU|media|
+WDIV-TV|media|
+WFLA-TV|media|
+WGAL|media|
+WHEC-TV|media|
+WKYC|media|
+WMAQ-TV|media|
+WNBC|media|
+WPXI|media|
+WRC-TV|media|
+WTVJ|media|
+WVIT|media|
+PBS|media|
+KOCE-TV|media|
+KQED|media|
+KQET 25|media|
+KQEH|media|
+KUHT|media|
+NJ PBS|media|
+WEDW|media|
+WETA-TV|media|
+WGBH-TV|media|
+WHYY-TV|media|
+WITF-TV|media|
+WLIW|media|
+WLVT-TV|media|
+WPPT|media|
+WQED|media|
+WNET|media|
+WTTW|media|
+WTVS|media|
+WVIA-TV|media|
+Roar|media|
+WTTE|media|
+ShopHQ|media|
+WRNN-TV|media|
+TBN|media|
+Telemundo|media|
+WNJU|media|
+True Crime Network|media|
+World|media|
+Cozi TV|media|
+Defy|media|
+Daystar Television Network|media|
+WUDT-LD|media|
+The Africa Channel|media|
+Voice of America Persian News Network|media|
+The Filipino Channel|media|
+GMA Life TV|media|
+GMA Pinoy TV|media|
+Alhurra|media|
+Phoenix North America Chinese Channel|media|
+Front Row Channel|media|
+Hallypop|media|
+Kapatid Channel|media|
+Saigon Broadcasting Television Network|media|
+AMGA TV|media|
+The Arabic Channel|media|
+Afrotainment|media|
+Afrotainment Music|media|
+AABC TV|media|
+ARTN|media|
+Animax|media|
+Aniplus|media|
+Arirang TV|media|
+Asia Vision|media|
+B4U Movies|media|
+B4U Music|media|
+Bonjour America|media|
+Bostel|media|
+CaribVision|media|
+DFH Network|media|
+Diya TV|media|
+Eleven Sports Network|media|
+German Kino Plus|media|
+High Vision|media|
+Horizon TV|media|
+ITV Gold|media|
+Impact Television|media|
+Jewish Broadcasting Service|media|
+Jewish Life Television|media|
+JUS One|media|
+JUS Punjabi|media|
+KBS America|media|
+KO-AM TV|media|
+The Korean Channel|media|
+MBC America|media|
+MKTV|media|
+Myx TV|media|
+New Greek TV|media|
+New Tang Dynasty Television|media|
+PanArmenian TV|media|
+Peace TV|media|
+Polvision|media|
+RSC|media|
+TV503 Crossing TV|media|
+SBS America|media|
+Sino TV|media|
+Sky Link TV|media|
+SPT TV|media|
+Tai Seng Sat TV|media|
+Tapesh TV|media|
+Jadeworld|media|
+TV Asia|media|
+tvK|media|
+USArmenia TV|media|
+Viên Thao TV|media|
+VIETV|media|
+Zee TV|media|

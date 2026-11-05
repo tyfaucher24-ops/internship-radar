@@ -1,0 +1,131 @@
+# V21 probe seed. Source: sector sweep "sports": S&P 500 GICS sector rows + YC directory industry rows + sector Wikipedia lists (see build_seeds.py)
+# name|industry|domain. Only boards that answer with real jobs are added to the registry.
+New York City, NY|sports|
+Los Angeles, CA|sports|
+SF Bay Area, CA|sports|
+Chicago, IL|sports|
+Boston, MA|sports|
+Dallas, TX|sports|
+Denver, CO|sports|
+Miami, FL|sports|
+Philadelphia, PA|sports|
+Washington, DC|sports|
+Atlanta, GA|sports|
+Houston, TX|sports|
+Minneapolis, MN|sports|
+Detroit, MI|sports|
+Phoenix, AZ|sports|
+Toronto, ON|sports|
+Seattle, WA|sports|
+Charlotte, NC|sports|
+Cincinnati, OH|sports|
+Cleveland, OH|sports|
+San Diego, CA|sports|
+Nashville, TN|sports|
+Pittsburgh, PA|sports|
+Tampa, FL|sports|
+St. Louis, MO|sports|
+Baltimore, MD|sports|
+Indianapolis, IN|sports|
+Kansas City, (MO/KS)|sports|
+New Orleans, LA|sports|
+Milwaukee, WI|sports|
+Orlando, FL|sports|
+Portland, OR|sports|
+Salt Lake City, UT|sports|
+Buffalo, NY|sports|
+Las Vegas, NV|sports|
+Columbus, OH|sports|
+Montreal, QC|sports|
+Vancouver, BC|sports|
+Green Bay, WI|sports|
+Jacksonville, FL|sports|
+Austin, TX|sports|
+Memphis, TN|sports|
+Oklahoma City, OK|sports|
+Sacramento, CA|sports|
+San Antonio, TX|sports|
+Edmonton, AB|sports|
+Ottawa, ON|sports|
+Raleigh, NC|sports|
+Winnipeg, MB|sports|
+Calgary, AB|sports|
+Baltimore Orioles|sports|
+Fenway Park|sports|
+Yankee Stadium|sports|
+Tropicana Field|sports|
+Rogers Centre|sports|
+South Side Chicago, Illinois|sports|
+Progressive Field|sports|
+Comerica Park|sports|
+Kauffman Stadium|sports|
+Target Field|sports|
+West Sacramento, California|sports|
+Daikin Park|sports|
+Angel Stadium|sports|
+T-Mobile Park|sports|
+Globe Life Field|sports|
+Atlanta Braves|sports|
+LoanDepot Park|sports|
+Citi Field|sports|
+Citizens Bank Park|sports|
+Nationals Park|sports|
+North Side Chicago, Illinois|sports|
+Great American Ball Park|sports|
+American Family Field|sports|
+PNC Park|sports|
+Busch Stadium|sports|
+Phoenix, Arizona|sports|
+Coors Field|sports|
+Dodger Stadium|sports|
+Petco Park|sports|
+Oracle Park|sports|
+Buffalo Bisons|sports|
+Charlotte, North Carolina|sports|
+Durham, North Carolina|sports|
+Jacksonville, Florida|sports|
+Allentown, Pennsylvania|sports|
+Norfolk, Virginia|sports|
+Rochester, New York|sports|
+Moosic, Pennsylvania|sports|
+Syracuse, New York|sports|
+Worcester, Massachusetts|sports|
+Columbus Clippers|sports|
+Lawrenceville, Georgia|sports|
+Indianapolis, Indiana|sports|
+Des Moines, Iowa|sports|
+Louisville, Kentucky|sports|
+Memphis, Tennessee|sports|
+Nashville, Tennessee|sports|
+Papillion, Nebraska|sports|
+Saint Paul, Minnesota|sports|
+Toledo, Ohio|sports|
+Albuquerque Isotopes|sports|
+El Paso, Texas|sports|
+Oklahoma City, Oklahoma|sports|
+Round Rock, Texas|sports|
+Sugar Land, Texas|sports|
+Las Vegas Aviators|sports|
+Reno, Nevada|sports|
+South Jordan, Utah|sports|
+Tacoma, Washington|sports|
+Binghamton Rumble Ponies|sports|
+Hartford, Connecticut|sports|
+Manchester, New Hampshire|sports|
+Portland, Maine|sports|
+Reading, Pennsylvania|sports|
+Bridgewater, New Jersey|sports|
+Akron RubberDucks|sports|
+Altoona, Pennsylvania|sports|
+Bowie, Maryland|sports|
+Erie, Pennsylvania|sports|
+Harrisburg, Pennsylvania|sports|
+Richmond, Virginia|sports|
+Birmingham Barons|sports|
+Chattanooga, Tennessee|sports|
+Knoxville, Tennessee|sports|
+Madison, Alabama|sports|
+Biloxi Shuckers|sports|
+Columbus, Georgia|sports|
+Montgomery, Alabama|sports|
+Pensacola, Florida|sports|

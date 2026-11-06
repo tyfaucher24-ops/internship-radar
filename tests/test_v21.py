@@ -1,4 +1,4 @@
-"""V21: live heartbeat present (Part 1), counts.json + '{N} open internships · Live' (Part 2), probe + new adapters (Part 3),
+"""V21: live heartbeat present (Part 1), counts.json + glowing-dot open count (Part 2 / V21.1), probe + new adapters (Part 3),
 'No deadline yet' labels + deadline sort (Part 4), descriptions sanitizer + About <Company> + no-desc fallback (Part 5).
 Run: python3 tests/test_v21.py  (needs node for the JS checks)"""
 import sys,os,re,json,subprocess,datetime
@@ -43,9 +43,11 @@ t(set(cj)>={'updated','open','new_today','closed_today','by_source'},'P2 counts.
 shutil.rmtree(d)
 hc=re.search(r'id="hdrCount"[^>]*>(.*?)</p>',IDX).group(1)
 t(not re.search(r'\d{3}',re.sub(r'\?v=[0-9a-f]+','',hc)),'P2 no hardcoded count in the #hdrCount skeleton')
-t(hc.index('open internships')<hc.index('qbadge'),'P2 skeleton order: open internships, then the Live slot (no shift)')
-t("open internships</small></span><span class=\"qbadge\">${lb}</span>" in A,'P2 header renders "{N} open internships · Live"')
-t('Live: this count comes from the latest listings sync' in A,'P2 aria-label says what Live means')
+t(hc.index('qbadge')<hc.index('open internships'),'P2 skeleton order: glowing-dot slot LEFT of open internships (no shift)')
+t('<span class="qbadge">${lb}</span><span class="q q-open">' in A and 'open internships' in A,'P2 header renders [dot] {N} open internships (no Live word)')
+t('Live count from the latest listings sync' in A,'P2 aria-label keeps live-count meaning for screen readers')
+t('>Live</span>' not in A.split('const liveTag=')[1].split('\n')[0] and 'live-dot-only' in A,'P2 liveTag has no visible Live word; only the glowing dot')
+t('counts.json?ts=' in A and 'LIVE_MS' in A,'P2 liveRefresh polls counts.json + meta on a calm interval')
 t("META.open_live||META.open" in A and 'open_live' in open('intro.js').read(),'P2 pre-listings paint + intro use the same open count')
 t(not re.search(r'(?<![\w.])1[0-9],[0-9]{3}(?![\w])',A+IDX),'P2 no literal 5-digit inventory number in app.js/index.html')
 # ---------- Part 4 ----------

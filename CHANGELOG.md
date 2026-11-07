@@ -1,6 +1,14 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V21.2 Best-match order, setup locations, evidence bullets, readable text, green count dot, 2026-11-06
+- Find: after a profile is saved, a resume is read, or setup finishes, the list orders by the existing match percent (highest first). Ties break by sooner deadline, newer posted date, company, title, then id. Letter grades and the grader are unchanged. A stored A–Z, Newest, or Closing soonest with no explicit Sort choice is treated as the old default. A later choice in the Sort menu stays put. Guests keep Closing soonest (or the sort they picked) and see no grades.
+- Setup: cities, “anywhere in” a state, and Remote are applied to the Find location filter when setup ends, saved with the other filters, and left alone after that. Open to relocating and places the filter does not use are not turned into filters.
+- Internship detail still has “How you match this posting.” Experiences a resume bullet actually supports are a bulleted list: the experience name, the resume line, then the posting requirement it covers. A title alone is not a match. The fit × chance line and every confidence footer are gone. Confidence is still calculated and still does not change the grade.
+- Text that sat on the page color (degree label, the closed-matches link, faint grays, empty stars, and purple links on a dark surface) uses the theme tokens, so it stays readable in light and dark. Fonts, sizes, and weights are unchanged.
+- The dot left of the open-internship count is green with a soft green glow while the sync is fresh, in light and dark. A stale sync stays gray, with no glow. Reduced motion keeps the glow and drops the pulse. The count and the refresh timer are unchanged.
+- Tests: tests/test_v21_2_explain.js, tests/test_v21_2_ux.py.
+
 ## V21 Live open count, wider coverage, no-deadline label, descriptions + company about, 2026-11-05
 - Find header: `{N} open internships · Live`. N is counted from the loaded listings (same open rule as before); a muted Live stays when the sync is older than 60 minutes. Screen-reader text says Live means the number came from the latest listings sync. Intro uses the same count (`meta.open_live`).
 - Each sync writes `data/counts.json` (open, new_today, closed_today, by_source, by_kind) for the private stats site. No service_role key; public JSON only.

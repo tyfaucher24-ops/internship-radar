@@ -100,13 +100,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 /* V14.3: auto-grow textareas (fallback where field-sizing is unsupported) */
 (function(){if(CSS.supports&&CSS.supports('field-sizing','content'))return;const g=t=>{t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'};document.addEventListener('input',e=>{const t=e.target;if(t.tagName==='TEXTAREA'&&t.closest('#t-profile,.rv-box'))g(t)})})();
-/* V14.3 §5: "How you match this posting" in the listing detail: reach/target/safety, Not-eligible reason, top 3 for/against with quotes, next steps, confidence */
+/* V21.2: How you match stays. No fit×chance formula and no confidence footer. Experiences that a resume bullet actually supports are a bulleted list: name, evidence, then the posting requirement. */
 (function(){if(typeof fbPanel!=='function')return;const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const _fb=fbPanel;
- const TAG={safety:'Safety',target:'Target',reach:'Reach'};
- const fx=f=>`<li><strong>${E(f.t)}</strong>${f.resume?`<br><span class="v143-q">Your resume: ${E(f.resume)}</span>`:''}${f.posting?`<br><span class="v143-q">The posting: ${E(f.posting)}</span>`:''}</li>`;
+ const bad=/closest match|high confidence|lower confidence|medium confidence|doesn.t lower the grade|fit\s*[×x]\s*chance/i;
  fbPanel=function(d){const base=_fb(d);const v=d&&d.v143;if(!v)return base;
-  const head=v.eligible?`<p class="v143-tag"><span class="v143-chip v143-${v.tag}">${TAG[v.tag]||''}</span> Fit × chance: ${v.fitXchance} of 100</p>`:`<p class="v143-ne"><strong>Not eligible:</strong> ${E(v.reason)}</p>`;
-  return base+`<section class="v143" aria-label="How you match this posting"><h4>How you match this posting</h4>${head}<div class="v143-cols">${v.pos.length?`<div><h5>Working for you</h5><ul>${v.pos.map(fx).join('')}</ul></div>`:''}${v.neg.length?`<div><h5>Working against you</h5><ul>${v.neg.map(fx).join('')}</ul></div>`:''}</div>${v.next.length?`<h5>Next steps</h5><ul>${v.next.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`:''}<p class="v143-conf">${E(v.confidence.note)}</p></section>`}})();
+  const items=(v.experiences||[]).filter(it=>it&&it.evidence&&it.why&&!bad.test(it.evidence+' '+it.why));
+  const lis=items.map(it=>`<li><b>${E(it.name)}</b><p>${E(it.evidence)}</p><p>${E(it.why)}</p></li>`).join('');
+  const note=!items.length&&v.evidenceNote&&!bad.test(v.evidenceNote)?`<p class="v143-why">${E(v.evidenceNote)}</p>`:'';
+  const ne=!v.eligible&&v.reason?`<p class="v143-ne"><strong>Not eligible:</strong> ${E(v.reason)}</p>`:'';
+  const steps=(v.steps||[]).filter(t=>t&&!bad.test(t)).slice(0,2);
+  const st=steps.length?`<h5>Next steps</h5><ul>${steps.map(t=>`<li>${E(t)}</li>`).join('')}</ul>`:'';
+  return base+`<section class="v143" aria-label="How you match this posting"><h4>How you match this posting</h4>${ne}${lis?`<ul class="v143-exp">${lis}</ul>`:''}${note}${st}</section>`}})();
 /* V19 / V19.1: one resume drop zone with four states (empty, reading, done, error) for #pfDrop (Profile) and #obDrop (intro step 1).
    Progress comes only from the 'ir:resume' events the readFile wrapper emits at real parse stages. The done state is rebuilt from the saved parse on load. */
 (function(){

@@ -51,7 +51,8 @@
   const tz=()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone||'America/New_York'}catch{return 'America/New_York'}};
   let prefs=null,loading=false;
   function box(){let b=$e('emailAlerts');if(b)return b;const w=document.querySelector('#t-profile .pf3-wrap');if(!w)return null;
-    b=document.createElement('section');b.id='emailAlerts';b.className='ea-box';b.setAttribute('aria-labelledby','eaH');w.appendChild(b);
+    b=document.createElement('section');b.id='emailAlerts';b.className='ea-box';b.setAttribute('aria-labelledby','eaH');
+    const bar=w.querySelector('.pf-bar');bar?w.insertBefore(b,bar):w.appendChild(b);
     b.addEventListener('change',onChange);b.addEventListener('click',e=>{if(e.target.id==='eaSignIn'){e.preventDefault();window.AccountUI&&AccountUI.open?AccountUI.open():(location.hash='signin')}});return b}
   function render(){const b=box();if(!b)return;
     if(!on){b.hidden=true;return}b.hidden=false;

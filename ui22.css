@@ -111,3 +111,4 @@ html.dark .ins-lim{color:var(--c-move,#fbbf24)}
 .pm .pm-fb{display:none}
 @media (max-width:1100px){#hdr .nav>.nav-fb{display:none}.pm .pm-fb{display:block}#hdr .m-hide{display:none}}
 html.dark .fx-eb{color:var(--c-up)}
+#t-db .fx-hero .pill.more{margin:0}

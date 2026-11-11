@@ -33,10 +33,8 @@ button.fx-st:hover{box-shadow:var(--v22-shadow)}button.fx-st:focus-visible{outli
 .fx-go{flex:none;background:var(--c-pri);color:#fff;border:0;font:inherit;font-weight:700;font-size:16px;padding:0 28px;height:46px;border-radius:11px;cursor:pointer}
 .fx-go:hover{background:var(--c-pri-ink)}html.dark .fx-go:hover{background:var(--c-pri-2)}
 .fx-filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
-.fx-quick{display:contents}
-.fx-chip,#t-db .fx-hero .pill{font:inherit;font-size:13.5px;font-weight:600;background:var(--c-surface);border:1px solid var(--c-line);color:var(--c-ink-2);padding:0 14px;height:36px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.fx-chip:hover,#t-db .fx-hero .pill:hover{border-color:var(--c-pri)}
-.fx-chip.on{background:var(--c-pri-soft);border-color:var(--c-pri);color:var(--c-pri-ink)}
+#t-db .fx-hero .pill{font:inherit;font-size:13.5px;font-weight:600;background:var(--c-surface);border:1px solid var(--c-line);color:var(--c-ink-2);padding:0 14px;height:36px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+#t-db .fx-hero .pill:hover{border-color:var(--c-pri)}
 #t-db .fx-hero .pills{display:contents}
 #t-db .fx-hero .pillwrap{position:relative}
 #t-db .fx-hero .pill{border-style:dashed;color:var(--c-mut)}
@@ -112,5 +110,11 @@ html.dark .ins-lim{color:var(--c-move,#fbbf24)}
 @media (max-width:1100px){#hdr .nav>.nav-fb{display:none}.pm .pm-fb{display:block}#hdr .m-hide{display:none}}
 html.dark .fx-eb{color:var(--c-up)}
 #t-db .fx-hero .pill.more{margin:0}
-@media (max-width:1400px){#t-db .fx-filters{gap:6px}#t-db .fx-filters .pill,#t-db .fx-filters .fx-quick button{padding-left:10px;padding-right:10px}}
+@media (max-width:1400px){#t-db .fx-filters{gap:6px}#t-db .fx-filters .pill{padding-left:10px;padding-right:10px}}
 .pf-col .pf-f:has(#cbSkills){margin-top:20px}
+
+/* Profile save bar lives at the end of the form (not fixed), so it never covers fields */
+#t-profile .pf-bar{position:static;left:auto;right:auto;bottom:auto;z-index:auto;background:var(--c-surface);border:1px solid var(--v22-line);border-radius:var(--v22-r);box-shadow:var(--v22-shadow);margin:20px 0 48px}
+#t-profile .pf-bar .pf-barin{max-width:none;margin:0;padding:14px 24px;min-height:72px;box-sizing:border-box}
+#t-profile .ea-box{margin:24px 0 0;max-width:none}
+@media (max-width:759px){#t-profile .pf-bar{margin:16px 0 40px}#t-profile .pf-bar .pf-barin{padding:10px 16px;min-height:64px}#t-profile .ea-box{margin:16px 0 0}}

@@ -1,4 +1,4 @@
-/* V22 UI: Find hero (live stat tiles, quick filters, Search button, result count) and the Insights page.
+/* V22 UI: Find hero (live stat tiles, Search button, result count) and the Insights page.
    Every number is computed in the browser from the listings the site already loaded (D, META), so it stays current after each sync. */
 (function(){
 const $i=id=>document.getElementById(id);
@@ -23,20 +23,14 @@ function heroStats(){if(!$i('fxOpen'))return;loadCounts();const LC=typeof liveCo
  set('fxOpen',LC.open||'');set('fxWk',LC.wk);set('fxNew',nw);set('fxCos',cos);
  const u=$i('fxUpd');if(u)u.textContent=updLabel();
  const s=$i('fxSub');if(s&&LC.open&&typeof META!=='undefined'&&META.companies_tracked)s.textContent=`${fmt(LC.open)} open internships pulled straight from ${fmt(META.companies_tracked)} company career sites, checked daily, with deadlines flagged before they close.`}
-const QUICK=[['cat','Accounting & Audit','Accounting'],['cat','Finance & Banking','Finance & Banking'],['term','Summer 2027','Summer 2027'],['wp','Remote','Remote'],['dlw','This week','Closing this week']];
-function quickTerm(){const d=new Date();return'Summer '+(d.getMonth()>=6?d.getFullYear()+1:d.getFullYear())}
-function renderQuick(){const q=$i('fxQuick');if(!q||typeof fv!=='function')return;QUICK[2][1]=QUICK[2][2]=quickTerm();
- const h=QUICK.map(([k,v,l],i)=>{const on=fv(k).includes(v);return`<button type="button" class="fx-chip${on?' on':''}" data-qi="${i}" aria-pressed="${on}">${H(l)}${on?' <span aria-hidden="true">×</span>':''}</button>`}).join('');if(q.dataset.h!==h){q.dataset.h=h;q.innerHTML=h}}
-function toggleQuick(i){const[k,v]=QUICK[i];const a=fv(k);fset(k,a.includes(v)?a.filter(x=>x!==v):[...a,v]);update()}
 function resCount(){const e=$i('fxRes');if(!e||typeof ALLN==='undefined'||!ready())return;const t=`${fmt(ALLN)} result${ALLN===1?'':'s'}`;if(e.textContent!==t)e.textContent=t}
 function toResults(){const r=document.querySelector('#t-db .rhead');if(r)scrollTo({top:r.getBoundingClientRect().top+scrollY-90,behavior:'smooth'})}
 function initFind(){
- const q=$i('fxQuick');if(q)q.addEventListener('click',e=>{const b=e.target.closest('[data-qi]');if(b)toggleQuick(+b.dataset.qi)});
  const g=$i('qGo');if(g)g.addEventListener('click',()=>{const i=$i('q');if(i)i.dispatchEvent(new Event('input',{bubbles:true}));toResults()});
  const qi=$i('q');if(qi)qi.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();qi.dispatchEvent(new Event('input',{bubbles:true}));toResults()}});
  const w=$i('fxWkBtn');if(w)w.addEventListener('click',()=>{if(!fv('dlw').includes('This week')){fset('dlw',[...fv('dlw'),'This week']);update()}toResults()});
- if(typeof update==='function'&&!update.__v22){const u0=update;update=function(){const r=u0.apply(this,arguments);try{renderQuick();resCount()}catch(e){}return r};update.__v22=1}
- renderQuick();heroStats();resCount()}
+ if(typeof update==='function'&&!update.__v22){const u0=update;update=function(){const r=u0.apply(this,arguments);try{resCount()}catch(e){}return r};update.__v22=1}
+ heroStats();resCount()}
 
 /* ---------------- Insights ---------------- */
 const GROUPS=[['Business majors',['Accounting & Audit','Finance & Banking','Quant & Trading','Consulting & Strategy','Business & Operations','Marketing & Sales','Supply Chain & Logistics','HR & People','Real Estate']],
@@ -127,7 +121,7 @@ const onIns=()=>{const s=$i('t-insights');return s&&!s.hidden};
 /* ---------------- wiring ---------------- */
 function init(){try{initFind()}catch(e){console.warn('ui22 find',e)}
  document.addEventListener('radar:meta',heroStats);
- document.addEventListener('radar:data',()=>{heroStats();renderQuick();resCount();if(onIns())render()});
+ document.addEventListener('radar:data',()=>{heroStats();resCount();if(onIns())render()});
  document.addEventListener('radar:refresh',()=>{heroStats();resCount();if(onIns())render()});
  document.addEventListener('radar:page',e=>{if(e.detail==='insights')render()});
  setInterval(heroStats,60000);

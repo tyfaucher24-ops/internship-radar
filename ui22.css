@@ -113,3 +113,4 @@ html.dark .ins-lim{color:var(--c-move,#fbbf24)}
 html.dark .fx-eb{color:var(--c-up)}
 #t-db .fx-hero .pill.more{margin:0}
 @media (max-width:1400px){#t-db .fx-filters{gap:6px}#t-db .fx-filters .pill,#t-db .fx-filters .fx-quick button{padding-left:10px;padding-right:10px}}
+.pf-col .pf-f:has(#cbSkills){margin-top:20px}

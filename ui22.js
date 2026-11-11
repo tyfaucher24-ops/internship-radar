@@ -105,7 +105,7 @@ function render(){if(!$i('t-insights'))return;shell();if(!ready()){$i('insLoad')
   tl+='<div class="mo">'+[7,8,9,10,11,12].map((m,i)=>{const s=`${Y-1}-${String(m).padStart(2,'0')}-01`;return`<span style="left:${pos(s)}%;${i==0?'transform:none':i==5?'transform:translateX(-100%)':''}">${dt(s).toLocaleDateString('en-US',{month:'short'})}</span>`}).join('')+'</div>';$i('tl').innerHTML=tl;
   const diff=A.c1?dayDiff(c.med,A.c1.med):0;
   $i('c1').innerHTML=f==='All'?(C.early?`Bar = middle 50% of postings. Earliest field: <b>${H(C.early)}</b> (median ${md(F[C.early].c1.med)}).`:'Bar = middle 50% of postings.'):`Bar = middle 50% of postings. That's <b>${diff===0?'the same as':Math.abs(diff)+' day'+(Math.abs(diff)===1?'':'s')+' '+(diff<0?'earlier than':'later than')}</b> the all-fields median (${md(A.c1.med)}).`;
-  $i('t1').textContent=c.pre_oct>=50?'Most of these roles are already up by October. Have your resume ready and start searching in August.':`Peak posting runs from ${md(c.q1)} to ${md(c.q3)}. Have your resume ready by ${md(c.q1)} and check new postings weekly.`;
+  $i('t1').textContent=c.pre_oct>=50?'Most of these roles are already up by October. Have your resume ready and start searching in August.':`Have your resume ready by ${md(c.q1)}, then check new postings weekly until ${md(c.q3)}. That is when most roles open.`;
   $i('f1').textContent=`Based on ${fmt(c.n)} Summer ${Y} postings, by the date the company published them. Tracking began ${tr}, so roles that opened and closed earlier are undercounted; real timing is likely a bit earlier.`}
  // card 2
  if(!lim('k2','l2',d.c2&&d.c2.n,MIN.c2)){const c=d.c2;

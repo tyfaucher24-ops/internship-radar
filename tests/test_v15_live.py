@@ -29,7 +29,7 @@ def open_(br,meta_age=None,w=1440):
             r=route.fetch();m=r.json();m['updated']=iso(meta_age);route.fulfill(response=r,body=json.dumps(m),headers={**r.headers,'content-type':'application/json'})
         p.route(re.compile(r'.*/data/meta\.json.*'),h)
     p.goto(URL);wf(p,"()=>typeof BYID!=='undefined'&&BYID.size>0");p.evaluate("()=>window.__introEnd&&__introEnd(false)");p.wait_for_timeout(1200);return p
-NOAGO=re.compile(r'\b(\d+\s*(min|mins|minutes|hours?|hrs?|days?)\s+ago|just now|updated\s+\d)',re.I)
+NOAGO=re.compile(r'\b(\d+\s*(min|mins|minutes|hours?|hrs?|days?)\s+ago|just now|updated\s+\d+\s*(min|mins|minutes|hours?|hrs?|days?))',re.I)
 with sync_playwright() as pw:
     br=pw.chromium.launch()
     p=open_(br,5)

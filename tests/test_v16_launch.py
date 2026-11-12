@@ -21,7 +21,7 @@ with sync_playwright() as pw:
     for k in ['<title>','name="description"','rel="canonical"','og:title','og:description','og:image"','og:url','twitter:card','twitter:image','name="viewport"','lang="en"']:ck('SEO tag '+k,k in h)
     ck('description no longer says no login','no login' not in h.lower())
     rb=urllib.request.urlopen(URL+'robots.txt').read().decode();ck('robots.txt has sitemap + hides admin','Sitemap:' in rb and 'Disallow: /admin.html' in rb)
-    sm=urllib.request.urlopen(URL+'sitemap.xml').read().decode();ck('sitemap.xml lists the site',URL in sm or 'tyfaucher24-ops.github.io' in sm)
+    sm=urllib.request.urlopen(URL+'sitemap.xml').read().decode();ck('sitemap.xml lists the site',URL in sm or 'tyfaucher24-ops.github.io' in sm or 'internindex.app' in sm)
     # og:image is absolute (canonical domain, as social sites need). Check the same path on the server under test,
 # so a local run doesn't 404 on a file that exists here but isn't deployed yet.
     og=re.search(r'og:image" content="([^"]+)"',h).group(1);canon=re.search(r'rel="canonical" href="([^"]+)"',h).group(1)

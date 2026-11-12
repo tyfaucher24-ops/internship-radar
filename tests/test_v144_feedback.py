@@ -31,7 +31,7 @@ with sync_playwright() as pw:
   p.evaluate("()=>go('feedback')");p.wait_for_timeout(500)
   ck('empty state text',"Upload your resume to see your honest feedback" in p.inner_text('#t-feedback'))
   ck('empty state upload button',p.locator('#t-feedback a.btn').count()>0)
-  ck('nav has Feedback',p.locator('nav [data-go=feedback]').count()==1)
+  ck('nav has Feedback',p.locator('nav.nav > a[data-go=feedback]').count()==1)
   # V14.5: upload fills the profile and goes to the homepage, no pop-up
   p.evaluate("()=>go('profile')");p.set_input_files('#resume','tests/resume-fixtures/f01/resume.pdf')
   wf(p,"()=>typeof MSCORE!=='undefined'&&MSCORE.size>0",90)

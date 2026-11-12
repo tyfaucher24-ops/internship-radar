@@ -113,8 +113,8 @@ html.dark .fx-eb{color:var(--c-up)}
 @media (max-width:1400px){#t-db .fx-filters{gap:6px}#t-db .fx-filters .pill{padding-left:10px;padding-right:10px}}
 .pf-col .pf-f:has(#cbSkills){margin-top:20px}
 
-/* Profile save bar lives at the end of the form (not fixed), so it never covers fields */
-#t-profile .pf-bar{position:static;left:auto;right:auto;bottom:auto;z-index:auto;background:var(--c-surface);border:1px solid var(--v22-line);border-radius:var(--v22-r);box-shadow:var(--v22-shadow);margin:20px 0 48px}
+/* Profile save bar sits under the page heading (not fixed), so it stays visible and never covers fields */
+#t-profile .pf-bar{position:static;left:auto;right:auto;bottom:auto;z-index:auto;background:var(--c-surface);border:1px solid var(--v22-line);border-radius:var(--v22-r);box-shadow:var(--v22-shadow);margin:0 0 24px}
 #t-profile .pf-bar .pf-barin{max-width:none;margin:0;padding:14px 24px;min-height:72px;box-sizing:border-box}
-#t-profile .ea-box{margin:24px 0 0;max-width:none}
-@media (max-width:759px){#t-profile .pf-bar{margin:16px 0 40px}#t-profile .pf-bar .pf-barin{padding:10px 16px;min-height:64px}#t-profile .ea-box{margin:16px 0 0}}
+#t-profile .ea-box{margin:24px 0 48px;max-width:none}
+@media (max-width:759px){#t-profile .pf-bar{margin:0 0 16px}#t-profile .pf-bar .pf-barin{padding:10px 16px;min-height:64px}#t-profile .ea-box{margin:16px 0 40px}}

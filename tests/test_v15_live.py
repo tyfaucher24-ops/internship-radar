@@ -33,7 +33,7 @@ NOAGO=re.compile(r'\b(\d+\s*(min|mins|minutes|hours?|hrs?|days?)\s+ago|just now|
 with sync_playwright() as pw:
     br=pw.chromium.launch()
     p=open_(br,5)
-    ck('glowing green status dot left of open count when sync fresh',p.evaluate("()=>{const h=document.getElementById('hdrCount');if(!h)return false;const dot=h.querySelector('.live-dot');const b=h.querySelector('.live-b:not(.live-old)');const t=h.textContent||'';return !!(dot&&b&&b.querySelector('.live-dot')===dot&&!/\\bLive\\b/.test(t)&&/open internships/i.test(t)&&h.innerHTML.indexOf('qbadge')<h.innerHTML.indexOf('open internships'))}"))
+    ck('Live pill left of open count when sync fresh',p.evaluate("()=>{const h=document.getElementById('hdrCount');if(!h)return false;const b=h.querySelector('.live-b');const dot=b&&b.querySelector('.live-dot');return !!(dot&&/^\\s*Live\\s*$/.test(b.textContent||'')&&b.getAttribute('aria-label')==='Listings are live'&&/open internships/i.test(h.textContent||'')&&h.innerHTML.indexOf('qbadge')<h.innerHTML.indexOf('open internships'))}"))
     body=p.evaluate("()=>document.body.innerText");ck('no "X ago" / sync timestamps in UI',not NOAGO.search(body),NOAGO.search(body) and NOAGO.search(body).group(0))
     # refresh: forced liveRefresh keeps scroll and card heights (no layout jump)
     p.evaluate("()=>window.scrollTo(0,1400)");p.wait_for_timeout(400)
@@ -46,7 +46,7 @@ with sync_playwright() as pw:
         for d in (False,True):theme(p,d);p.evaluate("()=>scrollTo(0,0)");p.wait_for_timeout(300);p.screenshot(path=f"{OUT}/v15-find-live-1440-{'dark' if d else 'light'}.png")
     p.close()
     p=open_(br,75)
-    ck('stale sync: muted static status dot (no fresh pulse), no Live word',p.evaluate("()=>{const h=document.getElementById('hdrCount');if(!h)return false;const old=h.querySelector('.live-b.live-old .live-dot');const fresh=h.querySelector('.live-b:not(.live-old)');const t=h.textContent||'';return !!(old&&!fresh&&!/\\bLive\\b/.test(t))}"))  # V21.1: muted static dot remains for CLS; visible Live word is gone
+    ck('stale sync: Live pill hidden, no timestamp',p.evaluate("()=>{const h=document.getElementById('hdrCount');if(!h)return false;const t=h.textContent||'';return !h.querySelector('.live-b')&&!/\\bLive\\b/.test(t)&&!/ago|updated|as of|\\d{1,2}:\\d{2}/i.test(t)}"))
     body=p.evaluate("()=>document.body.innerText");ck('stale: no timestamp shown instead',not NOAGO.search(body))
     log=p.evaluate("()=>JSON.parse(localStorage.getItem('liveStaleLog')||'[]')");ck('stale sync written to admin log',len(log)>=1,log)
     if OUT:p.screenshot(path=f'{OUT}/v15-find-stale-1440-light.png')

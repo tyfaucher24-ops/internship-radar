@@ -5,15 +5,12 @@ const DV=()=>(typeof META!=='undefined'&&META&&META.updated)?'?v='+encodeURIComp
 const pdate=x=>x.posted||x.fs||'';
 /* V15 addendum 2: no relative times anywhere; the posting date is shown as a plain date */
 const postedAgo=x=>{const d=pdate(x);if(!d)return'';return 'Posted '+new Date(d.slice(0,10)+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'})};
-/* V15 addendum 2: one calm "Live" badge replaces every "Updated X ago"; hidden when the last sync is over 60 minutes old */
+/* V21.2: one Live pill for the Find hero, the header count (#hdrCount / #dUpd) and the ticker (#tkAsOf).
+   A glowing green dot sits left of the word Live. Hidden entirely when the last sync is over LIVE_MAX_MIN; no clock time is shown instead. */
 const LIVE_MAX_MIN=60;const syncFresh=iso=>!!iso&&(Date.now()-Date.parse(iso.length===16?iso+':00Z':iso))/6e4<=LIVE_MAX_MIN;
-/* stale syncs are logged (not shown to users) so the admin page can list when the badge was hidden */
-function logStale(iso){try{const k='liveStaleLog',L=JSON.parse(localStorage.getItem(k)||'[]');if(L.length&&L[L.length-1].sync===iso)return;L.push({sync:iso||null,at:new Date().toISOString()});localStorage.setItem(k,JSON.stringify(L.slice(-20)));console.info('[Intern Index] Live badge hidden: last sync',iso,'is over',LIVE_MAX_MIN,'minutes old')}catch(e){}}
+/* stale syncs are logged (not shown to users) so the admin page can list when the pill was hidden */
+function logStale(iso){try{const k='liveStaleLog',L=JSON.parse(localStorage.getItem(k)||'[]');if(L.length&&L[L.length-1].sync===iso)return;L.push({sync:iso||null,at:new Date().toISOString()});localStorage.setItem(k,JSON.stringify(L.slice(-20)));console.info('[Intern Index] Live pill hidden: last sync',iso,'is over',LIVE_MAX_MIN,'minutes old')}catch(e){}}
 const liveBadge=iso=>{const f=syncFresh(iso);if(!f)logStale(iso);return f?'<span class="live-b" role="status" aria-label="Listings are live"><i class="live-dot" aria-hidden="true"></i>Live</span>':''};
-/* V21 Part 2: 'Live' next to the open count means the number was counted from the latest listings sync (not visitors online).
-   Green dot while that sync is <= LIVE_MAX_MIN old; a muted 'Live' (no dot) when it is older, with the age in the label. */
-/* V21.1: glowing green status dot left of the open count (no visible "Live" word). Aria keeps the meaning. */
-const liveTag=iso=>{if(!iso)return'';const f=syncFresh(iso);if(!f)logStale(iso);const a='Live count from the latest listings sync'+(f?'':' (last sync over an hour ago)');return`<span class="live-b live-dot-only${f?'':' live-old'}" role="status" aria-label="${a}" title="${a}"><i class="live-dot" aria-hidden="true"></i></span>`};
 const shortDate=d=>new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
 let LOGOS=null,logosAsked=false;function loadLogos(){if(logosAsked)return;logosAsked=true;fetch('data/logo-map.json'+DV()).then(r=>r.json()).then(m=>{LOGOS=m;const vis=()=>{if(D.length&&!$('t-db')?.hidden)vrender(true);if(!$('t-tracker')?.hidden&&window.trackerRefresh)trackerRefresh()};(window.requestAnimationFrame||setTimeout)(vis)}).catch(()=>{LOGOS={}})}
 /* V6.1: logo map is fetched after load when the browser is idle, never during first paint or the intro */
@@ -349,7 +346,7 @@ function markLive(){const td=new Date(),t=td.getFullYear()+'-'+String(td.getMont
 function liveCounts(){if(!D.length||!D.some(x=>'live' in x))return{open:META.open_live||META.open||0,wk:META.closing_this_week||0};let o=0,w=0;for(const x of D)if(x.live){o++;if(x.deadline){const n=days(x.deadline);if(n>=0&&n<=7)w++}}return{open:o,wk:w}}
 function hdrCount(){const LC=liveCounts();{const dc=document.getElementById('dCount'),du=document.getElementById('dUpd');if(dc&&LC.open)dc.textContent=LC.open.toLocaleString();if(du){const h=liveBadge(META.updated);if(du.dataset.h!==h){du.dataset.h=h;du.innerHTML=h}}}
  const t=META.updated?`${LC.open.toLocaleString()} open internships · ${LC.wk.toLocaleString()} closing this week`:'Live counts unavailable';const qb=document.getElementById('hdrCount');
- if(qb&&META.updated){/* V21.1: [glowing green dot] {N} open internships  (dot left; no "Live" word) */const lb=liveTag(META.updated);
+ if(qb&&META.updated){/* V21.2: same Live pill as the Find hero and the ticker */const lb=liveBadge(META.updated);
   const h=`<span class="qbadge">${lb}</span><span class="q q-open"><b class="mono">${LC.open.toLocaleString()}</b><small>open internships</small></span><span class="q"><b class="mono">${LC.wk.toLocaleString()}</b><small>closing this week</small></span>`;if(qb.dataset.h!==h){qb.dataset.h=h;qb.innerHTML=h}}
  document.querySelectorAll('.hdrCount').forEach(e=>{if(e.id==='hdrCount'&&META.updated)return;if(!e.closest('#intro'))e.textContent=t})}
 setInterval(()=>{if(META.updated)hdrCount()},60000);

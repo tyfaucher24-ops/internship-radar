@@ -12,8 +12,14 @@ const dayDiff=(a,b)=>Math.round((dt(a)-dt(b))/864e5);
 const ready=()=>typeof D!=='undefined'&&D.length&&D.some(x=>'live' in x);
 
 /* ---------------- Find hero ---------------- */
-function updLabel(){if(typeof META==='undefined'||!META.updated)return'Live internship data';const d=new Date(META.updated);if(isNaN(d))return'Live internship data';
- const t=d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});return'Live · updated '+(iso(d)===today()?t:d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+', '+t)}
+/* V21.2: the eyebrow is the shared Live pill (liveBadge). No "updated" clock. Hidden when the sync is stale. */
+function paintLive(){const eb=document.querySelector('#t-db .fx-eb'),u=$i('fxUpd');if(!eb||!u)return;
+ const isoT=(typeof META!=='undefined'&&META&&META.updated)||'';
+ if(!isoT||typeof liveBadge!=='function'){if(u.dataset.mode!=='wait'){u.dataset.mode='wait';u.dataset.h='';eb.hidden=false;u.textContent='Live internship data'}return}
+ const h=liveBadge(isoT);
+ if(!h){if(u.dataset.mode!=='off'){u.dataset.mode='off';u.dataset.h='';u.textContent='';eb.hidden=true}return}
+ if(u.dataset.h===h){eb.hidden=false;return}
+ u.dataset.mode='on';u.dataset.h=h;eb.hidden=false;u.innerHTML=h}
 /* "new today" uses the sync's own count (counts.json, America/New_York day); before it loads, nothing is shown rather than a guess */
 let CNT=null,cntAt=0;function loadCounts(){if(Date.now()-cntAt<60000)return;cntAt=Date.now();fetch('data/counts.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(j&&typeof j.new_today==='number'){CNT=j;heroStats()}}).catch(()=>{})}
 function heroStats(){if(!$i('fxOpen'))return;loadCounts();const LC=typeof liveCounts==='function'?liveCounts():{open:0,wk:0};let nw=CNT?CNT.new_today:'',cos='';
@@ -21,7 +27,7 @@ function heroStats(){if(!$i('fxOpen'))return;loadCounts();const LC=typeof liveCo
  else if(typeof META!=='undefined'&&META.companies_with_listings)cos=META.companies_with_listings;
  const set=(id,v)=>{const e=$i(id);if(e&&v!==''&&v!=null&&e.textContent!==fmt(v))e.textContent=fmt(v)};
  set('fxOpen',LC.open||'');set('fxWk',LC.wk);set('fxNew',nw);set('fxCos',cos);
- const u=$i('fxUpd');if(u)u.textContent=updLabel();
+ paintLive();
  const s=$i('fxSub');if(s&&LC.open&&typeof META!=='undefined'&&META.companies_tracked)s.textContent=`${fmt(LC.open)} open internships pulled straight from ${fmt(META.companies_tracked)} company career sites, checked daily, with deadlines flagged before they close.`}
 function resCount(){const e=$i('fxRes');if(!e||typeof ALLN==='undefined'||!ready())return;const t=`${fmt(ALLN)} result${ALLN===1?'':'s'}`;if(e.textContent!==t)e.textContent=t}
 function toResults(){const r=document.querySelector('#t-db .rhead');if(r)scrollTo({top:r.getBoundingClientRect().top+scrollY-90,behavior:'smooth'})}

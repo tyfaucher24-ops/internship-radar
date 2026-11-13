@@ -4,14 +4,13 @@
 const $=id=>document.getElementById(id);const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let CH=null,lastUpd='';
 const KL={new:'▲ NEW',closed:'▼ CLOSED',deadline:'● DEADLINE MOVED'};
-const fmtT=t=>new Date(t).toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});
 const fmtD=d=>{const x=new Date(d+'T12:00:00');return x.toLocaleDateString([],{month:'short',day:'numeric'})};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function has(id){try{return typeof BYID!=='undefined'&&BYID.has(String(id))}catch(_){return false}}
 function item(e){const det=e.k==='deadline'?`${esc(e.co)} → ${fmtD(e.to)}`:`${esc(e.co)}`;
  const ti=e.k==='deadline'?`<span class="tk-t">${esc(e.ti)} (was ${fmtD(e.from)})</span>`:`<span class="tk-t">${esc(e.ti)}${e.loc?' · '+esc(e.loc):''}</span>`;
  const ok=has(e.id);
- return `<button type="button" class="tk-i tk-${e.k}" data-tk="${esc(e.id)}"${ok?'':' disabled'} title="${esc(KL[e.k]+' · '+e.co+' · '+e.ti+' · seen in the latest sync')}"><span class="tk-k">${KL[e.k]}</span><span class="tk-co">${det}</span>${ti}<span class="tk-tm">${fmtT(e.t)}</span></button>`}
+ return `<button type="button" class="tk-i tk-${e.k}" data-tk="${esc(e.id)}"${ok?'':' disabled'} title="${esc(KL[e.k]+' · '+e.co+' · '+e.ti+' · seen in the latest sync')}"><span class="tk-k">${KL[e.k]}</span><span class="tk-co">${det}</span>${ti}</button>`}
 function pick(ev){/* latest sync first; interleave kinds so one kind doesn't fill the bar; cap the DOM size */
  const latest=ev.filter(e=>e.t===ev[0].t),by={new:[],deadline:[],closed:[]};latest.forEach(e=>by[e.k]&&by[e.k].push(e));
  const out=[];for(let i=0;out.length<36&&i<200;i++)for(const k of ['deadline','new','closed']){if(by[k][i])out.push(by[k][i])}return out.slice(0,36)}
@@ -19,8 +18,8 @@ function render(){const T=$('ticker');if(!T)return;const ev=(CH&&CH.events)||[];
  const L=pick(ev);const h=L.map(item).join('');$('tkTrack').innerHTML=h+(RM?'':h.replace(/<button /g,'<button aria-hidden="true" tabindex="-1" '));
  $('tkTrack').style.setProperty('--tk-dur',Math.max(40,L.length*5)+'s');asOf();T.hidden=false}
 let META_UPD='';
-function asOf(){/* V15 addendum 2: calm Live badge instead of "Updated X ago"; hidden when the last sync is over 60 minutes old */const el=$('tkAsOf');if(!el)return;const t=META_UPD||(CH&&CH.updated);
- const fresh=!!t&&(Date.now()-Date.parse(t))/6e4<=60;const h=fresh?'<span class="live-b" role="status" aria-label="Listings are live"><i class="live-dot" aria-hidden="true"></i>Live</span>':'';if(el.dataset.h!==h){el.dataset.h=h;el.innerHTML=h}el.removeAttribute('title');const w=$('tkStale');if(w)w.hidden=true;document.querySelectorAll('.iticker .lv').forEach(e=>e.hidden=!fresh)}
+function asOf(){/* V21.2: the shared liveBadge pill. Hidden when the last sync is over LIVE_MAX_MIN; no clock time. */const el=$('tkAsOf');if(!el)return;const t=META_UPD||(CH&&CH.updated);
+ const h=(t&&typeof liveBadge==='function')?liveBadge(t):'';if(el.dataset.h!==h){el.dataset.h=h;el.innerHTML=h}el.removeAttribute('title');const w=$('tkStale');if(w)w.hidden=true;document.querySelectorAll('.iticker .lv').forEach(e=>e.hidden=!h)}
 setInterval(asOf,60000);
 async function load(){try{const m=await (await fetch('data/meta.json?ts='+Date.now(),{cache:'no-store'})).json();if(m&&m.updated){META_UPD=m.updated;asOf()}}catch(_){}
 try{const r=await fetch('data/changes.json?ts='+Date.now(),{cache:'no-store'});if(!r.ok)return;const j=await r.json();if(j.updated===lastUpd)return;lastUpd=j.updated;CH=j;render()}catch(_){}}

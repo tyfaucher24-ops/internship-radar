@@ -15,6 +15,9 @@ html.dark .fx-hero{background:radial-gradient(1100px 460px at 88% -12%,rgba(109,
 .fx-top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:end}
 .fx-eb{display:inline-flex;align-items:center;gap:8px;margin:0;font-size:13px;font-weight:650;color:var(--c-green);background:var(--c-green-soft);border:1px solid color-mix(in srgb,var(--c-green) 30%,transparent);padding:6px 12px;border-radius:999px}
 .fx-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,.18)}
+/* V21.2: once the shared Live pill is in, drop the eyebrow's own chip so there is only one pill */
+#t-db .fx-eb:has(.live-b){padding:0;background:transparent;border:0;gap:0}
+#t-db .fx-eb:has(.live-b) .fx-dot{display:none}
 .fx-copy h1{font-size:clamp(40px,4.1vw,60px);line-height:1.03;letter-spacing:-.035em;margin:16px 0 12px;font-weight:800;color:var(--c-ink)}
 .fx-copy h1 span{color:var(--c-pri)}html.dark .fx-copy h1 span{color:var(--c-pri-ink)}
 .fx-sub{font-size:18px;line-height:1.5;color:var(--c-mut);max-width:600px;margin:0}

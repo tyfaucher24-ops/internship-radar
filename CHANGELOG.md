@@ -1,6 +1,10 @@
 # Intern Index changelog
 (The website was called Internship Radar before V12.1. The repo name and URL are unchanged.)
 
+## V21.2 Find page Live pill, 2026-11-13
+- Find page: every visible "last updated" time is gone (the hero clock, the header count, the ticker's as-of line, and the clock on each ticker item). One calm pill says **Live**, with a glowing green dot to the left of the word. It shows only while the last sync is within 60 minutes (`LIVE_MAX_MIN`); older than that, the pill hides and no stale time appears. The glow stays under reduced motion; the pulse does not. Find, the header count, and the ticker share `liveBadge`. Screen readers still hear "Listings are live".
+- Tests: `tests/test_v21_2_livepill.py`.
+
 ## V21 Live open count, wider coverage, no-deadline label, descriptions + company about, 2026-11-05
 - Find header: `{N} open internships · Live`. N is counted from the loaded listings (same open rule as before); a muted Live stays when the sync is older than 60 minutes. Screen-reader text says Live means the number came from the latest listings sync. Intro uses the same count (`meta.open_live`).
 - Each sync writes `data/counts.json` (open, new_today, closed_today, by_source, by_kind) for the private stats site. No service_role key; public JSON only.

@@ -1380,12 +1380,14 @@ html.dark .fx-t-safety{background:var(--c-green-soft)}.fx-t-target{background:va
 #t-profile .pf-l small,#t-profile .pf-f legend small{color:var(--c-mut)}
 
 /* ==== from v15.css ==== */
-/* V15 addendum 2: calm "Live" badge (replaces every "Updated X ago"); hidden by JS when the last sync is over 60 minutes old */
-.live-b{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 9px;border-radius:999px;font:600 12px/1 var(--font-sans,system-ui);letter-spacing:.02em;color:#14532d;background:#dcfce7;white-space:nowrap}
-.live-dot{width:8px;height:8px;border-radius:50%;background:#15803d;flex:none;animation:livePulse 2.6s ease-in-out infinite}
-@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(21,128,61,.40)}50%{box-shadow:0 0 0 5px rgba(21,128,61,0)}}
-@media (prefers-reduced-motion:reduce){.live-dot{animation:none}}
-.dark .live-b{color:#bbf7d0;background:#14532d}.dark .live-dot{background:#4ade80}
+/* V21.2: one calm Live pill (glowing green dot, then the word). JS hides it when the last sync is over 60 minutes old. The glow stays put under reduced motion; only the pulse stops. */
+.live-b{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 10px 0 8px;border-radius:999px;border:1px solid color-mix(in srgb,#047857 22%,transparent);font:600 12px/1 var(--font,system-ui);letter-spacing:.02em;color:#14532d;background:#ecfdf3;white-space:nowrap}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#059669;flex:none;box-shadow:0 0 0 3px rgba(5,150,105,.32),0 0 8px 1px rgba(5,150,105,.5);animation:livePulse 2.4s ease-in-out infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 3px rgba(5,150,105,.32),0 0 8px 1px rgba(5,150,105,.45)}50%{box-shadow:0 0 0 5px rgba(5,150,105,.16),0 0 12px 2px rgba(5,150,105,.62)}}
+@keyframes livePulseDark{0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,.34),0 0 10px 1px rgba(74,222,128,.5)}50%{box-shadow:0 0 0 6px rgba(74,222,128,.14),0 0 14px 2px rgba(74,222,128,.72)}}
+@media (prefers-reduced-motion:reduce){.live-dot{animation:none!important}}
+.dark .live-b{color:#bbf7d0;background:#123524;border-color:rgba(74,222,128,.35)}
+.dark .live-dot{background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.34),0 0 10px 1px rgba(74,222,128,.55);animation-name:livePulseDark}
 .qbadge:empty{display:none}
 /* V15: rows outside your picked locations are labelled, never hidden */
 .c-out{display:inline-block;font-size:12px;color:var(--muted,#57606a);margin-top:2px}
@@ -1589,16 +1591,5 @@ html.dark #intro.v13 .obcard .sugg ul li,html.dark #intro.v13 .sugg>ul li{color:
 html.dark #intro.v13 .sugg>ul li:hover,html.dark #intro.v13 .sugg>ul li[aria-selected="true"],html.dark #intro.v13 .obcard .sugg ul li:hover,html.dark #intro.v13 .obcard .sugg ul li[aria-selected="true"]{background:var(--c-pri-soft)}
 /* V19.2: the live badge fills in after a network check; keep its line height and the count's position so nothing moves */
 
-/* V21.1: glowing green status dot LEFT of the open count (no "Live" word). Slot reserved to avoid CLS. Calm pulse; muted static when sync > 60 min. */
-
- /* digit changes do not shift layout */
-.live-b.live-old{color:var(--c-mut);background:transparent;border:0}
-.live-b.live-old .live-dot{background:var(--c-mut,#9aa3ad);animation:none;box-shadow:none;opacity:.55}
-.dark .live-b.live-old{color:var(--c-mut);background:transparent}
-.dark .live-b.live-old .live-dot{background:#6b7280;opacity:.6}
-/* Calm finance-style glow (soft, not neon) */
-
-@keyframes livePulseSoft{0%,100%{box-shadow:0 0 0 0 rgba(22,128,60,.32)}50%{box-shadow:0 0 0 4px rgba(22,128,60,0)}}
-
-@keyframes livePulseSoftDark{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.28)}50%{box-shadow:0 0 0 4px rgba(74,222,128,0)}}
+/* V21.2: the Live pill is one chip. An older muted-dot variant is not rendered. */
 .d-blurb p{margin:0 0 6px}.d-about{line-height:1.5}
